@@ -1,7 +1,7 @@
 name: flusmic
 description: A prismic.io integration for Flutter
 version: 0.0.1
-author:
+authors:
   - Pablo Bautista <pablo@pixela.com.gt>
   - Pixela GT <team@pixela.com.gt>
 homepage: https://github.com/PixelaGt/flusmic
