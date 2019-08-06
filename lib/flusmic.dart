@@ -1,9 +1,13 @@
 library flusmic;
 
+export 'package:flusmic/src/models/api/api.dart';
+export 'package:flusmic/src/models/result/result.dart';
+export 'package:flusmic/src/models/types/types.dart';
+
 import 'dart:convert';
-import 'package:flutter/foundation.dart';
 import 'package:flusmic/src/models/api/api.dart';
 import 'package:flusmic/src/models/result/result.dart';
+import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 
 ///Flusmic class
