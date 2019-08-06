@@ -1,6 +1,8 @@
 library flusmic;
 
 export 'package:flusmic/src/models/api/api.dart';
+export 'package:flusmic/src/models/document/document.dart';
+export 'package:flusmic/src/models/api/ref.dart';
 export 'package:flusmic/src/models/result/result.dart';
 export 'package:flusmic/src/models/types/types.dart';
 
@@ -19,7 +21,6 @@ class Flusmic {
   Flusmic({@required this.prismicEndpoint});
 
   /// Fetch API
-  ///
   /// Get the API main document of prismic repository
   Future<Api> getApi() async {
     final raw = prismicEndpoint;
@@ -33,7 +34,6 @@ class Flusmic {
   }
 
   /// Fetch Root
-  ///
   /// Get the API root document of prismic repository
   /// Contains all the documents.
   Future<Result> getRootDocument() async {
@@ -49,7 +49,6 @@ class Flusmic {
   }
 
   /// Fetch documents by type
-  ///
   /// Get all the documents by [type] using the slug.
   Future<Result> getDocumentsByType(String slug) async {
     final api = await getApi();
@@ -67,7 +66,6 @@ class Flusmic {
   }
 
   /// Fetch document by id
-  ///
   /// Get a documents by [id].
   Future<Result> getDocumentById(String id) async {
     final api = await getApi();
