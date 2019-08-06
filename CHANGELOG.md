@@ -1,4 +1,4 @@
-## [0.1.0] - Expose remaining types.
+## [0.1.0] - Expose remaining types, slices added.
 
 ## [0.0.2] - Expose types.
 

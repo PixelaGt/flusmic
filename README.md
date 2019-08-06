@@ -71,7 +71,7 @@ We expect to have a better way to do this.
 - Text
 
 ## In the future
+- [X] Slices.
 - [ ] Complete API properties.
 - [ ] Add remaining types.
-- [ ] Slices.
 - [ ] Widgets?
