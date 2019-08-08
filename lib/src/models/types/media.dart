@@ -11,9 +11,13 @@ part 'media.g.dart';
 abstract class Media implements Built<Media, MediaBuilder> {
   @BuiltValueField(wireName: 'link_type')
   String get linkType;
+  @nullable
   String get name;
+  @nullable
   String get kind;
+  @nullable
   String get url;
+  @nullable
   String get size;
 
   Media._();

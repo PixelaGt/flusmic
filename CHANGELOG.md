@@ -1,3 +1,5 @@
+## [0.1.1] - Fix media type to be nullable.
+
 ## [0.1.0] - Expose remaining types, slices added.
 
 ## [0.0.2] - Expose types.

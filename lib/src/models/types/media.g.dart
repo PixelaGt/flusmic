@@ -21,16 +21,31 @@ class _$MediaSerializer implements StructuredSerializer<Media> {
       'link_type',
       serializers.serialize(object.linkType,
           specifiedType: const FullType(String)),
-      'name',
-      serializers.serialize(object.name, specifiedType: const FullType(String)),
-      'kind',
-      serializers.serialize(object.kind, specifiedType: const FullType(String)),
-      'url',
-      serializers.serialize(object.url, specifiedType: const FullType(String)),
-      'size',
-      serializers.serialize(object.size, specifiedType: const FullType(String)),
     ];
-
+    if (object.name != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(object.name,
+            specifiedType: const FullType(String)));
+    }
+    if (object.kind != null) {
+      result
+        ..add('kind')
+        ..add(serializers.serialize(object.kind,
+            specifiedType: const FullType(String)));
+    }
+    if (object.url != null) {
+      result
+        ..add('url')
+        ..add(serializers.serialize(object.url,
+            specifiedType: const FullType(String)));
+    }
+    if (object.size != null) {
+      result
+        ..add('size')
+        ..add(serializers.serialize(object.size,
+            specifiedType: const FullType(String)));
+    }
     return result;
   }
 
@@ -91,18 +106,6 @@ class _$Media extends Media {
       : super._() {
     if (linkType == null) {
       throw new BuiltValueNullFieldError('Media', 'linkType');
-    }
-    if (name == null) {
-      throw new BuiltValueNullFieldError('Media', 'name');
-    }
-    if (kind == null) {
-      throw new BuiltValueNullFieldError('Media', 'kind');
-    }
-    if (url == null) {
-      throw new BuiltValueNullFieldError('Media', 'url');
-    }
-    if (size == null) {
-      throw new BuiltValueNullFieldError('Media', 'size');
     }
   }
 
