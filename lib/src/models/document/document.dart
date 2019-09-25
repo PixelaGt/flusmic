@@ -16,18 +16,25 @@ abstract class Document implements Built<Document, DocumentBuilder> {
   @nullable
   String get uid;
   String get type;
+  @nullable
   String get href;
   BuiltList<String> get tags;
+  @nullable
   @BuiltValueField(wireName: 'first_publication_date')
   String get firstPublicationDate;
+  @nullable
   @BuiltValueField(wireName: 'last_publication_date')
   String get lastPublicationDate;
+  @nullable
   BuiltList<String> get slugs;
+  @nullable
   @BuiltValueField(wireName: 'linked_documents')
   BuiltList<String> get linkedDocuments;
   String get lang;
+  @nullable
   @BuiltValueField(wireName: 'alternate_languages')
   BuiltList<AlternateLanguage> get alternateLanguages;
+  @nullable
   JsonObject get data;
 
   Document._();
