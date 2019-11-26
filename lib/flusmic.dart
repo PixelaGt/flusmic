@@ -1,8 +1,9 @@
 library flusmic;
 
 export 'package:flusmic/src/models/api/api.dart';
-export 'package:flusmic/src/models/document/document.dart';
 export 'package:flusmic/src/models/api/ref.dart';
+export 'package:flusmic/src/models/document/document.dart';
+export 'package:flusmic/src/models/document/simple_document.dart';
 export 'package:flusmic/src/models/result/result.dart';
 export 'package:flusmic/src/models/types/types.dart';
 
