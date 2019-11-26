@@ -1,6 +1,6 @@
 name: flusmic
 description: A (no so complex) primsmic.io integration for Flutter and Dart.
-version: 0.1.2
+version: 0.1.3
 authors:
   - Pablo Bautista <pablo@pixela.com.gt>
   - Pixela GT <team@pixela.com.gt>

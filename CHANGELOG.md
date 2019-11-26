@@ -1,3 +1,5 @@
+## [0.1.3] - New model 'Simple Document' added.
+
 ## [0.1.2] - Fix media type to be nullable.
 
 ## [0.1.1] - Fix media type to be nullable.

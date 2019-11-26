@@ -22,41 +22,63 @@ class _$DocumentSerializer implements StructuredSerializer<Document> {
       serializers.serialize(object.id, specifiedType: const FullType(String)),
       'type',
       serializers.serialize(object.type, specifiedType: const FullType(String)),
-      'href',
-      serializers.serialize(object.href, specifiedType: const FullType(String)),
       'tags',
       serializers.serialize(object.tags,
           specifiedType:
               const FullType(BuiltList, const [const FullType(String)])),
-      'first_publication_date',
-      serializers.serialize(object.firstPublicationDate,
-          specifiedType: const FullType(String)),
-      'last_publication_date',
-      serializers.serialize(object.lastPublicationDate,
-          specifiedType: const FullType(String)),
-      'slugs',
-      serializers.serialize(object.slugs,
-          specifiedType:
-              const FullType(BuiltList, const [const FullType(String)])),
-      'linked_documents',
-      serializers.serialize(object.linkedDocuments,
-          specifiedType:
-              const FullType(BuiltList, const [const FullType(String)])),
       'lang',
       serializers.serialize(object.lang, specifiedType: const FullType(String)),
-      'alternate_languages',
-      serializers.serialize(object.alternateLanguages,
-          specifiedType: const FullType(
-              BuiltList, const [const FullType(AlternateLanguage)])),
-      'data',
-      serializers.serialize(object.data,
-          specifiedType: const FullType(JsonObject)),
     ];
     if (object.uid != null) {
       result
         ..add('uid')
         ..add(serializers.serialize(object.uid,
             specifiedType: const FullType(String)));
+    }
+    if (object.href != null) {
+      result
+        ..add('href')
+        ..add(serializers.serialize(object.href,
+            specifiedType: const FullType(String)));
+    }
+    if (object.firstPublicationDate != null) {
+      result
+        ..add('first_publication_date')
+        ..add(serializers.serialize(object.firstPublicationDate,
+            specifiedType: const FullType(String)));
+    }
+    if (object.lastPublicationDate != null) {
+      result
+        ..add('last_publication_date')
+        ..add(serializers.serialize(object.lastPublicationDate,
+            specifiedType: const FullType(String)));
+    }
+    if (object.slugs != null) {
+      result
+        ..add('slugs')
+        ..add(serializers.serialize(object.slugs,
+            specifiedType:
+                const FullType(BuiltList, const [const FullType(String)])));
+    }
+    if (object.linkedDocuments != null) {
+      result
+        ..add('linked_documents')
+        ..add(serializers.serialize(object.linkedDocuments,
+            specifiedType:
+                const FullType(BuiltList, const [const FullType(String)])));
+    }
+    if (object.alternateLanguages != null) {
+      result
+        ..add('alternate_languages')
+        ..add(serializers.serialize(object.alternateLanguages,
+            specifiedType: const FullType(
+                BuiltList, const [const FullType(AlternateLanguage)])));
+    }
+    if (object.data != null) {
+      result
+        ..add('data')
+        ..add(serializers.serialize(object.data,
+            specifiedType: const FullType(JsonObject)));
     }
     return result;
   }
@@ -184,32 +206,11 @@ class _$Document extends Document {
     if (type == null) {
       throw new BuiltValueNullFieldError('Document', 'type');
     }
-    if (href == null) {
-      throw new BuiltValueNullFieldError('Document', 'href');
-    }
     if (tags == null) {
       throw new BuiltValueNullFieldError('Document', 'tags');
     }
-    if (firstPublicationDate == null) {
-      throw new BuiltValueNullFieldError('Document', 'firstPublicationDate');
-    }
-    if (lastPublicationDate == null) {
-      throw new BuiltValueNullFieldError('Document', 'lastPublicationDate');
-    }
-    if (slugs == null) {
-      throw new BuiltValueNullFieldError('Document', 'slugs');
-    }
-    if (linkedDocuments == null) {
-      throw new BuiltValueNullFieldError('Document', 'linkedDocuments');
-    }
     if (lang == null) {
       throw new BuiltValueNullFieldError('Document', 'lang');
-    }
-    if (alternateLanguages == null) {
-      throw new BuiltValueNullFieldError('Document', 'alternateLanguages');
-    }
-    if (data == null) {
-      throw new BuiltValueNullFieldError('Document', 'data');
     }
   }
 
@@ -387,10 +388,10 @@ class DocumentBuilder implements Builder<Document, DocumentBuilder> {
               tags: tags.build(),
               firstPublicationDate: firstPublicationDate,
               lastPublicationDate: lastPublicationDate,
-              slugs: slugs.build(),
-              linkedDocuments: linkedDocuments.build(),
+              slugs: _slugs?.build(),
+              linkedDocuments: _linkedDocuments?.build(),
               lang: lang,
-              alternateLanguages: alternateLanguages.build(),
+              alternateLanguages: _alternateLanguages?.build(),
               data: data);
     } catch (_) {
       String _$failedField;
@@ -399,12 +400,12 @@ class DocumentBuilder implements Builder<Document, DocumentBuilder> {
         tags.build();
 
         _$failedField = 'slugs';
-        slugs.build();
+        _slugs?.build();
         _$failedField = 'linkedDocuments';
-        linkedDocuments.build();
+        _linkedDocuments?.build();
 
         _$failedField = 'alternateLanguages';
-        alternateLanguages.build();
+        _alternateLanguages?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             'Document', _$failedField, e.toString());
