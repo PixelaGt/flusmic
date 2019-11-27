@@ -16,6 +16,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(Media.serializer)
       ..add(Ref.serializer)
       ..add(Result.serializer)
+      ..add(SimpleDocument.serializer)
       ..add(Span.serializer)
       ..add(Text.serializer)
       ..addBuilderFactory(
@@ -30,6 +31,9 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(Span)]),
           () => new ListBuilder<Span>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())

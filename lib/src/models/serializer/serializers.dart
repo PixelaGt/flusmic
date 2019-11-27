@@ -6,6 +6,7 @@ import 'package:built_value/standard_json_plugin.dart';
 import 'package:flusmic/src/models/api/api.dart';
 import 'package:flusmic/src/models/api/ref.dart';
 import 'package:flusmic/src/models/document/document.dart';
+import 'package:flusmic/src/models/document/simple_document.dart';
 import 'package:flusmic/src/models/result/result.dart';
 import 'package:flusmic/src/models/types/alternate_language.dart';
 import 'package:flusmic/src/models/types/dimension.dart';
@@ -27,6 +28,7 @@ part 'serializers.g.dart';
   Media,
   Ref,
   Result,
+  SimpleDocument,
   Span,
   Text,
 ])
