@@ -1,4 +1,4 @@
-## [0.1.5] - Add nullables to Simple Document model.
+## [0.1.6] - Add nullables to Simple Document model.
 
 ## [0.1.5] - Fix export 'Simple Document' serializer.
 
