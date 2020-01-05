@@ -1,6 +1,6 @@
 name: flusmic
 description: A (no so complex) primsmic.io integration for Flutter and Dart.
-version: 0.1.6
+version: 0.1.7
 homepage: https://github.com/PixelaGt/flusmic
 repository: https://github.com/PixelaGt/flusmic
 environment:
@@ -9,15 +9,15 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  built_collection: ^4.2.2
-  built_value: ^6.7.0
+  built_collection: ^4.3.2
+  built_value: ^7.0.4
   http: ^0.12.0+2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  build_runner: ^1.6.1
-  built_value_generator: ^6.7.0
+  build_runner: ^1.7.2
+  built_value_generator: ^7.0.4
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
