@@ -11,13 +11,19 @@ part 'simple_document.g.dart';
 
 abstract class SimpleDocument
     implements Built<SimpleDocument, SimpleDocumentBuilder> {
+  @nullable
   String get id;
+  @nullable
   String get type;
+  @nullable
   BuiltList<String> get tags;
+  @nullable
   String get slug;
+  @nullable
   String get lang;
   @BuiltValueField(wireName: 'link_type')
   String get linkType;
+  @nullable
   bool get isBroken;
 
   SimpleDocument._();
