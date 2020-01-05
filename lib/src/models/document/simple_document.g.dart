@@ -20,26 +20,47 @@ class _$SimpleDocumentSerializer
   Iterable<Object> serialize(Serializers serializers, SimpleDocument object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object>[
-      'id',
-      serializers.serialize(object.id, specifiedType: const FullType(String)),
-      'type',
-      serializers.serialize(object.type, specifiedType: const FullType(String)),
-      'tags',
-      serializers.serialize(object.tags,
-          specifiedType:
-              const FullType(BuiltList, const [const FullType(String)])),
-      'slug',
-      serializers.serialize(object.slug, specifiedType: const FullType(String)),
-      'lang',
-      serializers.serialize(object.lang, specifiedType: const FullType(String)),
       'link_type',
       serializers.serialize(object.linkType,
           specifiedType: const FullType(String)),
-      'isBroken',
-      serializers.serialize(object.isBroken,
-          specifiedType: const FullType(bool)),
     ];
-
+    if (object.id != null) {
+      result
+        ..add('id')
+        ..add(serializers.serialize(object.id,
+            specifiedType: const FullType(String)));
+    }
+    if (object.type != null) {
+      result
+        ..add('type')
+        ..add(serializers.serialize(object.type,
+            specifiedType: const FullType(String)));
+    }
+    if (object.tags != null) {
+      result
+        ..add('tags')
+        ..add(serializers.serialize(object.tags,
+            specifiedType:
+                const FullType(BuiltList, const [const FullType(String)])));
+    }
+    if (object.slug != null) {
+      result
+        ..add('slug')
+        ..add(serializers.serialize(object.slug,
+            specifiedType: const FullType(String)));
+    }
+    if (object.lang != null) {
+      result
+        ..add('lang')
+        ..add(serializers.serialize(object.lang,
+            specifiedType: const FullType(String)));
+    }
+    if (object.isBroken != null) {
+      result
+        ..add('isBroken')
+        ..add(serializers.serialize(object.isBroken,
+            specifiedType: const FullType(bool)));
+    }
     return result;
   }
 
@@ -120,26 +141,8 @@ class _$SimpleDocument extends SimpleDocument {
       this.linkType,
       this.isBroken})
       : super._() {
-    if (id == null) {
-      throw new BuiltValueNullFieldError('SimpleDocument', 'id');
-    }
-    if (type == null) {
-      throw new BuiltValueNullFieldError('SimpleDocument', 'type');
-    }
-    if (tags == null) {
-      throw new BuiltValueNullFieldError('SimpleDocument', 'tags');
-    }
-    if (slug == null) {
-      throw new BuiltValueNullFieldError('SimpleDocument', 'slug');
-    }
-    if (lang == null) {
-      throw new BuiltValueNullFieldError('SimpleDocument', 'lang');
-    }
     if (linkType == null) {
       throw new BuiltValueNullFieldError('SimpleDocument', 'linkType');
-    }
-    if (isBroken == null) {
-      throw new BuiltValueNullFieldError('SimpleDocument', 'isBroken');
     }
   }
 
@@ -259,7 +262,7 @@ class SimpleDocumentBuilder
           new _$SimpleDocument._(
               id: id,
               type: type,
-              tags: tags.build(),
+              tags: _tags?.build(),
               slug: slug,
               lang: lang,
               linkType: linkType,
@@ -268,7 +271,7 @@ class SimpleDocumentBuilder
       String _$failedField;
       try {
         _$failedField = 'tags';
-        tags.build();
+        _tags?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             'SimpleDocument', _$failedField, e.toString());
