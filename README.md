@@ -72,6 +72,7 @@ We expect to have a better way to do this.
 
 ## In the future
 - [X] Slices.
+- [X] Add remaining types.
+- [X] Languages.
 - [ ] Complete API properties.
-- [ ] Add remaining types.
 - [ ] Widgets?

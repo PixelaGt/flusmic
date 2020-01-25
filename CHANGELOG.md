@@ -1,3 +1,5 @@
+## [0.1.7] - Language support.
+
 ## [0.1.7] - Update dependencies and fix null error with Simple Document.
 
 ## [0.1.6] - Add nullables to Simple Document model.

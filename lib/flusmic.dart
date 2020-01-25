@@ -15,11 +15,20 @@ import 'package:http/http.dart' as http;
 
 ///Flusmic class
 class Flusmic {
+  /// Default path for documents
   final String _documentPath = '/documents/search?ref=';
+
+  /// Default language
+  /// Ex. es-gt
+  final String defaultLanguage;
+
+  /// The prismic API endpoint
   final String prismicEndpoint;
+
+  /// Http client
   final http.Client _client = http.Client();
 
-  Flusmic({@required this.prismicEndpoint});
+  Flusmic({@required this.prismicEndpoint, this.defaultLanguage = ''});
 
   /// Fetch API
   /// Get the API main document of prismic repository
@@ -37,9 +46,13 @@ class Flusmic {
   /// Fetch Root
   /// Get the API root document of prismic repository
   /// Contains all the documents.
-  Future<Result> getRootDocument() async {
+  Future<Result> getRootDocument({String language}) async {
     final api = await getApi();
-    final raw = prismicEndpoint + _documentPath + '${api.refs.first.ref}';
+    final raw =
+        prismicEndpoint + _documentPath + '${api.refs.first.ref}' + language !=
+                null
+            ? language
+            : defaultLanguage;
     final encoded = Uri.encodeFull(raw);
     final response = await _client.get(encoded);
     if (response.statusCode == 200) {
@@ -51,12 +64,16 @@ class Flusmic {
 
   /// Fetch documents by type
   /// Get all the documents by [type] using the slug.
-  Future<Result> getDocumentsByType(String slug) async {
+  Future<Result> getDocumentsByType(String slug, {String language}) async {
     final api = await getApi();
     final raw = prismicEndpoint +
-        _documentPath +
-        '${api.refs.first.ref}' +
-        '&q=[[at(document.type,"$slug")]]';
+                _documentPath +
+                '${api.refs.first.ref}' +
+                '&q=[[at(document.type,"$slug")]]' +
+                language !=
+            null
+        ? language
+        : defaultLanguage;
     final encoded = Uri.encodeFull(raw);
     final response = await _client.get(encoded);
     if (response.statusCode == 200) {
@@ -68,12 +85,16 @@ class Flusmic {
 
   /// Fetch document by id
   /// Get a documents by [id].
-  Future<Result> getDocumentById(String id) async {
+  Future<Result> getDocumentById(String id, {String language}) async {
     final api = await getApi();
     final raw = prismicEndpoint +
-        _documentPath +
-        '${api.refs.first.ref}' +
-        '&q=[[at(document.id,"$id")]]';
+                _documentPath +
+                '${api.refs.first.ref}' +
+                '&q=[[at(document.id,"$id")]]' +
+                language !=
+            null
+        ? language
+        : defaultLanguage;
     final encoded = Uri.encodeFull(raw);
     final response = await _client.get(encoded);
     if (response.statusCode == 200) {
