@@ -1,4 +1,4 @@
-## [0.1.7] - Language support.
+## [0.1.8] - Language support.
 
 ## [0.1.7] - Update dependencies and fix null error with Simple Document.
 
