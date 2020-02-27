@@ -28,7 +28,7 @@ class Flusmic {
   /// Http client
   final http.Client _client = http.Client();
 
-  Flusmic({@required this.prismicEndpoint, this.defaultLanguage = ''});
+  Flusmic({@required this.prismicEndpoint, this.defaultLanguage});
 
   /// Fetch API
   /// Get the API main document of prismic repository
@@ -51,8 +51,8 @@ class Flusmic {
     final raw =
         prismicEndpoint + _documentPath + '${api.refs.first.ref}' + language !=
                 null
-            ? language
-            : defaultLanguage;
+            ? '&lang=$language'
+            : '';
     final encoded = Uri.encodeFull(raw);
     final response = await _client.get(encoded);
     if (response.statusCode == 200) {
@@ -72,8 +72,8 @@ class Flusmic {
                 '&q=[[at(document.type,"$slug")]]' +
                 language !=
             null
-        ? language
-        : defaultLanguage;
+        ? '&lang=$language'
+        : '';
     final encoded = Uri.encodeFull(raw);
     final response = await _client.get(encoded);
     if (response.statusCode == 200) {
@@ -93,8 +93,8 @@ class Flusmic {
                 '&q=[[at(document.id,"$id")]]' +
                 language !=
             null
-        ? language
-        : defaultLanguage;
+        ? '&lang=$language'
+        : '';
     final encoded = Uri.encodeFull(raw);
     final response = await _client.get(encoded);
     if (response.statusCode == 200) {
