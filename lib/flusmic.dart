@@ -48,11 +48,11 @@ class Flusmic {
   /// Contains all the documents.
   Future<Result> getRootDocument({String language}) async {
     final api = await getApi();
-    final raw =
-        prismicEndpoint + _documentPath + '${api.refs.first.ref}' + language !=
-                null
-            ? '&lang=$language'
-            : '';
+    final languageParam = language != null ? '&lang=$language' : '';
+    final raw = prismicEndpoint +
+        _documentPath +
+        '${api.refs.first.ref}' +
+        languageParam;
     final encoded = Uri.encodeFull(raw);
     final response = await _client.get(encoded);
     if (response.statusCode == 200) {
@@ -66,14 +66,12 @@ class Flusmic {
   /// Get all the documents by [type] using the slug.
   Future<Result> getDocumentsByType(String slug, {String language}) async {
     final api = await getApi();
+    final languageParam = language != null ? '&lang=$language' : '';
     final raw = prismicEndpoint +
-                _documentPath +
-                '${api.refs.first.ref}' +
-                '&q=[[at(document.type,"$slug")]]' +
-                language !=
-            null
-        ? '&lang=$language'
-        : '';
+        _documentPath +
+        '${api.refs.first.ref}' +
+        '&q=[[at(document.type,"$slug")]]' +
+        languageParam;
     final encoded = Uri.encodeFull(raw);
     final response = await _client.get(encoded);
     if (response.statusCode == 200) {
@@ -87,14 +85,12 @@ class Flusmic {
   /// Get a documents by [id].
   Future<Result> getDocumentById(String id, {String language}) async {
     final api = await getApi();
+    final languageParam = language != null ? '&lang=$language' : '';
     final raw = prismicEndpoint +
-                _documentPath +
-                '${api.refs.first.ref}' +
-                '&q=[[at(document.id,"$id")]]' +
-                language !=
-            null
-        ? '&lang=$language'
-        : '';
+        _documentPath +
+        '${api.refs.first.ref}' +
+        '&q=[[at(document.id,"$id")]]' +
+        languageParam;
     final encoded = Uri.encodeFull(raw);
     final response = await _client.get(encoded);
     if (response.statusCode == 200) {

@@ -1,3 +1,6 @@
+## [0.1.10] 
+* Fix path for Language.
+
 ## [0.1.9] 
 * Fix Language support.
 

@@ -1,6 +1,6 @@
 name: flusmic
 description: A functional and (not so) elegant primsmic.io integration for Dart and Flutter.
-version: 0.1.9
+version: 0.1.10
 homepage: https://github.com/PixelaGt/flusmic
 repository: https://github.com/PixelaGt/flusmic
 environment:
