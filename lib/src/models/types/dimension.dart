@@ -9,8 +9,8 @@ import 'package:flusmic/src/models/serializer/serializers.dart';
 part 'dimension.g.dart';
 
 abstract class Dimension implements Built<Dimension, DimensionBuilder> {
-  int get width;
-  int get height;
+  double get width;
+  double get height;
 
   Dimension._();
 

@@ -19,9 +19,11 @@ class _$DimensionSerializer implements StructuredSerializer<Dimension> {
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object>[
       'width',
-      serializers.serialize(object.width, specifiedType: const FullType(int)),
+      serializers.serialize(object.width,
+          specifiedType: const FullType(double)),
       'height',
-      serializers.serialize(object.height, specifiedType: const FullType(int)),
+      serializers.serialize(object.height,
+          specifiedType: const FullType(double)),
     ];
 
     return result;
@@ -40,11 +42,11 @@ class _$DimensionSerializer implements StructuredSerializer<Dimension> {
       switch (key) {
         case 'width':
           result.width = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+              specifiedType: const FullType(double)) as double;
           break;
         case 'height':
           result.height = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+              specifiedType: const FullType(double)) as double;
           break;
       }
     }
@@ -55,9 +57,9 @@ class _$DimensionSerializer implements StructuredSerializer<Dimension> {
 
 class _$Dimension extends Dimension {
   @override
-  final int width;
+  final double width;
   @override
-  final int height;
+  final double height;
 
   factory _$Dimension([void Function(DimensionBuilder) updates]) =>
       (new DimensionBuilder()..update(updates)).build();
@@ -101,13 +103,13 @@ class _$Dimension extends Dimension {
 class DimensionBuilder implements Builder<Dimension, DimensionBuilder> {
   _$Dimension _$v;
 
-  int _width;
-  int get width => _$this._width;
-  set width(int width) => _$this._width = width;
+  double _width;
+  double get width => _$this._width;
+  set width(double width) => _$this._width = width;
 
-  int _height;
-  int get height => _$this._height;
-  set height(int height) => _$this._height = height;
+  double _height;
+  double get height => _$this._height;
+  set height(double height) => _$this._height = height;
 
   DimensionBuilder();
 

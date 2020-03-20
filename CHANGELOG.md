@@ -1,3 +1,6 @@
+## [0.1.11] 
+* Fix Dimension type issues with prismic.io API.
+
 ## [0.1.10] 
 * Fix path for Language.
 
