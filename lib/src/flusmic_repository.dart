@@ -1,14 +1,5 @@
-export 'package:flusmic/src/models/api/api.dart';
-export 'package:flusmic/src/models/api/ref.dart';
-export 'package:flusmic/src/models/document/document.dart';
-export 'package:flusmic/src/models/document/simple_document.dart';
-export 'package:flusmic/src/models/result/result.dart';
-export 'package:flusmic/src/models/types/types.dart';
-//
 import 'dart:convert';
-import 'package:flusmic/src/models/api/api.dart';
-import 'package:flusmic/src/models/predicate/predicate.dart';
-import 'package:flusmic/src/models/result/result.dart';
+import 'package:flusmic/flusmic.dart';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 
@@ -73,15 +64,13 @@ class Flusmic {
   /// Fetch documents by type
   /// Get all the documents by [type] using the slug.
   Future<Result> getDocumentsByType(String slug, {String language}) async =>
-      await query([
-        Predicate.at(DefaultPredicatePath(DefaultPredicatePaths.type), slug)
-      ], language: language);
+      await query([Predicate.at(DefaultPredicatePath.type(), slug)],
+          language: language);
 
   /// Fetch document by id
   /// Get a documents by [id].
   Future<Result> getDocumentById(String id, {String language}) async {
-    return await query(
-        [Predicate.at(DefaultPredicatePath(DefaultPredicatePaths.id), id)],
+    return await query([Predicate.at(DefaultPredicatePath.id(), id)],
         language: language);
   }
 

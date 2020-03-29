@@ -29,7 +29,19 @@ abstract class PredicatePath {}
 class DefaultPredicatePath extends PredicatePath {
   final DefaultPredicatePaths path;
 
-  DefaultPredicatePath(this.path);
+  DefaultPredicatePath._(this.path);
+
+  factory DefaultPredicatePath.document() =>
+      DefaultPredicatePath._(DefaultPredicatePaths.document);
+
+  factory DefaultPredicatePath.id() =>
+      DefaultPredicatePath._(DefaultPredicatePaths.id);
+
+  factory DefaultPredicatePath.tags() =>
+      DefaultPredicatePath._(DefaultPredicatePaths.tags);
+
+  factory DefaultPredicatePath.type() =>
+      DefaultPredicatePath._(DefaultPredicatePaths.type);
 
   @override
   String toString() {
