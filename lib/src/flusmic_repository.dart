@@ -34,16 +34,14 @@ class Flusmic {
 
   /// Fetch by query
   /// Get result by query using predicates
-  Future<Result> query(List<Predicate> predicates, {String language}) async {
+  Future<Result> query(List<Predicate> predicates,
+      {String after, String language, int page, int pageSize}) async {
     final api = await getApi();
-    final useLanguage = language ?? defaultLanguage ?? '';
-    final languageParam = useLanguage.isNotEmpty ? '&lang=$useLanguage' : '';
-    final queries = predicates.map((p) => _generateQueries(p)).toList();
-    final raw = prismicEndpoint +
-        _documentPath +
-        '${api.refs.first.ref}' +
-        queries.join() +
-        languageParam;
+    final raw = _generateUrl(api.refs.first.ref, predicates,
+        after: after,
+        language: language ?? defaultLanguage,
+        page: page,
+        pageSize: pageSize);
     final encoded = Uri.encodeFull(raw);
     final response = await _client.get(encoded);
     if (response.statusCode == 200) {
@@ -72,6 +70,31 @@ class Flusmic {
   Future<Result> getDocumentById(String id, {String language}) async {
     return await query([Predicate.at(DefaultPredicatePath.id(), id)],
         language: language);
+  }
+
+  ///Generate the API url to perform the request
+  String _generateUrl(String apiRef, List<Predicate> predicates,
+      {List<CustomPredicatePath> fetch,
+      List<CustomPredicatePath> fetchLinks,
+      String after,
+      String language,
+      int page,
+      int pageSize}) {
+    final queries = predicates.map((p) => _generateQueries(p)).toList();
+    String raw = prismicEndpoint + _documentPath + '$apiRef' + queries.join();
+    if (after != null) raw = raw + '&after=$after';
+    if (language != null) raw = raw + '&lang=$language';
+    if (page != null) raw = raw + '&page=${page.toString()}';
+    if (pageSize != null) raw = raw + '&pageSize=${pageSize.toString()}';
+
+    if (fetch != null)
+      raw = raw + '&fetch=${fetch.map((f) => f.toString()).toList().join(',')}';
+
+    if (fetchLinks != null)
+      raw = raw +
+          '&fetchLinks=${fetchLinks.map((f) => f.toString()).toList().join(',')}';
+
+    return raw;
   }
 
   ///Convert predicate into query string

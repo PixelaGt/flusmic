@@ -22,37 +22,36 @@ abstract class Predicate with _$Predicate {
   factory Predicate.similar(String id, String value) = SimilarPredicate;
 }
 
-enum DefaultPredicatePaths { document, id, tags, type }
+enum DefaultPath { document, id, tags, type }
 
 abstract class PredicatePath {}
 
 class DefaultPredicatePath extends PredicatePath {
-  final DefaultPredicatePaths path;
+  final DefaultPath path;
 
   DefaultPredicatePath._(this.path);
 
   factory DefaultPredicatePath.document() =>
-      DefaultPredicatePath._(DefaultPredicatePaths.document);
+      DefaultPredicatePath._(DefaultPath.document);
 
-  factory DefaultPredicatePath.id() =>
-      DefaultPredicatePath._(DefaultPredicatePaths.id);
+  factory DefaultPredicatePath.id() => DefaultPredicatePath._(DefaultPath.id);
 
   factory DefaultPredicatePath.tags() =>
-      DefaultPredicatePath._(DefaultPredicatePaths.tags);
+      DefaultPredicatePath._(DefaultPath.tags);
 
   factory DefaultPredicatePath.type() =>
-      DefaultPredicatePath._(DefaultPredicatePaths.type);
+      DefaultPredicatePath._(DefaultPath.type);
 
   @override
   String toString() {
     switch (path) {
-      case DefaultPredicatePaths.document:
+      case DefaultPath.document:
         return 'document';
-      case DefaultPredicatePaths.id:
+      case DefaultPath.id:
         return 'document.id';
-      case DefaultPredicatePaths.tags:
+      case DefaultPath.tags:
         return 'document.tags';
-      case DefaultPredicatePaths.type:
+      case DefaultPath.type:
         return 'document.type';
       default:
         return '';
@@ -63,9 +62,12 @@ class DefaultPredicatePath extends PredicatePath {
 class CustomPredicatePath extends PredicatePath {
   final String customType;
   final String value;
+  final bool fetch;
 
-  CustomPredicatePath(this.customType, this.value);
+  CustomPredicatePath(this.customType, this.value, {this.fetch = false});
 
   @override
-  String toString() => 'my.${this.customType}.${this.value}';
+  String toString() => fetch
+      ? '${this.customType}.${this.value}'
+      : 'my.${this.customType}.${this.value}';
 }
