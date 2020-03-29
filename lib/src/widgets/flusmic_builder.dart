@@ -1,25 +1,24 @@
 import 'package:common_bloc/common_bloc.dart';
-import 'package:flusmic/src/repository/flusmic_repository.dart';
+import 'package:flusmic/src/flusmic_repository.dart';
+import 'package:flusmic/src/models/predicate/predicate.dart';
 import 'package:flusmic/src/widgets/flusmic_result.dart';
 import 'package:flutter/material.dart';
-
-enum FlusmicRequestType { api, id, root, type }
 
 typedef BuilderFn = Widget Function(BuildContext context, FlusmicResult result);
 
 class FlusmicBuilder extends StatefulWidget {
   final BuilderFn builder;
-  final FlusmicRepository repository;
-  final FlusmicRequestType type;
+  final Flusmic flusmic;
+  final List<Predicate> predicates;
+  final String baseUrl;
   final String language;
-  final String query;
 
   FlusmicBuilder(
       {@required this.builder,
-      @required this.repository,
-      @required this.type,
-      this.language,
-      this.query});
+      @required this.predicates,
+      this.baseUrl,
+      this.flusmic,
+      this.language});
 
   @override
   _FlusmicBuilderState createState() => _FlusmicBuilderState();
@@ -42,29 +41,11 @@ class _FlusmicBuilderState extends State<FlusmicBuilder> {
     super.dispose();
   }
 
-  Future<dynamic> _perform() async {
-    switch (widget.type) {
-      case FlusmicRequestType.api:
-        {
-          return await widget.repository.getApi();
-        }
-      case FlusmicRequestType.id:
-        {
-          return await widget.repository
-              .getDocumentById(widget.query, language: widget.language);
-        }
-      case FlusmicRequestType.root:
-        {
-          return await widget.repository
-              .getRootDocument(language: widget.language);
-        }
-      case FlusmicRequestType.type:
-        {
-          return await widget.repository
-              .getDocumentsByType(widget.query, language: widget.language);
-        }
-    }
-  }
+  Future<dynamic> _perform() async => await (widget.flusmic ??
+          Flusmic(
+              prismicEndpoint: widget.baseUrl,
+              defaultLanguage: widget.language))
+      .query(widget.predicates, language: widget.language);
 
   @override
   Widget build(BuildContext context) {

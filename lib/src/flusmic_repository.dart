@@ -4,14 +4,15 @@ export 'package:flusmic/src/models/document/document.dart';
 export 'package:flusmic/src/models/document/simple_document.dart';
 export 'package:flusmic/src/models/result/result.dart';
 export 'package:flusmic/src/models/types/types.dart';
+//
 import 'dart:convert';
 import 'package:flusmic/src/models/api/api.dart';
+import 'package:flusmic/src/models/predicate/predicate.dart';
 import 'package:flusmic/src/models/result/result.dart';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 
-///Flusmic class
-class FlusmicRepository {
+class Flusmic {
   /// Default path for documents
   final String _documentPath = '/documents/search?ref=';
 
@@ -25,7 +26,7 @@ class FlusmicRepository {
   /// Http client
   final http.Client _client = http.Client();
 
-  FlusmicRepository({@required this.prismicEndpoint, this.defaultLanguage});
+  Flusmic({@required this.prismicEndpoint, this.defaultLanguage});
 
   /// Fetch API
   /// Get the API main document of prismic repository
@@ -40,15 +41,17 @@ class FlusmicRepository {
     }
   }
 
-  /// Fetch Root
-  /// Get the API root document of prismic repository
-  /// Contains all the documents.
-  Future<Result> getRootDocument({String language}) async {
+  /// Fetch by query
+  /// Get result by query using predicates
+  Future<Result> query(List<Predicate> predicates, {String language}) async {
     final api = await getApi();
-    final languageParam = language != null ? '&lang=$language' : '';
+    final useLanguage = language ?? defaultLanguage ?? '';
+    final languageParam = useLanguage.isNotEmpty ? '&lang=$useLanguage' : '';
+    final queries = predicates.map((p) => _generateQueries(p)).toList();
     final raw = prismicEndpoint +
         _documentPath +
         '${api.refs.first.ref}' +
+        queries.join() +
         languageParam;
     final encoded = Uri.encodeFull(raw);
     final response = await _client.get(encoded);
@@ -59,44 +62,49 @@ class FlusmicRepository {
     }
   }
 
+  ///Utility and legacy methods
+
+  // Fetch Root
+  /// Get the API root document of prismic repository
+  /// Contains all the documents.
+  Future<Result> getRootDocument({String language}) async =>
+      await query([], language: language);
+
   /// Fetch documents by type
   /// Get all the documents by [type] using the slug.
-  Future<Result> getDocumentsByType(String slug, {String language}) async {
-    final api = await getApi();
-    final languageParam = language != null ? '&lang=$language' : '';
-    final raw = prismicEndpoint +
-        _documentPath +
-        '${api.refs.first.ref}' +
-        '&q=[[at(document.type,"$slug")]]' +
-        languageParam;
-    final encoded = Uri.encodeFull(raw);
-    final response = await _client.get(encoded);
-    if (response.statusCode == 200) {
-      return compute(Result.fromJson, utf8.decode(response.bodyBytes));
-    } else {
-      throw _manageErrors(response);
-    }
-  }
+  Future<Result> getDocumentsByType(String slug, {String language}) async =>
+      await query([
+        Predicate.at(DefaultPredicatePath(DefaultPredicatePaths.type), slug)
+      ], language: language);
 
   /// Fetch document by id
   /// Get a documents by [id].
   Future<Result> getDocumentById(String id, {String language}) async {
-    final api = await getApi();
-    final languageParam = language != null ? '&lang=$language' : '';
-    final raw = prismicEndpoint +
-        _documentPath +
-        '${api.refs.first.ref}' +
-        '&q=[[at(document.id,"$id")]]' +
-        languageParam;
-    final encoded = Uri.encodeFull(raw);
-    final response = await _client.get(encoded);
-    if (response.statusCode == 200) {
-      return compute(Result.fromJson, utf8.decode(response.bodyBytes));
-    } else {
-      throw _manageErrors(response);
-    }
+    return await query(
+        [Predicate.at(DefaultPredicatePath(DefaultPredicatePaths.id), id)],
+        language: language);
   }
 
+  ///Convert predicate into query string
+  String _generateQueries(Predicate predicate) => predicate.map(
+      any: (p) =>
+          '&q=[[any(${p.path.toString()}, [${p.values.map((v) => "$v").toList()}])]]',
+      at: (p) => '&q=[[at(${p.path.toString()}, "${p.value}")]]',
+      fullText: (p) => '&q=[[fullText(${p.path.toString()}, "${p.value}")]]',
+      gt: (p) => '&q=[[number.gt(${p.path.toString()}, "${p.value}")]]',
+      has: (p) => '&q=[[has(${p.path.toString()})]]',
+      inRange: (p) =>
+          '&q=[[number.inRange(${p.path.toString()}, ${p.lowerLimit}, ${p.upperLimit})]]',
+      into: (p) =>
+          '&q=[[in(${p.path.toString()}, [${p.values.map((v) => "$v").toList()}])]]',
+      lt: (p) => '&q=[[number.lt(${p.path.toString()}, "${p.value}")]]',
+      missing: (p) => '&q=[[missing(${p.path.toString()})]]',
+      near: (p) =>
+          '&q=[[geopoint.near(${p.path.toString()}, ${p.latitude}, ${p.longitude}, ${p.radius})]]',
+      not: (p) => '&q=[[not(${p.path.toString()}, "${p.value}")]]',
+      similar: (p) => '&q=[[at(${p.id}, "${p.value}")]]');
+
+  ///Manage network exceptions
   Exception _manageErrors(http.Response response) {
     if (response.statusCode == 400) {
       throw Exception('Bad Request');

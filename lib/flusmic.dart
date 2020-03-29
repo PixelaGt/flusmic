@@ -1,3 +1,4 @@
 library flusmic;
 
-export './src/repository/flusmic_repository.dart';
+export './src/flusmic_repository.dart';
+export './src/widgets/flusmic_builder.dart';

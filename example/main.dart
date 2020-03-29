@@ -1,7 +1,7 @@
 import 'package:flusmic/flusmic.dart';
 
 main(List<String> args) async {
-  final flusmic = FlusmicRepository(
+  final flusmic = Flusmic(
       prismicEndpoint: 'yourendpoint',
       defaultLanguage: 'your-default-language');
 
