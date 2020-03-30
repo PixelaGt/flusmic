@@ -1,14 +1,32 @@
 import 'package:common_bloc/common_bloc.dart';
+import 'package:flusmic/flusmic.dart';
 import 'package:flusmic/src/flusmic_repository.dart';
 import 'package:flusmic/src/models/predicate/predicate.dart';
 import 'package:flusmic/src/widgets/flusmic_result.dart';
 import 'package:flutter/material.dart';
+import 'package:state_notifier/state_notifier.dart';
 
 typedef BuilderFn = Widget Function(BuildContext context, FlusmicResult result);
+
+class FlusmicControllerState {
+  final String timestamp;
+  FlusmicControllerState(this.timestamp);
+}
+
+class FlusmicController extends StateNotifier<FlusmicControllerState> {
+  FlusmicController()
+      : super(FlusmicControllerState(DateTime.now().toString()));
+
+  void repeat() {
+    final current = DateTime.now().toString();
+    if (state.timestamp != current) state = FlusmicControllerState(current);
+  }
+}
 
 class FlusmicBuilder extends StatefulWidget {
   final BuilderFn builder;
   final Flusmic flusmic;
+  final FlusmicController controller;
   final List<Predicate> predicates;
   final String baseUrl;
   final String language;
@@ -17,6 +35,7 @@ class FlusmicBuilder extends StatefulWidget {
       {@required this.builder,
       @required this.predicates,
       this.baseUrl,
+      this.controller,
       this.flusmic,
       this.language});
 
@@ -26,13 +45,17 @@ class FlusmicBuilder extends StatefulWidget {
 
 class _FlusmicBuilderState extends State<FlusmicBuilder> {
   final RequestBloc _requestBloc = RequestBloc();
-  RequestState _currentState;
+  RequestState _currentState = RequestState.uninitialized();
+  FlusmicController _flusmicController = FlusmicController();
+
+  FlusmicController get flusmicController =>
+      widget.controller ?? _flusmicController;
 
   @override
   void initState() {
     super.initState();
-    _requestBloc.listen((state) => _currentState = state);
-    _requestBloc.perform(_perform, 'FlusmicRequest', withLoading: true);
+    _requestBloc.listen((state) => setState(() => _currentState = state));
+    flusmicController.addListener((state) => onRepeat());
   }
 
   @override
@@ -46,6 +69,9 @@ class _FlusmicBuilderState extends State<FlusmicBuilder> {
               prismicEndpoint: widget.baseUrl,
               defaultLanguage: widget.language))
       .query(widget.predicates, language: widget.language);
+
+  void onRepeat() =>
+      _requestBloc.perform(_perform, 'FlusmicRequest', withLoading: true);
 
   @override
   Widget build(BuildContext context) {
