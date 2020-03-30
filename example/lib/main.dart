@@ -41,7 +41,7 @@ class _HomeFlusmicScreenState extends State<HomeFlusmicScreen> {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: <Widget>[
                               Center(
-                                  child: Text('Hi! I loaded al the data :)',
+                                  child: Text('Hi! I loaded all the data :)',
                                       style: TextStyle(
                                           fontWeight: FontWeight.bold,
                                           fontSize: 16.0))),

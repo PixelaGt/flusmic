@@ -4,22 +4,71 @@ A prismic.io integration for Flutter
 
 ## Getting Started
 
-Flusmic only need the prismic.io endpoint for fetching results.
+Flusmic instance creation it's simple:
 
 ```
 final flusmic = Flusmic(prismicEndpoint: 'yourendpoint');
 ```
 
-By the time, flusmic have only 4 types of fetching:
+With an optional 'defaultLanguage' param;
+
+```
+final flusmic = Flusmic(prismicEndpoint: 'yourendpoint', defaultLanguage: 'yourlanguage');
+```
+
+By the time, Flusmic works through query predicates:
+
+### Predicates
+```
+final flusmic = Flusmic(prismicEndpoint: 'yourendpoint');
+
+final result = await flusmic
+    .query([Predicate.at(DefaultPredicatePath.type(), 'value')]);
+```
+
+You can add as many predicates you need.
+
+#### Available predicates
+- Any
+- At
+- FullText
+- Geopoint.Near
+- GreaterThan
+- Has
+- In (into)
+- InRange
+- LessThan
+- Missing
+- Not
+- Similar
+
+You can use 'DefaultPredicatePath', there are a few:
+
+#### Available Default Paths
+- Document
+- Id
+- Tags
+- Type
+
+If you need a CustomType path, you need to use CustomPredicatePath
+
+```
+final result = await flusmic
+    .query([Predicate.at(CustomPredicatePath('custom-type', 'field'), 'value')]);
+```
+
+More info about how Predicates works in [prismic.io query predicates reference](https://prismic.io/docs/rest-api/query-the-api/predicates-reference)
+
+If you only need to do a simple fetching, Flusmic have 4 basic methods:
 
 ### API
-For general prismic.io API information.
+For general prismic API information.
 ```
 final api = await flusmic.getApi();
 ```
 
 ### Root document
-The main document containing all the prismic.io documents.
+The main document containing all the prismic documents.
 ```
 final result = await flusmic.getRootDocument();
 ```
@@ -42,9 +91,9 @@ All the results (except for the API) returns a `Result` object. All the document
 
 Every document have a `data` property which is a `JsonObject`. You can get your json specific info parsing this object. We have pre-defined types to parse the basic prismic structure. Types like image, text, media, etc.
 
-A (easy) way (we think) to use this is with `BuiltValue`:
+As `data` property it's a json, you can convert it in any model you have.
 
-https://github.com/google/built_value.dart
+To use the pre-defined types, you need to create a BuiltValue class:
 
 Example class:
 ```
@@ -53,16 +102,13 @@ abstract class Character implements Built<Character, CharacterBuilder> {
     BuiltList<Text> get name;
 }
 ```
-
 With that class (and the remaining properties of BuiltValue), we only need to do a parsing for our specific type.
 
 ```
 final character = Character.fromJson(json.encode(document.data.value));
 ```
 
-We expect to have a better way to do this.
-
-## Types
+### Types
 - Dimension
 - Image
 - Language
@@ -70,9 +116,43 @@ We expect to have a better way to do this.
 - Span
 - Text
 
+## FlusmicBuilder
+
+In 1.0.0, FlusmicBuilder it's introduced. It's a simple way to create widgets depending on the state of fetching.
+
+```
+FlusmicBuilder(
+    baseUrl: 'yourendpoint',
+    builder: (context, result) => result.map(
+        init: (s) => Container(),
+        loading: (s) => CircularProgressIndicator(),
+        error: (s) => Center(child: Text('Hi! I\'m an error :(')),
+        loaded: (s) => Center(child: Text('Hi! I loaded all the data :)'))),
+    predicates: []);
+```
+
+If you need to repeat the request, you need to create a 'FlusmicController' and call the 'repeat' method.
+
+```
+final FlusmicController _flusmicController = FlusmicController();
+
+FlusmicBuilder(
+    baseUrl: 'yourendpoint',
+    builder: (context, result) => result.map(
+        init: (s) => Container(),
+        loading: (s) => CircularProgressIndicator(),
+        error: (s) => Center(child: Text('Hi! I\'m an error :(')),
+        loaded: (s) => Center(child: Text('Hi! I loaded all the data :)'))),
+    controller: _flusmicController,
+    predicates: []);
+
+_flusmicController.repeat();
+```
+
 ## In the future
 - [X] Slices.
-- [X] Add remaining types.
-- [X] Languages.
-- [ ] Complete API properties.
-- [ ] Widgets?
+- [X] Querying by predicates.
+- [X] Languages and search params.
+- [X] FlusmicBuilder
+- [ ] Date and time predicates.
+- [ ] Orderings search param.
