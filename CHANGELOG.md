@@ -1,3 +1,9 @@
+## [1.0.0 - Stable release]
+* Predicates.
+* FlusmicBuilder widget.
+* New way to query into prismic API
+* Minor fixes.
+
 ## [0.1.11] 
 * Fix Dimension type issues with prismic.io API.
 
