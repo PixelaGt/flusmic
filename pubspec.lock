@@ -147,7 +147,7 @@ packages:
       name: common_bloc
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.1.2+1"
+    version: "0.1.4+1"
   convert:
     dependency: transitive
     description:
@@ -499,6 +499,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.14"
+  webfeed:
+    dependency: transitive
+    description:
+      name: webfeed
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.4.2"
   xml:
     dependency: transitive
     description:

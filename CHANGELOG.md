@@ -1,3 +1,7 @@
+## [1.0.1]
+* Update dependencies.
+* Minor fixes.
+
 ## [1.0.0 - Stable release]
 * Predicates.
 * FlusmicBuilder widget.

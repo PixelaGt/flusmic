@@ -78,7 +78,6 @@ class _FlusmicBuilderState extends State<FlusmicBuilder> {
     return widget.builder(
         context,
         _currentState.when(
-            empty: () => FlusmicResult.init(),
             error: (error) => FlusmicResult.error(error),
             loaded: (result, _, __) => FlusmicResult.loaded(result),
             loading: () => FlusmicResult.loading(),
