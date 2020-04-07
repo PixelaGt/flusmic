@@ -1,4 +1,6 @@
 # flusmic
+[![pub](https://img.shields.io/badge/pub-1.0.1-blue)](https://pub.dev/packages/flusmic)
+![flusmic](https://github.com/PixelaGt/flusmic/workflows/flusmic/badge.svg?branch=master&event=push)
 
 A prismic.io integration for Flutter
 
