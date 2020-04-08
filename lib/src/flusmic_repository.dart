@@ -99,6 +99,8 @@ class Flusmic {
 
   ///Convert predicate into query string
   String _generateQueries(Predicate predicate) => predicate.map(
+
+      /// General predicates
       any: (p) =>
           '&q=[[any(${p.path.toString()}, [${p.values.map((v) => "$v").toList()}])]]',
       at: (p) => '&q=[[at(${p.path.toString()}, "${p.value}")]]',
@@ -114,7 +116,35 @@ class Flusmic {
       near: (p) =>
           '&q=[[geopoint.near(${p.path.toString()}, ${p.latitude}, ${p.longitude}, ${p.radius})]]',
       not: (p) => '&q=[[not(${p.path.toString()}, "${p.value}")]]',
-      similar: (p) => '&q=[[at(${p.id}, "${p.value}")]]');
+      similar: (p) => '&q=[[at(${p.id}, "${p.value}")]]',
+
+      /// Date/Time predicates
+      dateAfter: (p) => '&q=[date.after(${p.path.toString()}, "${p.date}")]',
+      dateBefore: (p) => '&q=[date.before(${p.path.toString()}, "${p.date}")]',
+      dateBetween: (p) =>
+          '&q=[date.between(${p.path.toString()}, "${p.startDate}", "${p.endDate}")]',
+      dateDayOfMonth: (p) =>
+          '&q=[date.day-of-month(${p.path.toString()}, ${p.day})]',
+      dateDayOfMonthAfter: (p) =>
+          '&q=[date.day-of-month-after(${p.path.toString()}, ${p.day})]',
+      dateDayOfMonthBefore: (p) =>
+          '&q=[date.day-of-month-before(${p.path.toString()}, ${p.day})]',
+      dateDayOfWeek: (p) =>
+          '&q=[date.day-of-week(${p.path.toString()}, "${p.day}")]',
+      dateDayOfWeekAfter: (p) =>
+          '&q=[date.day-of-week-after(${p.path.toString()}, "${p.day}")]',
+      dateDayOfWeekBefore: (p) =>
+          '&q=[date.day-of-week-before(${p.path.toString()}, "${p.day}")]',
+      dateMonth: (p) => '&q=[date.month(${p.path.toString()}, "${p.month}")]',
+      dateMonthAfter: (p) =>
+          '&q=[date.month-after(${p.path.toString()}, "${p.month}")]',
+      dateMonthBefore: (p) =>
+          '&q=[date.month-before(${p.path.toString()}, "${p.month}")]',
+      dateYear: (p) => '&q=[date.year(${p.path.toString()}, ${p.year})]',
+      hour: (p) => '&q=[date.hour(${p.path.toString()}, ${p.hour})]',
+      hourAfter: (p) => '&q=[date.hour-after(${p.path.toString()}, ${p.hour})]',
+      hourBefore: (p) =>
+          '&q=[date.hour-before(${p.path.toString()}, ${p.hour})]');
 
   ///Manage network exceptions
   Exception _manageErrors(http.Response response) {
