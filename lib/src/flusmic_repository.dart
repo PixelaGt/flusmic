@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:flusmic/flusmic.dart';
+import 'package:flusmic/src/models/ordering/ordering.dart';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 
@@ -74,12 +75,13 @@ class Flusmic {
 
   ///Generate the API url to perform the request
   String _generateUrl(String apiRef, List<Predicate> predicates,
-      {List<CustomPredicatePath> fetch,
+      {int page,
+      int pageSize,
+      List<CustomPredicatePath> fetch,
       List<CustomPredicatePath> fetchLinks,
+      List<Ordering> orderings,
       String after,
-      String language,
-      int page,
-      int pageSize}) {
+      String language}) {
     final queries = predicates.map((p) => _generateQueries(p)).toList();
     String raw = prismicEndpoint + _documentPath + '$apiRef' + queries.join();
     if (after != null) raw = raw + '&after=$after';
@@ -87,12 +89,23 @@ class Flusmic {
     if (page != null) raw = raw + '&page=${page.toString()}';
     if (pageSize != null) raw = raw + '&pageSize=${pageSize.toString()}';
 
-    if (fetch != null)
-      raw = raw + '&fetch=${fetch.map((f) => f.toString()).toList().join(',')}';
+    if (fetch != null) {
+      if (fetch.isNotEmpty)
+        raw =
+            raw + '&fetch=${fetch.map((f) => f.toString()).toList().join(',')}';
+    }
 
-    if (fetchLinks != null)
-      raw = raw +
-          '&fetchLinks=${fetchLinks.map((f) => f.toString()).toList().join(',')}';
+    if (fetchLinks != null) {
+      if (fetchLinks.isNotEmpty)
+        raw = raw +
+            '&fetchLinks=${fetchLinks.map((f) => f.toString()).toList().join(',')}';
+    }
+
+    if (orderings != null) {
+      if (orderings.isNotEmpty)
+        raw = raw +
+            '&orderings=[${orderings.map((o) => o.toString()).toList().join(',')}]';
+    }
 
     return raw;
   }
