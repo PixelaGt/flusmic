@@ -4,6 +4,7 @@ part 'predicate.freezed.dart';
 
 @freezed
 abstract class Predicate with _$Predicate {
+  /// General predicates
   factory Predicate.any(PredicatePath path, List<String> values) = AnyPredicate;
   factory Predicate.at(PredicatePath path, String value) = AtPredicate;
   factory Predicate.fullText(PredicatePath path, String value) =
@@ -20,9 +21,49 @@ abstract class Predicate with _$Predicate {
       double radius) = NearPredicate;
   factory Predicate.not(PredicatePath path, String value) = NotPredicate;
   factory Predicate.similar(String id, String value) = SimilarPredicate;
+
+  /// Date/Time predicates
+  factory Predicate.dateAfter(PredicatePath path, String date) =
+      DateAfterPredicate;
+  factory Predicate.dateBefore(PredicatePath path, String date) =
+      DateBeforePredicate;
+  factory Predicate.dateBetween(
+          PredicatePath path, String startDate, String endDate) =
+      DateBetweenPredicate;
+  factory Predicate.dateDayOfMonth(PredicatePath path, int day) =
+      DateDayOfMonthPredicate;
+  factory Predicate.dateDayOfMonthAfter(PredicatePath path, int day) =
+      DateDayOfMonthAfterPredicate;
+  factory Predicate.dateDayOfMonthBefore(PredicatePath path, int day) =
+      DateDayOfMonthBeforePredicate;
+  factory Predicate.dateDayOfWeek(PredicatePath path, String day) =
+      DateDayOfWeekPredicate;
+  factory Predicate.dateDayOfWeekAfter(PredicatePath path, String day) =
+      DateDayOfWeekAfterPredicate;
+  factory Predicate.dateDayOfWeekBefore(PredicatePath path, String day) =
+      DateDayOfWeekBeforePredicate;
+  factory Predicate.dateMonth(PredicatePath path, String month) =
+      DateMonthPredicate;
+  factory Predicate.dateMonthAfter(PredicatePath path, String month) =
+      DateMonthAfterPredicate;
+  factory Predicate.dateMonthBefore(PredicatePath path, String month) =
+      DateMonthBeforePredicate;
+  factory Predicate.dateYear(PredicatePath path, int year) = DateYearPredicate;
+  factory Predicate.hour(PredicatePath path, int hour) = DateHourPredicate;
+  factory Predicate.hourAfter(PredicatePath path, int hour) =
+      DateHourAfterPredicate;
+  factory Predicate.hourBefore(PredicatePath path, int hour) =
+      DateHourBeforePredicate;
 }
 
-enum DefaultPath { document, id, tags, type }
+enum DefaultPath {
+  document,
+  first_publication_date,
+  id,
+  last_publication_date,
+  tags,
+  type
+}
 
 abstract class PredicatePath {}
 
@@ -42,6 +83,12 @@ class DefaultPredicatePath extends PredicatePath {
   factory DefaultPredicatePath.type() =>
       DefaultPredicatePath._(DefaultPath.type);
 
+  factory DefaultPredicatePath.firstPublicationDate() =>
+      DefaultPredicatePath._(DefaultPath.first_publication_date);
+
+  factory DefaultPredicatePath.lastPublicationDate() =>
+      DefaultPredicatePath._(DefaultPath.last_publication_date);
+
   @override
   String toString() {
     switch (path) {
@@ -53,6 +100,10 @@ class DefaultPredicatePath extends PredicatePath {
         return 'document.tags';
       case DefaultPath.type:
         return 'document.type';
+      case DefaultPath.first_publication_date:
+        return 'document.first_publication_date';
+      case DefaultPath.last_publication_date:
+        return 'document.last_publication_date';
       default:
         return '';
     }
