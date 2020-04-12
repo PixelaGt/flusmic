@@ -36,11 +36,20 @@ class Flusmic {
   /// Fetch by query
   /// Get result by query using predicates
   Future<Result> query(List<Predicate> predicates,
-      {String after, String language, int page, int pageSize}) async {
+      {int page,
+      int pageSize,
+      List<CustomPredicatePath> fetch,
+      List<CustomPredicatePath> fetchLinks,
+      List<Ordering> orderings,
+      String after,
+      String language}) async {
     final api = await getApi();
     final raw = _generateUrl(api.refs.first.ref, predicates,
         after: after,
+        fetch: fetch,
+        fetchLinks: fetchLinks,
         language: language ?? defaultLanguage,
+        orderings: orderings,
         page: page,
         pageSize: pageSize);
     final encoded = Uri.encodeFull(raw);
@@ -104,7 +113,7 @@ class Flusmic {
     if (orderings != null) {
       if (orderings.isNotEmpty)
         raw = raw +
-            '&orderings=[${orderings.map((o) => o.toString()).toList().join(',')}]';
+            '&orderings=[${orderings.map((o) => _generateOrdering(o)).toList().join(',')}]';
     }
 
     return raw;
@@ -115,49 +124,54 @@ class Flusmic {
 
       /// General predicates
       any: (p) =>
-          '&q=[[any(${p.path.toString()}, [${p.values.map((v) => "$v").toList()}])]]',
+          '&q=[[any(${p.path.toString()}, ${p.values.map((v) => '"$v"').toList()})]]',
       at: (p) => '&q=[[at(${p.path.toString()}, "${p.value}")]]',
-      fullText: (p) => '&q=[[fullText(${p.path.toString()}, "${p.value}")]]',
-      gt: (p) => '&q=[[number.gt(${p.path.toString()}, "${p.value}")]]',
+      fullText: (p) => '&q=[[fulltext(${p.path.toString()}, "${p.value}")]]',
+      gt: (p) => '&q=[[number.gt(${p.path.toString()}, ${p.value})]]',
       has: (p) => '&q=[[has(${p.path.toString()})]]',
       inRange: (p) =>
           '&q=[[number.inRange(${p.path.toString()}, ${p.lowerLimit}, ${p.upperLimit})]]',
       into: (p) =>
-          '&q=[[in(${p.path.toString()}, [${p.values.map((v) => "$v").toList()}])]]',
-      lt: (p) => '&q=[[number.lt(${p.path.toString()}, "${p.value}")]]',
+          '&q=[[in(${p.path.toString()}, ${p.values.map((v) => '"$v"').toList()})]]',
+      lt: (p) => '&q=[[number.lt(${p.path.toString()}, ${p.value})]]',
       missing: (p) => '&q=[[missing(${p.path.toString()})]]',
       near: (p) =>
           '&q=[[geopoint.near(${p.path.toString()}, ${p.latitude}, ${p.longitude}, ${p.radius})]]',
       not: (p) => '&q=[[not(${p.path.toString()}, "${p.value}")]]',
-      similar: (p) => '&q=[[at(${p.id}, "${p.value}")]]',
+      similar: (p) => '&q=[[similar("${p.id}", ${p.value})]]',
 
       /// Date/Time predicates
-      dateAfter: (p) => '&q=[date.after(${p.path.toString()}, "${p.date}")]',
-      dateBefore: (p) => '&q=[date.before(${p.path.toString()}, "${p.date}")]',
+      dateAfter: (p) => '&q=[[date.after(${p.path.toString()}, ${p.epoch})]]',
+      dateBefore: (p) => '&q=[[date.before(${p.path.toString()}, ${p.epoch})]]',
       dateBetween: (p) =>
-          '&q=[date.between(${p.path.toString()}, "${p.startDate}", "${p.endDate}")]',
+          '&q=[[date.between(${p.path.toString()}, ${p.startEpoch}, ${p.endEpoch})]]',
       dateDayOfMonth: (p) =>
-          '&q=[date.day-of-month(${p.path.toString()}, ${p.day})]',
+          '&q=[[date.day-of-month(${p.path.toString()}, ${p.day})]]',
       dateDayOfMonthAfter: (p) =>
-          '&q=[date.day-of-month-after(${p.path.toString()}, ${p.day})]',
+          '&q=[[date.day-of-month-after(${p.path.toString()}, ${p.day})]]',
       dateDayOfMonthBefore: (p) =>
-          '&q=[date.day-of-month-before(${p.path.toString()}, ${p.day})]',
+          '&q=[[date.day-of-month-before(${p.path.toString()}, ${p.day})]]',
       dateDayOfWeek: (p) =>
-          '&q=[date.day-of-week(${p.path.toString()}, "${p.day}")]',
+          '&q=[[date.day-of-week(${p.path.toString()}, "${p.day}")]]',
       dateDayOfWeekAfter: (p) =>
-          '&q=[date.day-of-week-after(${p.path.toString()}, "${p.day}")]',
+          '&q=[[date.day-of-week-after(${p.path.toString()}, "${p.day}")]]',
       dateDayOfWeekBefore: (p) =>
-          '&q=[date.day-of-week-before(${p.path.toString()}, "${p.day}")]',
-      dateMonth: (p) => '&q=[date.month(${p.path.toString()}, "${p.month}")]',
+          '&q=[[date.day-of-week-before(${p.path.toString()}, "${p.day}")]]',
+      dateMonth: (p) => '&q=[[date.month(${p.path.toString()}, "${p.month}")]]',
       dateMonthAfter: (p) =>
-          '&q=[date.month-after(${p.path.toString()}, "${p.month}")]',
+          '&q=[[date.month-after(${p.path.toString()}, "${p.month}")]]',
       dateMonthBefore: (p) =>
-          '&q=[date.month-before(${p.path.toString()}, "${p.month}")]',
-      dateYear: (p) => '&q=[date.year(${p.path.toString()}, ${p.year})]',
-      hour: (p) => '&q=[date.hour(${p.path.toString()}, ${p.hour})]',
-      hourAfter: (p) => '&q=[date.hour-after(${p.path.toString()}, ${p.hour})]',
+          '&q=[[date.month-before(${p.path.toString()}, "${p.month}")]]',
+      dateYear: (p) => '&q=[[date.year(${p.path.toString()}, ${p.year})]]',
+      hour: (p) => '&q=[[date.hour(${p.path.toString()}, ${p.hour})]]',
+      hourAfter: (p) =>
+          '&q=[[date.hour-after(${p.path.toString()}, ${p.hour})]]',
       hourBefore: (p) =>
-          '&q=[date.hour-before(${p.path.toString()}, ${p.hour})]');
+          '&q=[[date.hour-before(${p.path.toString()}, ${p.hour})]]');
+
+  String _generateOrdering(Ordering ordering) =>
+      'my.${ordering.customType}.${ordering.field}' +
+      (ordering.descending ? ' des' : '');
 
   ///Manage network exceptions
   Exception _manageErrors(http.Response response) {

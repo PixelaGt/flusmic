@@ -92,33 +92,33 @@ class _$PredicateTearOff {
     );
   }
 
-  SimilarPredicate similar(String id, String value) {
+  SimilarPredicate similar(String id, int value) {
     return SimilarPredicate(
       id,
       value,
     );
   }
 
-  DateAfterPredicate dateAfter(PredicatePath path, String date) {
+  DateAfterPredicate dateAfter(PredicatePath path, int epoch) {
     return DateAfterPredicate(
       path,
-      date,
+      epoch,
     );
   }
 
-  DateBeforePredicate dateBefore(PredicatePath path, String date) {
+  DateBeforePredicate dateBefore(PredicatePath path, int epoch) {
     return DateBeforePredicate(
       path,
-      date,
+      epoch,
     );
   }
 
   DateBetweenPredicate dateBetween(
-      PredicatePath path, String startDate, String endDate) {
+      PredicatePath path, int startEpoch, int endEpoch) {
     return DateBetweenPredicate(
       path,
-      startDate,
-      endDate,
+      startEpoch,
+      endEpoch,
     );
   }
 
@@ -239,12 +239,11 @@ mixin _$Predicate {
         Result near(PredicatePath path, double latitude, double longitude,
             double radius),
     @required Result not(PredicatePath path, String value),
-    @required Result similar(String id, String value),
-    @required Result dateAfter(PredicatePath path, String date),
-    @required Result dateBefore(PredicatePath path, String date),
+    @required Result similar(String id, int value),
+    @required Result dateAfter(PredicatePath path, int epoch),
+    @required Result dateBefore(PredicatePath path, int epoch),
     @required
-        Result dateBetween(
-            PredicatePath path, String startDate, String endDate),
+        Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
     @required Result dateDayOfMonth(PredicatePath path, int day),
     @required Result dateDayOfMonthAfter(PredicatePath path, int day),
     @required Result dateDayOfMonthBefore(PredicatePath path, int day),
@@ -273,10 +272,10 @@ mixin _$Predicate {
     Result near(
         PredicatePath path, double latitude, double longitude, double radius),
     Result not(PredicatePath path, String value),
-    Result similar(String id, String value),
-    Result dateAfter(PredicatePath path, String date),
-    Result dateBefore(PredicatePath path, String date),
-    Result dateBetween(PredicatePath path, String startDate, String endDate),
+    Result similar(String id, int value),
+    Result dateAfter(PredicatePath path, int epoch),
+    Result dateBefore(PredicatePath path, int epoch),
+    Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
     Result dateDayOfMonth(PredicatePath path, int day),
     Result dateDayOfMonthAfter(PredicatePath path, int day),
     Result dateDayOfMonthBefore(PredicatePath path, int day),
@@ -451,12 +450,11 @@ class _$AnyPredicate implements AnyPredicate {
         Result near(PredicatePath path, double latitude, double longitude,
             double radius),
     @required Result not(PredicatePath path, String value),
-    @required Result similar(String id, String value),
-    @required Result dateAfter(PredicatePath path, String date),
-    @required Result dateBefore(PredicatePath path, String date),
+    @required Result similar(String id, int value),
+    @required Result dateAfter(PredicatePath path, int epoch),
+    @required Result dateBefore(PredicatePath path, int epoch),
     @required
-        Result dateBetween(
-            PredicatePath path, String startDate, String endDate),
+        Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
     @required Result dateDayOfMonth(PredicatePath path, int day),
     @required Result dateDayOfMonthAfter(PredicatePath path, int day),
     @required Result dateDayOfMonthBefore(PredicatePath path, int day),
@@ -517,10 +515,10 @@ class _$AnyPredicate implements AnyPredicate {
     Result near(
         PredicatePath path, double latitude, double longitude, double radius),
     Result not(PredicatePath path, String value),
-    Result similar(String id, String value),
-    Result dateAfter(PredicatePath path, String date),
-    Result dateBefore(PredicatePath path, String date),
-    Result dateBetween(PredicatePath path, String startDate, String endDate),
+    Result similar(String id, int value),
+    Result dateAfter(PredicatePath path, int epoch),
+    Result dateBefore(PredicatePath path, int epoch),
+    Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
     Result dateDayOfMonth(PredicatePath path, int day),
     Result dateDayOfMonthAfter(PredicatePath path, int day),
     Result dateDayOfMonthBefore(PredicatePath path, int day),
@@ -737,12 +735,11 @@ class _$AtPredicate implements AtPredicate {
         Result near(PredicatePath path, double latitude, double longitude,
             double radius),
     @required Result not(PredicatePath path, String value),
-    @required Result similar(String id, String value),
-    @required Result dateAfter(PredicatePath path, String date),
-    @required Result dateBefore(PredicatePath path, String date),
+    @required Result similar(String id, int value),
+    @required Result dateAfter(PredicatePath path, int epoch),
+    @required Result dateBefore(PredicatePath path, int epoch),
     @required
-        Result dateBetween(
-            PredicatePath path, String startDate, String endDate),
+        Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
     @required Result dateDayOfMonth(PredicatePath path, int day),
     @required Result dateDayOfMonthAfter(PredicatePath path, int day),
     @required Result dateDayOfMonthBefore(PredicatePath path, int day),
@@ -803,10 +800,10 @@ class _$AtPredicate implements AtPredicate {
     Result near(
         PredicatePath path, double latitude, double longitude, double radius),
     Result not(PredicatePath path, String value),
-    Result similar(String id, String value),
-    Result dateAfter(PredicatePath path, String date),
-    Result dateBefore(PredicatePath path, String date),
-    Result dateBetween(PredicatePath path, String startDate, String endDate),
+    Result similar(String id, int value),
+    Result dateAfter(PredicatePath path, int epoch),
+    Result dateBefore(PredicatePath path, int epoch),
+    Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
     Result dateDayOfMonth(PredicatePath path, int day),
     Result dateDayOfMonthAfter(PredicatePath path, int day),
     Result dateDayOfMonthBefore(PredicatePath path, int day),
@@ -1023,12 +1020,11 @@ class _$FullTextPredicate implements FullTextPredicate {
         Result near(PredicatePath path, double latitude, double longitude,
             double radius),
     @required Result not(PredicatePath path, String value),
-    @required Result similar(String id, String value),
-    @required Result dateAfter(PredicatePath path, String date),
-    @required Result dateBefore(PredicatePath path, String date),
+    @required Result similar(String id, int value),
+    @required Result dateAfter(PredicatePath path, int epoch),
+    @required Result dateBefore(PredicatePath path, int epoch),
     @required
-        Result dateBetween(
-            PredicatePath path, String startDate, String endDate),
+        Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
     @required Result dateDayOfMonth(PredicatePath path, int day),
     @required Result dateDayOfMonthAfter(PredicatePath path, int day),
     @required Result dateDayOfMonthBefore(PredicatePath path, int day),
@@ -1089,10 +1085,10 @@ class _$FullTextPredicate implements FullTextPredicate {
     Result near(
         PredicatePath path, double latitude, double longitude, double radius),
     Result not(PredicatePath path, String value),
-    Result similar(String id, String value),
-    Result dateAfter(PredicatePath path, String date),
-    Result dateBefore(PredicatePath path, String date),
-    Result dateBetween(PredicatePath path, String startDate, String endDate),
+    Result similar(String id, int value),
+    Result dateAfter(PredicatePath path, int epoch),
+    Result dateBefore(PredicatePath path, int epoch),
+    Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
     Result dateDayOfMonth(PredicatePath path, int day),
     Result dateDayOfMonthAfter(PredicatePath path, int day),
     Result dateDayOfMonthBefore(PredicatePath path, int day),
@@ -1309,12 +1305,11 @@ class _$GtPredicate implements GtPredicate {
         Result near(PredicatePath path, double latitude, double longitude,
             double radius),
     @required Result not(PredicatePath path, String value),
-    @required Result similar(String id, String value),
-    @required Result dateAfter(PredicatePath path, String date),
-    @required Result dateBefore(PredicatePath path, String date),
+    @required Result similar(String id, int value),
+    @required Result dateAfter(PredicatePath path, int epoch),
+    @required Result dateBefore(PredicatePath path, int epoch),
     @required
-        Result dateBetween(
-            PredicatePath path, String startDate, String endDate),
+        Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
     @required Result dateDayOfMonth(PredicatePath path, int day),
     @required Result dateDayOfMonthAfter(PredicatePath path, int day),
     @required Result dateDayOfMonthBefore(PredicatePath path, int day),
@@ -1375,10 +1370,10 @@ class _$GtPredicate implements GtPredicate {
     Result near(
         PredicatePath path, double latitude, double longitude, double radius),
     Result not(PredicatePath path, String value),
-    Result similar(String id, String value),
-    Result dateAfter(PredicatePath path, String date),
-    Result dateBefore(PredicatePath path, String date),
-    Result dateBetween(PredicatePath path, String startDate, String endDate),
+    Result similar(String id, int value),
+    Result dateAfter(PredicatePath path, int epoch),
+    Result dateBefore(PredicatePath path, int epoch),
+    Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
     Result dateDayOfMonth(PredicatePath path, int day),
     Result dateDayOfMonthAfter(PredicatePath path, int day),
     Result dateDayOfMonthBefore(PredicatePath path, int day),
@@ -1584,12 +1579,11 @@ class _$HasPredicate implements HasPredicate {
         Result near(PredicatePath path, double latitude, double longitude,
             double radius),
     @required Result not(PredicatePath path, String value),
-    @required Result similar(String id, String value),
-    @required Result dateAfter(PredicatePath path, String date),
-    @required Result dateBefore(PredicatePath path, String date),
+    @required Result similar(String id, int value),
+    @required Result dateAfter(PredicatePath path, int epoch),
+    @required Result dateBefore(PredicatePath path, int epoch),
     @required
-        Result dateBetween(
-            PredicatePath path, String startDate, String endDate),
+        Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
     @required Result dateDayOfMonth(PredicatePath path, int day),
     @required Result dateDayOfMonthAfter(PredicatePath path, int day),
     @required Result dateDayOfMonthBefore(PredicatePath path, int day),
@@ -1650,10 +1644,10 @@ class _$HasPredicate implements HasPredicate {
     Result near(
         PredicatePath path, double latitude, double longitude, double radius),
     Result not(PredicatePath path, String value),
-    Result similar(String id, String value),
-    Result dateAfter(PredicatePath path, String date),
-    Result dateBefore(PredicatePath path, String date),
-    Result dateBetween(PredicatePath path, String startDate, String endDate),
+    Result similar(String id, int value),
+    Result dateAfter(PredicatePath path, int epoch),
+    Result dateBefore(PredicatePath path, int epoch),
+    Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
     Result dateDayOfMonth(PredicatePath path, int day),
     Result dateDayOfMonthAfter(PredicatePath path, int day),
     Result dateDayOfMonthBefore(PredicatePath path, int day),
@@ -1878,12 +1872,11 @@ class _$InRangePredicate implements InRangePredicate {
         Result near(PredicatePath path, double latitude, double longitude,
             double radius),
     @required Result not(PredicatePath path, String value),
-    @required Result similar(String id, String value),
-    @required Result dateAfter(PredicatePath path, String date),
-    @required Result dateBefore(PredicatePath path, String date),
+    @required Result similar(String id, int value),
+    @required Result dateAfter(PredicatePath path, int epoch),
+    @required Result dateBefore(PredicatePath path, int epoch),
     @required
-        Result dateBetween(
-            PredicatePath path, String startDate, String endDate),
+        Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
     @required Result dateDayOfMonth(PredicatePath path, int day),
     @required Result dateDayOfMonthAfter(PredicatePath path, int day),
     @required Result dateDayOfMonthBefore(PredicatePath path, int day),
@@ -1944,10 +1937,10 @@ class _$InRangePredicate implements InRangePredicate {
     Result near(
         PredicatePath path, double latitude, double longitude, double radius),
     Result not(PredicatePath path, String value),
-    Result similar(String id, String value),
-    Result dateAfter(PredicatePath path, String date),
-    Result dateBefore(PredicatePath path, String date),
-    Result dateBetween(PredicatePath path, String startDate, String endDate),
+    Result similar(String id, int value),
+    Result dateAfter(PredicatePath path, int epoch),
+    Result dateBefore(PredicatePath path, int epoch),
+    Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
     Result dateDayOfMonth(PredicatePath path, int day),
     Result dateDayOfMonthAfter(PredicatePath path, int day),
     Result dateDayOfMonthBefore(PredicatePath path, int day),
@@ -2166,12 +2159,11 @@ class _$InPredicate implements InPredicate {
         Result near(PredicatePath path, double latitude, double longitude,
             double radius),
     @required Result not(PredicatePath path, String value),
-    @required Result similar(String id, String value),
-    @required Result dateAfter(PredicatePath path, String date),
-    @required Result dateBefore(PredicatePath path, String date),
+    @required Result similar(String id, int value),
+    @required Result dateAfter(PredicatePath path, int epoch),
+    @required Result dateBefore(PredicatePath path, int epoch),
     @required
-        Result dateBetween(
-            PredicatePath path, String startDate, String endDate),
+        Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
     @required Result dateDayOfMonth(PredicatePath path, int day),
     @required Result dateDayOfMonthAfter(PredicatePath path, int day),
     @required Result dateDayOfMonthBefore(PredicatePath path, int day),
@@ -2232,10 +2224,10 @@ class _$InPredicate implements InPredicate {
     Result near(
         PredicatePath path, double latitude, double longitude, double radius),
     Result not(PredicatePath path, String value),
-    Result similar(String id, String value),
-    Result dateAfter(PredicatePath path, String date),
-    Result dateBefore(PredicatePath path, String date),
-    Result dateBetween(PredicatePath path, String startDate, String endDate),
+    Result similar(String id, int value),
+    Result dateAfter(PredicatePath path, int epoch),
+    Result dateBefore(PredicatePath path, int epoch),
+    Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
     Result dateDayOfMonth(PredicatePath path, int day),
     Result dateDayOfMonthAfter(PredicatePath path, int day),
     Result dateDayOfMonthBefore(PredicatePath path, int day),
@@ -2451,12 +2443,11 @@ class _$LtPredicate implements LtPredicate {
         Result near(PredicatePath path, double latitude, double longitude,
             double radius),
     @required Result not(PredicatePath path, String value),
-    @required Result similar(String id, String value),
-    @required Result dateAfter(PredicatePath path, String date),
-    @required Result dateBefore(PredicatePath path, String date),
+    @required Result similar(String id, int value),
+    @required Result dateAfter(PredicatePath path, int epoch),
+    @required Result dateBefore(PredicatePath path, int epoch),
     @required
-        Result dateBetween(
-            PredicatePath path, String startDate, String endDate),
+        Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
     @required Result dateDayOfMonth(PredicatePath path, int day),
     @required Result dateDayOfMonthAfter(PredicatePath path, int day),
     @required Result dateDayOfMonthBefore(PredicatePath path, int day),
@@ -2517,10 +2508,10 @@ class _$LtPredicate implements LtPredicate {
     Result near(
         PredicatePath path, double latitude, double longitude, double radius),
     Result not(PredicatePath path, String value),
-    Result similar(String id, String value),
-    Result dateAfter(PredicatePath path, String date),
-    Result dateBefore(PredicatePath path, String date),
-    Result dateBetween(PredicatePath path, String startDate, String endDate),
+    Result similar(String id, int value),
+    Result dateAfter(PredicatePath path, int epoch),
+    Result dateBefore(PredicatePath path, int epoch),
+    Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
     Result dateDayOfMonth(PredicatePath path, int day),
     Result dateDayOfMonthAfter(PredicatePath path, int day),
     Result dateDayOfMonthBefore(PredicatePath path, int day),
@@ -2726,12 +2717,11 @@ class _$MissingPredicate implements MissingPredicate {
         Result near(PredicatePath path, double latitude, double longitude,
             double radius),
     @required Result not(PredicatePath path, String value),
-    @required Result similar(String id, String value),
-    @required Result dateAfter(PredicatePath path, String date),
-    @required Result dateBefore(PredicatePath path, String date),
+    @required Result similar(String id, int value),
+    @required Result dateAfter(PredicatePath path, int epoch),
+    @required Result dateBefore(PredicatePath path, int epoch),
     @required
-        Result dateBetween(
-            PredicatePath path, String startDate, String endDate),
+        Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
     @required Result dateDayOfMonth(PredicatePath path, int day),
     @required Result dateDayOfMonthAfter(PredicatePath path, int day),
     @required Result dateDayOfMonthBefore(PredicatePath path, int day),
@@ -2792,10 +2782,10 @@ class _$MissingPredicate implements MissingPredicate {
     Result near(
         PredicatePath path, double latitude, double longitude, double radius),
     Result not(PredicatePath path, String value),
-    Result similar(String id, String value),
-    Result dateAfter(PredicatePath path, String date),
-    Result dateBefore(PredicatePath path, String date),
-    Result dateBetween(PredicatePath path, String startDate, String endDate),
+    Result similar(String id, int value),
+    Result dateAfter(PredicatePath path, int epoch),
+    Result dateBefore(PredicatePath path, int epoch),
+    Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
     Result dateDayOfMonth(PredicatePath path, int day),
     Result dateDayOfMonthAfter(PredicatePath path, int day),
     Result dateDayOfMonthBefore(PredicatePath path, int day),
@@ -3029,12 +3019,11 @@ class _$NearPredicate implements NearPredicate {
         Result near(PredicatePath path, double latitude, double longitude,
             double radius),
     @required Result not(PredicatePath path, String value),
-    @required Result similar(String id, String value),
-    @required Result dateAfter(PredicatePath path, String date),
-    @required Result dateBefore(PredicatePath path, String date),
+    @required Result similar(String id, int value),
+    @required Result dateAfter(PredicatePath path, int epoch),
+    @required Result dateBefore(PredicatePath path, int epoch),
     @required
-        Result dateBetween(
-            PredicatePath path, String startDate, String endDate),
+        Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
     @required Result dateDayOfMonth(PredicatePath path, int day),
     @required Result dateDayOfMonthAfter(PredicatePath path, int day),
     @required Result dateDayOfMonthBefore(PredicatePath path, int day),
@@ -3095,10 +3084,10 @@ class _$NearPredicate implements NearPredicate {
     Result near(
         PredicatePath path, double latitude, double longitude, double radius),
     Result not(PredicatePath path, String value),
-    Result similar(String id, String value),
-    Result dateAfter(PredicatePath path, String date),
-    Result dateBefore(PredicatePath path, String date),
-    Result dateBetween(PredicatePath path, String startDate, String endDate),
+    Result similar(String id, int value),
+    Result dateAfter(PredicatePath path, int epoch),
+    Result dateBefore(PredicatePath path, int epoch),
+    Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
     Result dateDayOfMonth(PredicatePath path, int day),
     Result dateDayOfMonthAfter(PredicatePath path, int day),
     Result dateDayOfMonthBefore(PredicatePath path, int day),
@@ -3317,12 +3306,11 @@ class _$NotPredicate implements NotPredicate {
         Result near(PredicatePath path, double latitude, double longitude,
             double radius),
     @required Result not(PredicatePath path, String value),
-    @required Result similar(String id, String value),
-    @required Result dateAfter(PredicatePath path, String date),
-    @required Result dateBefore(PredicatePath path, String date),
+    @required Result similar(String id, int value),
+    @required Result dateAfter(PredicatePath path, int epoch),
+    @required Result dateBefore(PredicatePath path, int epoch),
     @required
-        Result dateBetween(
-            PredicatePath path, String startDate, String endDate),
+        Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
     @required Result dateDayOfMonth(PredicatePath path, int day),
     @required Result dateDayOfMonthAfter(PredicatePath path, int day),
     @required Result dateDayOfMonthBefore(PredicatePath path, int day),
@@ -3383,10 +3371,10 @@ class _$NotPredicate implements NotPredicate {
     Result near(
         PredicatePath path, double latitude, double longitude, double radius),
     Result not(PredicatePath path, String value),
-    Result similar(String id, String value),
-    Result dateAfter(PredicatePath path, String date),
-    Result dateBefore(PredicatePath path, String date),
-    Result dateBetween(PredicatePath path, String startDate, String endDate),
+    Result similar(String id, int value),
+    Result dateAfter(PredicatePath path, int epoch),
+    Result dateBefore(PredicatePath path, int epoch),
+    Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
     Result dateDayOfMonth(PredicatePath path, int day),
     Result dateDayOfMonthAfter(PredicatePath path, int day),
     Result dateDayOfMonthBefore(PredicatePath path, int day),
@@ -3525,7 +3513,7 @@ abstract class $SimilarPredicateCopyWith<$Res> {
   factory $SimilarPredicateCopyWith(
           SimilarPredicate value, $Res Function(SimilarPredicate) then) =
       _$SimilarPredicateCopyWithImpl<$Res>;
-  $Res call({String id, String value});
+  $Res call({String id, int value});
 }
 
 class _$SimilarPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
@@ -3544,7 +3532,7 @@ class _$SimilarPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
   }) {
     return _then(SimilarPredicate(
       id == freezed ? _value.id : id as String,
-      value == freezed ? _value.value : value as String,
+      value == freezed ? _value.value : value as int,
     ));
   }
 }
@@ -3557,7 +3545,7 @@ class _$SimilarPredicate implements SimilarPredicate {
   @override
   final String id;
   @override
-  final String value;
+  final int value;
 
   @override
   String toString() {
@@ -3602,12 +3590,11 @@ class _$SimilarPredicate implements SimilarPredicate {
         Result near(PredicatePath path, double latitude, double longitude,
             double radius),
     @required Result not(PredicatePath path, String value),
-    @required Result similar(String id, String value),
-    @required Result dateAfter(PredicatePath path, String date),
-    @required Result dateBefore(PredicatePath path, String date),
+    @required Result similar(String id, int value),
+    @required Result dateAfter(PredicatePath path, int epoch),
+    @required Result dateBefore(PredicatePath path, int epoch),
     @required
-        Result dateBetween(
-            PredicatePath path, String startDate, String endDate),
+        Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
     @required Result dateDayOfMonth(PredicatePath path, int day),
     @required Result dateDayOfMonthAfter(PredicatePath path, int day),
     @required Result dateDayOfMonthBefore(PredicatePath path, int day),
@@ -3668,10 +3655,10 @@ class _$SimilarPredicate implements SimilarPredicate {
     Result near(
         PredicatePath path, double latitude, double longitude, double radius),
     Result not(PredicatePath path, String value),
-    Result similar(String id, String value),
-    Result dateAfter(PredicatePath path, String date),
-    Result dateBefore(PredicatePath path, String date),
-    Result dateBetween(PredicatePath path, String startDate, String endDate),
+    Result similar(String id, int value),
+    Result dateAfter(PredicatePath path, int epoch),
+    Result dateBefore(PredicatePath path, int epoch),
+    Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
     Result dateDayOfMonth(PredicatePath path, int day),
     Result dateDayOfMonthAfter(PredicatePath path, int day),
     Result dateDayOfMonthBefore(PredicatePath path, int day),
@@ -3799,10 +3786,10 @@ class _$SimilarPredicate implements SimilarPredicate {
 }
 
 abstract class SimilarPredicate implements Predicate {
-  factory SimilarPredicate(String id, String value) = _$SimilarPredicate;
+  factory SimilarPredicate(String id, int value) = _$SimilarPredicate;
 
   String get id;
-  String get value;
+  int get value;
   $SimilarPredicateCopyWith<SimilarPredicate> get copyWith;
 }
 
@@ -3810,7 +3797,7 @@ abstract class $DateAfterPredicateCopyWith<$Res> {
   factory $DateAfterPredicateCopyWith(
           DateAfterPredicate value, $Res Function(DateAfterPredicate) then) =
       _$DateAfterPredicateCopyWithImpl<$Res>;
-  $Res call({PredicatePath path, String date});
+  $Res call({PredicatePath path, int epoch});
 }
 
 class _$DateAfterPredicateCopyWithImpl<$Res>
@@ -3826,28 +3813,28 @@ class _$DateAfterPredicateCopyWithImpl<$Res>
   @override
   $Res call({
     Object path = freezed,
-    Object date = freezed,
+    Object epoch = freezed,
   }) {
     return _then(DateAfterPredicate(
       path == freezed ? _value.path : path as PredicatePath,
-      date == freezed ? _value.date : date as String,
+      epoch == freezed ? _value.epoch : epoch as int,
     ));
   }
 }
 
 class _$DateAfterPredicate implements DateAfterPredicate {
-  _$DateAfterPredicate(this.path, this.date)
+  _$DateAfterPredicate(this.path, this.epoch)
       : assert(path != null),
-        assert(date != null);
+        assert(epoch != null);
 
   @override
   final PredicatePath path;
   @override
-  final String date;
+  final int epoch;
 
   @override
   String toString() {
-    return 'Predicate.dateAfter(path: $path, date: $date)';
+    return 'Predicate.dateAfter(path: $path, epoch: $epoch)';
   }
 
   @override
@@ -3856,15 +3843,15 @@ class _$DateAfterPredicate implements DateAfterPredicate {
         (other is DateAfterPredicate &&
             (identical(other.path, path) ||
                 const DeepCollectionEquality().equals(other.path, path)) &&
-            (identical(other.date, date) ||
-                const DeepCollectionEquality().equals(other.date, date)));
+            (identical(other.epoch, epoch) ||
+                const DeepCollectionEquality().equals(other.epoch, epoch)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(path) ^
-      const DeepCollectionEquality().hash(date);
+      const DeepCollectionEquality().hash(epoch);
 
   @override
   $DateAfterPredicateCopyWith<DateAfterPredicate> get copyWith =>
@@ -3888,12 +3875,11 @@ class _$DateAfterPredicate implements DateAfterPredicate {
         Result near(PredicatePath path, double latitude, double longitude,
             double radius),
     @required Result not(PredicatePath path, String value),
-    @required Result similar(String id, String value),
-    @required Result dateAfter(PredicatePath path, String date),
-    @required Result dateBefore(PredicatePath path, String date),
+    @required Result similar(String id, int value),
+    @required Result dateAfter(PredicatePath path, int epoch),
+    @required Result dateBefore(PredicatePath path, int epoch),
     @required
-        Result dateBetween(
-            PredicatePath path, String startDate, String endDate),
+        Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
     @required Result dateDayOfMonth(PredicatePath path, int day),
     @required Result dateDayOfMonthAfter(PredicatePath path, int day),
     @required Result dateDayOfMonthBefore(PredicatePath path, int day),
@@ -3936,7 +3922,7 @@ class _$DateAfterPredicate implements DateAfterPredicate {
     assert(hour != null);
     assert(hourAfter != null);
     assert(hourBefore != null);
-    return dateAfter(path, date);
+    return dateAfter(path, epoch);
   }
 
   @override
@@ -3954,10 +3940,10 @@ class _$DateAfterPredicate implements DateAfterPredicate {
     Result near(
         PredicatePath path, double latitude, double longitude, double radius),
     Result not(PredicatePath path, String value),
-    Result similar(String id, String value),
-    Result dateAfter(PredicatePath path, String date),
-    Result dateBefore(PredicatePath path, String date),
-    Result dateBetween(PredicatePath path, String startDate, String endDate),
+    Result similar(String id, int value),
+    Result dateAfter(PredicatePath path, int epoch),
+    Result dateBefore(PredicatePath path, int epoch),
+    Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
     Result dateDayOfMonth(PredicatePath path, int day),
     Result dateDayOfMonthAfter(PredicatePath path, int day),
     Result dateDayOfMonthBefore(PredicatePath path, int day),
@@ -3975,7 +3961,7 @@ class _$DateAfterPredicate implements DateAfterPredicate {
   }) {
     assert(orElse != null);
     if (dateAfter != null) {
-      return dateAfter(path, date);
+      return dateAfter(path, epoch);
     }
     return orElse();
   }
@@ -4085,11 +4071,11 @@ class _$DateAfterPredicate implements DateAfterPredicate {
 }
 
 abstract class DateAfterPredicate implements Predicate {
-  factory DateAfterPredicate(PredicatePath path, String date) =
+  factory DateAfterPredicate(PredicatePath path, int epoch) =
       _$DateAfterPredicate;
 
   PredicatePath get path;
-  String get date;
+  int get epoch;
   $DateAfterPredicateCopyWith<DateAfterPredicate> get copyWith;
 }
 
@@ -4097,7 +4083,7 @@ abstract class $DateBeforePredicateCopyWith<$Res> {
   factory $DateBeforePredicateCopyWith(
           DateBeforePredicate value, $Res Function(DateBeforePredicate) then) =
       _$DateBeforePredicateCopyWithImpl<$Res>;
-  $Res call({PredicatePath path, String date});
+  $Res call({PredicatePath path, int epoch});
 }
 
 class _$DateBeforePredicateCopyWithImpl<$Res>
@@ -4113,28 +4099,28 @@ class _$DateBeforePredicateCopyWithImpl<$Res>
   @override
   $Res call({
     Object path = freezed,
-    Object date = freezed,
+    Object epoch = freezed,
   }) {
     return _then(DateBeforePredicate(
       path == freezed ? _value.path : path as PredicatePath,
-      date == freezed ? _value.date : date as String,
+      epoch == freezed ? _value.epoch : epoch as int,
     ));
   }
 }
 
 class _$DateBeforePredicate implements DateBeforePredicate {
-  _$DateBeforePredicate(this.path, this.date)
+  _$DateBeforePredicate(this.path, this.epoch)
       : assert(path != null),
-        assert(date != null);
+        assert(epoch != null);
 
   @override
   final PredicatePath path;
   @override
-  final String date;
+  final int epoch;
 
   @override
   String toString() {
-    return 'Predicate.dateBefore(path: $path, date: $date)';
+    return 'Predicate.dateBefore(path: $path, epoch: $epoch)';
   }
 
   @override
@@ -4143,15 +4129,15 @@ class _$DateBeforePredicate implements DateBeforePredicate {
         (other is DateBeforePredicate &&
             (identical(other.path, path) ||
                 const DeepCollectionEquality().equals(other.path, path)) &&
-            (identical(other.date, date) ||
-                const DeepCollectionEquality().equals(other.date, date)));
+            (identical(other.epoch, epoch) ||
+                const DeepCollectionEquality().equals(other.epoch, epoch)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(path) ^
-      const DeepCollectionEquality().hash(date);
+      const DeepCollectionEquality().hash(epoch);
 
   @override
   $DateBeforePredicateCopyWith<DateBeforePredicate> get copyWith =>
@@ -4175,12 +4161,11 @@ class _$DateBeforePredicate implements DateBeforePredicate {
         Result near(PredicatePath path, double latitude, double longitude,
             double radius),
     @required Result not(PredicatePath path, String value),
-    @required Result similar(String id, String value),
-    @required Result dateAfter(PredicatePath path, String date),
-    @required Result dateBefore(PredicatePath path, String date),
+    @required Result similar(String id, int value),
+    @required Result dateAfter(PredicatePath path, int epoch),
+    @required Result dateBefore(PredicatePath path, int epoch),
     @required
-        Result dateBetween(
-            PredicatePath path, String startDate, String endDate),
+        Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
     @required Result dateDayOfMonth(PredicatePath path, int day),
     @required Result dateDayOfMonthAfter(PredicatePath path, int day),
     @required Result dateDayOfMonthBefore(PredicatePath path, int day),
@@ -4223,7 +4208,7 @@ class _$DateBeforePredicate implements DateBeforePredicate {
     assert(hour != null);
     assert(hourAfter != null);
     assert(hourBefore != null);
-    return dateBefore(path, date);
+    return dateBefore(path, epoch);
   }
 
   @override
@@ -4241,10 +4226,10 @@ class _$DateBeforePredicate implements DateBeforePredicate {
     Result near(
         PredicatePath path, double latitude, double longitude, double radius),
     Result not(PredicatePath path, String value),
-    Result similar(String id, String value),
-    Result dateAfter(PredicatePath path, String date),
-    Result dateBefore(PredicatePath path, String date),
-    Result dateBetween(PredicatePath path, String startDate, String endDate),
+    Result similar(String id, int value),
+    Result dateAfter(PredicatePath path, int epoch),
+    Result dateBefore(PredicatePath path, int epoch),
+    Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
     Result dateDayOfMonth(PredicatePath path, int day),
     Result dateDayOfMonthAfter(PredicatePath path, int day),
     Result dateDayOfMonthBefore(PredicatePath path, int day),
@@ -4262,7 +4247,7 @@ class _$DateBeforePredicate implements DateBeforePredicate {
   }) {
     assert(orElse != null);
     if (dateBefore != null) {
-      return dateBefore(path, date);
+      return dateBefore(path, epoch);
     }
     return orElse();
   }
@@ -4372,11 +4357,11 @@ class _$DateBeforePredicate implements DateBeforePredicate {
 }
 
 abstract class DateBeforePredicate implements Predicate {
-  factory DateBeforePredicate(PredicatePath path, String date) =
+  factory DateBeforePredicate(PredicatePath path, int epoch) =
       _$DateBeforePredicate;
 
   PredicatePath get path;
-  String get date;
+  int get epoch;
   $DateBeforePredicateCopyWith<DateBeforePredicate> get copyWith;
 }
 
@@ -4384,7 +4369,7 @@ abstract class $DateBetweenPredicateCopyWith<$Res> {
   factory $DateBetweenPredicateCopyWith(DateBetweenPredicate value,
           $Res Function(DateBetweenPredicate) then) =
       _$DateBetweenPredicateCopyWithImpl<$Res>;
-  $Res call({PredicatePath path, String startDate, String endDate});
+  $Res call({PredicatePath path, int startEpoch, int endEpoch});
 }
 
 class _$DateBetweenPredicateCopyWithImpl<$Res>
@@ -4400,33 +4385,33 @@ class _$DateBetweenPredicateCopyWithImpl<$Res>
   @override
   $Res call({
     Object path = freezed,
-    Object startDate = freezed,
-    Object endDate = freezed,
+    Object startEpoch = freezed,
+    Object endEpoch = freezed,
   }) {
     return _then(DateBetweenPredicate(
       path == freezed ? _value.path : path as PredicatePath,
-      startDate == freezed ? _value.startDate : startDate as String,
-      endDate == freezed ? _value.endDate : endDate as String,
+      startEpoch == freezed ? _value.startEpoch : startEpoch as int,
+      endEpoch == freezed ? _value.endEpoch : endEpoch as int,
     ));
   }
 }
 
 class _$DateBetweenPredicate implements DateBetweenPredicate {
-  _$DateBetweenPredicate(this.path, this.startDate, this.endDate)
+  _$DateBetweenPredicate(this.path, this.startEpoch, this.endEpoch)
       : assert(path != null),
-        assert(startDate != null),
-        assert(endDate != null);
+        assert(startEpoch != null),
+        assert(endEpoch != null);
 
   @override
   final PredicatePath path;
   @override
-  final String startDate;
+  final int startEpoch;
   @override
-  final String endDate;
+  final int endEpoch;
 
   @override
   String toString() {
-    return 'Predicate.dateBetween(path: $path, startDate: $startDate, endDate: $endDate)';
+    return 'Predicate.dateBetween(path: $path, startEpoch: $startEpoch, endEpoch: $endEpoch)';
   }
 
   @override
@@ -4435,19 +4420,20 @@ class _$DateBetweenPredicate implements DateBetweenPredicate {
         (other is DateBetweenPredicate &&
             (identical(other.path, path) ||
                 const DeepCollectionEquality().equals(other.path, path)) &&
-            (identical(other.startDate, startDate) ||
+            (identical(other.startEpoch, startEpoch) ||
                 const DeepCollectionEquality()
-                    .equals(other.startDate, startDate)) &&
-            (identical(other.endDate, endDate) ||
-                const DeepCollectionEquality().equals(other.endDate, endDate)));
+                    .equals(other.startEpoch, startEpoch)) &&
+            (identical(other.endEpoch, endEpoch) ||
+                const DeepCollectionEquality()
+                    .equals(other.endEpoch, endEpoch)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(path) ^
-      const DeepCollectionEquality().hash(startDate) ^
-      const DeepCollectionEquality().hash(endDate);
+      const DeepCollectionEquality().hash(startEpoch) ^
+      const DeepCollectionEquality().hash(endEpoch);
 
   @override
   $DateBetweenPredicateCopyWith<DateBetweenPredicate> get copyWith =>
@@ -4472,12 +4458,11 @@ class _$DateBetweenPredicate implements DateBetweenPredicate {
         Result near(PredicatePath path, double latitude, double longitude,
             double radius),
     @required Result not(PredicatePath path, String value),
-    @required Result similar(String id, String value),
-    @required Result dateAfter(PredicatePath path, String date),
-    @required Result dateBefore(PredicatePath path, String date),
+    @required Result similar(String id, int value),
+    @required Result dateAfter(PredicatePath path, int epoch),
+    @required Result dateBefore(PredicatePath path, int epoch),
     @required
-        Result dateBetween(
-            PredicatePath path, String startDate, String endDate),
+        Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
     @required Result dateDayOfMonth(PredicatePath path, int day),
     @required Result dateDayOfMonthAfter(PredicatePath path, int day),
     @required Result dateDayOfMonthBefore(PredicatePath path, int day),
@@ -4520,7 +4505,7 @@ class _$DateBetweenPredicate implements DateBetweenPredicate {
     assert(hour != null);
     assert(hourAfter != null);
     assert(hourBefore != null);
-    return dateBetween(path, startDate, endDate);
+    return dateBetween(path, startEpoch, endEpoch);
   }
 
   @override
@@ -4538,10 +4523,10 @@ class _$DateBetweenPredicate implements DateBetweenPredicate {
     Result near(
         PredicatePath path, double latitude, double longitude, double radius),
     Result not(PredicatePath path, String value),
-    Result similar(String id, String value),
-    Result dateAfter(PredicatePath path, String date),
-    Result dateBefore(PredicatePath path, String date),
-    Result dateBetween(PredicatePath path, String startDate, String endDate),
+    Result similar(String id, int value),
+    Result dateAfter(PredicatePath path, int epoch),
+    Result dateBefore(PredicatePath path, int epoch),
+    Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
     Result dateDayOfMonth(PredicatePath path, int day),
     Result dateDayOfMonthAfter(PredicatePath path, int day),
     Result dateDayOfMonthBefore(PredicatePath path, int day),
@@ -4559,7 +4544,7 @@ class _$DateBetweenPredicate implements DateBetweenPredicate {
   }) {
     assert(orElse != null);
     if (dateBetween != null) {
-      return dateBetween(path, startDate, endDate);
+      return dateBetween(path, startEpoch, endEpoch);
     }
     return orElse();
   }
@@ -4670,12 +4655,12 @@ class _$DateBetweenPredicate implements DateBetweenPredicate {
 
 abstract class DateBetweenPredicate implements Predicate {
   factory DateBetweenPredicate(
-          PredicatePath path, String startDate, String endDate) =
+          PredicatePath path, int startEpoch, int endEpoch) =
       _$DateBetweenPredicate;
 
   PredicatePath get path;
-  String get startDate;
-  String get endDate;
+  int get startEpoch;
+  int get endEpoch;
   $DateBetweenPredicateCopyWith<DateBetweenPredicate> get copyWith;
 }
 
@@ -4762,12 +4747,11 @@ class _$DateDayOfMonthPredicate implements DateDayOfMonthPredicate {
         Result near(PredicatePath path, double latitude, double longitude,
             double radius),
     @required Result not(PredicatePath path, String value),
-    @required Result similar(String id, String value),
-    @required Result dateAfter(PredicatePath path, String date),
-    @required Result dateBefore(PredicatePath path, String date),
+    @required Result similar(String id, int value),
+    @required Result dateAfter(PredicatePath path, int epoch),
+    @required Result dateBefore(PredicatePath path, int epoch),
     @required
-        Result dateBetween(
-            PredicatePath path, String startDate, String endDate),
+        Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
     @required Result dateDayOfMonth(PredicatePath path, int day),
     @required Result dateDayOfMonthAfter(PredicatePath path, int day),
     @required Result dateDayOfMonthBefore(PredicatePath path, int day),
@@ -4828,10 +4812,10 @@ class _$DateDayOfMonthPredicate implements DateDayOfMonthPredicate {
     Result near(
         PredicatePath path, double latitude, double longitude, double radius),
     Result not(PredicatePath path, String value),
-    Result similar(String id, String value),
-    Result dateAfter(PredicatePath path, String date),
-    Result dateBefore(PredicatePath path, String date),
-    Result dateBetween(PredicatePath path, String startDate, String endDate),
+    Result similar(String id, int value),
+    Result dateAfter(PredicatePath path, int epoch),
+    Result dateBefore(PredicatePath path, int epoch),
+    Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
     Result dateDayOfMonth(PredicatePath path, int day),
     Result dateDayOfMonthAfter(PredicatePath path, int day),
     Result dateDayOfMonthBefore(PredicatePath path, int day),
@@ -5053,12 +5037,11 @@ class _$DateDayOfMonthAfterPredicate implements DateDayOfMonthAfterPredicate {
         Result near(PredicatePath path, double latitude, double longitude,
             double radius),
     @required Result not(PredicatePath path, String value),
-    @required Result similar(String id, String value),
-    @required Result dateAfter(PredicatePath path, String date),
-    @required Result dateBefore(PredicatePath path, String date),
+    @required Result similar(String id, int value),
+    @required Result dateAfter(PredicatePath path, int epoch),
+    @required Result dateBefore(PredicatePath path, int epoch),
     @required
-        Result dateBetween(
-            PredicatePath path, String startDate, String endDate),
+        Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
     @required Result dateDayOfMonth(PredicatePath path, int day),
     @required Result dateDayOfMonthAfter(PredicatePath path, int day),
     @required Result dateDayOfMonthBefore(PredicatePath path, int day),
@@ -5119,10 +5102,10 @@ class _$DateDayOfMonthAfterPredicate implements DateDayOfMonthAfterPredicate {
     Result near(
         PredicatePath path, double latitude, double longitude, double radius),
     Result not(PredicatePath path, String value),
-    Result similar(String id, String value),
-    Result dateAfter(PredicatePath path, String date),
-    Result dateBefore(PredicatePath path, String date),
-    Result dateBetween(PredicatePath path, String startDate, String endDate),
+    Result similar(String id, int value),
+    Result dateAfter(PredicatePath path, int epoch),
+    Result dateBefore(PredicatePath path, int epoch),
+    Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
     Result dateDayOfMonth(PredicatePath path, int day),
     Result dateDayOfMonthAfter(PredicatePath path, int day),
     Result dateDayOfMonthBefore(PredicatePath path, int day),
@@ -5345,12 +5328,11 @@ class _$DateDayOfMonthBeforePredicate implements DateDayOfMonthBeforePredicate {
         Result near(PredicatePath path, double latitude, double longitude,
             double radius),
     @required Result not(PredicatePath path, String value),
-    @required Result similar(String id, String value),
-    @required Result dateAfter(PredicatePath path, String date),
-    @required Result dateBefore(PredicatePath path, String date),
+    @required Result similar(String id, int value),
+    @required Result dateAfter(PredicatePath path, int epoch),
+    @required Result dateBefore(PredicatePath path, int epoch),
     @required
-        Result dateBetween(
-            PredicatePath path, String startDate, String endDate),
+        Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
     @required Result dateDayOfMonth(PredicatePath path, int day),
     @required Result dateDayOfMonthAfter(PredicatePath path, int day),
     @required Result dateDayOfMonthBefore(PredicatePath path, int day),
@@ -5411,10 +5393,10 @@ class _$DateDayOfMonthBeforePredicate implements DateDayOfMonthBeforePredicate {
     Result near(
         PredicatePath path, double latitude, double longitude, double radius),
     Result not(PredicatePath path, String value),
-    Result similar(String id, String value),
-    Result dateAfter(PredicatePath path, String date),
-    Result dateBefore(PredicatePath path, String date),
-    Result dateBetween(PredicatePath path, String startDate, String endDate),
+    Result similar(String id, int value),
+    Result dateAfter(PredicatePath path, int epoch),
+    Result dateBefore(PredicatePath path, int epoch),
+    Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
     Result dateDayOfMonth(PredicatePath path, int day),
     Result dateDayOfMonthAfter(PredicatePath path, int day),
     Result dateDayOfMonthBefore(PredicatePath path, int day),
@@ -5634,12 +5616,11 @@ class _$DateDayOfWeekPredicate implements DateDayOfWeekPredicate {
         Result near(PredicatePath path, double latitude, double longitude,
             double radius),
     @required Result not(PredicatePath path, String value),
-    @required Result similar(String id, String value),
-    @required Result dateAfter(PredicatePath path, String date),
-    @required Result dateBefore(PredicatePath path, String date),
+    @required Result similar(String id, int value),
+    @required Result dateAfter(PredicatePath path, int epoch),
+    @required Result dateBefore(PredicatePath path, int epoch),
     @required
-        Result dateBetween(
-            PredicatePath path, String startDate, String endDate),
+        Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
     @required Result dateDayOfMonth(PredicatePath path, int day),
     @required Result dateDayOfMonthAfter(PredicatePath path, int day),
     @required Result dateDayOfMonthBefore(PredicatePath path, int day),
@@ -5700,10 +5681,10 @@ class _$DateDayOfWeekPredicate implements DateDayOfWeekPredicate {
     Result near(
         PredicatePath path, double latitude, double longitude, double radius),
     Result not(PredicatePath path, String value),
-    Result similar(String id, String value),
-    Result dateAfter(PredicatePath path, String date),
-    Result dateBefore(PredicatePath path, String date),
-    Result dateBetween(PredicatePath path, String startDate, String endDate),
+    Result similar(String id, int value),
+    Result dateAfter(PredicatePath path, int epoch),
+    Result dateBefore(PredicatePath path, int epoch),
+    Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
     Result dateDayOfMonth(PredicatePath path, int day),
     Result dateDayOfMonthAfter(PredicatePath path, int day),
     Result dateDayOfMonthBefore(PredicatePath path, int day),
@@ -5924,12 +5905,11 @@ class _$DateDayOfWeekAfterPredicate implements DateDayOfWeekAfterPredicate {
         Result near(PredicatePath path, double latitude, double longitude,
             double radius),
     @required Result not(PredicatePath path, String value),
-    @required Result similar(String id, String value),
-    @required Result dateAfter(PredicatePath path, String date),
-    @required Result dateBefore(PredicatePath path, String date),
+    @required Result similar(String id, int value),
+    @required Result dateAfter(PredicatePath path, int epoch),
+    @required Result dateBefore(PredicatePath path, int epoch),
     @required
-        Result dateBetween(
-            PredicatePath path, String startDate, String endDate),
+        Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
     @required Result dateDayOfMonth(PredicatePath path, int day),
     @required Result dateDayOfMonthAfter(PredicatePath path, int day),
     @required Result dateDayOfMonthBefore(PredicatePath path, int day),
@@ -5990,10 +5970,10 @@ class _$DateDayOfWeekAfterPredicate implements DateDayOfWeekAfterPredicate {
     Result near(
         PredicatePath path, double latitude, double longitude, double radius),
     Result not(PredicatePath path, String value),
-    Result similar(String id, String value),
-    Result dateAfter(PredicatePath path, String date),
-    Result dateBefore(PredicatePath path, String date),
-    Result dateBetween(PredicatePath path, String startDate, String endDate),
+    Result similar(String id, int value),
+    Result dateAfter(PredicatePath path, int epoch),
+    Result dateBefore(PredicatePath path, int epoch),
+    Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
     Result dateDayOfMonth(PredicatePath path, int day),
     Result dateDayOfMonthAfter(PredicatePath path, int day),
     Result dateDayOfMonthBefore(PredicatePath path, int day),
@@ -6216,12 +6196,11 @@ class _$DateDayOfWeekBeforePredicate implements DateDayOfWeekBeforePredicate {
         Result near(PredicatePath path, double latitude, double longitude,
             double radius),
     @required Result not(PredicatePath path, String value),
-    @required Result similar(String id, String value),
-    @required Result dateAfter(PredicatePath path, String date),
-    @required Result dateBefore(PredicatePath path, String date),
+    @required Result similar(String id, int value),
+    @required Result dateAfter(PredicatePath path, int epoch),
+    @required Result dateBefore(PredicatePath path, int epoch),
     @required
-        Result dateBetween(
-            PredicatePath path, String startDate, String endDate),
+        Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
     @required Result dateDayOfMonth(PredicatePath path, int day),
     @required Result dateDayOfMonthAfter(PredicatePath path, int day),
     @required Result dateDayOfMonthBefore(PredicatePath path, int day),
@@ -6282,10 +6261,10 @@ class _$DateDayOfWeekBeforePredicate implements DateDayOfWeekBeforePredicate {
     Result near(
         PredicatePath path, double latitude, double longitude, double radius),
     Result not(PredicatePath path, String value),
-    Result similar(String id, String value),
-    Result dateAfter(PredicatePath path, String date),
-    Result dateBefore(PredicatePath path, String date),
-    Result dateBetween(PredicatePath path, String startDate, String endDate),
+    Result similar(String id, int value),
+    Result dateAfter(PredicatePath path, int epoch),
+    Result dateBefore(PredicatePath path, int epoch),
+    Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
     Result dateDayOfMonth(PredicatePath path, int day),
     Result dateDayOfMonthAfter(PredicatePath path, int day),
     Result dateDayOfMonthBefore(PredicatePath path, int day),
@@ -6504,12 +6483,11 @@ class _$DateMonthPredicate implements DateMonthPredicate {
         Result near(PredicatePath path, double latitude, double longitude,
             double radius),
     @required Result not(PredicatePath path, String value),
-    @required Result similar(String id, String value),
-    @required Result dateAfter(PredicatePath path, String date),
-    @required Result dateBefore(PredicatePath path, String date),
+    @required Result similar(String id, int value),
+    @required Result dateAfter(PredicatePath path, int epoch),
+    @required Result dateBefore(PredicatePath path, int epoch),
     @required
-        Result dateBetween(
-            PredicatePath path, String startDate, String endDate),
+        Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
     @required Result dateDayOfMonth(PredicatePath path, int day),
     @required Result dateDayOfMonthAfter(PredicatePath path, int day),
     @required Result dateDayOfMonthBefore(PredicatePath path, int day),
@@ -6570,10 +6548,10 @@ class _$DateMonthPredicate implements DateMonthPredicate {
     Result near(
         PredicatePath path, double latitude, double longitude, double radius),
     Result not(PredicatePath path, String value),
-    Result similar(String id, String value),
-    Result dateAfter(PredicatePath path, String date),
-    Result dateBefore(PredicatePath path, String date),
-    Result dateBetween(PredicatePath path, String startDate, String endDate),
+    Result similar(String id, int value),
+    Result dateAfter(PredicatePath path, int epoch),
+    Result dateBefore(PredicatePath path, int epoch),
+    Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
     Result dateDayOfMonth(PredicatePath path, int day),
     Result dateDayOfMonthAfter(PredicatePath path, int day),
     Result dateDayOfMonthBefore(PredicatePath path, int day),
@@ -6792,12 +6770,11 @@ class _$DateMonthAfterPredicate implements DateMonthAfterPredicate {
         Result near(PredicatePath path, double latitude, double longitude,
             double radius),
     @required Result not(PredicatePath path, String value),
-    @required Result similar(String id, String value),
-    @required Result dateAfter(PredicatePath path, String date),
-    @required Result dateBefore(PredicatePath path, String date),
+    @required Result similar(String id, int value),
+    @required Result dateAfter(PredicatePath path, int epoch),
+    @required Result dateBefore(PredicatePath path, int epoch),
     @required
-        Result dateBetween(
-            PredicatePath path, String startDate, String endDate),
+        Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
     @required Result dateDayOfMonth(PredicatePath path, int day),
     @required Result dateDayOfMonthAfter(PredicatePath path, int day),
     @required Result dateDayOfMonthBefore(PredicatePath path, int day),
@@ -6858,10 +6835,10 @@ class _$DateMonthAfterPredicate implements DateMonthAfterPredicate {
     Result near(
         PredicatePath path, double latitude, double longitude, double radius),
     Result not(PredicatePath path, String value),
-    Result similar(String id, String value),
-    Result dateAfter(PredicatePath path, String date),
-    Result dateBefore(PredicatePath path, String date),
-    Result dateBetween(PredicatePath path, String startDate, String endDate),
+    Result similar(String id, int value),
+    Result dateAfter(PredicatePath path, int epoch),
+    Result dateBefore(PredicatePath path, int epoch),
+    Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
     Result dateDayOfMonth(PredicatePath path, int day),
     Result dateDayOfMonthAfter(PredicatePath path, int day),
     Result dateDayOfMonthBefore(PredicatePath path, int day),
@@ -7081,12 +7058,11 @@ class _$DateMonthBeforePredicate implements DateMonthBeforePredicate {
         Result near(PredicatePath path, double latitude, double longitude,
             double radius),
     @required Result not(PredicatePath path, String value),
-    @required Result similar(String id, String value),
-    @required Result dateAfter(PredicatePath path, String date),
-    @required Result dateBefore(PredicatePath path, String date),
+    @required Result similar(String id, int value),
+    @required Result dateAfter(PredicatePath path, int epoch),
+    @required Result dateBefore(PredicatePath path, int epoch),
     @required
-        Result dateBetween(
-            PredicatePath path, String startDate, String endDate),
+        Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
     @required Result dateDayOfMonth(PredicatePath path, int day),
     @required Result dateDayOfMonthAfter(PredicatePath path, int day),
     @required Result dateDayOfMonthBefore(PredicatePath path, int day),
@@ -7147,10 +7123,10 @@ class _$DateMonthBeforePredicate implements DateMonthBeforePredicate {
     Result near(
         PredicatePath path, double latitude, double longitude, double radius),
     Result not(PredicatePath path, String value),
-    Result similar(String id, String value),
-    Result dateAfter(PredicatePath path, String date),
-    Result dateBefore(PredicatePath path, String date),
-    Result dateBetween(PredicatePath path, String startDate, String endDate),
+    Result similar(String id, int value),
+    Result dateAfter(PredicatePath path, int epoch),
+    Result dateBefore(PredicatePath path, int epoch),
+    Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
     Result dateDayOfMonth(PredicatePath path, int day),
     Result dateDayOfMonthAfter(PredicatePath path, int day),
     Result dateDayOfMonthBefore(PredicatePath path, int day),
@@ -7368,12 +7344,11 @@ class _$DateYearPredicate implements DateYearPredicate {
         Result near(PredicatePath path, double latitude, double longitude,
             double radius),
     @required Result not(PredicatePath path, String value),
-    @required Result similar(String id, String value),
-    @required Result dateAfter(PredicatePath path, String date),
-    @required Result dateBefore(PredicatePath path, String date),
+    @required Result similar(String id, int value),
+    @required Result dateAfter(PredicatePath path, int epoch),
+    @required Result dateBefore(PredicatePath path, int epoch),
     @required
-        Result dateBetween(
-            PredicatePath path, String startDate, String endDate),
+        Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
     @required Result dateDayOfMonth(PredicatePath path, int day),
     @required Result dateDayOfMonthAfter(PredicatePath path, int day),
     @required Result dateDayOfMonthBefore(PredicatePath path, int day),
@@ -7434,10 +7409,10 @@ class _$DateYearPredicate implements DateYearPredicate {
     Result near(
         PredicatePath path, double latitude, double longitude, double radius),
     Result not(PredicatePath path, String value),
-    Result similar(String id, String value),
-    Result dateAfter(PredicatePath path, String date),
-    Result dateBefore(PredicatePath path, String date),
-    Result dateBetween(PredicatePath path, String startDate, String endDate),
+    Result similar(String id, int value),
+    Result dateAfter(PredicatePath path, int epoch),
+    Result dateBefore(PredicatePath path, int epoch),
+    Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
     Result dateDayOfMonth(PredicatePath path, int day),
     Result dateDayOfMonthAfter(PredicatePath path, int day),
     Result dateDayOfMonthBefore(PredicatePath path, int day),
@@ -7654,12 +7629,11 @@ class _$DateHourPredicate implements DateHourPredicate {
         Result near(PredicatePath path, double latitude, double longitude,
             double radius),
     @required Result not(PredicatePath path, String value),
-    @required Result similar(String id, String value),
-    @required Result dateAfter(PredicatePath path, String date),
-    @required Result dateBefore(PredicatePath path, String date),
+    @required Result similar(String id, int value),
+    @required Result dateAfter(PredicatePath path, int epoch),
+    @required Result dateBefore(PredicatePath path, int epoch),
     @required
-        Result dateBetween(
-            PredicatePath path, String startDate, String endDate),
+        Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
     @required Result dateDayOfMonth(PredicatePath path, int day),
     @required Result dateDayOfMonthAfter(PredicatePath path, int day),
     @required Result dateDayOfMonthBefore(PredicatePath path, int day),
@@ -7720,10 +7694,10 @@ class _$DateHourPredicate implements DateHourPredicate {
     Result near(
         PredicatePath path, double latitude, double longitude, double radius),
     Result not(PredicatePath path, String value),
-    Result similar(String id, String value),
-    Result dateAfter(PredicatePath path, String date),
-    Result dateBefore(PredicatePath path, String date),
-    Result dateBetween(PredicatePath path, String startDate, String endDate),
+    Result similar(String id, int value),
+    Result dateAfter(PredicatePath path, int epoch),
+    Result dateBefore(PredicatePath path, int epoch),
+    Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
     Result dateDayOfMonth(PredicatePath path, int day),
     Result dateDayOfMonthAfter(PredicatePath path, int day),
     Result dateDayOfMonthBefore(PredicatePath path, int day),
@@ -7941,12 +7915,11 @@ class _$DateHourAfterPredicate implements DateHourAfterPredicate {
         Result near(PredicatePath path, double latitude, double longitude,
             double radius),
     @required Result not(PredicatePath path, String value),
-    @required Result similar(String id, String value),
-    @required Result dateAfter(PredicatePath path, String date),
-    @required Result dateBefore(PredicatePath path, String date),
+    @required Result similar(String id, int value),
+    @required Result dateAfter(PredicatePath path, int epoch),
+    @required Result dateBefore(PredicatePath path, int epoch),
     @required
-        Result dateBetween(
-            PredicatePath path, String startDate, String endDate),
+        Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
     @required Result dateDayOfMonth(PredicatePath path, int day),
     @required Result dateDayOfMonthAfter(PredicatePath path, int day),
     @required Result dateDayOfMonthBefore(PredicatePath path, int day),
@@ -8007,10 +7980,10 @@ class _$DateHourAfterPredicate implements DateHourAfterPredicate {
     Result near(
         PredicatePath path, double latitude, double longitude, double radius),
     Result not(PredicatePath path, String value),
-    Result similar(String id, String value),
-    Result dateAfter(PredicatePath path, String date),
-    Result dateBefore(PredicatePath path, String date),
-    Result dateBetween(PredicatePath path, String startDate, String endDate),
+    Result similar(String id, int value),
+    Result dateAfter(PredicatePath path, int epoch),
+    Result dateBefore(PredicatePath path, int epoch),
+    Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
     Result dateDayOfMonth(PredicatePath path, int day),
     Result dateDayOfMonthAfter(PredicatePath path, int day),
     Result dateDayOfMonthBefore(PredicatePath path, int day),
@@ -8229,12 +8202,11 @@ class _$DateHourBeforePredicate implements DateHourBeforePredicate {
         Result near(PredicatePath path, double latitude, double longitude,
             double radius),
     @required Result not(PredicatePath path, String value),
-    @required Result similar(String id, String value),
-    @required Result dateAfter(PredicatePath path, String date),
-    @required Result dateBefore(PredicatePath path, String date),
+    @required Result similar(String id, int value),
+    @required Result dateAfter(PredicatePath path, int epoch),
+    @required Result dateBefore(PredicatePath path, int epoch),
     @required
-        Result dateBetween(
-            PredicatePath path, String startDate, String endDate),
+        Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
     @required Result dateDayOfMonth(PredicatePath path, int day),
     @required Result dateDayOfMonthAfter(PredicatePath path, int day),
     @required Result dateDayOfMonthBefore(PredicatePath path, int day),
@@ -8295,10 +8267,10 @@ class _$DateHourBeforePredicate implements DateHourBeforePredicate {
     Result near(
         PredicatePath path, double latitude, double longitude, double radius),
     Result not(PredicatePath path, String value),
-    Result similar(String id, String value),
-    Result dateAfter(PredicatePath path, String date),
-    Result dateBefore(PredicatePath path, String date),
-    Result dateBetween(PredicatePath path, String startDate, String endDate),
+    Result similar(String id, int value),
+    Result dateAfter(PredicatePath path, int epoch),
+    Result dateBefore(PredicatePath path, int epoch),
+    Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
     Result dateDayOfMonth(PredicatePath path, int day),
     Result dateDayOfMonthAfter(PredicatePath path, int day),
     Result dateDayOfMonthBefore(PredicatePath path, int day),

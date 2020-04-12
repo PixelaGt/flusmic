@@ -20,16 +20,15 @@ abstract class Predicate with _$Predicate {
   factory Predicate.near(PredicatePath path, double latitude, double longitude,
       double radius) = NearPredicate;
   factory Predicate.not(PredicatePath path, String value) = NotPredicate;
-  factory Predicate.similar(String id, String value) = SimilarPredicate;
+  factory Predicate.similar(String id, int value) = SimilarPredicate;
 
   /// Date/Time predicates
-  factory Predicate.dateAfter(PredicatePath path, String date) =
+  factory Predicate.dateAfter(PredicatePath path, int epoch) =
       DateAfterPredicate;
-  factory Predicate.dateBefore(PredicatePath path, String date) =
+  factory Predicate.dateBefore(PredicatePath path, int epoch) =
       DateBeforePredicate;
   factory Predicate.dateBetween(
-          PredicatePath path, String startDate, String endDate) =
-      DateBetweenPredicate;
+      PredicatePath path, int startEpoch, int endEpoch) = DateBetweenPredicate;
   factory Predicate.dateDayOfMonth(PredicatePath path, int day) =
       DateDayOfMonthPredicate;
   factory Predicate.dateDayOfMonthAfter(PredicatePath path, int day) =
