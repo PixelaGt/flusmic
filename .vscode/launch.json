@@ -6,9 +6,10 @@
     "configurations": [
         {
             "name": "Run tests",
+            "noDebug": true,
             "type": "dart",
             "request": "launch",
-            "program": "test/flusmic_test.dart"
+            "program": "test/"
         },
         {
             "name": "Run example",

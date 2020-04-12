@@ -6,6 +6,13 @@ void main() {
   group('query with flusmic', () {
     final flusmic =
         Flusmic(prismicEndpoint: 'https://flusmic.cdn.prismic.io/api/v2');
+    test('simple query', () async {
+      final result = await flusmic.query([
+        Predicate.any(DefaultPredicatePath.tags(), ['test'])
+      ]);
+      expect(result.results.length, 2);
+    });
+
     test('after', () async {
       final result = await flusmic.query(
           [Predicate.at(DefaultPredicatePath.type(), 'test')],

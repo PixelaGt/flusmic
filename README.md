@@ -1,7 +1,9 @@
 # flusmic
-[![pub](https://img.shields.io/badge/pub-1.0.1-blue)](https://pub.dev/packages/flusmic)
+[![pub](https://img.shields.io/badge/pub-1.1.0-blue)](https://pub.dev/packages/flusmic)
 ![flusmic](https://github.com/PixelaGt/flusmic/workflows/flusmic/badge.svg?branch=master&event=push)
 [![codecov](https://codecov.io/gh/PixelaGt/flusmic/branch/master/graph/badge.svg)](https://codecov.io/gh/PixelaGt/flusmic)
+[![Project Status: Active](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+
 
 A prismic.io integration for Flutter
 
@@ -32,6 +34,8 @@ final result = await flusmic
 You can add as many predicates you need.
 
 #### Available predicates
+
+##### Query
 - Any
 - At
 - FullText
@@ -44,6 +48,24 @@ You can add as many predicates you need.
 - Missing
 - Not
 - Similar
+
+##### Date and time
+- After
+- Before
+- Between
+- Day-of-month
+- Day-of-month After
+- Day-of-month Before
+- Day-of-week
+- Day-of-week After
+- Day-of-week Before
+- Month
+- Month After
+- Month Before
+- Year
+- Hour
+- Hour After
+- Hour Before
 
 You can use 'DefaultPredicatePath', there are a few:
 
@@ -157,5 +179,6 @@ _flusmicController.repeat();
 - [X] Querying by predicates.
 - [X] Languages and search params.
 - [X] FlusmicBuilder
-- [ ] Date and time predicates.
-- [ ] Orderings search param.
+- [X] Date and time predicates.
+- [X] Orderings search param.
+- [ ] RichText widget.
