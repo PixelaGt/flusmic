@@ -1,3 +1,8 @@
+## [1.1.0]
+* Date and time predicates
+* Orderings
+* Minor fixes.
+
 ## [1.0.1]
 * Update dependencies.
 * Minor fixes.

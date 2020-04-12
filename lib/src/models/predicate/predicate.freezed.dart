@@ -92,10 +92,128 @@ class _$PredicateTearOff {
     );
   }
 
-  SimilarPredicate similar(String id, String value) {
+  SimilarPredicate similar(String id, int value) {
     return SimilarPredicate(
       id,
       value,
+    );
+  }
+
+  DateAfterPredicate dateAfter(PredicatePath path, int epoch) {
+    return DateAfterPredicate(
+      path,
+      epoch,
+    );
+  }
+
+  DateBeforePredicate dateBefore(PredicatePath path, int epoch) {
+    return DateBeforePredicate(
+      path,
+      epoch,
+    );
+  }
+
+  DateBetweenPredicate dateBetween(
+      PredicatePath path, int startEpoch, int endEpoch) {
+    return DateBetweenPredicate(
+      path,
+      startEpoch,
+      endEpoch,
+    );
+  }
+
+  DateDayOfMonthPredicate dateDayOfMonth(PredicatePath path, int day) {
+    return DateDayOfMonthPredicate(
+      path,
+      day,
+    );
+  }
+
+  DateDayOfMonthAfterPredicate dateDayOfMonthAfter(
+      PredicatePath path, int day) {
+    return DateDayOfMonthAfterPredicate(
+      path,
+      day,
+    );
+  }
+
+  DateDayOfMonthBeforePredicate dateDayOfMonthBefore(
+      PredicatePath path, int day) {
+    return DateDayOfMonthBeforePredicate(
+      path,
+      day,
+    );
+  }
+
+  DateDayOfWeekPredicate dateDayOfWeek(PredicatePath path, String day) {
+    return DateDayOfWeekPredicate(
+      path,
+      day,
+    );
+  }
+
+  DateDayOfWeekAfterPredicate dateDayOfWeekAfter(
+      PredicatePath path, String day) {
+    return DateDayOfWeekAfterPredicate(
+      path,
+      day,
+    );
+  }
+
+  DateDayOfWeekBeforePredicate dateDayOfWeekBefore(
+      PredicatePath path, String day) {
+    return DateDayOfWeekBeforePredicate(
+      path,
+      day,
+    );
+  }
+
+  DateMonthPredicate dateMonth(PredicatePath path, String month) {
+    return DateMonthPredicate(
+      path,
+      month,
+    );
+  }
+
+  DateMonthAfterPredicate dateMonthAfter(PredicatePath path, String month) {
+    return DateMonthAfterPredicate(
+      path,
+      month,
+    );
+  }
+
+  DateMonthBeforePredicate dateMonthBefore(PredicatePath path, String month) {
+    return DateMonthBeforePredicate(
+      path,
+      month,
+    );
+  }
+
+  DateYearPredicate dateYear(PredicatePath path, int year) {
+    return DateYearPredicate(
+      path,
+      year,
+    );
+  }
+
+  DateHourPredicate hour(PredicatePath path, int hour) {
+    return DateHourPredicate(
+      path,
+      hour,
+    );
+  }
+
+  DateHourAfterPredicate hourAfter(PredicatePath path, int hour) {
+    return DateHourAfterPredicate(
+      path,
+      hour,
+    );
+  }
+
+  DateHourBeforePredicate hourBefore(PredicatePath path, int hour) {
+    return DateHourBeforePredicate(
+      path,
+      hour,
     );
   }
 }
@@ -121,7 +239,24 @@ mixin _$Predicate {
         Result near(PredicatePath path, double latitude, double longitude,
             double radius),
     @required Result not(PredicatePath path, String value),
-    @required Result similar(String id, String value),
+    @required Result similar(String id, int value),
+    @required Result dateAfter(PredicatePath path, int epoch),
+    @required Result dateBefore(PredicatePath path, int epoch),
+    @required
+        Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
+    @required Result dateDayOfMonth(PredicatePath path, int day),
+    @required Result dateDayOfMonthAfter(PredicatePath path, int day),
+    @required Result dateDayOfMonthBefore(PredicatePath path, int day),
+    @required Result dateDayOfWeek(PredicatePath path, String day),
+    @required Result dateDayOfWeekAfter(PredicatePath path, String day),
+    @required Result dateDayOfWeekBefore(PredicatePath path, String day),
+    @required Result dateMonth(PredicatePath path, String month),
+    @required Result dateMonthAfter(PredicatePath path, String month),
+    @required Result dateMonthBefore(PredicatePath path, String month),
+    @required Result dateYear(PredicatePath path, int year),
+    @required Result hour(PredicatePath path, int hour),
+    @required Result hourAfter(PredicatePath path, int hour),
+    @required Result hourBefore(PredicatePath path, int hour),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
@@ -137,7 +272,23 @@ mixin _$Predicate {
     Result near(
         PredicatePath path, double latitude, double longitude, double radius),
     Result not(PredicatePath path, String value),
-    Result similar(String id, String value),
+    Result similar(String id, int value),
+    Result dateAfter(PredicatePath path, int epoch),
+    Result dateBefore(PredicatePath path, int epoch),
+    Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
+    Result dateDayOfMonth(PredicatePath path, int day),
+    Result dateDayOfMonthAfter(PredicatePath path, int day),
+    Result dateDayOfMonthBefore(PredicatePath path, int day),
+    Result dateDayOfWeek(PredicatePath path, String day),
+    Result dateDayOfWeekAfter(PredicatePath path, String day),
+    Result dateDayOfWeekBefore(PredicatePath path, String day),
+    Result dateMonth(PredicatePath path, String month),
+    Result dateMonthAfter(PredicatePath path, String month),
+    Result dateMonthBefore(PredicatePath path, String month),
+    Result dateYear(PredicatePath path, int year),
+    Result hour(PredicatePath path, int hour),
+    Result hourAfter(PredicatePath path, int hour),
+    Result hourBefore(PredicatePath path, int hour),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -154,6 +305,22 @@ mixin _$Predicate {
     @required Result near(NearPredicate value),
     @required Result not(NotPredicate value),
     @required Result similar(SimilarPredicate value),
+    @required Result dateAfter(DateAfterPredicate value),
+    @required Result dateBefore(DateBeforePredicate value),
+    @required Result dateBetween(DateBetweenPredicate value),
+    @required Result dateDayOfMonth(DateDayOfMonthPredicate value),
+    @required Result dateDayOfMonthAfter(DateDayOfMonthAfterPredicate value),
+    @required Result dateDayOfMonthBefore(DateDayOfMonthBeforePredicate value),
+    @required Result dateDayOfWeek(DateDayOfWeekPredicate value),
+    @required Result dateDayOfWeekAfter(DateDayOfWeekAfterPredicate value),
+    @required Result dateDayOfWeekBefore(DateDayOfWeekBeforePredicate value),
+    @required Result dateMonth(DateMonthPredicate value),
+    @required Result dateMonthAfter(DateMonthAfterPredicate value),
+    @required Result dateMonthBefore(DateMonthBeforePredicate value),
+    @required Result dateYear(DateYearPredicate value),
+    @required Result hour(DateHourPredicate value),
+    @required Result hourAfter(DateHourAfterPredicate value),
+    @required Result hourBefore(DateHourBeforePredicate value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
@@ -169,6 +336,22 @@ mixin _$Predicate {
     Result near(NearPredicate value),
     Result not(NotPredicate value),
     Result similar(SimilarPredicate value),
+    Result dateAfter(DateAfterPredicate value),
+    Result dateBefore(DateBeforePredicate value),
+    Result dateBetween(DateBetweenPredicate value),
+    Result dateDayOfMonth(DateDayOfMonthPredicate value),
+    Result dateDayOfMonthAfter(DateDayOfMonthAfterPredicate value),
+    Result dateDayOfMonthBefore(DateDayOfMonthBeforePredicate value),
+    Result dateDayOfWeek(DateDayOfWeekPredicate value),
+    Result dateDayOfWeekAfter(DateDayOfWeekAfterPredicate value),
+    Result dateDayOfWeekBefore(DateDayOfWeekBeforePredicate value),
+    Result dateMonth(DateMonthPredicate value),
+    Result dateMonthAfter(DateMonthAfterPredicate value),
+    Result dateMonthBefore(DateMonthBeforePredicate value),
+    Result dateYear(DateYearPredicate value),
+    Result hour(DateHourPredicate value),
+    Result hourAfter(DateHourAfterPredicate value),
+    Result hourBefore(DateHourBeforePredicate value),
     @required Result orElse(),
   });
 }
@@ -267,7 +450,24 @@ class _$AnyPredicate implements AnyPredicate {
         Result near(PredicatePath path, double latitude, double longitude,
             double radius),
     @required Result not(PredicatePath path, String value),
-    @required Result similar(String id, String value),
+    @required Result similar(String id, int value),
+    @required Result dateAfter(PredicatePath path, int epoch),
+    @required Result dateBefore(PredicatePath path, int epoch),
+    @required
+        Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
+    @required Result dateDayOfMonth(PredicatePath path, int day),
+    @required Result dateDayOfMonthAfter(PredicatePath path, int day),
+    @required Result dateDayOfMonthBefore(PredicatePath path, int day),
+    @required Result dateDayOfWeek(PredicatePath path, String day),
+    @required Result dateDayOfWeekAfter(PredicatePath path, String day),
+    @required Result dateDayOfWeekBefore(PredicatePath path, String day),
+    @required Result dateMonth(PredicatePath path, String month),
+    @required Result dateMonthAfter(PredicatePath path, String month),
+    @required Result dateMonthBefore(PredicatePath path, String month),
+    @required Result dateYear(PredicatePath path, int year),
+    @required Result hour(PredicatePath path, int hour),
+    @required Result hourAfter(PredicatePath path, int hour),
+    @required Result hourBefore(PredicatePath path, int hour),
   }) {
     assert(any != null);
     assert(at != null);
@@ -281,6 +481,22 @@ class _$AnyPredicate implements AnyPredicate {
     assert(near != null);
     assert(not != null);
     assert(similar != null);
+    assert(dateAfter != null);
+    assert(dateBefore != null);
+    assert(dateBetween != null);
+    assert(dateDayOfMonth != null);
+    assert(dateDayOfMonthAfter != null);
+    assert(dateDayOfMonthBefore != null);
+    assert(dateDayOfWeek != null);
+    assert(dateDayOfWeekAfter != null);
+    assert(dateDayOfWeekBefore != null);
+    assert(dateMonth != null);
+    assert(dateMonthAfter != null);
+    assert(dateMonthBefore != null);
+    assert(dateYear != null);
+    assert(hour != null);
+    assert(hourAfter != null);
+    assert(hourBefore != null);
     return any(path, values);
   }
 
@@ -299,7 +515,23 @@ class _$AnyPredicate implements AnyPredicate {
     Result near(
         PredicatePath path, double latitude, double longitude, double radius),
     Result not(PredicatePath path, String value),
-    Result similar(String id, String value),
+    Result similar(String id, int value),
+    Result dateAfter(PredicatePath path, int epoch),
+    Result dateBefore(PredicatePath path, int epoch),
+    Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
+    Result dateDayOfMonth(PredicatePath path, int day),
+    Result dateDayOfMonthAfter(PredicatePath path, int day),
+    Result dateDayOfMonthBefore(PredicatePath path, int day),
+    Result dateDayOfWeek(PredicatePath path, String day),
+    Result dateDayOfWeekAfter(PredicatePath path, String day),
+    Result dateDayOfWeekBefore(PredicatePath path, String day),
+    Result dateMonth(PredicatePath path, String month),
+    Result dateMonthAfter(PredicatePath path, String month),
+    Result dateMonthBefore(PredicatePath path, String month),
+    Result dateYear(PredicatePath path, int year),
+    Result hour(PredicatePath path, int hour),
+    Result hourAfter(PredicatePath path, int hour),
+    Result hourBefore(PredicatePath path, int hour),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -324,6 +556,22 @@ class _$AnyPredicate implements AnyPredicate {
     @required Result near(NearPredicate value),
     @required Result not(NotPredicate value),
     @required Result similar(SimilarPredicate value),
+    @required Result dateAfter(DateAfterPredicate value),
+    @required Result dateBefore(DateBeforePredicate value),
+    @required Result dateBetween(DateBetweenPredicate value),
+    @required Result dateDayOfMonth(DateDayOfMonthPredicate value),
+    @required Result dateDayOfMonthAfter(DateDayOfMonthAfterPredicate value),
+    @required Result dateDayOfMonthBefore(DateDayOfMonthBeforePredicate value),
+    @required Result dateDayOfWeek(DateDayOfWeekPredicate value),
+    @required Result dateDayOfWeekAfter(DateDayOfWeekAfterPredicate value),
+    @required Result dateDayOfWeekBefore(DateDayOfWeekBeforePredicate value),
+    @required Result dateMonth(DateMonthPredicate value),
+    @required Result dateMonthAfter(DateMonthAfterPredicate value),
+    @required Result dateMonthBefore(DateMonthBeforePredicate value),
+    @required Result dateYear(DateYearPredicate value),
+    @required Result hour(DateHourPredicate value),
+    @required Result hourAfter(DateHourAfterPredicate value),
+    @required Result hourBefore(DateHourBeforePredicate value),
   }) {
     assert(any != null);
     assert(at != null);
@@ -337,6 +585,22 @@ class _$AnyPredicate implements AnyPredicate {
     assert(near != null);
     assert(not != null);
     assert(similar != null);
+    assert(dateAfter != null);
+    assert(dateBefore != null);
+    assert(dateBetween != null);
+    assert(dateDayOfMonth != null);
+    assert(dateDayOfMonthAfter != null);
+    assert(dateDayOfMonthBefore != null);
+    assert(dateDayOfWeek != null);
+    assert(dateDayOfWeekAfter != null);
+    assert(dateDayOfWeekBefore != null);
+    assert(dateMonth != null);
+    assert(dateMonthAfter != null);
+    assert(dateMonthBefore != null);
+    assert(dateYear != null);
+    assert(hour != null);
+    assert(hourAfter != null);
+    assert(hourBefore != null);
     return any(this);
   }
 
@@ -355,6 +619,22 @@ class _$AnyPredicate implements AnyPredicate {
     Result near(NearPredicate value),
     Result not(NotPredicate value),
     Result similar(SimilarPredicate value),
+    Result dateAfter(DateAfterPredicate value),
+    Result dateBefore(DateBeforePredicate value),
+    Result dateBetween(DateBetweenPredicate value),
+    Result dateDayOfMonth(DateDayOfMonthPredicate value),
+    Result dateDayOfMonthAfter(DateDayOfMonthAfterPredicate value),
+    Result dateDayOfMonthBefore(DateDayOfMonthBeforePredicate value),
+    Result dateDayOfWeek(DateDayOfWeekPredicate value),
+    Result dateDayOfWeekAfter(DateDayOfWeekAfterPredicate value),
+    Result dateDayOfWeekBefore(DateDayOfWeekBeforePredicate value),
+    Result dateMonth(DateMonthPredicate value),
+    Result dateMonthAfter(DateMonthAfterPredicate value),
+    Result dateMonthBefore(DateMonthBeforePredicate value),
+    Result dateYear(DateYearPredicate value),
+    Result hour(DateHourPredicate value),
+    Result hourAfter(DateHourAfterPredicate value),
+    Result hourBefore(DateHourBeforePredicate value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -455,7 +735,24 @@ class _$AtPredicate implements AtPredicate {
         Result near(PredicatePath path, double latitude, double longitude,
             double radius),
     @required Result not(PredicatePath path, String value),
-    @required Result similar(String id, String value),
+    @required Result similar(String id, int value),
+    @required Result dateAfter(PredicatePath path, int epoch),
+    @required Result dateBefore(PredicatePath path, int epoch),
+    @required
+        Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
+    @required Result dateDayOfMonth(PredicatePath path, int day),
+    @required Result dateDayOfMonthAfter(PredicatePath path, int day),
+    @required Result dateDayOfMonthBefore(PredicatePath path, int day),
+    @required Result dateDayOfWeek(PredicatePath path, String day),
+    @required Result dateDayOfWeekAfter(PredicatePath path, String day),
+    @required Result dateDayOfWeekBefore(PredicatePath path, String day),
+    @required Result dateMonth(PredicatePath path, String month),
+    @required Result dateMonthAfter(PredicatePath path, String month),
+    @required Result dateMonthBefore(PredicatePath path, String month),
+    @required Result dateYear(PredicatePath path, int year),
+    @required Result hour(PredicatePath path, int hour),
+    @required Result hourAfter(PredicatePath path, int hour),
+    @required Result hourBefore(PredicatePath path, int hour),
   }) {
     assert(any != null);
     assert(at != null);
@@ -469,6 +766,22 @@ class _$AtPredicate implements AtPredicate {
     assert(near != null);
     assert(not != null);
     assert(similar != null);
+    assert(dateAfter != null);
+    assert(dateBefore != null);
+    assert(dateBetween != null);
+    assert(dateDayOfMonth != null);
+    assert(dateDayOfMonthAfter != null);
+    assert(dateDayOfMonthBefore != null);
+    assert(dateDayOfWeek != null);
+    assert(dateDayOfWeekAfter != null);
+    assert(dateDayOfWeekBefore != null);
+    assert(dateMonth != null);
+    assert(dateMonthAfter != null);
+    assert(dateMonthBefore != null);
+    assert(dateYear != null);
+    assert(hour != null);
+    assert(hourAfter != null);
+    assert(hourBefore != null);
     return at(path, value);
   }
 
@@ -487,7 +800,23 @@ class _$AtPredicate implements AtPredicate {
     Result near(
         PredicatePath path, double latitude, double longitude, double radius),
     Result not(PredicatePath path, String value),
-    Result similar(String id, String value),
+    Result similar(String id, int value),
+    Result dateAfter(PredicatePath path, int epoch),
+    Result dateBefore(PredicatePath path, int epoch),
+    Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
+    Result dateDayOfMonth(PredicatePath path, int day),
+    Result dateDayOfMonthAfter(PredicatePath path, int day),
+    Result dateDayOfMonthBefore(PredicatePath path, int day),
+    Result dateDayOfWeek(PredicatePath path, String day),
+    Result dateDayOfWeekAfter(PredicatePath path, String day),
+    Result dateDayOfWeekBefore(PredicatePath path, String day),
+    Result dateMonth(PredicatePath path, String month),
+    Result dateMonthAfter(PredicatePath path, String month),
+    Result dateMonthBefore(PredicatePath path, String month),
+    Result dateYear(PredicatePath path, int year),
+    Result hour(PredicatePath path, int hour),
+    Result hourAfter(PredicatePath path, int hour),
+    Result hourBefore(PredicatePath path, int hour),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -512,6 +841,22 @@ class _$AtPredicate implements AtPredicate {
     @required Result near(NearPredicate value),
     @required Result not(NotPredicate value),
     @required Result similar(SimilarPredicate value),
+    @required Result dateAfter(DateAfterPredicate value),
+    @required Result dateBefore(DateBeforePredicate value),
+    @required Result dateBetween(DateBetweenPredicate value),
+    @required Result dateDayOfMonth(DateDayOfMonthPredicate value),
+    @required Result dateDayOfMonthAfter(DateDayOfMonthAfterPredicate value),
+    @required Result dateDayOfMonthBefore(DateDayOfMonthBeforePredicate value),
+    @required Result dateDayOfWeek(DateDayOfWeekPredicate value),
+    @required Result dateDayOfWeekAfter(DateDayOfWeekAfterPredicate value),
+    @required Result dateDayOfWeekBefore(DateDayOfWeekBeforePredicate value),
+    @required Result dateMonth(DateMonthPredicate value),
+    @required Result dateMonthAfter(DateMonthAfterPredicate value),
+    @required Result dateMonthBefore(DateMonthBeforePredicate value),
+    @required Result dateYear(DateYearPredicate value),
+    @required Result hour(DateHourPredicate value),
+    @required Result hourAfter(DateHourAfterPredicate value),
+    @required Result hourBefore(DateHourBeforePredicate value),
   }) {
     assert(any != null);
     assert(at != null);
@@ -525,6 +870,22 @@ class _$AtPredicate implements AtPredicate {
     assert(near != null);
     assert(not != null);
     assert(similar != null);
+    assert(dateAfter != null);
+    assert(dateBefore != null);
+    assert(dateBetween != null);
+    assert(dateDayOfMonth != null);
+    assert(dateDayOfMonthAfter != null);
+    assert(dateDayOfMonthBefore != null);
+    assert(dateDayOfWeek != null);
+    assert(dateDayOfWeekAfter != null);
+    assert(dateDayOfWeekBefore != null);
+    assert(dateMonth != null);
+    assert(dateMonthAfter != null);
+    assert(dateMonthBefore != null);
+    assert(dateYear != null);
+    assert(hour != null);
+    assert(hourAfter != null);
+    assert(hourBefore != null);
     return at(this);
   }
 
@@ -543,6 +904,22 @@ class _$AtPredicate implements AtPredicate {
     Result near(NearPredicate value),
     Result not(NotPredicate value),
     Result similar(SimilarPredicate value),
+    Result dateAfter(DateAfterPredicate value),
+    Result dateBefore(DateBeforePredicate value),
+    Result dateBetween(DateBetweenPredicate value),
+    Result dateDayOfMonth(DateDayOfMonthPredicate value),
+    Result dateDayOfMonthAfter(DateDayOfMonthAfterPredicate value),
+    Result dateDayOfMonthBefore(DateDayOfMonthBeforePredicate value),
+    Result dateDayOfWeek(DateDayOfWeekPredicate value),
+    Result dateDayOfWeekAfter(DateDayOfWeekAfterPredicate value),
+    Result dateDayOfWeekBefore(DateDayOfWeekBeforePredicate value),
+    Result dateMonth(DateMonthPredicate value),
+    Result dateMonthAfter(DateMonthAfterPredicate value),
+    Result dateMonthBefore(DateMonthBeforePredicate value),
+    Result dateYear(DateYearPredicate value),
+    Result hour(DateHourPredicate value),
+    Result hourAfter(DateHourAfterPredicate value),
+    Result hourBefore(DateHourBeforePredicate value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -643,7 +1020,24 @@ class _$FullTextPredicate implements FullTextPredicate {
         Result near(PredicatePath path, double latitude, double longitude,
             double radius),
     @required Result not(PredicatePath path, String value),
-    @required Result similar(String id, String value),
+    @required Result similar(String id, int value),
+    @required Result dateAfter(PredicatePath path, int epoch),
+    @required Result dateBefore(PredicatePath path, int epoch),
+    @required
+        Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
+    @required Result dateDayOfMonth(PredicatePath path, int day),
+    @required Result dateDayOfMonthAfter(PredicatePath path, int day),
+    @required Result dateDayOfMonthBefore(PredicatePath path, int day),
+    @required Result dateDayOfWeek(PredicatePath path, String day),
+    @required Result dateDayOfWeekAfter(PredicatePath path, String day),
+    @required Result dateDayOfWeekBefore(PredicatePath path, String day),
+    @required Result dateMonth(PredicatePath path, String month),
+    @required Result dateMonthAfter(PredicatePath path, String month),
+    @required Result dateMonthBefore(PredicatePath path, String month),
+    @required Result dateYear(PredicatePath path, int year),
+    @required Result hour(PredicatePath path, int hour),
+    @required Result hourAfter(PredicatePath path, int hour),
+    @required Result hourBefore(PredicatePath path, int hour),
   }) {
     assert(any != null);
     assert(at != null);
@@ -657,6 +1051,22 @@ class _$FullTextPredicate implements FullTextPredicate {
     assert(near != null);
     assert(not != null);
     assert(similar != null);
+    assert(dateAfter != null);
+    assert(dateBefore != null);
+    assert(dateBetween != null);
+    assert(dateDayOfMonth != null);
+    assert(dateDayOfMonthAfter != null);
+    assert(dateDayOfMonthBefore != null);
+    assert(dateDayOfWeek != null);
+    assert(dateDayOfWeekAfter != null);
+    assert(dateDayOfWeekBefore != null);
+    assert(dateMonth != null);
+    assert(dateMonthAfter != null);
+    assert(dateMonthBefore != null);
+    assert(dateYear != null);
+    assert(hour != null);
+    assert(hourAfter != null);
+    assert(hourBefore != null);
     return fullText(path, value);
   }
 
@@ -675,7 +1085,23 @@ class _$FullTextPredicate implements FullTextPredicate {
     Result near(
         PredicatePath path, double latitude, double longitude, double radius),
     Result not(PredicatePath path, String value),
-    Result similar(String id, String value),
+    Result similar(String id, int value),
+    Result dateAfter(PredicatePath path, int epoch),
+    Result dateBefore(PredicatePath path, int epoch),
+    Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
+    Result dateDayOfMonth(PredicatePath path, int day),
+    Result dateDayOfMonthAfter(PredicatePath path, int day),
+    Result dateDayOfMonthBefore(PredicatePath path, int day),
+    Result dateDayOfWeek(PredicatePath path, String day),
+    Result dateDayOfWeekAfter(PredicatePath path, String day),
+    Result dateDayOfWeekBefore(PredicatePath path, String day),
+    Result dateMonth(PredicatePath path, String month),
+    Result dateMonthAfter(PredicatePath path, String month),
+    Result dateMonthBefore(PredicatePath path, String month),
+    Result dateYear(PredicatePath path, int year),
+    Result hour(PredicatePath path, int hour),
+    Result hourAfter(PredicatePath path, int hour),
+    Result hourBefore(PredicatePath path, int hour),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -700,6 +1126,22 @@ class _$FullTextPredicate implements FullTextPredicate {
     @required Result near(NearPredicate value),
     @required Result not(NotPredicate value),
     @required Result similar(SimilarPredicate value),
+    @required Result dateAfter(DateAfterPredicate value),
+    @required Result dateBefore(DateBeforePredicate value),
+    @required Result dateBetween(DateBetweenPredicate value),
+    @required Result dateDayOfMonth(DateDayOfMonthPredicate value),
+    @required Result dateDayOfMonthAfter(DateDayOfMonthAfterPredicate value),
+    @required Result dateDayOfMonthBefore(DateDayOfMonthBeforePredicate value),
+    @required Result dateDayOfWeek(DateDayOfWeekPredicate value),
+    @required Result dateDayOfWeekAfter(DateDayOfWeekAfterPredicate value),
+    @required Result dateDayOfWeekBefore(DateDayOfWeekBeforePredicate value),
+    @required Result dateMonth(DateMonthPredicate value),
+    @required Result dateMonthAfter(DateMonthAfterPredicate value),
+    @required Result dateMonthBefore(DateMonthBeforePredicate value),
+    @required Result dateYear(DateYearPredicate value),
+    @required Result hour(DateHourPredicate value),
+    @required Result hourAfter(DateHourAfterPredicate value),
+    @required Result hourBefore(DateHourBeforePredicate value),
   }) {
     assert(any != null);
     assert(at != null);
@@ -713,6 +1155,22 @@ class _$FullTextPredicate implements FullTextPredicate {
     assert(near != null);
     assert(not != null);
     assert(similar != null);
+    assert(dateAfter != null);
+    assert(dateBefore != null);
+    assert(dateBetween != null);
+    assert(dateDayOfMonth != null);
+    assert(dateDayOfMonthAfter != null);
+    assert(dateDayOfMonthBefore != null);
+    assert(dateDayOfWeek != null);
+    assert(dateDayOfWeekAfter != null);
+    assert(dateDayOfWeekBefore != null);
+    assert(dateMonth != null);
+    assert(dateMonthAfter != null);
+    assert(dateMonthBefore != null);
+    assert(dateYear != null);
+    assert(hour != null);
+    assert(hourAfter != null);
+    assert(hourBefore != null);
     return fullText(this);
   }
 
@@ -731,6 +1189,22 @@ class _$FullTextPredicate implements FullTextPredicate {
     Result near(NearPredicate value),
     Result not(NotPredicate value),
     Result similar(SimilarPredicate value),
+    Result dateAfter(DateAfterPredicate value),
+    Result dateBefore(DateBeforePredicate value),
+    Result dateBetween(DateBetweenPredicate value),
+    Result dateDayOfMonth(DateDayOfMonthPredicate value),
+    Result dateDayOfMonthAfter(DateDayOfMonthAfterPredicate value),
+    Result dateDayOfMonthBefore(DateDayOfMonthBeforePredicate value),
+    Result dateDayOfWeek(DateDayOfWeekPredicate value),
+    Result dateDayOfWeekAfter(DateDayOfWeekAfterPredicate value),
+    Result dateDayOfWeekBefore(DateDayOfWeekBeforePredicate value),
+    Result dateMonth(DateMonthPredicate value),
+    Result dateMonthAfter(DateMonthAfterPredicate value),
+    Result dateMonthBefore(DateMonthBeforePredicate value),
+    Result dateYear(DateYearPredicate value),
+    Result hour(DateHourPredicate value),
+    Result hourAfter(DateHourAfterPredicate value),
+    Result hourBefore(DateHourBeforePredicate value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -831,7 +1305,24 @@ class _$GtPredicate implements GtPredicate {
         Result near(PredicatePath path, double latitude, double longitude,
             double radius),
     @required Result not(PredicatePath path, String value),
-    @required Result similar(String id, String value),
+    @required Result similar(String id, int value),
+    @required Result dateAfter(PredicatePath path, int epoch),
+    @required Result dateBefore(PredicatePath path, int epoch),
+    @required
+        Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
+    @required Result dateDayOfMonth(PredicatePath path, int day),
+    @required Result dateDayOfMonthAfter(PredicatePath path, int day),
+    @required Result dateDayOfMonthBefore(PredicatePath path, int day),
+    @required Result dateDayOfWeek(PredicatePath path, String day),
+    @required Result dateDayOfWeekAfter(PredicatePath path, String day),
+    @required Result dateDayOfWeekBefore(PredicatePath path, String day),
+    @required Result dateMonth(PredicatePath path, String month),
+    @required Result dateMonthAfter(PredicatePath path, String month),
+    @required Result dateMonthBefore(PredicatePath path, String month),
+    @required Result dateYear(PredicatePath path, int year),
+    @required Result hour(PredicatePath path, int hour),
+    @required Result hourAfter(PredicatePath path, int hour),
+    @required Result hourBefore(PredicatePath path, int hour),
   }) {
     assert(any != null);
     assert(at != null);
@@ -845,6 +1336,22 @@ class _$GtPredicate implements GtPredicate {
     assert(near != null);
     assert(not != null);
     assert(similar != null);
+    assert(dateAfter != null);
+    assert(dateBefore != null);
+    assert(dateBetween != null);
+    assert(dateDayOfMonth != null);
+    assert(dateDayOfMonthAfter != null);
+    assert(dateDayOfMonthBefore != null);
+    assert(dateDayOfWeek != null);
+    assert(dateDayOfWeekAfter != null);
+    assert(dateDayOfWeekBefore != null);
+    assert(dateMonth != null);
+    assert(dateMonthAfter != null);
+    assert(dateMonthBefore != null);
+    assert(dateYear != null);
+    assert(hour != null);
+    assert(hourAfter != null);
+    assert(hourBefore != null);
     return gt(path, value);
   }
 
@@ -863,7 +1370,23 @@ class _$GtPredicate implements GtPredicate {
     Result near(
         PredicatePath path, double latitude, double longitude, double radius),
     Result not(PredicatePath path, String value),
-    Result similar(String id, String value),
+    Result similar(String id, int value),
+    Result dateAfter(PredicatePath path, int epoch),
+    Result dateBefore(PredicatePath path, int epoch),
+    Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
+    Result dateDayOfMonth(PredicatePath path, int day),
+    Result dateDayOfMonthAfter(PredicatePath path, int day),
+    Result dateDayOfMonthBefore(PredicatePath path, int day),
+    Result dateDayOfWeek(PredicatePath path, String day),
+    Result dateDayOfWeekAfter(PredicatePath path, String day),
+    Result dateDayOfWeekBefore(PredicatePath path, String day),
+    Result dateMonth(PredicatePath path, String month),
+    Result dateMonthAfter(PredicatePath path, String month),
+    Result dateMonthBefore(PredicatePath path, String month),
+    Result dateYear(PredicatePath path, int year),
+    Result hour(PredicatePath path, int hour),
+    Result hourAfter(PredicatePath path, int hour),
+    Result hourBefore(PredicatePath path, int hour),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -888,6 +1411,22 @@ class _$GtPredicate implements GtPredicate {
     @required Result near(NearPredicate value),
     @required Result not(NotPredicate value),
     @required Result similar(SimilarPredicate value),
+    @required Result dateAfter(DateAfterPredicate value),
+    @required Result dateBefore(DateBeforePredicate value),
+    @required Result dateBetween(DateBetweenPredicate value),
+    @required Result dateDayOfMonth(DateDayOfMonthPredicate value),
+    @required Result dateDayOfMonthAfter(DateDayOfMonthAfterPredicate value),
+    @required Result dateDayOfMonthBefore(DateDayOfMonthBeforePredicate value),
+    @required Result dateDayOfWeek(DateDayOfWeekPredicate value),
+    @required Result dateDayOfWeekAfter(DateDayOfWeekAfterPredicate value),
+    @required Result dateDayOfWeekBefore(DateDayOfWeekBeforePredicate value),
+    @required Result dateMonth(DateMonthPredicate value),
+    @required Result dateMonthAfter(DateMonthAfterPredicate value),
+    @required Result dateMonthBefore(DateMonthBeforePredicate value),
+    @required Result dateYear(DateYearPredicate value),
+    @required Result hour(DateHourPredicate value),
+    @required Result hourAfter(DateHourAfterPredicate value),
+    @required Result hourBefore(DateHourBeforePredicate value),
   }) {
     assert(any != null);
     assert(at != null);
@@ -901,6 +1440,22 @@ class _$GtPredicate implements GtPredicate {
     assert(near != null);
     assert(not != null);
     assert(similar != null);
+    assert(dateAfter != null);
+    assert(dateBefore != null);
+    assert(dateBetween != null);
+    assert(dateDayOfMonth != null);
+    assert(dateDayOfMonthAfter != null);
+    assert(dateDayOfMonthBefore != null);
+    assert(dateDayOfWeek != null);
+    assert(dateDayOfWeekAfter != null);
+    assert(dateDayOfWeekBefore != null);
+    assert(dateMonth != null);
+    assert(dateMonthAfter != null);
+    assert(dateMonthBefore != null);
+    assert(dateYear != null);
+    assert(hour != null);
+    assert(hourAfter != null);
+    assert(hourBefore != null);
     return gt(this);
   }
 
@@ -919,6 +1474,22 @@ class _$GtPredicate implements GtPredicate {
     Result near(NearPredicate value),
     Result not(NotPredicate value),
     Result similar(SimilarPredicate value),
+    Result dateAfter(DateAfterPredicate value),
+    Result dateBefore(DateBeforePredicate value),
+    Result dateBetween(DateBetweenPredicate value),
+    Result dateDayOfMonth(DateDayOfMonthPredicate value),
+    Result dateDayOfMonthAfter(DateDayOfMonthAfterPredicate value),
+    Result dateDayOfMonthBefore(DateDayOfMonthBeforePredicate value),
+    Result dateDayOfWeek(DateDayOfWeekPredicate value),
+    Result dateDayOfWeekAfter(DateDayOfWeekAfterPredicate value),
+    Result dateDayOfWeekBefore(DateDayOfWeekBeforePredicate value),
+    Result dateMonth(DateMonthPredicate value),
+    Result dateMonthAfter(DateMonthAfterPredicate value),
+    Result dateMonthBefore(DateMonthBeforePredicate value),
+    Result dateYear(DateYearPredicate value),
+    Result hour(DateHourPredicate value),
+    Result hourAfter(DateHourAfterPredicate value),
+    Result hourBefore(DateHourBeforePredicate value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1008,7 +1579,24 @@ class _$HasPredicate implements HasPredicate {
         Result near(PredicatePath path, double latitude, double longitude,
             double radius),
     @required Result not(PredicatePath path, String value),
-    @required Result similar(String id, String value),
+    @required Result similar(String id, int value),
+    @required Result dateAfter(PredicatePath path, int epoch),
+    @required Result dateBefore(PredicatePath path, int epoch),
+    @required
+        Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
+    @required Result dateDayOfMonth(PredicatePath path, int day),
+    @required Result dateDayOfMonthAfter(PredicatePath path, int day),
+    @required Result dateDayOfMonthBefore(PredicatePath path, int day),
+    @required Result dateDayOfWeek(PredicatePath path, String day),
+    @required Result dateDayOfWeekAfter(PredicatePath path, String day),
+    @required Result dateDayOfWeekBefore(PredicatePath path, String day),
+    @required Result dateMonth(PredicatePath path, String month),
+    @required Result dateMonthAfter(PredicatePath path, String month),
+    @required Result dateMonthBefore(PredicatePath path, String month),
+    @required Result dateYear(PredicatePath path, int year),
+    @required Result hour(PredicatePath path, int hour),
+    @required Result hourAfter(PredicatePath path, int hour),
+    @required Result hourBefore(PredicatePath path, int hour),
   }) {
     assert(any != null);
     assert(at != null);
@@ -1022,6 +1610,22 @@ class _$HasPredicate implements HasPredicate {
     assert(near != null);
     assert(not != null);
     assert(similar != null);
+    assert(dateAfter != null);
+    assert(dateBefore != null);
+    assert(dateBetween != null);
+    assert(dateDayOfMonth != null);
+    assert(dateDayOfMonthAfter != null);
+    assert(dateDayOfMonthBefore != null);
+    assert(dateDayOfWeek != null);
+    assert(dateDayOfWeekAfter != null);
+    assert(dateDayOfWeekBefore != null);
+    assert(dateMonth != null);
+    assert(dateMonthAfter != null);
+    assert(dateMonthBefore != null);
+    assert(dateYear != null);
+    assert(hour != null);
+    assert(hourAfter != null);
+    assert(hourBefore != null);
     return has(path);
   }
 
@@ -1040,7 +1644,23 @@ class _$HasPredicate implements HasPredicate {
     Result near(
         PredicatePath path, double latitude, double longitude, double radius),
     Result not(PredicatePath path, String value),
-    Result similar(String id, String value),
+    Result similar(String id, int value),
+    Result dateAfter(PredicatePath path, int epoch),
+    Result dateBefore(PredicatePath path, int epoch),
+    Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
+    Result dateDayOfMonth(PredicatePath path, int day),
+    Result dateDayOfMonthAfter(PredicatePath path, int day),
+    Result dateDayOfMonthBefore(PredicatePath path, int day),
+    Result dateDayOfWeek(PredicatePath path, String day),
+    Result dateDayOfWeekAfter(PredicatePath path, String day),
+    Result dateDayOfWeekBefore(PredicatePath path, String day),
+    Result dateMonth(PredicatePath path, String month),
+    Result dateMonthAfter(PredicatePath path, String month),
+    Result dateMonthBefore(PredicatePath path, String month),
+    Result dateYear(PredicatePath path, int year),
+    Result hour(PredicatePath path, int hour),
+    Result hourAfter(PredicatePath path, int hour),
+    Result hourBefore(PredicatePath path, int hour),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1065,6 +1685,22 @@ class _$HasPredicate implements HasPredicate {
     @required Result near(NearPredicate value),
     @required Result not(NotPredicate value),
     @required Result similar(SimilarPredicate value),
+    @required Result dateAfter(DateAfterPredicate value),
+    @required Result dateBefore(DateBeforePredicate value),
+    @required Result dateBetween(DateBetweenPredicate value),
+    @required Result dateDayOfMonth(DateDayOfMonthPredicate value),
+    @required Result dateDayOfMonthAfter(DateDayOfMonthAfterPredicate value),
+    @required Result dateDayOfMonthBefore(DateDayOfMonthBeforePredicate value),
+    @required Result dateDayOfWeek(DateDayOfWeekPredicate value),
+    @required Result dateDayOfWeekAfter(DateDayOfWeekAfterPredicate value),
+    @required Result dateDayOfWeekBefore(DateDayOfWeekBeforePredicate value),
+    @required Result dateMonth(DateMonthPredicate value),
+    @required Result dateMonthAfter(DateMonthAfterPredicate value),
+    @required Result dateMonthBefore(DateMonthBeforePredicate value),
+    @required Result dateYear(DateYearPredicate value),
+    @required Result hour(DateHourPredicate value),
+    @required Result hourAfter(DateHourAfterPredicate value),
+    @required Result hourBefore(DateHourBeforePredicate value),
   }) {
     assert(any != null);
     assert(at != null);
@@ -1078,6 +1714,22 @@ class _$HasPredicate implements HasPredicate {
     assert(near != null);
     assert(not != null);
     assert(similar != null);
+    assert(dateAfter != null);
+    assert(dateBefore != null);
+    assert(dateBetween != null);
+    assert(dateDayOfMonth != null);
+    assert(dateDayOfMonthAfter != null);
+    assert(dateDayOfMonthBefore != null);
+    assert(dateDayOfWeek != null);
+    assert(dateDayOfWeekAfter != null);
+    assert(dateDayOfWeekBefore != null);
+    assert(dateMonth != null);
+    assert(dateMonthAfter != null);
+    assert(dateMonthBefore != null);
+    assert(dateYear != null);
+    assert(hour != null);
+    assert(hourAfter != null);
+    assert(hourBefore != null);
     return has(this);
   }
 
@@ -1096,6 +1748,22 @@ class _$HasPredicate implements HasPredicate {
     Result near(NearPredicate value),
     Result not(NotPredicate value),
     Result similar(SimilarPredicate value),
+    Result dateAfter(DateAfterPredicate value),
+    Result dateBefore(DateBeforePredicate value),
+    Result dateBetween(DateBetweenPredicate value),
+    Result dateDayOfMonth(DateDayOfMonthPredicate value),
+    Result dateDayOfMonthAfter(DateDayOfMonthAfterPredicate value),
+    Result dateDayOfMonthBefore(DateDayOfMonthBeforePredicate value),
+    Result dateDayOfWeek(DateDayOfWeekPredicate value),
+    Result dateDayOfWeekAfter(DateDayOfWeekAfterPredicate value),
+    Result dateDayOfWeekBefore(DateDayOfWeekBeforePredicate value),
+    Result dateMonth(DateMonthPredicate value),
+    Result dateMonthAfter(DateMonthAfterPredicate value),
+    Result dateMonthBefore(DateMonthBeforePredicate value),
+    Result dateYear(DateYearPredicate value),
+    Result hour(DateHourPredicate value),
+    Result hourAfter(DateHourAfterPredicate value),
+    Result hourBefore(DateHourBeforePredicate value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1204,7 +1872,24 @@ class _$InRangePredicate implements InRangePredicate {
         Result near(PredicatePath path, double latitude, double longitude,
             double radius),
     @required Result not(PredicatePath path, String value),
-    @required Result similar(String id, String value),
+    @required Result similar(String id, int value),
+    @required Result dateAfter(PredicatePath path, int epoch),
+    @required Result dateBefore(PredicatePath path, int epoch),
+    @required
+        Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
+    @required Result dateDayOfMonth(PredicatePath path, int day),
+    @required Result dateDayOfMonthAfter(PredicatePath path, int day),
+    @required Result dateDayOfMonthBefore(PredicatePath path, int day),
+    @required Result dateDayOfWeek(PredicatePath path, String day),
+    @required Result dateDayOfWeekAfter(PredicatePath path, String day),
+    @required Result dateDayOfWeekBefore(PredicatePath path, String day),
+    @required Result dateMonth(PredicatePath path, String month),
+    @required Result dateMonthAfter(PredicatePath path, String month),
+    @required Result dateMonthBefore(PredicatePath path, String month),
+    @required Result dateYear(PredicatePath path, int year),
+    @required Result hour(PredicatePath path, int hour),
+    @required Result hourAfter(PredicatePath path, int hour),
+    @required Result hourBefore(PredicatePath path, int hour),
   }) {
     assert(any != null);
     assert(at != null);
@@ -1218,6 +1903,22 @@ class _$InRangePredicate implements InRangePredicate {
     assert(near != null);
     assert(not != null);
     assert(similar != null);
+    assert(dateAfter != null);
+    assert(dateBefore != null);
+    assert(dateBetween != null);
+    assert(dateDayOfMonth != null);
+    assert(dateDayOfMonthAfter != null);
+    assert(dateDayOfMonthBefore != null);
+    assert(dateDayOfWeek != null);
+    assert(dateDayOfWeekAfter != null);
+    assert(dateDayOfWeekBefore != null);
+    assert(dateMonth != null);
+    assert(dateMonthAfter != null);
+    assert(dateMonthBefore != null);
+    assert(dateYear != null);
+    assert(hour != null);
+    assert(hourAfter != null);
+    assert(hourBefore != null);
     return inRange(path, lowerLimit, upperLimit);
   }
 
@@ -1236,7 +1937,23 @@ class _$InRangePredicate implements InRangePredicate {
     Result near(
         PredicatePath path, double latitude, double longitude, double radius),
     Result not(PredicatePath path, String value),
-    Result similar(String id, String value),
+    Result similar(String id, int value),
+    Result dateAfter(PredicatePath path, int epoch),
+    Result dateBefore(PredicatePath path, int epoch),
+    Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
+    Result dateDayOfMonth(PredicatePath path, int day),
+    Result dateDayOfMonthAfter(PredicatePath path, int day),
+    Result dateDayOfMonthBefore(PredicatePath path, int day),
+    Result dateDayOfWeek(PredicatePath path, String day),
+    Result dateDayOfWeekAfter(PredicatePath path, String day),
+    Result dateDayOfWeekBefore(PredicatePath path, String day),
+    Result dateMonth(PredicatePath path, String month),
+    Result dateMonthAfter(PredicatePath path, String month),
+    Result dateMonthBefore(PredicatePath path, String month),
+    Result dateYear(PredicatePath path, int year),
+    Result hour(PredicatePath path, int hour),
+    Result hourAfter(PredicatePath path, int hour),
+    Result hourBefore(PredicatePath path, int hour),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1261,6 +1978,22 @@ class _$InRangePredicate implements InRangePredicate {
     @required Result near(NearPredicate value),
     @required Result not(NotPredicate value),
     @required Result similar(SimilarPredicate value),
+    @required Result dateAfter(DateAfterPredicate value),
+    @required Result dateBefore(DateBeforePredicate value),
+    @required Result dateBetween(DateBetweenPredicate value),
+    @required Result dateDayOfMonth(DateDayOfMonthPredicate value),
+    @required Result dateDayOfMonthAfter(DateDayOfMonthAfterPredicate value),
+    @required Result dateDayOfMonthBefore(DateDayOfMonthBeforePredicate value),
+    @required Result dateDayOfWeek(DateDayOfWeekPredicate value),
+    @required Result dateDayOfWeekAfter(DateDayOfWeekAfterPredicate value),
+    @required Result dateDayOfWeekBefore(DateDayOfWeekBeforePredicate value),
+    @required Result dateMonth(DateMonthPredicate value),
+    @required Result dateMonthAfter(DateMonthAfterPredicate value),
+    @required Result dateMonthBefore(DateMonthBeforePredicate value),
+    @required Result dateYear(DateYearPredicate value),
+    @required Result hour(DateHourPredicate value),
+    @required Result hourAfter(DateHourAfterPredicate value),
+    @required Result hourBefore(DateHourBeforePredicate value),
   }) {
     assert(any != null);
     assert(at != null);
@@ -1274,6 +2007,22 @@ class _$InRangePredicate implements InRangePredicate {
     assert(near != null);
     assert(not != null);
     assert(similar != null);
+    assert(dateAfter != null);
+    assert(dateBefore != null);
+    assert(dateBetween != null);
+    assert(dateDayOfMonth != null);
+    assert(dateDayOfMonthAfter != null);
+    assert(dateDayOfMonthBefore != null);
+    assert(dateDayOfWeek != null);
+    assert(dateDayOfWeekAfter != null);
+    assert(dateDayOfWeekBefore != null);
+    assert(dateMonth != null);
+    assert(dateMonthAfter != null);
+    assert(dateMonthBefore != null);
+    assert(dateYear != null);
+    assert(hour != null);
+    assert(hourAfter != null);
+    assert(hourBefore != null);
     return inRange(this);
   }
 
@@ -1292,6 +2041,22 @@ class _$InRangePredicate implements InRangePredicate {
     Result near(NearPredicate value),
     Result not(NotPredicate value),
     Result similar(SimilarPredicate value),
+    Result dateAfter(DateAfterPredicate value),
+    Result dateBefore(DateBeforePredicate value),
+    Result dateBetween(DateBetweenPredicate value),
+    Result dateDayOfMonth(DateDayOfMonthPredicate value),
+    Result dateDayOfMonthAfter(DateDayOfMonthAfterPredicate value),
+    Result dateDayOfMonthBefore(DateDayOfMonthBeforePredicate value),
+    Result dateDayOfWeek(DateDayOfWeekPredicate value),
+    Result dateDayOfWeekAfter(DateDayOfWeekAfterPredicate value),
+    Result dateDayOfWeekBefore(DateDayOfWeekBeforePredicate value),
+    Result dateMonth(DateMonthPredicate value),
+    Result dateMonthAfter(DateMonthAfterPredicate value),
+    Result dateMonthBefore(DateMonthBeforePredicate value),
+    Result dateYear(DateYearPredicate value),
+    Result hour(DateHourPredicate value),
+    Result hourAfter(DateHourAfterPredicate value),
+    Result hourBefore(DateHourBeforePredicate value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1394,7 +2159,24 @@ class _$InPredicate implements InPredicate {
         Result near(PredicatePath path, double latitude, double longitude,
             double radius),
     @required Result not(PredicatePath path, String value),
-    @required Result similar(String id, String value),
+    @required Result similar(String id, int value),
+    @required Result dateAfter(PredicatePath path, int epoch),
+    @required Result dateBefore(PredicatePath path, int epoch),
+    @required
+        Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
+    @required Result dateDayOfMonth(PredicatePath path, int day),
+    @required Result dateDayOfMonthAfter(PredicatePath path, int day),
+    @required Result dateDayOfMonthBefore(PredicatePath path, int day),
+    @required Result dateDayOfWeek(PredicatePath path, String day),
+    @required Result dateDayOfWeekAfter(PredicatePath path, String day),
+    @required Result dateDayOfWeekBefore(PredicatePath path, String day),
+    @required Result dateMonth(PredicatePath path, String month),
+    @required Result dateMonthAfter(PredicatePath path, String month),
+    @required Result dateMonthBefore(PredicatePath path, String month),
+    @required Result dateYear(PredicatePath path, int year),
+    @required Result hour(PredicatePath path, int hour),
+    @required Result hourAfter(PredicatePath path, int hour),
+    @required Result hourBefore(PredicatePath path, int hour),
   }) {
     assert(any != null);
     assert(at != null);
@@ -1408,6 +2190,22 @@ class _$InPredicate implements InPredicate {
     assert(near != null);
     assert(not != null);
     assert(similar != null);
+    assert(dateAfter != null);
+    assert(dateBefore != null);
+    assert(dateBetween != null);
+    assert(dateDayOfMonth != null);
+    assert(dateDayOfMonthAfter != null);
+    assert(dateDayOfMonthBefore != null);
+    assert(dateDayOfWeek != null);
+    assert(dateDayOfWeekAfter != null);
+    assert(dateDayOfWeekBefore != null);
+    assert(dateMonth != null);
+    assert(dateMonthAfter != null);
+    assert(dateMonthBefore != null);
+    assert(dateYear != null);
+    assert(hour != null);
+    assert(hourAfter != null);
+    assert(hourBefore != null);
     return into(path, values);
   }
 
@@ -1426,7 +2224,23 @@ class _$InPredicate implements InPredicate {
     Result near(
         PredicatePath path, double latitude, double longitude, double radius),
     Result not(PredicatePath path, String value),
-    Result similar(String id, String value),
+    Result similar(String id, int value),
+    Result dateAfter(PredicatePath path, int epoch),
+    Result dateBefore(PredicatePath path, int epoch),
+    Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
+    Result dateDayOfMonth(PredicatePath path, int day),
+    Result dateDayOfMonthAfter(PredicatePath path, int day),
+    Result dateDayOfMonthBefore(PredicatePath path, int day),
+    Result dateDayOfWeek(PredicatePath path, String day),
+    Result dateDayOfWeekAfter(PredicatePath path, String day),
+    Result dateDayOfWeekBefore(PredicatePath path, String day),
+    Result dateMonth(PredicatePath path, String month),
+    Result dateMonthAfter(PredicatePath path, String month),
+    Result dateMonthBefore(PredicatePath path, String month),
+    Result dateYear(PredicatePath path, int year),
+    Result hour(PredicatePath path, int hour),
+    Result hourAfter(PredicatePath path, int hour),
+    Result hourBefore(PredicatePath path, int hour),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1451,6 +2265,22 @@ class _$InPredicate implements InPredicate {
     @required Result near(NearPredicate value),
     @required Result not(NotPredicate value),
     @required Result similar(SimilarPredicate value),
+    @required Result dateAfter(DateAfterPredicate value),
+    @required Result dateBefore(DateBeforePredicate value),
+    @required Result dateBetween(DateBetweenPredicate value),
+    @required Result dateDayOfMonth(DateDayOfMonthPredicate value),
+    @required Result dateDayOfMonthAfter(DateDayOfMonthAfterPredicate value),
+    @required Result dateDayOfMonthBefore(DateDayOfMonthBeforePredicate value),
+    @required Result dateDayOfWeek(DateDayOfWeekPredicate value),
+    @required Result dateDayOfWeekAfter(DateDayOfWeekAfterPredicate value),
+    @required Result dateDayOfWeekBefore(DateDayOfWeekBeforePredicate value),
+    @required Result dateMonth(DateMonthPredicate value),
+    @required Result dateMonthAfter(DateMonthAfterPredicate value),
+    @required Result dateMonthBefore(DateMonthBeforePredicate value),
+    @required Result dateYear(DateYearPredicate value),
+    @required Result hour(DateHourPredicate value),
+    @required Result hourAfter(DateHourAfterPredicate value),
+    @required Result hourBefore(DateHourBeforePredicate value),
   }) {
     assert(any != null);
     assert(at != null);
@@ -1464,6 +2294,22 @@ class _$InPredicate implements InPredicate {
     assert(near != null);
     assert(not != null);
     assert(similar != null);
+    assert(dateAfter != null);
+    assert(dateBefore != null);
+    assert(dateBetween != null);
+    assert(dateDayOfMonth != null);
+    assert(dateDayOfMonthAfter != null);
+    assert(dateDayOfMonthBefore != null);
+    assert(dateDayOfWeek != null);
+    assert(dateDayOfWeekAfter != null);
+    assert(dateDayOfWeekBefore != null);
+    assert(dateMonth != null);
+    assert(dateMonthAfter != null);
+    assert(dateMonthBefore != null);
+    assert(dateYear != null);
+    assert(hour != null);
+    assert(hourAfter != null);
+    assert(hourBefore != null);
     return into(this);
   }
 
@@ -1482,6 +2328,22 @@ class _$InPredicate implements InPredicate {
     Result near(NearPredicate value),
     Result not(NotPredicate value),
     Result similar(SimilarPredicate value),
+    Result dateAfter(DateAfterPredicate value),
+    Result dateBefore(DateBeforePredicate value),
+    Result dateBetween(DateBetweenPredicate value),
+    Result dateDayOfMonth(DateDayOfMonthPredicate value),
+    Result dateDayOfMonthAfter(DateDayOfMonthAfterPredicate value),
+    Result dateDayOfMonthBefore(DateDayOfMonthBeforePredicate value),
+    Result dateDayOfWeek(DateDayOfWeekPredicate value),
+    Result dateDayOfWeekAfter(DateDayOfWeekAfterPredicate value),
+    Result dateDayOfWeekBefore(DateDayOfWeekBeforePredicate value),
+    Result dateMonth(DateMonthPredicate value),
+    Result dateMonthAfter(DateMonthAfterPredicate value),
+    Result dateMonthBefore(DateMonthBeforePredicate value),
+    Result dateYear(DateYearPredicate value),
+    Result hour(DateHourPredicate value),
+    Result hourAfter(DateHourAfterPredicate value),
+    Result hourBefore(DateHourBeforePredicate value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1581,7 +2443,24 @@ class _$LtPredicate implements LtPredicate {
         Result near(PredicatePath path, double latitude, double longitude,
             double radius),
     @required Result not(PredicatePath path, String value),
-    @required Result similar(String id, String value),
+    @required Result similar(String id, int value),
+    @required Result dateAfter(PredicatePath path, int epoch),
+    @required Result dateBefore(PredicatePath path, int epoch),
+    @required
+        Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
+    @required Result dateDayOfMonth(PredicatePath path, int day),
+    @required Result dateDayOfMonthAfter(PredicatePath path, int day),
+    @required Result dateDayOfMonthBefore(PredicatePath path, int day),
+    @required Result dateDayOfWeek(PredicatePath path, String day),
+    @required Result dateDayOfWeekAfter(PredicatePath path, String day),
+    @required Result dateDayOfWeekBefore(PredicatePath path, String day),
+    @required Result dateMonth(PredicatePath path, String month),
+    @required Result dateMonthAfter(PredicatePath path, String month),
+    @required Result dateMonthBefore(PredicatePath path, String month),
+    @required Result dateYear(PredicatePath path, int year),
+    @required Result hour(PredicatePath path, int hour),
+    @required Result hourAfter(PredicatePath path, int hour),
+    @required Result hourBefore(PredicatePath path, int hour),
   }) {
     assert(any != null);
     assert(at != null);
@@ -1595,6 +2474,22 @@ class _$LtPredicate implements LtPredicate {
     assert(near != null);
     assert(not != null);
     assert(similar != null);
+    assert(dateAfter != null);
+    assert(dateBefore != null);
+    assert(dateBetween != null);
+    assert(dateDayOfMonth != null);
+    assert(dateDayOfMonthAfter != null);
+    assert(dateDayOfMonthBefore != null);
+    assert(dateDayOfWeek != null);
+    assert(dateDayOfWeekAfter != null);
+    assert(dateDayOfWeekBefore != null);
+    assert(dateMonth != null);
+    assert(dateMonthAfter != null);
+    assert(dateMonthBefore != null);
+    assert(dateYear != null);
+    assert(hour != null);
+    assert(hourAfter != null);
+    assert(hourBefore != null);
     return lt(path, value);
   }
 
@@ -1613,7 +2508,23 @@ class _$LtPredicate implements LtPredicate {
     Result near(
         PredicatePath path, double latitude, double longitude, double radius),
     Result not(PredicatePath path, String value),
-    Result similar(String id, String value),
+    Result similar(String id, int value),
+    Result dateAfter(PredicatePath path, int epoch),
+    Result dateBefore(PredicatePath path, int epoch),
+    Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
+    Result dateDayOfMonth(PredicatePath path, int day),
+    Result dateDayOfMonthAfter(PredicatePath path, int day),
+    Result dateDayOfMonthBefore(PredicatePath path, int day),
+    Result dateDayOfWeek(PredicatePath path, String day),
+    Result dateDayOfWeekAfter(PredicatePath path, String day),
+    Result dateDayOfWeekBefore(PredicatePath path, String day),
+    Result dateMonth(PredicatePath path, String month),
+    Result dateMonthAfter(PredicatePath path, String month),
+    Result dateMonthBefore(PredicatePath path, String month),
+    Result dateYear(PredicatePath path, int year),
+    Result hour(PredicatePath path, int hour),
+    Result hourAfter(PredicatePath path, int hour),
+    Result hourBefore(PredicatePath path, int hour),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1638,6 +2549,22 @@ class _$LtPredicate implements LtPredicate {
     @required Result near(NearPredicate value),
     @required Result not(NotPredicate value),
     @required Result similar(SimilarPredicate value),
+    @required Result dateAfter(DateAfterPredicate value),
+    @required Result dateBefore(DateBeforePredicate value),
+    @required Result dateBetween(DateBetweenPredicate value),
+    @required Result dateDayOfMonth(DateDayOfMonthPredicate value),
+    @required Result dateDayOfMonthAfter(DateDayOfMonthAfterPredicate value),
+    @required Result dateDayOfMonthBefore(DateDayOfMonthBeforePredicate value),
+    @required Result dateDayOfWeek(DateDayOfWeekPredicate value),
+    @required Result dateDayOfWeekAfter(DateDayOfWeekAfterPredicate value),
+    @required Result dateDayOfWeekBefore(DateDayOfWeekBeforePredicate value),
+    @required Result dateMonth(DateMonthPredicate value),
+    @required Result dateMonthAfter(DateMonthAfterPredicate value),
+    @required Result dateMonthBefore(DateMonthBeforePredicate value),
+    @required Result dateYear(DateYearPredicate value),
+    @required Result hour(DateHourPredicate value),
+    @required Result hourAfter(DateHourAfterPredicate value),
+    @required Result hourBefore(DateHourBeforePredicate value),
   }) {
     assert(any != null);
     assert(at != null);
@@ -1651,6 +2578,22 @@ class _$LtPredicate implements LtPredicate {
     assert(near != null);
     assert(not != null);
     assert(similar != null);
+    assert(dateAfter != null);
+    assert(dateBefore != null);
+    assert(dateBetween != null);
+    assert(dateDayOfMonth != null);
+    assert(dateDayOfMonthAfter != null);
+    assert(dateDayOfMonthBefore != null);
+    assert(dateDayOfWeek != null);
+    assert(dateDayOfWeekAfter != null);
+    assert(dateDayOfWeekBefore != null);
+    assert(dateMonth != null);
+    assert(dateMonthAfter != null);
+    assert(dateMonthBefore != null);
+    assert(dateYear != null);
+    assert(hour != null);
+    assert(hourAfter != null);
+    assert(hourBefore != null);
     return lt(this);
   }
 
@@ -1669,6 +2612,22 @@ class _$LtPredicate implements LtPredicate {
     Result near(NearPredicate value),
     Result not(NotPredicate value),
     Result similar(SimilarPredicate value),
+    Result dateAfter(DateAfterPredicate value),
+    Result dateBefore(DateBeforePredicate value),
+    Result dateBetween(DateBetweenPredicate value),
+    Result dateDayOfMonth(DateDayOfMonthPredicate value),
+    Result dateDayOfMonthAfter(DateDayOfMonthAfterPredicate value),
+    Result dateDayOfMonthBefore(DateDayOfMonthBeforePredicate value),
+    Result dateDayOfWeek(DateDayOfWeekPredicate value),
+    Result dateDayOfWeekAfter(DateDayOfWeekAfterPredicate value),
+    Result dateDayOfWeekBefore(DateDayOfWeekBeforePredicate value),
+    Result dateMonth(DateMonthPredicate value),
+    Result dateMonthAfter(DateMonthAfterPredicate value),
+    Result dateMonthBefore(DateMonthBeforePredicate value),
+    Result dateYear(DateYearPredicate value),
+    Result hour(DateHourPredicate value),
+    Result hourAfter(DateHourAfterPredicate value),
+    Result hourBefore(DateHourBeforePredicate value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1758,7 +2717,24 @@ class _$MissingPredicate implements MissingPredicate {
         Result near(PredicatePath path, double latitude, double longitude,
             double radius),
     @required Result not(PredicatePath path, String value),
-    @required Result similar(String id, String value),
+    @required Result similar(String id, int value),
+    @required Result dateAfter(PredicatePath path, int epoch),
+    @required Result dateBefore(PredicatePath path, int epoch),
+    @required
+        Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
+    @required Result dateDayOfMonth(PredicatePath path, int day),
+    @required Result dateDayOfMonthAfter(PredicatePath path, int day),
+    @required Result dateDayOfMonthBefore(PredicatePath path, int day),
+    @required Result dateDayOfWeek(PredicatePath path, String day),
+    @required Result dateDayOfWeekAfter(PredicatePath path, String day),
+    @required Result dateDayOfWeekBefore(PredicatePath path, String day),
+    @required Result dateMonth(PredicatePath path, String month),
+    @required Result dateMonthAfter(PredicatePath path, String month),
+    @required Result dateMonthBefore(PredicatePath path, String month),
+    @required Result dateYear(PredicatePath path, int year),
+    @required Result hour(PredicatePath path, int hour),
+    @required Result hourAfter(PredicatePath path, int hour),
+    @required Result hourBefore(PredicatePath path, int hour),
   }) {
     assert(any != null);
     assert(at != null);
@@ -1772,6 +2748,22 @@ class _$MissingPredicate implements MissingPredicate {
     assert(near != null);
     assert(not != null);
     assert(similar != null);
+    assert(dateAfter != null);
+    assert(dateBefore != null);
+    assert(dateBetween != null);
+    assert(dateDayOfMonth != null);
+    assert(dateDayOfMonthAfter != null);
+    assert(dateDayOfMonthBefore != null);
+    assert(dateDayOfWeek != null);
+    assert(dateDayOfWeekAfter != null);
+    assert(dateDayOfWeekBefore != null);
+    assert(dateMonth != null);
+    assert(dateMonthAfter != null);
+    assert(dateMonthBefore != null);
+    assert(dateYear != null);
+    assert(hour != null);
+    assert(hourAfter != null);
+    assert(hourBefore != null);
     return missing(path);
   }
 
@@ -1790,7 +2782,23 @@ class _$MissingPredicate implements MissingPredicate {
     Result near(
         PredicatePath path, double latitude, double longitude, double radius),
     Result not(PredicatePath path, String value),
-    Result similar(String id, String value),
+    Result similar(String id, int value),
+    Result dateAfter(PredicatePath path, int epoch),
+    Result dateBefore(PredicatePath path, int epoch),
+    Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
+    Result dateDayOfMonth(PredicatePath path, int day),
+    Result dateDayOfMonthAfter(PredicatePath path, int day),
+    Result dateDayOfMonthBefore(PredicatePath path, int day),
+    Result dateDayOfWeek(PredicatePath path, String day),
+    Result dateDayOfWeekAfter(PredicatePath path, String day),
+    Result dateDayOfWeekBefore(PredicatePath path, String day),
+    Result dateMonth(PredicatePath path, String month),
+    Result dateMonthAfter(PredicatePath path, String month),
+    Result dateMonthBefore(PredicatePath path, String month),
+    Result dateYear(PredicatePath path, int year),
+    Result hour(PredicatePath path, int hour),
+    Result hourAfter(PredicatePath path, int hour),
+    Result hourBefore(PredicatePath path, int hour),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1815,6 +2823,22 @@ class _$MissingPredicate implements MissingPredicate {
     @required Result near(NearPredicate value),
     @required Result not(NotPredicate value),
     @required Result similar(SimilarPredicate value),
+    @required Result dateAfter(DateAfterPredicate value),
+    @required Result dateBefore(DateBeforePredicate value),
+    @required Result dateBetween(DateBetweenPredicate value),
+    @required Result dateDayOfMonth(DateDayOfMonthPredicate value),
+    @required Result dateDayOfMonthAfter(DateDayOfMonthAfterPredicate value),
+    @required Result dateDayOfMonthBefore(DateDayOfMonthBeforePredicate value),
+    @required Result dateDayOfWeek(DateDayOfWeekPredicate value),
+    @required Result dateDayOfWeekAfter(DateDayOfWeekAfterPredicate value),
+    @required Result dateDayOfWeekBefore(DateDayOfWeekBeforePredicate value),
+    @required Result dateMonth(DateMonthPredicate value),
+    @required Result dateMonthAfter(DateMonthAfterPredicate value),
+    @required Result dateMonthBefore(DateMonthBeforePredicate value),
+    @required Result dateYear(DateYearPredicate value),
+    @required Result hour(DateHourPredicate value),
+    @required Result hourAfter(DateHourAfterPredicate value),
+    @required Result hourBefore(DateHourBeforePredicate value),
   }) {
     assert(any != null);
     assert(at != null);
@@ -1828,6 +2852,22 @@ class _$MissingPredicate implements MissingPredicate {
     assert(near != null);
     assert(not != null);
     assert(similar != null);
+    assert(dateAfter != null);
+    assert(dateBefore != null);
+    assert(dateBetween != null);
+    assert(dateDayOfMonth != null);
+    assert(dateDayOfMonthAfter != null);
+    assert(dateDayOfMonthBefore != null);
+    assert(dateDayOfWeek != null);
+    assert(dateDayOfWeekAfter != null);
+    assert(dateDayOfWeekBefore != null);
+    assert(dateMonth != null);
+    assert(dateMonthAfter != null);
+    assert(dateMonthBefore != null);
+    assert(dateYear != null);
+    assert(hour != null);
+    assert(hourAfter != null);
+    assert(hourBefore != null);
     return missing(this);
   }
 
@@ -1846,6 +2886,22 @@ class _$MissingPredicate implements MissingPredicate {
     Result near(NearPredicate value),
     Result not(NotPredicate value),
     Result similar(SimilarPredicate value),
+    Result dateAfter(DateAfterPredicate value),
+    Result dateBefore(DateBeforePredicate value),
+    Result dateBetween(DateBetweenPredicate value),
+    Result dateDayOfMonth(DateDayOfMonthPredicate value),
+    Result dateDayOfMonthAfter(DateDayOfMonthAfterPredicate value),
+    Result dateDayOfMonthBefore(DateDayOfMonthBeforePredicate value),
+    Result dateDayOfWeek(DateDayOfWeekPredicate value),
+    Result dateDayOfWeekAfter(DateDayOfWeekAfterPredicate value),
+    Result dateDayOfWeekBefore(DateDayOfWeekBeforePredicate value),
+    Result dateMonth(DateMonthPredicate value),
+    Result dateMonthAfter(DateMonthAfterPredicate value),
+    Result dateMonthBefore(DateMonthBeforePredicate value),
+    Result dateYear(DateYearPredicate value),
+    Result hour(DateHourPredicate value),
+    Result hourAfter(DateHourAfterPredicate value),
+    Result hourBefore(DateHourBeforePredicate value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1963,7 +3019,24 @@ class _$NearPredicate implements NearPredicate {
         Result near(PredicatePath path, double latitude, double longitude,
             double radius),
     @required Result not(PredicatePath path, String value),
-    @required Result similar(String id, String value),
+    @required Result similar(String id, int value),
+    @required Result dateAfter(PredicatePath path, int epoch),
+    @required Result dateBefore(PredicatePath path, int epoch),
+    @required
+        Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
+    @required Result dateDayOfMonth(PredicatePath path, int day),
+    @required Result dateDayOfMonthAfter(PredicatePath path, int day),
+    @required Result dateDayOfMonthBefore(PredicatePath path, int day),
+    @required Result dateDayOfWeek(PredicatePath path, String day),
+    @required Result dateDayOfWeekAfter(PredicatePath path, String day),
+    @required Result dateDayOfWeekBefore(PredicatePath path, String day),
+    @required Result dateMonth(PredicatePath path, String month),
+    @required Result dateMonthAfter(PredicatePath path, String month),
+    @required Result dateMonthBefore(PredicatePath path, String month),
+    @required Result dateYear(PredicatePath path, int year),
+    @required Result hour(PredicatePath path, int hour),
+    @required Result hourAfter(PredicatePath path, int hour),
+    @required Result hourBefore(PredicatePath path, int hour),
   }) {
     assert(any != null);
     assert(at != null);
@@ -1977,6 +3050,22 @@ class _$NearPredicate implements NearPredicate {
     assert(near != null);
     assert(not != null);
     assert(similar != null);
+    assert(dateAfter != null);
+    assert(dateBefore != null);
+    assert(dateBetween != null);
+    assert(dateDayOfMonth != null);
+    assert(dateDayOfMonthAfter != null);
+    assert(dateDayOfMonthBefore != null);
+    assert(dateDayOfWeek != null);
+    assert(dateDayOfWeekAfter != null);
+    assert(dateDayOfWeekBefore != null);
+    assert(dateMonth != null);
+    assert(dateMonthAfter != null);
+    assert(dateMonthBefore != null);
+    assert(dateYear != null);
+    assert(hour != null);
+    assert(hourAfter != null);
+    assert(hourBefore != null);
     return near(path, latitude, longitude, radius);
   }
 
@@ -1995,7 +3084,23 @@ class _$NearPredicate implements NearPredicate {
     Result near(
         PredicatePath path, double latitude, double longitude, double radius),
     Result not(PredicatePath path, String value),
-    Result similar(String id, String value),
+    Result similar(String id, int value),
+    Result dateAfter(PredicatePath path, int epoch),
+    Result dateBefore(PredicatePath path, int epoch),
+    Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
+    Result dateDayOfMonth(PredicatePath path, int day),
+    Result dateDayOfMonthAfter(PredicatePath path, int day),
+    Result dateDayOfMonthBefore(PredicatePath path, int day),
+    Result dateDayOfWeek(PredicatePath path, String day),
+    Result dateDayOfWeekAfter(PredicatePath path, String day),
+    Result dateDayOfWeekBefore(PredicatePath path, String day),
+    Result dateMonth(PredicatePath path, String month),
+    Result dateMonthAfter(PredicatePath path, String month),
+    Result dateMonthBefore(PredicatePath path, String month),
+    Result dateYear(PredicatePath path, int year),
+    Result hour(PredicatePath path, int hour),
+    Result hourAfter(PredicatePath path, int hour),
+    Result hourBefore(PredicatePath path, int hour),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -2020,6 +3125,22 @@ class _$NearPredicate implements NearPredicate {
     @required Result near(NearPredicate value),
     @required Result not(NotPredicate value),
     @required Result similar(SimilarPredicate value),
+    @required Result dateAfter(DateAfterPredicate value),
+    @required Result dateBefore(DateBeforePredicate value),
+    @required Result dateBetween(DateBetweenPredicate value),
+    @required Result dateDayOfMonth(DateDayOfMonthPredicate value),
+    @required Result dateDayOfMonthAfter(DateDayOfMonthAfterPredicate value),
+    @required Result dateDayOfMonthBefore(DateDayOfMonthBeforePredicate value),
+    @required Result dateDayOfWeek(DateDayOfWeekPredicate value),
+    @required Result dateDayOfWeekAfter(DateDayOfWeekAfterPredicate value),
+    @required Result dateDayOfWeekBefore(DateDayOfWeekBeforePredicate value),
+    @required Result dateMonth(DateMonthPredicate value),
+    @required Result dateMonthAfter(DateMonthAfterPredicate value),
+    @required Result dateMonthBefore(DateMonthBeforePredicate value),
+    @required Result dateYear(DateYearPredicate value),
+    @required Result hour(DateHourPredicate value),
+    @required Result hourAfter(DateHourAfterPredicate value),
+    @required Result hourBefore(DateHourBeforePredicate value),
   }) {
     assert(any != null);
     assert(at != null);
@@ -2033,6 +3154,22 @@ class _$NearPredicate implements NearPredicate {
     assert(near != null);
     assert(not != null);
     assert(similar != null);
+    assert(dateAfter != null);
+    assert(dateBefore != null);
+    assert(dateBetween != null);
+    assert(dateDayOfMonth != null);
+    assert(dateDayOfMonthAfter != null);
+    assert(dateDayOfMonthBefore != null);
+    assert(dateDayOfWeek != null);
+    assert(dateDayOfWeekAfter != null);
+    assert(dateDayOfWeekBefore != null);
+    assert(dateMonth != null);
+    assert(dateMonthAfter != null);
+    assert(dateMonthBefore != null);
+    assert(dateYear != null);
+    assert(hour != null);
+    assert(hourAfter != null);
+    assert(hourBefore != null);
     return near(this);
   }
 
@@ -2051,6 +3188,22 @@ class _$NearPredicate implements NearPredicate {
     Result near(NearPredicate value),
     Result not(NotPredicate value),
     Result similar(SimilarPredicate value),
+    Result dateAfter(DateAfterPredicate value),
+    Result dateBefore(DateBeforePredicate value),
+    Result dateBetween(DateBetweenPredicate value),
+    Result dateDayOfMonth(DateDayOfMonthPredicate value),
+    Result dateDayOfMonthAfter(DateDayOfMonthAfterPredicate value),
+    Result dateDayOfMonthBefore(DateDayOfMonthBeforePredicate value),
+    Result dateDayOfWeek(DateDayOfWeekPredicate value),
+    Result dateDayOfWeekAfter(DateDayOfWeekAfterPredicate value),
+    Result dateDayOfWeekBefore(DateDayOfWeekBeforePredicate value),
+    Result dateMonth(DateMonthPredicate value),
+    Result dateMonthAfter(DateMonthAfterPredicate value),
+    Result dateMonthBefore(DateMonthBeforePredicate value),
+    Result dateYear(DateYearPredicate value),
+    Result hour(DateHourPredicate value),
+    Result hourAfter(DateHourAfterPredicate value),
+    Result hourBefore(DateHourBeforePredicate value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -2153,7 +3306,24 @@ class _$NotPredicate implements NotPredicate {
         Result near(PredicatePath path, double latitude, double longitude,
             double radius),
     @required Result not(PredicatePath path, String value),
-    @required Result similar(String id, String value),
+    @required Result similar(String id, int value),
+    @required Result dateAfter(PredicatePath path, int epoch),
+    @required Result dateBefore(PredicatePath path, int epoch),
+    @required
+        Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
+    @required Result dateDayOfMonth(PredicatePath path, int day),
+    @required Result dateDayOfMonthAfter(PredicatePath path, int day),
+    @required Result dateDayOfMonthBefore(PredicatePath path, int day),
+    @required Result dateDayOfWeek(PredicatePath path, String day),
+    @required Result dateDayOfWeekAfter(PredicatePath path, String day),
+    @required Result dateDayOfWeekBefore(PredicatePath path, String day),
+    @required Result dateMonth(PredicatePath path, String month),
+    @required Result dateMonthAfter(PredicatePath path, String month),
+    @required Result dateMonthBefore(PredicatePath path, String month),
+    @required Result dateYear(PredicatePath path, int year),
+    @required Result hour(PredicatePath path, int hour),
+    @required Result hourAfter(PredicatePath path, int hour),
+    @required Result hourBefore(PredicatePath path, int hour),
   }) {
     assert(any != null);
     assert(at != null);
@@ -2167,6 +3337,22 @@ class _$NotPredicate implements NotPredicate {
     assert(near != null);
     assert(not != null);
     assert(similar != null);
+    assert(dateAfter != null);
+    assert(dateBefore != null);
+    assert(dateBetween != null);
+    assert(dateDayOfMonth != null);
+    assert(dateDayOfMonthAfter != null);
+    assert(dateDayOfMonthBefore != null);
+    assert(dateDayOfWeek != null);
+    assert(dateDayOfWeekAfter != null);
+    assert(dateDayOfWeekBefore != null);
+    assert(dateMonth != null);
+    assert(dateMonthAfter != null);
+    assert(dateMonthBefore != null);
+    assert(dateYear != null);
+    assert(hour != null);
+    assert(hourAfter != null);
+    assert(hourBefore != null);
     return not(path, value);
   }
 
@@ -2185,7 +3371,23 @@ class _$NotPredicate implements NotPredicate {
     Result near(
         PredicatePath path, double latitude, double longitude, double radius),
     Result not(PredicatePath path, String value),
-    Result similar(String id, String value),
+    Result similar(String id, int value),
+    Result dateAfter(PredicatePath path, int epoch),
+    Result dateBefore(PredicatePath path, int epoch),
+    Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
+    Result dateDayOfMonth(PredicatePath path, int day),
+    Result dateDayOfMonthAfter(PredicatePath path, int day),
+    Result dateDayOfMonthBefore(PredicatePath path, int day),
+    Result dateDayOfWeek(PredicatePath path, String day),
+    Result dateDayOfWeekAfter(PredicatePath path, String day),
+    Result dateDayOfWeekBefore(PredicatePath path, String day),
+    Result dateMonth(PredicatePath path, String month),
+    Result dateMonthAfter(PredicatePath path, String month),
+    Result dateMonthBefore(PredicatePath path, String month),
+    Result dateYear(PredicatePath path, int year),
+    Result hour(PredicatePath path, int hour),
+    Result hourAfter(PredicatePath path, int hour),
+    Result hourBefore(PredicatePath path, int hour),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -2210,6 +3412,22 @@ class _$NotPredicate implements NotPredicate {
     @required Result near(NearPredicate value),
     @required Result not(NotPredicate value),
     @required Result similar(SimilarPredicate value),
+    @required Result dateAfter(DateAfterPredicate value),
+    @required Result dateBefore(DateBeforePredicate value),
+    @required Result dateBetween(DateBetweenPredicate value),
+    @required Result dateDayOfMonth(DateDayOfMonthPredicate value),
+    @required Result dateDayOfMonthAfter(DateDayOfMonthAfterPredicate value),
+    @required Result dateDayOfMonthBefore(DateDayOfMonthBeforePredicate value),
+    @required Result dateDayOfWeek(DateDayOfWeekPredicate value),
+    @required Result dateDayOfWeekAfter(DateDayOfWeekAfterPredicate value),
+    @required Result dateDayOfWeekBefore(DateDayOfWeekBeforePredicate value),
+    @required Result dateMonth(DateMonthPredicate value),
+    @required Result dateMonthAfter(DateMonthAfterPredicate value),
+    @required Result dateMonthBefore(DateMonthBeforePredicate value),
+    @required Result dateYear(DateYearPredicate value),
+    @required Result hour(DateHourPredicate value),
+    @required Result hourAfter(DateHourAfterPredicate value),
+    @required Result hourBefore(DateHourBeforePredicate value),
   }) {
     assert(any != null);
     assert(at != null);
@@ -2223,6 +3441,22 @@ class _$NotPredicate implements NotPredicate {
     assert(near != null);
     assert(not != null);
     assert(similar != null);
+    assert(dateAfter != null);
+    assert(dateBefore != null);
+    assert(dateBetween != null);
+    assert(dateDayOfMonth != null);
+    assert(dateDayOfMonthAfter != null);
+    assert(dateDayOfMonthBefore != null);
+    assert(dateDayOfWeek != null);
+    assert(dateDayOfWeekAfter != null);
+    assert(dateDayOfWeekBefore != null);
+    assert(dateMonth != null);
+    assert(dateMonthAfter != null);
+    assert(dateMonthBefore != null);
+    assert(dateYear != null);
+    assert(hour != null);
+    assert(hourAfter != null);
+    assert(hourBefore != null);
     return not(this);
   }
 
@@ -2241,6 +3475,22 @@ class _$NotPredicate implements NotPredicate {
     Result near(NearPredicate value),
     Result not(NotPredicate value),
     Result similar(SimilarPredicate value),
+    Result dateAfter(DateAfterPredicate value),
+    Result dateBefore(DateBeforePredicate value),
+    Result dateBetween(DateBetweenPredicate value),
+    Result dateDayOfMonth(DateDayOfMonthPredicate value),
+    Result dateDayOfMonthAfter(DateDayOfMonthAfterPredicate value),
+    Result dateDayOfMonthBefore(DateDayOfMonthBeforePredicate value),
+    Result dateDayOfWeek(DateDayOfWeekPredicate value),
+    Result dateDayOfWeekAfter(DateDayOfWeekAfterPredicate value),
+    Result dateDayOfWeekBefore(DateDayOfWeekBeforePredicate value),
+    Result dateMonth(DateMonthPredicate value),
+    Result dateMonthAfter(DateMonthAfterPredicate value),
+    Result dateMonthBefore(DateMonthBeforePredicate value),
+    Result dateYear(DateYearPredicate value),
+    Result hour(DateHourPredicate value),
+    Result hourAfter(DateHourAfterPredicate value),
+    Result hourBefore(DateHourBeforePredicate value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -2263,7 +3513,7 @@ abstract class $SimilarPredicateCopyWith<$Res> {
   factory $SimilarPredicateCopyWith(
           SimilarPredicate value, $Res Function(SimilarPredicate) then) =
       _$SimilarPredicateCopyWithImpl<$Res>;
-  $Res call({String id, String value});
+  $Res call({String id, int value});
 }
 
 class _$SimilarPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
@@ -2282,7 +3532,7 @@ class _$SimilarPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
   }) {
     return _then(SimilarPredicate(
       id == freezed ? _value.id : id as String,
-      value == freezed ? _value.value : value as String,
+      value == freezed ? _value.value : value as int,
     ));
   }
 }
@@ -2295,7 +3545,7 @@ class _$SimilarPredicate implements SimilarPredicate {
   @override
   final String id;
   @override
-  final String value;
+  final int value;
 
   @override
   String toString() {
@@ -2340,7 +3590,24 @@ class _$SimilarPredicate implements SimilarPredicate {
         Result near(PredicatePath path, double latitude, double longitude,
             double radius),
     @required Result not(PredicatePath path, String value),
-    @required Result similar(String id, String value),
+    @required Result similar(String id, int value),
+    @required Result dateAfter(PredicatePath path, int epoch),
+    @required Result dateBefore(PredicatePath path, int epoch),
+    @required
+        Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
+    @required Result dateDayOfMonth(PredicatePath path, int day),
+    @required Result dateDayOfMonthAfter(PredicatePath path, int day),
+    @required Result dateDayOfMonthBefore(PredicatePath path, int day),
+    @required Result dateDayOfWeek(PredicatePath path, String day),
+    @required Result dateDayOfWeekAfter(PredicatePath path, String day),
+    @required Result dateDayOfWeekBefore(PredicatePath path, String day),
+    @required Result dateMonth(PredicatePath path, String month),
+    @required Result dateMonthAfter(PredicatePath path, String month),
+    @required Result dateMonthBefore(PredicatePath path, String month),
+    @required Result dateYear(PredicatePath path, int year),
+    @required Result hour(PredicatePath path, int hour),
+    @required Result hourAfter(PredicatePath path, int hour),
+    @required Result hourBefore(PredicatePath path, int hour),
   }) {
     assert(any != null);
     assert(at != null);
@@ -2354,6 +3621,22 @@ class _$SimilarPredicate implements SimilarPredicate {
     assert(near != null);
     assert(not != null);
     assert(similar != null);
+    assert(dateAfter != null);
+    assert(dateBefore != null);
+    assert(dateBetween != null);
+    assert(dateDayOfMonth != null);
+    assert(dateDayOfMonthAfter != null);
+    assert(dateDayOfMonthBefore != null);
+    assert(dateDayOfWeek != null);
+    assert(dateDayOfWeekAfter != null);
+    assert(dateDayOfWeekBefore != null);
+    assert(dateMonth != null);
+    assert(dateMonthAfter != null);
+    assert(dateMonthBefore != null);
+    assert(dateYear != null);
+    assert(hour != null);
+    assert(hourAfter != null);
+    assert(hourBefore != null);
     return similar(id, value);
   }
 
@@ -2372,7 +3655,23 @@ class _$SimilarPredicate implements SimilarPredicate {
     Result near(
         PredicatePath path, double latitude, double longitude, double radius),
     Result not(PredicatePath path, String value),
-    Result similar(String id, String value),
+    Result similar(String id, int value),
+    Result dateAfter(PredicatePath path, int epoch),
+    Result dateBefore(PredicatePath path, int epoch),
+    Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
+    Result dateDayOfMonth(PredicatePath path, int day),
+    Result dateDayOfMonthAfter(PredicatePath path, int day),
+    Result dateDayOfMonthBefore(PredicatePath path, int day),
+    Result dateDayOfWeek(PredicatePath path, String day),
+    Result dateDayOfWeekAfter(PredicatePath path, String day),
+    Result dateDayOfWeekBefore(PredicatePath path, String day),
+    Result dateMonth(PredicatePath path, String month),
+    Result dateMonthAfter(PredicatePath path, String month),
+    Result dateMonthBefore(PredicatePath path, String month),
+    Result dateYear(PredicatePath path, int year),
+    Result hour(PredicatePath path, int hour),
+    Result hourAfter(PredicatePath path, int hour),
+    Result hourBefore(PredicatePath path, int hour),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -2397,6 +3696,22 @@ class _$SimilarPredicate implements SimilarPredicate {
     @required Result near(NearPredicate value),
     @required Result not(NotPredicate value),
     @required Result similar(SimilarPredicate value),
+    @required Result dateAfter(DateAfterPredicate value),
+    @required Result dateBefore(DateBeforePredicate value),
+    @required Result dateBetween(DateBetweenPredicate value),
+    @required Result dateDayOfMonth(DateDayOfMonthPredicate value),
+    @required Result dateDayOfMonthAfter(DateDayOfMonthAfterPredicate value),
+    @required Result dateDayOfMonthBefore(DateDayOfMonthBeforePredicate value),
+    @required Result dateDayOfWeek(DateDayOfWeekPredicate value),
+    @required Result dateDayOfWeekAfter(DateDayOfWeekAfterPredicate value),
+    @required Result dateDayOfWeekBefore(DateDayOfWeekBeforePredicate value),
+    @required Result dateMonth(DateMonthPredicate value),
+    @required Result dateMonthAfter(DateMonthAfterPredicate value),
+    @required Result dateMonthBefore(DateMonthBeforePredicate value),
+    @required Result dateYear(DateYearPredicate value),
+    @required Result hour(DateHourPredicate value),
+    @required Result hourAfter(DateHourAfterPredicate value),
+    @required Result hourBefore(DateHourBeforePredicate value),
   }) {
     assert(any != null);
     assert(at != null);
@@ -2410,6 +3725,22 @@ class _$SimilarPredicate implements SimilarPredicate {
     assert(near != null);
     assert(not != null);
     assert(similar != null);
+    assert(dateAfter != null);
+    assert(dateBefore != null);
+    assert(dateBetween != null);
+    assert(dateDayOfMonth != null);
+    assert(dateDayOfMonthAfter != null);
+    assert(dateDayOfMonthBefore != null);
+    assert(dateDayOfWeek != null);
+    assert(dateDayOfWeekAfter != null);
+    assert(dateDayOfWeekBefore != null);
+    assert(dateMonth != null);
+    assert(dateMonthAfter != null);
+    assert(dateMonthBefore != null);
+    assert(dateYear != null);
+    assert(hour != null);
+    assert(hourAfter != null);
+    assert(hourBefore != null);
     return similar(this);
   }
 
@@ -2428,6 +3759,22 @@ class _$SimilarPredicate implements SimilarPredicate {
     Result near(NearPredicate value),
     Result not(NotPredicate value),
     Result similar(SimilarPredicate value),
+    Result dateAfter(DateAfterPredicate value),
+    Result dateBefore(DateBeforePredicate value),
+    Result dateBetween(DateBetweenPredicate value),
+    Result dateDayOfMonth(DateDayOfMonthPredicate value),
+    Result dateDayOfMonthAfter(DateDayOfMonthAfterPredicate value),
+    Result dateDayOfMonthBefore(DateDayOfMonthBeforePredicate value),
+    Result dateDayOfWeek(DateDayOfWeekPredicate value),
+    Result dateDayOfWeekAfter(DateDayOfWeekAfterPredicate value),
+    Result dateDayOfWeekBefore(DateDayOfWeekBeforePredicate value),
+    Result dateMonth(DateMonthPredicate value),
+    Result dateMonthAfter(DateMonthAfterPredicate value),
+    Result dateMonthBefore(DateMonthBeforePredicate value),
+    Result dateYear(DateYearPredicate value),
+    Result hour(DateHourPredicate value),
+    Result hourAfter(DateHourAfterPredicate value),
+    Result hourBefore(DateHourBeforePredicate value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -2439,9 +3786,4622 @@ class _$SimilarPredicate implements SimilarPredicate {
 }
 
 abstract class SimilarPredicate implements Predicate {
-  factory SimilarPredicate(String id, String value) = _$SimilarPredicate;
+  factory SimilarPredicate(String id, int value) = _$SimilarPredicate;
 
   String get id;
-  String get value;
+  int get value;
   $SimilarPredicateCopyWith<SimilarPredicate> get copyWith;
+}
+
+abstract class $DateAfterPredicateCopyWith<$Res> {
+  factory $DateAfterPredicateCopyWith(
+          DateAfterPredicate value, $Res Function(DateAfterPredicate) then) =
+      _$DateAfterPredicateCopyWithImpl<$Res>;
+  $Res call({PredicatePath path, int epoch});
+}
+
+class _$DateAfterPredicateCopyWithImpl<$Res>
+    extends _$PredicateCopyWithImpl<$Res>
+    implements $DateAfterPredicateCopyWith<$Res> {
+  _$DateAfterPredicateCopyWithImpl(
+      DateAfterPredicate _value, $Res Function(DateAfterPredicate) _then)
+      : super(_value, (v) => _then(v as DateAfterPredicate));
+
+  @override
+  DateAfterPredicate get _value => super._value as DateAfterPredicate;
+
+  @override
+  $Res call({
+    Object path = freezed,
+    Object epoch = freezed,
+  }) {
+    return _then(DateAfterPredicate(
+      path == freezed ? _value.path : path as PredicatePath,
+      epoch == freezed ? _value.epoch : epoch as int,
+    ));
+  }
+}
+
+class _$DateAfterPredicate implements DateAfterPredicate {
+  _$DateAfterPredicate(this.path, this.epoch)
+      : assert(path != null),
+        assert(epoch != null);
+
+  @override
+  final PredicatePath path;
+  @override
+  final int epoch;
+
+  @override
+  String toString() {
+    return 'Predicate.dateAfter(path: $path, epoch: $epoch)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is DateAfterPredicate &&
+            (identical(other.path, path) ||
+                const DeepCollectionEquality().equals(other.path, path)) &&
+            (identical(other.epoch, epoch) ||
+                const DeepCollectionEquality().equals(other.epoch, epoch)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(path) ^
+      const DeepCollectionEquality().hash(epoch);
+
+  @override
+  $DateAfterPredicateCopyWith<DateAfterPredicate> get copyWith =>
+      _$DateAfterPredicateCopyWithImpl<DateAfterPredicate>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result any(PredicatePath path, List<String> values),
+    @required Result at(PredicatePath path, String value),
+    @required Result fullText(PredicatePath path, String value),
+    @required Result gt(PredicatePath path, double value),
+    @required Result has(PredicatePath path),
+    @required
+        Result inRange(
+            PredicatePath path, double lowerLimit, double upperLimit),
+    @required Result into(PredicatePath path, List<String> values),
+    @required Result lt(PredicatePath path, double value),
+    @required Result missing(PredicatePath path),
+    @required
+        Result near(PredicatePath path, double latitude, double longitude,
+            double radius),
+    @required Result not(PredicatePath path, String value),
+    @required Result similar(String id, int value),
+    @required Result dateAfter(PredicatePath path, int epoch),
+    @required Result dateBefore(PredicatePath path, int epoch),
+    @required
+        Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
+    @required Result dateDayOfMonth(PredicatePath path, int day),
+    @required Result dateDayOfMonthAfter(PredicatePath path, int day),
+    @required Result dateDayOfMonthBefore(PredicatePath path, int day),
+    @required Result dateDayOfWeek(PredicatePath path, String day),
+    @required Result dateDayOfWeekAfter(PredicatePath path, String day),
+    @required Result dateDayOfWeekBefore(PredicatePath path, String day),
+    @required Result dateMonth(PredicatePath path, String month),
+    @required Result dateMonthAfter(PredicatePath path, String month),
+    @required Result dateMonthBefore(PredicatePath path, String month),
+    @required Result dateYear(PredicatePath path, int year),
+    @required Result hour(PredicatePath path, int hour),
+    @required Result hourAfter(PredicatePath path, int hour),
+    @required Result hourBefore(PredicatePath path, int hour),
+  }) {
+    assert(any != null);
+    assert(at != null);
+    assert(fullText != null);
+    assert(gt != null);
+    assert(has != null);
+    assert(inRange != null);
+    assert(into != null);
+    assert(lt != null);
+    assert(missing != null);
+    assert(near != null);
+    assert(not != null);
+    assert(similar != null);
+    assert(dateAfter != null);
+    assert(dateBefore != null);
+    assert(dateBetween != null);
+    assert(dateDayOfMonth != null);
+    assert(dateDayOfMonthAfter != null);
+    assert(dateDayOfMonthBefore != null);
+    assert(dateDayOfWeek != null);
+    assert(dateDayOfWeekAfter != null);
+    assert(dateDayOfWeekBefore != null);
+    assert(dateMonth != null);
+    assert(dateMonthAfter != null);
+    assert(dateMonthBefore != null);
+    assert(dateYear != null);
+    assert(hour != null);
+    assert(hourAfter != null);
+    assert(hourBefore != null);
+    return dateAfter(path, epoch);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result any(PredicatePath path, List<String> values),
+    Result at(PredicatePath path, String value),
+    Result fullText(PredicatePath path, String value),
+    Result gt(PredicatePath path, double value),
+    Result has(PredicatePath path),
+    Result inRange(PredicatePath path, double lowerLimit, double upperLimit),
+    Result into(PredicatePath path, List<String> values),
+    Result lt(PredicatePath path, double value),
+    Result missing(PredicatePath path),
+    Result near(
+        PredicatePath path, double latitude, double longitude, double radius),
+    Result not(PredicatePath path, String value),
+    Result similar(String id, int value),
+    Result dateAfter(PredicatePath path, int epoch),
+    Result dateBefore(PredicatePath path, int epoch),
+    Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
+    Result dateDayOfMonth(PredicatePath path, int day),
+    Result dateDayOfMonthAfter(PredicatePath path, int day),
+    Result dateDayOfMonthBefore(PredicatePath path, int day),
+    Result dateDayOfWeek(PredicatePath path, String day),
+    Result dateDayOfWeekAfter(PredicatePath path, String day),
+    Result dateDayOfWeekBefore(PredicatePath path, String day),
+    Result dateMonth(PredicatePath path, String month),
+    Result dateMonthAfter(PredicatePath path, String month),
+    Result dateMonthBefore(PredicatePath path, String month),
+    Result dateYear(PredicatePath path, int year),
+    Result hour(PredicatePath path, int hour),
+    Result hourAfter(PredicatePath path, int hour),
+    Result hourBefore(PredicatePath path, int hour),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (dateAfter != null) {
+      return dateAfter(path, epoch);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result any(AnyPredicate value),
+    @required Result at(AtPredicate value),
+    @required Result fullText(FullTextPredicate value),
+    @required Result gt(GtPredicate value),
+    @required Result has(HasPredicate value),
+    @required Result inRange(InRangePredicate value),
+    @required Result into(InPredicate value),
+    @required Result lt(LtPredicate value),
+    @required Result missing(MissingPredicate value),
+    @required Result near(NearPredicate value),
+    @required Result not(NotPredicate value),
+    @required Result similar(SimilarPredicate value),
+    @required Result dateAfter(DateAfterPredicate value),
+    @required Result dateBefore(DateBeforePredicate value),
+    @required Result dateBetween(DateBetweenPredicate value),
+    @required Result dateDayOfMonth(DateDayOfMonthPredicate value),
+    @required Result dateDayOfMonthAfter(DateDayOfMonthAfterPredicate value),
+    @required Result dateDayOfMonthBefore(DateDayOfMonthBeforePredicate value),
+    @required Result dateDayOfWeek(DateDayOfWeekPredicate value),
+    @required Result dateDayOfWeekAfter(DateDayOfWeekAfterPredicate value),
+    @required Result dateDayOfWeekBefore(DateDayOfWeekBeforePredicate value),
+    @required Result dateMonth(DateMonthPredicate value),
+    @required Result dateMonthAfter(DateMonthAfterPredicate value),
+    @required Result dateMonthBefore(DateMonthBeforePredicate value),
+    @required Result dateYear(DateYearPredicate value),
+    @required Result hour(DateHourPredicate value),
+    @required Result hourAfter(DateHourAfterPredicate value),
+    @required Result hourBefore(DateHourBeforePredicate value),
+  }) {
+    assert(any != null);
+    assert(at != null);
+    assert(fullText != null);
+    assert(gt != null);
+    assert(has != null);
+    assert(inRange != null);
+    assert(into != null);
+    assert(lt != null);
+    assert(missing != null);
+    assert(near != null);
+    assert(not != null);
+    assert(similar != null);
+    assert(dateAfter != null);
+    assert(dateBefore != null);
+    assert(dateBetween != null);
+    assert(dateDayOfMonth != null);
+    assert(dateDayOfMonthAfter != null);
+    assert(dateDayOfMonthBefore != null);
+    assert(dateDayOfWeek != null);
+    assert(dateDayOfWeekAfter != null);
+    assert(dateDayOfWeekBefore != null);
+    assert(dateMonth != null);
+    assert(dateMonthAfter != null);
+    assert(dateMonthBefore != null);
+    assert(dateYear != null);
+    assert(hour != null);
+    assert(hourAfter != null);
+    assert(hourBefore != null);
+    return dateAfter(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result any(AnyPredicate value),
+    Result at(AtPredicate value),
+    Result fullText(FullTextPredicate value),
+    Result gt(GtPredicate value),
+    Result has(HasPredicate value),
+    Result inRange(InRangePredicate value),
+    Result into(InPredicate value),
+    Result lt(LtPredicate value),
+    Result missing(MissingPredicate value),
+    Result near(NearPredicate value),
+    Result not(NotPredicate value),
+    Result similar(SimilarPredicate value),
+    Result dateAfter(DateAfterPredicate value),
+    Result dateBefore(DateBeforePredicate value),
+    Result dateBetween(DateBetweenPredicate value),
+    Result dateDayOfMonth(DateDayOfMonthPredicate value),
+    Result dateDayOfMonthAfter(DateDayOfMonthAfterPredicate value),
+    Result dateDayOfMonthBefore(DateDayOfMonthBeforePredicate value),
+    Result dateDayOfWeek(DateDayOfWeekPredicate value),
+    Result dateDayOfWeekAfter(DateDayOfWeekAfterPredicate value),
+    Result dateDayOfWeekBefore(DateDayOfWeekBeforePredicate value),
+    Result dateMonth(DateMonthPredicate value),
+    Result dateMonthAfter(DateMonthAfterPredicate value),
+    Result dateMonthBefore(DateMonthBeforePredicate value),
+    Result dateYear(DateYearPredicate value),
+    Result hour(DateHourPredicate value),
+    Result hourAfter(DateHourAfterPredicate value),
+    Result hourBefore(DateHourBeforePredicate value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (dateAfter != null) {
+      return dateAfter(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DateAfterPredicate implements Predicate {
+  factory DateAfterPredicate(PredicatePath path, int epoch) =
+      _$DateAfterPredicate;
+
+  PredicatePath get path;
+  int get epoch;
+  $DateAfterPredicateCopyWith<DateAfterPredicate> get copyWith;
+}
+
+abstract class $DateBeforePredicateCopyWith<$Res> {
+  factory $DateBeforePredicateCopyWith(
+          DateBeforePredicate value, $Res Function(DateBeforePredicate) then) =
+      _$DateBeforePredicateCopyWithImpl<$Res>;
+  $Res call({PredicatePath path, int epoch});
+}
+
+class _$DateBeforePredicateCopyWithImpl<$Res>
+    extends _$PredicateCopyWithImpl<$Res>
+    implements $DateBeforePredicateCopyWith<$Res> {
+  _$DateBeforePredicateCopyWithImpl(
+      DateBeforePredicate _value, $Res Function(DateBeforePredicate) _then)
+      : super(_value, (v) => _then(v as DateBeforePredicate));
+
+  @override
+  DateBeforePredicate get _value => super._value as DateBeforePredicate;
+
+  @override
+  $Res call({
+    Object path = freezed,
+    Object epoch = freezed,
+  }) {
+    return _then(DateBeforePredicate(
+      path == freezed ? _value.path : path as PredicatePath,
+      epoch == freezed ? _value.epoch : epoch as int,
+    ));
+  }
+}
+
+class _$DateBeforePredicate implements DateBeforePredicate {
+  _$DateBeforePredicate(this.path, this.epoch)
+      : assert(path != null),
+        assert(epoch != null);
+
+  @override
+  final PredicatePath path;
+  @override
+  final int epoch;
+
+  @override
+  String toString() {
+    return 'Predicate.dateBefore(path: $path, epoch: $epoch)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is DateBeforePredicate &&
+            (identical(other.path, path) ||
+                const DeepCollectionEquality().equals(other.path, path)) &&
+            (identical(other.epoch, epoch) ||
+                const DeepCollectionEquality().equals(other.epoch, epoch)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(path) ^
+      const DeepCollectionEquality().hash(epoch);
+
+  @override
+  $DateBeforePredicateCopyWith<DateBeforePredicate> get copyWith =>
+      _$DateBeforePredicateCopyWithImpl<DateBeforePredicate>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result any(PredicatePath path, List<String> values),
+    @required Result at(PredicatePath path, String value),
+    @required Result fullText(PredicatePath path, String value),
+    @required Result gt(PredicatePath path, double value),
+    @required Result has(PredicatePath path),
+    @required
+        Result inRange(
+            PredicatePath path, double lowerLimit, double upperLimit),
+    @required Result into(PredicatePath path, List<String> values),
+    @required Result lt(PredicatePath path, double value),
+    @required Result missing(PredicatePath path),
+    @required
+        Result near(PredicatePath path, double latitude, double longitude,
+            double radius),
+    @required Result not(PredicatePath path, String value),
+    @required Result similar(String id, int value),
+    @required Result dateAfter(PredicatePath path, int epoch),
+    @required Result dateBefore(PredicatePath path, int epoch),
+    @required
+        Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
+    @required Result dateDayOfMonth(PredicatePath path, int day),
+    @required Result dateDayOfMonthAfter(PredicatePath path, int day),
+    @required Result dateDayOfMonthBefore(PredicatePath path, int day),
+    @required Result dateDayOfWeek(PredicatePath path, String day),
+    @required Result dateDayOfWeekAfter(PredicatePath path, String day),
+    @required Result dateDayOfWeekBefore(PredicatePath path, String day),
+    @required Result dateMonth(PredicatePath path, String month),
+    @required Result dateMonthAfter(PredicatePath path, String month),
+    @required Result dateMonthBefore(PredicatePath path, String month),
+    @required Result dateYear(PredicatePath path, int year),
+    @required Result hour(PredicatePath path, int hour),
+    @required Result hourAfter(PredicatePath path, int hour),
+    @required Result hourBefore(PredicatePath path, int hour),
+  }) {
+    assert(any != null);
+    assert(at != null);
+    assert(fullText != null);
+    assert(gt != null);
+    assert(has != null);
+    assert(inRange != null);
+    assert(into != null);
+    assert(lt != null);
+    assert(missing != null);
+    assert(near != null);
+    assert(not != null);
+    assert(similar != null);
+    assert(dateAfter != null);
+    assert(dateBefore != null);
+    assert(dateBetween != null);
+    assert(dateDayOfMonth != null);
+    assert(dateDayOfMonthAfter != null);
+    assert(dateDayOfMonthBefore != null);
+    assert(dateDayOfWeek != null);
+    assert(dateDayOfWeekAfter != null);
+    assert(dateDayOfWeekBefore != null);
+    assert(dateMonth != null);
+    assert(dateMonthAfter != null);
+    assert(dateMonthBefore != null);
+    assert(dateYear != null);
+    assert(hour != null);
+    assert(hourAfter != null);
+    assert(hourBefore != null);
+    return dateBefore(path, epoch);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result any(PredicatePath path, List<String> values),
+    Result at(PredicatePath path, String value),
+    Result fullText(PredicatePath path, String value),
+    Result gt(PredicatePath path, double value),
+    Result has(PredicatePath path),
+    Result inRange(PredicatePath path, double lowerLimit, double upperLimit),
+    Result into(PredicatePath path, List<String> values),
+    Result lt(PredicatePath path, double value),
+    Result missing(PredicatePath path),
+    Result near(
+        PredicatePath path, double latitude, double longitude, double radius),
+    Result not(PredicatePath path, String value),
+    Result similar(String id, int value),
+    Result dateAfter(PredicatePath path, int epoch),
+    Result dateBefore(PredicatePath path, int epoch),
+    Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
+    Result dateDayOfMonth(PredicatePath path, int day),
+    Result dateDayOfMonthAfter(PredicatePath path, int day),
+    Result dateDayOfMonthBefore(PredicatePath path, int day),
+    Result dateDayOfWeek(PredicatePath path, String day),
+    Result dateDayOfWeekAfter(PredicatePath path, String day),
+    Result dateDayOfWeekBefore(PredicatePath path, String day),
+    Result dateMonth(PredicatePath path, String month),
+    Result dateMonthAfter(PredicatePath path, String month),
+    Result dateMonthBefore(PredicatePath path, String month),
+    Result dateYear(PredicatePath path, int year),
+    Result hour(PredicatePath path, int hour),
+    Result hourAfter(PredicatePath path, int hour),
+    Result hourBefore(PredicatePath path, int hour),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (dateBefore != null) {
+      return dateBefore(path, epoch);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result any(AnyPredicate value),
+    @required Result at(AtPredicate value),
+    @required Result fullText(FullTextPredicate value),
+    @required Result gt(GtPredicate value),
+    @required Result has(HasPredicate value),
+    @required Result inRange(InRangePredicate value),
+    @required Result into(InPredicate value),
+    @required Result lt(LtPredicate value),
+    @required Result missing(MissingPredicate value),
+    @required Result near(NearPredicate value),
+    @required Result not(NotPredicate value),
+    @required Result similar(SimilarPredicate value),
+    @required Result dateAfter(DateAfterPredicate value),
+    @required Result dateBefore(DateBeforePredicate value),
+    @required Result dateBetween(DateBetweenPredicate value),
+    @required Result dateDayOfMonth(DateDayOfMonthPredicate value),
+    @required Result dateDayOfMonthAfter(DateDayOfMonthAfterPredicate value),
+    @required Result dateDayOfMonthBefore(DateDayOfMonthBeforePredicate value),
+    @required Result dateDayOfWeek(DateDayOfWeekPredicate value),
+    @required Result dateDayOfWeekAfter(DateDayOfWeekAfterPredicate value),
+    @required Result dateDayOfWeekBefore(DateDayOfWeekBeforePredicate value),
+    @required Result dateMonth(DateMonthPredicate value),
+    @required Result dateMonthAfter(DateMonthAfterPredicate value),
+    @required Result dateMonthBefore(DateMonthBeforePredicate value),
+    @required Result dateYear(DateYearPredicate value),
+    @required Result hour(DateHourPredicate value),
+    @required Result hourAfter(DateHourAfterPredicate value),
+    @required Result hourBefore(DateHourBeforePredicate value),
+  }) {
+    assert(any != null);
+    assert(at != null);
+    assert(fullText != null);
+    assert(gt != null);
+    assert(has != null);
+    assert(inRange != null);
+    assert(into != null);
+    assert(lt != null);
+    assert(missing != null);
+    assert(near != null);
+    assert(not != null);
+    assert(similar != null);
+    assert(dateAfter != null);
+    assert(dateBefore != null);
+    assert(dateBetween != null);
+    assert(dateDayOfMonth != null);
+    assert(dateDayOfMonthAfter != null);
+    assert(dateDayOfMonthBefore != null);
+    assert(dateDayOfWeek != null);
+    assert(dateDayOfWeekAfter != null);
+    assert(dateDayOfWeekBefore != null);
+    assert(dateMonth != null);
+    assert(dateMonthAfter != null);
+    assert(dateMonthBefore != null);
+    assert(dateYear != null);
+    assert(hour != null);
+    assert(hourAfter != null);
+    assert(hourBefore != null);
+    return dateBefore(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result any(AnyPredicate value),
+    Result at(AtPredicate value),
+    Result fullText(FullTextPredicate value),
+    Result gt(GtPredicate value),
+    Result has(HasPredicate value),
+    Result inRange(InRangePredicate value),
+    Result into(InPredicate value),
+    Result lt(LtPredicate value),
+    Result missing(MissingPredicate value),
+    Result near(NearPredicate value),
+    Result not(NotPredicate value),
+    Result similar(SimilarPredicate value),
+    Result dateAfter(DateAfterPredicate value),
+    Result dateBefore(DateBeforePredicate value),
+    Result dateBetween(DateBetweenPredicate value),
+    Result dateDayOfMonth(DateDayOfMonthPredicate value),
+    Result dateDayOfMonthAfter(DateDayOfMonthAfterPredicate value),
+    Result dateDayOfMonthBefore(DateDayOfMonthBeforePredicate value),
+    Result dateDayOfWeek(DateDayOfWeekPredicate value),
+    Result dateDayOfWeekAfter(DateDayOfWeekAfterPredicate value),
+    Result dateDayOfWeekBefore(DateDayOfWeekBeforePredicate value),
+    Result dateMonth(DateMonthPredicate value),
+    Result dateMonthAfter(DateMonthAfterPredicate value),
+    Result dateMonthBefore(DateMonthBeforePredicate value),
+    Result dateYear(DateYearPredicate value),
+    Result hour(DateHourPredicate value),
+    Result hourAfter(DateHourAfterPredicate value),
+    Result hourBefore(DateHourBeforePredicate value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (dateBefore != null) {
+      return dateBefore(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DateBeforePredicate implements Predicate {
+  factory DateBeforePredicate(PredicatePath path, int epoch) =
+      _$DateBeforePredicate;
+
+  PredicatePath get path;
+  int get epoch;
+  $DateBeforePredicateCopyWith<DateBeforePredicate> get copyWith;
+}
+
+abstract class $DateBetweenPredicateCopyWith<$Res> {
+  factory $DateBetweenPredicateCopyWith(DateBetweenPredicate value,
+          $Res Function(DateBetweenPredicate) then) =
+      _$DateBetweenPredicateCopyWithImpl<$Res>;
+  $Res call({PredicatePath path, int startEpoch, int endEpoch});
+}
+
+class _$DateBetweenPredicateCopyWithImpl<$Res>
+    extends _$PredicateCopyWithImpl<$Res>
+    implements $DateBetweenPredicateCopyWith<$Res> {
+  _$DateBetweenPredicateCopyWithImpl(
+      DateBetweenPredicate _value, $Res Function(DateBetweenPredicate) _then)
+      : super(_value, (v) => _then(v as DateBetweenPredicate));
+
+  @override
+  DateBetweenPredicate get _value => super._value as DateBetweenPredicate;
+
+  @override
+  $Res call({
+    Object path = freezed,
+    Object startEpoch = freezed,
+    Object endEpoch = freezed,
+  }) {
+    return _then(DateBetweenPredicate(
+      path == freezed ? _value.path : path as PredicatePath,
+      startEpoch == freezed ? _value.startEpoch : startEpoch as int,
+      endEpoch == freezed ? _value.endEpoch : endEpoch as int,
+    ));
+  }
+}
+
+class _$DateBetweenPredicate implements DateBetweenPredicate {
+  _$DateBetweenPredicate(this.path, this.startEpoch, this.endEpoch)
+      : assert(path != null),
+        assert(startEpoch != null),
+        assert(endEpoch != null);
+
+  @override
+  final PredicatePath path;
+  @override
+  final int startEpoch;
+  @override
+  final int endEpoch;
+
+  @override
+  String toString() {
+    return 'Predicate.dateBetween(path: $path, startEpoch: $startEpoch, endEpoch: $endEpoch)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is DateBetweenPredicate &&
+            (identical(other.path, path) ||
+                const DeepCollectionEquality().equals(other.path, path)) &&
+            (identical(other.startEpoch, startEpoch) ||
+                const DeepCollectionEquality()
+                    .equals(other.startEpoch, startEpoch)) &&
+            (identical(other.endEpoch, endEpoch) ||
+                const DeepCollectionEquality()
+                    .equals(other.endEpoch, endEpoch)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(path) ^
+      const DeepCollectionEquality().hash(startEpoch) ^
+      const DeepCollectionEquality().hash(endEpoch);
+
+  @override
+  $DateBetweenPredicateCopyWith<DateBetweenPredicate> get copyWith =>
+      _$DateBetweenPredicateCopyWithImpl<DateBetweenPredicate>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result any(PredicatePath path, List<String> values),
+    @required Result at(PredicatePath path, String value),
+    @required Result fullText(PredicatePath path, String value),
+    @required Result gt(PredicatePath path, double value),
+    @required Result has(PredicatePath path),
+    @required
+        Result inRange(
+            PredicatePath path, double lowerLimit, double upperLimit),
+    @required Result into(PredicatePath path, List<String> values),
+    @required Result lt(PredicatePath path, double value),
+    @required Result missing(PredicatePath path),
+    @required
+        Result near(PredicatePath path, double latitude, double longitude,
+            double radius),
+    @required Result not(PredicatePath path, String value),
+    @required Result similar(String id, int value),
+    @required Result dateAfter(PredicatePath path, int epoch),
+    @required Result dateBefore(PredicatePath path, int epoch),
+    @required
+        Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
+    @required Result dateDayOfMonth(PredicatePath path, int day),
+    @required Result dateDayOfMonthAfter(PredicatePath path, int day),
+    @required Result dateDayOfMonthBefore(PredicatePath path, int day),
+    @required Result dateDayOfWeek(PredicatePath path, String day),
+    @required Result dateDayOfWeekAfter(PredicatePath path, String day),
+    @required Result dateDayOfWeekBefore(PredicatePath path, String day),
+    @required Result dateMonth(PredicatePath path, String month),
+    @required Result dateMonthAfter(PredicatePath path, String month),
+    @required Result dateMonthBefore(PredicatePath path, String month),
+    @required Result dateYear(PredicatePath path, int year),
+    @required Result hour(PredicatePath path, int hour),
+    @required Result hourAfter(PredicatePath path, int hour),
+    @required Result hourBefore(PredicatePath path, int hour),
+  }) {
+    assert(any != null);
+    assert(at != null);
+    assert(fullText != null);
+    assert(gt != null);
+    assert(has != null);
+    assert(inRange != null);
+    assert(into != null);
+    assert(lt != null);
+    assert(missing != null);
+    assert(near != null);
+    assert(not != null);
+    assert(similar != null);
+    assert(dateAfter != null);
+    assert(dateBefore != null);
+    assert(dateBetween != null);
+    assert(dateDayOfMonth != null);
+    assert(dateDayOfMonthAfter != null);
+    assert(dateDayOfMonthBefore != null);
+    assert(dateDayOfWeek != null);
+    assert(dateDayOfWeekAfter != null);
+    assert(dateDayOfWeekBefore != null);
+    assert(dateMonth != null);
+    assert(dateMonthAfter != null);
+    assert(dateMonthBefore != null);
+    assert(dateYear != null);
+    assert(hour != null);
+    assert(hourAfter != null);
+    assert(hourBefore != null);
+    return dateBetween(path, startEpoch, endEpoch);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result any(PredicatePath path, List<String> values),
+    Result at(PredicatePath path, String value),
+    Result fullText(PredicatePath path, String value),
+    Result gt(PredicatePath path, double value),
+    Result has(PredicatePath path),
+    Result inRange(PredicatePath path, double lowerLimit, double upperLimit),
+    Result into(PredicatePath path, List<String> values),
+    Result lt(PredicatePath path, double value),
+    Result missing(PredicatePath path),
+    Result near(
+        PredicatePath path, double latitude, double longitude, double radius),
+    Result not(PredicatePath path, String value),
+    Result similar(String id, int value),
+    Result dateAfter(PredicatePath path, int epoch),
+    Result dateBefore(PredicatePath path, int epoch),
+    Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
+    Result dateDayOfMonth(PredicatePath path, int day),
+    Result dateDayOfMonthAfter(PredicatePath path, int day),
+    Result dateDayOfMonthBefore(PredicatePath path, int day),
+    Result dateDayOfWeek(PredicatePath path, String day),
+    Result dateDayOfWeekAfter(PredicatePath path, String day),
+    Result dateDayOfWeekBefore(PredicatePath path, String day),
+    Result dateMonth(PredicatePath path, String month),
+    Result dateMonthAfter(PredicatePath path, String month),
+    Result dateMonthBefore(PredicatePath path, String month),
+    Result dateYear(PredicatePath path, int year),
+    Result hour(PredicatePath path, int hour),
+    Result hourAfter(PredicatePath path, int hour),
+    Result hourBefore(PredicatePath path, int hour),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (dateBetween != null) {
+      return dateBetween(path, startEpoch, endEpoch);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result any(AnyPredicate value),
+    @required Result at(AtPredicate value),
+    @required Result fullText(FullTextPredicate value),
+    @required Result gt(GtPredicate value),
+    @required Result has(HasPredicate value),
+    @required Result inRange(InRangePredicate value),
+    @required Result into(InPredicate value),
+    @required Result lt(LtPredicate value),
+    @required Result missing(MissingPredicate value),
+    @required Result near(NearPredicate value),
+    @required Result not(NotPredicate value),
+    @required Result similar(SimilarPredicate value),
+    @required Result dateAfter(DateAfterPredicate value),
+    @required Result dateBefore(DateBeforePredicate value),
+    @required Result dateBetween(DateBetweenPredicate value),
+    @required Result dateDayOfMonth(DateDayOfMonthPredicate value),
+    @required Result dateDayOfMonthAfter(DateDayOfMonthAfterPredicate value),
+    @required Result dateDayOfMonthBefore(DateDayOfMonthBeforePredicate value),
+    @required Result dateDayOfWeek(DateDayOfWeekPredicate value),
+    @required Result dateDayOfWeekAfter(DateDayOfWeekAfterPredicate value),
+    @required Result dateDayOfWeekBefore(DateDayOfWeekBeforePredicate value),
+    @required Result dateMonth(DateMonthPredicate value),
+    @required Result dateMonthAfter(DateMonthAfterPredicate value),
+    @required Result dateMonthBefore(DateMonthBeforePredicate value),
+    @required Result dateYear(DateYearPredicate value),
+    @required Result hour(DateHourPredicate value),
+    @required Result hourAfter(DateHourAfterPredicate value),
+    @required Result hourBefore(DateHourBeforePredicate value),
+  }) {
+    assert(any != null);
+    assert(at != null);
+    assert(fullText != null);
+    assert(gt != null);
+    assert(has != null);
+    assert(inRange != null);
+    assert(into != null);
+    assert(lt != null);
+    assert(missing != null);
+    assert(near != null);
+    assert(not != null);
+    assert(similar != null);
+    assert(dateAfter != null);
+    assert(dateBefore != null);
+    assert(dateBetween != null);
+    assert(dateDayOfMonth != null);
+    assert(dateDayOfMonthAfter != null);
+    assert(dateDayOfMonthBefore != null);
+    assert(dateDayOfWeek != null);
+    assert(dateDayOfWeekAfter != null);
+    assert(dateDayOfWeekBefore != null);
+    assert(dateMonth != null);
+    assert(dateMonthAfter != null);
+    assert(dateMonthBefore != null);
+    assert(dateYear != null);
+    assert(hour != null);
+    assert(hourAfter != null);
+    assert(hourBefore != null);
+    return dateBetween(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result any(AnyPredicate value),
+    Result at(AtPredicate value),
+    Result fullText(FullTextPredicate value),
+    Result gt(GtPredicate value),
+    Result has(HasPredicate value),
+    Result inRange(InRangePredicate value),
+    Result into(InPredicate value),
+    Result lt(LtPredicate value),
+    Result missing(MissingPredicate value),
+    Result near(NearPredicate value),
+    Result not(NotPredicate value),
+    Result similar(SimilarPredicate value),
+    Result dateAfter(DateAfterPredicate value),
+    Result dateBefore(DateBeforePredicate value),
+    Result dateBetween(DateBetweenPredicate value),
+    Result dateDayOfMonth(DateDayOfMonthPredicate value),
+    Result dateDayOfMonthAfter(DateDayOfMonthAfterPredicate value),
+    Result dateDayOfMonthBefore(DateDayOfMonthBeforePredicate value),
+    Result dateDayOfWeek(DateDayOfWeekPredicate value),
+    Result dateDayOfWeekAfter(DateDayOfWeekAfterPredicate value),
+    Result dateDayOfWeekBefore(DateDayOfWeekBeforePredicate value),
+    Result dateMonth(DateMonthPredicate value),
+    Result dateMonthAfter(DateMonthAfterPredicate value),
+    Result dateMonthBefore(DateMonthBeforePredicate value),
+    Result dateYear(DateYearPredicate value),
+    Result hour(DateHourPredicate value),
+    Result hourAfter(DateHourAfterPredicate value),
+    Result hourBefore(DateHourBeforePredicate value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (dateBetween != null) {
+      return dateBetween(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DateBetweenPredicate implements Predicate {
+  factory DateBetweenPredicate(
+          PredicatePath path, int startEpoch, int endEpoch) =
+      _$DateBetweenPredicate;
+
+  PredicatePath get path;
+  int get startEpoch;
+  int get endEpoch;
+  $DateBetweenPredicateCopyWith<DateBetweenPredicate> get copyWith;
+}
+
+abstract class $DateDayOfMonthPredicateCopyWith<$Res> {
+  factory $DateDayOfMonthPredicateCopyWith(DateDayOfMonthPredicate value,
+          $Res Function(DateDayOfMonthPredicate) then) =
+      _$DateDayOfMonthPredicateCopyWithImpl<$Res>;
+  $Res call({PredicatePath path, int day});
+}
+
+class _$DateDayOfMonthPredicateCopyWithImpl<$Res>
+    extends _$PredicateCopyWithImpl<$Res>
+    implements $DateDayOfMonthPredicateCopyWith<$Res> {
+  _$DateDayOfMonthPredicateCopyWithImpl(DateDayOfMonthPredicate _value,
+      $Res Function(DateDayOfMonthPredicate) _then)
+      : super(_value, (v) => _then(v as DateDayOfMonthPredicate));
+
+  @override
+  DateDayOfMonthPredicate get _value => super._value as DateDayOfMonthPredicate;
+
+  @override
+  $Res call({
+    Object path = freezed,
+    Object day = freezed,
+  }) {
+    return _then(DateDayOfMonthPredicate(
+      path == freezed ? _value.path : path as PredicatePath,
+      day == freezed ? _value.day : day as int,
+    ));
+  }
+}
+
+class _$DateDayOfMonthPredicate implements DateDayOfMonthPredicate {
+  _$DateDayOfMonthPredicate(this.path, this.day)
+      : assert(path != null),
+        assert(day != null);
+
+  @override
+  final PredicatePath path;
+  @override
+  final int day;
+
+  @override
+  String toString() {
+    return 'Predicate.dateDayOfMonth(path: $path, day: $day)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is DateDayOfMonthPredicate &&
+            (identical(other.path, path) ||
+                const DeepCollectionEquality().equals(other.path, path)) &&
+            (identical(other.day, day) ||
+                const DeepCollectionEquality().equals(other.day, day)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(path) ^
+      const DeepCollectionEquality().hash(day);
+
+  @override
+  $DateDayOfMonthPredicateCopyWith<DateDayOfMonthPredicate> get copyWith =>
+      _$DateDayOfMonthPredicateCopyWithImpl<DateDayOfMonthPredicate>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result any(PredicatePath path, List<String> values),
+    @required Result at(PredicatePath path, String value),
+    @required Result fullText(PredicatePath path, String value),
+    @required Result gt(PredicatePath path, double value),
+    @required Result has(PredicatePath path),
+    @required
+        Result inRange(
+            PredicatePath path, double lowerLimit, double upperLimit),
+    @required Result into(PredicatePath path, List<String> values),
+    @required Result lt(PredicatePath path, double value),
+    @required Result missing(PredicatePath path),
+    @required
+        Result near(PredicatePath path, double latitude, double longitude,
+            double radius),
+    @required Result not(PredicatePath path, String value),
+    @required Result similar(String id, int value),
+    @required Result dateAfter(PredicatePath path, int epoch),
+    @required Result dateBefore(PredicatePath path, int epoch),
+    @required
+        Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
+    @required Result dateDayOfMonth(PredicatePath path, int day),
+    @required Result dateDayOfMonthAfter(PredicatePath path, int day),
+    @required Result dateDayOfMonthBefore(PredicatePath path, int day),
+    @required Result dateDayOfWeek(PredicatePath path, String day),
+    @required Result dateDayOfWeekAfter(PredicatePath path, String day),
+    @required Result dateDayOfWeekBefore(PredicatePath path, String day),
+    @required Result dateMonth(PredicatePath path, String month),
+    @required Result dateMonthAfter(PredicatePath path, String month),
+    @required Result dateMonthBefore(PredicatePath path, String month),
+    @required Result dateYear(PredicatePath path, int year),
+    @required Result hour(PredicatePath path, int hour),
+    @required Result hourAfter(PredicatePath path, int hour),
+    @required Result hourBefore(PredicatePath path, int hour),
+  }) {
+    assert(any != null);
+    assert(at != null);
+    assert(fullText != null);
+    assert(gt != null);
+    assert(has != null);
+    assert(inRange != null);
+    assert(into != null);
+    assert(lt != null);
+    assert(missing != null);
+    assert(near != null);
+    assert(not != null);
+    assert(similar != null);
+    assert(dateAfter != null);
+    assert(dateBefore != null);
+    assert(dateBetween != null);
+    assert(dateDayOfMonth != null);
+    assert(dateDayOfMonthAfter != null);
+    assert(dateDayOfMonthBefore != null);
+    assert(dateDayOfWeek != null);
+    assert(dateDayOfWeekAfter != null);
+    assert(dateDayOfWeekBefore != null);
+    assert(dateMonth != null);
+    assert(dateMonthAfter != null);
+    assert(dateMonthBefore != null);
+    assert(dateYear != null);
+    assert(hour != null);
+    assert(hourAfter != null);
+    assert(hourBefore != null);
+    return dateDayOfMonth(path, day);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result any(PredicatePath path, List<String> values),
+    Result at(PredicatePath path, String value),
+    Result fullText(PredicatePath path, String value),
+    Result gt(PredicatePath path, double value),
+    Result has(PredicatePath path),
+    Result inRange(PredicatePath path, double lowerLimit, double upperLimit),
+    Result into(PredicatePath path, List<String> values),
+    Result lt(PredicatePath path, double value),
+    Result missing(PredicatePath path),
+    Result near(
+        PredicatePath path, double latitude, double longitude, double radius),
+    Result not(PredicatePath path, String value),
+    Result similar(String id, int value),
+    Result dateAfter(PredicatePath path, int epoch),
+    Result dateBefore(PredicatePath path, int epoch),
+    Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
+    Result dateDayOfMonth(PredicatePath path, int day),
+    Result dateDayOfMonthAfter(PredicatePath path, int day),
+    Result dateDayOfMonthBefore(PredicatePath path, int day),
+    Result dateDayOfWeek(PredicatePath path, String day),
+    Result dateDayOfWeekAfter(PredicatePath path, String day),
+    Result dateDayOfWeekBefore(PredicatePath path, String day),
+    Result dateMonth(PredicatePath path, String month),
+    Result dateMonthAfter(PredicatePath path, String month),
+    Result dateMonthBefore(PredicatePath path, String month),
+    Result dateYear(PredicatePath path, int year),
+    Result hour(PredicatePath path, int hour),
+    Result hourAfter(PredicatePath path, int hour),
+    Result hourBefore(PredicatePath path, int hour),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (dateDayOfMonth != null) {
+      return dateDayOfMonth(path, day);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result any(AnyPredicate value),
+    @required Result at(AtPredicate value),
+    @required Result fullText(FullTextPredicate value),
+    @required Result gt(GtPredicate value),
+    @required Result has(HasPredicate value),
+    @required Result inRange(InRangePredicate value),
+    @required Result into(InPredicate value),
+    @required Result lt(LtPredicate value),
+    @required Result missing(MissingPredicate value),
+    @required Result near(NearPredicate value),
+    @required Result not(NotPredicate value),
+    @required Result similar(SimilarPredicate value),
+    @required Result dateAfter(DateAfterPredicate value),
+    @required Result dateBefore(DateBeforePredicate value),
+    @required Result dateBetween(DateBetweenPredicate value),
+    @required Result dateDayOfMonth(DateDayOfMonthPredicate value),
+    @required Result dateDayOfMonthAfter(DateDayOfMonthAfterPredicate value),
+    @required Result dateDayOfMonthBefore(DateDayOfMonthBeforePredicate value),
+    @required Result dateDayOfWeek(DateDayOfWeekPredicate value),
+    @required Result dateDayOfWeekAfter(DateDayOfWeekAfterPredicate value),
+    @required Result dateDayOfWeekBefore(DateDayOfWeekBeforePredicate value),
+    @required Result dateMonth(DateMonthPredicate value),
+    @required Result dateMonthAfter(DateMonthAfterPredicate value),
+    @required Result dateMonthBefore(DateMonthBeforePredicate value),
+    @required Result dateYear(DateYearPredicate value),
+    @required Result hour(DateHourPredicate value),
+    @required Result hourAfter(DateHourAfterPredicate value),
+    @required Result hourBefore(DateHourBeforePredicate value),
+  }) {
+    assert(any != null);
+    assert(at != null);
+    assert(fullText != null);
+    assert(gt != null);
+    assert(has != null);
+    assert(inRange != null);
+    assert(into != null);
+    assert(lt != null);
+    assert(missing != null);
+    assert(near != null);
+    assert(not != null);
+    assert(similar != null);
+    assert(dateAfter != null);
+    assert(dateBefore != null);
+    assert(dateBetween != null);
+    assert(dateDayOfMonth != null);
+    assert(dateDayOfMonthAfter != null);
+    assert(dateDayOfMonthBefore != null);
+    assert(dateDayOfWeek != null);
+    assert(dateDayOfWeekAfter != null);
+    assert(dateDayOfWeekBefore != null);
+    assert(dateMonth != null);
+    assert(dateMonthAfter != null);
+    assert(dateMonthBefore != null);
+    assert(dateYear != null);
+    assert(hour != null);
+    assert(hourAfter != null);
+    assert(hourBefore != null);
+    return dateDayOfMonth(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result any(AnyPredicate value),
+    Result at(AtPredicate value),
+    Result fullText(FullTextPredicate value),
+    Result gt(GtPredicate value),
+    Result has(HasPredicate value),
+    Result inRange(InRangePredicate value),
+    Result into(InPredicate value),
+    Result lt(LtPredicate value),
+    Result missing(MissingPredicate value),
+    Result near(NearPredicate value),
+    Result not(NotPredicate value),
+    Result similar(SimilarPredicate value),
+    Result dateAfter(DateAfterPredicate value),
+    Result dateBefore(DateBeforePredicate value),
+    Result dateBetween(DateBetweenPredicate value),
+    Result dateDayOfMonth(DateDayOfMonthPredicate value),
+    Result dateDayOfMonthAfter(DateDayOfMonthAfterPredicate value),
+    Result dateDayOfMonthBefore(DateDayOfMonthBeforePredicate value),
+    Result dateDayOfWeek(DateDayOfWeekPredicate value),
+    Result dateDayOfWeekAfter(DateDayOfWeekAfterPredicate value),
+    Result dateDayOfWeekBefore(DateDayOfWeekBeforePredicate value),
+    Result dateMonth(DateMonthPredicate value),
+    Result dateMonthAfter(DateMonthAfterPredicate value),
+    Result dateMonthBefore(DateMonthBeforePredicate value),
+    Result dateYear(DateYearPredicate value),
+    Result hour(DateHourPredicate value),
+    Result hourAfter(DateHourAfterPredicate value),
+    Result hourBefore(DateHourBeforePredicate value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (dateDayOfMonth != null) {
+      return dateDayOfMonth(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DateDayOfMonthPredicate implements Predicate {
+  factory DateDayOfMonthPredicate(PredicatePath path, int day) =
+      _$DateDayOfMonthPredicate;
+
+  PredicatePath get path;
+  int get day;
+  $DateDayOfMonthPredicateCopyWith<DateDayOfMonthPredicate> get copyWith;
+}
+
+abstract class $DateDayOfMonthAfterPredicateCopyWith<$Res> {
+  factory $DateDayOfMonthAfterPredicateCopyWith(
+          DateDayOfMonthAfterPredicate value,
+          $Res Function(DateDayOfMonthAfterPredicate) then) =
+      _$DateDayOfMonthAfterPredicateCopyWithImpl<$Res>;
+  $Res call({PredicatePath path, int day});
+}
+
+class _$DateDayOfMonthAfterPredicateCopyWithImpl<$Res>
+    extends _$PredicateCopyWithImpl<$Res>
+    implements $DateDayOfMonthAfterPredicateCopyWith<$Res> {
+  _$DateDayOfMonthAfterPredicateCopyWithImpl(
+      DateDayOfMonthAfterPredicate _value,
+      $Res Function(DateDayOfMonthAfterPredicate) _then)
+      : super(_value, (v) => _then(v as DateDayOfMonthAfterPredicate));
+
+  @override
+  DateDayOfMonthAfterPredicate get _value =>
+      super._value as DateDayOfMonthAfterPredicate;
+
+  @override
+  $Res call({
+    Object path = freezed,
+    Object day = freezed,
+  }) {
+    return _then(DateDayOfMonthAfterPredicate(
+      path == freezed ? _value.path : path as PredicatePath,
+      day == freezed ? _value.day : day as int,
+    ));
+  }
+}
+
+class _$DateDayOfMonthAfterPredicate implements DateDayOfMonthAfterPredicate {
+  _$DateDayOfMonthAfterPredicate(this.path, this.day)
+      : assert(path != null),
+        assert(day != null);
+
+  @override
+  final PredicatePath path;
+  @override
+  final int day;
+
+  @override
+  String toString() {
+    return 'Predicate.dateDayOfMonthAfter(path: $path, day: $day)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is DateDayOfMonthAfterPredicate &&
+            (identical(other.path, path) ||
+                const DeepCollectionEquality().equals(other.path, path)) &&
+            (identical(other.day, day) ||
+                const DeepCollectionEquality().equals(other.day, day)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(path) ^
+      const DeepCollectionEquality().hash(day);
+
+  @override
+  $DateDayOfMonthAfterPredicateCopyWith<DateDayOfMonthAfterPredicate>
+      get copyWith => _$DateDayOfMonthAfterPredicateCopyWithImpl<
+          DateDayOfMonthAfterPredicate>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result any(PredicatePath path, List<String> values),
+    @required Result at(PredicatePath path, String value),
+    @required Result fullText(PredicatePath path, String value),
+    @required Result gt(PredicatePath path, double value),
+    @required Result has(PredicatePath path),
+    @required
+        Result inRange(
+            PredicatePath path, double lowerLimit, double upperLimit),
+    @required Result into(PredicatePath path, List<String> values),
+    @required Result lt(PredicatePath path, double value),
+    @required Result missing(PredicatePath path),
+    @required
+        Result near(PredicatePath path, double latitude, double longitude,
+            double radius),
+    @required Result not(PredicatePath path, String value),
+    @required Result similar(String id, int value),
+    @required Result dateAfter(PredicatePath path, int epoch),
+    @required Result dateBefore(PredicatePath path, int epoch),
+    @required
+        Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
+    @required Result dateDayOfMonth(PredicatePath path, int day),
+    @required Result dateDayOfMonthAfter(PredicatePath path, int day),
+    @required Result dateDayOfMonthBefore(PredicatePath path, int day),
+    @required Result dateDayOfWeek(PredicatePath path, String day),
+    @required Result dateDayOfWeekAfter(PredicatePath path, String day),
+    @required Result dateDayOfWeekBefore(PredicatePath path, String day),
+    @required Result dateMonth(PredicatePath path, String month),
+    @required Result dateMonthAfter(PredicatePath path, String month),
+    @required Result dateMonthBefore(PredicatePath path, String month),
+    @required Result dateYear(PredicatePath path, int year),
+    @required Result hour(PredicatePath path, int hour),
+    @required Result hourAfter(PredicatePath path, int hour),
+    @required Result hourBefore(PredicatePath path, int hour),
+  }) {
+    assert(any != null);
+    assert(at != null);
+    assert(fullText != null);
+    assert(gt != null);
+    assert(has != null);
+    assert(inRange != null);
+    assert(into != null);
+    assert(lt != null);
+    assert(missing != null);
+    assert(near != null);
+    assert(not != null);
+    assert(similar != null);
+    assert(dateAfter != null);
+    assert(dateBefore != null);
+    assert(dateBetween != null);
+    assert(dateDayOfMonth != null);
+    assert(dateDayOfMonthAfter != null);
+    assert(dateDayOfMonthBefore != null);
+    assert(dateDayOfWeek != null);
+    assert(dateDayOfWeekAfter != null);
+    assert(dateDayOfWeekBefore != null);
+    assert(dateMonth != null);
+    assert(dateMonthAfter != null);
+    assert(dateMonthBefore != null);
+    assert(dateYear != null);
+    assert(hour != null);
+    assert(hourAfter != null);
+    assert(hourBefore != null);
+    return dateDayOfMonthAfter(path, day);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result any(PredicatePath path, List<String> values),
+    Result at(PredicatePath path, String value),
+    Result fullText(PredicatePath path, String value),
+    Result gt(PredicatePath path, double value),
+    Result has(PredicatePath path),
+    Result inRange(PredicatePath path, double lowerLimit, double upperLimit),
+    Result into(PredicatePath path, List<String> values),
+    Result lt(PredicatePath path, double value),
+    Result missing(PredicatePath path),
+    Result near(
+        PredicatePath path, double latitude, double longitude, double radius),
+    Result not(PredicatePath path, String value),
+    Result similar(String id, int value),
+    Result dateAfter(PredicatePath path, int epoch),
+    Result dateBefore(PredicatePath path, int epoch),
+    Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
+    Result dateDayOfMonth(PredicatePath path, int day),
+    Result dateDayOfMonthAfter(PredicatePath path, int day),
+    Result dateDayOfMonthBefore(PredicatePath path, int day),
+    Result dateDayOfWeek(PredicatePath path, String day),
+    Result dateDayOfWeekAfter(PredicatePath path, String day),
+    Result dateDayOfWeekBefore(PredicatePath path, String day),
+    Result dateMonth(PredicatePath path, String month),
+    Result dateMonthAfter(PredicatePath path, String month),
+    Result dateMonthBefore(PredicatePath path, String month),
+    Result dateYear(PredicatePath path, int year),
+    Result hour(PredicatePath path, int hour),
+    Result hourAfter(PredicatePath path, int hour),
+    Result hourBefore(PredicatePath path, int hour),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (dateDayOfMonthAfter != null) {
+      return dateDayOfMonthAfter(path, day);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result any(AnyPredicate value),
+    @required Result at(AtPredicate value),
+    @required Result fullText(FullTextPredicate value),
+    @required Result gt(GtPredicate value),
+    @required Result has(HasPredicate value),
+    @required Result inRange(InRangePredicate value),
+    @required Result into(InPredicate value),
+    @required Result lt(LtPredicate value),
+    @required Result missing(MissingPredicate value),
+    @required Result near(NearPredicate value),
+    @required Result not(NotPredicate value),
+    @required Result similar(SimilarPredicate value),
+    @required Result dateAfter(DateAfterPredicate value),
+    @required Result dateBefore(DateBeforePredicate value),
+    @required Result dateBetween(DateBetweenPredicate value),
+    @required Result dateDayOfMonth(DateDayOfMonthPredicate value),
+    @required Result dateDayOfMonthAfter(DateDayOfMonthAfterPredicate value),
+    @required Result dateDayOfMonthBefore(DateDayOfMonthBeforePredicate value),
+    @required Result dateDayOfWeek(DateDayOfWeekPredicate value),
+    @required Result dateDayOfWeekAfter(DateDayOfWeekAfterPredicate value),
+    @required Result dateDayOfWeekBefore(DateDayOfWeekBeforePredicate value),
+    @required Result dateMonth(DateMonthPredicate value),
+    @required Result dateMonthAfter(DateMonthAfterPredicate value),
+    @required Result dateMonthBefore(DateMonthBeforePredicate value),
+    @required Result dateYear(DateYearPredicate value),
+    @required Result hour(DateHourPredicate value),
+    @required Result hourAfter(DateHourAfterPredicate value),
+    @required Result hourBefore(DateHourBeforePredicate value),
+  }) {
+    assert(any != null);
+    assert(at != null);
+    assert(fullText != null);
+    assert(gt != null);
+    assert(has != null);
+    assert(inRange != null);
+    assert(into != null);
+    assert(lt != null);
+    assert(missing != null);
+    assert(near != null);
+    assert(not != null);
+    assert(similar != null);
+    assert(dateAfter != null);
+    assert(dateBefore != null);
+    assert(dateBetween != null);
+    assert(dateDayOfMonth != null);
+    assert(dateDayOfMonthAfter != null);
+    assert(dateDayOfMonthBefore != null);
+    assert(dateDayOfWeek != null);
+    assert(dateDayOfWeekAfter != null);
+    assert(dateDayOfWeekBefore != null);
+    assert(dateMonth != null);
+    assert(dateMonthAfter != null);
+    assert(dateMonthBefore != null);
+    assert(dateYear != null);
+    assert(hour != null);
+    assert(hourAfter != null);
+    assert(hourBefore != null);
+    return dateDayOfMonthAfter(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result any(AnyPredicate value),
+    Result at(AtPredicate value),
+    Result fullText(FullTextPredicate value),
+    Result gt(GtPredicate value),
+    Result has(HasPredicate value),
+    Result inRange(InRangePredicate value),
+    Result into(InPredicate value),
+    Result lt(LtPredicate value),
+    Result missing(MissingPredicate value),
+    Result near(NearPredicate value),
+    Result not(NotPredicate value),
+    Result similar(SimilarPredicate value),
+    Result dateAfter(DateAfterPredicate value),
+    Result dateBefore(DateBeforePredicate value),
+    Result dateBetween(DateBetweenPredicate value),
+    Result dateDayOfMonth(DateDayOfMonthPredicate value),
+    Result dateDayOfMonthAfter(DateDayOfMonthAfterPredicate value),
+    Result dateDayOfMonthBefore(DateDayOfMonthBeforePredicate value),
+    Result dateDayOfWeek(DateDayOfWeekPredicate value),
+    Result dateDayOfWeekAfter(DateDayOfWeekAfterPredicate value),
+    Result dateDayOfWeekBefore(DateDayOfWeekBeforePredicate value),
+    Result dateMonth(DateMonthPredicate value),
+    Result dateMonthAfter(DateMonthAfterPredicate value),
+    Result dateMonthBefore(DateMonthBeforePredicate value),
+    Result dateYear(DateYearPredicate value),
+    Result hour(DateHourPredicate value),
+    Result hourAfter(DateHourAfterPredicate value),
+    Result hourBefore(DateHourBeforePredicate value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (dateDayOfMonthAfter != null) {
+      return dateDayOfMonthAfter(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DateDayOfMonthAfterPredicate implements Predicate {
+  factory DateDayOfMonthAfterPredicate(PredicatePath path, int day) =
+      _$DateDayOfMonthAfterPredicate;
+
+  PredicatePath get path;
+  int get day;
+  $DateDayOfMonthAfterPredicateCopyWith<DateDayOfMonthAfterPredicate>
+      get copyWith;
+}
+
+abstract class $DateDayOfMonthBeforePredicateCopyWith<$Res> {
+  factory $DateDayOfMonthBeforePredicateCopyWith(
+          DateDayOfMonthBeforePredicate value,
+          $Res Function(DateDayOfMonthBeforePredicate) then) =
+      _$DateDayOfMonthBeforePredicateCopyWithImpl<$Res>;
+  $Res call({PredicatePath path, int day});
+}
+
+class _$DateDayOfMonthBeforePredicateCopyWithImpl<$Res>
+    extends _$PredicateCopyWithImpl<$Res>
+    implements $DateDayOfMonthBeforePredicateCopyWith<$Res> {
+  _$DateDayOfMonthBeforePredicateCopyWithImpl(
+      DateDayOfMonthBeforePredicate _value,
+      $Res Function(DateDayOfMonthBeforePredicate) _then)
+      : super(_value, (v) => _then(v as DateDayOfMonthBeforePredicate));
+
+  @override
+  DateDayOfMonthBeforePredicate get _value =>
+      super._value as DateDayOfMonthBeforePredicate;
+
+  @override
+  $Res call({
+    Object path = freezed,
+    Object day = freezed,
+  }) {
+    return _then(DateDayOfMonthBeforePredicate(
+      path == freezed ? _value.path : path as PredicatePath,
+      day == freezed ? _value.day : day as int,
+    ));
+  }
+}
+
+class _$DateDayOfMonthBeforePredicate implements DateDayOfMonthBeforePredicate {
+  _$DateDayOfMonthBeforePredicate(this.path, this.day)
+      : assert(path != null),
+        assert(day != null);
+
+  @override
+  final PredicatePath path;
+  @override
+  final int day;
+
+  @override
+  String toString() {
+    return 'Predicate.dateDayOfMonthBefore(path: $path, day: $day)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is DateDayOfMonthBeforePredicate &&
+            (identical(other.path, path) ||
+                const DeepCollectionEquality().equals(other.path, path)) &&
+            (identical(other.day, day) ||
+                const DeepCollectionEquality().equals(other.day, day)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(path) ^
+      const DeepCollectionEquality().hash(day);
+
+  @override
+  $DateDayOfMonthBeforePredicateCopyWith<DateDayOfMonthBeforePredicate>
+      get copyWith => _$DateDayOfMonthBeforePredicateCopyWithImpl<
+          DateDayOfMonthBeforePredicate>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result any(PredicatePath path, List<String> values),
+    @required Result at(PredicatePath path, String value),
+    @required Result fullText(PredicatePath path, String value),
+    @required Result gt(PredicatePath path, double value),
+    @required Result has(PredicatePath path),
+    @required
+        Result inRange(
+            PredicatePath path, double lowerLimit, double upperLimit),
+    @required Result into(PredicatePath path, List<String> values),
+    @required Result lt(PredicatePath path, double value),
+    @required Result missing(PredicatePath path),
+    @required
+        Result near(PredicatePath path, double latitude, double longitude,
+            double radius),
+    @required Result not(PredicatePath path, String value),
+    @required Result similar(String id, int value),
+    @required Result dateAfter(PredicatePath path, int epoch),
+    @required Result dateBefore(PredicatePath path, int epoch),
+    @required
+        Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
+    @required Result dateDayOfMonth(PredicatePath path, int day),
+    @required Result dateDayOfMonthAfter(PredicatePath path, int day),
+    @required Result dateDayOfMonthBefore(PredicatePath path, int day),
+    @required Result dateDayOfWeek(PredicatePath path, String day),
+    @required Result dateDayOfWeekAfter(PredicatePath path, String day),
+    @required Result dateDayOfWeekBefore(PredicatePath path, String day),
+    @required Result dateMonth(PredicatePath path, String month),
+    @required Result dateMonthAfter(PredicatePath path, String month),
+    @required Result dateMonthBefore(PredicatePath path, String month),
+    @required Result dateYear(PredicatePath path, int year),
+    @required Result hour(PredicatePath path, int hour),
+    @required Result hourAfter(PredicatePath path, int hour),
+    @required Result hourBefore(PredicatePath path, int hour),
+  }) {
+    assert(any != null);
+    assert(at != null);
+    assert(fullText != null);
+    assert(gt != null);
+    assert(has != null);
+    assert(inRange != null);
+    assert(into != null);
+    assert(lt != null);
+    assert(missing != null);
+    assert(near != null);
+    assert(not != null);
+    assert(similar != null);
+    assert(dateAfter != null);
+    assert(dateBefore != null);
+    assert(dateBetween != null);
+    assert(dateDayOfMonth != null);
+    assert(dateDayOfMonthAfter != null);
+    assert(dateDayOfMonthBefore != null);
+    assert(dateDayOfWeek != null);
+    assert(dateDayOfWeekAfter != null);
+    assert(dateDayOfWeekBefore != null);
+    assert(dateMonth != null);
+    assert(dateMonthAfter != null);
+    assert(dateMonthBefore != null);
+    assert(dateYear != null);
+    assert(hour != null);
+    assert(hourAfter != null);
+    assert(hourBefore != null);
+    return dateDayOfMonthBefore(path, day);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result any(PredicatePath path, List<String> values),
+    Result at(PredicatePath path, String value),
+    Result fullText(PredicatePath path, String value),
+    Result gt(PredicatePath path, double value),
+    Result has(PredicatePath path),
+    Result inRange(PredicatePath path, double lowerLimit, double upperLimit),
+    Result into(PredicatePath path, List<String> values),
+    Result lt(PredicatePath path, double value),
+    Result missing(PredicatePath path),
+    Result near(
+        PredicatePath path, double latitude, double longitude, double radius),
+    Result not(PredicatePath path, String value),
+    Result similar(String id, int value),
+    Result dateAfter(PredicatePath path, int epoch),
+    Result dateBefore(PredicatePath path, int epoch),
+    Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
+    Result dateDayOfMonth(PredicatePath path, int day),
+    Result dateDayOfMonthAfter(PredicatePath path, int day),
+    Result dateDayOfMonthBefore(PredicatePath path, int day),
+    Result dateDayOfWeek(PredicatePath path, String day),
+    Result dateDayOfWeekAfter(PredicatePath path, String day),
+    Result dateDayOfWeekBefore(PredicatePath path, String day),
+    Result dateMonth(PredicatePath path, String month),
+    Result dateMonthAfter(PredicatePath path, String month),
+    Result dateMonthBefore(PredicatePath path, String month),
+    Result dateYear(PredicatePath path, int year),
+    Result hour(PredicatePath path, int hour),
+    Result hourAfter(PredicatePath path, int hour),
+    Result hourBefore(PredicatePath path, int hour),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (dateDayOfMonthBefore != null) {
+      return dateDayOfMonthBefore(path, day);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result any(AnyPredicate value),
+    @required Result at(AtPredicate value),
+    @required Result fullText(FullTextPredicate value),
+    @required Result gt(GtPredicate value),
+    @required Result has(HasPredicate value),
+    @required Result inRange(InRangePredicate value),
+    @required Result into(InPredicate value),
+    @required Result lt(LtPredicate value),
+    @required Result missing(MissingPredicate value),
+    @required Result near(NearPredicate value),
+    @required Result not(NotPredicate value),
+    @required Result similar(SimilarPredicate value),
+    @required Result dateAfter(DateAfterPredicate value),
+    @required Result dateBefore(DateBeforePredicate value),
+    @required Result dateBetween(DateBetweenPredicate value),
+    @required Result dateDayOfMonth(DateDayOfMonthPredicate value),
+    @required Result dateDayOfMonthAfter(DateDayOfMonthAfterPredicate value),
+    @required Result dateDayOfMonthBefore(DateDayOfMonthBeforePredicate value),
+    @required Result dateDayOfWeek(DateDayOfWeekPredicate value),
+    @required Result dateDayOfWeekAfter(DateDayOfWeekAfterPredicate value),
+    @required Result dateDayOfWeekBefore(DateDayOfWeekBeforePredicate value),
+    @required Result dateMonth(DateMonthPredicate value),
+    @required Result dateMonthAfter(DateMonthAfterPredicate value),
+    @required Result dateMonthBefore(DateMonthBeforePredicate value),
+    @required Result dateYear(DateYearPredicate value),
+    @required Result hour(DateHourPredicate value),
+    @required Result hourAfter(DateHourAfterPredicate value),
+    @required Result hourBefore(DateHourBeforePredicate value),
+  }) {
+    assert(any != null);
+    assert(at != null);
+    assert(fullText != null);
+    assert(gt != null);
+    assert(has != null);
+    assert(inRange != null);
+    assert(into != null);
+    assert(lt != null);
+    assert(missing != null);
+    assert(near != null);
+    assert(not != null);
+    assert(similar != null);
+    assert(dateAfter != null);
+    assert(dateBefore != null);
+    assert(dateBetween != null);
+    assert(dateDayOfMonth != null);
+    assert(dateDayOfMonthAfter != null);
+    assert(dateDayOfMonthBefore != null);
+    assert(dateDayOfWeek != null);
+    assert(dateDayOfWeekAfter != null);
+    assert(dateDayOfWeekBefore != null);
+    assert(dateMonth != null);
+    assert(dateMonthAfter != null);
+    assert(dateMonthBefore != null);
+    assert(dateYear != null);
+    assert(hour != null);
+    assert(hourAfter != null);
+    assert(hourBefore != null);
+    return dateDayOfMonthBefore(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result any(AnyPredicate value),
+    Result at(AtPredicate value),
+    Result fullText(FullTextPredicate value),
+    Result gt(GtPredicate value),
+    Result has(HasPredicate value),
+    Result inRange(InRangePredicate value),
+    Result into(InPredicate value),
+    Result lt(LtPredicate value),
+    Result missing(MissingPredicate value),
+    Result near(NearPredicate value),
+    Result not(NotPredicate value),
+    Result similar(SimilarPredicate value),
+    Result dateAfter(DateAfterPredicate value),
+    Result dateBefore(DateBeforePredicate value),
+    Result dateBetween(DateBetweenPredicate value),
+    Result dateDayOfMonth(DateDayOfMonthPredicate value),
+    Result dateDayOfMonthAfter(DateDayOfMonthAfterPredicate value),
+    Result dateDayOfMonthBefore(DateDayOfMonthBeforePredicate value),
+    Result dateDayOfWeek(DateDayOfWeekPredicate value),
+    Result dateDayOfWeekAfter(DateDayOfWeekAfterPredicate value),
+    Result dateDayOfWeekBefore(DateDayOfWeekBeforePredicate value),
+    Result dateMonth(DateMonthPredicate value),
+    Result dateMonthAfter(DateMonthAfterPredicate value),
+    Result dateMonthBefore(DateMonthBeforePredicate value),
+    Result dateYear(DateYearPredicate value),
+    Result hour(DateHourPredicate value),
+    Result hourAfter(DateHourAfterPredicate value),
+    Result hourBefore(DateHourBeforePredicate value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (dateDayOfMonthBefore != null) {
+      return dateDayOfMonthBefore(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DateDayOfMonthBeforePredicate implements Predicate {
+  factory DateDayOfMonthBeforePredicate(PredicatePath path, int day) =
+      _$DateDayOfMonthBeforePredicate;
+
+  PredicatePath get path;
+  int get day;
+  $DateDayOfMonthBeforePredicateCopyWith<DateDayOfMonthBeforePredicate>
+      get copyWith;
+}
+
+abstract class $DateDayOfWeekPredicateCopyWith<$Res> {
+  factory $DateDayOfWeekPredicateCopyWith(DateDayOfWeekPredicate value,
+          $Res Function(DateDayOfWeekPredicate) then) =
+      _$DateDayOfWeekPredicateCopyWithImpl<$Res>;
+  $Res call({PredicatePath path, String day});
+}
+
+class _$DateDayOfWeekPredicateCopyWithImpl<$Res>
+    extends _$PredicateCopyWithImpl<$Res>
+    implements $DateDayOfWeekPredicateCopyWith<$Res> {
+  _$DateDayOfWeekPredicateCopyWithImpl(DateDayOfWeekPredicate _value,
+      $Res Function(DateDayOfWeekPredicate) _then)
+      : super(_value, (v) => _then(v as DateDayOfWeekPredicate));
+
+  @override
+  DateDayOfWeekPredicate get _value => super._value as DateDayOfWeekPredicate;
+
+  @override
+  $Res call({
+    Object path = freezed,
+    Object day = freezed,
+  }) {
+    return _then(DateDayOfWeekPredicate(
+      path == freezed ? _value.path : path as PredicatePath,
+      day == freezed ? _value.day : day as String,
+    ));
+  }
+}
+
+class _$DateDayOfWeekPredicate implements DateDayOfWeekPredicate {
+  _$DateDayOfWeekPredicate(this.path, this.day)
+      : assert(path != null),
+        assert(day != null);
+
+  @override
+  final PredicatePath path;
+  @override
+  final String day;
+
+  @override
+  String toString() {
+    return 'Predicate.dateDayOfWeek(path: $path, day: $day)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is DateDayOfWeekPredicate &&
+            (identical(other.path, path) ||
+                const DeepCollectionEquality().equals(other.path, path)) &&
+            (identical(other.day, day) ||
+                const DeepCollectionEquality().equals(other.day, day)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(path) ^
+      const DeepCollectionEquality().hash(day);
+
+  @override
+  $DateDayOfWeekPredicateCopyWith<DateDayOfWeekPredicate> get copyWith =>
+      _$DateDayOfWeekPredicateCopyWithImpl<DateDayOfWeekPredicate>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result any(PredicatePath path, List<String> values),
+    @required Result at(PredicatePath path, String value),
+    @required Result fullText(PredicatePath path, String value),
+    @required Result gt(PredicatePath path, double value),
+    @required Result has(PredicatePath path),
+    @required
+        Result inRange(
+            PredicatePath path, double lowerLimit, double upperLimit),
+    @required Result into(PredicatePath path, List<String> values),
+    @required Result lt(PredicatePath path, double value),
+    @required Result missing(PredicatePath path),
+    @required
+        Result near(PredicatePath path, double latitude, double longitude,
+            double radius),
+    @required Result not(PredicatePath path, String value),
+    @required Result similar(String id, int value),
+    @required Result dateAfter(PredicatePath path, int epoch),
+    @required Result dateBefore(PredicatePath path, int epoch),
+    @required
+        Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
+    @required Result dateDayOfMonth(PredicatePath path, int day),
+    @required Result dateDayOfMonthAfter(PredicatePath path, int day),
+    @required Result dateDayOfMonthBefore(PredicatePath path, int day),
+    @required Result dateDayOfWeek(PredicatePath path, String day),
+    @required Result dateDayOfWeekAfter(PredicatePath path, String day),
+    @required Result dateDayOfWeekBefore(PredicatePath path, String day),
+    @required Result dateMonth(PredicatePath path, String month),
+    @required Result dateMonthAfter(PredicatePath path, String month),
+    @required Result dateMonthBefore(PredicatePath path, String month),
+    @required Result dateYear(PredicatePath path, int year),
+    @required Result hour(PredicatePath path, int hour),
+    @required Result hourAfter(PredicatePath path, int hour),
+    @required Result hourBefore(PredicatePath path, int hour),
+  }) {
+    assert(any != null);
+    assert(at != null);
+    assert(fullText != null);
+    assert(gt != null);
+    assert(has != null);
+    assert(inRange != null);
+    assert(into != null);
+    assert(lt != null);
+    assert(missing != null);
+    assert(near != null);
+    assert(not != null);
+    assert(similar != null);
+    assert(dateAfter != null);
+    assert(dateBefore != null);
+    assert(dateBetween != null);
+    assert(dateDayOfMonth != null);
+    assert(dateDayOfMonthAfter != null);
+    assert(dateDayOfMonthBefore != null);
+    assert(dateDayOfWeek != null);
+    assert(dateDayOfWeekAfter != null);
+    assert(dateDayOfWeekBefore != null);
+    assert(dateMonth != null);
+    assert(dateMonthAfter != null);
+    assert(dateMonthBefore != null);
+    assert(dateYear != null);
+    assert(hour != null);
+    assert(hourAfter != null);
+    assert(hourBefore != null);
+    return dateDayOfWeek(path, day);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result any(PredicatePath path, List<String> values),
+    Result at(PredicatePath path, String value),
+    Result fullText(PredicatePath path, String value),
+    Result gt(PredicatePath path, double value),
+    Result has(PredicatePath path),
+    Result inRange(PredicatePath path, double lowerLimit, double upperLimit),
+    Result into(PredicatePath path, List<String> values),
+    Result lt(PredicatePath path, double value),
+    Result missing(PredicatePath path),
+    Result near(
+        PredicatePath path, double latitude, double longitude, double radius),
+    Result not(PredicatePath path, String value),
+    Result similar(String id, int value),
+    Result dateAfter(PredicatePath path, int epoch),
+    Result dateBefore(PredicatePath path, int epoch),
+    Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
+    Result dateDayOfMonth(PredicatePath path, int day),
+    Result dateDayOfMonthAfter(PredicatePath path, int day),
+    Result dateDayOfMonthBefore(PredicatePath path, int day),
+    Result dateDayOfWeek(PredicatePath path, String day),
+    Result dateDayOfWeekAfter(PredicatePath path, String day),
+    Result dateDayOfWeekBefore(PredicatePath path, String day),
+    Result dateMonth(PredicatePath path, String month),
+    Result dateMonthAfter(PredicatePath path, String month),
+    Result dateMonthBefore(PredicatePath path, String month),
+    Result dateYear(PredicatePath path, int year),
+    Result hour(PredicatePath path, int hour),
+    Result hourAfter(PredicatePath path, int hour),
+    Result hourBefore(PredicatePath path, int hour),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (dateDayOfWeek != null) {
+      return dateDayOfWeek(path, day);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result any(AnyPredicate value),
+    @required Result at(AtPredicate value),
+    @required Result fullText(FullTextPredicate value),
+    @required Result gt(GtPredicate value),
+    @required Result has(HasPredicate value),
+    @required Result inRange(InRangePredicate value),
+    @required Result into(InPredicate value),
+    @required Result lt(LtPredicate value),
+    @required Result missing(MissingPredicate value),
+    @required Result near(NearPredicate value),
+    @required Result not(NotPredicate value),
+    @required Result similar(SimilarPredicate value),
+    @required Result dateAfter(DateAfterPredicate value),
+    @required Result dateBefore(DateBeforePredicate value),
+    @required Result dateBetween(DateBetweenPredicate value),
+    @required Result dateDayOfMonth(DateDayOfMonthPredicate value),
+    @required Result dateDayOfMonthAfter(DateDayOfMonthAfterPredicate value),
+    @required Result dateDayOfMonthBefore(DateDayOfMonthBeforePredicate value),
+    @required Result dateDayOfWeek(DateDayOfWeekPredicate value),
+    @required Result dateDayOfWeekAfter(DateDayOfWeekAfterPredicate value),
+    @required Result dateDayOfWeekBefore(DateDayOfWeekBeforePredicate value),
+    @required Result dateMonth(DateMonthPredicate value),
+    @required Result dateMonthAfter(DateMonthAfterPredicate value),
+    @required Result dateMonthBefore(DateMonthBeforePredicate value),
+    @required Result dateYear(DateYearPredicate value),
+    @required Result hour(DateHourPredicate value),
+    @required Result hourAfter(DateHourAfterPredicate value),
+    @required Result hourBefore(DateHourBeforePredicate value),
+  }) {
+    assert(any != null);
+    assert(at != null);
+    assert(fullText != null);
+    assert(gt != null);
+    assert(has != null);
+    assert(inRange != null);
+    assert(into != null);
+    assert(lt != null);
+    assert(missing != null);
+    assert(near != null);
+    assert(not != null);
+    assert(similar != null);
+    assert(dateAfter != null);
+    assert(dateBefore != null);
+    assert(dateBetween != null);
+    assert(dateDayOfMonth != null);
+    assert(dateDayOfMonthAfter != null);
+    assert(dateDayOfMonthBefore != null);
+    assert(dateDayOfWeek != null);
+    assert(dateDayOfWeekAfter != null);
+    assert(dateDayOfWeekBefore != null);
+    assert(dateMonth != null);
+    assert(dateMonthAfter != null);
+    assert(dateMonthBefore != null);
+    assert(dateYear != null);
+    assert(hour != null);
+    assert(hourAfter != null);
+    assert(hourBefore != null);
+    return dateDayOfWeek(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result any(AnyPredicate value),
+    Result at(AtPredicate value),
+    Result fullText(FullTextPredicate value),
+    Result gt(GtPredicate value),
+    Result has(HasPredicate value),
+    Result inRange(InRangePredicate value),
+    Result into(InPredicate value),
+    Result lt(LtPredicate value),
+    Result missing(MissingPredicate value),
+    Result near(NearPredicate value),
+    Result not(NotPredicate value),
+    Result similar(SimilarPredicate value),
+    Result dateAfter(DateAfterPredicate value),
+    Result dateBefore(DateBeforePredicate value),
+    Result dateBetween(DateBetweenPredicate value),
+    Result dateDayOfMonth(DateDayOfMonthPredicate value),
+    Result dateDayOfMonthAfter(DateDayOfMonthAfterPredicate value),
+    Result dateDayOfMonthBefore(DateDayOfMonthBeforePredicate value),
+    Result dateDayOfWeek(DateDayOfWeekPredicate value),
+    Result dateDayOfWeekAfter(DateDayOfWeekAfterPredicate value),
+    Result dateDayOfWeekBefore(DateDayOfWeekBeforePredicate value),
+    Result dateMonth(DateMonthPredicate value),
+    Result dateMonthAfter(DateMonthAfterPredicate value),
+    Result dateMonthBefore(DateMonthBeforePredicate value),
+    Result dateYear(DateYearPredicate value),
+    Result hour(DateHourPredicate value),
+    Result hourAfter(DateHourAfterPredicate value),
+    Result hourBefore(DateHourBeforePredicate value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (dateDayOfWeek != null) {
+      return dateDayOfWeek(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DateDayOfWeekPredicate implements Predicate {
+  factory DateDayOfWeekPredicate(PredicatePath path, String day) =
+      _$DateDayOfWeekPredicate;
+
+  PredicatePath get path;
+  String get day;
+  $DateDayOfWeekPredicateCopyWith<DateDayOfWeekPredicate> get copyWith;
+}
+
+abstract class $DateDayOfWeekAfterPredicateCopyWith<$Res> {
+  factory $DateDayOfWeekAfterPredicateCopyWith(
+          DateDayOfWeekAfterPredicate value,
+          $Res Function(DateDayOfWeekAfterPredicate) then) =
+      _$DateDayOfWeekAfterPredicateCopyWithImpl<$Res>;
+  $Res call({PredicatePath path, String day});
+}
+
+class _$DateDayOfWeekAfterPredicateCopyWithImpl<$Res>
+    extends _$PredicateCopyWithImpl<$Res>
+    implements $DateDayOfWeekAfterPredicateCopyWith<$Res> {
+  _$DateDayOfWeekAfterPredicateCopyWithImpl(DateDayOfWeekAfterPredicate _value,
+      $Res Function(DateDayOfWeekAfterPredicate) _then)
+      : super(_value, (v) => _then(v as DateDayOfWeekAfterPredicate));
+
+  @override
+  DateDayOfWeekAfterPredicate get _value =>
+      super._value as DateDayOfWeekAfterPredicate;
+
+  @override
+  $Res call({
+    Object path = freezed,
+    Object day = freezed,
+  }) {
+    return _then(DateDayOfWeekAfterPredicate(
+      path == freezed ? _value.path : path as PredicatePath,
+      day == freezed ? _value.day : day as String,
+    ));
+  }
+}
+
+class _$DateDayOfWeekAfterPredicate implements DateDayOfWeekAfterPredicate {
+  _$DateDayOfWeekAfterPredicate(this.path, this.day)
+      : assert(path != null),
+        assert(day != null);
+
+  @override
+  final PredicatePath path;
+  @override
+  final String day;
+
+  @override
+  String toString() {
+    return 'Predicate.dateDayOfWeekAfter(path: $path, day: $day)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is DateDayOfWeekAfterPredicate &&
+            (identical(other.path, path) ||
+                const DeepCollectionEquality().equals(other.path, path)) &&
+            (identical(other.day, day) ||
+                const DeepCollectionEquality().equals(other.day, day)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(path) ^
+      const DeepCollectionEquality().hash(day);
+
+  @override
+  $DateDayOfWeekAfterPredicateCopyWith<DateDayOfWeekAfterPredicate>
+      get copyWith => _$DateDayOfWeekAfterPredicateCopyWithImpl<
+          DateDayOfWeekAfterPredicate>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result any(PredicatePath path, List<String> values),
+    @required Result at(PredicatePath path, String value),
+    @required Result fullText(PredicatePath path, String value),
+    @required Result gt(PredicatePath path, double value),
+    @required Result has(PredicatePath path),
+    @required
+        Result inRange(
+            PredicatePath path, double lowerLimit, double upperLimit),
+    @required Result into(PredicatePath path, List<String> values),
+    @required Result lt(PredicatePath path, double value),
+    @required Result missing(PredicatePath path),
+    @required
+        Result near(PredicatePath path, double latitude, double longitude,
+            double radius),
+    @required Result not(PredicatePath path, String value),
+    @required Result similar(String id, int value),
+    @required Result dateAfter(PredicatePath path, int epoch),
+    @required Result dateBefore(PredicatePath path, int epoch),
+    @required
+        Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
+    @required Result dateDayOfMonth(PredicatePath path, int day),
+    @required Result dateDayOfMonthAfter(PredicatePath path, int day),
+    @required Result dateDayOfMonthBefore(PredicatePath path, int day),
+    @required Result dateDayOfWeek(PredicatePath path, String day),
+    @required Result dateDayOfWeekAfter(PredicatePath path, String day),
+    @required Result dateDayOfWeekBefore(PredicatePath path, String day),
+    @required Result dateMonth(PredicatePath path, String month),
+    @required Result dateMonthAfter(PredicatePath path, String month),
+    @required Result dateMonthBefore(PredicatePath path, String month),
+    @required Result dateYear(PredicatePath path, int year),
+    @required Result hour(PredicatePath path, int hour),
+    @required Result hourAfter(PredicatePath path, int hour),
+    @required Result hourBefore(PredicatePath path, int hour),
+  }) {
+    assert(any != null);
+    assert(at != null);
+    assert(fullText != null);
+    assert(gt != null);
+    assert(has != null);
+    assert(inRange != null);
+    assert(into != null);
+    assert(lt != null);
+    assert(missing != null);
+    assert(near != null);
+    assert(not != null);
+    assert(similar != null);
+    assert(dateAfter != null);
+    assert(dateBefore != null);
+    assert(dateBetween != null);
+    assert(dateDayOfMonth != null);
+    assert(dateDayOfMonthAfter != null);
+    assert(dateDayOfMonthBefore != null);
+    assert(dateDayOfWeek != null);
+    assert(dateDayOfWeekAfter != null);
+    assert(dateDayOfWeekBefore != null);
+    assert(dateMonth != null);
+    assert(dateMonthAfter != null);
+    assert(dateMonthBefore != null);
+    assert(dateYear != null);
+    assert(hour != null);
+    assert(hourAfter != null);
+    assert(hourBefore != null);
+    return dateDayOfWeekAfter(path, day);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result any(PredicatePath path, List<String> values),
+    Result at(PredicatePath path, String value),
+    Result fullText(PredicatePath path, String value),
+    Result gt(PredicatePath path, double value),
+    Result has(PredicatePath path),
+    Result inRange(PredicatePath path, double lowerLimit, double upperLimit),
+    Result into(PredicatePath path, List<String> values),
+    Result lt(PredicatePath path, double value),
+    Result missing(PredicatePath path),
+    Result near(
+        PredicatePath path, double latitude, double longitude, double radius),
+    Result not(PredicatePath path, String value),
+    Result similar(String id, int value),
+    Result dateAfter(PredicatePath path, int epoch),
+    Result dateBefore(PredicatePath path, int epoch),
+    Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
+    Result dateDayOfMonth(PredicatePath path, int day),
+    Result dateDayOfMonthAfter(PredicatePath path, int day),
+    Result dateDayOfMonthBefore(PredicatePath path, int day),
+    Result dateDayOfWeek(PredicatePath path, String day),
+    Result dateDayOfWeekAfter(PredicatePath path, String day),
+    Result dateDayOfWeekBefore(PredicatePath path, String day),
+    Result dateMonth(PredicatePath path, String month),
+    Result dateMonthAfter(PredicatePath path, String month),
+    Result dateMonthBefore(PredicatePath path, String month),
+    Result dateYear(PredicatePath path, int year),
+    Result hour(PredicatePath path, int hour),
+    Result hourAfter(PredicatePath path, int hour),
+    Result hourBefore(PredicatePath path, int hour),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (dateDayOfWeekAfter != null) {
+      return dateDayOfWeekAfter(path, day);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result any(AnyPredicate value),
+    @required Result at(AtPredicate value),
+    @required Result fullText(FullTextPredicate value),
+    @required Result gt(GtPredicate value),
+    @required Result has(HasPredicate value),
+    @required Result inRange(InRangePredicate value),
+    @required Result into(InPredicate value),
+    @required Result lt(LtPredicate value),
+    @required Result missing(MissingPredicate value),
+    @required Result near(NearPredicate value),
+    @required Result not(NotPredicate value),
+    @required Result similar(SimilarPredicate value),
+    @required Result dateAfter(DateAfterPredicate value),
+    @required Result dateBefore(DateBeforePredicate value),
+    @required Result dateBetween(DateBetweenPredicate value),
+    @required Result dateDayOfMonth(DateDayOfMonthPredicate value),
+    @required Result dateDayOfMonthAfter(DateDayOfMonthAfterPredicate value),
+    @required Result dateDayOfMonthBefore(DateDayOfMonthBeforePredicate value),
+    @required Result dateDayOfWeek(DateDayOfWeekPredicate value),
+    @required Result dateDayOfWeekAfter(DateDayOfWeekAfterPredicate value),
+    @required Result dateDayOfWeekBefore(DateDayOfWeekBeforePredicate value),
+    @required Result dateMonth(DateMonthPredicate value),
+    @required Result dateMonthAfter(DateMonthAfterPredicate value),
+    @required Result dateMonthBefore(DateMonthBeforePredicate value),
+    @required Result dateYear(DateYearPredicate value),
+    @required Result hour(DateHourPredicate value),
+    @required Result hourAfter(DateHourAfterPredicate value),
+    @required Result hourBefore(DateHourBeforePredicate value),
+  }) {
+    assert(any != null);
+    assert(at != null);
+    assert(fullText != null);
+    assert(gt != null);
+    assert(has != null);
+    assert(inRange != null);
+    assert(into != null);
+    assert(lt != null);
+    assert(missing != null);
+    assert(near != null);
+    assert(not != null);
+    assert(similar != null);
+    assert(dateAfter != null);
+    assert(dateBefore != null);
+    assert(dateBetween != null);
+    assert(dateDayOfMonth != null);
+    assert(dateDayOfMonthAfter != null);
+    assert(dateDayOfMonthBefore != null);
+    assert(dateDayOfWeek != null);
+    assert(dateDayOfWeekAfter != null);
+    assert(dateDayOfWeekBefore != null);
+    assert(dateMonth != null);
+    assert(dateMonthAfter != null);
+    assert(dateMonthBefore != null);
+    assert(dateYear != null);
+    assert(hour != null);
+    assert(hourAfter != null);
+    assert(hourBefore != null);
+    return dateDayOfWeekAfter(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result any(AnyPredicate value),
+    Result at(AtPredicate value),
+    Result fullText(FullTextPredicate value),
+    Result gt(GtPredicate value),
+    Result has(HasPredicate value),
+    Result inRange(InRangePredicate value),
+    Result into(InPredicate value),
+    Result lt(LtPredicate value),
+    Result missing(MissingPredicate value),
+    Result near(NearPredicate value),
+    Result not(NotPredicate value),
+    Result similar(SimilarPredicate value),
+    Result dateAfter(DateAfterPredicate value),
+    Result dateBefore(DateBeforePredicate value),
+    Result dateBetween(DateBetweenPredicate value),
+    Result dateDayOfMonth(DateDayOfMonthPredicate value),
+    Result dateDayOfMonthAfter(DateDayOfMonthAfterPredicate value),
+    Result dateDayOfMonthBefore(DateDayOfMonthBeforePredicate value),
+    Result dateDayOfWeek(DateDayOfWeekPredicate value),
+    Result dateDayOfWeekAfter(DateDayOfWeekAfterPredicate value),
+    Result dateDayOfWeekBefore(DateDayOfWeekBeforePredicate value),
+    Result dateMonth(DateMonthPredicate value),
+    Result dateMonthAfter(DateMonthAfterPredicate value),
+    Result dateMonthBefore(DateMonthBeforePredicate value),
+    Result dateYear(DateYearPredicate value),
+    Result hour(DateHourPredicate value),
+    Result hourAfter(DateHourAfterPredicate value),
+    Result hourBefore(DateHourBeforePredicate value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (dateDayOfWeekAfter != null) {
+      return dateDayOfWeekAfter(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DateDayOfWeekAfterPredicate implements Predicate {
+  factory DateDayOfWeekAfterPredicate(PredicatePath path, String day) =
+      _$DateDayOfWeekAfterPredicate;
+
+  PredicatePath get path;
+  String get day;
+  $DateDayOfWeekAfterPredicateCopyWith<DateDayOfWeekAfterPredicate>
+      get copyWith;
+}
+
+abstract class $DateDayOfWeekBeforePredicateCopyWith<$Res> {
+  factory $DateDayOfWeekBeforePredicateCopyWith(
+          DateDayOfWeekBeforePredicate value,
+          $Res Function(DateDayOfWeekBeforePredicate) then) =
+      _$DateDayOfWeekBeforePredicateCopyWithImpl<$Res>;
+  $Res call({PredicatePath path, String day});
+}
+
+class _$DateDayOfWeekBeforePredicateCopyWithImpl<$Res>
+    extends _$PredicateCopyWithImpl<$Res>
+    implements $DateDayOfWeekBeforePredicateCopyWith<$Res> {
+  _$DateDayOfWeekBeforePredicateCopyWithImpl(
+      DateDayOfWeekBeforePredicate _value,
+      $Res Function(DateDayOfWeekBeforePredicate) _then)
+      : super(_value, (v) => _then(v as DateDayOfWeekBeforePredicate));
+
+  @override
+  DateDayOfWeekBeforePredicate get _value =>
+      super._value as DateDayOfWeekBeforePredicate;
+
+  @override
+  $Res call({
+    Object path = freezed,
+    Object day = freezed,
+  }) {
+    return _then(DateDayOfWeekBeforePredicate(
+      path == freezed ? _value.path : path as PredicatePath,
+      day == freezed ? _value.day : day as String,
+    ));
+  }
+}
+
+class _$DateDayOfWeekBeforePredicate implements DateDayOfWeekBeforePredicate {
+  _$DateDayOfWeekBeforePredicate(this.path, this.day)
+      : assert(path != null),
+        assert(day != null);
+
+  @override
+  final PredicatePath path;
+  @override
+  final String day;
+
+  @override
+  String toString() {
+    return 'Predicate.dateDayOfWeekBefore(path: $path, day: $day)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is DateDayOfWeekBeforePredicate &&
+            (identical(other.path, path) ||
+                const DeepCollectionEquality().equals(other.path, path)) &&
+            (identical(other.day, day) ||
+                const DeepCollectionEquality().equals(other.day, day)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(path) ^
+      const DeepCollectionEquality().hash(day);
+
+  @override
+  $DateDayOfWeekBeforePredicateCopyWith<DateDayOfWeekBeforePredicate>
+      get copyWith => _$DateDayOfWeekBeforePredicateCopyWithImpl<
+          DateDayOfWeekBeforePredicate>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result any(PredicatePath path, List<String> values),
+    @required Result at(PredicatePath path, String value),
+    @required Result fullText(PredicatePath path, String value),
+    @required Result gt(PredicatePath path, double value),
+    @required Result has(PredicatePath path),
+    @required
+        Result inRange(
+            PredicatePath path, double lowerLimit, double upperLimit),
+    @required Result into(PredicatePath path, List<String> values),
+    @required Result lt(PredicatePath path, double value),
+    @required Result missing(PredicatePath path),
+    @required
+        Result near(PredicatePath path, double latitude, double longitude,
+            double radius),
+    @required Result not(PredicatePath path, String value),
+    @required Result similar(String id, int value),
+    @required Result dateAfter(PredicatePath path, int epoch),
+    @required Result dateBefore(PredicatePath path, int epoch),
+    @required
+        Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
+    @required Result dateDayOfMonth(PredicatePath path, int day),
+    @required Result dateDayOfMonthAfter(PredicatePath path, int day),
+    @required Result dateDayOfMonthBefore(PredicatePath path, int day),
+    @required Result dateDayOfWeek(PredicatePath path, String day),
+    @required Result dateDayOfWeekAfter(PredicatePath path, String day),
+    @required Result dateDayOfWeekBefore(PredicatePath path, String day),
+    @required Result dateMonth(PredicatePath path, String month),
+    @required Result dateMonthAfter(PredicatePath path, String month),
+    @required Result dateMonthBefore(PredicatePath path, String month),
+    @required Result dateYear(PredicatePath path, int year),
+    @required Result hour(PredicatePath path, int hour),
+    @required Result hourAfter(PredicatePath path, int hour),
+    @required Result hourBefore(PredicatePath path, int hour),
+  }) {
+    assert(any != null);
+    assert(at != null);
+    assert(fullText != null);
+    assert(gt != null);
+    assert(has != null);
+    assert(inRange != null);
+    assert(into != null);
+    assert(lt != null);
+    assert(missing != null);
+    assert(near != null);
+    assert(not != null);
+    assert(similar != null);
+    assert(dateAfter != null);
+    assert(dateBefore != null);
+    assert(dateBetween != null);
+    assert(dateDayOfMonth != null);
+    assert(dateDayOfMonthAfter != null);
+    assert(dateDayOfMonthBefore != null);
+    assert(dateDayOfWeek != null);
+    assert(dateDayOfWeekAfter != null);
+    assert(dateDayOfWeekBefore != null);
+    assert(dateMonth != null);
+    assert(dateMonthAfter != null);
+    assert(dateMonthBefore != null);
+    assert(dateYear != null);
+    assert(hour != null);
+    assert(hourAfter != null);
+    assert(hourBefore != null);
+    return dateDayOfWeekBefore(path, day);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result any(PredicatePath path, List<String> values),
+    Result at(PredicatePath path, String value),
+    Result fullText(PredicatePath path, String value),
+    Result gt(PredicatePath path, double value),
+    Result has(PredicatePath path),
+    Result inRange(PredicatePath path, double lowerLimit, double upperLimit),
+    Result into(PredicatePath path, List<String> values),
+    Result lt(PredicatePath path, double value),
+    Result missing(PredicatePath path),
+    Result near(
+        PredicatePath path, double latitude, double longitude, double radius),
+    Result not(PredicatePath path, String value),
+    Result similar(String id, int value),
+    Result dateAfter(PredicatePath path, int epoch),
+    Result dateBefore(PredicatePath path, int epoch),
+    Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
+    Result dateDayOfMonth(PredicatePath path, int day),
+    Result dateDayOfMonthAfter(PredicatePath path, int day),
+    Result dateDayOfMonthBefore(PredicatePath path, int day),
+    Result dateDayOfWeek(PredicatePath path, String day),
+    Result dateDayOfWeekAfter(PredicatePath path, String day),
+    Result dateDayOfWeekBefore(PredicatePath path, String day),
+    Result dateMonth(PredicatePath path, String month),
+    Result dateMonthAfter(PredicatePath path, String month),
+    Result dateMonthBefore(PredicatePath path, String month),
+    Result dateYear(PredicatePath path, int year),
+    Result hour(PredicatePath path, int hour),
+    Result hourAfter(PredicatePath path, int hour),
+    Result hourBefore(PredicatePath path, int hour),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (dateDayOfWeekBefore != null) {
+      return dateDayOfWeekBefore(path, day);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result any(AnyPredicate value),
+    @required Result at(AtPredicate value),
+    @required Result fullText(FullTextPredicate value),
+    @required Result gt(GtPredicate value),
+    @required Result has(HasPredicate value),
+    @required Result inRange(InRangePredicate value),
+    @required Result into(InPredicate value),
+    @required Result lt(LtPredicate value),
+    @required Result missing(MissingPredicate value),
+    @required Result near(NearPredicate value),
+    @required Result not(NotPredicate value),
+    @required Result similar(SimilarPredicate value),
+    @required Result dateAfter(DateAfterPredicate value),
+    @required Result dateBefore(DateBeforePredicate value),
+    @required Result dateBetween(DateBetweenPredicate value),
+    @required Result dateDayOfMonth(DateDayOfMonthPredicate value),
+    @required Result dateDayOfMonthAfter(DateDayOfMonthAfterPredicate value),
+    @required Result dateDayOfMonthBefore(DateDayOfMonthBeforePredicate value),
+    @required Result dateDayOfWeek(DateDayOfWeekPredicate value),
+    @required Result dateDayOfWeekAfter(DateDayOfWeekAfterPredicate value),
+    @required Result dateDayOfWeekBefore(DateDayOfWeekBeforePredicate value),
+    @required Result dateMonth(DateMonthPredicate value),
+    @required Result dateMonthAfter(DateMonthAfterPredicate value),
+    @required Result dateMonthBefore(DateMonthBeforePredicate value),
+    @required Result dateYear(DateYearPredicate value),
+    @required Result hour(DateHourPredicate value),
+    @required Result hourAfter(DateHourAfterPredicate value),
+    @required Result hourBefore(DateHourBeforePredicate value),
+  }) {
+    assert(any != null);
+    assert(at != null);
+    assert(fullText != null);
+    assert(gt != null);
+    assert(has != null);
+    assert(inRange != null);
+    assert(into != null);
+    assert(lt != null);
+    assert(missing != null);
+    assert(near != null);
+    assert(not != null);
+    assert(similar != null);
+    assert(dateAfter != null);
+    assert(dateBefore != null);
+    assert(dateBetween != null);
+    assert(dateDayOfMonth != null);
+    assert(dateDayOfMonthAfter != null);
+    assert(dateDayOfMonthBefore != null);
+    assert(dateDayOfWeek != null);
+    assert(dateDayOfWeekAfter != null);
+    assert(dateDayOfWeekBefore != null);
+    assert(dateMonth != null);
+    assert(dateMonthAfter != null);
+    assert(dateMonthBefore != null);
+    assert(dateYear != null);
+    assert(hour != null);
+    assert(hourAfter != null);
+    assert(hourBefore != null);
+    return dateDayOfWeekBefore(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result any(AnyPredicate value),
+    Result at(AtPredicate value),
+    Result fullText(FullTextPredicate value),
+    Result gt(GtPredicate value),
+    Result has(HasPredicate value),
+    Result inRange(InRangePredicate value),
+    Result into(InPredicate value),
+    Result lt(LtPredicate value),
+    Result missing(MissingPredicate value),
+    Result near(NearPredicate value),
+    Result not(NotPredicate value),
+    Result similar(SimilarPredicate value),
+    Result dateAfter(DateAfterPredicate value),
+    Result dateBefore(DateBeforePredicate value),
+    Result dateBetween(DateBetweenPredicate value),
+    Result dateDayOfMonth(DateDayOfMonthPredicate value),
+    Result dateDayOfMonthAfter(DateDayOfMonthAfterPredicate value),
+    Result dateDayOfMonthBefore(DateDayOfMonthBeforePredicate value),
+    Result dateDayOfWeek(DateDayOfWeekPredicate value),
+    Result dateDayOfWeekAfter(DateDayOfWeekAfterPredicate value),
+    Result dateDayOfWeekBefore(DateDayOfWeekBeforePredicate value),
+    Result dateMonth(DateMonthPredicate value),
+    Result dateMonthAfter(DateMonthAfterPredicate value),
+    Result dateMonthBefore(DateMonthBeforePredicate value),
+    Result dateYear(DateYearPredicate value),
+    Result hour(DateHourPredicate value),
+    Result hourAfter(DateHourAfterPredicate value),
+    Result hourBefore(DateHourBeforePredicate value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (dateDayOfWeekBefore != null) {
+      return dateDayOfWeekBefore(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DateDayOfWeekBeforePredicate implements Predicate {
+  factory DateDayOfWeekBeforePredicate(PredicatePath path, String day) =
+      _$DateDayOfWeekBeforePredicate;
+
+  PredicatePath get path;
+  String get day;
+  $DateDayOfWeekBeforePredicateCopyWith<DateDayOfWeekBeforePredicate>
+      get copyWith;
+}
+
+abstract class $DateMonthPredicateCopyWith<$Res> {
+  factory $DateMonthPredicateCopyWith(
+          DateMonthPredicate value, $Res Function(DateMonthPredicate) then) =
+      _$DateMonthPredicateCopyWithImpl<$Res>;
+  $Res call({PredicatePath path, String month});
+}
+
+class _$DateMonthPredicateCopyWithImpl<$Res>
+    extends _$PredicateCopyWithImpl<$Res>
+    implements $DateMonthPredicateCopyWith<$Res> {
+  _$DateMonthPredicateCopyWithImpl(
+      DateMonthPredicate _value, $Res Function(DateMonthPredicate) _then)
+      : super(_value, (v) => _then(v as DateMonthPredicate));
+
+  @override
+  DateMonthPredicate get _value => super._value as DateMonthPredicate;
+
+  @override
+  $Res call({
+    Object path = freezed,
+    Object month = freezed,
+  }) {
+    return _then(DateMonthPredicate(
+      path == freezed ? _value.path : path as PredicatePath,
+      month == freezed ? _value.month : month as String,
+    ));
+  }
+}
+
+class _$DateMonthPredicate implements DateMonthPredicate {
+  _$DateMonthPredicate(this.path, this.month)
+      : assert(path != null),
+        assert(month != null);
+
+  @override
+  final PredicatePath path;
+  @override
+  final String month;
+
+  @override
+  String toString() {
+    return 'Predicate.dateMonth(path: $path, month: $month)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is DateMonthPredicate &&
+            (identical(other.path, path) ||
+                const DeepCollectionEquality().equals(other.path, path)) &&
+            (identical(other.month, month) ||
+                const DeepCollectionEquality().equals(other.month, month)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(path) ^
+      const DeepCollectionEquality().hash(month);
+
+  @override
+  $DateMonthPredicateCopyWith<DateMonthPredicate> get copyWith =>
+      _$DateMonthPredicateCopyWithImpl<DateMonthPredicate>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result any(PredicatePath path, List<String> values),
+    @required Result at(PredicatePath path, String value),
+    @required Result fullText(PredicatePath path, String value),
+    @required Result gt(PredicatePath path, double value),
+    @required Result has(PredicatePath path),
+    @required
+        Result inRange(
+            PredicatePath path, double lowerLimit, double upperLimit),
+    @required Result into(PredicatePath path, List<String> values),
+    @required Result lt(PredicatePath path, double value),
+    @required Result missing(PredicatePath path),
+    @required
+        Result near(PredicatePath path, double latitude, double longitude,
+            double radius),
+    @required Result not(PredicatePath path, String value),
+    @required Result similar(String id, int value),
+    @required Result dateAfter(PredicatePath path, int epoch),
+    @required Result dateBefore(PredicatePath path, int epoch),
+    @required
+        Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
+    @required Result dateDayOfMonth(PredicatePath path, int day),
+    @required Result dateDayOfMonthAfter(PredicatePath path, int day),
+    @required Result dateDayOfMonthBefore(PredicatePath path, int day),
+    @required Result dateDayOfWeek(PredicatePath path, String day),
+    @required Result dateDayOfWeekAfter(PredicatePath path, String day),
+    @required Result dateDayOfWeekBefore(PredicatePath path, String day),
+    @required Result dateMonth(PredicatePath path, String month),
+    @required Result dateMonthAfter(PredicatePath path, String month),
+    @required Result dateMonthBefore(PredicatePath path, String month),
+    @required Result dateYear(PredicatePath path, int year),
+    @required Result hour(PredicatePath path, int hour),
+    @required Result hourAfter(PredicatePath path, int hour),
+    @required Result hourBefore(PredicatePath path, int hour),
+  }) {
+    assert(any != null);
+    assert(at != null);
+    assert(fullText != null);
+    assert(gt != null);
+    assert(has != null);
+    assert(inRange != null);
+    assert(into != null);
+    assert(lt != null);
+    assert(missing != null);
+    assert(near != null);
+    assert(not != null);
+    assert(similar != null);
+    assert(dateAfter != null);
+    assert(dateBefore != null);
+    assert(dateBetween != null);
+    assert(dateDayOfMonth != null);
+    assert(dateDayOfMonthAfter != null);
+    assert(dateDayOfMonthBefore != null);
+    assert(dateDayOfWeek != null);
+    assert(dateDayOfWeekAfter != null);
+    assert(dateDayOfWeekBefore != null);
+    assert(dateMonth != null);
+    assert(dateMonthAfter != null);
+    assert(dateMonthBefore != null);
+    assert(dateYear != null);
+    assert(hour != null);
+    assert(hourAfter != null);
+    assert(hourBefore != null);
+    return dateMonth(path, month);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result any(PredicatePath path, List<String> values),
+    Result at(PredicatePath path, String value),
+    Result fullText(PredicatePath path, String value),
+    Result gt(PredicatePath path, double value),
+    Result has(PredicatePath path),
+    Result inRange(PredicatePath path, double lowerLimit, double upperLimit),
+    Result into(PredicatePath path, List<String> values),
+    Result lt(PredicatePath path, double value),
+    Result missing(PredicatePath path),
+    Result near(
+        PredicatePath path, double latitude, double longitude, double radius),
+    Result not(PredicatePath path, String value),
+    Result similar(String id, int value),
+    Result dateAfter(PredicatePath path, int epoch),
+    Result dateBefore(PredicatePath path, int epoch),
+    Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
+    Result dateDayOfMonth(PredicatePath path, int day),
+    Result dateDayOfMonthAfter(PredicatePath path, int day),
+    Result dateDayOfMonthBefore(PredicatePath path, int day),
+    Result dateDayOfWeek(PredicatePath path, String day),
+    Result dateDayOfWeekAfter(PredicatePath path, String day),
+    Result dateDayOfWeekBefore(PredicatePath path, String day),
+    Result dateMonth(PredicatePath path, String month),
+    Result dateMonthAfter(PredicatePath path, String month),
+    Result dateMonthBefore(PredicatePath path, String month),
+    Result dateYear(PredicatePath path, int year),
+    Result hour(PredicatePath path, int hour),
+    Result hourAfter(PredicatePath path, int hour),
+    Result hourBefore(PredicatePath path, int hour),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (dateMonth != null) {
+      return dateMonth(path, month);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result any(AnyPredicate value),
+    @required Result at(AtPredicate value),
+    @required Result fullText(FullTextPredicate value),
+    @required Result gt(GtPredicate value),
+    @required Result has(HasPredicate value),
+    @required Result inRange(InRangePredicate value),
+    @required Result into(InPredicate value),
+    @required Result lt(LtPredicate value),
+    @required Result missing(MissingPredicate value),
+    @required Result near(NearPredicate value),
+    @required Result not(NotPredicate value),
+    @required Result similar(SimilarPredicate value),
+    @required Result dateAfter(DateAfterPredicate value),
+    @required Result dateBefore(DateBeforePredicate value),
+    @required Result dateBetween(DateBetweenPredicate value),
+    @required Result dateDayOfMonth(DateDayOfMonthPredicate value),
+    @required Result dateDayOfMonthAfter(DateDayOfMonthAfterPredicate value),
+    @required Result dateDayOfMonthBefore(DateDayOfMonthBeforePredicate value),
+    @required Result dateDayOfWeek(DateDayOfWeekPredicate value),
+    @required Result dateDayOfWeekAfter(DateDayOfWeekAfterPredicate value),
+    @required Result dateDayOfWeekBefore(DateDayOfWeekBeforePredicate value),
+    @required Result dateMonth(DateMonthPredicate value),
+    @required Result dateMonthAfter(DateMonthAfterPredicate value),
+    @required Result dateMonthBefore(DateMonthBeforePredicate value),
+    @required Result dateYear(DateYearPredicate value),
+    @required Result hour(DateHourPredicate value),
+    @required Result hourAfter(DateHourAfterPredicate value),
+    @required Result hourBefore(DateHourBeforePredicate value),
+  }) {
+    assert(any != null);
+    assert(at != null);
+    assert(fullText != null);
+    assert(gt != null);
+    assert(has != null);
+    assert(inRange != null);
+    assert(into != null);
+    assert(lt != null);
+    assert(missing != null);
+    assert(near != null);
+    assert(not != null);
+    assert(similar != null);
+    assert(dateAfter != null);
+    assert(dateBefore != null);
+    assert(dateBetween != null);
+    assert(dateDayOfMonth != null);
+    assert(dateDayOfMonthAfter != null);
+    assert(dateDayOfMonthBefore != null);
+    assert(dateDayOfWeek != null);
+    assert(dateDayOfWeekAfter != null);
+    assert(dateDayOfWeekBefore != null);
+    assert(dateMonth != null);
+    assert(dateMonthAfter != null);
+    assert(dateMonthBefore != null);
+    assert(dateYear != null);
+    assert(hour != null);
+    assert(hourAfter != null);
+    assert(hourBefore != null);
+    return dateMonth(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result any(AnyPredicate value),
+    Result at(AtPredicate value),
+    Result fullText(FullTextPredicate value),
+    Result gt(GtPredicate value),
+    Result has(HasPredicate value),
+    Result inRange(InRangePredicate value),
+    Result into(InPredicate value),
+    Result lt(LtPredicate value),
+    Result missing(MissingPredicate value),
+    Result near(NearPredicate value),
+    Result not(NotPredicate value),
+    Result similar(SimilarPredicate value),
+    Result dateAfter(DateAfterPredicate value),
+    Result dateBefore(DateBeforePredicate value),
+    Result dateBetween(DateBetweenPredicate value),
+    Result dateDayOfMonth(DateDayOfMonthPredicate value),
+    Result dateDayOfMonthAfter(DateDayOfMonthAfterPredicate value),
+    Result dateDayOfMonthBefore(DateDayOfMonthBeforePredicate value),
+    Result dateDayOfWeek(DateDayOfWeekPredicate value),
+    Result dateDayOfWeekAfter(DateDayOfWeekAfterPredicate value),
+    Result dateDayOfWeekBefore(DateDayOfWeekBeforePredicate value),
+    Result dateMonth(DateMonthPredicate value),
+    Result dateMonthAfter(DateMonthAfterPredicate value),
+    Result dateMonthBefore(DateMonthBeforePredicate value),
+    Result dateYear(DateYearPredicate value),
+    Result hour(DateHourPredicate value),
+    Result hourAfter(DateHourAfterPredicate value),
+    Result hourBefore(DateHourBeforePredicate value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (dateMonth != null) {
+      return dateMonth(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DateMonthPredicate implements Predicate {
+  factory DateMonthPredicate(PredicatePath path, String month) =
+      _$DateMonthPredicate;
+
+  PredicatePath get path;
+  String get month;
+  $DateMonthPredicateCopyWith<DateMonthPredicate> get copyWith;
+}
+
+abstract class $DateMonthAfterPredicateCopyWith<$Res> {
+  factory $DateMonthAfterPredicateCopyWith(DateMonthAfterPredicate value,
+          $Res Function(DateMonthAfterPredicate) then) =
+      _$DateMonthAfterPredicateCopyWithImpl<$Res>;
+  $Res call({PredicatePath path, String month});
+}
+
+class _$DateMonthAfterPredicateCopyWithImpl<$Res>
+    extends _$PredicateCopyWithImpl<$Res>
+    implements $DateMonthAfterPredicateCopyWith<$Res> {
+  _$DateMonthAfterPredicateCopyWithImpl(DateMonthAfterPredicate _value,
+      $Res Function(DateMonthAfterPredicate) _then)
+      : super(_value, (v) => _then(v as DateMonthAfterPredicate));
+
+  @override
+  DateMonthAfterPredicate get _value => super._value as DateMonthAfterPredicate;
+
+  @override
+  $Res call({
+    Object path = freezed,
+    Object month = freezed,
+  }) {
+    return _then(DateMonthAfterPredicate(
+      path == freezed ? _value.path : path as PredicatePath,
+      month == freezed ? _value.month : month as String,
+    ));
+  }
+}
+
+class _$DateMonthAfterPredicate implements DateMonthAfterPredicate {
+  _$DateMonthAfterPredicate(this.path, this.month)
+      : assert(path != null),
+        assert(month != null);
+
+  @override
+  final PredicatePath path;
+  @override
+  final String month;
+
+  @override
+  String toString() {
+    return 'Predicate.dateMonthAfter(path: $path, month: $month)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is DateMonthAfterPredicate &&
+            (identical(other.path, path) ||
+                const DeepCollectionEquality().equals(other.path, path)) &&
+            (identical(other.month, month) ||
+                const DeepCollectionEquality().equals(other.month, month)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(path) ^
+      const DeepCollectionEquality().hash(month);
+
+  @override
+  $DateMonthAfterPredicateCopyWith<DateMonthAfterPredicate> get copyWith =>
+      _$DateMonthAfterPredicateCopyWithImpl<DateMonthAfterPredicate>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result any(PredicatePath path, List<String> values),
+    @required Result at(PredicatePath path, String value),
+    @required Result fullText(PredicatePath path, String value),
+    @required Result gt(PredicatePath path, double value),
+    @required Result has(PredicatePath path),
+    @required
+        Result inRange(
+            PredicatePath path, double lowerLimit, double upperLimit),
+    @required Result into(PredicatePath path, List<String> values),
+    @required Result lt(PredicatePath path, double value),
+    @required Result missing(PredicatePath path),
+    @required
+        Result near(PredicatePath path, double latitude, double longitude,
+            double radius),
+    @required Result not(PredicatePath path, String value),
+    @required Result similar(String id, int value),
+    @required Result dateAfter(PredicatePath path, int epoch),
+    @required Result dateBefore(PredicatePath path, int epoch),
+    @required
+        Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
+    @required Result dateDayOfMonth(PredicatePath path, int day),
+    @required Result dateDayOfMonthAfter(PredicatePath path, int day),
+    @required Result dateDayOfMonthBefore(PredicatePath path, int day),
+    @required Result dateDayOfWeek(PredicatePath path, String day),
+    @required Result dateDayOfWeekAfter(PredicatePath path, String day),
+    @required Result dateDayOfWeekBefore(PredicatePath path, String day),
+    @required Result dateMonth(PredicatePath path, String month),
+    @required Result dateMonthAfter(PredicatePath path, String month),
+    @required Result dateMonthBefore(PredicatePath path, String month),
+    @required Result dateYear(PredicatePath path, int year),
+    @required Result hour(PredicatePath path, int hour),
+    @required Result hourAfter(PredicatePath path, int hour),
+    @required Result hourBefore(PredicatePath path, int hour),
+  }) {
+    assert(any != null);
+    assert(at != null);
+    assert(fullText != null);
+    assert(gt != null);
+    assert(has != null);
+    assert(inRange != null);
+    assert(into != null);
+    assert(lt != null);
+    assert(missing != null);
+    assert(near != null);
+    assert(not != null);
+    assert(similar != null);
+    assert(dateAfter != null);
+    assert(dateBefore != null);
+    assert(dateBetween != null);
+    assert(dateDayOfMonth != null);
+    assert(dateDayOfMonthAfter != null);
+    assert(dateDayOfMonthBefore != null);
+    assert(dateDayOfWeek != null);
+    assert(dateDayOfWeekAfter != null);
+    assert(dateDayOfWeekBefore != null);
+    assert(dateMonth != null);
+    assert(dateMonthAfter != null);
+    assert(dateMonthBefore != null);
+    assert(dateYear != null);
+    assert(hour != null);
+    assert(hourAfter != null);
+    assert(hourBefore != null);
+    return dateMonthAfter(path, month);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result any(PredicatePath path, List<String> values),
+    Result at(PredicatePath path, String value),
+    Result fullText(PredicatePath path, String value),
+    Result gt(PredicatePath path, double value),
+    Result has(PredicatePath path),
+    Result inRange(PredicatePath path, double lowerLimit, double upperLimit),
+    Result into(PredicatePath path, List<String> values),
+    Result lt(PredicatePath path, double value),
+    Result missing(PredicatePath path),
+    Result near(
+        PredicatePath path, double latitude, double longitude, double radius),
+    Result not(PredicatePath path, String value),
+    Result similar(String id, int value),
+    Result dateAfter(PredicatePath path, int epoch),
+    Result dateBefore(PredicatePath path, int epoch),
+    Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
+    Result dateDayOfMonth(PredicatePath path, int day),
+    Result dateDayOfMonthAfter(PredicatePath path, int day),
+    Result dateDayOfMonthBefore(PredicatePath path, int day),
+    Result dateDayOfWeek(PredicatePath path, String day),
+    Result dateDayOfWeekAfter(PredicatePath path, String day),
+    Result dateDayOfWeekBefore(PredicatePath path, String day),
+    Result dateMonth(PredicatePath path, String month),
+    Result dateMonthAfter(PredicatePath path, String month),
+    Result dateMonthBefore(PredicatePath path, String month),
+    Result dateYear(PredicatePath path, int year),
+    Result hour(PredicatePath path, int hour),
+    Result hourAfter(PredicatePath path, int hour),
+    Result hourBefore(PredicatePath path, int hour),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (dateMonthAfter != null) {
+      return dateMonthAfter(path, month);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result any(AnyPredicate value),
+    @required Result at(AtPredicate value),
+    @required Result fullText(FullTextPredicate value),
+    @required Result gt(GtPredicate value),
+    @required Result has(HasPredicate value),
+    @required Result inRange(InRangePredicate value),
+    @required Result into(InPredicate value),
+    @required Result lt(LtPredicate value),
+    @required Result missing(MissingPredicate value),
+    @required Result near(NearPredicate value),
+    @required Result not(NotPredicate value),
+    @required Result similar(SimilarPredicate value),
+    @required Result dateAfter(DateAfterPredicate value),
+    @required Result dateBefore(DateBeforePredicate value),
+    @required Result dateBetween(DateBetweenPredicate value),
+    @required Result dateDayOfMonth(DateDayOfMonthPredicate value),
+    @required Result dateDayOfMonthAfter(DateDayOfMonthAfterPredicate value),
+    @required Result dateDayOfMonthBefore(DateDayOfMonthBeforePredicate value),
+    @required Result dateDayOfWeek(DateDayOfWeekPredicate value),
+    @required Result dateDayOfWeekAfter(DateDayOfWeekAfterPredicate value),
+    @required Result dateDayOfWeekBefore(DateDayOfWeekBeforePredicate value),
+    @required Result dateMonth(DateMonthPredicate value),
+    @required Result dateMonthAfter(DateMonthAfterPredicate value),
+    @required Result dateMonthBefore(DateMonthBeforePredicate value),
+    @required Result dateYear(DateYearPredicate value),
+    @required Result hour(DateHourPredicate value),
+    @required Result hourAfter(DateHourAfterPredicate value),
+    @required Result hourBefore(DateHourBeforePredicate value),
+  }) {
+    assert(any != null);
+    assert(at != null);
+    assert(fullText != null);
+    assert(gt != null);
+    assert(has != null);
+    assert(inRange != null);
+    assert(into != null);
+    assert(lt != null);
+    assert(missing != null);
+    assert(near != null);
+    assert(not != null);
+    assert(similar != null);
+    assert(dateAfter != null);
+    assert(dateBefore != null);
+    assert(dateBetween != null);
+    assert(dateDayOfMonth != null);
+    assert(dateDayOfMonthAfter != null);
+    assert(dateDayOfMonthBefore != null);
+    assert(dateDayOfWeek != null);
+    assert(dateDayOfWeekAfter != null);
+    assert(dateDayOfWeekBefore != null);
+    assert(dateMonth != null);
+    assert(dateMonthAfter != null);
+    assert(dateMonthBefore != null);
+    assert(dateYear != null);
+    assert(hour != null);
+    assert(hourAfter != null);
+    assert(hourBefore != null);
+    return dateMonthAfter(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result any(AnyPredicate value),
+    Result at(AtPredicate value),
+    Result fullText(FullTextPredicate value),
+    Result gt(GtPredicate value),
+    Result has(HasPredicate value),
+    Result inRange(InRangePredicate value),
+    Result into(InPredicate value),
+    Result lt(LtPredicate value),
+    Result missing(MissingPredicate value),
+    Result near(NearPredicate value),
+    Result not(NotPredicate value),
+    Result similar(SimilarPredicate value),
+    Result dateAfter(DateAfterPredicate value),
+    Result dateBefore(DateBeforePredicate value),
+    Result dateBetween(DateBetweenPredicate value),
+    Result dateDayOfMonth(DateDayOfMonthPredicate value),
+    Result dateDayOfMonthAfter(DateDayOfMonthAfterPredicate value),
+    Result dateDayOfMonthBefore(DateDayOfMonthBeforePredicate value),
+    Result dateDayOfWeek(DateDayOfWeekPredicate value),
+    Result dateDayOfWeekAfter(DateDayOfWeekAfterPredicate value),
+    Result dateDayOfWeekBefore(DateDayOfWeekBeforePredicate value),
+    Result dateMonth(DateMonthPredicate value),
+    Result dateMonthAfter(DateMonthAfterPredicate value),
+    Result dateMonthBefore(DateMonthBeforePredicate value),
+    Result dateYear(DateYearPredicate value),
+    Result hour(DateHourPredicate value),
+    Result hourAfter(DateHourAfterPredicate value),
+    Result hourBefore(DateHourBeforePredicate value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (dateMonthAfter != null) {
+      return dateMonthAfter(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DateMonthAfterPredicate implements Predicate {
+  factory DateMonthAfterPredicate(PredicatePath path, String month) =
+      _$DateMonthAfterPredicate;
+
+  PredicatePath get path;
+  String get month;
+  $DateMonthAfterPredicateCopyWith<DateMonthAfterPredicate> get copyWith;
+}
+
+abstract class $DateMonthBeforePredicateCopyWith<$Res> {
+  factory $DateMonthBeforePredicateCopyWith(DateMonthBeforePredicate value,
+          $Res Function(DateMonthBeforePredicate) then) =
+      _$DateMonthBeforePredicateCopyWithImpl<$Res>;
+  $Res call({PredicatePath path, String month});
+}
+
+class _$DateMonthBeforePredicateCopyWithImpl<$Res>
+    extends _$PredicateCopyWithImpl<$Res>
+    implements $DateMonthBeforePredicateCopyWith<$Res> {
+  _$DateMonthBeforePredicateCopyWithImpl(DateMonthBeforePredicate _value,
+      $Res Function(DateMonthBeforePredicate) _then)
+      : super(_value, (v) => _then(v as DateMonthBeforePredicate));
+
+  @override
+  DateMonthBeforePredicate get _value =>
+      super._value as DateMonthBeforePredicate;
+
+  @override
+  $Res call({
+    Object path = freezed,
+    Object month = freezed,
+  }) {
+    return _then(DateMonthBeforePredicate(
+      path == freezed ? _value.path : path as PredicatePath,
+      month == freezed ? _value.month : month as String,
+    ));
+  }
+}
+
+class _$DateMonthBeforePredicate implements DateMonthBeforePredicate {
+  _$DateMonthBeforePredicate(this.path, this.month)
+      : assert(path != null),
+        assert(month != null);
+
+  @override
+  final PredicatePath path;
+  @override
+  final String month;
+
+  @override
+  String toString() {
+    return 'Predicate.dateMonthBefore(path: $path, month: $month)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is DateMonthBeforePredicate &&
+            (identical(other.path, path) ||
+                const DeepCollectionEquality().equals(other.path, path)) &&
+            (identical(other.month, month) ||
+                const DeepCollectionEquality().equals(other.month, month)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(path) ^
+      const DeepCollectionEquality().hash(month);
+
+  @override
+  $DateMonthBeforePredicateCopyWith<DateMonthBeforePredicate> get copyWith =>
+      _$DateMonthBeforePredicateCopyWithImpl<DateMonthBeforePredicate>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result any(PredicatePath path, List<String> values),
+    @required Result at(PredicatePath path, String value),
+    @required Result fullText(PredicatePath path, String value),
+    @required Result gt(PredicatePath path, double value),
+    @required Result has(PredicatePath path),
+    @required
+        Result inRange(
+            PredicatePath path, double lowerLimit, double upperLimit),
+    @required Result into(PredicatePath path, List<String> values),
+    @required Result lt(PredicatePath path, double value),
+    @required Result missing(PredicatePath path),
+    @required
+        Result near(PredicatePath path, double latitude, double longitude,
+            double radius),
+    @required Result not(PredicatePath path, String value),
+    @required Result similar(String id, int value),
+    @required Result dateAfter(PredicatePath path, int epoch),
+    @required Result dateBefore(PredicatePath path, int epoch),
+    @required
+        Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
+    @required Result dateDayOfMonth(PredicatePath path, int day),
+    @required Result dateDayOfMonthAfter(PredicatePath path, int day),
+    @required Result dateDayOfMonthBefore(PredicatePath path, int day),
+    @required Result dateDayOfWeek(PredicatePath path, String day),
+    @required Result dateDayOfWeekAfter(PredicatePath path, String day),
+    @required Result dateDayOfWeekBefore(PredicatePath path, String day),
+    @required Result dateMonth(PredicatePath path, String month),
+    @required Result dateMonthAfter(PredicatePath path, String month),
+    @required Result dateMonthBefore(PredicatePath path, String month),
+    @required Result dateYear(PredicatePath path, int year),
+    @required Result hour(PredicatePath path, int hour),
+    @required Result hourAfter(PredicatePath path, int hour),
+    @required Result hourBefore(PredicatePath path, int hour),
+  }) {
+    assert(any != null);
+    assert(at != null);
+    assert(fullText != null);
+    assert(gt != null);
+    assert(has != null);
+    assert(inRange != null);
+    assert(into != null);
+    assert(lt != null);
+    assert(missing != null);
+    assert(near != null);
+    assert(not != null);
+    assert(similar != null);
+    assert(dateAfter != null);
+    assert(dateBefore != null);
+    assert(dateBetween != null);
+    assert(dateDayOfMonth != null);
+    assert(dateDayOfMonthAfter != null);
+    assert(dateDayOfMonthBefore != null);
+    assert(dateDayOfWeek != null);
+    assert(dateDayOfWeekAfter != null);
+    assert(dateDayOfWeekBefore != null);
+    assert(dateMonth != null);
+    assert(dateMonthAfter != null);
+    assert(dateMonthBefore != null);
+    assert(dateYear != null);
+    assert(hour != null);
+    assert(hourAfter != null);
+    assert(hourBefore != null);
+    return dateMonthBefore(path, month);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result any(PredicatePath path, List<String> values),
+    Result at(PredicatePath path, String value),
+    Result fullText(PredicatePath path, String value),
+    Result gt(PredicatePath path, double value),
+    Result has(PredicatePath path),
+    Result inRange(PredicatePath path, double lowerLimit, double upperLimit),
+    Result into(PredicatePath path, List<String> values),
+    Result lt(PredicatePath path, double value),
+    Result missing(PredicatePath path),
+    Result near(
+        PredicatePath path, double latitude, double longitude, double radius),
+    Result not(PredicatePath path, String value),
+    Result similar(String id, int value),
+    Result dateAfter(PredicatePath path, int epoch),
+    Result dateBefore(PredicatePath path, int epoch),
+    Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
+    Result dateDayOfMonth(PredicatePath path, int day),
+    Result dateDayOfMonthAfter(PredicatePath path, int day),
+    Result dateDayOfMonthBefore(PredicatePath path, int day),
+    Result dateDayOfWeek(PredicatePath path, String day),
+    Result dateDayOfWeekAfter(PredicatePath path, String day),
+    Result dateDayOfWeekBefore(PredicatePath path, String day),
+    Result dateMonth(PredicatePath path, String month),
+    Result dateMonthAfter(PredicatePath path, String month),
+    Result dateMonthBefore(PredicatePath path, String month),
+    Result dateYear(PredicatePath path, int year),
+    Result hour(PredicatePath path, int hour),
+    Result hourAfter(PredicatePath path, int hour),
+    Result hourBefore(PredicatePath path, int hour),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (dateMonthBefore != null) {
+      return dateMonthBefore(path, month);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result any(AnyPredicate value),
+    @required Result at(AtPredicate value),
+    @required Result fullText(FullTextPredicate value),
+    @required Result gt(GtPredicate value),
+    @required Result has(HasPredicate value),
+    @required Result inRange(InRangePredicate value),
+    @required Result into(InPredicate value),
+    @required Result lt(LtPredicate value),
+    @required Result missing(MissingPredicate value),
+    @required Result near(NearPredicate value),
+    @required Result not(NotPredicate value),
+    @required Result similar(SimilarPredicate value),
+    @required Result dateAfter(DateAfterPredicate value),
+    @required Result dateBefore(DateBeforePredicate value),
+    @required Result dateBetween(DateBetweenPredicate value),
+    @required Result dateDayOfMonth(DateDayOfMonthPredicate value),
+    @required Result dateDayOfMonthAfter(DateDayOfMonthAfterPredicate value),
+    @required Result dateDayOfMonthBefore(DateDayOfMonthBeforePredicate value),
+    @required Result dateDayOfWeek(DateDayOfWeekPredicate value),
+    @required Result dateDayOfWeekAfter(DateDayOfWeekAfterPredicate value),
+    @required Result dateDayOfWeekBefore(DateDayOfWeekBeforePredicate value),
+    @required Result dateMonth(DateMonthPredicate value),
+    @required Result dateMonthAfter(DateMonthAfterPredicate value),
+    @required Result dateMonthBefore(DateMonthBeforePredicate value),
+    @required Result dateYear(DateYearPredicate value),
+    @required Result hour(DateHourPredicate value),
+    @required Result hourAfter(DateHourAfterPredicate value),
+    @required Result hourBefore(DateHourBeforePredicate value),
+  }) {
+    assert(any != null);
+    assert(at != null);
+    assert(fullText != null);
+    assert(gt != null);
+    assert(has != null);
+    assert(inRange != null);
+    assert(into != null);
+    assert(lt != null);
+    assert(missing != null);
+    assert(near != null);
+    assert(not != null);
+    assert(similar != null);
+    assert(dateAfter != null);
+    assert(dateBefore != null);
+    assert(dateBetween != null);
+    assert(dateDayOfMonth != null);
+    assert(dateDayOfMonthAfter != null);
+    assert(dateDayOfMonthBefore != null);
+    assert(dateDayOfWeek != null);
+    assert(dateDayOfWeekAfter != null);
+    assert(dateDayOfWeekBefore != null);
+    assert(dateMonth != null);
+    assert(dateMonthAfter != null);
+    assert(dateMonthBefore != null);
+    assert(dateYear != null);
+    assert(hour != null);
+    assert(hourAfter != null);
+    assert(hourBefore != null);
+    return dateMonthBefore(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result any(AnyPredicate value),
+    Result at(AtPredicate value),
+    Result fullText(FullTextPredicate value),
+    Result gt(GtPredicate value),
+    Result has(HasPredicate value),
+    Result inRange(InRangePredicate value),
+    Result into(InPredicate value),
+    Result lt(LtPredicate value),
+    Result missing(MissingPredicate value),
+    Result near(NearPredicate value),
+    Result not(NotPredicate value),
+    Result similar(SimilarPredicate value),
+    Result dateAfter(DateAfterPredicate value),
+    Result dateBefore(DateBeforePredicate value),
+    Result dateBetween(DateBetweenPredicate value),
+    Result dateDayOfMonth(DateDayOfMonthPredicate value),
+    Result dateDayOfMonthAfter(DateDayOfMonthAfterPredicate value),
+    Result dateDayOfMonthBefore(DateDayOfMonthBeforePredicate value),
+    Result dateDayOfWeek(DateDayOfWeekPredicate value),
+    Result dateDayOfWeekAfter(DateDayOfWeekAfterPredicate value),
+    Result dateDayOfWeekBefore(DateDayOfWeekBeforePredicate value),
+    Result dateMonth(DateMonthPredicate value),
+    Result dateMonthAfter(DateMonthAfterPredicate value),
+    Result dateMonthBefore(DateMonthBeforePredicate value),
+    Result dateYear(DateYearPredicate value),
+    Result hour(DateHourPredicate value),
+    Result hourAfter(DateHourAfterPredicate value),
+    Result hourBefore(DateHourBeforePredicate value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (dateMonthBefore != null) {
+      return dateMonthBefore(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DateMonthBeforePredicate implements Predicate {
+  factory DateMonthBeforePredicate(PredicatePath path, String month) =
+      _$DateMonthBeforePredicate;
+
+  PredicatePath get path;
+  String get month;
+  $DateMonthBeforePredicateCopyWith<DateMonthBeforePredicate> get copyWith;
+}
+
+abstract class $DateYearPredicateCopyWith<$Res> {
+  factory $DateYearPredicateCopyWith(
+          DateYearPredicate value, $Res Function(DateYearPredicate) then) =
+      _$DateYearPredicateCopyWithImpl<$Res>;
+  $Res call({PredicatePath path, int year});
+}
+
+class _$DateYearPredicateCopyWithImpl<$Res>
+    extends _$PredicateCopyWithImpl<$Res>
+    implements $DateYearPredicateCopyWith<$Res> {
+  _$DateYearPredicateCopyWithImpl(
+      DateYearPredicate _value, $Res Function(DateYearPredicate) _then)
+      : super(_value, (v) => _then(v as DateYearPredicate));
+
+  @override
+  DateYearPredicate get _value => super._value as DateYearPredicate;
+
+  @override
+  $Res call({
+    Object path = freezed,
+    Object year = freezed,
+  }) {
+    return _then(DateYearPredicate(
+      path == freezed ? _value.path : path as PredicatePath,
+      year == freezed ? _value.year : year as int,
+    ));
+  }
+}
+
+class _$DateYearPredicate implements DateYearPredicate {
+  _$DateYearPredicate(this.path, this.year)
+      : assert(path != null),
+        assert(year != null);
+
+  @override
+  final PredicatePath path;
+  @override
+  final int year;
+
+  @override
+  String toString() {
+    return 'Predicate.dateYear(path: $path, year: $year)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is DateYearPredicate &&
+            (identical(other.path, path) ||
+                const DeepCollectionEquality().equals(other.path, path)) &&
+            (identical(other.year, year) ||
+                const DeepCollectionEquality().equals(other.year, year)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(path) ^
+      const DeepCollectionEquality().hash(year);
+
+  @override
+  $DateYearPredicateCopyWith<DateYearPredicate> get copyWith =>
+      _$DateYearPredicateCopyWithImpl<DateYearPredicate>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result any(PredicatePath path, List<String> values),
+    @required Result at(PredicatePath path, String value),
+    @required Result fullText(PredicatePath path, String value),
+    @required Result gt(PredicatePath path, double value),
+    @required Result has(PredicatePath path),
+    @required
+        Result inRange(
+            PredicatePath path, double lowerLimit, double upperLimit),
+    @required Result into(PredicatePath path, List<String> values),
+    @required Result lt(PredicatePath path, double value),
+    @required Result missing(PredicatePath path),
+    @required
+        Result near(PredicatePath path, double latitude, double longitude,
+            double radius),
+    @required Result not(PredicatePath path, String value),
+    @required Result similar(String id, int value),
+    @required Result dateAfter(PredicatePath path, int epoch),
+    @required Result dateBefore(PredicatePath path, int epoch),
+    @required
+        Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
+    @required Result dateDayOfMonth(PredicatePath path, int day),
+    @required Result dateDayOfMonthAfter(PredicatePath path, int day),
+    @required Result dateDayOfMonthBefore(PredicatePath path, int day),
+    @required Result dateDayOfWeek(PredicatePath path, String day),
+    @required Result dateDayOfWeekAfter(PredicatePath path, String day),
+    @required Result dateDayOfWeekBefore(PredicatePath path, String day),
+    @required Result dateMonth(PredicatePath path, String month),
+    @required Result dateMonthAfter(PredicatePath path, String month),
+    @required Result dateMonthBefore(PredicatePath path, String month),
+    @required Result dateYear(PredicatePath path, int year),
+    @required Result hour(PredicatePath path, int hour),
+    @required Result hourAfter(PredicatePath path, int hour),
+    @required Result hourBefore(PredicatePath path, int hour),
+  }) {
+    assert(any != null);
+    assert(at != null);
+    assert(fullText != null);
+    assert(gt != null);
+    assert(has != null);
+    assert(inRange != null);
+    assert(into != null);
+    assert(lt != null);
+    assert(missing != null);
+    assert(near != null);
+    assert(not != null);
+    assert(similar != null);
+    assert(dateAfter != null);
+    assert(dateBefore != null);
+    assert(dateBetween != null);
+    assert(dateDayOfMonth != null);
+    assert(dateDayOfMonthAfter != null);
+    assert(dateDayOfMonthBefore != null);
+    assert(dateDayOfWeek != null);
+    assert(dateDayOfWeekAfter != null);
+    assert(dateDayOfWeekBefore != null);
+    assert(dateMonth != null);
+    assert(dateMonthAfter != null);
+    assert(dateMonthBefore != null);
+    assert(dateYear != null);
+    assert(hour != null);
+    assert(hourAfter != null);
+    assert(hourBefore != null);
+    return dateYear(path, year);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result any(PredicatePath path, List<String> values),
+    Result at(PredicatePath path, String value),
+    Result fullText(PredicatePath path, String value),
+    Result gt(PredicatePath path, double value),
+    Result has(PredicatePath path),
+    Result inRange(PredicatePath path, double lowerLimit, double upperLimit),
+    Result into(PredicatePath path, List<String> values),
+    Result lt(PredicatePath path, double value),
+    Result missing(PredicatePath path),
+    Result near(
+        PredicatePath path, double latitude, double longitude, double radius),
+    Result not(PredicatePath path, String value),
+    Result similar(String id, int value),
+    Result dateAfter(PredicatePath path, int epoch),
+    Result dateBefore(PredicatePath path, int epoch),
+    Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
+    Result dateDayOfMonth(PredicatePath path, int day),
+    Result dateDayOfMonthAfter(PredicatePath path, int day),
+    Result dateDayOfMonthBefore(PredicatePath path, int day),
+    Result dateDayOfWeek(PredicatePath path, String day),
+    Result dateDayOfWeekAfter(PredicatePath path, String day),
+    Result dateDayOfWeekBefore(PredicatePath path, String day),
+    Result dateMonth(PredicatePath path, String month),
+    Result dateMonthAfter(PredicatePath path, String month),
+    Result dateMonthBefore(PredicatePath path, String month),
+    Result dateYear(PredicatePath path, int year),
+    Result hour(PredicatePath path, int hour),
+    Result hourAfter(PredicatePath path, int hour),
+    Result hourBefore(PredicatePath path, int hour),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (dateYear != null) {
+      return dateYear(path, year);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result any(AnyPredicate value),
+    @required Result at(AtPredicate value),
+    @required Result fullText(FullTextPredicate value),
+    @required Result gt(GtPredicate value),
+    @required Result has(HasPredicate value),
+    @required Result inRange(InRangePredicate value),
+    @required Result into(InPredicate value),
+    @required Result lt(LtPredicate value),
+    @required Result missing(MissingPredicate value),
+    @required Result near(NearPredicate value),
+    @required Result not(NotPredicate value),
+    @required Result similar(SimilarPredicate value),
+    @required Result dateAfter(DateAfterPredicate value),
+    @required Result dateBefore(DateBeforePredicate value),
+    @required Result dateBetween(DateBetweenPredicate value),
+    @required Result dateDayOfMonth(DateDayOfMonthPredicate value),
+    @required Result dateDayOfMonthAfter(DateDayOfMonthAfterPredicate value),
+    @required Result dateDayOfMonthBefore(DateDayOfMonthBeforePredicate value),
+    @required Result dateDayOfWeek(DateDayOfWeekPredicate value),
+    @required Result dateDayOfWeekAfter(DateDayOfWeekAfterPredicate value),
+    @required Result dateDayOfWeekBefore(DateDayOfWeekBeforePredicate value),
+    @required Result dateMonth(DateMonthPredicate value),
+    @required Result dateMonthAfter(DateMonthAfterPredicate value),
+    @required Result dateMonthBefore(DateMonthBeforePredicate value),
+    @required Result dateYear(DateYearPredicate value),
+    @required Result hour(DateHourPredicate value),
+    @required Result hourAfter(DateHourAfterPredicate value),
+    @required Result hourBefore(DateHourBeforePredicate value),
+  }) {
+    assert(any != null);
+    assert(at != null);
+    assert(fullText != null);
+    assert(gt != null);
+    assert(has != null);
+    assert(inRange != null);
+    assert(into != null);
+    assert(lt != null);
+    assert(missing != null);
+    assert(near != null);
+    assert(not != null);
+    assert(similar != null);
+    assert(dateAfter != null);
+    assert(dateBefore != null);
+    assert(dateBetween != null);
+    assert(dateDayOfMonth != null);
+    assert(dateDayOfMonthAfter != null);
+    assert(dateDayOfMonthBefore != null);
+    assert(dateDayOfWeek != null);
+    assert(dateDayOfWeekAfter != null);
+    assert(dateDayOfWeekBefore != null);
+    assert(dateMonth != null);
+    assert(dateMonthAfter != null);
+    assert(dateMonthBefore != null);
+    assert(dateYear != null);
+    assert(hour != null);
+    assert(hourAfter != null);
+    assert(hourBefore != null);
+    return dateYear(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result any(AnyPredicate value),
+    Result at(AtPredicate value),
+    Result fullText(FullTextPredicate value),
+    Result gt(GtPredicate value),
+    Result has(HasPredicate value),
+    Result inRange(InRangePredicate value),
+    Result into(InPredicate value),
+    Result lt(LtPredicate value),
+    Result missing(MissingPredicate value),
+    Result near(NearPredicate value),
+    Result not(NotPredicate value),
+    Result similar(SimilarPredicate value),
+    Result dateAfter(DateAfterPredicate value),
+    Result dateBefore(DateBeforePredicate value),
+    Result dateBetween(DateBetweenPredicate value),
+    Result dateDayOfMonth(DateDayOfMonthPredicate value),
+    Result dateDayOfMonthAfter(DateDayOfMonthAfterPredicate value),
+    Result dateDayOfMonthBefore(DateDayOfMonthBeforePredicate value),
+    Result dateDayOfWeek(DateDayOfWeekPredicate value),
+    Result dateDayOfWeekAfter(DateDayOfWeekAfterPredicate value),
+    Result dateDayOfWeekBefore(DateDayOfWeekBeforePredicate value),
+    Result dateMonth(DateMonthPredicate value),
+    Result dateMonthAfter(DateMonthAfterPredicate value),
+    Result dateMonthBefore(DateMonthBeforePredicate value),
+    Result dateYear(DateYearPredicate value),
+    Result hour(DateHourPredicate value),
+    Result hourAfter(DateHourAfterPredicate value),
+    Result hourBefore(DateHourBeforePredicate value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (dateYear != null) {
+      return dateYear(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DateYearPredicate implements Predicate {
+  factory DateYearPredicate(PredicatePath path, int year) = _$DateYearPredicate;
+
+  PredicatePath get path;
+  int get year;
+  $DateYearPredicateCopyWith<DateYearPredicate> get copyWith;
+}
+
+abstract class $DateHourPredicateCopyWith<$Res> {
+  factory $DateHourPredicateCopyWith(
+          DateHourPredicate value, $Res Function(DateHourPredicate) then) =
+      _$DateHourPredicateCopyWithImpl<$Res>;
+  $Res call({PredicatePath path, int hour});
+}
+
+class _$DateHourPredicateCopyWithImpl<$Res>
+    extends _$PredicateCopyWithImpl<$Res>
+    implements $DateHourPredicateCopyWith<$Res> {
+  _$DateHourPredicateCopyWithImpl(
+      DateHourPredicate _value, $Res Function(DateHourPredicate) _then)
+      : super(_value, (v) => _then(v as DateHourPredicate));
+
+  @override
+  DateHourPredicate get _value => super._value as DateHourPredicate;
+
+  @override
+  $Res call({
+    Object path = freezed,
+    Object hour = freezed,
+  }) {
+    return _then(DateHourPredicate(
+      path == freezed ? _value.path : path as PredicatePath,
+      hour == freezed ? _value.hour : hour as int,
+    ));
+  }
+}
+
+class _$DateHourPredicate implements DateHourPredicate {
+  _$DateHourPredicate(this.path, this.hour)
+      : assert(path != null),
+        assert(hour != null);
+
+  @override
+  final PredicatePath path;
+  @override
+  final int hour;
+
+  @override
+  String toString() {
+    return 'Predicate.hour(path: $path, hour: $hour)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is DateHourPredicate &&
+            (identical(other.path, path) ||
+                const DeepCollectionEquality().equals(other.path, path)) &&
+            (identical(other.hour, hour) ||
+                const DeepCollectionEquality().equals(other.hour, hour)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(path) ^
+      const DeepCollectionEquality().hash(hour);
+
+  @override
+  $DateHourPredicateCopyWith<DateHourPredicate> get copyWith =>
+      _$DateHourPredicateCopyWithImpl<DateHourPredicate>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result any(PredicatePath path, List<String> values),
+    @required Result at(PredicatePath path, String value),
+    @required Result fullText(PredicatePath path, String value),
+    @required Result gt(PredicatePath path, double value),
+    @required Result has(PredicatePath path),
+    @required
+        Result inRange(
+            PredicatePath path, double lowerLimit, double upperLimit),
+    @required Result into(PredicatePath path, List<String> values),
+    @required Result lt(PredicatePath path, double value),
+    @required Result missing(PredicatePath path),
+    @required
+        Result near(PredicatePath path, double latitude, double longitude,
+            double radius),
+    @required Result not(PredicatePath path, String value),
+    @required Result similar(String id, int value),
+    @required Result dateAfter(PredicatePath path, int epoch),
+    @required Result dateBefore(PredicatePath path, int epoch),
+    @required
+        Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
+    @required Result dateDayOfMonth(PredicatePath path, int day),
+    @required Result dateDayOfMonthAfter(PredicatePath path, int day),
+    @required Result dateDayOfMonthBefore(PredicatePath path, int day),
+    @required Result dateDayOfWeek(PredicatePath path, String day),
+    @required Result dateDayOfWeekAfter(PredicatePath path, String day),
+    @required Result dateDayOfWeekBefore(PredicatePath path, String day),
+    @required Result dateMonth(PredicatePath path, String month),
+    @required Result dateMonthAfter(PredicatePath path, String month),
+    @required Result dateMonthBefore(PredicatePath path, String month),
+    @required Result dateYear(PredicatePath path, int year),
+    @required Result hour(PredicatePath path, int hour),
+    @required Result hourAfter(PredicatePath path, int hour),
+    @required Result hourBefore(PredicatePath path, int hour),
+  }) {
+    assert(any != null);
+    assert(at != null);
+    assert(fullText != null);
+    assert(gt != null);
+    assert(has != null);
+    assert(inRange != null);
+    assert(into != null);
+    assert(lt != null);
+    assert(missing != null);
+    assert(near != null);
+    assert(not != null);
+    assert(similar != null);
+    assert(dateAfter != null);
+    assert(dateBefore != null);
+    assert(dateBetween != null);
+    assert(dateDayOfMonth != null);
+    assert(dateDayOfMonthAfter != null);
+    assert(dateDayOfMonthBefore != null);
+    assert(dateDayOfWeek != null);
+    assert(dateDayOfWeekAfter != null);
+    assert(dateDayOfWeekBefore != null);
+    assert(dateMonth != null);
+    assert(dateMonthAfter != null);
+    assert(dateMonthBefore != null);
+    assert(dateYear != null);
+    assert(hour != null);
+    assert(hourAfter != null);
+    assert(hourBefore != null);
+    return hour(path, this.hour);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result any(PredicatePath path, List<String> values),
+    Result at(PredicatePath path, String value),
+    Result fullText(PredicatePath path, String value),
+    Result gt(PredicatePath path, double value),
+    Result has(PredicatePath path),
+    Result inRange(PredicatePath path, double lowerLimit, double upperLimit),
+    Result into(PredicatePath path, List<String> values),
+    Result lt(PredicatePath path, double value),
+    Result missing(PredicatePath path),
+    Result near(
+        PredicatePath path, double latitude, double longitude, double radius),
+    Result not(PredicatePath path, String value),
+    Result similar(String id, int value),
+    Result dateAfter(PredicatePath path, int epoch),
+    Result dateBefore(PredicatePath path, int epoch),
+    Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
+    Result dateDayOfMonth(PredicatePath path, int day),
+    Result dateDayOfMonthAfter(PredicatePath path, int day),
+    Result dateDayOfMonthBefore(PredicatePath path, int day),
+    Result dateDayOfWeek(PredicatePath path, String day),
+    Result dateDayOfWeekAfter(PredicatePath path, String day),
+    Result dateDayOfWeekBefore(PredicatePath path, String day),
+    Result dateMonth(PredicatePath path, String month),
+    Result dateMonthAfter(PredicatePath path, String month),
+    Result dateMonthBefore(PredicatePath path, String month),
+    Result dateYear(PredicatePath path, int year),
+    Result hour(PredicatePath path, int hour),
+    Result hourAfter(PredicatePath path, int hour),
+    Result hourBefore(PredicatePath path, int hour),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (hour != null) {
+      return hour(path, this.hour);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result any(AnyPredicate value),
+    @required Result at(AtPredicate value),
+    @required Result fullText(FullTextPredicate value),
+    @required Result gt(GtPredicate value),
+    @required Result has(HasPredicate value),
+    @required Result inRange(InRangePredicate value),
+    @required Result into(InPredicate value),
+    @required Result lt(LtPredicate value),
+    @required Result missing(MissingPredicate value),
+    @required Result near(NearPredicate value),
+    @required Result not(NotPredicate value),
+    @required Result similar(SimilarPredicate value),
+    @required Result dateAfter(DateAfterPredicate value),
+    @required Result dateBefore(DateBeforePredicate value),
+    @required Result dateBetween(DateBetweenPredicate value),
+    @required Result dateDayOfMonth(DateDayOfMonthPredicate value),
+    @required Result dateDayOfMonthAfter(DateDayOfMonthAfterPredicate value),
+    @required Result dateDayOfMonthBefore(DateDayOfMonthBeforePredicate value),
+    @required Result dateDayOfWeek(DateDayOfWeekPredicate value),
+    @required Result dateDayOfWeekAfter(DateDayOfWeekAfterPredicate value),
+    @required Result dateDayOfWeekBefore(DateDayOfWeekBeforePredicate value),
+    @required Result dateMonth(DateMonthPredicate value),
+    @required Result dateMonthAfter(DateMonthAfterPredicate value),
+    @required Result dateMonthBefore(DateMonthBeforePredicate value),
+    @required Result dateYear(DateYearPredicate value),
+    @required Result hour(DateHourPredicate value),
+    @required Result hourAfter(DateHourAfterPredicate value),
+    @required Result hourBefore(DateHourBeforePredicate value),
+  }) {
+    assert(any != null);
+    assert(at != null);
+    assert(fullText != null);
+    assert(gt != null);
+    assert(has != null);
+    assert(inRange != null);
+    assert(into != null);
+    assert(lt != null);
+    assert(missing != null);
+    assert(near != null);
+    assert(not != null);
+    assert(similar != null);
+    assert(dateAfter != null);
+    assert(dateBefore != null);
+    assert(dateBetween != null);
+    assert(dateDayOfMonth != null);
+    assert(dateDayOfMonthAfter != null);
+    assert(dateDayOfMonthBefore != null);
+    assert(dateDayOfWeek != null);
+    assert(dateDayOfWeekAfter != null);
+    assert(dateDayOfWeekBefore != null);
+    assert(dateMonth != null);
+    assert(dateMonthAfter != null);
+    assert(dateMonthBefore != null);
+    assert(dateYear != null);
+    assert(hour != null);
+    assert(hourAfter != null);
+    assert(hourBefore != null);
+    return hour(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result any(AnyPredicate value),
+    Result at(AtPredicate value),
+    Result fullText(FullTextPredicate value),
+    Result gt(GtPredicate value),
+    Result has(HasPredicate value),
+    Result inRange(InRangePredicate value),
+    Result into(InPredicate value),
+    Result lt(LtPredicate value),
+    Result missing(MissingPredicate value),
+    Result near(NearPredicate value),
+    Result not(NotPredicate value),
+    Result similar(SimilarPredicate value),
+    Result dateAfter(DateAfterPredicate value),
+    Result dateBefore(DateBeforePredicate value),
+    Result dateBetween(DateBetweenPredicate value),
+    Result dateDayOfMonth(DateDayOfMonthPredicate value),
+    Result dateDayOfMonthAfter(DateDayOfMonthAfterPredicate value),
+    Result dateDayOfMonthBefore(DateDayOfMonthBeforePredicate value),
+    Result dateDayOfWeek(DateDayOfWeekPredicate value),
+    Result dateDayOfWeekAfter(DateDayOfWeekAfterPredicate value),
+    Result dateDayOfWeekBefore(DateDayOfWeekBeforePredicate value),
+    Result dateMonth(DateMonthPredicate value),
+    Result dateMonthAfter(DateMonthAfterPredicate value),
+    Result dateMonthBefore(DateMonthBeforePredicate value),
+    Result dateYear(DateYearPredicate value),
+    Result hour(DateHourPredicate value),
+    Result hourAfter(DateHourAfterPredicate value),
+    Result hourBefore(DateHourBeforePredicate value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (hour != null) {
+      return hour(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DateHourPredicate implements Predicate {
+  factory DateHourPredicate(PredicatePath path, int hour) = _$DateHourPredicate;
+
+  PredicatePath get path;
+  int get hour;
+  $DateHourPredicateCopyWith<DateHourPredicate> get copyWith;
+}
+
+abstract class $DateHourAfterPredicateCopyWith<$Res> {
+  factory $DateHourAfterPredicateCopyWith(DateHourAfterPredicate value,
+          $Res Function(DateHourAfterPredicate) then) =
+      _$DateHourAfterPredicateCopyWithImpl<$Res>;
+  $Res call({PredicatePath path, int hour});
+}
+
+class _$DateHourAfterPredicateCopyWithImpl<$Res>
+    extends _$PredicateCopyWithImpl<$Res>
+    implements $DateHourAfterPredicateCopyWith<$Res> {
+  _$DateHourAfterPredicateCopyWithImpl(DateHourAfterPredicate _value,
+      $Res Function(DateHourAfterPredicate) _then)
+      : super(_value, (v) => _then(v as DateHourAfterPredicate));
+
+  @override
+  DateHourAfterPredicate get _value => super._value as DateHourAfterPredicate;
+
+  @override
+  $Res call({
+    Object path = freezed,
+    Object hour = freezed,
+  }) {
+    return _then(DateHourAfterPredicate(
+      path == freezed ? _value.path : path as PredicatePath,
+      hour == freezed ? _value.hour : hour as int,
+    ));
+  }
+}
+
+class _$DateHourAfterPredicate implements DateHourAfterPredicate {
+  _$DateHourAfterPredicate(this.path, this.hour)
+      : assert(path != null),
+        assert(hour != null);
+
+  @override
+  final PredicatePath path;
+  @override
+  final int hour;
+
+  @override
+  String toString() {
+    return 'Predicate.hourAfter(path: $path, hour: $hour)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is DateHourAfterPredicate &&
+            (identical(other.path, path) ||
+                const DeepCollectionEquality().equals(other.path, path)) &&
+            (identical(other.hour, hour) ||
+                const DeepCollectionEquality().equals(other.hour, hour)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(path) ^
+      const DeepCollectionEquality().hash(hour);
+
+  @override
+  $DateHourAfterPredicateCopyWith<DateHourAfterPredicate> get copyWith =>
+      _$DateHourAfterPredicateCopyWithImpl<DateHourAfterPredicate>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result any(PredicatePath path, List<String> values),
+    @required Result at(PredicatePath path, String value),
+    @required Result fullText(PredicatePath path, String value),
+    @required Result gt(PredicatePath path, double value),
+    @required Result has(PredicatePath path),
+    @required
+        Result inRange(
+            PredicatePath path, double lowerLimit, double upperLimit),
+    @required Result into(PredicatePath path, List<String> values),
+    @required Result lt(PredicatePath path, double value),
+    @required Result missing(PredicatePath path),
+    @required
+        Result near(PredicatePath path, double latitude, double longitude,
+            double radius),
+    @required Result not(PredicatePath path, String value),
+    @required Result similar(String id, int value),
+    @required Result dateAfter(PredicatePath path, int epoch),
+    @required Result dateBefore(PredicatePath path, int epoch),
+    @required
+        Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
+    @required Result dateDayOfMonth(PredicatePath path, int day),
+    @required Result dateDayOfMonthAfter(PredicatePath path, int day),
+    @required Result dateDayOfMonthBefore(PredicatePath path, int day),
+    @required Result dateDayOfWeek(PredicatePath path, String day),
+    @required Result dateDayOfWeekAfter(PredicatePath path, String day),
+    @required Result dateDayOfWeekBefore(PredicatePath path, String day),
+    @required Result dateMonth(PredicatePath path, String month),
+    @required Result dateMonthAfter(PredicatePath path, String month),
+    @required Result dateMonthBefore(PredicatePath path, String month),
+    @required Result dateYear(PredicatePath path, int year),
+    @required Result hour(PredicatePath path, int hour),
+    @required Result hourAfter(PredicatePath path, int hour),
+    @required Result hourBefore(PredicatePath path, int hour),
+  }) {
+    assert(any != null);
+    assert(at != null);
+    assert(fullText != null);
+    assert(gt != null);
+    assert(has != null);
+    assert(inRange != null);
+    assert(into != null);
+    assert(lt != null);
+    assert(missing != null);
+    assert(near != null);
+    assert(not != null);
+    assert(similar != null);
+    assert(dateAfter != null);
+    assert(dateBefore != null);
+    assert(dateBetween != null);
+    assert(dateDayOfMonth != null);
+    assert(dateDayOfMonthAfter != null);
+    assert(dateDayOfMonthBefore != null);
+    assert(dateDayOfWeek != null);
+    assert(dateDayOfWeekAfter != null);
+    assert(dateDayOfWeekBefore != null);
+    assert(dateMonth != null);
+    assert(dateMonthAfter != null);
+    assert(dateMonthBefore != null);
+    assert(dateYear != null);
+    assert(hour != null);
+    assert(hourAfter != null);
+    assert(hourBefore != null);
+    return hourAfter(path, this.hour);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result any(PredicatePath path, List<String> values),
+    Result at(PredicatePath path, String value),
+    Result fullText(PredicatePath path, String value),
+    Result gt(PredicatePath path, double value),
+    Result has(PredicatePath path),
+    Result inRange(PredicatePath path, double lowerLimit, double upperLimit),
+    Result into(PredicatePath path, List<String> values),
+    Result lt(PredicatePath path, double value),
+    Result missing(PredicatePath path),
+    Result near(
+        PredicatePath path, double latitude, double longitude, double radius),
+    Result not(PredicatePath path, String value),
+    Result similar(String id, int value),
+    Result dateAfter(PredicatePath path, int epoch),
+    Result dateBefore(PredicatePath path, int epoch),
+    Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
+    Result dateDayOfMonth(PredicatePath path, int day),
+    Result dateDayOfMonthAfter(PredicatePath path, int day),
+    Result dateDayOfMonthBefore(PredicatePath path, int day),
+    Result dateDayOfWeek(PredicatePath path, String day),
+    Result dateDayOfWeekAfter(PredicatePath path, String day),
+    Result dateDayOfWeekBefore(PredicatePath path, String day),
+    Result dateMonth(PredicatePath path, String month),
+    Result dateMonthAfter(PredicatePath path, String month),
+    Result dateMonthBefore(PredicatePath path, String month),
+    Result dateYear(PredicatePath path, int year),
+    Result hour(PredicatePath path, int hour),
+    Result hourAfter(PredicatePath path, int hour),
+    Result hourBefore(PredicatePath path, int hour),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (hourAfter != null) {
+      return hourAfter(path, this.hour);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result any(AnyPredicate value),
+    @required Result at(AtPredicate value),
+    @required Result fullText(FullTextPredicate value),
+    @required Result gt(GtPredicate value),
+    @required Result has(HasPredicate value),
+    @required Result inRange(InRangePredicate value),
+    @required Result into(InPredicate value),
+    @required Result lt(LtPredicate value),
+    @required Result missing(MissingPredicate value),
+    @required Result near(NearPredicate value),
+    @required Result not(NotPredicate value),
+    @required Result similar(SimilarPredicate value),
+    @required Result dateAfter(DateAfterPredicate value),
+    @required Result dateBefore(DateBeforePredicate value),
+    @required Result dateBetween(DateBetweenPredicate value),
+    @required Result dateDayOfMonth(DateDayOfMonthPredicate value),
+    @required Result dateDayOfMonthAfter(DateDayOfMonthAfterPredicate value),
+    @required Result dateDayOfMonthBefore(DateDayOfMonthBeforePredicate value),
+    @required Result dateDayOfWeek(DateDayOfWeekPredicate value),
+    @required Result dateDayOfWeekAfter(DateDayOfWeekAfterPredicate value),
+    @required Result dateDayOfWeekBefore(DateDayOfWeekBeforePredicate value),
+    @required Result dateMonth(DateMonthPredicate value),
+    @required Result dateMonthAfter(DateMonthAfterPredicate value),
+    @required Result dateMonthBefore(DateMonthBeforePredicate value),
+    @required Result dateYear(DateYearPredicate value),
+    @required Result hour(DateHourPredicate value),
+    @required Result hourAfter(DateHourAfterPredicate value),
+    @required Result hourBefore(DateHourBeforePredicate value),
+  }) {
+    assert(any != null);
+    assert(at != null);
+    assert(fullText != null);
+    assert(gt != null);
+    assert(has != null);
+    assert(inRange != null);
+    assert(into != null);
+    assert(lt != null);
+    assert(missing != null);
+    assert(near != null);
+    assert(not != null);
+    assert(similar != null);
+    assert(dateAfter != null);
+    assert(dateBefore != null);
+    assert(dateBetween != null);
+    assert(dateDayOfMonth != null);
+    assert(dateDayOfMonthAfter != null);
+    assert(dateDayOfMonthBefore != null);
+    assert(dateDayOfWeek != null);
+    assert(dateDayOfWeekAfter != null);
+    assert(dateDayOfWeekBefore != null);
+    assert(dateMonth != null);
+    assert(dateMonthAfter != null);
+    assert(dateMonthBefore != null);
+    assert(dateYear != null);
+    assert(hour != null);
+    assert(hourAfter != null);
+    assert(hourBefore != null);
+    return hourAfter(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result any(AnyPredicate value),
+    Result at(AtPredicate value),
+    Result fullText(FullTextPredicate value),
+    Result gt(GtPredicate value),
+    Result has(HasPredicate value),
+    Result inRange(InRangePredicate value),
+    Result into(InPredicate value),
+    Result lt(LtPredicate value),
+    Result missing(MissingPredicate value),
+    Result near(NearPredicate value),
+    Result not(NotPredicate value),
+    Result similar(SimilarPredicate value),
+    Result dateAfter(DateAfterPredicate value),
+    Result dateBefore(DateBeforePredicate value),
+    Result dateBetween(DateBetweenPredicate value),
+    Result dateDayOfMonth(DateDayOfMonthPredicate value),
+    Result dateDayOfMonthAfter(DateDayOfMonthAfterPredicate value),
+    Result dateDayOfMonthBefore(DateDayOfMonthBeforePredicate value),
+    Result dateDayOfWeek(DateDayOfWeekPredicate value),
+    Result dateDayOfWeekAfter(DateDayOfWeekAfterPredicate value),
+    Result dateDayOfWeekBefore(DateDayOfWeekBeforePredicate value),
+    Result dateMonth(DateMonthPredicate value),
+    Result dateMonthAfter(DateMonthAfterPredicate value),
+    Result dateMonthBefore(DateMonthBeforePredicate value),
+    Result dateYear(DateYearPredicate value),
+    Result hour(DateHourPredicate value),
+    Result hourAfter(DateHourAfterPredicate value),
+    Result hourBefore(DateHourBeforePredicate value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (hourAfter != null) {
+      return hourAfter(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DateHourAfterPredicate implements Predicate {
+  factory DateHourAfterPredicate(PredicatePath path, int hour) =
+      _$DateHourAfterPredicate;
+
+  PredicatePath get path;
+  int get hour;
+  $DateHourAfterPredicateCopyWith<DateHourAfterPredicate> get copyWith;
+}
+
+abstract class $DateHourBeforePredicateCopyWith<$Res> {
+  factory $DateHourBeforePredicateCopyWith(DateHourBeforePredicate value,
+          $Res Function(DateHourBeforePredicate) then) =
+      _$DateHourBeforePredicateCopyWithImpl<$Res>;
+  $Res call({PredicatePath path, int hour});
+}
+
+class _$DateHourBeforePredicateCopyWithImpl<$Res>
+    extends _$PredicateCopyWithImpl<$Res>
+    implements $DateHourBeforePredicateCopyWith<$Res> {
+  _$DateHourBeforePredicateCopyWithImpl(DateHourBeforePredicate _value,
+      $Res Function(DateHourBeforePredicate) _then)
+      : super(_value, (v) => _then(v as DateHourBeforePredicate));
+
+  @override
+  DateHourBeforePredicate get _value => super._value as DateHourBeforePredicate;
+
+  @override
+  $Res call({
+    Object path = freezed,
+    Object hour = freezed,
+  }) {
+    return _then(DateHourBeforePredicate(
+      path == freezed ? _value.path : path as PredicatePath,
+      hour == freezed ? _value.hour : hour as int,
+    ));
+  }
+}
+
+class _$DateHourBeforePredicate implements DateHourBeforePredicate {
+  _$DateHourBeforePredicate(this.path, this.hour)
+      : assert(path != null),
+        assert(hour != null);
+
+  @override
+  final PredicatePath path;
+  @override
+  final int hour;
+
+  @override
+  String toString() {
+    return 'Predicate.hourBefore(path: $path, hour: $hour)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is DateHourBeforePredicate &&
+            (identical(other.path, path) ||
+                const DeepCollectionEquality().equals(other.path, path)) &&
+            (identical(other.hour, hour) ||
+                const DeepCollectionEquality().equals(other.hour, hour)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(path) ^
+      const DeepCollectionEquality().hash(hour);
+
+  @override
+  $DateHourBeforePredicateCopyWith<DateHourBeforePredicate> get copyWith =>
+      _$DateHourBeforePredicateCopyWithImpl<DateHourBeforePredicate>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result any(PredicatePath path, List<String> values),
+    @required Result at(PredicatePath path, String value),
+    @required Result fullText(PredicatePath path, String value),
+    @required Result gt(PredicatePath path, double value),
+    @required Result has(PredicatePath path),
+    @required
+        Result inRange(
+            PredicatePath path, double lowerLimit, double upperLimit),
+    @required Result into(PredicatePath path, List<String> values),
+    @required Result lt(PredicatePath path, double value),
+    @required Result missing(PredicatePath path),
+    @required
+        Result near(PredicatePath path, double latitude, double longitude,
+            double radius),
+    @required Result not(PredicatePath path, String value),
+    @required Result similar(String id, int value),
+    @required Result dateAfter(PredicatePath path, int epoch),
+    @required Result dateBefore(PredicatePath path, int epoch),
+    @required
+        Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
+    @required Result dateDayOfMonth(PredicatePath path, int day),
+    @required Result dateDayOfMonthAfter(PredicatePath path, int day),
+    @required Result dateDayOfMonthBefore(PredicatePath path, int day),
+    @required Result dateDayOfWeek(PredicatePath path, String day),
+    @required Result dateDayOfWeekAfter(PredicatePath path, String day),
+    @required Result dateDayOfWeekBefore(PredicatePath path, String day),
+    @required Result dateMonth(PredicatePath path, String month),
+    @required Result dateMonthAfter(PredicatePath path, String month),
+    @required Result dateMonthBefore(PredicatePath path, String month),
+    @required Result dateYear(PredicatePath path, int year),
+    @required Result hour(PredicatePath path, int hour),
+    @required Result hourAfter(PredicatePath path, int hour),
+    @required Result hourBefore(PredicatePath path, int hour),
+  }) {
+    assert(any != null);
+    assert(at != null);
+    assert(fullText != null);
+    assert(gt != null);
+    assert(has != null);
+    assert(inRange != null);
+    assert(into != null);
+    assert(lt != null);
+    assert(missing != null);
+    assert(near != null);
+    assert(not != null);
+    assert(similar != null);
+    assert(dateAfter != null);
+    assert(dateBefore != null);
+    assert(dateBetween != null);
+    assert(dateDayOfMonth != null);
+    assert(dateDayOfMonthAfter != null);
+    assert(dateDayOfMonthBefore != null);
+    assert(dateDayOfWeek != null);
+    assert(dateDayOfWeekAfter != null);
+    assert(dateDayOfWeekBefore != null);
+    assert(dateMonth != null);
+    assert(dateMonthAfter != null);
+    assert(dateMonthBefore != null);
+    assert(dateYear != null);
+    assert(hour != null);
+    assert(hourAfter != null);
+    assert(hourBefore != null);
+    return hourBefore(path, this.hour);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result any(PredicatePath path, List<String> values),
+    Result at(PredicatePath path, String value),
+    Result fullText(PredicatePath path, String value),
+    Result gt(PredicatePath path, double value),
+    Result has(PredicatePath path),
+    Result inRange(PredicatePath path, double lowerLimit, double upperLimit),
+    Result into(PredicatePath path, List<String> values),
+    Result lt(PredicatePath path, double value),
+    Result missing(PredicatePath path),
+    Result near(
+        PredicatePath path, double latitude, double longitude, double radius),
+    Result not(PredicatePath path, String value),
+    Result similar(String id, int value),
+    Result dateAfter(PredicatePath path, int epoch),
+    Result dateBefore(PredicatePath path, int epoch),
+    Result dateBetween(PredicatePath path, int startEpoch, int endEpoch),
+    Result dateDayOfMonth(PredicatePath path, int day),
+    Result dateDayOfMonthAfter(PredicatePath path, int day),
+    Result dateDayOfMonthBefore(PredicatePath path, int day),
+    Result dateDayOfWeek(PredicatePath path, String day),
+    Result dateDayOfWeekAfter(PredicatePath path, String day),
+    Result dateDayOfWeekBefore(PredicatePath path, String day),
+    Result dateMonth(PredicatePath path, String month),
+    Result dateMonthAfter(PredicatePath path, String month),
+    Result dateMonthBefore(PredicatePath path, String month),
+    Result dateYear(PredicatePath path, int year),
+    Result hour(PredicatePath path, int hour),
+    Result hourAfter(PredicatePath path, int hour),
+    Result hourBefore(PredicatePath path, int hour),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (hourBefore != null) {
+      return hourBefore(path, this.hour);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result any(AnyPredicate value),
+    @required Result at(AtPredicate value),
+    @required Result fullText(FullTextPredicate value),
+    @required Result gt(GtPredicate value),
+    @required Result has(HasPredicate value),
+    @required Result inRange(InRangePredicate value),
+    @required Result into(InPredicate value),
+    @required Result lt(LtPredicate value),
+    @required Result missing(MissingPredicate value),
+    @required Result near(NearPredicate value),
+    @required Result not(NotPredicate value),
+    @required Result similar(SimilarPredicate value),
+    @required Result dateAfter(DateAfterPredicate value),
+    @required Result dateBefore(DateBeforePredicate value),
+    @required Result dateBetween(DateBetweenPredicate value),
+    @required Result dateDayOfMonth(DateDayOfMonthPredicate value),
+    @required Result dateDayOfMonthAfter(DateDayOfMonthAfterPredicate value),
+    @required Result dateDayOfMonthBefore(DateDayOfMonthBeforePredicate value),
+    @required Result dateDayOfWeek(DateDayOfWeekPredicate value),
+    @required Result dateDayOfWeekAfter(DateDayOfWeekAfterPredicate value),
+    @required Result dateDayOfWeekBefore(DateDayOfWeekBeforePredicate value),
+    @required Result dateMonth(DateMonthPredicate value),
+    @required Result dateMonthAfter(DateMonthAfterPredicate value),
+    @required Result dateMonthBefore(DateMonthBeforePredicate value),
+    @required Result dateYear(DateYearPredicate value),
+    @required Result hour(DateHourPredicate value),
+    @required Result hourAfter(DateHourAfterPredicate value),
+    @required Result hourBefore(DateHourBeforePredicate value),
+  }) {
+    assert(any != null);
+    assert(at != null);
+    assert(fullText != null);
+    assert(gt != null);
+    assert(has != null);
+    assert(inRange != null);
+    assert(into != null);
+    assert(lt != null);
+    assert(missing != null);
+    assert(near != null);
+    assert(not != null);
+    assert(similar != null);
+    assert(dateAfter != null);
+    assert(dateBefore != null);
+    assert(dateBetween != null);
+    assert(dateDayOfMonth != null);
+    assert(dateDayOfMonthAfter != null);
+    assert(dateDayOfMonthBefore != null);
+    assert(dateDayOfWeek != null);
+    assert(dateDayOfWeekAfter != null);
+    assert(dateDayOfWeekBefore != null);
+    assert(dateMonth != null);
+    assert(dateMonthAfter != null);
+    assert(dateMonthBefore != null);
+    assert(dateYear != null);
+    assert(hour != null);
+    assert(hourAfter != null);
+    assert(hourBefore != null);
+    return hourBefore(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result any(AnyPredicate value),
+    Result at(AtPredicate value),
+    Result fullText(FullTextPredicate value),
+    Result gt(GtPredicate value),
+    Result has(HasPredicate value),
+    Result inRange(InRangePredicate value),
+    Result into(InPredicate value),
+    Result lt(LtPredicate value),
+    Result missing(MissingPredicate value),
+    Result near(NearPredicate value),
+    Result not(NotPredicate value),
+    Result similar(SimilarPredicate value),
+    Result dateAfter(DateAfterPredicate value),
+    Result dateBefore(DateBeforePredicate value),
+    Result dateBetween(DateBetweenPredicate value),
+    Result dateDayOfMonth(DateDayOfMonthPredicate value),
+    Result dateDayOfMonthAfter(DateDayOfMonthAfterPredicate value),
+    Result dateDayOfMonthBefore(DateDayOfMonthBeforePredicate value),
+    Result dateDayOfWeek(DateDayOfWeekPredicate value),
+    Result dateDayOfWeekAfter(DateDayOfWeekAfterPredicate value),
+    Result dateDayOfWeekBefore(DateDayOfWeekBeforePredicate value),
+    Result dateMonth(DateMonthPredicate value),
+    Result dateMonthAfter(DateMonthAfterPredicate value),
+    Result dateMonthBefore(DateMonthBeforePredicate value),
+    Result dateYear(DateYearPredicate value),
+    Result hour(DateHourPredicate value),
+    Result hourAfter(DateHourAfterPredicate value),
+    Result hourBefore(DateHourBeforePredicate value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (hourBefore != null) {
+      return hourBefore(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DateHourBeforePredicate implements Predicate {
+  factory DateHourBeforePredicate(PredicatePath path, int hour) =
+      _$DateHourBeforePredicate;
+
+  PredicatePath get path;
+  int get hour;
+  $DateHourBeforePredicateCopyWith<DateHourBeforePredicate> get copyWith;
 }
