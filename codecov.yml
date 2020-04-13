@@ -22,3 +22,8 @@ comment:
 ignore:
   - "**/*.freezed.dart"
   - "**/*.g.dart"
+  - "lib/src/models/api"
+  - "lib/src/models/document"
+  - "lib/src/models/result"
+  - "lib/src/models/serializer"
+  - "lib/src/models/types"

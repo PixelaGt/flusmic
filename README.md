@@ -1,10 +1,20 @@
 # flusmic
-[![pub](https://img.shields.io/badge/pub-1.0.1-blue)](https://pub.dev/packages/flusmic)
+[![pub](https://img.shields.io/badge/pub-1.1.0-blue)](https://pub.dev/packages/flusmic)
 ![flusmic](https://github.com/PixelaGt/flusmic/workflows/flusmic/badge.svg?branch=master&event=push)
+[![codecov](https://codecov.io/gh/PixelaGt/flusmic/branch/master/graph/badge.svg)](https://codecov.io/gh/PixelaGt/flusmic)
+[![Project Status: Active](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+
 
 A prismic.io integration for Flutter
 
 ## Getting Started
+
+Add Flusmic in your pubspec.yaml file.
+
+```
+dependencies:
+  flusmic: 1.1.0 // latest version
+```
 
 Flusmic instance creation it's simple:
 
@@ -31,6 +41,8 @@ final result = await flusmic
 You can add as many predicates you need.
 
 #### Available predicates
+
+##### Query
 - Any
 - At
 - FullText
@@ -44,24 +56,45 @@ You can add as many predicates you need.
 - Not
 - Similar
 
-You can use 'DefaultPredicatePath', there are a few:
+##### Date and time
+- After
+- Before
+- Between
+- Day-of-month
+- Day-of-month After
+- Day-of-month Before
+- Day-of-week
+- Day-of-week After
+- Day-of-week Before
+- Month
+- Month After
+- Month Before
+- Year
+- Hour
+- Hour After
+- Hour Before
 
-#### Available Default Paths
+There are two types of PredicatePath, 
+
+#### DefaultPredicatePath
+
+##### Available Default Paths
 - Document
 - Id
 - Tags
-- Type
 
-If you need a CustomType path, you need to use CustomPredicatePath
+#### CustomPredicatePath
 
 ```
 final result = await flusmic
-    .query([Predicate.at(CustomPredicatePath('custom-type', 'field'), 'value')]);
+    .query([Predicate.at(CustomPredicatePath('custom-type', 'field'), 'value', fetch: false)]); 
 ```
+
+If you will use a CustomPredicatePath with fetch o fetchLink, 'fetch' param must be true.
 
 More info about how Predicates works in [prismic.io query predicates reference](https://prismic.io/docs/rest-api/query-the-api/predicates-reference)
 
-If you only need to do a simple fetching, Flusmic have 4 basic methods:
+### If you only need to do a simple fetching, Flusmic have 4 basic methods:
 
 ### API
 For general prismic API information.
@@ -156,5 +189,6 @@ _flusmicController.repeat();
 - [X] Querying by predicates.
 - [X] Languages and search params.
 - [X] FlusmicBuilder
-- [ ] Date and time predicates.
-- [ ] Orderings search param.
+- [X] Date and time predicates.
+- [X] Orderings search param.
+- [ ] RichText widget.
