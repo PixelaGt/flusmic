@@ -9,6 +9,13 @@ A prismic.io integration for Flutter
 
 ## Getting Started
 
+Add Flusmic in your pubspec.yaml file.
+
+```
+dependencies:
+  flusmic: 1.1.0 // latest version
+```
+
 Flusmic instance creation it's simple:
 
 ```
@@ -67,24 +74,27 @@ You can add as many predicates you need.
 - Hour After
 - Hour Before
 
-You can use 'DefaultPredicatePath', there are a few:
+There are two types of PredicatePath, 
 
-#### Available Default Paths
+#### DefaultPredicatePath
+
+##### Available Default Paths
 - Document
 - Id
 - Tags
-- Type
 
-If you need a CustomType path, you need to use CustomPredicatePath
+#### CustomPredicatePath
 
 ```
 final result = await flusmic
-    .query([Predicate.at(CustomPredicatePath('custom-type', 'field'), 'value')]);
+    .query([Predicate.at(CustomPredicatePath('custom-type', 'field'), 'value', fetch: false)]); 
 ```
+
+If you will use a CustomPredicatePath with fetch o fetchLink, 'fetch' param must be true.
 
 More info about how Predicates works in [prismic.io query predicates reference](https://prismic.io/docs/rest-api/query-the-api/predicates-reference)
 
-If you only need to do a simple fetching, Flusmic have 4 basic methods:
+### If you only need to do a simple fetching, Flusmic have 4 basic methods:
 
 ### API
 For general prismic API information.
