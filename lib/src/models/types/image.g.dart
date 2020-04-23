@@ -17,7 +17,10 @@ class _$ImageSerializer implements StructuredSerializer<Image> {
   @override
   Iterable<Object> serialize(Serializers serializers, Image object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[];
+    final result = <Object>[
+      'type',
+      serializers.serialize(object.type, specifiedType: const FullType(String)),
+    ];
     if (object.dimensions != null) {
       result
         ..add('dimensions')
@@ -56,6 +59,10 @@ class _$ImageSerializer implements StructuredSerializer<Image> {
       iterator.moveNext();
       final dynamic value = iterator.current;
       switch (key) {
+        case 'type':
+          result.type = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
         case 'dimensions':
           result.dimensions.replace(serializers.deserialize(value,
               specifiedType: const FullType(Dimension)) as Dimension);
@@ -81,6 +88,8 @@ class _$ImageSerializer implements StructuredSerializer<Image> {
 
 class _$Image extends Image {
   @override
+  final String type;
+  @override
   final Dimension dimensions;
   @override
   final String alt;
@@ -92,7 +101,12 @@ class _$Image extends Image {
   factory _$Image([void Function(ImageBuilder) updates]) =>
       (new ImageBuilder()..update(updates)).build();
 
-  _$Image._({this.dimensions, this.alt, this.copyright, this.url}) : super._();
+  _$Image._({this.type, this.dimensions, this.alt, this.copyright, this.url})
+      : super._() {
+    if (type == null) {
+      throw new BuiltValueNullFieldError('Image', 'type');
+    }
+  }
 
   @override
   Image rebuild(void Function(ImageBuilder) updates) =>
@@ -105,6 +119,7 @@ class _$Image extends Image {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is Image &&
+        type == other.type &&
         dimensions == other.dimensions &&
         alt == other.alt &&
         copyright == other.copyright &&
@@ -114,13 +129,15 @@ class _$Image extends Image {
   @override
   int get hashCode {
     return $jf($jc(
-        $jc($jc($jc(0, dimensions.hashCode), alt.hashCode), copyright.hashCode),
+        $jc($jc($jc($jc(0, type.hashCode), dimensions.hashCode), alt.hashCode),
+            copyright.hashCode),
         url.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Image')
+          ..add('type', type)
           ..add('dimensions', dimensions)
           ..add('alt', alt)
           ..add('copyright', copyright)
@@ -131,6 +148,10 @@ class _$Image extends Image {
 
 class ImageBuilder implements Builder<Image, ImageBuilder> {
   _$Image _$v;
+
+  String _type;
+  String get type => _$this._type;
+  set type(String type) => _$this._type = type;
 
   DimensionBuilder _dimensions;
   DimensionBuilder get dimensions =>
@@ -154,6 +175,7 @@ class ImageBuilder implements Builder<Image, ImageBuilder> {
 
   ImageBuilder get _$this {
     if (_$v != null) {
+      _type = _$v.type;
       _dimensions = _$v.dimensions?.toBuilder();
       _alt = _$v.alt;
       _copyright = _$v.copyright;
@@ -182,6 +204,7 @@ class ImageBuilder implements Builder<Image, ImageBuilder> {
     try {
       _$result = _$v ??
           new _$Image._(
+              type: type,
               dimensions: _dimensions?.build(),
               alt: alt,
               copyright: copyright,

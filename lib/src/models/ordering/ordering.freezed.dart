@@ -106,6 +106,11 @@ class _$_Ordering implements _Ordering {
   final bool descending;
 
   @override
+  String toString() {
+    return 'Ordering(customType: $customType, field: $field, descending: $descending)';
+  }
+
+  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Ordering &&
