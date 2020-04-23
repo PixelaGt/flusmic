@@ -36,7 +36,7 @@ class Flusmic {
     var raw = prismicEndpoint;
     if (authToken != null) {
       if (authToken.isNotEmpty) {
-        raw = '$raw&access_token=$authToken';
+        raw = '$raw?access_token=$authToken';
       }
     }
     final encoded = Uri.encodeFull(raw);
@@ -69,10 +69,8 @@ class Flusmic {
         orderings: orderings,
         page: page,
         pageSize: pageSize);
-    print('Flusmic: $raw');
     final encoded = Uri.encodeFull(raw);
     final response = await _client.get(encoded);
-    print('Flusmic: ${response.body}');
     if (response.statusCode == 200) {
       return compute(Result.fromJson, utf8.decode(response.bodyBytes));
     } else {

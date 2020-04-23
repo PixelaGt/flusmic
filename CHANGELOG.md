@@ -1,3 +1,9 @@
+## [1.2.0]
+* authToken support.
+* New `Renderizable` class for RichText support.
+* Effective dart.
+* Update dependencies.
+
 ## [1.1.0]
 * Date and time predicates
 * Orderings

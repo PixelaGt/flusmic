@@ -42,6 +42,12 @@ class _$ImageSerializer implements StructuredSerializer<Image> {
         ..add(serializers.serialize(object.url,
             specifiedType: const FullType(String)));
     }
+    if (object.type != null) {
+      result
+        ..add('type')
+        ..add(serializers.serialize(object.type,
+            specifiedType: const FullType(String)));
+    }
     return result;
   }
 
@@ -72,6 +78,10 @@ class _$ImageSerializer implements StructuredSerializer<Image> {
           result.url = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
+        case 'type':
+          result.type = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
       }
     }
 
@@ -88,11 +98,14 @@ class _$Image extends Image {
   final String copyright;
   @override
   final String url;
+  @override
+  final String type;
 
   factory _$Image([void Function(ImageBuilder) updates]) =>
       (new ImageBuilder()..update(updates)).build();
 
-  _$Image._({this.dimensions, this.alt, this.copyright, this.url}) : super._();
+  _$Image._({this.dimensions, this.alt, this.copyright, this.url, this.type})
+      : super._();
 
   @override
   Image rebuild(void Function(ImageBuilder) updates) =>
@@ -108,14 +121,18 @@ class _$Image extends Image {
         dimensions == other.dimensions &&
         alt == other.alt &&
         copyright == other.copyright &&
-        url == other.url;
+        url == other.url &&
+        type == other.type;
   }
 
   @override
   int get hashCode {
     return $jf($jc(
-        $jc($jc($jc(0, dimensions.hashCode), alt.hashCode), copyright.hashCode),
-        url.hashCode));
+        $jc(
+            $jc($jc($jc(0, dimensions.hashCode), alt.hashCode),
+                copyright.hashCode),
+            url.hashCode),
+        type.hashCode));
   }
 
   @override
@@ -124,7 +141,8 @@ class _$Image extends Image {
           ..add('dimensions', dimensions)
           ..add('alt', alt)
           ..add('copyright', copyright)
-          ..add('url', url))
+          ..add('url', url)
+          ..add('type', type))
         .toString();
   }
 }
@@ -151,6 +169,10 @@ class ImageBuilder
   String get url => _$this._url;
   set url(String url) => _$this._url = url;
 
+  String _type;
+  String get type => _$this._type;
+  set type(String type) => _$this._type = type;
+
   ImageBuilder();
 
   ImageBuilder get _$this {
@@ -159,6 +181,7 @@ class ImageBuilder
       _alt = _$v.alt;
       _copyright = _$v.copyright;
       _url = _$v.url;
+      _type = _$v.type;
       _$v = null;
     }
     return this;
@@ -186,7 +209,8 @@ class ImageBuilder
               dimensions: _dimensions?.build(),
               alt: alt,
               copyright: copyright,
-              url: url);
+              url: url,
+              type: type);
     } catch (_) {
       String _$failedField;
       try {

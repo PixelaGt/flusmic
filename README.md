@@ -1,9 +1,10 @@
 # flusmic
-[![pub](https://img.shields.io/badge/pub-1.1.0-blue)](https://pub.dev/packages/flusmic)
+[![pub](https://img.shields.io/badge/pub-1.2.0-blue)](https://pub.dev/packages/flusmic)
 ![flusmic](https://github.com/PixelaGt/flusmic/workflows/flusmic/badge.svg?branch=master&event=push)
 [![codecov](https://codecov.io/gh/PixelaGt/flusmic/branch/master/graph/badge.svg)](https://codecov.io/gh/PixelaGt/flusmic)
 [![Project Status: Active](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
-
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![style: effective dart](https://img.shields.io/badge/style-effective_dart-40c4ff.svg)](https://github.com/pblinux/end_credits)
 
 A prismic.io integration for Flutter
 
