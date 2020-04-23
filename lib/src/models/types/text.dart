@@ -11,22 +11,24 @@ import 'span.dart';
 
 part 'text.g.dart';
 
-abstract class Text implements Built<Text, TextBuilder>, Renderizable {
-  @override
-  String get type;
+@BuiltValue(wireName: 'paragraph')
+abstract class Text implements Renderizable, Built<Text, TextBuilder> {
   String get text;
   BuiltList<Span> get spans;
+  @nullable
+  String get type;
 
   Text._();
 
   factory Text([updates(TextBuilder b)]) = _$Text;
 
   String toJson() {
-    return json.encode(serializers.serializeWith(Text.serializer, this));
+    return json
+        .encode(richTextSerializers.serializeWith(Text.serializer, this));
   }
 
   static Text fromJson(String jsonString) {
-    return serializers.deserializeWith(
+    return richTextSerializers.deserializeWith(
         Text.serializer, json.decode(jsonString));
   }
 

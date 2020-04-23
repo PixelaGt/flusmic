@@ -69,8 +69,10 @@ class Flusmic {
         orderings: orderings,
         page: page,
         pageSize: pageSize);
+    print('Flusmic: $raw');
     final encoded = Uri.encodeFull(raw);
     final response = await _client.get(encoded);
+    print('Flusmic: ${response.body}');
     if (response.statusCode == 200) {
       return compute(Result.fromJson, utf8.decode(response.bodyBytes));
     } else {
@@ -112,7 +114,7 @@ class Flusmic {
       String authToken,
       String language}) {
     final queries = predicates.map(_generateQueries).toList();
-    var raw = '$prismicEndpoint$_documentPath$apiRef+${queries.join()}';
+    var raw = '$prismicEndpoint$_documentPath$apiRef${queries.join()}';
     if (after != null) {
       raw = '$raw&after=$after';
     }

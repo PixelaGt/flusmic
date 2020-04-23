@@ -3,6 +3,7 @@ export 'dimension.dart';
 export 'image.dart';
 export 'language.dart';
 export 'media.dart';
+export 'renderizable.dart';
 export 'slice.dart';
 export 'span.dart';
 export 'text.dart';

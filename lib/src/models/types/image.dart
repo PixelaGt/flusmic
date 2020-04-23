@@ -4,15 +4,14 @@ import 'dart:convert';
 
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:flusmic/src/models/types/renderizable.dart';
 import '../serializer/serializers.dart';
 import 'dimension.dart';
-import 'renderizable.dart';
 
 part 'image.g.dart';
 
-abstract class Image implements Built<Image, ImageBuilder>, Renderizable {
-  @override
-  String get type;
+@BuiltValue(wireName: 'image')
+abstract class Image implements Renderizable, Built<Image, ImageBuilder> {
   @nullable
   Dimension get dimensions;
   @nullable
@@ -27,11 +26,12 @@ abstract class Image implements Built<Image, ImageBuilder>, Renderizable {
   factory Image([updates(ImageBuilder b)]) = _$Image;
 
   String toJson() {
-    return json.encode(serializers.serializeWith(Image.serializer, this));
+    return json
+        .encode(richTextSerializers.serializeWith(Image.serializer, this));
   }
 
   static Image fromJson(String jsonString) {
-    return serializers.deserializeWith(
+    return richTextSerializers.deserializeWith(
         Image.serializer, json.decode(jsonString));
   }
 
