@@ -8,27 +8,37 @@ import '../serializer/serializers.dart';
 
 part 'alternate_language.g.dart';
 
+///AlternateLanguage model
 abstract class AlternateLanguage
     implements Built<AlternateLanguage, AlternateLanguageBuilder> {
+  ///Identifier
   String get id;
+
+  ///Type
   String get type;
+
+  ///Language
   String get lang;
 
   AlternateLanguage._();
 
+  ///Creates a new AlternateLanguage
   factory AlternateLanguage([updates(AlternateLanguageBuilder b)]) =
       _$AlternateLanguage;
 
+  ///Converts to json
   String toJson() {
     return json
         .encode(serializers.serializeWith(AlternateLanguage.serializer, this));
   }
 
+  ///Converts from json
   static AlternateLanguage fromJson(String jsonString) {
     return serializers.deserializeWith(
         AlternateLanguage.serializer, json.decode(jsonString));
   }
 
+  ///Serializer
   static Serializer<AlternateLanguage> get serializer =>
       _$alternateLanguageSerializer;
 }

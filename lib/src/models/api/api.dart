@@ -11,21 +11,29 @@ import 'ref.dart';
 
 part 'api.g.dart';
 
+///Api model
 abstract class Api implements Built<Api, ApiBuilder> {
+  ///References
   BuiltList<Ref> get refs;
+
+  ///Available languages
   BuiltList<Language> get languages;
 
   Api._();
 
+  ///Creates new Api
   factory Api([updates(ApiBuilder b)]) = _$Api;
 
+  ///Converts to json
   String toJson() {
     return json.encode(serializers.serializeWith(Api.serializer, this));
   }
 
+  ///Converts from json
   static Api fromJson(String jsonString) {
     return serializers.deserializeWith(Api.serializer, json.decode(jsonString));
   }
 
+  ///Serializer
   static Serializer<Api> get serializer => _$apiSerializer;
 }

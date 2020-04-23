@@ -8,29 +8,49 @@ import 'flusmic_result.dart';
 
 typedef BuilderFn = Widget Function(BuildContext context, FlusmicResult result);
 
+///Controller state
 class FlusmicControllerState {
+  ///Last action perfomed timestamp
   final String timestamp;
+
+  ///Main controller
   FlusmicControllerState(this.timestamp);
 }
 
+///Class for control FlusmicBuilder
 class FlusmicController extends StateNotifier<FlusmicControllerState> {
+  ///Constructor
   FlusmicController()
       : super(FlusmicControllerState(DateTime.now().toString()));
 
+  ///Repeat an action
   void repeat() {
     final current = DateTime.now().toString();
     if (state.timestamp != current) state = FlusmicControllerState(current);
   }
 }
 
+///Widget for handle Flusmic requests
 class FlusmicBuilder extends StatefulWidget {
+  ///Widget builder
   final BuilderFn builder;
+
+  ///Flusmic instance
   final Flusmic flusmic;
+
+  ///Flusmic controller
   final FlusmicController controller;
+
+  ///List of predicates to query
   final List<Predicate> predicates;
+
+  ///Respository URL
   final String baseUrl;
+
+  ///Language
   final String language;
 
+  ///Main constructor
   FlusmicBuilder(
       {@required this.builder,
       @required this.predicates,
