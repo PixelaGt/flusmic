@@ -5,8 +5,8 @@ import 'dart:convert';
 import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
-import 'package:flusmic/src/models/document/document.dart';
-import 'package:flusmic/src/models/serializer/serializers.dart';
+import '../document/document.dart';
+import '../serializer/serializers.dart';
 
 part 'result.g.dart';
 

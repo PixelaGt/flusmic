@@ -57,9 +57,9 @@ abstract class Predicate with _$Predicate {
 
 enum DefaultPath {
   document,
-  first_publication_date,
+  firstPublicationDate,
   id,
-  last_publication_date,
+  lastPublicationDate,
   tags,
   type
 }
@@ -83,10 +83,10 @@ class DefaultPredicatePath extends PredicatePath {
       DefaultPredicatePath._(DefaultPath.type);
 
   factory DefaultPredicatePath.firstPublicationDate() =>
-      DefaultPredicatePath._(DefaultPath.first_publication_date);
+      DefaultPredicatePath._(DefaultPath.firstPublicationDate);
 
   factory DefaultPredicatePath.lastPublicationDate() =>
-      DefaultPredicatePath._(DefaultPath.last_publication_date);
+      DefaultPredicatePath._(DefaultPath.lastPublicationDate);
 
   @override
   String toString() {
@@ -99,9 +99,9 @@ class DefaultPredicatePath extends PredicatePath {
         return 'document.tags';
       case DefaultPath.type:
         return 'document.type';
-      case DefaultPath.first_publication_date:
+      case DefaultPath.firstPublicationDate:
         return 'document.first_publication_date';
-      case DefaultPath.last_publication_date:
+      case DefaultPath.lastPublicationDate:
         return 'document.last_publication_date';
       default:
         return '';
@@ -117,7 +117,5 @@ class CustomPredicatePath extends PredicatePath {
   CustomPredicatePath(this.customType, this.value, {this.fetch = false});
 
   @override
-  String toString() => fetch
-      ? '${this.customType}.${this.value}'
-      : 'my.${this.customType}.${this.value}';
+  String toString() => fetch ? '$customType.$value' : 'my.$customType.$value';
 }

@@ -4,7 +4,7 @@ import 'dart:convert';
 
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
-import 'package:flusmic/src/models/serializer/serializers.dart';
+import '../serializer/serializers.dart';
 
 part 'ref.g.dart';
 

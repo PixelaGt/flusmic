@@ -1,10 +1,10 @@
 import 'package:common_bloc/common_bloc.dart';
-import 'package:flusmic/flusmic.dart';
-import 'package:flusmic/src/flusmic_repository.dart';
-import 'package:flusmic/src/models/predicate/predicate.dart';
-import 'package:flusmic/src/widgets/flusmic_result.dart';
 import 'package:flutter/material.dart';
 import 'package:state_notifier/state_notifier.dart';
+import '../../flusmic.dart';
+import '../flusmic_repository.dart';
+import '../models/predicate/predicate.dart';
+import 'flusmic_result.dart';
 
 typedef BuilderFn = Widget Function(BuildContext context, FlusmicResult result);
 
@@ -46,7 +46,7 @@ class FlusmicBuilder extends StatefulWidget {
 class _FlusmicBuilderState extends State<FlusmicBuilder> {
   final RequestBloc _requestBloc = RequestBloc();
   RequestState _currentState = RequestState.uninitialized();
-  FlusmicController _flusmicController = FlusmicController();
+  final _flusmicController = FlusmicController();
 
   FlusmicController get flusmicController =>
       widget.controller ?? _flusmicController;

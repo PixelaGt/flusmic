@@ -5,9 +5,9 @@ import 'dart:convert';
 import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
-import 'package:flusmic/src/models/api/ref.dart';
-import 'package:flusmic/src/models/serializer/serializers.dart';
-import 'package:flusmic/src/models/types/language.dart';
+import '../serializer/serializers.dart';
+import '../types/language.dart';
+import 'ref.dart';
 
 part 'api.g.dart';
 
