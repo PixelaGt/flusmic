@@ -4,9 +4,9 @@ import 'dart:convert';
 
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
-import 'package:flusmic/src/models/serializer/serializers.dart';
-import 'package:flusmic/src/models/types/dimension.dart';
-import 'package:flusmic/src/models/types/renderizable.dart';
+import '../serializer/serializers.dart';
+import 'dimension.dart';
+import 'renderizable.dart';
 
 part 'image.g.dart';
 

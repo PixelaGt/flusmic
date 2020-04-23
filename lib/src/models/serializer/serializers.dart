@@ -3,22 +3,22 @@ library serializers;
 import 'package:built_collection/built_collection.dart';
 import 'package:built_value/serializer.dart';
 import 'package:built_value/standard_json_plugin.dart';
-import 'package:flusmic/src/models/api/api.dart';
-import 'package:flusmic/src/models/api/ref.dart';
-import 'package:flusmic/src/models/document/document.dart';
-import 'package:flusmic/src/models/document/simple_document.dart';
-import 'package:flusmic/src/models/result/result.dart';
-import 'package:flusmic/src/models/types/alternate_language.dart';
-import 'package:flusmic/src/models/types/dimension.dart';
-import 'package:flusmic/src/models/types/image.dart';
-import 'package:flusmic/src/models/types/language.dart';
-import 'package:flusmic/src/models/types/media.dart';
-import 'package:flusmic/src/models/types/span.dart';
-import 'package:flusmic/src/models/types/text.dart';
+import '../api/api.dart';
+import '../api/ref.dart';
+import '../document/document.dart';
+import '../document/simple_document.dart';
+import '../result/result.dart';
+import '../types/alternate_language.dart';
+import '../types/dimension.dart';
+import '../types/image.dart';
+import '../types/language.dart';
+import '../types/media.dart';
+import '../types/span.dart';
+import '../types/text.dart';
 
 part 'serializers.g.dart';
 
-@SerializersFor(const [
+@SerializersFor([
   AlternateLanguage,
   Api,
   Dimension,

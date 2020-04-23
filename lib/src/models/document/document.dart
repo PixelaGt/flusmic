@@ -6,8 +6,8 @@ import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/json_object.dart';
 import 'package:built_value/serializer.dart';
-import 'package:flusmic/src/models/serializer/serializers.dart';
-import 'package:flusmic/src/models/types/alternate_language.dart';
+import '../serializer/serializers.dart';
+import '../types/alternate_language.dart';
 
 part 'document.g.dart';
 
