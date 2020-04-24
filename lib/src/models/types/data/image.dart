@@ -4,34 +4,33 @@ import 'dart:convert';
 
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
-import '../serializer/serializers.dart';
-import 'dimension.dart';
-import 'renderizable.dart';
+import '../../serializer/serializers.dart';
+import '../info/dimension.dart';
+import '../rich_text/generic_image.dart';
 
 part 'image.g.dart';
 
 ///Image model
-@BuiltValue(wireName: 'image')
-abstract class Image implements Renderizable, Built<Image, ImageBuilder> {
+abstract class Image implements GenericImage, Built<Image, ImageBuilder> {
   ///Dimensions of image
+  @override
   @nullable
   Dimension get dimensions;
 
   ///Alt
+  @override
   @nullable
   String get alt;
 
   ///Copyright of image
+  @override
   @nullable
   String get copyright;
 
   ///Url of image
+  @override
   @nullable
   String get url;
-
-  ///Type of
-  @nullable
-  String get type;
 
   Image._();
 
@@ -41,12 +40,12 @@ abstract class Image implements Renderizable, Built<Image, ImageBuilder> {
   ///Converts to json
   String toJson() {
     return json
-        .encode(richTextSerializers.serializeWith(Image.serializer, this));
+        .encode(flusmicSerializers.serializeWith(Image.serializer, this));
   }
 
   ///Converts from json
   static Image fromJson(String jsonString) {
-    return richTextSerializers.deserializeWith(
+    return flusmicSerializers.deserializeWith(
         Image.serializer, json.decode(jsonString));
   }
 

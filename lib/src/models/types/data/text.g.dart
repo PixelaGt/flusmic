@@ -53,7 +53,7 @@ class _$TextSerializer implements StructuredSerializer<Text> {
           result.spans.replace(serializers.deserialize(value,
                   specifiedType:
                       const FullType(BuiltList, const [const FullType(Span)]))
-              as BuiltList<dynamic>);
+              as BuiltList<Object>);
           break;
         case 'type':
           result.type = serializers.deserialize(value,
@@ -117,7 +117,7 @@ class _$Text extends Text {
   }
 }
 
-class TextBuilder implements Builder<Text, TextBuilder>, RenderizableBuilder {
+class TextBuilder implements Builder<Text, TextBuilder> {
   _$Text _$v;
 
   String _text;
@@ -145,7 +145,7 @@ class TextBuilder implements Builder<Text, TextBuilder>, RenderizableBuilder {
   }
 
   @override
-  void replace(covariant Text other) {
+  void replace(Text other) {
     if (other == null) {
       throw new ArgumentError.notNull('other');
     }

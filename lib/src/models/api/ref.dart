@@ -29,12 +29,13 @@ abstract class Ref implements Built<Ref, RefBuilder> {
 
   ///Converts to json
   String toJson() {
-    return json.encode(serializers.serializeWith(Ref.serializer, this));
+    return json.encode(flusmicSerializers.serializeWith(Ref.serializer, this));
   }
 
   ///Converts from json
   static Ref fromJson(String jsonString) {
-    return serializers.deserializeWith(Ref.serializer, json.decode(jsonString));
+    return flusmicSerializers.deserializeWith(
+        Ref.serializer, json.decode(jsonString));
   }
 
   ///Serializer

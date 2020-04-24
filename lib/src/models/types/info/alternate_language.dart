@@ -4,7 +4,7 @@ import 'dart:convert';
 
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
-import '../serializer/serializers.dart';
+import '../../serializer/serializers.dart';
 
 part 'alternate_language.g.dart';
 
@@ -28,13 +28,13 @@ abstract class AlternateLanguage
 
   ///Converts to json
   String toJson() {
-    return json
-        .encode(serializers.serializeWith(AlternateLanguage.serializer, this));
+    return json.encode(
+        flusmicSerializers.serializeWith(AlternateLanguage.serializer, this));
   }
 
   ///Converts from json
   static AlternateLanguage fromJson(String jsonString) {
-    return serializers.deserializeWith(
+    return flusmicSerializers.deserializeWith(
         AlternateLanguage.serializer, json.decode(jsonString));
   }
 

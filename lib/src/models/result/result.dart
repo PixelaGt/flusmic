@@ -59,12 +59,13 @@ abstract class Result implements Built<Result, ResultBuilder> {
 
   ///Converts to json
   String toJson() {
-    return json.encode(serializers.serializeWith(Result.serializer, this));
+    return json
+        .encode(flusmicSerializers.serializeWith(Result.serializer, this));
   }
 
   ///Converts from json
   static Result fromJson(String jsonString) {
-    return serializers.deserializeWith(
+    return flusmicSerializers.deserializeWith(
         Result.serializer, json.decode(jsonString));
   }
 

@@ -27,11 +27,24 @@ part 'serializers.g.dart';
   Span,
   Text
 ])
-final Serializers serializers =
-    (_$serializers.toBuilder()..addPlugin(StandardJsonPlugin())).build();
+final Serializers flusmicSerializers =
+    (_$flusmicSerializers.toBuilder()..addPlugin(StandardJsonPlugin())).build();
 
 ///Serializer for handle rich text
-@SerializersFor([Image, Renderizable, Text])
-final Serializers richTextSerializers = (_$serializers.toBuilder()
-      ..addPlugin(StandardJsonPlugin(discriminator: 'type')))
-    .build();
+@SerializersFor([
+  EmbedHeading1,
+  EmbedHeading2,
+  EmbedHeading3,
+  EmbedHeading4,
+  EmbedHeading5,
+  EmbedHeading6,
+  EmbedImage,
+  EmbedListItem,
+  EmbedOrderedListItem,
+  EmbedParagraph,
+  Renderizable
+])
+final Serializers flusmicRichTextSerializers =
+    (_$flusmicRichTextSerializers.toBuilder()
+          ..addPlugin(StandardJsonPlugin(discriminator: 'type')))
+        .build();

@@ -5,7 +5,7 @@ import 'dart:convert';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/json_object.dart';
 import 'package:built_value/serializer.dart';
-import '../serializer/serializers.dart';
+import '../../serializer/serializers.dart';
 
 part 'slice.g.dart';
 
@@ -33,12 +33,13 @@ abstract class Slice implements Built<Slice, SliceBuilder> {
 
   ///Converts to json
   String toJson() {
-    return json.encode(serializers.serializeWith(Slice.serializer, this));
+    return json
+        .encode(flusmicSerializers.serializeWith(Slice.serializer, this));
   }
 
   ///Converts from json
   static Slice fromJson(String jsonString) {
-    return serializers.deserializeWith(
+    return flusmicSerializers.deserializeWith(
         Slice.serializer, json.decode(jsonString));
   }
 

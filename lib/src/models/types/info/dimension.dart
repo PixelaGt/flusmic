@@ -4,7 +4,7 @@ import 'dart:convert';
 
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
-import '../serializer/serializers.dart';
+import '../../serializer/serializers.dart';
 
 part 'dimension.g.dart';
 
@@ -23,12 +23,13 @@ abstract class Dimension implements Built<Dimension, DimensionBuilder> {
 
   ///Converts to json
   String toJson() {
-    return json.encode(serializers.serializeWith(Dimension.serializer, this));
+    return json
+        .encode(flusmicSerializers.serializeWith(Dimension.serializer, this));
   }
 
   ///Converts from json
   static Dimension fromJson(String jsonString) {
-    return serializers.deserializeWith(
+    return flusmicSerializers.deserializeWith(
         Dimension.serializer, json.decode(jsonString));
   }
 

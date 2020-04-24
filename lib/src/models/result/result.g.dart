@@ -101,7 +101,7 @@ class _$ResultSerializer implements StructuredSerializer<Result> {
           result.results.replace(serializers.deserialize(value,
                   specifiedType: const FullType(
                       BuiltList, const [const FullType(Document)]))
-              as BuiltList<dynamic>);
+              as BuiltList<Object>);
           break;
         case 'version':
           result.version = serializers.deserialize(value,

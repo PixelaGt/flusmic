@@ -47,13 +47,13 @@ abstract class SimpleDocument
 
   ///Converts to json
   String toJson() {
-    return json
-        .encode(serializers.serializeWith(SimpleDocument.serializer, this));
+    return json.encode(
+        flusmicSerializers.serializeWith(SimpleDocument.serializer, this));
   }
 
   ///Converts from json
   static SimpleDocument fromJson(String jsonString) {
-    return serializers.deserializeWith(
+    return flusmicSerializers.deserializeWith(
         SimpleDocument.serializer, json.decode(jsonString));
   }
 

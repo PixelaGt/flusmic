@@ -4,7 +4,7 @@ import 'dart:convert';
 
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
-import '../serializer/serializers.dart';
+import '../../serializer/serializers.dart';
 
 part 'span.g.dart';
 
@@ -26,12 +26,12 @@ abstract class Span implements Built<Span, SpanBuilder> {
 
   ///Converts to json
   String toJson() {
-    return json.encode(serializers.serializeWith(Span.serializer, this));
+    return json.encode(flusmicSerializers.serializeWith(Span.serializer, this));
   }
 
   ///Converts from json
   static Span fromJson(String jsonString) {
-    return serializers.deserializeWith(
+    return flusmicSerializers.deserializeWith(
         Span.serializer, json.decode(jsonString));
   }
 

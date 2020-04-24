@@ -46,13 +46,13 @@ class _$ApiSerializer implements StructuredSerializer<Api> {
           result.refs.replace(serializers.deserialize(value,
                   specifiedType:
                       const FullType(BuiltList, const [const FullType(Ref)]))
-              as BuiltList<dynamic>);
+              as BuiltList<Object>);
           break;
         case 'languages':
           result.languages.replace(serializers.deserialize(value,
                   specifiedType: const FullType(
                       BuiltList, const [const FullType(Language)]))
-              as BuiltList<dynamic>);
+              as BuiltList<Object>);
           break;
       }
     }

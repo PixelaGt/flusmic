@@ -6,7 +6,8 @@ import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 import '../serializer/serializers.dart';
-import '../types/language.dart';
+import '../types/types.dart';
+
 import 'ref.dart';
 
 part 'api.g.dart';
@@ -26,12 +27,13 @@ abstract class Api implements Built<Api, ApiBuilder> {
 
   ///Converts to json
   String toJson() {
-    return json.encode(serializers.serializeWith(Api.serializer, this));
+    return json.encode(flusmicSerializers.serializeWith(Api.serializer, this));
   }
 
   ///Converts from json
   static Api fromJson(String jsonString) {
-    return serializers.deserializeWith(Api.serializer, json.decode(jsonString));
+    return flusmicSerializers.deserializeWith(
+        Api.serializer, json.decode(jsonString));
   }
 
   ///Serializer

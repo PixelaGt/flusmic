@@ -4,7 +4,7 @@ import 'dart:convert';
 
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
-import '../serializer/serializers.dart';
+import '../../serializer/serializers.dart';
 
 part 'media.g.dart';
 
@@ -37,12 +37,13 @@ abstract class Media implements Built<Media, MediaBuilder> {
 
   ///Converts to json
   String toJson() {
-    return json.encode(serializers.serializeWith(Media.serializer, this));
+    return json
+        .encode(flusmicSerializers.serializeWith(Media.serializer, this));
   }
 
   ///Converts from json
   static Media fromJson(String jsonString) {
-    return serializers.deserializeWith(
+    return flusmicSerializers.deserializeWith(
         Media.serializer, json.decode(jsonString));
   }
 

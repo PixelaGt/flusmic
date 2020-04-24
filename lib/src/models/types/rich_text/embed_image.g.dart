@@ -1,21 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of image;
+part of embed_image;
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-Serializer<Image> _$imageSerializer = new _$ImageSerializer();
+Serializer<EmbedImage> _$embedImageSerializer = new _$EmbedImageSerializer();
 
-class _$ImageSerializer implements StructuredSerializer<Image> {
+class _$EmbedImageSerializer implements StructuredSerializer<EmbedImage> {
   @override
-  final Iterable<Type> types = const [Image, _$Image];
+  final Iterable<Type> types = const [EmbedImage, _$EmbedImage];
   @override
   final String wireName = 'image';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, Image object,
+  Iterable<Object> serialize(Serializers serializers, EmbedImage object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object>[];
     if (object.dimensions != null) {
@@ -42,19 +42,13 @@ class _$ImageSerializer implements StructuredSerializer<Image> {
         ..add(serializers.serialize(object.url,
             specifiedType: const FullType(String)));
     }
-    if (object.type != null) {
-      result
-        ..add('type')
-        ..add(serializers.serialize(object.type,
-            specifiedType: const FullType(String)));
-    }
     return result;
   }
 
   @override
-  Image deserialize(Serializers serializers, Iterable<Object> serialized,
+  EmbedImage deserialize(Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new ImageBuilder();
+    final result = new EmbedImageBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -78,10 +72,6 @@ class _$ImageSerializer implements StructuredSerializer<Image> {
           result.url = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
-        case 'type':
-          result.type = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          break;
       }
     }
 
@@ -89,7 +79,7 @@ class _$ImageSerializer implements StructuredSerializer<Image> {
   }
 }
 
-class _$Image extends Image {
+class _$EmbedImage extends EmbedImage {
   @override
   final Dimension dimensions;
   @override
@@ -98,58 +88,51 @@ class _$Image extends Image {
   final String copyright;
   @override
   final String url;
-  @override
-  final String type;
 
-  factory _$Image([void Function(ImageBuilder) updates]) =>
-      (new ImageBuilder()..update(updates)).build();
+  factory _$EmbedImage([void Function(EmbedImageBuilder) updates]) =>
+      (new EmbedImageBuilder()..update(updates)).build();
 
-  _$Image._({this.dimensions, this.alt, this.copyright, this.url, this.type})
+  _$EmbedImage._({this.dimensions, this.alt, this.copyright, this.url})
       : super._();
 
   @override
-  Image rebuild(void Function(ImageBuilder) updates) =>
+  EmbedImage rebuild(void Function(EmbedImageBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  ImageBuilder toBuilder() => new ImageBuilder()..replace(this);
+  EmbedImageBuilder toBuilder() => new EmbedImageBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is Image &&
+    return other is EmbedImage &&
         dimensions == other.dimensions &&
         alt == other.alt &&
         copyright == other.copyright &&
-        url == other.url &&
-        type == other.type;
+        url == other.url;
   }
 
   @override
   int get hashCode {
     return $jf($jc(
-        $jc(
-            $jc($jc($jc(0, dimensions.hashCode), alt.hashCode),
-                copyright.hashCode),
-            url.hashCode),
-        type.hashCode));
+        $jc($jc($jc(0, dimensions.hashCode), alt.hashCode), copyright.hashCode),
+        url.hashCode));
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('Image')
+    return (newBuiltValueToStringHelper('EmbedImage')
           ..add('dimensions', dimensions)
           ..add('alt', alt)
           ..add('copyright', copyright)
-          ..add('url', url)
-          ..add('type', type))
+          ..add('url', url))
         .toString();
   }
 }
 
-class ImageBuilder
-    implements Builder<Image, ImageBuilder>, RenderizableBuilder {
-  _$Image _$v;
+class EmbedImageBuilder
+    implements Builder<EmbedImage, EmbedImageBuilder>, RenderizableBuilder {
+  _$EmbedImage _$v;
 
   DimensionBuilder _dimensions;
   DimensionBuilder get dimensions =>
@@ -169,48 +152,42 @@ class ImageBuilder
   String get url => _$this._url;
   set url(String url) => _$this._url = url;
 
-  String _type;
-  String get type => _$this._type;
-  set type(String type) => _$this._type = type;
+  EmbedImageBuilder();
 
-  ImageBuilder();
-
-  ImageBuilder get _$this {
+  EmbedImageBuilder get _$this {
     if (_$v != null) {
       _dimensions = _$v.dimensions?.toBuilder();
       _alt = _$v.alt;
       _copyright = _$v.copyright;
       _url = _$v.url;
-      _type = _$v.type;
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(covariant Image other) {
+  void replace(covariant EmbedImage other) {
     if (other == null) {
       throw new ArgumentError.notNull('other');
     }
-    _$v = other as _$Image;
+    _$v = other as _$EmbedImage;
   }
 
   @override
-  void update(void Function(ImageBuilder) updates) {
+  void update(void Function(EmbedImageBuilder) updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$Image build() {
-    _$Image _$result;
+  _$EmbedImage build() {
+    _$EmbedImage _$result;
     try {
       _$result = _$v ??
-          new _$Image._(
+          new _$EmbedImage._(
               dimensions: _dimensions?.build(),
               alt: alt,
               copyright: copyright,
-              url: url,
-              type: type);
+              url: url);
     } catch (_) {
       String _$failedField;
       try {
@@ -218,7 +195,7 @@ class ImageBuilder
         _dimensions?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'Image', _$failedField, e.toString());
+            'EmbedImage', _$failedField, e.toString());
       }
       rethrow;
     }

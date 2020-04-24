@@ -6,7 +6,7 @@ part of serializers;
 // BuiltValueGenerator
 // **************************************************************************
 
-Serializers _$serializers = (new Serializers().toBuilder()
+Serializers _$flusmicSerializers = (new Serializers().toBuilder()
       ..add(AlternateLanguage.serializer)
       ..add(Api.serializer)
       ..add(Dimension.serializer)
@@ -47,11 +47,43 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltList, const [const FullType(AlternateLanguage)]),
           () => new ListBuilder<AlternateLanguage>()))
     .build();
-Serializers _$richTextSerializers = (new Serializers().toBuilder()
+Serializers _$flusmicRichTextSerializers = (new Serializers().toBuilder()
       ..add(Dimension.serializer)
-      ..add(Image.serializer)
+      ..add(EmbedHeading1.serializer)
+      ..add(EmbedHeading2.serializer)
+      ..add(EmbedHeading3.serializer)
+      ..add(EmbedHeading4.serializer)
+      ..add(EmbedHeading5.serializer)
+      ..add(EmbedHeading6.serializer)
+      ..add(EmbedImage.serializer)
+      ..add(EmbedListItem.serializer)
+      ..add(EmbedOrderedListItem.serializer)
+      ..add(EmbedParagraph.serializer)
       ..add(Span.serializer)
-      ..add(Text.serializer)
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(Span)]),
+          () => new ListBuilder<Span>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(Span)]),
+          () => new ListBuilder<Span>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(Span)]),
+          () => new ListBuilder<Span>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(Span)]),
+          () => new ListBuilder<Span>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(Span)]),
+          () => new ListBuilder<Span>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(Span)]),
+          () => new ListBuilder<Span>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(Span)]),
+          () => new ListBuilder<Span>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(Span)]),
+          () => new ListBuilder<Span>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(Span)]),
           () => new ListBuilder<Span>()))

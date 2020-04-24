@@ -7,7 +7,7 @@ import 'package:built_value/built_value.dart';
 import 'package:built_value/json_object.dart';
 import 'package:built_value/serializer.dart';
 import '../serializer/serializers.dart';
-import '../types/alternate_language.dart';
+import '../types/types.dart';
 
 part 'document.g.dart';
 
@@ -68,12 +68,13 @@ abstract class Document implements Built<Document, DocumentBuilder> {
 
   ///Converts to json
   String toJson() {
-    return json.encode(serializers.serializeWith(Document.serializer, this));
+    return json
+        .encode(flusmicSerializers.serializeWith(Document.serializer, this));
   }
 
   ///Converts from json
   static Document fromJson(String jsonString) {
-    return serializers.deserializeWith(
+    return flusmicSerializers.deserializeWith(
         Document.serializer, json.decode(jsonString));
   }
 

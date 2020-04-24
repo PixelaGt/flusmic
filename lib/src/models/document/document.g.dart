@@ -114,7 +114,7 @@ class _$DocumentSerializer implements StructuredSerializer<Document> {
           result.tags.replace(serializers.deserialize(value,
                   specifiedType:
                       const FullType(BuiltList, const [const FullType(String)]))
-              as BuiltList<dynamic>);
+              as BuiltList<Object>);
           break;
         case 'first_publication_date':
           result.firstPublicationDate = serializers.deserialize(value,
@@ -128,13 +128,13 @@ class _$DocumentSerializer implements StructuredSerializer<Document> {
           result.slugs.replace(serializers.deserialize(value,
                   specifiedType:
                       const FullType(BuiltList, const [const FullType(String)]))
-              as BuiltList<dynamic>);
+              as BuiltList<Object>);
           break;
         case 'linked_documents':
           result.linkedDocuments.replace(serializers.deserialize(value,
                   specifiedType:
                       const FullType(BuiltList, const [const FullType(String)]))
-              as BuiltList<dynamic>);
+              as BuiltList<Object>);
           break;
         case 'lang':
           result.lang = serializers.deserialize(value,
@@ -144,7 +144,7 @@ class _$DocumentSerializer implements StructuredSerializer<Document> {
           result.alternateLanguages.replace(serializers.deserialize(value,
                   specifiedType: const FullType(
                       BuiltList, const [const FullType(AlternateLanguage)]))
-              as BuiltList<dynamic>);
+              as BuiltList<Object>);
           break;
         case 'data':
           result.data = serializers.deserialize(value,
