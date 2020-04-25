@@ -88,7 +88,7 @@ class _$SimpleDocumentSerializer
           result.tags.replace(serializers.deserialize(value,
                   specifiedType:
                       const FullType(BuiltList, const [const FullType(String)]))
-              as BuiltList<dynamic>);
+              as BuiltList<Object>);
           break;
         case 'slug':
           result.slug = serializers.deserialize(value,

@@ -1,36 +1,56 @@
 import 'package:common_bloc/common_bloc.dart';
-import 'package:flusmic/flusmic.dart';
-import 'package:flusmic/src/flusmic_repository.dart';
-import 'package:flusmic/src/models/predicate/predicate.dart';
-import 'package:flusmic/src/widgets/flusmic_result.dart';
 import 'package:flutter/material.dart';
 import 'package:state_notifier/state_notifier.dart';
+import '../../flusmic.dart';
+import '../flusmic_repository.dart';
+import '../models/predicate/predicate.dart';
+import 'flusmic_result.dart';
 
 typedef BuilderFn = Widget Function(BuildContext context, FlusmicResult result);
 
+///Controller state
 class FlusmicControllerState {
+  ///Last action perfomed timestamp
   final String timestamp;
+
+  ///Main controller
   FlusmicControllerState(this.timestamp);
 }
 
+///Class for control FlusmicBuilder
 class FlusmicController extends StateNotifier<FlusmicControllerState> {
+  ///Constructor
   FlusmicController()
       : super(FlusmicControllerState(DateTime.now().toString()));
 
+  ///Repeat an action
   void repeat() {
     final current = DateTime.now().toString();
     if (state.timestamp != current) state = FlusmicControllerState(current);
   }
 }
 
+///Widget for handle Flusmic requests
 class FlusmicBuilder extends StatefulWidget {
+  ///Widget builder
   final BuilderFn builder;
+
+  ///Flusmic instance
   final Flusmic flusmic;
+
+  ///Flusmic controller
   final FlusmicController controller;
+
+  ///List of predicates to query
   final List<Predicate> predicates;
+
+  ///Respository URL
   final String baseUrl;
+
+  ///Language
   final String language;
 
+  ///Main constructor
   FlusmicBuilder(
       {@required this.builder,
       @required this.predicates,
@@ -46,7 +66,7 @@ class FlusmicBuilder extends StatefulWidget {
 class _FlusmicBuilderState extends State<FlusmicBuilder> {
   final RequestBloc _requestBloc = RequestBloc();
   RequestState _currentState = RequestState.uninitialized();
-  FlusmicController _flusmicController = FlusmicController();
+  final _flusmicController = FlusmicController();
 
   FlusmicController get flusmicController =>
       widget.controller ?? _flusmicController;

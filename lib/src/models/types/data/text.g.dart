@@ -12,14 +12,12 @@ class _$TextSerializer implements StructuredSerializer<Text> {
   @override
   final Iterable<Type> types = const [Text, _$Text];
   @override
-  final String wireName = 'Text';
+  final String wireName = 'paragraph';
 
   @override
   Iterable<Object> serialize(Serializers serializers, Text object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object>[
-      'type',
-      serializers.serialize(object.type, specifiedType: const FullType(String)),
       'text',
       serializers.serialize(object.text, specifiedType: const FullType(String)),
       'spans',
@@ -27,7 +25,12 @@ class _$TextSerializer implements StructuredSerializer<Text> {
           specifiedType:
               const FullType(BuiltList, const [const FullType(Span)])),
     ];
-
+    if (object.type != null) {
+      result
+        ..add('type')
+        ..add(serializers.serialize(object.type,
+            specifiedType: const FullType(String)));
+    }
     return result;
   }
 
@@ -42,10 +45,6 @@ class _$TextSerializer implements StructuredSerializer<Text> {
       iterator.moveNext();
       final dynamic value = iterator.current;
       switch (key) {
-        case 'type':
-          result.type = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          break;
         case 'text':
           result.text = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
@@ -54,7 +53,11 @@ class _$TextSerializer implements StructuredSerializer<Text> {
           result.spans.replace(serializers.deserialize(value,
                   specifiedType:
                       const FullType(BuiltList, const [const FullType(Span)]))
-              as BuiltList<dynamic>);
+              as BuiltList<Object>);
+          break;
+        case 'type':
+          result.type = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           break;
       }
     }
@@ -65,19 +68,16 @@ class _$TextSerializer implements StructuredSerializer<Text> {
 
 class _$Text extends Text {
   @override
-  final String type;
-  @override
   final String text;
   @override
   final BuiltList<Span> spans;
+  @override
+  final String type;
 
   factory _$Text([void Function(TextBuilder) updates]) =>
       (new TextBuilder()..update(updates)).build();
 
-  _$Text._({this.type, this.text, this.spans}) : super._() {
-    if (type == null) {
-      throw new BuiltValueNullFieldError('Text', 'type');
-    }
+  _$Text._({this.text, this.spans, this.type}) : super._() {
     if (text == null) {
       throw new BuiltValueNullFieldError('Text', 'text');
     }
@@ -97,32 +97,28 @@ class _$Text extends Text {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is Text &&
-        type == other.type &&
         text == other.text &&
-        spans == other.spans;
+        spans == other.spans &&
+        type == other.type;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc(0, type.hashCode), text.hashCode), spans.hashCode));
+    return $jf($jc($jc($jc(0, text.hashCode), spans.hashCode), type.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Text')
-          ..add('type', type)
           ..add('text', text)
-          ..add('spans', spans))
+          ..add('spans', spans)
+          ..add('type', type))
         .toString();
   }
 }
 
 class TextBuilder implements Builder<Text, TextBuilder> {
   _$Text _$v;
-
-  String _type;
-  String get type => _$this._type;
-  set type(String type) => _$this._type = type;
 
   String _text;
   String get text => _$this._text;
@@ -132,13 +128,17 @@ class TextBuilder implements Builder<Text, TextBuilder> {
   ListBuilder<Span> get spans => _$this._spans ??= new ListBuilder<Span>();
   set spans(ListBuilder<Span> spans) => _$this._spans = spans;
 
+  String _type;
+  String get type => _$this._type;
+  set type(String type) => _$this._type = type;
+
   TextBuilder();
 
   TextBuilder get _$this {
     if (_$v != null) {
-      _type = _$v.type;
       _text = _$v.text;
       _spans = _$v.spans?.toBuilder();
+      _type = _$v.type;
       _$v = null;
     }
     return this;
@@ -162,7 +162,7 @@ class TextBuilder implements Builder<Text, TextBuilder> {
     _$Text _$result;
     try {
       _$result =
-          _$v ?? new _$Text._(type: type, text: text, spans: spans.build());
+          _$v ?? new _$Text._(text: text, spans: spans.build(), type: type);
     } catch (_) {
       String _$failedField;
       try {
