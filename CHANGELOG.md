@@ -1,6 +1,6 @@
 ## [1.2.0]
 * authToken support.
-* New `Renderizable` class for (initial) RichText support.
+* Initial RichText support through models.
 * Effective dart.
 * Update dependencies.
 
