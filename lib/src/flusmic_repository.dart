@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 import '../flusmic.dart';
+import 'flusmic_error.dart';
 import 'models/ordering/ordering.dart';
 
 /// Flusmic - repository class
@@ -43,9 +44,8 @@ class Flusmic {
     final response = await _client.get(encoded);
     if (response.statusCode == 200) {
       return compute(Api.fromJson, utf8.decode(response.bodyBytes));
-    } else {
-      throw _manageErrors(response);
     }
+    throw manageException(response);
   }
 
   /// Fetch by query
@@ -73,9 +73,8 @@ class Flusmic {
     final response = await _client.get(encoded);
     if (response.statusCode == 200) {
       return compute(Result.fromJson, utf8.decode(response.bodyBytes));
-    } else {
-      throw _manageErrors(response);
     }
+    throw manageException(response);
   }
 
   ///Utility and legacy methods
@@ -218,20 +217,5 @@ class Flusmic {
   String _generateOrdering(Ordering ordering) {
     final descending = ordering.descending ? ' des' : '';
     return 'my.${ordering.customType}.${ordering.field}$descending';
-  }
-
-  ///Manage network exceptions
-  Exception _manageErrors(http.Response response) {
-    if (response.statusCode == 400) {
-      throw Exception('Bad Request');
-    } else if (response.statusCode == 401) {
-      throw Exception('Unauthorized');
-    } else if (response.statusCode == 403) {
-      throw Exception('Forbidden');
-    } else if (response.statusCode == 500) {
-      throw Exception('Internal Server Error');
-    } else {
-      throw Exception('Unknown error: ${response.body}');
-    }
   }
 }
