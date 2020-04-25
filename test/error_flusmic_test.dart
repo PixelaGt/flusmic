@@ -4,12 +4,14 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:nock/nock.dart';
 
 void main() {
-  setUpAll(nock.init);
+  setUpAll(() {
+    nock.defaultBase = "https://flusmic.cdn.prismic.io";
+    nock.init();
+  });
   setUp(nock.cleanAll);
   group('error from prismic', () {
     test('bad request exception', () {
-      nock("https://flusmic.cdn.prismic.io").get("/api/v2")
-        ..replay(400, 'data');
+      nock.get("/api/v2")..replay(400, 'data');
       final flusmic =
           Flusmic(prismicEndpoint: 'https://flusmic.cdn.prismic.io/api/v2');
       expect(
@@ -19,8 +21,7 @@ void main() {
     });
 
     test('unauthorized exception', () {
-      nock("https://flusmic.cdn.prismic.io").get("/api/v2")
-        ..replay(401, 'data');
+      nock.get("/api/v2")..replay(401, 'data');
       final flusmic =
           Flusmic(prismicEndpoint: 'https://flusmic.cdn.prismic.io/api/v2');
       expect(
@@ -30,17 +31,17 @@ void main() {
     });
 
     test('forbidden exception', () {
-      nock("https://flusmic.cdn.prismic.io").get("/api/v2")
-        ..replay(403, 'data');
+      nock.get("/api/v2")..replay(403, 'data');
       final flusmic =
           Flusmic(prismicEndpoint: 'https://flusmic.cdn.prismic.io/api/v2');
-      expect(() async => await flusmic.getApi(),
-          throwsA(isA<FlusmicError>().having((e) => e.code, 'forbidden', 403)));
+      expect(
+          () async => await flusmic.getApi(),
+          throwsA(
+              isA<FlusmicError>().having((e) => e.code, 'forbidden', 403)));
     });
 
     test('server error exception', () {
-      nock("https://flusmic.cdn.prismic.io").get("/api/v2")
-        ..replay(500, 'data');
+      nock.get("/api/v2")..replay(500, 'data');
       final flusmic =
           Flusmic(prismicEndpoint: 'https://flusmic.cdn.prismic.io/api/v2');
       expect(
@@ -50,8 +51,7 @@ void main() {
     });
 
     test('Unknown exception', () {
-      nock("https://flusmic.cdn.prismic.io").get("/api/v2")
-        ..replay(422, 'data');
+      nock.get("/api/v2")..replay(422, 'data');
       final flusmic =
           Flusmic(prismicEndpoint: 'https://flusmic.cdn.prismic.io/api/v2');
       expect(() async => await flusmic.getApi(),
@@ -59,3 +59,6 @@ void main() {
     });
   });
 }
+
+const apiResponse =
+    '{"refs":[{"id":"master","ref":"XpKeURAAACzK17lv","label":"Master","isMasterRef":true}],"integrationFieldsRef":null,"bookmarks":{},"types":{"test":"Test"},"languages":[{"id":"en-us","name":"English - United States"}],"tags":["test"],"forms":{"everything":{"method":"GET","enctype":"application/x-www-form-urlencoded","action":"https://flusmic.cdn.prismic.io/api/v2/documents/search","fields":{"ref":{"type":"String","multiple":false},"q":{"type":"String","multiple":true},"lang":{"type":"String","multiple":false},"page":{"type":"Integer","multiple":false,"default":"1"},"pageSize":{"type":"Integer","multiple":false,"default":"20"},"after":{"type":"String","multiple":false},"fetch":{"type":"String","multiple":false},"fetchLinks":{"type":"String","multiple":false},"graphQuery":{"type":"String","multiple":false},"orderings":{"type":"String","multiple":false},"referer":{"type":"String","multiple":false}}}},"oauth_initiate":"https://flusmic.prismic.io/auth","oauth_token":"https://flusmic.prismic.io/auth/token","version":"8991d98","license":"All Rights Reserved","experiments":{"draft":[],"running":[]}}';

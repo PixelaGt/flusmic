@@ -8,44 +8,105 @@ import 'package:mockito/mockito.dart';
 class FlusmicMock extends Mock implements Flusmic {}
 
 void main() {
-  testWidgets('flusmic builder loaded', (tester) async {
-    final flusmic = FlusmicMock();
-    final predicates = [
-      Predicate.any(DefaultPredicatePath.tags(), ['test'])
-    ];
+  group('flusmic builder', () {
+    testWidgets('flusmic builder loading', (tester) async {
+      await tester.runAsync(() async {
+        final flusmic = FlusmicMock();
+        final predicates = [
+          Predicate.any(DefaultPredicatePath.tags(), ['test'])
+        ];
 
-    when(flusmic.query(predicates)).thenAnswer(
-        (invocation) => Future.value(Result.fromJson(mockResponse)));
+        when(flusmic.query(predicates)).thenAnswer((invocation) =>
+            Future.delayed(
+                Duration(seconds: 30), () => Result.fromJson(mockResponse)));
+        await tester
+            .pumpWidget(FlusmicApp(flusmic: flusmic, predicates: predicates));
+        await tester.pumpAndSettle(
+            Duration(seconds: 10), EnginePhase.build, Duration(minutes: 1));
 
-    await tester.pumpWidget(FlusmicApp(flusmic, predicates));
-    await tester.pumpAndSettle();
+        expect(find.byKey(Key('FlusmicApp')), findsOneWidget);
+        expect(find.byKey(Key('loading')), findsOneWidget);
+      });
+    });
 
-    expect(find.byKey(Key('FlusmicApp')), findsOneWidget);
-    expect(find.byKey(Key('loaded')), findsOneWidget);
-  });
+    testWidgets('flusmic builder loaded', (tester) async {
+      final flusmic = FlusmicMock();
+      final predicates = [
+        Predicate.any(DefaultPredicatePath.tags(), ['test'])
+      ];
 
-  testWidgets('flusmic builder failed', (tester) async {
-    final flusmic = FlusmicMock();
-    final predicates = [
-      Predicate.any(DefaultPredicatePath.tags(), ['test'])
-    ];
+      when(flusmic.query(predicates)).thenAnswer(
+          (invocation) => Future.value(Result.fromJson(mockResponse)));
 
-    when(flusmic.query(predicates))
-        .thenThrow(FlusmicError(code: 400, humanMessage: 'Bad request'));
+      await tester
+          .pumpWidget(FlusmicApp(flusmic: flusmic, predicates: predicates));
+      await tester.pumpAndSettle();
 
-    await tester.pumpWidget(FlusmicApp(flusmic, predicates));
-    await tester.pumpAndSettle();
+      expect(find.byKey(Key('FlusmicApp')), findsOneWidget);
+      expect(find.byKey(Key('loaded')), findsOneWidget);
+    });
 
-    expect(find.byKey(Key('FlusmicApp')), findsOneWidget);
-    expect(find.byKey(Key('error')), findsOneWidget);
+    testWidgets('flusmic builder repeat', (tester) async {
+      final flusmic = FlusmicMock();
+      final flusmicController = FlusmicController();
+      final predicates = [
+        Predicate.any(DefaultPredicatePath.tags(), ['test'])
+      ];
+
+      when(flusmic.query(predicates)).thenAnswer(
+          (invocation) => Future.value(Result.fromJson(mockResponse)));
+
+      await tester.pumpWidget(FlusmicApp(
+          flusmic: flusmic,
+          predicates: predicates,
+          controller: flusmicController));
+      await tester.pumpAndSettle();
+
+      flusmicController.repeat();
+
+      await tester.pumpAndSettle();
+
+      expect(find.byKey(Key('FlusmicApp')), findsOneWidget);
+      expect(find.byKey(Key('loaded')), findsOneWidget);
+    });
+
+    testWidgets('flusmic builder failed', (tester) async {
+      final flusmic = FlusmicMock();
+      final predicates = [
+        Predicate.any(DefaultPredicatePath.tags(), ['test'])
+      ];
+
+      when(flusmic.query(predicates))
+          .thenThrow(FlusmicError(code: 400, humanMessage: 'Bad request'));
+
+      await tester
+          .pumpWidget(FlusmicApp(flusmic: flusmic, predicates: predicates));
+      await tester.pumpAndSettle();
+
+      expect(find.byKey(Key('FlusmicApp')), findsOneWidget);
+      expect(find.byKey(Key('error')), findsOneWidget);
+    });
+
+    testWidgets('flusmic builder simple', (tester) async {
+      final predicates = [
+        Predicate.any(DefaultPredicatePath.tags(), ['test'])
+      ];
+      await tester
+          .pumpWidget(FlusmicApp(predicates: predicates, flusmic: null));
+      await tester.pumpAndSettle();
+
+      expect(find.byKey(Key('FlusmicApp')), findsOneWidget);
+    });
   });
 }
 
 class FlusmicApp extends StatefulWidget {
   final Flusmic flusmic;
+  final FlusmicController controller;
   final List<Predicate> predicates;
 
-  FlusmicApp(this.flusmic, this.predicates);
+  FlusmicApp(
+      {@required this.flusmic, @required this.predicates, this.controller});
 
   @override
   _FlusmicAppState createState() => _FlusmicAppState();
@@ -58,8 +119,9 @@ class _FlusmicAppState extends State<FlusmicApp> {
         home: Scaffold(
             key: Key('FlusmicApp'),
             body: FlusmicBuilder(
-                flusmic: widget.flusmic,
+                flusmic: widget.flusmic ?? null,
                 baseUrl: 'https://flusmic.cdn.prismic.io/api/v2',
+                controller: widget.controller ?? null,
                 builder: (context, state) => state.map(
                     init: (s) => Container(
                         child: Text('Initial State', key: Key('initial'))),
