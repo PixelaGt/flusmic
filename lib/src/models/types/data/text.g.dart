@@ -12,7 +12,7 @@ class _$TextSerializer implements StructuredSerializer<Text> {
   @override
   final Iterable<Type> types = const [Text, _$Text];
   @override
-  final String wireName = 'paragraph';
+  final String wireName = 'Text';
 
   @override
   Iterable<Object> serialize(Serializers serializers, Text object,
