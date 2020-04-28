@@ -12,7 +12,6 @@ import 'span.dart';
 part 'text.g.dart';
 
 ///Text model
-@BuiltValue(wireName: 'paragraph')
 abstract class Text implements GenericText, Built<Text, TextBuilder> {
   ///Current text
   @override
