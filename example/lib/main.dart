@@ -59,7 +59,7 @@ class _HomeFlusmicScreenState extends State<HomeFlusmicScreen> {
               Predicate.at(DefaultPredicatePath.id(), 'WsvbDx8AAGsezMtN')
             ]),
         floatingActionButton: FloatingActionButton(
-            onPressed: () => _flusmicController.repeat(),
+            onPressed: _flusmicController.repeat,
             child: Icon(Icons.replay)));
   }
 }

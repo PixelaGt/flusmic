@@ -2,6 +2,9 @@ import 'package:flusmic/flusmic.dart';
 import 'package:flusmic/src/models/ordering/ordering.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+const authToken = '''
+MC5YcUlOclJFQUFDUUFYOEtF.77-977-9IDzvv70G77-9Ru-_ve-_vVbvv71I77-9BO-_vU8A77-977-977-977-9JDfvv70Fc3_vv71A77-977-9''';
+
 void main() {
   group('query with flusmic', () {
     final flusmic =
@@ -10,6 +13,13 @@ void main() {
       final result = await flusmic.query([
         Predicate.any(DefaultPredicatePath.tags(), ['test'])
       ]);
+      expect(result.results.length, 2);
+    });
+
+    test('authToken', () async {
+      final result = await flusmic.query([
+        Predicate.any(DefaultPredicatePath.tags(), ['test'])
+      ], authToken: authToken);
       expect(result.results.length, 2);
     });
 
