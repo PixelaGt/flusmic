@@ -1,10 +1,8 @@
 import 'package:common_bloc/common_bloc.dart';
+import 'package:flusmic/flusmic.dart';
 import 'package:flutter/material.dart';
 import 'package:state_notifier/state_notifier.dart';
-import '../../flusmic.dart';
-import '../flusmic_repository.dart';
-import '../models/predicate/predicate.dart';
-import 'flusmic_result.dart';
+import 'models/flusmic_result.dart';
 
 typedef BuilderFn = Widget Function(BuildContext context, FlusmicResult result);
 

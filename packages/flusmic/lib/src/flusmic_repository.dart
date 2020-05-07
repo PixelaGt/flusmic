@@ -1,6 +1,6 @@
 import 'dart:convert';
-import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
+import 'package:meta/meta.dart';
 import '../flusmic.dart';
 import 'flusmic_error.dart';
 import 'models/ordering/ordering.dart';
@@ -43,7 +43,7 @@ class Flusmic {
     final encoded = Uri.encodeFull(raw);
     final response = await _client.get(encoded);
     if (response.statusCode == 200) {
-      return compute(Api.fromJson, utf8.decode(response.bodyBytes));
+      return Api.fromJson(utf8.decode(response.bodyBytes));
     }
     throw manageException(response);
   }
@@ -72,7 +72,7 @@ class Flusmic {
     final encoded = Uri.encodeFull(raw);
     final response = await _client.get(encoded);
     if (response.statusCode == 200) {
-      return compute(Result.fromJson, utf8.decode(response.bodyBytes));
+      return Result.fromJson(utf8.decode(response.bodyBytes));
     }
     throw manageException(response);
   }

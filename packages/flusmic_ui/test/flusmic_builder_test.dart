@@ -1,5 +1,6 @@
 import 'package:flusmic/flusmic.dart' hide Text;
 import 'package:flusmic/src/flusmic_error.dart';
+import 'package:flusmic_ui/flusmic_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
