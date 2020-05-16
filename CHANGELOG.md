@@ -1,3 +1,6 @@
+## [1.2.1]
+* Update dependencies
+
 ## [1.2.0]
 * authToken support.
 * Initial RichText support through models.
