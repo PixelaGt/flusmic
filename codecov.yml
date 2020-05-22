@@ -22,6 +22,7 @@ comment:
 ignore:
   - "**/*.freezed.dart"
   - "**/*.g.dart"
+  - "examples/"
   - "lib/src/models/api"
   - "lib/src/models/document"
   - "lib/src/models/result"
