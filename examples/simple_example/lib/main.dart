@@ -1,4 +1,4 @@
-import 'package:flusmic/flusmic.dart' hide Text;
+import 'package:flusmic_ui/flusmic_ui.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(FlusmicApp());
