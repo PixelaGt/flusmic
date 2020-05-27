@@ -1,5 +1,5 @@
+import 'package:dio/dio.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:http/http.dart';
 
 ///Exception for Flusmic
 class FlusmicError implements Exception {
@@ -7,7 +7,10 @@ class FlusmicError implements Exception {
   final String humanMessage;
 
   ///Message from response
-  final String message;
+  ///
+  ///If is a know status code, returns a message.
+  ///If is a unknown error, returns the response data.
+  final dynamic message;
 
   ///Status code
   final int code;
@@ -30,6 +33,6 @@ FlusmicError manageException(Response response) {
       return FlusmicError(code: 500, humanMessage: 'Server error');
     default:
       return FlusmicError(
-          code: 100, humanMessage: 'Unknown error', message: response.body);
+          code: 100, humanMessage: 'Unknown error', message: response.data);
   }
 }

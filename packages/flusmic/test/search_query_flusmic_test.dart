@@ -1,5 +1,4 @@
 import 'package:flusmic/flusmic.dart';
-import 'package:flusmic/src/models/ordering/ordering.dart';
 import 'package:test/test.dart';
 
 const authToken = '''

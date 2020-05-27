@@ -1,83 +1,38 @@
-library document;
+import 'package:freezed_annotation/freezed_annotation.dart';
+import '../info/alternate_language.dart';
 
-import 'dart:convert';
-
-import 'package:built_collection/built_collection.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/json_object.dart';
-import 'package:built_value/serializer.dart';
-import '../serializer/serializers.dart';
-import '../types/types.dart';
-
+part 'document.freezed.dart';
 part 'document.g.dart';
 
 ///Document model
-abstract class Document implements Built<Document, DocumentBuilder> {
-  ///Identifier
-  String get id;
+///
+///Handle all the info of your Prismic.io document
+@freezed
+abstract class Document with _$Document {
+  ///Deafult factory constructor for Document
+  factory Document(
+      {@JsonKey(name: 'alternate_languages')
+          List<AlternateLanguage> alternateLanguages,
+      @JsonKey(name: 'first_publication_date')
+          String firstPublicationDate,
+      @JsonKey(name: 'last_publication_date')
+          String lastPublicationDate,
+      @JsonKey(name: 'linked_documents')
+          List<String> linkedDocuments,
+      @required
+          List<String> tags,
+      @required
+          String id,
+      @required
+          String lang,
+      @required
+          String type,
+      Map<String, dynamic> data,
+      List<String> slugs,
+      String href,
+      String uid}) = _Document;
 
-  ///Unique identifier
-  @nullable
-  String get uid;
-
-  ///Type of document
-  String get type;
-
-  ///Reference
-  @nullable
-  String get href;
-
-  ///Tags
-  BuiltList<String> get tags;
-
-  ///Publication date
-  @nullable
-  @BuiltValueField(wireName: 'first_publication_date')
-  String get firstPublicationDate;
-
-  ///Last update date
-  @nullable
-  @BuiltValueField(wireName: 'last_publication_date')
-  String get lastPublicationDate;
-
-  ///Slugs
-  @nullable
-  BuiltList<String> get slugs;
-
-  ///Linked documents
-  @nullable
-  @BuiltValueField(wireName: 'linked_documents')
-  BuiltList<String> get linkedDocuments;
-
-  ///Language
-  String get lang;
-
-  ///Available language
-  @nullable
-  @BuiltValueField(wireName: 'alternate_languages')
-  BuiltList<AlternateLanguage> get alternateLanguages;
-
-  ///Current data
-  @nullable
-  JsonObject get data;
-
-  Document._();
-
-  ///Creates new Document
-  factory Document([updates(DocumentBuilder b)]) = _$Document;
-
-  ///Converts to json
-  String toJson() {
-    return json
-        .encode(flusmicSerializers.serializeWith(Document.serializer, this));
-  }
-
-  ///Converts from json
-  static Document fromJson(String jsonString) {
-    return flusmicSerializers.deserializeWith(
-        Document.serializer, json.decode(jsonString));
-  }
-
-  ///Serializer
-  static Serializer<Document> get serializer => _$documentSerializer;
+  ///Creates a Document object from json
+  factory Document.fromJson(Map<String, dynamic> json) =>
+      _$DocumentFromJson(json);
 }

@@ -1,9 +1,7 @@
-import 'dart:convert';
-import 'package:http/http.dart' as http;
+import 'package:dio/dio.dart';
 import 'package:meta/meta.dart';
 import '../flusmic.dart';
 import 'flusmic_error.dart';
-import 'models/ordering/ordering.dart';
 
 /// Flusmic - repository class
 ///
@@ -23,34 +21,44 @@ class Flusmic {
   final String prismicEndpoint;
 
   /// Http client
-  final http.Client _client = http.Client();
+  Dio _client;
 
   ///Main constructor
   Flusmic(
       {@required this.prismicEndpoint,
       this.defaultLanguage,
-      this.defaultAuthToken});
+      this.defaultAuthToken}) {
+    _client = Dio(BaseOptions(
+        baseUrl: prismicEndpoint,
+        responseType: ResponseType.json,
+        contentType: 'application/json',
+        queryParameters: {
+          if (defaultAuthToken != null) 'access_token': defaultAuthToken
+        }));
+  }
 
   /// Fetch API
   /// Get the API main document of prismic repository
   Future<Api> getApi({String authToken}) async {
-    var raw = prismicEndpoint;
-    if (authToken != null) {
-      if (authToken.isNotEmpty) {
-        raw = '$raw?access_token=$authToken';
+    try {
+      var raw = '';
+      if (defaultAuthToken == null) {
+        if (authToken != null) {
+          if (authToken.isNotEmpty) {
+            raw = '$raw?access_token=$authToken';
+          }
+        }
       }
+      final response = await _client.get(raw);
+      return Api.fromJson(response.data);
+    } on DioError catch (error) {
+      throw manageException(error.response);
     }
-    final encoded = Uri.encodeFull(raw);
-    final response = await _client.get(encoded);
-    if (response.statusCode == 200) {
-      return Api.fromJson(utf8.decode(response.bodyBytes));
-    }
-    throw manageException(response);
   }
 
   /// Fetch by query
   /// Get result by query using predicates
-  Future<Result> query(List<Predicate> predicates,
+  Future<FlusmicResponse> query(List<Predicate> predicates,
       {int page,
       int pageSize,
       List<CustomPredicatePath> fetch,
@@ -59,48 +67,49 @@ class Flusmic {
       String after,
       String authToken,
       String language}) async {
-    final api = await getApi(authToken: authToken);
-    final raw = _generateUrl(api.refs.first.ref, predicates,
-        authToken: authToken ?? defaultAuthToken,
-        after: after,
-        fetch: fetch,
-        fetchLinks: fetchLinks,
-        language: language ?? defaultLanguage,
-        orderings: orderings,
-        page: page,
-        pageSize: pageSize);
-    final encoded = Uri.encodeFull(raw);
-    final response = await _client.get(encoded);
-    if (response.statusCode == 200) {
-      return Result.fromJson(utf8.decode(response.bodyBytes));
+    try {
+      final api = await getApi(authToken: authToken);
+      final raw = _generateUrl(api.refs.first.ref, predicates,
+          authToken: authToken ?? defaultAuthToken,
+          after: after,
+          fetch: fetch,
+          fetchLinks: fetchLinks,
+          language: language ?? defaultLanguage,
+          orderings: orderings,
+          page: page,
+          pageSize: pageSize);
+      final response = await _client.get(raw);
+      return FlusmicResponse.fromJson(response.data);
+    } on DioError catch (error) {
+      throw manageException(error.response);
     }
-    throw manageException(response);
   }
 
   ///Utility and legacy methods
 
-  // Fetch Root
-  /// Get the API root document of prismic repository
-  /// Contains all the documents.
-  Future<Result> getRootDocument({String language, String authToken}) async =>
+  ///Fetch Root
+  ///Get the API root document of prismic repository
+  ///Contains all the documents.
+  Future<FlusmicResponse> getRootDocument(
+          {String language, String authToken}) async =>
       await query([], authToken: authToken, language: language);
 
   /// Fetch documents by type
   /// Get all the documents by [type] using the slug.
-  Future<Result> getDocumentsByType(String slug,
+  Future<FlusmicResponse> getDocumentsByType(String slug,
           {String language, String authToken}) async =>
       await query([Predicate.at(DefaultPredicatePath.type(), slug)],
           authToken: authToken, language: language);
 
   /// Fetch document by id
   /// Get a documents by [id].
-  Future<Result> getDocumentById(String id,
+  Future<FlusmicResponse> getDocumentById(String id,
       {String language, String authToken}) async {
     return await query([Predicate.at(DefaultPredicatePath.id(), id)],
         authToken: authToken, language: language);
   }
 
-  ///Generate the API url to perform the request
+  ///Generate the API url to perform a request.
   String _generateUrl(String apiRef, List<Predicate> predicates,
       {int page,
       int pageSize,

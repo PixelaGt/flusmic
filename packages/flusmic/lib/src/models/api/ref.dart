@@ -1,43 +1,20 @@
-library ref;
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-import 'dart:convert';
-
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
-import '../serializer/serializers.dart';
-
+part 'ref.freezed.dart';
 part 'ref.g.dart';
 
-///Reference model
-abstract class Ref implements Built<Ref, RefBuilder> {
-  ///Identifier
-  String get id;
+///Ref model
+///
+///Handle Prismic.io references for querying.
+@freezed
+abstract class Ref with _$Ref {
+  ///Deafult factory constructor for Ref
+  factory Ref(
+      {@required String id,
+      @required String label,
+      @required String ref,
+      @required bool isMasterRef}) = _Ref;
 
-  ///Reference slug
-  String get ref;
-
-  ///Label
-  String get label;
-
-  ///Is this a master ref
-  bool get isMasterRef;
-
-  Ref._();
-
-  ///Creates new Ref
-  factory Ref([updates(RefBuilder b)]) = _$Ref;
-
-  ///Converts to json
-  String toJson() {
-    return json.encode(flusmicSerializers.serializeWith(Ref.serializer, this));
-  }
-
-  ///Converts from json
-  static Ref fromJson(String jsonString) {
-    return flusmicSerializers.deserializeWith(
-        Ref.serializer, json.decode(jsonString));
-  }
-
-  ///Serializer
-  static Serializer<Ref> get serializer => _$refSerializer;
+  ///Creates a Ref object from json
+  factory Ref.fromJson(Map<String, dynamic> json) => _$RefFromJson(json);
 }

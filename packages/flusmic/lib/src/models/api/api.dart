@@ -1,41 +1,25 @@
-library api;
-
-import 'dart:convert';
-
-import 'package:built_collection/built_collection.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
-import '../serializer/serializers.dart';
-import '../types/types.dart';
-
+import 'package:freezed_annotation/freezed_annotation.dart';
+import '../info/language.dart';
 import 'ref.dart';
 
+part 'api.freezed.dart';
 part 'api.g.dart';
 
 ///Api model
-abstract class Api implements Built<Api, ApiBuilder> {
-  ///References
-  BuiltList<Ref> get refs;
+///
+///Handle Prismic.io entrypoint data for querying.
+@freezed
+abstract class Api with _$Api {
+  ///Deafult factory constructor for Ref
+  factory Api(
+      {@required @JsonKey(name: 'oauth_initiate') String oauthInitiate,
+      @required @JsonKey(name: 'oauth_token') String oauthToken,
+      @required List<Language> languages,
+      @required List<Ref> refs,
+      @required String license,
+      @required String version,
+      Map<String, String> types}) = _Api;
 
-  ///Available languages
-  BuiltList<Language> get languages;
-
-  Api._();
-
-  ///Creates new Api
-  factory Api([updates(ApiBuilder b)]) = _$Api;
-
-  ///Converts to json
-  String toJson() {
-    return json.encode(flusmicSerializers.serializeWith(Api.serializer, this));
-  }
-
-  ///Converts from json
-  static Api fromJson(String jsonString) {
-    return flusmicSerializers.deserializeWith(
-        Api.serializer, json.decode(jsonString));
-  }
-
-  ///Serializer
-  static Serializer<Api> get serializer => _$apiSerializer;
+  ///Creates a Api object from json
+  factory Api.fromJson(Map<String, dynamic> json) => _$ApiFromJson(json);
 }
