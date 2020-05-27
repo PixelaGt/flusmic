@@ -1,5 +1,6 @@
+import './model/base/flusmic_test.dart';
+import 'package:flusmic_ui/flusmic_ui.dart';
 import 'package:flutter/material.dart';
-import 'package:flusmic_ui/flusmic_ui.dart' hide Text;
 
 void main() => runApp(FlusmicApp());
 
@@ -28,35 +29,34 @@ class _HomeFlusmicScreenState extends State<HomeFlusmicScreen> {
     return Scaffold(
         appBar: AppBar(title: Text('Flusmic example')),
         body: FlusmicBuilder(
-            baseUrl: 'https://pixela.cdn.prismic.io/api/v2',
+            baseUrl: 'https://flusmic.cdn.prismic.io/api/v2',
             builder: (context, result) => result.map(
                 init: (s) => Container(),
                 loading: (s) => Center(child: CircularProgressIndicator()),
                 error: (s) => Center(child: Text('Hi! I\'m an error :(')),
-                loaded: (s) => Container(
-                    child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                        child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: <Widget>[
-                              Center(
-                                  child: Text('Hi! I loaded all the data :)',
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 16.0))),
-                              SizedBox(height: 16.0),
-                              Center(
-                                  child: Text((s.result as Result)
-                                      .results
-                                      .first
-                                      .data
-                                      .toString()))
-                            ])))),
+                loaded: (s) {
+                  final data = (s.result as FlusmicResponse).results.first.data;
+                  final custom = FlusmicTest.fromJson(data);
+                  return Container(
+                      child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                          child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: <Widget>[
+                                Center(
+                                    child: Text('Hi! I loaded all the data :)',
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 16.0))),
+                                SizedBox(height: 16.0),
+                                Center(child: Text(custom.toString()))
+                              ])));
+                }),
             controller: _flusmicController,
             predicates: [
-              Predicate.at(DefaultPredicatePath.type(), 'about'),
-              Predicate.at(DefaultPredicatePath.id(), 'WsvbDx8AAGsezMtN')
+              Predicate.at(DefaultPredicatePath.type(), 'test'),
+              Predicate.at(DefaultPredicatePath.id(), 'XpJ8phAAACzK1yQw')
             ]),
         floatingActionButton: FloatingActionButton(
             onPressed: _flusmicController.repeat, child: Icon(Icons.replay)));
