@@ -82,7 +82,7 @@ class _FlusmicBuilderState extends State<FlusmicBuilder> {
     super.dispose();
   }
 
-  Future<dynamic> _perform() async => await (widget.flusmic ??
+  Future<FlusmicResponse> _perform() async => await (widget.flusmic ??
           Flusmic(
               prismicEndpoint: widget.baseUrl,
               defaultLanguage: widget.language))
