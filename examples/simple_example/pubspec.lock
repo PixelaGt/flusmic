@@ -140,7 +140,7 @@ packages:
       name: common_bloc
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.0"
+    version: "2.0.1"
   convert:
     dependency: transitive
     description:
@@ -242,20 +242,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.14.0+3"
-  http:
-    dependency: transitive
-    description:
-      name: http
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.12.1"
-  http_interceptor:
-    dependency: transitive
-    description:
-      name: http_interceptor
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.2.0"
   http_multi_server:
     dependency: transitive
     description:

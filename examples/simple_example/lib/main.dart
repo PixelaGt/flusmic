@@ -35,7 +35,7 @@ class _HomeFlusmicScreenState extends State<HomeFlusmicScreen> {
                 loading: (s) => Center(child: CircularProgressIndicator()),
                 error: (s) => Center(child: Text('Hi! I\'m an error :(')),
                 loaded: (s) {
-                  final data = (s.result as FlusmicResponse).results.first.data;
+                  final data = s.response.results.first.data;
                   final custom = FlusmicTest.fromJson(data);
                   return Container(
                       child: Padding(
