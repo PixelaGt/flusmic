@@ -2,9 +2,9 @@ import 'package:common_bloc/common_bloc.dart';
 import 'package:flusmic/flusmic.dart';
 import 'package:flutter/material.dart';
 import 'package:state_notifier/state_notifier.dart';
-import 'models/flusmic_result.dart';
+import 'models/flusmic_status.dart';
 
-typedef BuilderFn = Widget Function(BuildContext context, FlusmicResult result);
+typedef BuilderFn = Widget Function(BuildContext context, FlusmicStatus status);
 
 ///Controller state
 class FlusmicControllerState {
@@ -96,9 +96,10 @@ class _FlusmicBuilderState extends State<FlusmicBuilder> {
     return widget.builder(
         context,
         _currentState.when(
-            error: (error) => FlusmicResult.error(error),
-            loaded: (result, _, __) => FlusmicResult.loaded(result),
-            loading: () => FlusmicResult.loading(),
-            uninitialized: () => FlusmicResult.init()));
+            error: (error) => FlusmicStatus.error(error),
+            loaded: (result, _, __) =>
+                FlusmicStatus.loaded(result as FlusmicResponse),
+            loading: () => FlusmicStatus.loading(),
+            uninitialized: () => FlusmicStatus.init()));
   }
 }
