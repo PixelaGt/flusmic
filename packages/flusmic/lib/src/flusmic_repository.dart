@@ -1,4 +1,5 @@
-import 'package:dio/dio.dart';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
 import 'package:meta/meta.dart';
 import '../flusmic.dart';
 import 'flusmic_error.dart';
@@ -21,39 +22,32 @@ class Flusmic {
   final String prismicEndpoint;
 
   /// Http client
-  Dio _client;
+  http.Client _client;
 
   ///Main constructor
   Flusmic(
       {@required this.prismicEndpoint,
       this.defaultLanguage,
       this.defaultAuthToken}) {
-    _client = Dio(BaseOptions(
-        baseUrl: prismicEndpoint,
-        responseType: ResponseType.json,
-        contentType: 'application/json',
-        queryParameters: {
-          if (defaultAuthToken != null) 'access_token': defaultAuthToken
-        }));
+    _client = http.Client();
   }
 
   /// Fetch API
   /// Get the API main document of prismic repository
   Future<Api> getApi({String authToken}) async {
-    try {
-      var raw = '';
-      if (defaultAuthToken == null) {
-        if (authToken != null) {
-          if (authToken.isNotEmpty) {
-            raw = '$raw?access_token=$authToken';
-          }
+    var raw = prismicEndpoint;
+    if (defaultAuthToken == null) {
+      if (authToken != null) {
+        if (authToken.isNotEmpty) {
+          raw += '?access_token=$authToken';
         }
       }
-      final response = await _client.get(raw);
-      return Api.fromJson(response.data);
-    } on DioError catch (error) {
-      throw manageException(error.response);
     }
+    final response = await _client.get(raw);
+    if (response.statusCode <= 200) {
+      return Api.fromJson(json.decode(utf8.decode(response.bodyBytes)));
+    }
+    throw manageException(response);
   }
 
   /// Fetch by query
@@ -67,22 +61,22 @@ class Flusmic {
       String after,
       String authToken,
       String language}) async {
-    try {
-      final api = await getApi(authToken: authToken);
-      final raw = _generateUrl(api.refs.first.ref, predicates,
-          authToken: authToken ?? defaultAuthToken,
-          after: after,
-          fetch: fetch,
-          fetchLinks: fetchLinks,
-          language: language ?? defaultLanguage,
-          orderings: orderings,
-          page: page,
-          pageSize: pageSize);
-      final response = await _client.get(raw);
-      return FlusmicResponse.fromJson(response.data);
-    } on DioError catch (error) {
-      throw manageException(error.response);
+    final api = await getApi(authToken: authToken);
+    final raw = _generateUrl(api.refs.first.ref, predicates,
+        authToken: authToken ?? defaultAuthToken,
+        after: after,
+        fetch: fetch,
+        fetchLinks: fetchLinks,
+        language: language ?? defaultLanguage,
+        orderings: orderings,
+        page: page,
+        pageSize: pageSize);
+    final response = await _client.get(raw);
+    if (response.statusCode <= 200) {
+      return FlusmicResponse.fromJson(
+          json.decode(utf8.decode(response.bodyBytes)));
     }
+    throw manageException(response);
   }
 
   ///Utility and legacy methods
