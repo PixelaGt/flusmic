@@ -4,5 +4,6 @@ analyzer:
     - "examples/**"
     - "**.g.dart"
     - "**.freezed.dart"
+    - "packages/flusmic/test/.test_coverage.dart"
   errors:
     include_file_not_found: ignore

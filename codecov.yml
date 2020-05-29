@@ -24,3 +24,4 @@ ignore:
   - "**/*.g.dart"
   - "examples/"
   - "packages/flusmic/lib/src/models"
+  - "packages/flusmic/test/.test_coverage.dart"

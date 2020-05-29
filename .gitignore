@@ -9,6 +9,7 @@
 .history
 .svn/
 coverage/
+packages/flusmic/test/.test_coverage.dart
 
 # IntelliJ related
 *.iml
