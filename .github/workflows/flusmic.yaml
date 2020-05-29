@@ -32,7 +32,7 @@ jobs:
         uses: ChicagoFlutter/lcov-cop@v1.0.0
         with:
           path: "./packages/flusmic/coverage/lcov.info"
-          min_coverage: 95
+          min_coverage: 85
           exclude: "**/*.g.dart **/*.freezed.dart lib/src/models/**"
       - name: upload coverage
         uses: codecov/codecov-action@v1
