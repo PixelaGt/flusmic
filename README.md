@@ -1,4 +1,3 @@
-<img src="https://raw.githubusercontent.com/PixelaGT/flusmic/package/images/flusmic.png" width="350">
 
 # flusmic
 ![flusmic](https://github.com/PixelaGt/flusmic/workflows/flusmic/badge.svg?branch=master&event=push)
@@ -6,6 +5,8 @@
 [![Project Status: Active](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![style: effective dart](https://img.shields.io/badge/style-effective_dart-40c4ff.svg)](https://github.com/pblinux/end_credits)
+
+<img src="https://raw.githubusercontent.com/PixelaGt/flusmic/v2.0.0/images/flusmic.png" width="350">
 
 A (unofficial) prismic.io integration for Dart and Flutter.
 

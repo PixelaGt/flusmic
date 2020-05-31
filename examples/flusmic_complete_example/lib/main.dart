@@ -37,21 +37,9 @@ class _HomeFlusmicScreenState extends State<HomeFlusmicScreen> {
                 loaded: (s) {
                   final data = s.response.results.first.data;
                   final custom = FlusmicTest.fromJson(data);
-                  return Container(
-                      child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                          child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: <Widget>[
-                                Center(
-                                    child: Text('Hi! I loaded all the data :)',
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 16.0))),
-                                SizedBox(height: 16.0),
-                                Center(child: Text(custom.toString()))
-                              ])));
+                  return SingleChildScrollView(
+                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                      child: FlusmicRichText(custom.content));
                 }),
             controller: _flusmicController,
             predicates: [

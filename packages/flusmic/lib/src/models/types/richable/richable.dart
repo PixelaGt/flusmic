@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'embed/embed.dart';
 import 'embed_image/embed_image.dart';
 import 'embed_text/embed_text.dart';
 
@@ -17,6 +18,8 @@ abstract class Richable {
     switch (json['type']) {
       case "image":
         return EmbedImage.fromJson(json);
+      case "embed":
+        return Embed.fromJson(json);
       default:
         return EmbedText.fromJson(json);
     }
@@ -29,6 +32,8 @@ abstract class Richable {
     switch (runtimeType) {
       case EmbedImage:
         return (this as EmbedImage).toJson();
+      case Embed:
+        return (this as Embed).toJson();
       default:
         return (this as EmbedText).toJson();
     }
