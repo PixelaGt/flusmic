@@ -1,7 +1,7 @@
-import 'package:flusmic/src/models/types/richable/embed/embed_data.dart';
 import 'package:json_annotation/json_annotation.dart';
 import '../flusmic_embed.dart';
 import '../richable.dart';
+import 'embed_data.dart';
 
 part 'embed.g.dart';
 

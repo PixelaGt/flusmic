@@ -1,7 +1,9 @@
 ## [2.0.0]
-* Isolate for dart support.
-* New way to work with models.
+* Dart only support.
 * Full Rich Text support.
+* Full Link support.
+* New models structure.
+* Minor fixes to error handling.
 * Update dependencies.
 
 ## [1.2.0]
