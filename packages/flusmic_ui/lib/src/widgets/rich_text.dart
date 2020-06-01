@@ -14,32 +14,32 @@ class InnerRichText extends StatefulWidget {
   ///Style for headline1
   ///
   ///Otherwise, is `TextTheme.headline1`
-  final TextStyle headlin1Style;
+  final TextStyle headline1Style;
 
   ///Style for headline2
   ///
   ///Otherwise, is `TextTheme.headline2`
-  final TextStyle headlin2Style;
+  final TextStyle headline2Style;
 
   ///Style for headline3
   ///
   ///Otherwise, is `TextTheme.headline3`
-  final TextStyle headlin3Style;
+  final TextStyle headline3Style;
 
   ///Style for headline4
   ///
   ///Otherwise, is `TextTheme.headline4`
-  final TextStyle headlin4Style;
+  final TextStyle headline4Style;
 
   ///Style for headline5
   ///
   ///Otherwise, is `TextTheme.headline5`
-  final TextStyle headlin5Style;
+  final TextStyle headline5Style;
 
   ///Style for headline6
   ///
   ///Otherwise, is `TextTheme.headline6`
-  final TextStyle headlin6Style;
+  final TextStyle headline6Style;
 
   ///Style for paragraph
   ///
@@ -49,12 +49,12 @@ class InnerRichText extends StatefulWidget {
   ///Default constructor
   InnerRichText(this.text,
       {this.bottomSeparation = 8.0,
-      this.headlin1Style,
-      this.headlin2Style,
-      this.headlin3Style,
-      this.headlin4Style,
-      this.headlin5Style,
-      this.headlin6Style,
+      this.headline1Style,
+      this.headline2Style,
+      this.headline3Style,
+      this.headline4Style,
+      this.headline5Style,
+      this.headline6Style,
       this.paragraphStyle});
 
   @override
@@ -75,17 +75,17 @@ class _InnerRichTextState extends State<InnerRichText> {
   TextStyle _styleByType(String type) {
     switch (type) {
       case 'heading1':
-        return widget.headlin1Style ?? Theme.of(context).textTheme.headline1;
+        return widget.headline1Style ?? Theme.of(context).textTheme.headline1;
       case 'heading2':
-        return widget.headlin2Style ?? Theme.of(context).textTheme.headline2;
+        return widget.headline2Style ?? Theme.of(context).textTheme.headline2;
       case 'heading3':
-        return widget.headlin3Style ?? Theme.of(context).textTheme.headline3;
+        return widget.headline3Style ?? Theme.of(context).textTheme.headline3;
       case 'heading4':
-        return widget.headlin4Style ?? Theme.of(context).textTheme.headline4;
+        return widget.headline4Style ?? Theme.of(context).textTheme.headline4;
       case 'heading5':
-        return widget.headlin5Style ?? Theme.of(context).textTheme.headline5;
+        return widget.headline5Style ?? Theme.of(context).textTheme.headline5;
       case 'heading6':
-        return widget.headlin6Style ?? Theme.of(context).textTheme.headline6;
+        return widget.headline6Style ?? Theme.of(context).textTheme.headline6;
       default:
         return widget.paragraphStyle ?? Theme.of(context).textTheme.bodyText2;
     }
