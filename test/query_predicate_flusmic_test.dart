@@ -35,7 +35,7 @@ void main() {
       final result = await flusmic.query([
         Predicate.fullText(DefaultPredicatePath.document(), "large content")
       ]);
-      expect(result.results.length, 2);
+      expect(result.results.length, 1);
     });
 
     test('has', () async {

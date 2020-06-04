@@ -1,3 +1,6 @@
+## [1.2.3]
+* Update common_bloc dependency
+
 ## [1.2.2]
 * Update common_bloc dependency
 
