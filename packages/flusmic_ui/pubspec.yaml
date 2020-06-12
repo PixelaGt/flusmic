@@ -12,8 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
   common_bloc: ^2.0.2
-  flusmic:
-    path: ../flusmic/
+  flusmic: ^2.0.0+1
   flutter_advanced_networkimage: ^0.7.0
   freezed_annotation: ^0.7.1
   state_notifier: ^0.5.0

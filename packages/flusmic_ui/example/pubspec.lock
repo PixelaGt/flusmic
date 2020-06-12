@@ -186,10 +186,10 @@ packages:
   flusmic:
     dependency: transitive
     description:
-      path: "../../flusmic"
-      relative: true
-    source: path
-    version: "2.0.0"
+      name: flusmic
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.0+1"
   flusmic_ui:
     dependency: "direct main"
     description:
