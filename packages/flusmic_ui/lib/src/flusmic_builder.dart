@@ -30,6 +30,9 @@ class FlusmicController extends StateNotifier<FlusmicControllerState> {
 
 ///Widget for handle Flusmic requests
 class FlusmicBuilder extends StatefulWidget {
+  ///Authorization token
+  final String authToken;
+
   ///Widget builder
   final BuilderFn builder;
 
@@ -52,6 +55,7 @@ class FlusmicBuilder extends StatefulWidget {
   FlusmicBuilder(
       {@required this.builder,
       @required this.predicates,
+      this.authToken,
       this.baseUrl,
       this.controller,
       this.flusmic,
@@ -72,21 +76,25 @@ class _FlusmicBuilderState extends State<FlusmicBuilder> {
   @override
   void initState() {
     super.initState();
-    _requestBloc.listen((state) => setState(() => _currentState = state));
+    _requestBloc.listen((state) {
+      if (mounted) setState(() => _currentState = state);
+    });
     flusmicController.addListener((state) => onRepeat());
   }
 
   @override
   void dispose() {
     _requestBloc.close();
+    _flusmicController.dispose();
     super.dispose();
   }
 
   Future<FlusmicResponse> _perform() async => await (widget.flusmic ??
           Flusmic(
-              prismicEndpoint: widget.baseUrl,
-              defaultLanguage: widget.language))
-      .query(widget.predicates, language: widget.language);
+              defaultAuthToken: widget.authToken,
+              defaultLanguage: widget.language,
+              prismicEndpoint: widget.baseUrl))
+      .query(widget.predicates);
 
   void onRepeat() =>
       _requestBloc.perform(_perform, 'FlusmicRequest', withLoading: true);
