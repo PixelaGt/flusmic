@@ -1,5 +1,4 @@
-import 'dart:convert';
-import 'package:http/http.dart' as http;
+import 'package:dio/dio.dart';
 import 'package:meta/meta.dart';
 import '../flusmic.dart';
 import 'flusmic_error.dart';
@@ -22,61 +21,66 @@ class Flusmic {
   final String prismicEndpoint;
 
   /// Http client
-  http.Client _client;
+  Dio _client;
 
   ///Main constructor
   Flusmic(
       {@required this.prismicEndpoint,
       this.defaultLanguage,
       this.defaultAuthToken}) {
-    _client = http.Client();
+    _client = Dio(BaseOptions(
+        baseUrl: prismicEndpoint,
+        contentType: 'application/json',
+        responseType: ResponseType.json,
+        queryParameters: {
+          if (defaultAuthToken?.isNotEmpty ?? false)
+            'access_token': defaultAuthToken,
+          if (defaultLanguage?.isNotEmpty ?? false) 'lang': defaultLanguage
+        }));
   }
 
   /// Fetch API
   /// Get the API main document of prismic repository
   Future<Api> getApi({String authToken}) async {
-    var raw = prismicEndpoint;
-    if (defaultAuthToken == null) {
-      if (authToken != null) {
-        if (authToken.isNotEmpty) {
-          raw += '?access_token=$authToken';
-        }
-      }
+    try {
+      final response = await _client.get('', queryParameters: {
+        if (defaultAuthToken == null && authToken != null)
+          'access_token': authToken
+      });
+      return Api.fromJson(response.data);
+    } on DioError catch (error) {
+      throw manageException(error.response);
     }
-    final response = await _client.get(raw);
-    if (response.statusCode <= 200) {
-      return Api.fromJson(json.decode(utf8.decode(response.bodyBytes)));
-    }
-    throw manageException(response);
   }
 
   /// Fetch by query
   /// Get result by query using predicates
   Future<FlusmicResponse> query(List<Predicate> predicates,
-      {int page,
-      int pageSize,
-      List<CustomPredicatePath> fetch,
+      {List<CustomPredicatePath> fetch,
       List<CustomPredicatePath> fetchLinks,
       List<Ordering> orderings,
       String after,
       String authToken,
-      String language}) async {
-    final api = await getApi(authToken: authToken);
-    final raw = _generateUrl(api.refs.first.ref, predicates,
-        authToken: authToken ?? defaultAuthToken,
-        after: after,
-        fetch: fetch,
-        fetchLinks: fetchLinks,
-        language: language ?? defaultLanguage,
-        orderings: orderings,
-        page: page,
-        pageSize: pageSize);
-    final response = await _client.get(raw);
-    if (response.statusCode <= 200) {
-      return FlusmicResponse.fromJson(
-          json.decode(utf8.decode(response.bodyBytes)));
+      String language,
+      int page,
+      int pageSize}) async {
+    try {
+      final api = await getApi(authToken: authToken);
+      final response = await _client.get(
+          _generateUrl(predicates, api.refs.first.ref),
+          queryParameters: _generateParams(
+              after: after,
+              authToken: authToken,
+              fetch: fetch,
+              fetchLinks: fetchLinks,
+              language: language,
+              orderings: orderings,
+              page: page,
+              pageSize: pageSize));
+      return FlusmicResponse.fromJson(response.data);
+    } on DioError catch (error) {
+      throw manageException(error.response);
     }
-    throw manageException(response);
   }
 
   ///Utility and legacy methods
@@ -103,53 +107,35 @@ class Flusmic {
         authToken: authToken, language: language);
   }
 
+  ///Generate params to perform a request.
+  Map<String, dynamic> _generateParams(
+          {int page,
+          int pageSize,
+          List<CustomPredicatePath> fetch,
+          List<CustomPredicatePath> fetchLinks,
+          List<Ordering> orderings,
+          String after,
+          String authToken,
+          String language}) =>
+      {
+        if (after?.isNotEmpty ?? false) 'after': after,
+        if (authToken?.isNotEmpty ?? false) 'access_token': authToken,
+        if (fetch?.isNotEmpty ?? false)
+          'fetch': fetch.map((f) => f.toString()).toList().join(','),
+        if (fetchLinks?.isNotEmpty ?? false)
+          'fetchLinks': fetchLinks.map((f) => f.toString()).toList().join(','),
+        if (language?.isNotEmpty ?? false) 'lang': language,
+        if (orderings?.isNotEmpty ?? false)
+          'orderings':
+              '[${orderings.map(_generateOrdering).toList().join(',')}]',
+        if (page != null) 'page': page.toString(),
+        if (pageSize != null) 'pageSize': pageSize.toString(),
+      };
+
   ///Generate the API url to perform a request.
-  String _generateUrl(String apiRef, List<Predicate> predicates,
-      {int page,
-      int pageSize,
-      List<CustomPredicatePath> fetch,
-      List<CustomPredicatePath> fetchLinks,
-      List<Ordering> orderings,
-      String after,
-      String authToken,
-      String language}) {
+  String _generateUrl(List<Predicate> predicates, String apiRef) {
     final queries = predicates.map(_generateQueries).toList();
-    var raw = '$prismicEndpoint$_documentPath$apiRef${queries.join()}';
-    if (after != null) {
-      raw = '$raw&after=$after';
-    }
-    if (language != null) {
-      raw = '$raw&lang=$language';
-    }
-    if (page != null) {
-      raw = '$raw&page=${page.toString()}';
-    }
-    if (pageSize != null) {
-      raw = '$raw&pageSize=${pageSize.toString()}';
-    }
-    if (fetch != null) {
-      if (fetch.isNotEmpty) {
-        final query = fetch.map((f) => f.toString()).toList().join(',');
-        raw = '$raw&fetch=$query';
-      }
-    }
-    if (fetchLinks != null) {
-      if (fetchLinks.isNotEmpty) {
-        final query = fetchLinks.map((f) => f.toString()).toList().join(',');
-        raw = '$raw&fetchLinks=$query';
-      }
-    }
-    if (orderings != null) {
-      if (orderings.isNotEmpty) {
-        final query = orderings.map(_generateOrdering).toList().join(',');
-        raw = '$raw&orderings=[$query]';
-      }
-    }
-    if (authToken != null) {
-      if (authToken.isNotEmpty) {
-        raw = '$raw&access_token=$authToken';
-      }
-    }
+    var raw = '$_documentPath$apiRef${queries.join()}';
     return raw;
   }
 

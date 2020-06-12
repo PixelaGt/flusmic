@@ -15,7 +15,7 @@ void main() {
       expect(result.results.length, 2);
     });
 
-    test('authToken', () async {
+    test('auth', () async {
       final result = await flusmic.query([
         Predicate.any(DefaultPredicatePath.tags(), ['test'])
       ], authToken: authToken);
@@ -70,6 +70,27 @@ void main() {
       final result = await flusmic.query(
           [Predicate.at(DefaultPredicatePath.type(), 'test')],
           pageSize: 2);
+      expect(result.results.length, 2);
+    });
+  });
+
+  group('query with flusmic with default values', () {
+    test('default auth', () async {
+      final flusmic = Flusmic(
+          defaultAuthToken: authToken,
+          prismicEndpoint: 'https://flusmic.cdn.prismic.io/api/v2');
+      final result = await flusmic.query([
+        Predicate.any(DefaultPredicatePath.tags(), ['test'])
+      ], authToken: authToken);
+      expect(result.results.length, 2);
+    });
+
+    test('default language', () async {
+      final flusmic = Flusmic(
+          defaultAuthToken: authToken,
+          prismicEndpoint: 'https://flusmic.cdn.prismic.io/api/v2');
+      final result = await flusmic
+          .query([Predicate.at(DefaultPredicatePath.type(), 'test')]);
       expect(result.results.length, 2);
     });
   });
