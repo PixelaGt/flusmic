@@ -5,17 +5,24 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Run tests",
+            "name": "Run flusmic tests",
             "noDebug": true,
             "type": "dart",
             "request": "launch",
-            "program": "test/"
+            "program": "packages/flusmic/test/"
         },
         {
-            "name": "Run example",
+            "name": "Run flusmic_ui tests",
+            "noDebug": true,
             "type": "dart",
             "request": "launch",
-            "program": "example/lib/main.dart"
+            "program": "packages/flusmic_ui/test/"
+        },
+        {
+            "name": "Run simple example",
+            "type": "dart",
+            "request": "launch",
+            "program": "examples/simple_example/lib/main.dart"
         }
     ]
 }

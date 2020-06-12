@@ -8,8 +8,6 @@
 .buildlog/
 .history
 .svn/
-coverage/
-packages/flusmic/test/.test_coverage.dart
 
 # IntelliJ related
 *.iml
@@ -26,6 +24,7 @@ packages/flusmic/test/.test_coverage.dart
 **/doc/api/
 .dart_tool/
 .flutter-plugins
+.flutter-plugins-dependencies
 .packages
 .pub-cache/
 .pub/
@@ -59,10 +58,12 @@ build/
 **/ios/.generated/
 **/ios/Flutter/App.framework
 **/ios/Flutter/Flutter.framework
+**/ios/Flutter/Flutter.podspec
 **/ios/Flutter/Generated.xcconfig
 **/ios/Flutter/app.flx
 **/ios/Flutter/app.zip
 **/ios/Flutter/flutter_assets/
+**/ios/Flutter/flutter_export_environment.sh
 **/ios/ServiceDefinitions.json
 **/ios/Runner/GeneratedPluginRegistrant.*
 

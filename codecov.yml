@@ -22,8 +22,7 @@ comment:
 ignore:
   - "**/*.freezed.dart"
   - "**/*.g.dart"
-  - "lib/src/models/api"
-  - "lib/src/models/document"
-  - "lib/src/models/result"
-  - "lib/src/models/serializer"
-  - "lib/src/models/types"
+  - "examples/"
+  - "packages/flusmic/lib/src/models"
+  - "packages/flusmic_ui/lib/src/models"
+  - "packages/flusmic/test/.test_coverage.dart"

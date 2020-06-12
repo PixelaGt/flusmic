@@ -1,14 +1,11 @@
 include: package:effective_dart/analysis_options.yaml
 analyzer:
   exclude:
-    - example/lib/**
-    - lib/src/models/api/**.g.dart
-    - lib/src/models/document/**.g.dart
-    - lib/src/models/ordering/**.freezed.dart
-    - lib/src/models/predicate/**.freezed.dart
-    - lib/src/models/result/**.g.dart
-    - lib/src/models/serializer/**.g.dart
-    - lib/src/models/types/**.g.dart
-    - lib/src/widgets/**.freezed.dart
+    - "**.freezed.dart"
+    - "**.g.dart"
+    - "examples/**"
+    - "packages/flusmic/lib/example/**"
+    - "packages/flusmic/test/.test_coverage.dart"
+    - "packages/flusmic_ui/lib/example/**"
   errors:
     include_file_not_found: ignore
