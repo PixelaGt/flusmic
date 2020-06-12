@@ -1,3 +1,6 @@
+## [2.0.0+1]
+* Health suggestions
+
 ## [2.0.0]
 * Dart only support.
 * Full Rich Text support.
