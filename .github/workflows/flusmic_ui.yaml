@@ -1,0 +1,37 @@
+name: flusmic_ui
+
+on:
+  push:
+    paths:
+      - "packages/flusmic_ui/**"
+      - ".github/workflows/flusmic_ui.yaml"
+  pull_request:
+    paths:
+      - "packages/flusmic_ui/**"
+      - ".github/workflows/flusmic_ui.yaml"
+
+jobs:
+  flusmic-ui-build:
+    defaults:
+      run:
+        working-directory: packages/flusmic_ui
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: subosito/flutter-action@v1.3.0
+      - name: get dependencies
+        run: flutter packages get
+      - name: valid format
+        run: flutter format --set-exit-if-changed lib
+      - name: analyze
+        run: flutter analyze lib
+      - name: run tests
+        run: flutter test --no-pub --coverage
+      - name: check coverage percentage
+        uses: ChicagoFlutter/lcov-cop@v1.0.0
+        with:
+          path: "./packages/flusmic_ui/coverage/lcov.info"
+          min_coverage: 95
+          exclude: "**/*.freezed.dart"
+      - name: upload coverage
+        uses: codecov/codecov-action@v1
