@@ -1,6 +1,5 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_advanced_networkimage/provider.dart';
-import 'package:flutter_advanced_networkimage/transition.dart';
 import '../../flusmic_ui.dart';
 
 ///InnerRichImage
@@ -33,13 +32,13 @@ class InnerRichImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
         padding: EdgeInsets.only(bottom: bottomSeparation),
-        child: TransitionToImage(
-            image: AdvancedNetworkImage(image.url, useDiskCache: true),
-            enableRefresh: true,
+        child: CachedNetworkImage(
+            imageUrl: image.url,
             fit: fit,
             height: image.dimensions.height,
             width: image.dimensions.width,
-            loadingWidget: loadingWidget ?? Container(),
-            placeholder: failWidget ?? Center(child: Icon(Icons.refresh))));
+            placeholder: (context, url) => loadingWidget ?? Container(),
+            errorWidget: (context, url, error) =>
+                failWidget ?? Center(child: Icon(Icons.refresh))));
   }
 }
