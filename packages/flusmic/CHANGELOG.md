@@ -1,3 +1,6 @@
+## [2.0.0+2]
+* Update dependencies.
+
 ## [2.0.0+1]
 * Health suggestions
 
