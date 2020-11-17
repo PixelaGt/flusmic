@@ -17,7 +17,7 @@ jobs:
         working-directory: packages/flusmic
     runs-on: ubuntu-latest
     container:
-      image: google/dart:2.8.1
+      image: google/dart:2.10.0
     steps:
       - uses: actions/checkout@v2
       - name: get dependencies
@@ -29,7 +29,7 @@ jobs:
       - name: run tests
         run: pub run test_coverage
       - name: check coverage percentage
-        uses: ChicagoFlutter/lcov-cop@v1.0.0
+        uses: VeryGoodOpenSource/very_good_coverage@v1.1.1
         with:
           path: "./packages/flusmic/coverage/lcov.info"
           min_coverage: 95
