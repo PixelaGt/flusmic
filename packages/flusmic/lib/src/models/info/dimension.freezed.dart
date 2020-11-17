@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'dimension.dart';
 
@@ -12,20 +12,29 @@ Dimension _$DimensionFromJson(Map<String, dynamic> json) {
   return _Dimension.fromJson(json);
 }
 
+/// @nodoc
 class _$DimensionTearOff {
   const _$DimensionTearOff();
 
+// ignore: unused_element
   _Dimension call({@required double height, @required double width}) {
     return _Dimension(
       height: height,
       width: width,
     );
   }
+
+// ignore: unused_element
+  Dimension fromJson(Map<String, Object> json) {
+    return Dimension.fromJson(json);
+  }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $Dimension = _$DimensionTearOff();
 
+/// @nodoc
 mixin _$Dimension {
   double get height;
   double get width;
@@ -34,12 +43,14 @@ mixin _$Dimension {
   $DimensionCopyWith<Dimension> get copyWith;
 }
 
+/// @nodoc
 abstract class $DimensionCopyWith<$Res> {
   factory $DimensionCopyWith(Dimension value, $Res Function(Dimension) then) =
       _$DimensionCopyWithImpl<$Res>;
   $Res call({double height, double width});
 }
 
+/// @nodoc
 class _$DimensionCopyWithImpl<$Res> implements $DimensionCopyWith<$Res> {
   _$DimensionCopyWithImpl(this._value, this._then);
 
@@ -59,6 +70,7 @@ class _$DimensionCopyWithImpl<$Res> implements $DimensionCopyWith<$Res> {
   }
 }
 
+/// @nodoc
 abstract class _$DimensionCopyWith<$Res> implements $DimensionCopyWith<$Res> {
   factory _$DimensionCopyWith(
           _Dimension value, $Res Function(_Dimension) then) =
@@ -67,6 +79,7 @@ abstract class _$DimensionCopyWith<$Res> implements $DimensionCopyWith<$Res> {
   $Res call({double height, double width});
 }
 
+/// @nodoc
 class __$DimensionCopyWithImpl<$Res> extends _$DimensionCopyWithImpl<$Res>
     implements _$DimensionCopyWith<$Res> {
   __$DimensionCopyWithImpl(_Dimension _value, $Res Function(_Dimension) _then)
@@ -88,6 +101,8 @@ class __$DimensionCopyWithImpl<$Res> extends _$DimensionCopyWithImpl<$Res>
 }
 
 @JsonSerializable()
+
+/// @nodoc
 class _$_Dimension implements _Dimension {
   _$_Dimension({@required this.height, @required this.width})
       : assert(height != null),

@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'ref.dart';
 
@@ -12,9 +12,11 @@ Ref _$RefFromJson(Map<String, dynamic> json) {
   return _Ref.fromJson(json);
 }
 
+/// @nodoc
 class _$RefTearOff {
   const _$RefTearOff();
 
+// ignore: unused_element
   _Ref call(
       {@required String id,
       @required String label,
@@ -27,11 +29,18 @@ class _$RefTearOff {
       isMasterRef: isMasterRef,
     );
   }
+
+// ignore: unused_element
+  Ref fromJson(Map<String, Object> json) {
+    return Ref.fromJson(json);
+  }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $Ref = _$RefTearOff();
 
+/// @nodoc
 mixin _$Ref {
   String get id;
   String get label;
@@ -42,12 +51,14 @@ mixin _$Ref {
   $RefCopyWith<Ref> get copyWith;
 }
 
+/// @nodoc
 abstract class $RefCopyWith<$Res> {
   factory $RefCopyWith(Ref value, $Res Function(Ref) then) =
       _$RefCopyWithImpl<$Res>;
   $Res call({String id, String label, String ref, bool isMasterRef});
 }
 
+/// @nodoc
 class _$RefCopyWithImpl<$Res> implements $RefCopyWith<$Res> {
   _$RefCopyWithImpl(this._value, this._then);
 
@@ -72,6 +83,7 @@ class _$RefCopyWithImpl<$Res> implements $RefCopyWith<$Res> {
   }
 }
 
+/// @nodoc
 abstract class _$RefCopyWith<$Res> implements $RefCopyWith<$Res> {
   factory _$RefCopyWith(_Ref value, $Res Function(_Ref) then) =
       __$RefCopyWithImpl<$Res>;
@@ -79,6 +91,7 @@ abstract class _$RefCopyWith<$Res> implements $RefCopyWith<$Res> {
   $Res call({String id, String label, String ref, bool isMasterRef});
 }
 
+/// @nodoc
 class __$RefCopyWithImpl<$Res> extends _$RefCopyWithImpl<$Res>
     implements _$RefCopyWith<$Res> {
   __$RefCopyWithImpl(_Ref _value, $Res Function(_Ref) _then)
@@ -105,6 +118,8 @@ class __$RefCopyWithImpl<$Res> extends _$RefCopyWithImpl<$Res>
 }
 
 @JsonSerializable()
+
+/// @nodoc
 class _$_Ref implements _Ref {
   _$_Ref(
       {@required this.id,

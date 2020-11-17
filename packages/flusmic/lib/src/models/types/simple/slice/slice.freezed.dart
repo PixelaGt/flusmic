@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'slice.dart';
 
@@ -12,9 +12,11 @@ Slice _$SliceFromJson(Map<String, dynamic> json) {
   return _Slice.fromJson(json);
 }
 
+/// @nodoc
 class _$SliceTearOff {
   const _$SliceTearOff();
 
+// ignore: unused_element
   _Slice call(
       {@JsonKey(name: 'slice_label') String sliceLabel,
       @required @JsonKey(name: 'slice_type') String sliceType,
@@ -27,11 +29,18 @@ class _$SliceTearOff {
       primary: primary,
     );
   }
+
+// ignore: unused_element
+  Slice fromJson(Map<String, Object> json) {
+    return Slice.fromJson(json);
+  }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $Slice = _$SliceTearOff();
 
+/// @nodoc
 mixin _$Slice {
   @JsonKey(name: 'slice_label')
   String get sliceLabel;
@@ -44,6 +53,7 @@ mixin _$Slice {
   $SliceCopyWith<Slice> get copyWith;
 }
 
+/// @nodoc
 abstract class $SliceCopyWith<$Res> {
   factory $SliceCopyWith(Slice value, $Res Function(Slice) then) =
       _$SliceCopyWithImpl<$Res>;
@@ -54,6 +64,7 @@ abstract class $SliceCopyWith<$Res> {
       Map<String, dynamic> primary});
 }
 
+/// @nodoc
 class _$SliceCopyWithImpl<$Res> implements $SliceCopyWith<$Res> {
   _$SliceCopyWithImpl(this._value, this._then);
 
@@ -80,6 +91,7 @@ class _$SliceCopyWithImpl<$Res> implements $SliceCopyWith<$Res> {
   }
 }
 
+/// @nodoc
 abstract class _$SliceCopyWith<$Res> implements $SliceCopyWith<$Res> {
   factory _$SliceCopyWith(_Slice value, $Res Function(_Slice) then) =
       __$SliceCopyWithImpl<$Res>;
@@ -91,6 +103,7 @@ abstract class _$SliceCopyWith<$Res> implements $SliceCopyWith<$Res> {
       Map<String, dynamic> primary});
 }
 
+/// @nodoc
 class __$SliceCopyWithImpl<$Res> extends _$SliceCopyWithImpl<$Res>
     implements _$SliceCopyWith<$Res> {
   __$SliceCopyWithImpl(_Slice _value, $Res Function(_Slice) _then)
@@ -119,6 +132,8 @@ class __$SliceCopyWithImpl<$Res> extends _$SliceCopyWithImpl<$Res>
 }
 
 @JsonSerializable()
+
+/// @nodoc
 class _$_Slice implements _Slice {
   _$_Slice(
       {@JsonKey(name: 'slice_label') this.sliceLabel,

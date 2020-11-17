@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'document.dart';
 
@@ -12,9 +12,11 @@ Document _$DocumentFromJson(Map<String, dynamic> json) {
   return _Document.fromJson(json);
 }
 
+/// @nodoc
 class _$DocumentTearOff {
   const _$DocumentTearOff();
 
+// ignore: unused_element
   _Document call(
       {@JsonKey(name: 'alternate_languages')
           List<AlternateLanguage> alternateLanguages,
@@ -51,11 +53,18 @@ class _$DocumentTearOff {
       uid: uid,
     );
   }
+
+// ignore: unused_element
+  Document fromJson(Map<String, Object> json) {
+    return Document.fromJson(json);
+  }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $Document = _$DocumentTearOff();
 
+/// @nodoc
 mixin _$Document {
   @JsonKey(name: 'alternate_languages')
   List<AlternateLanguage> get alternateLanguages;
@@ -78,6 +87,7 @@ mixin _$Document {
   $DocumentCopyWith<Document> get copyWith;
 }
 
+/// @nodoc
 abstract class $DocumentCopyWith<$Res> {
   factory $DocumentCopyWith(Document value, $Res Function(Document) then) =
       _$DocumentCopyWithImpl<$Res>;
@@ -100,6 +110,7 @@ abstract class $DocumentCopyWith<$Res> {
       String uid});
 }
 
+/// @nodoc
 class _$DocumentCopyWithImpl<$Res> implements $DocumentCopyWith<$Res> {
   _$DocumentCopyWithImpl(this._value, this._then);
 
@@ -147,6 +158,7 @@ class _$DocumentCopyWithImpl<$Res> implements $DocumentCopyWith<$Res> {
   }
 }
 
+/// @nodoc
 abstract class _$DocumentCopyWith<$Res> implements $DocumentCopyWith<$Res> {
   factory _$DocumentCopyWith(_Document value, $Res Function(_Document) then) =
       __$DocumentCopyWithImpl<$Res>;
@@ -170,6 +182,7 @@ abstract class _$DocumentCopyWith<$Res> implements $DocumentCopyWith<$Res> {
       String uid});
 }
 
+/// @nodoc
 class __$DocumentCopyWithImpl<$Res> extends _$DocumentCopyWithImpl<$Res>
     implements _$DocumentCopyWith<$Res> {
   __$DocumentCopyWithImpl(_Document _value, $Res Function(_Document) _then)
@@ -219,6 +232,8 @@ class __$DocumentCopyWithImpl<$Res> extends _$DocumentCopyWithImpl<$Res>
 }
 
 @JsonSerializable()
+
+/// @nodoc
 class _$_Document implements _Document {
   _$_Document(
       {@JsonKey(name: 'alternate_languages') this.alternateLanguages,

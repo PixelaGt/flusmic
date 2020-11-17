@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'geopoint.dart';
 
@@ -12,20 +12,29 @@ Geopoint _$GeopointFromJson(Map<String, dynamic> json) {
   return _Geopoint.fromJson(json);
 }
 
+/// @nodoc
 class _$GeopointTearOff {
   const _$GeopointTearOff();
 
+// ignore: unused_element
   _Geopoint call({@required double latitude, @required double longitude}) {
     return _Geopoint(
       latitude: latitude,
       longitude: longitude,
     );
   }
+
+// ignore: unused_element
+  Geopoint fromJson(Map<String, Object> json) {
+    return Geopoint.fromJson(json);
+  }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $Geopoint = _$GeopointTearOff();
 
+/// @nodoc
 mixin _$Geopoint {
   double get latitude;
   double get longitude;
@@ -34,12 +43,14 @@ mixin _$Geopoint {
   $GeopointCopyWith<Geopoint> get copyWith;
 }
 
+/// @nodoc
 abstract class $GeopointCopyWith<$Res> {
   factory $GeopointCopyWith(Geopoint value, $Res Function(Geopoint) then) =
       _$GeopointCopyWithImpl<$Res>;
   $Res call({double latitude, double longitude});
 }
 
+/// @nodoc
 class _$GeopointCopyWithImpl<$Res> implements $GeopointCopyWith<$Res> {
   _$GeopointCopyWithImpl(this._value, this._then);
 
@@ -59,6 +70,7 @@ class _$GeopointCopyWithImpl<$Res> implements $GeopointCopyWith<$Res> {
   }
 }
 
+/// @nodoc
 abstract class _$GeopointCopyWith<$Res> implements $GeopointCopyWith<$Res> {
   factory _$GeopointCopyWith(_Geopoint value, $Res Function(_Geopoint) then) =
       __$GeopointCopyWithImpl<$Res>;
@@ -66,6 +78,7 @@ abstract class _$GeopointCopyWith<$Res> implements $GeopointCopyWith<$Res> {
   $Res call({double latitude, double longitude});
 }
 
+/// @nodoc
 class __$GeopointCopyWithImpl<$Res> extends _$GeopointCopyWithImpl<$Res>
     implements _$GeopointCopyWith<$Res> {
   __$GeopointCopyWithImpl(_Geopoint _value, $Res Function(_Geopoint) _then)
@@ -87,6 +100,8 @@ class __$GeopointCopyWithImpl<$Res> extends _$GeopointCopyWithImpl<$Res>
 }
 
 @JsonSerializable()
+
+/// @nodoc
 class _$_Geopoint implements _Geopoint {
   _$_Geopoint({@required this.latitude, @required this.longitude})
       : assert(latitude != null),

@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'span.dart';
 
@@ -12,9 +12,11 @@ Span _$SpanFromJson(Map<String, dynamic> json) {
   return _Span.fromJson(json);
 }
 
+/// @nodoc
 class _$SpanTearOff {
   const _$SpanTearOff();
 
+// ignore: unused_element
   _Span call({@required String type, @required int end, @required int start}) {
     return _Span(
       type: type,
@@ -22,11 +24,18 @@ class _$SpanTearOff {
       start: start,
     );
   }
+
+// ignore: unused_element
+  Span fromJson(Map<String, Object> json) {
+    return Span.fromJson(json);
+  }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $Span = _$SpanTearOff();
 
+/// @nodoc
 mixin _$Span {
   String get type;
   int get end;
@@ -36,12 +45,14 @@ mixin _$Span {
   $SpanCopyWith<Span> get copyWith;
 }
 
+/// @nodoc
 abstract class $SpanCopyWith<$Res> {
   factory $SpanCopyWith(Span value, $Res Function(Span) then) =
       _$SpanCopyWithImpl<$Res>;
   $Res call({String type, int end, int start});
 }
 
+/// @nodoc
 class _$SpanCopyWithImpl<$Res> implements $SpanCopyWith<$Res> {
   _$SpanCopyWithImpl(this._value, this._then);
 
@@ -63,6 +74,7 @@ class _$SpanCopyWithImpl<$Res> implements $SpanCopyWith<$Res> {
   }
 }
 
+/// @nodoc
 abstract class _$SpanCopyWith<$Res> implements $SpanCopyWith<$Res> {
   factory _$SpanCopyWith(_Span value, $Res Function(_Span) then) =
       __$SpanCopyWithImpl<$Res>;
@@ -70,6 +82,7 @@ abstract class _$SpanCopyWith<$Res> implements $SpanCopyWith<$Res> {
   $Res call({String type, int end, int start});
 }
 
+/// @nodoc
 class __$SpanCopyWithImpl<$Res> extends _$SpanCopyWithImpl<$Res>
     implements _$SpanCopyWith<$Res> {
   __$SpanCopyWithImpl(_Span _value, $Res Function(_Span) _then)
@@ -93,6 +106,8 @@ class __$SpanCopyWithImpl<$Res> extends _$SpanCopyWithImpl<$Res>
 }
 
 @JsonSerializable()
+
+/// @nodoc
 class _$_Span implements _Span {
   _$_Span({@required this.type, @required this.end, @required this.start})
       : assert(type != null),

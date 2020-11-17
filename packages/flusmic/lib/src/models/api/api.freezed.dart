@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'api.dart';
 
@@ -12,9 +12,11 @@ Api _$ApiFromJson(Map<String, dynamic> json) {
   return _Api.fromJson(json);
 }
 
+/// @nodoc
 class _$ApiTearOff {
   const _$ApiTearOff();
 
+// ignore: unused_element
   _Api call(
       {@required @JsonKey(name: 'oauth_initiate') String oauthInitiate,
       @required @JsonKey(name: 'oauth_token') String oauthToken,
@@ -33,11 +35,18 @@ class _$ApiTearOff {
       types: types,
     );
   }
+
+// ignore: unused_element
+  Api fromJson(Map<String, Object> json) {
+    return Api.fromJson(json);
+  }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $Api = _$ApiTearOff();
 
+/// @nodoc
 mixin _$Api {
   @JsonKey(name: 'oauth_initiate')
   String get oauthInitiate;
@@ -53,6 +62,7 @@ mixin _$Api {
   $ApiCopyWith<Api> get copyWith;
 }
 
+/// @nodoc
 abstract class $ApiCopyWith<$Res> {
   factory $ApiCopyWith(Api value, $Res Function(Api) then) =
       _$ApiCopyWithImpl<$Res>;
@@ -66,6 +76,7 @@ abstract class $ApiCopyWith<$Res> {
       Map<String, String> types});
 }
 
+/// @nodoc
 class _$ApiCopyWithImpl<$Res> implements $ApiCopyWith<$Res> {
   _$ApiCopyWithImpl(this._value, this._then);
 
@@ -99,6 +110,7 @@ class _$ApiCopyWithImpl<$Res> implements $ApiCopyWith<$Res> {
   }
 }
 
+/// @nodoc
 abstract class _$ApiCopyWith<$Res> implements $ApiCopyWith<$Res> {
   factory _$ApiCopyWith(_Api value, $Res Function(_Api) then) =
       __$ApiCopyWithImpl<$Res>;
@@ -113,6 +125,7 @@ abstract class _$ApiCopyWith<$Res> implements $ApiCopyWith<$Res> {
       Map<String, String> types});
 }
 
+/// @nodoc
 class __$ApiCopyWithImpl<$Res> extends _$ApiCopyWithImpl<$Res>
     implements _$ApiCopyWith<$Res> {
   __$ApiCopyWithImpl(_Api _value, $Res Function(_Api) _then)
@@ -148,6 +161,8 @@ class __$ApiCopyWithImpl<$Res> extends _$ApiCopyWithImpl<$Res>
 }
 
 @JsonSerializable()
+
+/// @nodoc
 class _$_Api implements _Api {
   _$_Api(
       {@required @JsonKey(name: 'oauth_initiate') this.oauthInitiate,

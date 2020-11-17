@@ -204,7 +204,12 @@ class Flusmic {
           '&q=[[date.hour-before(${p.path.toString()}, ${p.hour})]]');
 
   String _generateOrdering(Ordering ordering) {
-    final descending = ordering.descending ? ' des' : '';
-    return 'my.${ordering.customType}.${ordering.field}$descending';
+    final descending = ordering.descending ? ' desc' : '';
+    return ordering.map(
+      document: (o) => 'document.${o.type}$descending',
+      firstPublicationDate: (o) => 'document.first_publication_date$descending',
+      lastPublicationDate: (o) => 'document.last_publication_date$descending',
+      type: (o) => 'my.${o.customType}.${o.field}$descending',
+    );
   }
 }
