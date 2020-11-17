@@ -89,15 +89,15 @@ class Flusmic {
   ///Get the API root document of prismic repository
   ///Contains all the documents.
   Future<FlusmicResponse> getRootDocument(
-          {String language, String authToken}) async =>
-      await query([], authToken: authToken, language: language);
+          {String language, String authToken, int page = 1}) async =>
+      await query([], authToken: authToken, language: language, page: page);
 
   /// Fetch documents by type
   /// Get all the documents by [type] using the slug.
   Future<FlusmicResponse> getDocumentsByType(String slug,
-          {String language, String authToken}) async =>
+          {String language, String authToken, int page = 1}) async =>
       await query([Predicate.at(DefaultPredicatePath.type(), slug)],
-          authToken: authToken, language: language);
+          authToken: authToken, language: language, page: page);
 
   /// Fetch document by id
   /// Get a documents by [id].
