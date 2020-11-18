@@ -6,6 +6,8 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![style: effective dart](https://img.shields.io/badge/style-effective_dart-40c4ff.svg)](https://github.com/pblinux/end_credits)
 
+<img src="https://raw.githubusercontent.com/PixelaGt/flusmic/master/images/flusmic.png" width="350">
+
 A (unofficial) prismic.io integration for Dart and Flutter.
 
 ## Getting Started

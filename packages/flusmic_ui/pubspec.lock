@@ -228,9 +228,9 @@ packages:
   flusmic:
     dependency: "direct main"
     description:
-      path: "../flusmic"
-      relative: true
-    source: path
+      name: flusmic
+      url: "https://pub.dartlang.org"
+    source: hosted
     version: "2.1.0"
   flutter:
     dependency: "direct main"
