@@ -10,7 +10,7 @@ void main() {
     test('bad request exception', () async {
       await HttpOverrides.runZoned(() {
         nock('https://flusmic.cdn.prismic.io').get("/api/v2")
-          ..replay(400, 'data');
+          ..reply(400, 'data');
         final flusmic =
             Flusmic(prismicEndpoint: 'https://flusmic.cdn.prismic.io/api/v2');
         expect(
@@ -23,7 +23,7 @@ void main() {
     test('unauthorized exception', () async {
       await HttpOverrides.runZoned(() {
         nock('https://flusmic.cdn.prismic.io').get("/api/v2")
-          ..replay(401, 'data');
+          ..reply(401, 'data');
         final flusmic =
             Flusmic(prismicEndpoint: 'https://flusmic.cdn.prismic.io/api/v2');
         expect(
@@ -36,7 +36,7 @@ void main() {
     test('forbidden exception', () async {
       await HttpOverrides.runZoned(() {
         nock('https://flusmic.cdn.prismic.io').get("/api/v2")
-          ..replay(403, 'data');
+          ..reply(403, 'data');
         final flusmic =
             Flusmic(prismicEndpoint: 'https://flusmic.cdn.prismic.io/api/v2');
         expect(
@@ -49,7 +49,7 @@ void main() {
     test('server error exception', () async {
       await HttpOverrides.runZoned(() {
         nock('https://flusmic.cdn.prismic.io').get("/api/v2")
-          ..replay(500, 'data');
+          ..reply(500, 'data');
         final flusmic =
             Flusmic(prismicEndpoint: 'https://flusmic.cdn.prismic.io/api/v2');
         expect(
@@ -62,10 +62,25 @@ void main() {
     test('Unknown exception', () async {
       await HttpOverrides.runZoned(() {
         nock('https://flusmic.cdn.prismic.io').get("/api/v2")
-          ..replay(422, 'data');
+          ..reply(422, 'data');
         final flusmic =
             Flusmic(prismicEndpoint: 'https://flusmic.cdn.prismic.io/api/v2');
         expect(() async => await flusmic.getApi(),
+            throwsA(isA<FlusmicError>().having((e) => e.code, 'unknown', 100)));
+      }, createHttpClient: (context) => MockClient());
+    });
+
+    test('Unknown exception for query', () async {
+      await HttpOverrides.runZoned(() {
+        nock('https://flusmic.cdn.prismic.io').get(equals('/api/v2'))
+          ..reply(200, apiResponse,
+              headers: {'Content-Type': 'application/json'});
+        nock('https://flusmic.cdn.prismic.io')
+            .get(contains('/api/v2/documents/search?ref='))
+              ..reply(422, 'date');
+        final flusmic =
+            Flusmic(prismicEndpoint: 'https://flusmic.cdn.prismic.io/api/v2');
+        expect(() async => await flusmic.getRootDocument(),
             throwsA(isA<FlusmicError>().having((e) => e.code, 'unknown', 100)));
       }, createHttpClient: (context) => MockClient());
     });

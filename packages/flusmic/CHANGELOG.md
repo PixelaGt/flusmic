@@ -1,3 +1,9 @@
+## [2.1.0]
+* Fix 'des' issue with orderings
+* 'page' param for `getRootDocument` and `getDocumentsByType` methods
+* **BREAKING**: Change `Ordering` constructors to `type`, `document`, `firstPublicationDate` and `lastPublicationDate` 
+* Update dependencies.
+
 ## [2.0.0+2]
 * Update dependencies.
 

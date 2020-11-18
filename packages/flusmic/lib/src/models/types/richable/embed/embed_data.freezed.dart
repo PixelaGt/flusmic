@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'embed_data.dart';
 
@@ -12,9 +12,11 @@ EmbedData _$EmbedDataFromJson(Map<String, dynamic> json) {
   return _EmbedData.fromJson(json);
 }
 
+/// @nodoc
 class _$EmbedDataTearOff {
   const _$EmbedDataTearOff();
 
+// ignore: unused_element
   _EmbedData call(
       {@required @JsonKey(name: 'author_name') String authorName,
       @required @JsonKey(name: 'author_url') String authorUrl,
@@ -47,11 +49,18 @@ class _$EmbedDataTearOff {
       width: width,
     );
   }
+
+// ignore: unused_element
+  EmbedData fromJson(Map<String, Object> json) {
+    return EmbedData.fromJson(json);
+  }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $EmbedData = _$EmbedDataTearOff();
 
+/// @nodoc
 mixin _$EmbedData {
   @JsonKey(name: 'author_name')
   String get authorName;
@@ -80,6 +89,7 @@ mixin _$EmbedData {
   $EmbedDataCopyWith<EmbedData> get copyWith;
 }
 
+/// @nodoc
 abstract class $EmbedDataCopyWith<$Res> {
   factory $EmbedDataCopyWith(EmbedData value, $Res Function(EmbedData) then) =
       _$EmbedDataCopyWithImpl<$Res>;
@@ -100,6 +110,7 @@ abstract class $EmbedDataCopyWith<$Res> {
       double width});
 }
 
+/// @nodoc
 class _$EmbedDataCopyWithImpl<$Res> implements $EmbedDataCopyWith<$Res> {
   _$EmbedDataCopyWithImpl(this._value, this._then);
 
@@ -153,6 +164,7 @@ class _$EmbedDataCopyWithImpl<$Res> implements $EmbedDataCopyWith<$Res> {
   }
 }
 
+/// @nodoc
 abstract class _$EmbedDataCopyWith<$Res> implements $EmbedDataCopyWith<$Res> {
   factory _$EmbedDataCopyWith(
           _EmbedData value, $Res Function(_EmbedData) then) =
@@ -175,6 +187,7 @@ abstract class _$EmbedDataCopyWith<$Res> implements $EmbedDataCopyWith<$Res> {
       double width});
 }
 
+/// @nodoc
 class __$EmbedDataCopyWithImpl<$Res> extends _$EmbedDataCopyWithImpl<$Res>
     implements _$EmbedDataCopyWith<$Res> {
   __$EmbedDataCopyWithImpl(_EmbedData _value, $Res Function(_EmbedData) _then)
@@ -230,6 +243,8 @@ class __$EmbedDataCopyWithImpl<$Res> extends _$EmbedDataCopyWithImpl<$Res>
 }
 
 @JsonSerializable()
+
+/// @nodoc
 class _$_EmbedData implements _EmbedData {
   _$_EmbedData(
       {@required @JsonKey(name: 'author_name') this.authorName,

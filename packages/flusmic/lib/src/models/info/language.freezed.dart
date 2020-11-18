@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'language.dart';
 
@@ -12,20 +12,29 @@ Language _$LanguageFromJson(Map<String, dynamic> json) {
   return _Language.fromJson(json);
 }
 
+/// @nodoc
 class _$LanguageTearOff {
   const _$LanguageTearOff();
 
+// ignore: unused_element
   _Language call({@required String id, @required String name}) {
     return _Language(
       id: id,
       name: name,
     );
   }
+
+// ignore: unused_element
+  Language fromJson(Map<String, Object> json) {
+    return Language.fromJson(json);
+  }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $Language = _$LanguageTearOff();
 
+/// @nodoc
 mixin _$Language {
   String get id;
   String get name;
@@ -34,12 +43,14 @@ mixin _$Language {
   $LanguageCopyWith<Language> get copyWith;
 }
 
+/// @nodoc
 abstract class $LanguageCopyWith<$Res> {
   factory $LanguageCopyWith(Language value, $Res Function(Language) then) =
       _$LanguageCopyWithImpl<$Res>;
   $Res call({String id, String name});
 }
 
+/// @nodoc
 class _$LanguageCopyWithImpl<$Res> implements $LanguageCopyWith<$Res> {
   _$LanguageCopyWithImpl(this._value, this._then);
 
@@ -59,6 +70,7 @@ class _$LanguageCopyWithImpl<$Res> implements $LanguageCopyWith<$Res> {
   }
 }
 
+/// @nodoc
 abstract class _$LanguageCopyWith<$Res> implements $LanguageCopyWith<$Res> {
   factory _$LanguageCopyWith(_Language value, $Res Function(_Language) then) =
       __$LanguageCopyWithImpl<$Res>;
@@ -66,6 +78,7 @@ abstract class _$LanguageCopyWith<$Res> implements $LanguageCopyWith<$Res> {
   $Res call({String id, String name});
 }
 
+/// @nodoc
 class __$LanguageCopyWithImpl<$Res> extends _$LanguageCopyWithImpl<$Res>
     implements _$LanguageCopyWith<$Res> {
   __$LanguageCopyWithImpl(_Language _value, $Res Function(_Language) _then)
@@ -87,6 +100,8 @@ class __$LanguageCopyWithImpl<$Res> extends _$LanguageCopyWithImpl<$Res>
 }
 
 @JsonSerializable()
+
+/// @nodoc
 class _$_Language implements _Language {
   _$_Language({@required this.id, @required this.name})
       : assert(id != null),

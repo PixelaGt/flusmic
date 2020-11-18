@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'predicate.dart';
 
@@ -9,9 +9,11 @@ part of 'predicate.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$PredicateTearOff {
   const _$PredicateTearOff();
 
+// ignore: unused_element
   AnyPredicate any(PredicatePath path, List<String> values) {
     return AnyPredicate(
       path,
@@ -19,6 +21,7 @@ class _$PredicateTearOff {
     );
   }
 
+// ignore: unused_element
   AtPredicate at(PredicatePath path, String value) {
     return AtPredicate(
       path,
@@ -26,6 +29,7 @@ class _$PredicateTearOff {
     );
   }
 
+// ignore: unused_element
   FullTextPredicate fullText(PredicatePath path, String value) {
     return FullTextPredicate(
       path,
@@ -33,6 +37,7 @@ class _$PredicateTearOff {
     );
   }
 
+// ignore: unused_element
   GtPredicate gt(PredicatePath path, double value) {
     return GtPredicate(
       path,
@@ -40,12 +45,14 @@ class _$PredicateTearOff {
     );
   }
 
+// ignore: unused_element
   HasPredicate has(PredicatePath path) {
     return HasPredicate(
       path,
     );
   }
 
+// ignore: unused_element
   InRangePredicate inRange(
       PredicatePath path, double lowerLimit, double upperLimit) {
     return InRangePredicate(
@@ -55,6 +62,7 @@ class _$PredicateTearOff {
     );
   }
 
+// ignore: unused_element
   InPredicate into(PredicatePath path, List<String> values) {
     return InPredicate(
       path,
@@ -62,6 +70,7 @@ class _$PredicateTearOff {
     );
   }
 
+// ignore: unused_element
   LtPredicate lt(PredicatePath path, double value) {
     return LtPredicate(
       path,
@@ -69,12 +78,14 @@ class _$PredicateTearOff {
     );
   }
 
+// ignore: unused_element
   MissingPredicate missing(PredicatePath path) {
     return MissingPredicate(
       path,
     );
   }
 
+// ignore: unused_element
   NearPredicate near(
       PredicatePath path, double latitude, double longitude, double radius) {
     return NearPredicate(
@@ -85,6 +96,7 @@ class _$PredicateTearOff {
     );
   }
 
+// ignore: unused_element
   NotPredicate not(PredicatePath path, String value) {
     return NotPredicate(
       path,
@@ -92,6 +104,7 @@ class _$PredicateTearOff {
     );
   }
 
+// ignore: unused_element
   SimilarPredicate similar(String id, int value) {
     return SimilarPredicate(
       id,
@@ -99,6 +112,7 @@ class _$PredicateTearOff {
     );
   }
 
+// ignore: unused_element
   DateAfterPredicate dateAfter(PredicatePath path, int epoch) {
     return DateAfterPredicate(
       path,
@@ -106,6 +120,7 @@ class _$PredicateTearOff {
     );
   }
 
+// ignore: unused_element
   DateBeforePredicate dateBefore(PredicatePath path, int epoch) {
     return DateBeforePredicate(
       path,
@@ -113,6 +128,7 @@ class _$PredicateTearOff {
     );
   }
 
+// ignore: unused_element
   DateBetweenPredicate dateBetween(
       PredicatePath path, int startEpoch, int endEpoch) {
     return DateBetweenPredicate(
@@ -122,6 +138,7 @@ class _$PredicateTearOff {
     );
   }
 
+// ignore: unused_element
   DateDayOfMonthPredicate dateDayOfMonth(PredicatePath path, int day) {
     return DateDayOfMonthPredicate(
       path,
@@ -129,6 +146,7 @@ class _$PredicateTearOff {
     );
   }
 
+// ignore: unused_element
   DateDayOfMonthAfterPredicate dateDayOfMonthAfter(
       PredicatePath path, int day) {
     return DateDayOfMonthAfterPredicate(
@@ -137,6 +155,7 @@ class _$PredicateTearOff {
     );
   }
 
+// ignore: unused_element
   DateDayOfMonthBeforePredicate dateDayOfMonthBefore(
       PredicatePath path, int day) {
     return DateDayOfMonthBeforePredicate(
@@ -145,6 +164,7 @@ class _$PredicateTearOff {
     );
   }
 
+// ignore: unused_element
   DateDayOfWeekPredicate dateDayOfWeek(PredicatePath path, String day) {
     return DateDayOfWeekPredicate(
       path,
@@ -152,6 +172,7 @@ class _$PredicateTearOff {
     );
   }
 
+// ignore: unused_element
   DateDayOfWeekAfterPredicate dateDayOfWeekAfter(
       PredicatePath path, String day) {
     return DateDayOfWeekAfterPredicate(
@@ -160,6 +181,7 @@ class _$PredicateTearOff {
     );
   }
 
+// ignore: unused_element
   DateDayOfWeekBeforePredicate dateDayOfWeekBefore(
       PredicatePath path, String day) {
     return DateDayOfWeekBeforePredicate(
@@ -168,6 +190,7 @@ class _$PredicateTearOff {
     );
   }
 
+// ignore: unused_element
   DateMonthPredicate dateMonth(PredicatePath path, String month) {
     return DateMonthPredicate(
       path,
@@ -175,6 +198,7 @@ class _$PredicateTearOff {
     );
   }
 
+// ignore: unused_element
   DateMonthAfterPredicate dateMonthAfter(PredicatePath path, String month) {
     return DateMonthAfterPredicate(
       path,
@@ -182,6 +206,7 @@ class _$PredicateTearOff {
     );
   }
 
+// ignore: unused_element
   DateMonthBeforePredicate dateMonthBefore(PredicatePath path, String month) {
     return DateMonthBeforePredicate(
       path,
@@ -189,6 +214,7 @@ class _$PredicateTearOff {
     );
   }
 
+// ignore: unused_element
   DateYearPredicate dateYear(PredicatePath path, int year) {
     return DateYearPredicate(
       path,
@@ -196,6 +222,7 @@ class _$PredicateTearOff {
     );
   }
 
+// ignore: unused_element
   DateHourPredicate hour(PredicatePath path, int hour) {
     return DateHourPredicate(
       path,
@@ -203,6 +230,7 @@ class _$PredicateTearOff {
     );
   }
 
+// ignore: unused_element
   DateHourAfterPredicate hourAfter(PredicatePath path, int hour) {
     return DateHourAfterPredicate(
       path,
@@ -210,6 +238,7 @@ class _$PredicateTearOff {
     );
   }
 
+// ignore: unused_element
   DateHourBeforePredicate hourBefore(PredicatePath path, int hour) {
     return DateHourBeforePredicate(
       path,
@@ -218,9 +247,11 @@ class _$PredicateTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $Predicate = _$PredicateTearOff();
 
+/// @nodoc
 mixin _$Predicate {
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -356,11 +387,13 @@ mixin _$Predicate {
   });
 }
 
+/// @nodoc
 abstract class $PredicateCopyWith<$Res> {
   factory $PredicateCopyWith(Predicate value, $Res Function(Predicate) then) =
       _$PredicateCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$PredicateCopyWithImpl<$Res> implements $PredicateCopyWith<$Res> {
   _$PredicateCopyWithImpl(this._value, this._then);
 
@@ -369,6 +402,7 @@ class _$PredicateCopyWithImpl<$Res> implements $PredicateCopyWith<$Res> {
   final $Res Function(Predicate) _then;
 }
 
+/// @nodoc
 abstract class $AnyPredicateCopyWith<$Res> {
   factory $AnyPredicateCopyWith(
           AnyPredicate value, $Res Function(AnyPredicate) then) =
@@ -376,6 +410,7 @@ abstract class $AnyPredicateCopyWith<$Res> {
   $Res call({PredicatePath path, List<String> values});
 }
 
+/// @nodoc
 class _$AnyPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
     implements $AnyPredicateCopyWith<$Res> {
   _$AnyPredicateCopyWithImpl(
@@ -397,6 +432,7 @@ class _$AnyPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$AnyPredicate implements AnyPredicate {
   _$AnyPredicate(this.path, this.values)
       : assert(path != null),
@@ -654,6 +690,7 @@ abstract class AnyPredicate implements Predicate {
   $AnyPredicateCopyWith<AnyPredicate> get copyWith;
 }
 
+/// @nodoc
 abstract class $AtPredicateCopyWith<$Res> {
   factory $AtPredicateCopyWith(
           AtPredicate value, $Res Function(AtPredicate) then) =
@@ -661,6 +698,7 @@ abstract class $AtPredicateCopyWith<$Res> {
   $Res call({PredicatePath path, String value});
 }
 
+/// @nodoc
 class _$AtPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
     implements $AtPredicateCopyWith<$Res> {
   _$AtPredicateCopyWithImpl(
@@ -682,6 +720,7 @@ class _$AtPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$AtPredicate implements AtPredicate {
   _$AtPredicate(this.path, this.value)
       : assert(path != null),
@@ -938,6 +977,7 @@ abstract class AtPredicate implements Predicate {
   $AtPredicateCopyWith<AtPredicate> get copyWith;
 }
 
+/// @nodoc
 abstract class $FullTextPredicateCopyWith<$Res> {
   factory $FullTextPredicateCopyWith(
           FullTextPredicate value, $Res Function(FullTextPredicate) then) =
@@ -945,6 +985,7 @@ abstract class $FullTextPredicateCopyWith<$Res> {
   $Res call({PredicatePath path, String value});
 }
 
+/// @nodoc
 class _$FullTextPredicateCopyWithImpl<$Res>
     extends _$PredicateCopyWithImpl<$Res>
     implements $FullTextPredicateCopyWith<$Res> {
@@ -967,6 +1008,7 @@ class _$FullTextPredicateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$FullTextPredicate implements FullTextPredicate {
   _$FullTextPredicate(this.path, this.value)
       : assert(path != null),
@@ -1224,6 +1266,7 @@ abstract class FullTextPredicate implements Predicate {
   $FullTextPredicateCopyWith<FullTextPredicate> get copyWith;
 }
 
+/// @nodoc
 abstract class $GtPredicateCopyWith<$Res> {
   factory $GtPredicateCopyWith(
           GtPredicate value, $Res Function(GtPredicate) then) =
@@ -1231,6 +1274,7 @@ abstract class $GtPredicateCopyWith<$Res> {
   $Res call({PredicatePath path, double value});
 }
 
+/// @nodoc
 class _$GtPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
     implements $GtPredicateCopyWith<$Res> {
   _$GtPredicateCopyWithImpl(
@@ -1252,6 +1296,7 @@ class _$GtPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$GtPredicate implements GtPredicate {
   _$GtPredicate(this.path, this.value)
       : assert(path != null),
@@ -1508,6 +1553,7 @@ abstract class GtPredicate implements Predicate {
   $GtPredicateCopyWith<GtPredicate> get copyWith;
 }
 
+/// @nodoc
 abstract class $HasPredicateCopyWith<$Res> {
   factory $HasPredicateCopyWith(
           HasPredicate value, $Res Function(HasPredicate) then) =
@@ -1515,6 +1561,7 @@ abstract class $HasPredicateCopyWith<$Res> {
   $Res call({PredicatePath path});
 }
 
+/// @nodoc
 class _$HasPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
     implements $HasPredicateCopyWith<$Res> {
   _$HasPredicateCopyWithImpl(
@@ -1534,6 +1581,7 @@ class _$HasPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$HasPredicate implements HasPredicate {
   _$HasPredicate(this.path) : assert(path != null);
 
@@ -1781,6 +1829,7 @@ abstract class HasPredicate implements Predicate {
   $HasPredicateCopyWith<HasPredicate> get copyWith;
 }
 
+/// @nodoc
 abstract class $InRangePredicateCopyWith<$Res> {
   factory $InRangePredicateCopyWith(
           InRangePredicate value, $Res Function(InRangePredicate) then) =
@@ -1788,6 +1837,7 @@ abstract class $InRangePredicateCopyWith<$Res> {
   $Res call({PredicatePath path, double lowerLimit, double upperLimit});
 }
 
+/// @nodoc
 class _$InRangePredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
     implements $InRangePredicateCopyWith<$Res> {
   _$InRangePredicateCopyWithImpl(
@@ -1811,6 +1861,7 @@ class _$InRangePredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$InRangePredicate implements InRangePredicate {
   _$InRangePredicate(this.path, this.lowerLimit, this.upperLimit)
       : assert(path != null),
@@ -2078,6 +2129,7 @@ abstract class InRangePredicate implements Predicate {
   $InRangePredicateCopyWith<InRangePredicate> get copyWith;
 }
 
+/// @nodoc
 abstract class $InPredicateCopyWith<$Res> {
   factory $InPredicateCopyWith(
           InPredicate value, $Res Function(InPredicate) then) =
@@ -2085,6 +2137,7 @@ abstract class $InPredicateCopyWith<$Res> {
   $Res call({PredicatePath path, List<String> values});
 }
 
+/// @nodoc
 class _$InPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
     implements $InPredicateCopyWith<$Res> {
   _$InPredicateCopyWithImpl(
@@ -2106,6 +2159,7 @@ class _$InPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$InPredicate implements InPredicate {
   _$InPredicate(this.path, this.values)
       : assert(path != null),
@@ -2362,6 +2416,7 @@ abstract class InPredicate implements Predicate {
   $InPredicateCopyWith<InPredicate> get copyWith;
 }
 
+/// @nodoc
 abstract class $LtPredicateCopyWith<$Res> {
   factory $LtPredicateCopyWith(
           LtPredicate value, $Res Function(LtPredicate) then) =
@@ -2369,6 +2424,7 @@ abstract class $LtPredicateCopyWith<$Res> {
   $Res call({PredicatePath path, double value});
 }
 
+/// @nodoc
 class _$LtPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
     implements $LtPredicateCopyWith<$Res> {
   _$LtPredicateCopyWithImpl(
@@ -2390,6 +2446,7 @@ class _$LtPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$LtPredicate implements LtPredicate {
   _$LtPredicate(this.path, this.value)
       : assert(path != null),
@@ -2646,6 +2703,7 @@ abstract class LtPredicate implements Predicate {
   $LtPredicateCopyWith<LtPredicate> get copyWith;
 }
 
+/// @nodoc
 abstract class $MissingPredicateCopyWith<$Res> {
   factory $MissingPredicateCopyWith(
           MissingPredicate value, $Res Function(MissingPredicate) then) =
@@ -2653,6 +2711,7 @@ abstract class $MissingPredicateCopyWith<$Res> {
   $Res call({PredicatePath path});
 }
 
+/// @nodoc
 class _$MissingPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
     implements $MissingPredicateCopyWith<$Res> {
   _$MissingPredicateCopyWithImpl(
@@ -2672,6 +2731,7 @@ class _$MissingPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$MissingPredicate implements MissingPredicate {
   _$MissingPredicate(this.path) : assert(path != null);
 
@@ -2919,6 +2979,7 @@ abstract class MissingPredicate implements Predicate {
   $MissingPredicateCopyWith<MissingPredicate> get copyWith;
 }
 
+/// @nodoc
 abstract class $NearPredicateCopyWith<$Res> {
   factory $NearPredicateCopyWith(
           NearPredicate value, $Res Function(NearPredicate) then) =
@@ -2927,6 +2988,7 @@ abstract class $NearPredicateCopyWith<$Res> {
       {PredicatePath path, double latitude, double longitude, double radius});
 }
 
+/// @nodoc
 class _$NearPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
     implements $NearPredicateCopyWith<$Res> {
   _$NearPredicateCopyWithImpl(
@@ -2952,6 +3014,7 @@ class _$NearPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$NearPredicate implements NearPredicate {
   _$NearPredicate(this.path, this.latitude, this.longitude, this.radius)
       : assert(path != null),
@@ -3225,6 +3288,7 @@ abstract class NearPredicate implements Predicate {
   $NearPredicateCopyWith<NearPredicate> get copyWith;
 }
 
+/// @nodoc
 abstract class $NotPredicateCopyWith<$Res> {
   factory $NotPredicateCopyWith(
           NotPredicate value, $Res Function(NotPredicate) then) =
@@ -3232,6 +3296,7 @@ abstract class $NotPredicateCopyWith<$Res> {
   $Res call({PredicatePath path, String value});
 }
 
+/// @nodoc
 class _$NotPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
     implements $NotPredicateCopyWith<$Res> {
   _$NotPredicateCopyWithImpl(
@@ -3253,6 +3318,7 @@ class _$NotPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$NotPredicate implements NotPredicate {
   _$NotPredicate(this.path, this.value)
       : assert(path != null),
@@ -3509,6 +3575,7 @@ abstract class NotPredicate implements Predicate {
   $NotPredicateCopyWith<NotPredicate> get copyWith;
 }
 
+/// @nodoc
 abstract class $SimilarPredicateCopyWith<$Res> {
   factory $SimilarPredicateCopyWith(
           SimilarPredicate value, $Res Function(SimilarPredicate) then) =
@@ -3516,6 +3583,7 @@ abstract class $SimilarPredicateCopyWith<$Res> {
   $Res call({String id, int value});
 }
 
+/// @nodoc
 class _$SimilarPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
     implements $SimilarPredicateCopyWith<$Res> {
   _$SimilarPredicateCopyWithImpl(
@@ -3537,6 +3605,7 @@ class _$SimilarPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$SimilarPredicate implements SimilarPredicate {
   _$SimilarPredicate(this.id, this.value)
       : assert(id != null),
@@ -3793,6 +3862,7 @@ abstract class SimilarPredicate implements Predicate {
   $SimilarPredicateCopyWith<SimilarPredicate> get copyWith;
 }
 
+/// @nodoc
 abstract class $DateAfterPredicateCopyWith<$Res> {
   factory $DateAfterPredicateCopyWith(
           DateAfterPredicate value, $Res Function(DateAfterPredicate) then) =
@@ -3800,6 +3870,7 @@ abstract class $DateAfterPredicateCopyWith<$Res> {
   $Res call({PredicatePath path, int epoch});
 }
 
+/// @nodoc
 class _$DateAfterPredicateCopyWithImpl<$Res>
     extends _$PredicateCopyWithImpl<$Res>
     implements $DateAfterPredicateCopyWith<$Res> {
@@ -3822,6 +3893,7 @@ class _$DateAfterPredicateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$DateAfterPredicate implements DateAfterPredicate {
   _$DateAfterPredicate(this.path, this.epoch)
       : assert(path != null),
@@ -4079,6 +4151,7 @@ abstract class DateAfterPredicate implements Predicate {
   $DateAfterPredicateCopyWith<DateAfterPredicate> get copyWith;
 }
 
+/// @nodoc
 abstract class $DateBeforePredicateCopyWith<$Res> {
   factory $DateBeforePredicateCopyWith(
           DateBeforePredicate value, $Res Function(DateBeforePredicate) then) =
@@ -4086,6 +4159,7 @@ abstract class $DateBeforePredicateCopyWith<$Res> {
   $Res call({PredicatePath path, int epoch});
 }
 
+/// @nodoc
 class _$DateBeforePredicateCopyWithImpl<$Res>
     extends _$PredicateCopyWithImpl<$Res>
     implements $DateBeforePredicateCopyWith<$Res> {
@@ -4108,6 +4182,7 @@ class _$DateBeforePredicateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$DateBeforePredicate implements DateBeforePredicate {
   _$DateBeforePredicate(this.path, this.epoch)
       : assert(path != null),
@@ -4365,6 +4440,7 @@ abstract class DateBeforePredicate implements Predicate {
   $DateBeforePredicateCopyWith<DateBeforePredicate> get copyWith;
 }
 
+/// @nodoc
 abstract class $DateBetweenPredicateCopyWith<$Res> {
   factory $DateBetweenPredicateCopyWith(DateBetweenPredicate value,
           $Res Function(DateBetweenPredicate) then) =
@@ -4372,6 +4448,7 @@ abstract class $DateBetweenPredicateCopyWith<$Res> {
   $Res call({PredicatePath path, int startEpoch, int endEpoch});
 }
 
+/// @nodoc
 class _$DateBetweenPredicateCopyWithImpl<$Res>
     extends _$PredicateCopyWithImpl<$Res>
     implements $DateBetweenPredicateCopyWith<$Res> {
@@ -4396,6 +4473,7 @@ class _$DateBetweenPredicateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$DateBetweenPredicate implements DateBetweenPredicate {
   _$DateBetweenPredicate(this.path, this.startEpoch, this.endEpoch)
       : assert(path != null),
@@ -4664,6 +4742,7 @@ abstract class DateBetweenPredicate implements Predicate {
   $DateBetweenPredicateCopyWith<DateBetweenPredicate> get copyWith;
 }
 
+/// @nodoc
 abstract class $DateDayOfMonthPredicateCopyWith<$Res> {
   factory $DateDayOfMonthPredicateCopyWith(DateDayOfMonthPredicate value,
           $Res Function(DateDayOfMonthPredicate) then) =
@@ -4671,6 +4750,7 @@ abstract class $DateDayOfMonthPredicateCopyWith<$Res> {
   $Res call({PredicatePath path, int day});
 }
 
+/// @nodoc
 class _$DateDayOfMonthPredicateCopyWithImpl<$Res>
     extends _$PredicateCopyWithImpl<$Res>
     implements $DateDayOfMonthPredicateCopyWith<$Res> {
@@ -4693,6 +4773,7 @@ class _$DateDayOfMonthPredicateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$DateDayOfMonthPredicate implements DateDayOfMonthPredicate {
   _$DateDayOfMonthPredicate(this.path, this.day)
       : assert(path != null),
@@ -4951,6 +5032,7 @@ abstract class DateDayOfMonthPredicate implements Predicate {
   $DateDayOfMonthPredicateCopyWith<DateDayOfMonthPredicate> get copyWith;
 }
 
+/// @nodoc
 abstract class $DateDayOfMonthAfterPredicateCopyWith<$Res> {
   factory $DateDayOfMonthAfterPredicateCopyWith(
           DateDayOfMonthAfterPredicate value,
@@ -4959,6 +5041,7 @@ abstract class $DateDayOfMonthAfterPredicateCopyWith<$Res> {
   $Res call({PredicatePath path, int day});
 }
 
+/// @nodoc
 class _$DateDayOfMonthAfterPredicateCopyWithImpl<$Res>
     extends _$PredicateCopyWithImpl<$Res>
     implements $DateDayOfMonthAfterPredicateCopyWith<$Res> {
@@ -4983,6 +5066,7 @@ class _$DateDayOfMonthAfterPredicateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$DateDayOfMonthAfterPredicate implements DateDayOfMonthAfterPredicate {
   _$DateDayOfMonthAfterPredicate(this.path, this.day)
       : assert(path != null),
@@ -5242,6 +5326,7 @@ abstract class DateDayOfMonthAfterPredicate implements Predicate {
       get copyWith;
 }
 
+/// @nodoc
 abstract class $DateDayOfMonthBeforePredicateCopyWith<$Res> {
   factory $DateDayOfMonthBeforePredicateCopyWith(
           DateDayOfMonthBeforePredicate value,
@@ -5250,6 +5335,7 @@ abstract class $DateDayOfMonthBeforePredicateCopyWith<$Res> {
   $Res call({PredicatePath path, int day});
 }
 
+/// @nodoc
 class _$DateDayOfMonthBeforePredicateCopyWithImpl<$Res>
     extends _$PredicateCopyWithImpl<$Res>
     implements $DateDayOfMonthBeforePredicateCopyWith<$Res> {
@@ -5274,6 +5360,7 @@ class _$DateDayOfMonthBeforePredicateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$DateDayOfMonthBeforePredicate implements DateDayOfMonthBeforePredicate {
   _$DateDayOfMonthBeforePredicate(this.path, this.day)
       : assert(path != null),
@@ -5533,6 +5620,7 @@ abstract class DateDayOfMonthBeforePredicate implements Predicate {
       get copyWith;
 }
 
+/// @nodoc
 abstract class $DateDayOfWeekPredicateCopyWith<$Res> {
   factory $DateDayOfWeekPredicateCopyWith(DateDayOfWeekPredicate value,
           $Res Function(DateDayOfWeekPredicate) then) =
@@ -5540,6 +5628,7 @@ abstract class $DateDayOfWeekPredicateCopyWith<$Res> {
   $Res call({PredicatePath path, String day});
 }
 
+/// @nodoc
 class _$DateDayOfWeekPredicateCopyWithImpl<$Res>
     extends _$PredicateCopyWithImpl<$Res>
     implements $DateDayOfWeekPredicateCopyWith<$Res> {
@@ -5562,6 +5651,7 @@ class _$DateDayOfWeekPredicateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$DateDayOfWeekPredicate implements DateDayOfWeekPredicate {
   _$DateDayOfWeekPredicate(this.path, this.day)
       : assert(path != null),
@@ -5820,6 +5910,7 @@ abstract class DateDayOfWeekPredicate implements Predicate {
   $DateDayOfWeekPredicateCopyWith<DateDayOfWeekPredicate> get copyWith;
 }
 
+/// @nodoc
 abstract class $DateDayOfWeekAfterPredicateCopyWith<$Res> {
   factory $DateDayOfWeekAfterPredicateCopyWith(
           DateDayOfWeekAfterPredicate value,
@@ -5828,6 +5919,7 @@ abstract class $DateDayOfWeekAfterPredicateCopyWith<$Res> {
   $Res call({PredicatePath path, String day});
 }
 
+/// @nodoc
 class _$DateDayOfWeekAfterPredicateCopyWithImpl<$Res>
     extends _$PredicateCopyWithImpl<$Res>
     implements $DateDayOfWeekAfterPredicateCopyWith<$Res> {
@@ -5851,6 +5943,7 @@ class _$DateDayOfWeekAfterPredicateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$DateDayOfWeekAfterPredicate implements DateDayOfWeekAfterPredicate {
   _$DateDayOfWeekAfterPredicate(this.path, this.day)
       : assert(path != null),
@@ -6110,6 +6203,7 @@ abstract class DateDayOfWeekAfterPredicate implements Predicate {
       get copyWith;
 }
 
+/// @nodoc
 abstract class $DateDayOfWeekBeforePredicateCopyWith<$Res> {
   factory $DateDayOfWeekBeforePredicateCopyWith(
           DateDayOfWeekBeforePredicate value,
@@ -6118,6 +6212,7 @@ abstract class $DateDayOfWeekBeforePredicateCopyWith<$Res> {
   $Res call({PredicatePath path, String day});
 }
 
+/// @nodoc
 class _$DateDayOfWeekBeforePredicateCopyWithImpl<$Res>
     extends _$PredicateCopyWithImpl<$Res>
     implements $DateDayOfWeekBeforePredicateCopyWith<$Res> {
@@ -6142,6 +6237,7 @@ class _$DateDayOfWeekBeforePredicateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$DateDayOfWeekBeforePredicate implements DateDayOfWeekBeforePredicate {
   _$DateDayOfWeekBeforePredicate(this.path, this.day)
       : assert(path != null),
@@ -6401,6 +6497,7 @@ abstract class DateDayOfWeekBeforePredicate implements Predicate {
       get copyWith;
 }
 
+/// @nodoc
 abstract class $DateMonthPredicateCopyWith<$Res> {
   factory $DateMonthPredicateCopyWith(
           DateMonthPredicate value, $Res Function(DateMonthPredicate) then) =
@@ -6408,6 +6505,7 @@ abstract class $DateMonthPredicateCopyWith<$Res> {
   $Res call({PredicatePath path, String month});
 }
 
+/// @nodoc
 class _$DateMonthPredicateCopyWithImpl<$Res>
     extends _$PredicateCopyWithImpl<$Res>
     implements $DateMonthPredicateCopyWith<$Res> {
@@ -6430,6 +6528,7 @@ class _$DateMonthPredicateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$DateMonthPredicate implements DateMonthPredicate {
   _$DateMonthPredicate(this.path, this.month)
       : assert(path != null),
@@ -6687,6 +6786,7 @@ abstract class DateMonthPredicate implements Predicate {
   $DateMonthPredicateCopyWith<DateMonthPredicate> get copyWith;
 }
 
+/// @nodoc
 abstract class $DateMonthAfterPredicateCopyWith<$Res> {
   factory $DateMonthAfterPredicateCopyWith(DateMonthAfterPredicate value,
           $Res Function(DateMonthAfterPredicate) then) =
@@ -6694,6 +6794,7 @@ abstract class $DateMonthAfterPredicateCopyWith<$Res> {
   $Res call({PredicatePath path, String month});
 }
 
+/// @nodoc
 class _$DateMonthAfterPredicateCopyWithImpl<$Res>
     extends _$PredicateCopyWithImpl<$Res>
     implements $DateMonthAfterPredicateCopyWith<$Res> {
@@ -6716,6 +6817,7 @@ class _$DateMonthAfterPredicateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$DateMonthAfterPredicate implements DateMonthAfterPredicate {
   _$DateMonthAfterPredicate(this.path, this.month)
       : assert(path != null),
@@ -6974,6 +7076,7 @@ abstract class DateMonthAfterPredicate implements Predicate {
   $DateMonthAfterPredicateCopyWith<DateMonthAfterPredicate> get copyWith;
 }
 
+/// @nodoc
 abstract class $DateMonthBeforePredicateCopyWith<$Res> {
   factory $DateMonthBeforePredicateCopyWith(DateMonthBeforePredicate value,
           $Res Function(DateMonthBeforePredicate) then) =
@@ -6981,6 +7084,7 @@ abstract class $DateMonthBeforePredicateCopyWith<$Res> {
   $Res call({PredicatePath path, String month});
 }
 
+/// @nodoc
 class _$DateMonthBeforePredicateCopyWithImpl<$Res>
     extends _$PredicateCopyWithImpl<$Res>
     implements $DateMonthBeforePredicateCopyWith<$Res> {
@@ -7004,6 +7108,7 @@ class _$DateMonthBeforePredicateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$DateMonthBeforePredicate implements DateMonthBeforePredicate {
   _$DateMonthBeforePredicate(this.path, this.month)
       : assert(path != null),
@@ -7262,6 +7367,7 @@ abstract class DateMonthBeforePredicate implements Predicate {
   $DateMonthBeforePredicateCopyWith<DateMonthBeforePredicate> get copyWith;
 }
 
+/// @nodoc
 abstract class $DateYearPredicateCopyWith<$Res> {
   factory $DateYearPredicateCopyWith(
           DateYearPredicate value, $Res Function(DateYearPredicate) then) =
@@ -7269,6 +7375,7 @@ abstract class $DateYearPredicateCopyWith<$Res> {
   $Res call({PredicatePath path, int year});
 }
 
+/// @nodoc
 class _$DateYearPredicateCopyWithImpl<$Res>
     extends _$PredicateCopyWithImpl<$Res>
     implements $DateYearPredicateCopyWith<$Res> {
@@ -7291,6 +7398,7 @@ class _$DateYearPredicateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$DateYearPredicate implements DateYearPredicate {
   _$DateYearPredicate(this.path, this.year)
       : assert(path != null),
@@ -7547,6 +7655,7 @@ abstract class DateYearPredicate implements Predicate {
   $DateYearPredicateCopyWith<DateYearPredicate> get copyWith;
 }
 
+/// @nodoc
 abstract class $DateHourPredicateCopyWith<$Res> {
   factory $DateHourPredicateCopyWith(
           DateHourPredicate value, $Res Function(DateHourPredicate) then) =
@@ -7554,6 +7663,7 @@ abstract class $DateHourPredicateCopyWith<$Res> {
   $Res call({PredicatePath path, int hour});
 }
 
+/// @nodoc
 class _$DateHourPredicateCopyWithImpl<$Res>
     extends _$PredicateCopyWithImpl<$Res>
     implements $DateHourPredicateCopyWith<$Res> {
@@ -7576,6 +7686,7 @@ class _$DateHourPredicateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$DateHourPredicate implements DateHourPredicate {
   _$DateHourPredicate(this.path, this.hour)
       : assert(path != null),
@@ -7832,6 +7943,7 @@ abstract class DateHourPredicate implements Predicate {
   $DateHourPredicateCopyWith<DateHourPredicate> get copyWith;
 }
 
+/// @nodoc
 abstract class $DateHourAfterPredicateCopyWith<$Res> {
   factory $DateHourAfterPredicateCopyWith(DateHourAfterPredicate value,
           $Res Function(DateHourAfterPredicate) then) =
@@ -7839,6 +7951,7 @@ abstract class $DateHourAfterPredicateCopyWith<$Res> {
   $Res call({PredicatePath path, int hour});
 }
 
+/// @nodoc
 class _$DateHourAfterPredicateCopyWithImpl<$Res>
     extends _$PredicateCopyWithImpl<$Res>
     implements $DateHourAfterPredicateCopyWith<$Res> {
@@ -7861,6 +7974,7 @@ class _$DateHourAfterPredicateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$DateHourAfterPredicate implements DateHourAfterPredicate {
   _$DateHourAfterPredicate(this.path, this.hour)
       : assert(path != null),
@@ -8119,6 +8233,7 @@ abstract class DateHourAfterPredicate implements Predicate {
   $DateHourAfterPredicateCopyWith<DateHourAfterPredicate> get copyWith;
 }
 
+/// @nodoc
 abstract class $DateHourBeforePredicateCopyWith<$Res> {
   factory $DateHourBeforePredicateCopyWith(DateHourBeforePredicate value,
           $Res Function(DateHourBeforePredicate) then) =
@@ -8126,6 +8241,7 @@ abstract class $DateHourBeforePredicateCopyWith<$Res> {
   $Res call({PredicatePath path, int hour});
 }
 
+/// @nodoc
 class _$DateHourBeforePredicateCopyWithImpl<$Res>
     extends _$PredicateCopyWithImpl<$Res>
     implements $DateHourBeforePredicateCopyWith<$Res> {
@@ -8148,6 +8264,7 @@ class _$DateHourBeforePredicateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$DateHourBeforePredicate implements DateHourBeforePredicate {
   _$DateHourBeforePredicate(this.path, this.hour)
       : assert(path != null),

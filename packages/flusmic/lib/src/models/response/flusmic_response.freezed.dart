@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'flusmic_response.dart';
 
@@ -12,9 +12,11 @@ FlusmicResponse _$FlusmicResponseFromJson(Map<String, dynamic> json) {
   return _FlusmicResponse.fromJson(json);
 }
 
+/// @nodoc
 class _$FlusmicResponseTearOff {
   const _$FlusmicResponseTearOff();
 
+// ignore: unused_element
   _FlusmicResponse call(
       {@JsonKey(name: 'next_page') String nextPage,
       @JsonKey(name: 'prev_page') String prevPage,
@@ -39,11 +41,18 @@ class _$FlusmicResponseTearOff {
       page: page,
     );
   }
+
+// ignore: unused_element
+  FlusmicResponse fromJson(Map<String, Object> json) {
+    return FlusmicResponse.fromJson(json);
+  }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $FlusmicResponse = _$FlusmicResponseTearOff();
 
+/// @nodoc
 mixin _$FlusmicResponse {
   @JsonKey(name: 'next_page')
   String get nextPage;
@@ -66,6 +75,7 @@ mixin _$FlusmicResponse {
   $FlusmicResponseCopyWith<FlusmicResponse> get copyWith;
 }
 
+/// @nodoc
 abstract class $FlusmicResponseCopyWith<$Res> {
   factory $FlusmicResponseCopyWith(
           FlusmicResponse value, $Res Function(FlusmicResponse) then) =
@@ -83,6 +93,7 @@ abstract class $FlusmicResponseCopyWith<$Res> {
       int page});
 }
 
+/// @nodoc
 class _$FlusmicResponseCopyWithImpl<$Res>
     implements $FlusmicResponseCopyWith<$Res> {
   _$FlusmicResponseCopyWithImpl(this._value, this._then);
@@ -124,6 +135,7 @@ class _$FlusmicResponseCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 abstract class _$FlusmicResponseCopyWith<$Res>
     implements $FlusmicResponseCopyWith<$Res> {
   factory _$FlusmicResponseCopyWith(
@@ -143,6 +155,7 @@ abstract class _$FlusmicResponseCopyWith<$Res>
       int page});
 }
 
+/// @nodoc
 class __$FlusmicResponseCopyWithImpl<$Res>
     extends _$FlusmicResponseCopyWithImpl<$Res>
     implements _$FlusmicResponseCopyWith<$Res> {
@@ -187,6 +200,8 @@ class __$FlusmicResponseCopyWithImpl<$Res>
 }
 
 @JsonSerializable()
+
+/// @nodoc
 class _$_FlusmicResponse implements _FlusmicResponse {
   _$_FlusmicResponse(
       {@JsonKey(name: 'next_page') this.nextPage,

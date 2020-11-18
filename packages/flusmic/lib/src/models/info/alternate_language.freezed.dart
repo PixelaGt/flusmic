@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'alternate_language.dart';
 
@@ -12,9 +12,11 @@ AlternateLanguage _$AlternateLanguageFromJson(Map<String, dynamic> json) {
   return _AlternateLanguage.fromJson(json);
 }
 
+/// @nodoc
 class _$AlternateLanguageTearOff {
   const _$AlternateLanguageTearOff();
 
+// ignore: unused_element
   _AlternateLanguage call(
       {@required String id, @required String lang, @required String type}) {
     return _AlternateLanguage(
@@ -23,11 +25,18 @@ class _$AlternateLanguageTearOff {
       type: type,
     );
   }
+
+// ignore: unused_element
+  AlternateLanguage fromJson(Map<String, Object> json) {
+    return AlternateLanguage.fromJson(json);
+  }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $AlternateLanguage = _$AlternateLanguageTearOff();
 
+/// @nodoc
 mixin _$AlternateLanguage {
   String get id;
   String get lang;
@@ -37,6 +46,7 @@ mixin _$AlternateLanguage {
   $AlternateLanguageCopyWith<AlternateLanguage> get copyWith;
 }
 
+/// @nodoc
 abstract class $AlternateLanguageCopyWith<$Res> {
   factory $AlternateLanguageCopyWith(
           AlternateLanguage value, $Res Function(AlternateLanguage) then) =
@@ -44,6 +54,7 @@ abstract class $AlternateLanguageCopyWith<$Res> {
   $Res call({String id, String lang, String type});
 }
 
+/// @nodoc
 class _$AlternateLanguageCopyWithImpl<$Res>
     implements $AlternateLanguageCopyWith<$Res> {
   _$AlternateLanguageCopyWithImpl(this._value, this._then);
@@ -66,6 +77,7 @@ class _$AlternateLanguageCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 abstract class _$AlternateLanguageCopyWith<$Res>
     implements $AlternateLanguageCopyWith<$Res> {
   factory _$AlternateLanguageCopyWith(
@@ -75,6 +87,7 @@ abstract class _$AlternateLanguageCopyWith<$Res>
   $Res call({String id, String lang, String type});
 }
 
+/// @nodoc
 class __$AlternateLanguageCopyWithImpl<$Res>
     extends _$AlternateLanguageCopyWithImpl<$Res>
     implements _$AlternateLanguageCopyWith<$Res> {
@@ -100,6 +113,8 @@ class __$AlternateLanguageCopyWithImpl<$Res>
 }
 
 @JsonSerializable()
+
+/// @nodoc
 class _$_AlternateLanguage implements _AlternateLanguage {
   _$_AlternateLanguage(
       {@required this.id, @required this.lang, @required this.type})
