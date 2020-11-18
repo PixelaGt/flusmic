@@ -11,19 +11,21 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  cached_network_image: ^2.2.0+1
-  common_bloc: ^2.0.3
-  flusmic: ^2.0.0+2
-  freezed_annotation: ^0.11.0
-  state_notifier: ^0.5.0
+  cached_network_image: ^2.3.0
+  common_bloc: ^3.0.2
+  # flusmic: ^2.1.0
+  flusmic:
+    path: ../flusmic
+  freezed_annotation: ^0.12.0
+  state_notifier: ^0.6.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   build_runner: ^1.10.0
-  effective_dart: ^1.2.2
-  freezed: ^0.11.0
-  mockito: ^4.1.1
+  effective_dart: ^1.3.0
+  freezed: ^0.12.0
+  mockito: ^4.1.3
 
 flutter:
   #
