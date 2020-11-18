@@ -37,8 +37,6 @@ class InnerRichImage extends StatelessWidget {
             fit: fit,
             height: image.dimensions.height,
             width: image.dimensions.width,
-            placeholder: (context, url) => loadingWidget ?? Container(),
-            errorWidget: (context, url, error) =>
-                failWidget ?? Center(child: Icon(Icons.refresh))));
+            placeholder: (context, url) => loadingWidget ?? Container()));
   }
 }
