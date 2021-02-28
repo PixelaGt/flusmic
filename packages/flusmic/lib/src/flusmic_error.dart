@@ -3,6 +3,10 @@ import 'package:meta/meta.dart';
 
 ///Exception for Flusmic
 class FlusmicError implements Exception {
+  ///Main constructor
+  FlusmicError(
+      {@required this.code, @required this.humanMessage, this.message});
+
   ///Readable message
   final String humanMessage;
 
@@ -14,10 +18,6 @@ class FlusmicError implements Exception {
 
   ///Status code
   final int code;
-
-  ///Main constructor
-  FlusmicError(
-      {@required this.code, @required this.humanMessage, this.message});
 }
 
 ///Manage all the exception from Prismic.io

@@ -33,7 +33,7 @@ void main() {
 
     test('fullText', () async {
       final result = await flusmic.query([
-        Predicate.fullText(DefaultPredicatePath.document(), "large content")
+        Predicate.fullText(DefaultPredicatePath.document(), 'large content')
       ]);
       expect(result.results.length, 1);
     });

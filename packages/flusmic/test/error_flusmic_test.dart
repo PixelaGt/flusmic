@@ -8,8 +8,8 @@ import 'package:test/test.dart';
 void main() {
   group('error from prismic', () {
     test('bad request exception', () async {
-      await HttpOverrides.runZoned(() {
-        nock('https://flusmic.cdn.prismic.io').get("/api/v2")
+      HttpOverrides.runZoned(() {
+        nock('https://flusmic.cdn.prismic.io').get('/api/v2')
           ..reply(400, 'data');
         final flusmic =
             Flusmic(prismicEndpoint: 'https://flusmic.cdn.prismic.io/api/v2');
@@ -21,8 +21,8 @@ void main() {
     });
 
     test('unauthorized exception', () async {
-      await HttpOverrides.runZoned(() {
-        nock('https://flusmic.cdn.prismic.io').get("/api/v2")
+      HttpOverrides.runZoned(() {
+        nock('https://flusmic.cdn.prismic.io').get('/api/v2')
           ..reply(401, 'data');
         final flusmic =
             Flusmic(prismicEndpoint: 'https://flusmic.cdn.prismic.io/api/v2');
@@ -34,8 +34,8 @@ void main() {
     });
 
     test('forbidden exception', () async {
-      await HttpOverrides.runZoned(() {
-        nock('https://flusmic.cdn.prismic.io').get("/api/v2")
+      HttpOverrides.runZoned(() {
+        nock('https://flusmic.cdn.prismic.io').get('/api/v2')
           ..reply(403, 'data');
         final flusmic =
             Flusmic(prismicEndpoint: 'https://flusmic.cdn.prismic.io/api/v2');
@@ -47,8 +47,8 @@ void main() {
     });
 
     test('server error exception', () async {
-      await HttpOverrides.runZoned(() {
-        nock('https://flusmic.cdn.prismic.io').get("/api/v2")
+      HttpOverrides.runZoned(() {
+        nock('https://flusmic.cdn.prismic.io').get('/api/v2')
           ..reply(500, 'data');
         final flusmic =
             Flusmic(prismicEndpoint: 'https://flusmic.cdn.prismic.io/api/v2');
@@ -60,8 +60,8 @@ void main() {
     });
 
     test('Unknown exception', () async {
-      await HttpOverrides.runZoned(() {
-        nock('https://flusmic.cdn.prismic.io').get("/api/v2")
+      HttpOverrides.runZoned(() {
+        nock('https://flusmic.cdn.prismic.io').get('/api/v2')
           ..reply(422, 'data');
         final flusmic =
             Flusmic(prismicEndpoint: 'https://flusmic.cdn.prismic.io/api/v2');
@@ -71,7 +71,7 @@ void main() {
     });
 
     test('Unknown exception for query', () async {
-      await HttpOverrides.runZoned(() {
+      HttpOverrides.runZoned(() {
         nock('https://flusmic.cdn.prismic.io').get(equals('/api/v2'))
           ..reply(200, apiResponse,
               headers: {'Content-Type': 'application/json'});
@@ -88,44 +88,44 @@ void main() {
 }
 
 const apiResponse = {
-  "refs": [
+  'refs': [
     {
-      "id": "master",
-      "ref": "XpKeURAAACzK17lv",
-      "label": "Master",
-      "isMasterRef": true
+      'id': 'master',
+      'ref': 'XpKeURAAACzK17lv',
+      'label': 'Master',
+      'isMasterRef': true
     }
   ],
-  "integrationFieldsRef": null,
-  "bookmarks": {},
-  "types": {"test": "Test"},
-  "languages": [
-    {"id": "en-us", "name": "English - United States"}
+  'integrationFieldsRef': null,
+  'bookmarks': {},
+  'types': {'test': 'Test'},
+  'languages': [
+    {'id': 'en-us', 'name': 'English - United States'}
   ],
-  "tags": ["test"],
-  "forms": {
-    "everything": {
-      "method": "GET",
-      "enctype": "application/x-www-form-urlencoded",
-      "action": "https://flusmic.cdn.prismic.io/api/v2/documents/search",
-      "fields": {
-        "ref": {"type": "String", "multiple": false},
-        "q": {"type": "String", "multiple": true},
-        "lang": {"type": "String", "multiple": false},
-        "page": {"type": "Integer", "multiple": false, "default": "1"},
-        "pageSize": {"type": "Integer", "multiple": false, "default": "20"},
-        "after": {"type": "String", "multiple": false},
-        "fetch": {"type": "String", "multiple": false},
-        "fetchLinks": {"type": "String", "multiple": false},
-        "graphQuery": {"type": "String", "multiple": false},
-        "orderings": {"type": "String", "multiple": false},
-        "referer": {"type": "String", "multiple": false}
+  'tags': ['test'],
+  'forms': {
+    'everything': {
+      'method': 'GET',
+      'enctype': 'application/x-www-form-urlencoded',
+      'action': 'https://flusmic.cdn.prismic.io/api/v2/documents/search',
+      'fields': {
+        'ref': {'type': 'String', 'multiple': false},
+        'q': {'type': 'String', 'multiple': true},
+        'lang': {'type': 'String', 'multiple': false},
+        'page': {'type': 'Integer', 'multiple': false, 'default': '1'},
+        'pageSize': {'type': 'Integer', 'multiple': false, 'default': '20'},
+        'after': {'type': 'String', 'multiple': false},
+        'fetch': {'type': 'String', 'multiple': false},
+        'fetchLinks': {'type': 'String', 'multiple': false},
+        'graphQuery': {'type': 'String', 'multiple': false},
+        'orderings': {'type': 'String', 'multiple': false},
+        'referer': {'type': 'String', 'multiple': false}
       }
     }
   },
-  "oauth_initiate": "https://flusmic.prismic.io/auth",
-  "oauth_token": "https://flusmic.prismic.io/auth/token",
-  "version": "8991d98",
-  "license": "All Rights Reserved",
-  "experiments": {"draft": [], "running": []}
+  'oauth_initiate': 'https://flusmic.prismic.io/auth',
+  'oauth_token': 'https://flusmic.prismic.io/auth/token',
+  'version': '8991d98',
+  'license': 'All Rights Reserved',
+  'experiments': {'draft': [], 'running': []}
 };

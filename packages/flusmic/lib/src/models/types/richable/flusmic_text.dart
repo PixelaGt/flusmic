@@ -6,6 +6,9 @@ import '../simple/span/span.dart';
 ///
 ///`EmbedImage` and `SimpleText`
 abstract class FlusmicText {
+  ///Default constructor
+  FlusmicText(this.spans, this.text, this.type);
+
   ///Current text
   final String text;
 
@@ -15,9 +18,6 @@ abstract class FlusmicText {
 
   ///Type of
   final String type;
-
-  ///Default constructor
-  FlusmicText(this.spans, this.text, this.type);
 
   ///Converts a dimension to json
   static List<Map<String, dynamic>> spansToJson(List<Span> spans) =>

@@ -73,13 +73,13 @@ void main() {
     test('document orderings', () async {
       final result = await flusmic.query(
           [Predicate.at(DefaultPredicatePath.type(), 'test')],
-          orderings: [Ordering.document('first_publication_date')]);
+          orderings: const [Ordering.document('first_publication_date')]);
       expect(result.results.length, 2);
     });
     test('document orderings desc', () async {
       final result = await flusmic.query([
         Predicate.at(DefaultPredicatePath.type(), 'test')
-      ], orderings: [
+      ], orderings: const [
         Ordering.document('first_publication_date', descending: true)
       ]);
       expect(result.results.length, 2);
@@ -87,41 +87,41 @@ void main() {
     test('first publication date orderings', () async {
       final result = await flusmic.query(
           [Predicate.at(DefaultPredicatePath.type(), 'test')],
-          orderings: [Ordering.firstPublicationDate()]);
+          orderings: const [Ordering.firstPublicationDate()]);
       expect(result.results.length, 2);
     });
 
     test('first publication date orderings desc', () async {
       final result = await flusmic.query(
           [Predicate.at(DefaultPredicatePath.type(), 'test')],
-          orderings: [Ordering.firstPublicationDate(descending: true)]);
+          orderings: const [Ordering.firstPublicationDate(descending: true)]);
       expect(result.results.length, 2);
     });
 
     test('last publication date orderings', () async {
       final result = await flusmic.query(
           [Predicate.at(DefaultPredicatePath.type(), 'test')],
-          orderings: [Ordering.lastPublicationDate()]);
+          orderings: const [Ordering.lastPublicationDate()]);
       expect(result.results.length, 2);
     });
 
     test('last publication date orderings desc', () async {
       final result = await flusmic.query(
           [Predicate.at(DefaultPredicatePath.type(), 'test')],
-          orderings: [Ordering.lastPublicationDate(descending: true)]);
+          orderings: const [Ordering.lastPublicationDate(descending: true)]);
       expect(result.results.length, 2);
     });
     test('type orderings', () async {
       final result = await flusmic.query(
           [Predicate.at(DefaultPredicatePath.type(), 'test')],
-          orderings: [Ordering.type('test', 'number')]);
+          orderings: const [Ordering.type('test', 'number')]);
       expect(result.results.length, 2);
     });
 
     test('type orderings desc', () async {
       final result = await flusmic.query(
           [Predicate.at(DefaultPredicatePath.type(), 'test')],
-          orderings: [Ordering.type('test', 'number', descending: true)]);
+          orderings: const [Ordering.type('test', 'number', descending: true)]);
       expect(result.results.length, 2);
     });
   });

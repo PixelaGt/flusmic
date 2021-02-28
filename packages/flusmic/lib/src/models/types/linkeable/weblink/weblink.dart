@@ -9,9 +9,6 @@ part 'weblink.g.dart';
 ///Handle a simple link reference
 @JsonSerializable()
 class Weblink extends Linkeable {
-  ///Url of Weblink
-  String url;
-
   ///Default constructor for Weblink
   Weblink(String linkType, {@required this.url}) : super(linkType);
 
@@ -19,6 +16,10 @@ class Weblink extends Linkeable {
   factory Weblink.fromJson(Map<String, dynamic> json) =>
       _$WeblinkFromJson(json);
 
+  ///Url of Weblink
+  String url;
+
   ///Converts Weblink object to json
+  @override
   Map<String, dynamic> toJson() => _$WeblinkToJson(this);
 }

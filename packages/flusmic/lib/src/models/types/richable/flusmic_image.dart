@@ -5,6 +5,9 @@ import '../../info/dimension.dart';
 ///
 ///`EmbedImage` and `SimpleImage`
 abstract class FlusmicImage {
+  ///Default constructor
+  FlusmicImage(this.alt, this.copyright, this.dimensions, this.url);
+
   ///Image dimensions
   @JsonKey(fromJson: dimensionFromJson, toJson: dimensionToJson)
   final Dimension dimensions;
@@ -17,9 +20,6 @@ abstract class FlusmicImage {
 
   ///Image url
   final String url;
-
-  ///Default constructor
-  FlusmicImage(this.alt, this.copyright, this.dimensions, this.url);
 
   ///Converts a dimension to json
   static Map<String, dynamic> dimensionToJson(Dimension dimension) =>

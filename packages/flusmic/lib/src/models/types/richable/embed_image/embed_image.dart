@@ -19,5 +19,6 @@ class EmbedImage extends FlusmicImage implements Richable {
       _$EmbedImageFromJson(json);
 
   ///Converts EmbedImage object to json
+  @override
   Map<String, dynamic> toJson() => _$EmbedImageToJson(this);
 }

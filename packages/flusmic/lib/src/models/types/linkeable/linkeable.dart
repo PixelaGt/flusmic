@@ -10,27 +10,27 @@ part 'linkeable.g.dart';
 ///`Media`, `DocumentReference` and `Weblink`
 @JsonSerializable(createFactory: false)
 abstract class Linkeable {
-  ///The link type of the reference
-  @JsonKey(name: 'link_type')
-  final String linkType;
-
   ///Default constructor
   Linkeable(this.linkType);
 
   ///Creates a Linkeable object from json
   ///
   ///Can create a `Media`, `DocumentReference`, `Weblink` depending
-  ///on [link_type] from json.
+  ///on `link_type` from json.
   factory Linkeable.fromJson(Map<String, dynamic> json) {
     switch (json['link_type']) {
-      case "Media":
+      case 'Media':
         return Media.fromJson(json);
-      case "Document":
+      case 'Document':
         return DocumentReference.fromJson(json);
       default:
         return Weblink.fromJson(json);
     }
   }
+
+  ///The link type of the reference
+  @JsonKey(name: 'link_type')
+  final String linkType;
 
   ///Converts Linkeable object to json
   ///

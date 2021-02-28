@@ -141,8 +141,6 @@ abstract class PredicatePath {}
 
 ///Define a Default path for predicates
 class DefaultPredicatePath extends PredicatePath {
-  final DefaultPath _path;
-
   DefaultPredicatePath._(this._path);
 
   ///Default path for document query
@@ -168,6 +166,8 @@ class DefaultPredicatePath extends PredicatePath {
   factory DefaultPredicatePath.lastPublicationDate() =>
       DefaultPredicatePath._(DefaultPath.lastPublicationDate);
 
+  final DefaultPath _path;
+
   @override
   String toString() {
     switch (_path) {
@@ -191,6 +191,9 @@ class DefaultPredicatePath extends PredicatePath {
 
 ///Define a Custom path for predicates
 class CustomPredicatePath extends PredicatePath {
+  ///Main constructor
+  CustomPredicatePath(this.customType, this.value, {this.fetch = false});
+
   ///Type
   final String customType;
 
@@ -199,9 +202,6 @@ class CustomPredicatePath extends PredicatePath {
 
   ///For fetch or fetchLinks
   final bool fetch;
-
-  ///Main constructor
-  CustomPredicatePath(this.customType, this.value, {this.fetch = false});
 
   @override
   String toString() => fetch ? '$customType.$value' : 'my.$customType.$value';

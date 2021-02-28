@@ -13,12 +13,12 @@ abstract class Richable {
   ///Creates a Richable object from json
   ///
   ///Can create a `EmbedImage` or `EmbedText` depending
-  ///on [type] from json.
+  ///on type from json.
   factory Richable.fromJson(Map<String, dynamic> json) {
     switch (json['type']) {
-      case "image":
+      case 'image':
         return EmbedImage.fromJson(json);
-      case "embed":
+      case 'embed':
         return Embed.fromJson(json);
       default:
         return EmbedText.fromJson(json);

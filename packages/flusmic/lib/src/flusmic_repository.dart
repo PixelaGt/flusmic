@@ -7,22 +7,6 @@ import 'flusmic_error.dart';
 ///
 /// Get documents from Prismic.io
 class Flusmic {
-  /// Default path for documents
-  final String _documentPath = '/documents/search?ref=';
-
-  /// Default language
-  /// Ex. es-gt
-  final String defaultLanguage;
-
-  ///Default Auth token
-  final String defaultAuthToken;
-
-  /// The prismic API endpoint
-  final String prismicEndpoint;
-
-  /// Http client
-  Dio _client;
-
   ///Main constructor
   Flusmic(
       {@required this.prismicEndpoint,
@@ -38,6 +22,22 @@ class Flusmic {
           if (defaultLanguage?.isNotEmpty ?? false) 'lang': defaultLanguage
         }));
   }
+
+  /// Default path for documents
+  final String _documentPath = '/documents/search?ref=';
+
+  /// Default language
+  /// Ex. es-gt
+  final String defaultLanguage;
+
+  ///Default Auth token
+  final String defaultAuthToken;
+
+  /// The prismic API endpoint
+  final String prismicEndpoint;
+
+  /// Http client
+  Dio _client;
 
   /// Fetch API
   /// Get the API main document of prismic repository
@@ -93,7 +93,7 @@ class Flusmic {
       await query([], authToken: authToken, language: language, page: page);
 
   /// Fetch documents by type
-  /// Get all the documents by [type] using the slug.
+  /// Get all the documents by type using the [slug].
   Future<FlusmicResponse> getDocumentsByType(String slug,
           {String language, String authToken, int page = 1}) async =>
       await query([Predicate.at(DefaultPredicatePath.type(), slug)],
@@ -135,8 +135,7 @@ class Flusmic {
   ///Generate the API url to perform a request.
   String _generateUrl(List<Predicate> predicates, String apiRef) {
     final queries = predicates.map(_generateQueries).toList();
-    var raw = '$_documentPath$apiRef${queries.join()}';
-    return raw;
+    return '$_documentPath$apiRef${queries.join()}';
   }
 
   ///Convert predicate into query string

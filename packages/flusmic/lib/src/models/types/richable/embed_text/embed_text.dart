@@ -19,5 +19,6 @@ class EmbedText extends FlusmicText implements Richable {
       _$EmbedTextFromJson(json);
 
   ///Converts EmbedText object to json
+  @override
   Map<String, dynamic> toJson() => _$EmbedTextToJson(this);
 }

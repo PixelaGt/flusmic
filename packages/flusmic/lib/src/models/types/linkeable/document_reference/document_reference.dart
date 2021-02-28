@@ -9,6 +9,20 @@ part 'document_reference.g.dart';
 ///Handle a reference to document without content
 @JsonSerializable()
 class DocumentReference extends Linkeable {
+  ///Deafult factory constructor for DocumentReference
+  DocumentReference(String linkType,
+      {@required this.id,
+      @required this.isBroken,
+      @required this.lang,
+      @required this.slug,
+      @required this.tags,
+      @required this.type})
+      : super(linkType);
+
+  ///Creates a DocumentReference object from json
+  factory DocumentReference.fromJson(Map<String, dynamic> json) =>
+      _$DocumentReferenceFromJson(json);
+
   ///Tags of the document
   List<String> tags;
 
@@ -27,20 +41,7 @@ class DocumentReference extends Linkeable {
   ///Is a broken reference?
   bool isBroken;
 
-  ///Deafult factory constructor for DocumentReference
-  DocumentReference(String linkType,
-      {@required this.id,
-      @required this.isBroken,
-      @required this.lang,
-      @required this.slug,
-      @required this.tags,
-      @required this.type})
-      : super(linkType);
-
-  ///Creates a DocumentReference object from json
-  factory DocumentReference.fromJson(Map<String, dynamic> json) =>
-      _$DocumentReferenceFromJson(json);
-
   ///Converts DocumentReference object to json
+  @override
   Map<String, dynamic> toJson() => _$DocumentReferenceToJson(this);
 }

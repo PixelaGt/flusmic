@@ -18,5 +18,6 @@ class Embed extends FlusmicEmbed implements Richable {
   factory Embed.fromJson(Map<String, dynamic> json) => _$EmbedFromJson(json);
 
   ///Converts Embed object to json
+  @override
   Map<String, dynamic> toJson() => _$EmbedToJson(this);
 }
