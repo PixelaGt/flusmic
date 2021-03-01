@@ -9,7 +9,7 @@ part 'dimension.g.dart';
 @freezed
 abstract class Dimension with _$Dimension {
   ///Deafult factory constructor for Dimension
-  factory Dimension({@required double height, @required double width}) =
+  factory Dimension({required double height, required double width}) =
       _Dimension;
 
   ///Creates a Dimension object from json

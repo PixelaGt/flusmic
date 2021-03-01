@@ -10,9 +10,7 @@ part of 'embed.dart';
 
 Embed _$EmbedFromJson(Map<String, dynamic> json) {
   return Embed(
-    json['oembed'] == null
-        ? null
-        : EmbedData.fromJson(json['oembed'] as Map<String, dynamic>),
+    EmbedData.fromJson(json['oembed'] as Map<String, dynamic>),
     json['type'] as String,
   );
 }

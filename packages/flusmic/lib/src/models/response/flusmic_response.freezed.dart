@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'flusmic_response.dart';
 
@@ -16,18 +16,17 @@ FlusmicResponse _$FlusmicResponseFromJson(Map<String, dynamic> json) {
 class _$FlusmicResponseTearOff {
   const _$FlusmicResponseTearOff();
 
-// ignore: unused_element
   _FlusmicResponse call(
-      {@JsonKey(name: 'next_page') String nextPage,
-      @JsonKey(name: 'prev_page') String prevPage,
-      @required @JsonKey(name: 'results_per_page') int resultsPerPage,
-      @required @JsonKey(name: 'results_size') int resultsSize,
-      @required @JsonKey(name: 'total_pages') int totalPages,
-      @required @JsonKey(name: 'total_results_size') int totalResultsSize,
-      @required List<Document> results,
-      @required String license,
-      @required String version,
-      @required int page}) {
+      {@JsonKey(name: 'next_page') String? nextPage,
+      @JsonKey(name: 'prev_page') String? prevPage,
+      @JsonKey(name: 'results_per_page') required int resultsPerPage,
+      @JsonKey(name: 'results_size') required int resultsSize,
+      @JsonKey(name: 'total_pages') required int totalPages,
+      @JsonKey(name: 'total_results_size') required int totalResultsSize,
+      required List<Document> results,
+      required String license,
+      required String version,
+      required int page}) {
     return _FlusmicResponse(
       nextPage: nextPage,
       prevPage: prevPage,
@@ -42,22 +41,20 @@ class _$FlusmicResponseTearOff {
     );
   }
 
-// ignore: unused_element
   FlusmicResponse fromJson(Map<String, Object> json) {
     return FlusmicResponse.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $FlusmicResponse = _$FlusmicResponseTearOff();
 
 /// @nodoc
 mixin _$FlusmicResponse {
   @JsonKey(name: 'next_page')
-  String get nextPage;
+  String? get nextPage;
   @JsonKey(name: 'prev_page')
-  String get prevPage;
+  String? get prevPage;
   @JsonKey(name: 'results_per_page')
   int get resultsPerPage;
   @JsonKey(name: 'results_size')
@@ -72,6 +69,7 @@ mixin _$FlusmicResponse {
   int get page;
 
   Map<String, dynamic> toJson();
+  @JsonKey(ignore: true)
   $FlusmicResponseCopyWith<FlusmicResponse> get copyWith;
 }
 
@@ -81,8 +79,8 @@ abstract class $FlusmicResponseCopyWith<$Res> {
           FlusmicResponse value, $Res Function(FlusmicResponse) then) =
       _$FlusmicResponseCopyWithImpl<$Res>;
   $Res call(
-      {@JsonKey(name: 'next_page') String nextPage,
-      @JsonKey(name: 'prev_page') String prevPage,
+      {@JsonKey(name: 'next_page') String? nextPage,
+      @JsonKey(name: 'prev_page') String? prevPage,
       @JsonKey(name: 'results_per_page') int resultsPerPage,
       @JsonKey(name: 'results_size') int resultsSize,
       @JsonKey(name: 'total_pages') int totalPages,
@@ -104,20 +102,20 @@ class _$FlusmicResponseCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object nextPage = freezed,
-    Object prevPage = freezed,
-    Object resultsPerPage = freezed,
-    Object resultsSize = freezed,
-    Object totalPages = freezed,
-    Object totalResultsSize = freezed,
-    Object results = freezed,
-    Object license = freezed,
-    Object version = freezed,
-    Object page = freezed,
+    Object? nextPage = freezed,
+    Object? prevPage = freezed,
+    Object? resultsPerPage = freezed,
+    Object? resultsSize = freezed,
+    Object? totalPages = freezed,
+    Object? totalResultsSize = freezed,
+    Object? results = freezed,
+    Object? license = freezed,
+    Object? version = freezed,
+    Object? page = freezed,
   }) {
     return _then(_value.copyWith(
-      nextPage: nextPage == freezed ? _value.nextPage : nextPage as String,
-      prevPage: prevPage == freezed ? _value.prevPage : prevPage as String,
+      nextPage: nextPage == freezed ? _value.nextPage : nextPage as String?,
+      prevPage: prevPage == freezed ? _value.prevPage : prevPage as String?,
       resultsPerPage: resultsPerPage == freezed
           ? _value.resultsPerPage
           : resultsPerPage as int,
@@ -143,8 +141,8 @@ abstract class _$FlusmicResponseCopyWith<$Res>
       __$FlusmicResponseCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@JsonKey(name: 'next_page') String nextPage,
-      @JsonKey(name: 'prev_page') String prevPage,
+      {@JsonKey(name: 'next_page') String? nextPage,
+      @JsonKey(name: 'prev_page') String? prevPage,
       @JsonKey(name: 'results_per_page') int resultsPerPage,
       @JsonKey(name: 'results_size') int resultsSize,
       @JsonKey(name: 'total_pages') int totalPages,
@@ -168,20 +166,20 @@ class __$FlusmicResponseCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object nextPage = freezed,
-    Object prevPage = freezed,
-    Object resultsPerPage = freezed,
-    Object resultsSize = freezed,
-    Object totalPages = freezed,
-    Object totalResultsSize = freezed,
-    Object results = freezed,
-    Object license = freezed,
-    Object version = freezed,
-    Object page = freezed,
+    Object? nextPage = freezed,
+    Object? prevPage = freezed,
+    Object? resultsPerPage = freezed,
+    Object? resultsSize = freezed,
+    Object? totalPages = freezed,
+    Object? totalResultsSize = freezed,
+    Object? results = freezed,
+    Object? license = freezed,
+    Object? version = freezed,
+    Object? page = freezed,
   }) {
     return _then(_FlusmicResponse(
-      nextPage: nextPage == freezed ? _value.nextPage : nextPage as String,
-      prevPage: prevPage == freezed ? _value.prevPage : prevPage as String,
+      nextPage: nextPage == freezed ? _value.nextPage : nextPage as String?,
+      prevPage: prevPage == freezed ? _value.prevPage : prevPage as String?,
       resultsPerPage: resultsPerPage == freezed
           ? _value.resultsPerPage
           : resultsPerPage as int,
@@ -206,32 +204,24 @@ class _$_FlusmicResponse implements _FlusmicResponse {
   _$_FlusmicResponse(
       {@JsonKey(name: 'next_page') this.nextPage,
       @JsonKey(name: 'prev_page') this.prevPage,
-      @required @JsonKey(name: 'results_per_page') this.resultsPerPage,
-      @required @JsonKey(name: 'results_size') this.resultsSize,
-      @required @JsonKey(name: 'total_pages') this.totalPages,
-      @required @JsonKey(name: 'total_results_size') this.totalResultsSize,
-      @required this.results,
-      @required this.license,
-      @required this.version,
-      @required this.page})
-      : assert(resultsPerPage != null),
-        assert(resultsSize != null),
-        assert(totalPages != null),
-        assert(totalResultsSize != null),
-        assert(results != null),
-        assert(license != null),
-        assert(version != null),
-        assert(page != null);
+      @JsonKey(name: 'results_per_page') required this.resultsPerPage,
+      @JsonKey(name: 'results_size') required this.resultsSize,
+      @JsonKey(name: 'total_pages') required this.totalPages,
+      @JsonKey(name: 'total_results_size') required this.totalResultsSize,
+      required this.results,
+      required this.license,
+      required this.version,
+      required this.page});
 
   factory _$_FlusmicResponse.fromJson(Map<String, dynamic> json) =>
       _$_$_FlusmicResponseFromJson(json);
 
   @override
   @JsonKey(name: 'next_page')
-  final String nextPage;
+  final String? nextPage;
   @override
   @JsonKey(name: 'prev_page')
-  final String prevPage;
+  final String? prevPage;
   @override
   @JsonKey(name: 'results_per_page')
   final int resultsPerPage;
@@ -307,6 +297,7 @@ class _$_FlusmicResponse implements _FlusmicResponse {
       const DeepCollectionEquality().hash(version) ^
       const DeepCollectionEquality().hash(page);
 
+  @JsonKey(ignore: true)
   @override
   _$FlusmicResponseCopyWith<_FlusmicResponse> get copyWith =>
       __$FlusmicResponseCopyWithImpl<_FlusmicResponse>(this, _$identity);
@@ -319,26 +310,26 @@ class _$_FlusmicResponse implements _FlusmicResponse {
 
 abstract class _FlusmicResponse implements FlusmicResponse {
   factory _FlusmicResponse(
-      {@JsonKey(name: 'next_page') String nextPage,
-      @JsonKey(name: 'prev_page') String prevPage,
-      @required @JsonKey(name: 'results_per_page') int resultsPerPage,
-      @required @JsonKey(name: 'results_size') int resultsSize,
-      @required @JsonKey(name: 'total_pages') int totalPages,
-      @required @JsonKey(name: 'total_results_size') int totalResultsSize,
-      @required List<Document> results,
-      @required String license,
-      @required String version,
-      @required int page}) = _$_FlusmicResponse;
+      {@JsonKey(name: 'next_page') String? nextPage,
+      @JsonKey(name: 'prev_page') String? prevPage,
+      @JsonKey(name: 'results_per_page') required int resultsPerPage,
+      @JsonKey(name: 'results_size') required int resultsSize,
+      @JsonKey(name: 'total_pages') required int totalPages,
+      @JsonKey(name: 'total_results_size') required int totalResultsSize,
+      required List<Document> results,
+      required String license,
+      required String version,
+      required int page}) = _$_FlusmicResponse;
 
   factory _FlusmicResponse.fromJson(Map<String, dynamic> json) =
       _$_FlusmicResponse.fromJson;
 
   @override
   @JsonKey(name: 'next_page')
-  String get nextPage;
+  String? get nextPage;
   @override
   @JsonKey(name: 'prev_page')
-  String get prevPage;
+  String? get prevPage;
   @override
   @JsonKey(name: 'results_per_page')
   int get resultsPerPage;
@@ -360,5 +351,6 @@ abstract class _FlusmicResponse implements FlusmicResponse {
   @override
   int get page;
   @override
+  @JsonKey(ignore: true)
   _$FlusmicResponseCopyWith<_FlusmicResponse> get copyWith;
 }

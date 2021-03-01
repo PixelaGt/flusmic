@@ -1,5 +1,4 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:meta/meta.dart';
 import '../linkeable.dart';
 
 part 'weblink.g.dart';
@@ -10,7 +9,7 @@ part 'weblink.g.dart';
 @JsonSerializable()
 class Weblink extends Linkeable {
   ///Default constructor for Weblink
-  Weblink(String linkType, {@required this.url}) : super(linkType);
+  Weblink(String linkType, {required this.url}) : super(linkType);
 
   ///Creates a Weblink object from json
   factory Weblink.fromJson(Map<String, dynamic> json) =>

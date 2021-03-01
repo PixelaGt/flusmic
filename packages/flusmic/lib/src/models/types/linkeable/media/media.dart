@@ -1,5 +1,4 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:meta/meta.dart';
 import '../linkeable.dart';
 
 part 'media.g.dart';
@@ -11,10 +10,10 @@ part 'media.g.dart';
 class Media extends Linkeable {
   ///Default constructor for media
   Media(String linkType,
-      {@required this.kind,
-      @required this.name,
-      @required this.size,
-      @required this.url,
+      {required this.kind,
+      required this.name,
+      required this.size,
+      required this.url,
       this.height,
       this.width})
       : super(linkType);
@@ -23,7 +22,7 @@ class Media extends Linkeable {
   factory Media.fromJson(Map<String, dynamic> json) => _$MediaFromJson(json);
 
   ///Height of media
-  String height;
+  String? height;
 
   ///What type of media is
   String kind;
@@ -38,7 +37,7 @@ class Media extends Linkeable {
   String url;
 
   ///Weight of media
-  String width;
+  String? width;
 
   ///Converts Media object to json
   @override

@@ -15,8 +15,8 @@ Media _$MediaFromJson(Map<String, dynamic> json) {
     name: json['name'] as String,
     size: json['size'] as String,
     url: json['url'] as String,
-    height: json['height'] as String,
-    width: json['width'] as String,
+    height: json['height'] as String?,
+    width: json['width'] as String?,
   );
 }
 

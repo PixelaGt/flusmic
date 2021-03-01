@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'alternate_language.dart';
 
@@ -16,9 +16,8 @@ AlternateLanguage _$AlternateLanguageFromJson(Map<String, dynamic> json) {
 class _$AlternateLanguageTearOff {
   const _$AlternateLanguageTearOff();
 
-// ignore: unused_element
   _AlternateLanguage call(
-      {@required String id, @required String lang, @required String type}) {
+      {required String id, required String lang, required String type}) {
     return _AlternateLanguage(
       id: id,
       lang: lang,
@@ -26,14 +25,12 @@ class _$AlternateLanguageTearOff {
     );
   }
 
-// ignore: unused_element
   AlternateLanguage fromJson(Map<String, Object> json) {
     return AlternateLanguage.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $AlternateLanguage = _$AlternateLanguageTearOff();
 
 /// @nodoc
@@ -43,6 +40,7 @@ mixin _$AlternateLanguage {
   String get type;
 
   Map<String, dynamic> toJson();
+  @JsonKey(ignore: true)
   $AlternateLanguageCopyWith<AlternateLanguage> get copyWith;
 }
 
@@ -65,9 +63,9 @@ class _$AlternateLanguageCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object id = freezed,
-    Object lang = freezed,
-    Object type = freezed,
+    Object? id = freezed,
+    Object? lang = freezed,
+    Object? type = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as String,
@@ -100,9 +98,9 @@ class __$AlternateLanguageCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object id = freezed,
-    Object lang = freezed,
-    Object type = freezed,
+    Object? id = freezed,
+    Object? lang = freezed,
+    Object? type = freezed,
   }) {
     return _then(_AlternateLanguage(
       id: id == freezed ? _value.id : id as String,
@@ -117,10 +115,7 @@ class __$AlternateLanguageCopyWithImpl<$Res>
 /// @nodoc
 class _$_AlternateLanguage implements _AlternateLanguage {
   _$_AlternateLanguage(
-      {@required this.id, @required this.lang, @required this.type})
-      : assert(id != null),
-        assert(lang != null),
-        assert(type != null);
+      {required this.id, required this.lang, required this.type});
 
   factory _$_AlternateLanguage.fromJson(Map<String, dynamic> json) =>
       _$_$_AlternateLanguageFromJson(json);
@@ -156,6 +151,7 @@ class _$_AlternateLanguage implements _AlternateLanguage {
       const DeepCollectionEquality().hash(lang) ^
       const DeepCollectionEquality().hash(type);
 
+  @JsonKey(ignore: true)
   @override
   _$AlternateLanguageCopyWith<_AlternateLanguage> get copyWith =>
       __$AlternateLanguageCopyWithImpl<_AlternateLanguage>(this, _$identity);
@@ -168,9 +164,9 @@ class _$_AlternateLanguage implements _AlternateLanguage {
 
 abstract class _AlternateLanguage implements AlternateLanguage {
   factory _AlternateLanguage(
-      {@required String id,
-      @required String lang,
-      @required String type}) = _$_AlternateLanguage;
+      {required String id,
+      required String lang,
+      required String type}) = _$_AlternateLanguage;
 
   factory _AlternateLanguage.fromJson(Map<String, dynamic> json) =
       _$_AlternateLanguage.fromJson;
@@ -182,5 +178,6 @@ abstract class _AlternateLanguage implements AlternateLanguage {
   @override
   String get type;
   @override
+  @JsonKey(ignore: true)
   _$AlternateLanguageCopyWith<_AlternateLanguage> get copyWith;
 }

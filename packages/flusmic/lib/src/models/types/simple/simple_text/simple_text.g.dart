@@ -10,10 +10,9 @@ part of 'simple_text.dart';
 
 SimpleText _$SimpleTextFromJson(Map<String, dynamic> json) {
   return SimpleText(
-    (json['spans'] as List)
-        ?.map(
-            (e) => e == null ? null : Span.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
+    (json['spans'] as List<dynamic>)
+        .map((e) => Span.fromJson(e as Map<String, dynamic>))
+        .toList(),
     json['text'] as String,
     json['type'] as String,
   );

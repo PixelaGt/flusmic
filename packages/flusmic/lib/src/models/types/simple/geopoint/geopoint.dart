@@ -9,7 +9,7 @@ part 'geopoint.g.dart';
 @freezed
 abstract class Geopoint with _$Geopoint {
   ///Deafult factory constructor for Geopoint
-  factory Geopoint({@required double latitude, @required double longitude}) =
+  factory Geopoint({required double latitude, required double longitude}) =
       _Geopoint;
 
   ///Creates a Geopoint object from json

@@ -15,7 +15,7 @@ DocumentReference _$DocumentReferenceFromJson(Map<String, dynamic> json) {
     isBroken: json['isBroken'] as bool,
     lang: json['lang'] as String,
     slug: json['slug'] as String,
-    tags: (json['tags'] as List)?.map((e) => e as String)?.toList(),
+    tags: (json['tags'] as List<dynamic>).map((e) => e as String).toList(),
     type: json['type'] as String,
   );
 }

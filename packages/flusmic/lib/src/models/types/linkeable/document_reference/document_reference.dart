@@ -1,5 +1,4 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:meta/meta.dart';
 import '../linkeable.dart';
 
 part 'document_reference.g.dart';
@@ -11,12 +10,12 @@ part 'document_reference.g.dart';
 class DocumentReference extends Linkeable {
   ///Deafult factory constructor for DocumentReference
   DocumentReference(String linkType,
-      {@required this.id,
-      @required this.isBroken,
-      @required this.lang,
-      @required this.slug,
-      @required this.tags,
-      @required this.type})
+      {required this.id,
+      required this.isBroken,
+      required this.lang,
+      required this.slug,
+      required this.tags,
+      required this.type})
       : super(linkType);
 
   ///Creates a DocumentReference object from json

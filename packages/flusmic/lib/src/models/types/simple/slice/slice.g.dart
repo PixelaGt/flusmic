@@ -10,12 +10,12 @@ part of 'slice.dart';
 
 _$_Slice _$_$_SliceFromJson(Map<String, dynamic> json) {
   return _$_Slice(
-    sliceLabel: json['slice_label'] as String,
-    sliceType: json['slice_type'] as String,
-    items: (json['items'] as List)
+    sliceLabel: json['slice_label'] as String?,
+    sliceType: json['slice_type'] as String?,
+    items: (json['items'] as List<dynamic>?)
         ?.map((e) => e as Map<String, dynamic>)
-        ?.toList(),
-    primary: json['primary'] as Map<String, dynamic>,
+        .toList(),
+    primary: json['primary'] as Map<String, dynamic>?,
   );
 }
 

@@ -6,10 +6,10 @@ issue_tracker: https://github.com/PixelaGt/flusmic/issues
 homepage: https://github.com/PixelaGt/flusmic
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: ">=2.12.0-0 <3.0.0"
 
 dependencies:
-  dio: ^3.0.10
+  dio: ^4.0.0-beta1
   freezed_annotation: ^0.13.0-nullsafety.0
   json_annotation: ^4.0.0
   meta: ^1.3.0

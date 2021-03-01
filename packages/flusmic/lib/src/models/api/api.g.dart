@@ -10,18 +10,17 @@ part of 'api.dart';
 
 _$_Api _$_$_ApiFromJson(Map<String, dynamic> json) {
   return _$_Api(
-    oauthInitiate: json['oauth_initiate'] as String,
-    oauthToken: json['oauth_token'] as String,
-    languages: (json['languages'] as List)
-        ?.map((e) =>
-            e == null ? null : Language.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
-    refs: (json['refs'] as List)
-        ?.map((e) => e == null ? null : Ref.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
+    oauthInitiate: json['oauth_initiate'] as String?,
+    oauthToken: json['oauth_token'] as String?,
+    languages: (json['languages'] as List<dynamic>)
+        .map((e) => Language.fromJson(e as Map<String, dynamic>))
+        .toList(),
+    refs: (json['refs'] as List<dynamic>)
+        .map((e) => Ref.fromJson(e as Map<String, dynamic>))
+        .toList(),
     license: json['license'] as String,
     version: json['version'] as String,
-    types: (json['types'] as Map<String, dynamic>)?.map(
+    types: (json['types'] as Map<String, dynamic>?)?.map(
       (k, e) => MapEntry(k, e as String),
     ),
   );

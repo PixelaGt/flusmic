@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:meta/meta.dart';
 import '../flusmic.dart';
 import 'flusmic_error.dart';
 
@@ -9,7 +8,7 @@ import 'flusmic_error.dart';
 class Flusmic {
   ///Main constructor
   Flusmic(
-      {@required this.prismicEndpoint,
+      {required this.prismicEndpoint,
       this.defaultLanguage,
       this.defaultAuthToken}) {
     _client = Dio(BaseOptions(
@@ -28,20 +27,20 @@ class Flusmic {
 
   /// Default language
   /// Ex. es-gt
-  final String defaultLanguage;
+  final String? defaultLanguage;
 
   ///Default Auth token
-  final String defaultAuthToken;
+  final String? defaultAuthToken;
 
   /// The prismic API endpoint
   final String prismicEndpoint;
 
   /// Http client
-  Dio _client;
+  late Dio _client;
 
   /// Fetch API
   /// Get the API main document of prismic repository
-  Future<Api> getApi({String authToken}) async {
+  Future<Api> getApi({String? authToken}) async {
     try {
       final response = await _client.get('', queryParameters: {
         if (defaultAuthToken == null && authToken != null)
@@ -49,21 +48,23 @@ class Flusmic {
       });
       return Api.fromJson(response.data);
     } on DioError catch (error) {
-      throw manageException(error.response);
+      throw FlusmicError.fromResponse(error.response);
+    } on Exception catch (error) {
+      throw FlusmicError.fromException(error);
     }
   }
 
   /// Fetch by query
   /// Get result by query using predicates
   Future<FlusmicResponse> query(List<Predicate> predicates,
-      {List<CustomPredicatePath> fetch,
-      List<CustomPredicatePath> fetchLinks,
-      List<Ordering> orderings,
-      String after,
-      String authToken,
-      String language,
-      int page,
-      int pageSize}) async {
+      {List<CustomPredicatePath>? fetch,
+      List<CustomPredicatePath>? fetchLinks,
+      List<Ordering>? orderings,
+      String? after,
+      String? authToken,
+      String? language,
+      int? page,
+      int? pageSize}) async {
     try {
       final api = await getApi(authToken: authToken);
       final response = await _client.get(
@@ -79,7 +80,9 @@ class Flusmic {
               pageSize: pageSize));
       return FlusmicResponse.fromJson(response.data);
     } on DioError catch (error) {
-      throw manageException(error.response);
+      throw FlusmicError.fromResponse(error.response);
+    } on Exception catch (error) {
+      throw FlusmicError.fromException(error);
     }
   }
 
@@ -89,45 +92,45 @@ class Flusmic {
   ///Get the API root document of prismic repository
   ///Contains all the documents.
   Future<FlusmicResponse> getRootDocument(
-          {String language, String authToken, int page = 1}) async =>
+          {String? language, String? authToken, int page = 1}) async =>
       await query([], authToken: authToken, language: language, page: page);
 
   /// Fetch documents by type
   /// Get all the documents by type using the [slug].
   Future<FlusmicResponse> getDocumentsByType(String slug,
-          {String language, String authToken, int page = 1}) async =>
+          {String? language, String? authToken, int page = 1}) async =>
       await query([Predicate.at(DefaultPredicatePath.type(), slug)],
           authToken: authToken, language: language, page: page);
 
   /// Fetch document by id
   /// Get a documents by [id].
   Future<FlusmicResponse> getDocumentById(String id,
-      {String language, String authToken}) async {
+      {String? language, String? authToken}) async {
     return await query([Predicate.at(DefaultPredicatePath.id(), id)],
         authToken: authToken, language: language);
   }
 
   ///Generate params to perform a request.
   Map<String, dynamic> _generateParams(
-          {int page,
-          int pageSize,
-          List<CustomPredicatePath> fetch,
-          List<CustomPredicatePath> fetchLinks,
-          List<Ordering> orderings,
-          String after,
-          String authToken,
-          String language}) =>
+          {int? page,
+          int? pageSize,
+          List<CustomPredicatePath>? fetch,
+          List<CustomPredicatePath>? fetchLinks,
+          List<Ordering>? orderings,
+          String? after,
+          String? authToken,
+          String? language}) =>
       {
         if (after?.isNotEmpty ?? false) 'after': after,
         if (authToken?.isNotEmpty ?? false) 'access_token': authToken,
         if (fetch?.isNotEmpty ?? false)
-          'fetch': fetch.map((f) => f.toString()).toList().join(','),
+          'fetch': fetch?.map((f) => f.toString()).toList().join(','),
         if (fetchLinks?.isNotEmpty ?? false)
-          'fetchLinks': fetchLinks.map((f) => f.toString()).toList().join(','),
+          'fetchLinks': fetchLinks?.map((f) => f.toString()).toList().join(','),
         if (language?.isNotEmpty ?? false) 'lang': language,
         if (orderings?.isNotEmpty ?? false)
           'orderings':
-              '[${orderings.map(_generateOrdering).toList().join(',')}]',
+              '[${orderings?.map(_generateOrdering).toList().join(',')}]',
         if (page != null) 'page': page.toString(),
         if (pageSize != null) 'pageSize': pageSize.toString(),
       };

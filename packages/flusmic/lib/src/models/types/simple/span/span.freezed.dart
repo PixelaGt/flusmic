@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'span.dart';
 
@@ -16,8 +16,7 @@ Span _$SpanFromJson(Map<String, dynamic> json) {
 class _$SpanTearOff {
   const _$SpanTearOff();
 
-// ignore: unused_element
-  _Span call({@required String type, @required int end, @required int start}) {
+  _Span call({required String type, required int end, required int start}) {
     return _Span(
       type: type,
       end: end,
@@ -25,14 +24,12 @@ class _$SpanTearOff {
     );
   }
 
-// ignore: unused_element
   Span fromJson(Map<String, Object> json) {
     return Span.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $Span = _$SpanTearOff();
 
 /// @nodoc
@@ -42,6 +39,7 @@ mixin _$Span {
   int get start;
 
   Map<String, dynamic> toJson();
+  @JsonKey(ignore: true)
   $SpanCopyWith<Span> get copyWith;
 }
 
@@ -62,9 +60,9 @@ class _$SpanCopyWithImpl<$Res> implements $SpanCopyWith<$Res> {
 
   @override
   $Res call({
-    Object type = freezed,
-    Object end = freezed,
-    Object start = freezed,
+    Object? type = freezed,
+    Object? end = freezed,
+    Object? start = freezed,
   }) {
     return _then(_value.copyWith(
       type: type == freezed ? _value.type : type as String,
@@ -93,9 +91,9 @@ class __$SpanCopyWithImpl<$Res> extends _$SpanCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object type = freezed,
-    Object end = freezed,
-    Object start = freezed,
+    Object? type = freezed,
+    Object? end = freezed,
+    Object? start = freezed,
   }) {
     return _then(_Span(
       type: type == freezed ? _value.type : type as String,
@@ -109,10 +107,7 @@ class __$SpanCopyWithImpl<$Res> extends _$SpanCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_Span implements _Span {
-  _$_Span({@required this.type, @required this.end, @required this.start})
-      : assert(type != null),
-        assert(end != null),
-        assert(start != null);
+  _$_Span({required this.type, required this.end, required this.start});
 
   factory _$_Span.fromJson(Map<String, dynamic> json) =>
       _$_$_SpanFromJson(json);
@@ -148,6 +143,7 @@ class _$_Span implements _Span {
       const DeepCollectionEquality().hash(end) ^
       const DeepCollectionEquality().hash(start);
 
+  @JsonKey(ignore: true)
   @override
   _$SpanCopyWith<_Span> get copyWith =>
       __$SpanCopyWithImpl<_Span>(this, _$identity);
@@ -159,10 +155,8 @@ class _$_Span implements _Span {
 }
 
 abstract class _Span implements Span {
-  factory _Span(
-      {@required String type,
-      @required int end,
-      @required int start}) = _$_Span;
+  factory _Span({required String type, required int end, required int start}) =
+      _$_Span;
 
   factory _Span.fromJson(Map<String, dynamic> json) = _$_Span.fromJson;
 
@@ -173,5 +167,6 @@ abstract class _Span implements Span {
   @override
   int get start;
   @override
+  @JsonKey(ignore: true)
   _$SpanCopyWith<_Span> get copyWith;
 }

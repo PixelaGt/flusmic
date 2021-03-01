@@ -10,16 +10,15 @@ part of 'flusmic_response.dart';
 
 _$_FlusmicResponse _$_$_FlusmicResponseFromJson(Map<String, dynamic> json) {
   return _$_FlusmicResponse(
-    nextPage: json['next_page'] as String,
-    prevPage: json['prev_page'] as String,
+    nextPage: json['next_page'] as String?,
+    prevPage: json['prev_page'] as String?,
     resultsPerPage: json['results_per_page'] as int,
     resultsSize: json['results_size'] as int,
     totalPages: json['total_pages'] as int,
     totalResultsSize: json['total_results_size'] as int,
-    results: (json['results'] as List)
-        ?.map((e) =>
-            e == null ? null : Document.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
+    results: (json['results'] as List<dynamic>)
+        .map((e) => Document.fromJson(e as Map<String, dynamic>))
+        .toList(),
     license: json['license'] as String,
     version: json['version'] as String,
     page: json['page'] as int,

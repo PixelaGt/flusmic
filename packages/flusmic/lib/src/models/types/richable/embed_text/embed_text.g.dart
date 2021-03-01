@@ -10,10 +10,9 @@ part of 'embed_text.dart';
 
 EmbedText _$EmbedTextFromJson(Map<String, dynamic> json) {
   return EmbedText(
-    (json['spans'] as List)
-        ?.map(
-            (e) => e == null ? null : Span.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
+    (json['spans'] as List<dynamic>)
+        .map((e) => Span.fromJson(e as Map<String, dynamic>))
+        .toList(),
     json['text'] as String,
     json['type'] as String,
   );

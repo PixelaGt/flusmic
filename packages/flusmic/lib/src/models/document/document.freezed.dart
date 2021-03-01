@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'document.dart';
 
@@ -16,28 +16,23 @@ Document _$DocumentFromJson(Map<String, dynamic> json) {
 class _$DocumentTearOff {
   const _$DocumentTearOff();
 
-// ignore: unused_element
   _Document call(
       {@JsonKey(name: 'alternate_languages')
-          List<AlternateLanguage> alternateLanguages,
+          List<AlternateLanguage>? alternateLanguages,
       @JsonKey(name: 'first_publication_date')
-          String firstPublicationDate,
+          String? firstPublicationDate,
       @JsonKey(name: 'last_publication_date')
-          String lastPublicationDate,
+          String? lastPublicationDate,
       @JsonKey(name: 'linked_documents')
-          List<String> linkedDocuments,
-      @required
-          List<String> tags,
-      @required
-          String id,
-      @required
-          String lang,
-      @required
-          String type,
-      Map<String, dynamic> data,
-      List<String> slugs,
-      String href,
-      String uid}) {
+          List<String>? linkedDocuments,
+      required List<String> tags,
+      required String id,
+      required String lang,
+      required String type,
+      Map<String, dynamic>? data,
+      List<String>? slugs,
+      String? href,
+      String? uid}) {
     return _Document(
       alternateLanguages: alternateLanguages,
       firstPublicationDate: firstPublicationDate,
@@ -54,36 +49,35 @@ class _$DocumentTearOff {
     );
   }
 
-// ignore: unused_element
   Document fromJson(Map<String, Object> json) {
     return Document.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $Document = _$DocumentTearOff();
 
 /// @nodoc
 mixin _$Document {
   @JsonKey(name: 'alternate_languages')
-  List<AlternateLanguage> get alternateLanguages;
+  List<AlternateLanguage>? get alternateLanguages;
   @JsonKey(name: 'first_publication_date')
-  String get firstPublicationDate;
+  String? get firstPublicationDate;
   @JsonKey(name: 'last_publication_date')
-  String get lastPublicationDate;
+  String? get lastPublicationDate;
   @JsonKey(name: 'linked_documents')
-  List<String> get linkedDocuments;
+  List<String>? get linkedDocuments;
   List<String> get tags;
   String get id;
   String get lang;
   String get type;
-  Map<String, dynamic> get data;
-  List<String> get slugs;
-  String get href;
-  String get uid;
+  Map<String, dynamic>? get data;
+  List<String>? get slugs;
+  String? get href;
+  String? get uid;
 
   Map<String, dynamic> toJson();
+  @JsonKey(ignore: true)
   $DocumentCopyWith<Document> get copyWith;
 }
 
@@ -93,21 +87,21 @@ abstract class $DocumentCopyWith<$Res> {
       _$DocumentCopyWithImpl<$Res>;
   $Res call(
       {@JsonKey(name: 'alternate_languages')
-          List<AlternateLanguage> alternateLanguages,
+          List<AlternateLanguage>? alternateLanguages,
       @JsonKey(name: 'first_publication_date')
-          String firstPublicationDate,
+          String? firstPublicationDate,
       @JsonKey(name: 'last_publication_date')
-          String lastPublicationDate,
+          String? lastPublicationDate,
       @JsonKey(name: 'linked_documents')
-          List<String> linkedDocuments,
+          List<String>? linkedDocuments,
       List<String> tags,
       String id,
       String lang,
       String type,
-      Map<String, dynamic> data,
-      List<String> slugs,
-      String href,
-      String uid});
+      Map<String, dynamic>? data,
+      List<String>? slugs,
+      String? href,
+      String? uid});
 }
 
 /// @nodoc
@@ -120,40 +114,40 @@ class _$DocumentCopyWithImpl<$Res> implements $DocumentCopyWith<$Res> {
 
   @override
   $Res call({
-    Object alternateLanguages = freezed,
-    Object firstPublicationDate = freezed,
-    Object lastPublicationDate = freezed,
-    Object linkedDocuments = freezed,
-    Object tags = freezed,
-    Object id = freezed,
-    Object lang = freezed,
-    Object type = freezed,
-    Object data = freezed,
-    Object slugs = freezed,
-    Object href = freezed,
-    Object uid = freezed,
+    Object? alternateLanguages = freezed,
+    Object? firstPublicationDate = freezed,
+    Object? lastPublicationDate = freezed,
+    Object? linkedDocuments = freezed,
+    Object? tags = freezed,
+    Object? id = freezed,
+    Object? lang = freezed,
+    Object? type = freezed,
+    Object? data = freezed,
+    Object? slugs = freezed,
+    Object? href = freezed,
+    Object? uid = freezed,
   }) {
     return _then(_value.copyWith(
       alternateLanguages: alternateLanguages == freezed
           ? _value.alternateLanguages
-          : alternateLanguages as List<AlternateLanguage>,
+          : alternateLanguages as List<AlternateLanguage>?,
       firstPublicationDate: firstPublicationDate == freezed
           ? _value.firstPublicationDate
-          : firstPublicationDate as String,
+          : firstPublicationDate as String?,
       lastPublicationDate: lastPublicationDate == freezed
           ? _value.lastPublicationDate
-          : lastPublicationDate as String,
+          : lastPublicationDate as String?,
       linkedDocuments: linkedDocuments == freezed
           ? _value.linkedDocuments
-          : linkedDocuments as List<String>,
+          : linkedDocuments as List<String>?,
       tags: tags == freezed ? _value.tags : tags as List<String>,
       id: id == freezed ? _value.id : id as String,
       lang: lang == freezed ? _value.lang : lang as String,
       type: type == freezed ? _value.type : type as String,
-      data: data == freezed ? _value.data : data as Map<String, dynamic>,
-      slugs: slugs == freezed ? _value.slugs : slugs as List<String>,
-      href: href == freezed ? _value.href : href as String,
-      uid: uid == freezed ? _value.uid : uid as String,
+      data: data == freezed ? _value.data : data as Map<String, dynamic>?,
+      slugs: slugs == freezed ? _value.slugs : slugs as List<String>?,
+      href: href == freezed ? _value.href : href as String?,
+      uid: uid == freezed ? _value.uid : uid as String?,
     ));
   }
 }
@@ -165,21 +159,21 @@ abstract class _$DocumentCopyWith<$Res> implements $DocumentCopyWith<$Res> {
   @override
   $Res call(
       {@JsonKey(name: 'alternate_languages')
-          List<AlternateLanguage> alternateLanguages,
+          List<AlternateLanguage>? alternateLanguages,
       @JsonKey(name: 'first_publication_date')
-          String firstPublicationDate,
+          String? firstPublicationDate,
       @JsonKey(name: 'last_publication_date')
-          String lastPublicationDate,
+          String? lastPublicationDate,
       @JsonKey(name: 'linked_documents')
-          List<String> linkedDocuments,
+          List<String>? linkedDocuments,
       List<String> tags,
       String id,
       String lang,
       String type,
-      Map<String, dynamic> data,
-      List<String> slugs,
-      String href,
-      String uid});
+      Map<String, dynamic>? data,
+      List<String>? slugs,
+      String? href,
+      String? uid});
 }
 
 /// @nodoc
@@ -193,40 +187,40 @@ class __$DocumentCopyWithImpl<$Res> extends _$DocumentCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object alternateLanguages = freezed,
-    Object firstPublicationDate = freezed,
-    Object lastPublicationDate = freezed,
-    Object linkedDocuments = freezed,
-    Object tags = freezed,
-    Object id = freezed,
-    Object lang = freezed,
-    Object type = freezed,
-    Object data = freezed,
-    Object slugs = freezed,
-    Object href = freezed,
-    Object uid = freezed,
+    Object? alternateLanguages = freezed,
+    Object? firstPublicationDate = freezed,
+    Object? lastPublicationDate = freezed,
+    Object? linkedDocuments = freezed,
+    Object? tags = freezed,
+    Object? id = freezed,
+    Object? lang = freezed,
+    Object? type = freezed,
+    Object? data = freezed,
+    Object? slugs = freezed,
+    Object? href = freezed,
+    Object? uid = freezed,
   }) {
     return _then(_Document(
       alternateLanguages: alternateLanguages == freezed
           ? _value.alternateLanguages
-          : alternateLanguages as List<AlternateLanguage>,
+          : alternateLanguages as List<AlternateLanguage>?,
       firstPublicationDate: firstPublicationDate == freezed
           ? _value.firstPublicationDate
-          : firstPublicationDate as String,
+          : firstPublicationDate as String?,
       lastPublicationDate: lastPublicationDate == freezed
           ? _value.lastPublicationDate
-          : lastPublicationDate as String,
+          : lastPublicationDate as String?,
       linkedDocuments: linkedDocuments == freezed
           ? _value.linkedDocuments
-          : linkedDocuments as List<String>,
+          : linkedDocuments as List<String>?,
       tags: tags == freezed ? _value.tags : tags as List<String>,
       id: id == freezed ? _value.id : id as String,
       lang: lang == freezed ? _value.lang : lang as String,
       type: type == freezed ? _value.type : type as String,
-      data: data == freezed ? _value.data : data as Map<String, dynamic>,
-      slugs: slugs == freezed ? _value.slugs : slugs as List<String>,
-      href: href == freezed ? _value.href : href as String,
-      uid: uid == freezed ? _value.uid : uid as String,
+      data: data == freezed ? _value.data : data as Map<String, dynamic>?,
+      slugs: slugs == freezed ? _value.slugs : slugs as List<String>?,
+      href: href == freezed ? _value.href : href as String?,
+      uid: uid == freezed ? _value.uid : uid as String?,
     ));
   }
 }
@@ -240,34 +234,30 @@ class _$_Document implements _Document {
       @JsonKey(name: 'first_publication_date') this.firstPublicationDate,
       @JsonKey(name: 'last_publication_date') this.lastPublicationDate,
       @JsonKey(name: 'linked_documents') this.linkedDocuments,
-      @required this.tags,
-      @required this.id,
-      @required this.lang,
-      @required this.type,
+      required this.tags,
+      required this.id,
+      required this.lang,
+      required this.type,
       this.data,
       this.slugs,
       this.href,
-      this.uid})
-      : assert(tags != null),
-        assert(id != null),
-        assert(lang != null),
-        assert(type != null);
+      this.uid});
 
   factory _$_Document.fromJson(Map<String, dynamic> json) =>
       _$_$_DocumentFromJson(json);
 
   @override
   @JsonKey(name: 'alternate_languages')
-  final List<AlternateLanguage> alternateLanguages;
+  final List<AlternateLanguage>? alternateLanguages;
   @override
   @JsonKey(name: 'first_publication_date')
-  final String firstPublicationDate;
+  final String? firstPublicationDate;
   @override
   @JsonKey(name: 'last_publication_date')
-  final String lastPublicationDate;
+  final String? lastPublicationDate;
   @override
   @JsonKey(name: 'linked_documents')
-  final List<String> linkedDocuments;
+  final List<String>? linkedDocuments;
   @override
   final List<String> tags;
   @override
@@ -277,13 +267,13 @@ class _$_Document implements _Document {
   @override
   final String type;
   @override
-  final Map<String, dynamic> data;
+  final Map<String, dynamic>? data;
   @override
-  final List<String> slugs;
+  final List<String>? slugs;
   @override
-  final String href;
+  final String? href;
   @override
-  final String uid;
+  final String? uid;
 
   @override
   String toString() {
@@ -340,6 +330,7 @@ class _$_Document implements _Document {
       const DeepCollectionEquality().hash(href) ^
       const DeepCollectionEquality().hash(uid);
 
+  @JsonKey(ignore: true)
   @override
   _$DocumentCopyWith<_Document> get copyWith =>
       __$DocumentCopyWithImpl<_Document>(this, _$identity);
@@ -353,40 +344,36 @@ class _$_Document implements _Document {
 abstract class _Document implements Document {
   factory _Document(
       {@JsonKey(name: 'alternate_languages')
-          List<AlternateLanguage> alternateLanguages,
+          List<AlternateLanguage>? alternateLanguages,
       @JsonKey(name: 'first_publication_date')
-          String firstPublicationDate,
+          String? firstPublicationDate,
       @JsonKey(name: 'last_publication_date')
-          String lastPublicationDate,
+          String? lastPublicationDate,
       @JsonKey(name: 'linked_documents')
-          List<String> linkedDocuments,
-      @required
-          List<String> tags,
-      @required
-          String id,
-      @required
-          String lang,
-      @required
-          String type,
-      Map<String, dynamic> data,
-      List<String> slugs,
-      String href,
-      String uid}) = _$_Document;
+          List<String>? linkedDocuments,
+      required List<String> tags,
+      required String id,
+      required String lang,
+      required String type,
+      Map<String, dynamic>? data,
+      List<String>? slugs,
+      String? href,
+      String? uid}) = _$_Document;
 
   factory _Document.fromJson(Map<String, dynamic> json) = _$_Document.fromJson;
 
   @override
   @JsonKey(name: 'alternate_languages')
-  List<AlternateLanguage> get alternateLanguages;
+  List<AlternateLanguage>? get alternateLanguages;
   @override
   @JsonKey(name: 'first_publication_date')
-  String get firstPublicationDate;
+  String? get firstPublicationDate;
   @override
   @JsonKey(name: 'last_publication_date')
-  String get lastPublicationDate;
+  String? get lastPublicationDate;
   @override
   @JsonKey(name: 'linked_documents')
-  List<String> get linkedDocuments;
+  List<String>? get linkedDocuments;
   @override
   List<String> get tags;
   @override
@@ -396,13 +383,14 @@ abstract class _Document implements Document {
   @override
   String get type;
   @override
-  Map<String, dynamic> get data;
+  Map<String, dynamic>? get data;
   @override
-  List<String> get slugs;
+  List<String>? get slugs;
   @override
-  String get href;
+  String? get href;
   @override
-  String get uid;
+  String? get uid;
   @override
+  @JsonKey(ignore: true)
   _$DocumentCopyWith<_Document> get copyWith;
 }

@@ -10,8 +10,8 @@ part 'span.g.dart';
 @freezed
 abstract class Span with _$Span {
   ///Deafult factory constructor for Span
-  factory Span(
-      {@required String type, @required int end, @required int start}) = _Span;
+  factory Span({required String type, required int end, required int start}) =
+      _Span;
 
   ///Creates a Span object from json
   factory Span.fromJson(Map<String, dynamic> json) => _$SpanFromJson(json);

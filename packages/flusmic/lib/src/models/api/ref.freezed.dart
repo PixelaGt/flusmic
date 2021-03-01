@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'ref.dart';
 
@@ -16,12 +16,11 @@ Ref _$RefFromJson(Map<String, dynamic> json) {
 class _$RefTearOff {
   const _$RefTearOff();
 
-// ignore: unused_element
   _Ref call(
-      {@required String id,
-      @required String label,
-      @required String ref,
-      @required bool isMasterRef}) {
+      {required String id,
+      required String label,
+      required String ref,
+      required bool isMasterRef}) {
     return _Ref(
       id: id,
       label: label,
@@ -30,14 +29,12 @@ class _$RefTearOff {
     );
   }
 
-// ignore: unused_element
   Ref fromJson(Map<String, Object> json) {
     return Ref.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $Ref = _$RefTearOff();
 
 /// @nodoc
@@ -48,6 +45,7 @@ mixin _$Ref {
   bool get isMasterRef;
 
   Map<String, dynamic> toJson();
+  @JsonKey(ignore: true)
   $RefCopyWith<Ref> get copyWith;
 }
 
@@ -68,10 +66,10 @@ class _$RefCopyWithImpl<$Res> implements $RefCopyWith<$Res> {
 
   @override
   $Res call({
-    Object id = freezed,
-    Object label = freezed,
-    Object ref = freezed,
-    Object isMasterRef = freezed,
+    Object? id = freezed,
+    Object? label = freezed,
+    Object? ref = freezed,
+    Object? isMasterRef = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as String,
@@ -102,10 +100,10 @@ class __$RefCopyWithImpl<$Res> extends _$RefCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object id = freezed,
-    Object label = freezed,
-    Object ref = freezed,
-    Object isMasterRef = freezed,
+    Object? id = freezed,
+    Object? label = freezed,
+    Object? ref = freezed,
+    Object? isMasterRef = freezed,
   }) {
     return _then(_Ref(
       id: id == freezed ? _value.id : id as String,
@@ -122,14 +120,10 @@ class __$RefCopyWithImpl<$Res> extends _$RefCopyWithImpl<$Res>
 /// @nodoc
 class _$_Ref implements _Ref {
   _$_Ref(
-      {@required this.id,
-      @required this.label,
-      @required this.ref,
-      @required this.isMasterRef})
-      : assert(id != null),
-        assert(label != null),
-        assert(ref != null),
-        assert(isMasterRef != null);
+      {required this.id,
+      required this.label,
+      required this.ref,
+      required this.isMasterRef});
 
   factory _$_Ref.fromJson(Map<String, dynamic> json) => _$_$_RefFromJson(json);
 
@@ -170,6 +164,7 @@ class _$_Ref implements _Ref {
       const DeepCollectionEquality().hash(ref) ^
       const DeepCollectionEquality().hash(isMasterRef);
 
+  @JsonKey(ignore: true)
   @override
   _$RefCopyWith<_Ref> get copyWith =>
       __$RefCopyWithImpl<_Ref>(this, _$identity);
@@ -182,10 +177,10 @@ class _$_Ref implements _Ref {
 
 abstract class _Ref implements Ref {
   factory _Ref(
-      {@required String id,
-      @required String label,
-      @required String ref,
-      @required bool isMasterRef}) = _$_Ref;
+      {required String id,
+      required String label,
+      required String ref,
+      required bool isMasterRef}) = _$_Ref;
 
   factory _Ref.fromJson(Map<String, dynamic> json) = _$_Ref.fromJson;
 
@@ -198,5 +193,6 @@ abstract class _Ref implements Ref {
   @override
   bool get isMasterRef;
   @override
+  @JsonKey(ignore: true)
   _$RefCopyWith<_Ref> get copyWith;
 }

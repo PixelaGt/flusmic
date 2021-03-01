@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'dimension.dart';
 
@@ -16,22 +16,19 @@ Dimension _$DimensionFromJson(Map<String, dynamic> json) {
 class _$DimensionTearOff {
   const _$DimensionTearOff();
 
-// ignore: unused_element
-  _Dimension call({@required double height, @required double width}) {
+  _Dimension call({required double height, required double width}) {
     return _Dimension(
       height: height,
       width: width,
     );
   }
 
-// ignore: unused_element
   Dimension fromJson(Map<String, Object> json) {
     return Dimension.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $Dimension = _$DimensionTearOff();
 
 /// @nodoc
@@ -40,6 +37,7 @@ mixin _$Dimension {
   double get width;
 
   Map<String, dynamic> toJson();
+  @JsonKey(ignore: true)
   $DimensionCopyWith<Dimension> get copyWith;
 }
 
@@ -60,8 +58,8 @@ class _$DimensionCopyWithImpl<$Res> implements $DimensionCopyWith<$Res> {
 
   @override
   $Res call({
-    Object height = freezed,
-    Object width = freezed,
+    Object? height = freezed,
+    Object? width = freezed,
   }) {
     return _then(_value.copyWith(
       height: height == freezed ? _value.height : height as double,
@@ -90,8 +88,8 @@ class __$DimensionCopyWithImpl<$Res> extends _$DimensionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object height = freezed,
-    Object width = freezed,
+    Object? height = freezed,
+    Object? width = freezed,
   }) {
     return _then(_Dimension(
       height: height == freezed ? _value.height : height as double,
@@ -104,9 +102,7 @@ class __$DimensionCopyWithImpl<$Res> extends _$DimensionCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_Dimension implements _Dimension {
-  _$_Dimension({@required this.height, @required this.width})
-      : assert(height != null),
-        assert(width != null);
+  _$_Dimension({required this.height, required this.width});
 
   factory _$_Dimension.fromJson(Map<String, dynamic> json) =>
       _$_$_DimensionFromJson(json);
@@ -137,6 +133,7 @@ class _$_Dimension implements _Dimension {
       const DeepCollectionEquality().hash(height) ^
       const DeepCollectionEquality().hash(width);
 
+  @JsonKey(ignore: true)
   @override
   _$DimensionCopyWith<_Dimension> get copyWith =>
       __$DimensionCopyWithImpl<_Dimension>(this, _$identity);
@@ -148,7 +145,7 @@ class _$_Dimension implements _Dimension {
 }
 
 abstract class _Dimension implements Dimension {
-  factory _Dimension({@required double height, @required double width}) =
+  factory _Dimension({required double height, required double width}) =
       _$_Dimension;
 
   factory _Dimension.fromJson(Map<String, dynamic> json) =
@@ -159,5 +156,6 @@ abstract class _Dimension implements Dimension {
   @override
   double get width;
   @override
+  @JsonKey(ignore: true)
   _$DimensionCopyWith<_Dimension> get copyWith;
 }

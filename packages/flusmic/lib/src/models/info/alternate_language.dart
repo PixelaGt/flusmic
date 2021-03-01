@@ -10,9 +10,9 @@ part 'alternate_language.g.dart';
 abstract class AlternateLanguage with _$AlternateLanguage {
   ///Deafult factory constructor for AlternateLanguage
   factory AlternateLanguage(
-      {@required String id,
-      @required String lang,
-      @required String type}) = _AlternateLanguage;
+      {required String id,
+      required String lang,
+      required String type}) = _AlternateLanguage;
 
   ///Creates a AlternateLanguage object from json
   factory AlternateLanguage.fromJson(Map<String, dynamic> json) =>
