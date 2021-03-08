@@ -1,25 +1,26 @@
 name: flusmic_ui_example
 description: Simple example of Flusmic UI on Flutter
+publish_to: none
 
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: '>=2.12.0 <3.0.0'
 
 dependencies:
   flutter:
     sdk: flutter
   flusmic_ui:
     path: ../
-  freezed_annotation: ^0.12.0
-  json_annotation: ^3.0.1
+  freezed_annotation: ^0.14.0
+  json_annotation: ^4.0.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  build_runner: ^1.10.0
-  freezed: ^0.12.2
-  json_serializable: ^3.3.0
+  build_runner: ^1.11.5
+  freezed: ^0.14.0
+  json_serializable: ^4.0.2
 
 flutter:
   uses-material-design: true

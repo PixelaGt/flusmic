@@ -4,15 +4,16 @@ import 'package:flutter/material.dart';
 import 'package:state_notifier/state_notifier.dart';
 import 'models/flusmic_status.dart';
 
+/// Builder function to return a widget based on the current [status].
 typedef BuilderFn = Widget Function(BuildContext context, FlusmicStatus status);
 
 ///Controller state
 class FlusmicControllerState {
-  ///Last action perfomed timestamp
-  final String timestamp;
-
   ///Main controller
   FlusmicControllerState(this.timestamp);
+
+  ///Last action perfomed timestamp
+  final String timestamp;
 }
 
 ///Class for control FlusmicBuilder
@@ -30,17 +31,28 @@ class FlusmicController extends StateNotifier<FlusmicControllerState> {
 
 ///Widget for handle Flusmic requests
 class FlusmicBuilder extends StatefulWidget {
+  ///Main constructor
+  FlusmicBuilder({
+    required this.builder,
+    required this.predicates,
+    required this.baseUrl,
+    this.authToken,
+    this.controller,
+    this.flusmic,
+    this.language,
+  });
+
   ///Authorization token
-  final String authToken;
+  final String? authToken;
 
   ///Widget builder
   final BuilderFn builder;
 
   ///Flusmic instance
-  final Flusmic flusmic;
+  final Flusmic? flusmic;
 
   ///Flusmic controller
-  final FlusmicController controller;
+  final FlusmicController? controller;
 
   ///List of predicates to query
   final List<Predicate> predicates;
@@ -49,17 +61,7 @@ class FlusmicBuilder extends StatefulWidget {
   final String baseUrl;
 
   ///Language
-  final String language;
-
-  ///Main constructor
-  FlusmicBuilder(
-      {@required this.builder,
-      @required this.predicates,
-      this.authToken,
-      this.baseUrl,
-      this.controller,
-      this.flusmic,
-      this.language});
+  final String? language;
 
   @override
   _FlusmicBuilderState createState() => _FlusmicBuilderState();
@@ -91,9 +93,10 @@ class _FlusmicBuilderState extends State<FlusmicBuilder> {
 
   Future<FlusmicResponse> _perform() async => await (widget.flusmic ??
           Flusmic(
-              defaultAuthToken: widget.authToken,
-              defaultLanguage: widget.language,
-              prismicEndpoint: widget.baseUrl))
+            defaultAuthToken: widget.authToken,
+            defaultLanguage: widget.language,
+            prismicEndpoint: widget.baseUrl,
+          ))
       .query(widget.predicates);
 
   void onRepeat() =>
@@ -102,12 +105,14 @@ class _FlusmicBuilderState extends State<FlusmicBuilder> {
   @override
   Widget build(BuildContext context) {
     return widget.builder(
-        context,
-        _currentState.when(
-            error: (error) => FlusmicStatus.error(error),
-            loaded: (result, _, __) =>
-                FlusmicStatus.loaded(result as FlusmicResponse),
-            loading: () => FlusmicStatus.loading(),
-            uninitialized: () => FlusmicStatus.init()));
+      context,
+      _currentState.when(
+        error: (error) => FlusmicStatus.error(error),
+        loaded: (result, _, __) =>
+            FlusmicStatus.loaded(result as FlusmicResponse),
+        loading: () => FlusmicStatus.loading(),
+        uninitialized: () => FlusmicStatus.init(),
+      ),
+    );
   }
 }
