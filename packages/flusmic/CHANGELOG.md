@@ -1,3 +1,8 @@
+## [3.0.0-nullsafety.1]
+* **BREAKING**: Null safety support
+* Improves error management
+* Update dependencies
+
 ## [2.1.0]
 * Fix 'des' issue with orderings
 * 'page' param for `getRootDocument` and `getDocumentsByType` methods
