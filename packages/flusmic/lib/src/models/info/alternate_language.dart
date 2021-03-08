@@ -7,7 +7,7 @@ part 'alternate_language.g.dart';
 ///
 ///Handle alternative languages reference for a document.
 @freezed
-abstract class AlternateLanguage with _$AlternateLanguage {
+class AlternateLanguage with _$AlternateLanguage {
   ///Deafult factory constructor for AlternateLanguage
   factory AlternateLanguage(
       {required String id,

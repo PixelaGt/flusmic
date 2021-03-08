@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'ref.dart';
 
@@ -8,6 +8,10 @@ part of 'ref.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 Ref _$RefFromJson(Map<String, dynamic> json) {
   return _Ref.fromJson(json);
 }
@@ -39,14 +43,14 @@ const $Ref = _$RefTearOff();
 
 /// @nodoc
 mixin _$Ref {
-  String get id;
-  String get label;
-  String get ref;
-  bool get isMasterRef;
+  String get id => throw _privateConstructorUsedError;
+  String get label => throw _privateConstructorUsedError;
+  String get ref => throw _privateConstructorUsedError;
+  bool get isMasterRef => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $RefCopyWith<Ref> get copyWith;
+  $RefCopyWith<Ref> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -72,11 +76,22 @@ class _$RefCopyWithImpl<$Res> implements $RefCopyWith<$Res> {
     Object? isMasterRef = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as String,
-      label: label == freezed ? _value.label : label as String,
-      ref: ref == freezed ? _value.ref : ref as String,
-      isMasterRef:
-          isMasterRef == freezed ? _value.isMasterRef : isMasterRef as bool,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      label: label == freezed
+          ? _value.label
+          : label // ignore: cast_nullable_to_non_nullable
+              as String,
+      ref: ref == freezed
+          ? _value.ref
+          : ref // ignore: cast_nullable_to_non_nullable
+              as String,
+      isMasterRef: isMasterRef == freezed
+          ? _value.isMasterRef
+          : isMasterRef // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -106,11 +121,22 @@ class __$RefCopyWithImpl<$Res> extends _$RefCopyWithImpl<$Res>
     Object? isMasterRef = freezed,
   }) {
     return _then(_Ref(
-      id: id == freezed ? _value.id : id as String,
-      label: label == freezed ? _value.label : label as String,
-      ref: ref == freezed ? _value.ref : ref as String,
-      isMasterRef:
-          isMasterRef == freezed ? _value.isMasterRef : isMasterRef as bool,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      label: label == freezed
+          ? _value.label
+          : label // ignore: cast_nullable_to_non_nullable
+              as String,
+      ref: ref == freezed
+          ? _value.ref
+          : ref // ignore: cast_nullable_to_non_nullable
+              as String,
+      isMasterRef: isMasterRef == freezed
+          ? _value.isMasterRef
+          : isMasterRef // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -185,14 +211,14 @@ abstract class _Ref implements Ref {
   factory _Ref.fromJson(Map<String, dynamic> json) = _$_Ref.fromJson;
 
   @override
-  String get id;
+  String get id => throw _privateConstructorUsedError;
   @override
-  String get label;
+  String get label => throw _privateConstructorUsedError;
   @override
-  String get ref;
+  String get ref => throw _privateConstructorUsedError;
   @override
-  bool get isMasterRef;
+  bool get isMasterRef => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$RefCopyWith<_Ref> get copyWith;
+  _$RefCopyWith<_Ref> get copyWith => throw _privateConstructorUsedError;
 }

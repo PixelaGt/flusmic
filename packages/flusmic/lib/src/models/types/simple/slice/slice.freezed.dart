@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'slice.dart';
 
@@ -8,6 +8,10 @@ part of 'slice.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 Slice _$SliceFromJson(Map<String, dynamic> json) {
   return _Slice.fromJson(json);
 }
@@ -40,15 +44,15 @@ const $Slice = _$SliceTearOff();
 /// @nodoc
 mixin _$Slice {
   @JsonKey(name: 'slice_label')
-  String? get sliceLabel;
+  String? get sliceLabel => throw _privateConstructorUsedError;
   @JsonKey(name: 'slice_type')
-  String? get sliceType;
-  List<Map<String, dynamic>>? get items;
-  Map<String, dynamic>? get primary;
+  String? get sliceType => throw _privateConstructorUsedError;
+  List<Map<String, dynamic>>? get items => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get primary => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $SliceCopyWith<Slice> get copyWith;
+  $SliceCopyWith<Slice> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -78,15 +82,22 @@ class _$SliceCopyWithImpl<$Res> implements $SliceCopyWith<$Res> {
     Object? primary = freezed,
   }) {
     return _then(_value.copyWith(
-      sliceLabel:
-          sliceLabel == freezed ? _value.sliceLabel : sliceLabel as String?,
-      sliceType: sliceType == freezed ? _value.sliceType : sliceType as String?,
+      sliceLabel: sliceLabel == freezed
+          ? _value.sliceLabel
+          : sliceLabel // ignore: cast_nullable_to_non_nullable
+              as String?,
+      sliceType: sliceType == freezed
+          ? _value.sliceType
+          : sliceType // ignore: cast_nullable_to_non_nullable
+              as String?,
       items: items == freezed
           ? _value.items
-          : items as List<Map<String, dynamic>>?,
+          : items // ignore: cast_nullable_to_non_nullable
+              as List<Map<String, dynamic>>?,
       primary: primary == freezed
           ? _value.primary
-          : primary as Map<String, dynamic>?,
+          : primary // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
     ));
   }
 }
@@ -120,15 +131,22 @@ class __$SliceCopyWithImpl<$Res> extends _$SliceCopyWithImpl<$Res>
     Object? primary = freezed,
   }) {
     return _then(_Slice(
-      sliceLabel:
-          sliceLabel == freezed ? _value.sliceLabel : sliceLabel as String?,
-      sliceType: sliceType == freezed ? _value.sliceType : sliceType as String?,
+      sliceLabel: sliceLabel == freezed
+          ? _value.sliceLabel
+          : sliceLabel // ignore: cast_nullable_to_non_nullable
+              as String?,
+      sliceType: sliceType == freezed
+          ? _value.sliceType
+          : sliceType // ignore: cast_nullable_to_non_nullable
+              as String?,
       items: items == freezed
           ? _value.items
-          : items as List<Map<String, dynamic>>?,
+          : items // ignore: cast_nullable_to_non_nullable
+              as List<Map<String, dynamic>>?,
       primary: primary == freezed
           ? _value.primary
-          : primary as Map<String, dynamic>?,
+          : primary // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
     ));
   }
 }
@@ -208,15 +226,15 @@ abstract class _Slice implements Slice {
 
   @override
   @JsonKey(name: 'slice_label')
-  String? get sliceLabel;
+  String? get sliceLabel => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'slice_type')
-  String? get sliceType;
+  String? get sliceType => throw _privateConstructorUsedError;
   @override
-  List<Map<String, dynamic>>? get items;
+  List<Map<String, dynamic>>? get items => throw _privateConstructorUsedError;
   @override
-  Map<String, dynamic>? get primary;
+  Map<String, dynamic>? get primary => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$SliceCopyWith<_Slice> get copyWith;
+  _$SliceCopyWith<_Slice> get copyWith => throw _privateConstructorUsedError;
 }

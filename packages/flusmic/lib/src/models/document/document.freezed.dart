@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'document.dart';
 
@@ -8,6 +8,10 @@ part of 'document.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 Document _$DocumentFromJson(Map<String, dynamic> json) {
   return _Document.fromJson(json);
 }
@@ -60,25 +64,27 @@ const $Document = _$DocumentTearOff();
 /// @nodoc
 mixin _$Document {
   @JsonKey(name: 'alternate_languages')
-  List<AlternateLanguage>? get alternateLanguages;
+  List<AlternateLanguage>? get alternateLanguages =>
+      throw _privateConstructorUsedError;
   @JsonKey(name: 'first_publication_date')
-  String? get firstPublicationDate;
+  String? get firstPublicationDate => throw _privateConstructorUsedError;
   @JsonKey(name: 'last_publication_date')
-  String? get lastPublicationDate;
+  String? get lastPublicationDate => throw _privateConstructorUsedError;
   @JsonKey(name: 'linked_documents')
-  List<String>? get linkedDocuments;
-  List<String> get tags;
-  String get id;
-  String get lang;
-  String get type;
-  Map<String, dynamic>? get data;
-  List<String>? get slugs;
-  String? get href;
-  String? get uid;
+  List<String>? get linkedDocuments => throw _privateConstructorUsedError;
+  List<String> get tags => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
+  String get lang => throw _privateConstructorUsedError;
+  String get type => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get data => throw _privateConstructorUsedError;
+  List<String>? get slugs => throw _privateConstructorUsedError;
+  String? get href => throw _privateConstructorUsedError;
+  String? get uid => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $DocumentCopyWith<Document> get copyWith;
+  $DocumentCopyWith<Document> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -130,24 +136,52 @@ class _$DocumentCopyWithImpl<$Res> implements $DocumentCopyWith<$Res> {
     return _then(_value.copyWith(
       alternateLanguages: alternateLanguages == freezed
           ? _value.alternateLanguages
-          : alternateLanguages as List<AlternateLanguage>?,
+          : alternateLanguages // ignore: cast_nullable_to_non_nullable
+              as List<AlternateLanguage>?,
       firstPublicationDate: firstPublicationDate == freezed
           ? _value.firstPublicationDate
-          : firstPublicationDate as String?,
+          : firstPublicationDate // ignore: cast_nullable_to_non_nullable
+              as String?,
       lastPublicationDate: lastPublicationDate == freezed
           ? _value.lastPublicationDate
-          : lastPublicationDate as String?,
+          : lastPublicationDate // ignore: cast_nullable_to_non_nullable
+              as String?,
       linkedDocuments: linkedDocuments == freezed
           ? _value.linkedDocuments
-          : linkedDocuments as List<String>?,
-      tags: tags == freezed ? _value.tags : tags as List<String>,
-      id: id == freezed ? _value.id : id as String,
-      lang: lang == freezed ? _value.lang : lang as String,
-      type: type == freezed ? _value.type : type as String,
-      data: data == freezed ? _value.data : data as Map<String, dynamic>?,
-      slugs: slugs == freezed ? _value.slugs : slugs as List<String>?,
-      href: href == freezed ? _value.href : href as String?,
-      uid: uid == freezed ? _value.uid : uid as String?,
+          : linkedDocuments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      tags: tags == freezed
+          ? _value.tags
+          : tags // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      lang: lang == freezed
+          ? _value.lang
+          : lang // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      data: data == freezed
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+      slugs: slugs == freezed
+          ? _value.slugs
+          : slugs // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      href: href == freezed
+          ? _value.href
+          : href // ignore: cast_nullable_to_non_nullable
+              as String?,
+      uid: uid == freezed
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -203,24 +237,52 @@ class __$DocumentCopyWithImpl<$Res> extends _$DocumentCopyWithImpl<$Res>
     return _then(_Document(
       alternateLanguages: alternateLanguages == freezed
           ? _value.alternateLanguages
-          : alternateLanguages as List<AlternateLanguage>?,
+          : alternateLanguages // ignore: cast_nullable_to_non_nullable
+              as List<AlternateLanguage>?,
       firstPublicationDate: firstPublicationDate == freezed
           ? _value.firstPublicationDate
-          : firstPublicationDate as String?,
+          : firstPublicationDate // ignore: cast_nullable_to_non_nullable
+              as String?,
       lastPublicationDate: lastPublicationDate == freezed
           ? _value.lastPublicationDate
-          : lastPublicationDate as String?,
+          : lastPublicationDate // ignore: cast_nullable_to_non_nullable
+              as String?,
       linkedDocuments: linkedDocuments == freezed
           ? _value.linkedDocuments
-          : linkedDocuments as List<String>?,
-      tags: tags == freezed ? _value.tags : tags as List<String>,
-      id: id == freezed ? _value.id : id as String,
-      lang: lang == freezed ? _value.lang : lang as String,
-      type: type == freezed ? _value.type : type as String,
-      data: data == freezed ? _value.data : data as Map<String, dynamic>?,
-      slugs: slugs == freezed ? _value.slugs : slugs as List<String>?,
-      href: href == freezed ? _value.href : href as String?,
-      uid: uid == freezed ? _value.uid : uid as String?,
+          : linkedDocuments // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      tags: tags == freezed
+          ? _value.tags
+          : tags // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      lang: lang == freezed
+          ? _value.lang
+          : lang // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      data: data == freezed
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+      slugs: slugs == freezed
+          ? _value.slugs
+          : slugs // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      href: href == freezed
+          ? _value.href
+          : href // ignore: cast_nullable_to_non_nullable
+              as String?,
+      uid: uid == freezed
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -364,33 +426,35 @@ abstract class _Document implements Document {
 
   @override
   @JsonKey(name: 'alternate_languages')
-  List<AlternateLanguage>? get alternateLanguages;
+  List<AlternateLanguage>? get alternateLanguages =>
+      throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'first_publication_date')
-  String? get firstPublicationDate;
+  String? get firstPublicationDate => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'last_publication_date')
-  String? get lastPublicationDate;
+  String? get lastPublicationDate => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'linked_documents')
-  List<String>? get linkedDocuments;
+  List<String>? get linkedDocuments => throw _privateConstructorUsedError;
   @override
-  List<String> get tags;
+  List<String> get tags => throw _privateConstructorUsedError;
   @override
-  String get id;
+  String get id => throw _privateConstructorUsedError;
   @override
-  String get lang;
+  String get lang => throw _privateConstructorUsedError;
   @override
-  String get type;
+  String get type => throw _privateConstructorUsedError;
   @override
-  Map<String, dynamic>? get data;
+  Map<String, dynamic>? get data => throw _privateConstructorUsedError;
   @override
-  List<String>? get slugs;
+  List<String>? get slugs => throw _privateConstructorUsedError;
   @override
-  String? get href;
+  String? get href => throw _privateConstructorUsedError;
   @override
-  String? get uid;
+  String? get uid => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$DocumentCopyWith<_Document> get copyWith;
+  _$DocumentCopyWith<_Document> get copyWith =>
+      throw _privateConstructorUsedError;
 }

@@ -7,7 +7,7 @@ part 'ref.g.dart';
 ///
 ///Handle Prismic.io references for querying.
 @freezed
-abstract class Ref with _$Ref {
+class Ref with _$Ref {
   ///Deafult factory constructor for Ref
   factory Ref(
       {required String id,

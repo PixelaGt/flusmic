@@ -8,7 +8,7 @@ part 'document.g.dart';
 ///
 ///Handle all the info of your Prismic.io document
 @freezed
-abstract class Document with _$Document {
+class Document with _$Document {
   ///Deafult factory constructor for Document
   factory Document({
     @JsonKey(name: 'alternate_languages')

@@ -7,7 +7,7 @@ part 'slice.g.dart';
 ///
 ///Represents a slice and contains all of related info
 @freezed
-abstract class Slice with _$Slice {
+class Slice with _$Slice {
   ///Deafult factory constructor for Slice
   factory Slice({
     @JsonKey(name: 'slice_label') String? sliceLabel,

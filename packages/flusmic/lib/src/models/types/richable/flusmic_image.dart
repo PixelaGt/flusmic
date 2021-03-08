@@ -13,10 +13,10 @@ abstract class FlusmicImage {
   final Dimension dimensions;
 
   ///Alt
-  final String alt;
+  final String? alt;
 
   ///Copyright
-  final String copyright;
+  final String? copyright;
 
   ///Image url
   final String url;

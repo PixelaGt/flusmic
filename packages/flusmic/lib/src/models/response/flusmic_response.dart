@@ -8,7 +8,7 @@ part 'flusmic_response.g.dart';
 ///
 ///Handle all the data fetched from Prismic.io
 @freezed
-abstract class FlusmicResponse with _$FlusmicResponse {
+class FlusmicResponse with _$FlusmicResponse {
   ///Deafult factory constructor for FlusmicResponse
   factory FlusmicResponse({
     @JsonKey(name: 'next_page') String? nextPage,

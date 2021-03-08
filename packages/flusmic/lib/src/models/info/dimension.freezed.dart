@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'dimension.dart';
 
@@ -8,6 +8,10 @@ part of 'dimension.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 Dimension _$DimensionFromJson(Map<String, dynamic> json) {
   return _Dimension.fromJson(json);
 }
@@ -33,12 +37,13 @@ const $Dimension = _$DimensionTearOff();
 
 /// @nodoc
 mixin _$Dimension {
-  double get height;
-  double get width;
+  double get height => throw _privateConstructorUsedError;
+  double get width => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $DimensionCopyWith<Dimension> get copyWith;
+  $DimensionCopyWith<Dimension> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -62,8 +67,14 @@ class _$DimensionCopyWithImpl<$Res> implements $DimensionCopyWith<$Res> {
     Object? width = freezed,
   }) {
     return _then(_value.copyWith(
-      height: height == freezed ? _value.height : height as double,
-      width: width == freezed ? _value.width : width as double,
+      height: height == freezed
+          ? _value.height
+          : height // ignore: cast_nullable_to_non_nullable
+              as double,
+      width: width == freezed
+          ? _value.width
+          : width // ignore: cast_nullable_to_non_nullable
+              as double,
     ));
   }
 }
@@ -92,8 +103,14 @@ class __$DimensionCopyWithImpl<$Res> extends _$DimensionCopyWithImpl<$Res>
     Object? width = freezed,
   }) {
     return _then(_Dimension(
-      height: height == freezed ? _value.height : height as double,
-      width: width == freezed ? _value.width : width as double,
+      height: height == freezed
+          ? _value.height
+          : height // ignore: cast_nullable_to_non_nullable
+              as double,
+      width: width == freezed
+          ? _value.width
+          : width // ignore: cast_nullable_to_non_nullable
+              as double,
     ));
   }
 }
@@ -152,10 +169,11 @@ abstract class _Dimension implements Dimension {
       _$_Dimension.fromJson;
 
   @override
-  double get height;
+  double get height => throw _privateConstructorUsedError;
   @override
-  double get width;
+  double get width => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$DimensionCopyWith<_Dimension> get copyWith;
+  _$DimensionCopyWith<_Dimension> get copyWith =>
+      throw _privateConstructorUsedError;
 }

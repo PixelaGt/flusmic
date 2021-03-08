@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'predicate.dart';
 
@@ -8,6 +8,9 @@ part of 'predicate.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 class _$PredicateTearOff {
@@ -261,7 +264,8 @@ mixin _$Predicate {
     required TResult Function(PredicatePath path, int hour) hour,
     required TResult Function(PredicatePath path, int hour) hourAfter,
     required TResult Function(PredicatePath path, int hour) hourBefore,
-  });
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(PredicatePath path, List<String> values)? any,
@@ -297,7 +301,8 @@ mixin _$Predicate {
     TResult Function(PredicatePath path, int hour)? hourAfter,
     TResult Function(PredicatePath path, int hour)? hourBefore,
     required TResult orElse(),
-  });
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AnyPredicate value) any,
@@ -332,7 +337,8 @@ mixin _$Predicate {
     required TResult Function(DateHourPredicate value) hour,
     required TResult Function(DateHourAfterPredicate value) hourAfter,
     required TResult Function(DateHourBeforePredicate value) hourBefore,
-  });
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AnyPredicate value)? any,
@@ -364,7 +370,8 @@ mixin _$Predicate {
     TResult Function(DateHourAfterPredicate value)? hourAfter,
     TResult Function(DateHourBeforePredicate value)? hourBefore,
     required TResult orElse(),
-  });
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -406,8 +413,14 @@ class _$AnyPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
     Object? values = freezed,
   }) {
     return _then(AnyPredicate(
-      path == freezed ? _value.path : path as PredicatePath,
-      values == freezed ? _value.values : values as List<String>,
+      path == freezed
+          ? _value.path
+          : path // ignore: cast_nullable_to_non_nullable
+              as PredicatePath,
+      values == freezed
+          ? _value.values
+          : values // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ));
   }
 }
@@ -615,10 +628,11 @@ abstract class AnyPredicate implements Predicate {
   factory AnyPredicate(PredicatePath path, List<String> values) =
       _$AnyPredicate;
 
-  PredicatePath get path;
-  List<String> get values;
+  PredicatePath get path => throw _privateConstructorUsedError;
+  List<String> get values => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $AnyPredicateCopyWith<AnyPredicate> get copyWith;
+  $AnyPredicateCopyWith<AnyPredicate> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -645,8 +659,14 @@ class _$AtPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
     Object? value = freezed,
   }) {
     return _then(AtPredicate(
-      path == freezed ? _value.path : path as PredicatePath,
-      value == freezed ? _value.value : value as String,
+      path == freezed
+          ? _value.path
+          : path // ignore: cast_nullable_to_non_nullable
+              as PredicatePath,
+      value == freezed
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -853,10 +873,11 @@ class _$AtPredicate implements AtPredicate {
 abstract class AtPredicate implements Predicate {
   factory AtPredicate(PredicatePath path, String value) = _$AtPredicate;
 
-  PredicatePath get path;
-  String get value;
+  PredicatePath get path => throw _privateConstructorUsedError;
+  String get value => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $AtPredicateCopyWith<AtPredicate> get copyWith;
+  $AtPredicateCopyWith<AtPredicate> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -884,8 +905,14 @@ class _$FullTextPredicateCopyWithImpl<$Res>
     Object? value = freezed,
   }) {
     return _then(FullTextPredicate(
-      path == freezed ? _value.path : path as PredicatePath,
-      value == freezed ? _value.value : value as String,
+      path == freezed
+          ? _value.path
+          : path // ignore: cast_nullable_to_non_nullable
+              as PredicatePath,
+      value == freezed
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -1093,10 +1120,11 @@ abstract class FullTextPredicate implements Predicate {
   factory FullTextPredicate(PredicatePath path, String value) =
       _$FullTextPredicate;
 
-  PredicatePath get path;
-  String get value;
+  PredicatePath get path => throw _privateConstructorUsedError;
+  String get value => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $FullTextPredicateCopyWith<FullTextPredicate> get copyWith;
+  $FullTextPredicateCopyWith<FullTextPredicate> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1123,8 +1151,14 @@ class _$GtPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
     Object? value = freezed,
   }) {
     return _then(GtPredicate(
-      path == freezed ? _value.path : path as PredicatePath,
-      value == freezed ? _value.value : value as double,
+      path == freezed
+          ? _value.path
+          : path // ignore: cast_nullable_to_non_nullable
+              as PredicatePath,
+      value == freezed
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as double,
     ));
   }
 }
@@ -1331,10 +1365,11 @@ class _$GtPredicate implements GtPredicate {
 abstract class GtPredicate implements Predicate {
   factory GtPredicate(PredicatePath path, double value) = _$GtPredicate;
 
-  PredicatePath get path;
-  double get value;
+  PredicatePath get path => throw _privateConstructorUsedError;
+  double get value => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $GtPredicateCopyWith<GtPredicate> get copyWith;
+  $GtPredicateCopyWith<GtPredicate> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1360,7 +1395,10 @@ class _$HasPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
     Object? path = freezed,
   }) {
     return _then(HasPredicate(
-      path == freezed ? _value.path : path as PredicatePath,
+      path == freezed
+          ? _value.path
+          : path // ignore: cast_nullable_to_non_nullable
+              as PredicatePath,
     ));
   }
 }
@@ -1561,9 +1599,10 @@ class _$HasPredicate implements HasPredicate {
 abstract class HasPredicate implements Predicate {
   factory HasPredicate(PredicatePath path) = _$HasPredicate;
 
-  PredicatePath get path;
+  PredicatePath get path => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $HasPredicateCopyWith<HasPredicate> get copyWith;
+  $HasPredicateCopyWith<HasPredicate> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1591,9 +1630,18 @@ class _$InRangePredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
     Object? upperLimit = freezed,
   }) {
     return _then(InRangePredicate(
-      path == freezed ? _value.path : path as PredicatePath,
-      lowerLimit == freezed ? _value.lowerLimit : lowerLimit as double,
-      upperLimit == freezed ? _value.upperLimit : upperLimit as double,
+      path == freezed
+          ? _value.path
+          : path // ignore: cast_nullable_to_non_nullable
+              as PredicatePath,
+      lowerLimit == freezed
+          ? _value.lowerLimit
+          : lowerLimit // ignore: cast_nullable_to_non_nullable
+              as double,
+      upperLimit == freezed
+          ? _value.upperLimit
+          : upperLimit // ignore: cast_nullable_to_non_nullable
+              as double,
     ));
   }
 }
@@ -1809,11 +1857,12 @@ abstract class InRangePredicate implements Predicate {
           PredicatePath path, double lowerLimit, double upperLimit) =
       _$InRangePredicate;
 
-  PredicatePath get path;
-  double get lowerLimit;
-  double get upperLimit;
+  PredicatePath get path => throw _privateConstructorUsedError;
+  double get lowerLimit => throw _privateConstructorUsedError;
+  double get upperLimit => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $InRangePredicateCopyWith<InRangePredicate> get copyWith;
+  $InRangePredicateCopyWith<InRangePredicate> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1840,8 +1889,14 @@ class _$InPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
     Object? values = freezed,
   }) {
     return _then(InPredicate(
-      path == freezed ? _value.path : path as PredicatePath,
-      values == freezed ? _value.values : values as List<String>,
+      path == freezed
+          ? _value.path
+          : path // ignore: cast_nullable_to_non_nullable
+              as PredicatePath,
+      values == freezed
+          ? _value.values
+          : values // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ));
   }
 }
@@ -2048,10 +2103,11 @@ class _$InPredicate implements InPredicate {
 abstract class InPredicate implements Predicate {
   factory InPredicate(PredicatePath path, List<String> values) = _$InPredicate;
 
-  PredicatePath get path;
-  List<String> get values;
+  PredicatePath get path => throw _privateConstructorUsedError;
+  List<String> get values => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $InPredicateCopyWith<InPredicate> get copyWith;
+  $InPredicateCopyWith<InPredicate> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -2078,8 +2134,14 @@ class _$LtPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
     Object? value = freezed,
   }) {
     return _then(LtPredicate(
-      path == freezed ? _value.path : path as PredicatePath,
-      value == freezed ? _value.value : value as double,
+      path == freezed
+          ? _value.path
+          : path // ignore: cast_nullable_to_non_nullable
+              as PredicatePath,
+      value == freezed
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as double,
     ));
   }
 }
@@ -2286,10 +2348,11 @@ class _$LtPredicate implements LtPredicate {
 abstract class LtPredicate implements Predicate {
   factory LtPredicate(PredicatePath path, double value) = _$LtPredicate;
 
-  PredicatePath get path;
-  double get value;
+  PredicatePath get path => throw _privateConstructorUsedError;
+  double get value => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $LtPredicateCopyWith<LtPredicate> get copyWith;
+  $LtPredicateCopyWith<LtPredicate> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -2315,7 +2378,10 @@ class _$MissingPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
     Object? path = freezed,
   }) {
     return _then(MissingPredicate(
-      path == freezed ? _value.path : path as PredicatePath,
+      path == freezed
+          ? _value.path
+          : path // ignore: cast_nullable_to_non_nullable
+              as PredicatePath,
     ));
   }
 }
@@ -2516,9 +2582,10 @@ class _$MissingPredicate implements MissingPredicate {
 abstract class MissingPredicate implements Predicate {
   factory MissingPredicate(PredicatePath path) = _$MissingPredicate;
 
-  PredicatePath get path;
+  PredicatePath get path => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $MissingPredicateCopyWith<MissingPredicate> get copyWith;
+  $MissingPredicateCopyWith<MissingPredicate> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -2548,10 +2615,22 @@ class _$NearPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
     Object? radius = freezed,
   }) {
     return _then(NearPredicate(
-      path == freezed ? _value.path : path as PredicatePath,
-      latitude == freezed ? _value.latitude : latitude as double,
-      longitude == freezed ? _value.longitude : longitude as double,
-      radius == freezed ? _value.radius : radius as double,
+      path == freezed
+          ? _value.path
+          : path // ignore: cast_nullable_to_non_nullable
+              as PredicatePath,
+      latitude == freezed
+          ? _value.latitude
+          : latitude // ignore: cast_nullable_to_non_nullable
+              as double,
+      longitude == freezed
+          ? _value.longitude
+          : longitude // ignore: cast_nullable_to_non_nullable
+              as double,
+      radius == freezed
+          ? _value.radius
+          : radius // ignore: cast_nullable_to_non_nullable
+              as double,
     ));
   }
 }
@@ -2771,12 +2850,13 @@ abstract class NearPredicate implements Predicate {
   factory NearPredicate(PredicatePath path, double latitude, double longitude,
       double radius) = _$NearPredicate;
 
-  PredicatePath get path;
-  double get latitude;
-  double get longitude;
-  double get radius;
+  PredicatePath get path => throw _privateConstructorUsedError;
+  double get latitude => throw _privateConstructorUsedError;
+  double get longitude => throw _privateConstructorUsedError;
+  double get radius => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $NearPredicateCopyWith<NearPredicate> get copyWith;
+  $NearPredicateCopyWith<NearPredicate> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -2803,8 +2883,14 @@ class _$NotPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
     Object? value = freezed,
   }) {
     return _then(NotPredicate(
-      path == freezed ? _value.path : path as PredicatePath,
-      value == freezed ? _value.value : value as String,
+      path == freezed
+          ? _value.path
+          : path // ignore: cast_nullable_to_non_nullable
+              as PredicatePath,
+      value == freezed
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -3011,10 +3097,11 @@ class _$NotPredicate implements NotPredicate {
 abstract class NotPredicate implements Predicate {
   factory NotPredicate(PredicatePath path, String value) = _$NotPredicate;
 
-  PredicatePath get path;
-  String get value;
+  PredicatePath get path => throw _privateConstructorUsedError;
+  String get value => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $NotPredicateCopyWith<NotPredicate> get copyWith;
+  $NotPredicateCopyWith<NotPredicate> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -3041,8 +3128,14 @@ class _$SimilarPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
     Object? value = freezed,
   }) {
     return _then(SimilarPredicate(
-      id == freezed ? _value.id : id as String,
-      value == freezed ? _value.value : value as int,
+      id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      value == freezed
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -3249,10 +3342,11 @@ class _$SimilarPredicate implements SimilarPredicate {
 abstract class SimilarPredicate implements Predicate {
   factory SimilarPredicate(String id, int value) = _$SimilarPredicate;
 
-  String get id;
-  int get value;
+  String get id => throw _privateConstructorUsedError;
+  int get value => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $SimilarPredicateCopyWith<SimilarPredicate> get copyWith;
+  $SimilarPredicateCopyWith<SimilarPredicate> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -3280,8 +3374,14 @@ class _$DateAfterPredicateCopyWithImpl<$Res>
     Object? epoch = freezed,
   }) {
     return _then(DateAfterPredicate(
-      path == freezed ? _value.path : path as PredicatePath,
-      epoch == freezed ? _value.epoch : epoch as int,
+      path == freezed
+          ? _value.path
+          : path // ignore: cast_nullable_to_non_nullable
+              as PredicatePath,
+      epoch == freezed
+          ? _value.epoch
+          : epoch // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -3489,10 +3589,11 @@ abstract class DateAfterPredicate implements Predicate {
   factory DateAfterPredicate(PredicatePath path, int epoch) =
       _$DateAfterPredicate;
 
-  PredicatePath get path;
-  int get epoch;
+  PredicatePath get path => throw _privateConstructorUsedError;
+  int get epoch => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $DateAfterPredicateCopyWith<DateAfterPredicate> get copyWith;
+  $DateAfterPredicateCopyWith<DateAfterPredicate> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -3520,8 +3621,14 @@ class _$DateBeforePredicateCopyWithImpl<$Res>
     Object? epoch = freezed,
   }) {
     return _then(DateBeforePredicate(
-      path == freezed ? _value.path : path as PredicatePath,
-      epoch == freezed ? _value.epoch : epoch as int,
+      path == freezed
+          ? _value.path
+          : path // ignore: cast_nullable_to_non_nullable
+              as PredicatePath,
+      epoch == freezed
+          ? _value.epoch
+          : epoch // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -3729,10 +3836,11 @@ abstract class DateBeforePredicate implements Predicate {
   factory DateBeforePredicate(PredicatePath path, int epoch) =
       _$DateBeforePredicate;
 
-  PredicatePath get path;
-  int get epoch;
+  PredicatePath get path => throw _privateConstructorUsedError;
+  int get epoch => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $DateBeforePredicateCopyWith<DateBeforePredicate> get copyWith;
+  $DateBeforePredicateCopyWith<DateBeforePredicate> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -3761,9 +3869,18 @@ class _$DateBetweenPredicateCopyWithImpl<$Res>
     Object? endEpoch = freezed,
   }) {
     return _then(DateBetweenPredicate(
-      path == freezed ? _value.path : path as PredicatePath,
-      startEpoch == freezed ? _value.startEpoch : startEpoch as int,
-      endEpoch == freezed ? _value.endEpoch : endEpoch as int,
+      path == freezed
+          ? _value.path
+          : path // ignore: cast_nullable_to_non_nullable
+              as PredicatePath,
+      startEpoch == freezed
+          ? _value.startEpoch
+          : startEpoch // ignore: cast_nullable_to_non_nullable
+              as int,
+      endEpoch == freezed
+          ? _value.endEpoch
+          : endEpoch // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -3980,11 +4097,12 @@ abstract class DateBetweenPredicate implements Predicate {
           PredicatePath path, int startEpoch, int endEpoch) =
       _$DateBetweenPredicate;
 
-  PredicatePath get path;
-  int get startEpoch;
-  int get endEpoch;
+  PredicatePath get path => throw _privateConstructorUsedError;
+  int get startEpoch => throw _privateConstructorUsedError;
+  int get endEpoch => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $DateBetweenPredicateCopyWith<DateBetweenPredicate> get copyWith;
+  $DateBetweenPredicateCopyWith<DateBetweenPredicate> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -4012,8 +4130,14 @@ class _$DateDayOfMonthPredicateCopyWithImpl<$Res>
     Object? day = freezed,
   }) {
     return _then(DateDayOfMonthPredicate(
-      path == freezed ? _value.path : path as PredicatePath,
-      day == freezed ? _value.day : day as int,
+      path == freezed
+          ? _value.path
+          : path // ignore: cast_nullable_to_non_nullable
+              as PredicatePath,
+      day == freezed
+          ? _value.day
+          : day // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -4222,10 +4346,11 @@ abstract class DateDayOfMonthPredicate implements Predicate {
   factory DateDayOfMonthPredicate(PredicatePath path, int day) =
       _$DateDayOfMonthPredicate;
 
-  PredicatePath get path;
-  int get day;
+  PredicatePath get path => throw _privateConstructorUsedError;
+  int get day => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $DateDayOfMonthPredicateCopyWith<DateDayOfMonthPredicate> get copyWith;
+  $DateDayOfMonthPredicateCopyWith<DateDayOfMonthPredicate> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -4256,8 +4381,14 @@ class _$DateDayOfMonthAfterPredicateCopyWithImpl<$Res>
     Object? day = freezed,
   }) {
     return _then(DateDayOfMonthAfterPredicate(
-      path == freezed ? _value.path : path as PredicatePath,
-      day == freezed ? _value.day : day as int,
+      path == freezed
+          ? _value.path
+          : path // ignore: cast_nullable_to_non_nullable
+              as PredicatePath,
+      day == freezed
+          ? _value.day
+          : day // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -4466,11 +4597,11 @@ abstract class DateDayOfMonthAfterPredicate implements Predicate {
   factory DateDayOfMonthAfterPredicate(PredicatePath path, int day) =
       _$DateDayOfMonthAfterPredicate;
 
-  PredicatePath get path;
-  int get day;
+  PredicatePath get path => throw _privateConstructorUsedError;
+  int get day => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $DateDayOfMonthAfterPredicateCopyWith<DateDayOfMonthAfterPredicate>
-      get copyWith;
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -4501,8 +4632,14 @@ class _$DateDayOfMonthBeforePredicateCopyWithImpl<$Res>
     Object? day = freezed,
   }) {
     return _then(DateDayOfMonthBeforePredicate(
-      path == freezed ? _value.path : path as PredicatePath,
-      day == freezed ? _value.day : day as int,
+      path == freezed
+          ? _value.path
+          : path // ignore: cast_nullable_to_non_nullable
+              as PredicatePath,
+      day == freezed
+          ? _value.day
+          : day // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -4711,11 +4848,11 @@ abstract class DateDayOfMonthBeforePredicate implements Predicate {
   factory DateDayOfMonthBeforePredicate(PredicatePath path, int day) =
       _$DateDayOfMonthBeforePredicate;
 
-  PredicatePath get path;
-  int get day;
+  PredicatePath get path => throw _privateConstructorUsedError;
+  int get day => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $DateDayOfMonthBeforePredicateCopyWith<DateDayOfMonthBeforePredicate>
-      get copyWith;
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -4743,8 +4880,14 @@ class _$DateDayOfWeekPredicateCopyWithImpl<$Res>
     Object? day = freezed,
   }) {
     return _then(DateDayOfWeekPredicate(
-      path == freezed ? _value.path : path as PredicatePath,
-      day == freezed ? _value.day : day as String,
+      path == freezed
+          ? _value.path
+          : path // ignore: cast_nullable_to_non_nullable
+              as PredicatePath,
+      day == freezed
+          ? _value.day
+          : day // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -4953,10 +5096,11 @@ abstract class DateDayOfWeekPredicate implements Predicate {
   factory DateDayOfWeekPredicate(PredicatePath path, String day) =
       _$DateDayOfWeekPredicate;
 
-  PredicatePath get path;
-  String get day;
+  PredicatePath get path => throw _privateConstructorUsedError;
+  String get day => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $DateDayOfWeekPredicateCopyWith<DateDayOfWeekPredicate> get copyWith;
+  $DateDayOfWeekPredicateCopyWith<DateDayOfWeekPredicate> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -4986,8 +5130,14 @@ class _$DateDayOfWeekAfterPredicateCopyWithImpl<$Res>
     Object? day = freezed,
   }) {
     return _then(DateDayOfWeekAfterPredicate(
-      path == freezed ? _value.path : path as PredicatePath,
-      day == freezed ? _value.day : day as String,
+      path == freezed
+          ? _value.path
+          : path // ignore: cast_nullable_to_non_nullable
+              as PredicatePath,
+      day == freezed
+          ? _value.day
+          : day // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -5196,11 +5346,11 @@ abstract class DateDayOfWeekAfterPredicate implements Predicate {
   factory DateDayOfWeekAfterPredicate(PredicatePath path, String day) =
       _$DateDayOfWeekAfterPredicate;
 
-  PredicatePath get path;
-  String get day;
+  PredicatePath get path => throw _privateConstructorUsedError;
+  String get day => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $DateDayOfWeekAfterPredicateCopyWith<DateDayOfWeekAfterPredicate>
-      get copyWith;
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -5231,8 +5381,14 @@ class _$DateDayOfWeekBeforePredicateCopyWithImpl<$Res>
     Object? day = freezed,
   }) {
     return _then(DateDayOfWeekBeforePredicate(
-      path == freezed ? _value.path : path as PredicatePath,
-      day == freezed ? _value.day : day as String,
+      path == freezed
+          ? _value.path
+          : path // ignore: cast_nullable_to_non_nullable
+              as PredicatePath,
+      day == freezed
+          ? _value.day
+          : day // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -5441,11 +5597,11 @@ abstract class DateDayOfWeekBeforePredicate implements Predicate {
   factory DateDayOfWeekBeforePredicate(PredicatePath path, String day) =
       _$DateDayOfWeekBeforePredicate;
 
-  PredicatePath get path;
-  String get day;
+  PredicatePath get path => throw _privateConstructorUsedError;
+  String get day => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $DateDayOfWeekBeforePredicateCopyWith<DateDayOfWeekBeforePredicate>
-      get copyWith;
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -5473,8 +5629,14 @@ class _$DateMonthPredicateCopyWithImpl<$Res>
     Object? month = freezed,
   }) {
     return _then(DateMonthPredicate(
-      path == freezed ? _value.path : path as PredicatePath,
-      month == freezed ? _value.month : month as String,
+      path == freezed
+          ? _value.path
+          : path // ignore: cast_nullable_to_non_nullable
+              as PredicatePath,
+      month == freezed
+          ? _value.month
+          : month // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -5682,10 +5844,11 @@ abstract class DateMonthPredicate implements Predicate {
   factory DateMonthPredicate(PredicatePath path, String month) =
       _$DateMonthPredicate;
 
-  PredicatePath get path;
-  String get month;
+  PredicatePath get path => throw _privateConstructorUsedError;
+  String get month => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $DateMonthPredicateCopyWith<DateMonthPredicate> get copyWith;
+  $DateMonthPredicateCopyWith<DateMonthPredicate> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -5713,8 +5876,14 @@ class _$DateMonthAfterPredicateCopyWithImpl<$Res>
     Object? month = freezed,
   }) {
     return _then(DateMonthAfterPredicate(
-      path == freezed ? _value.path : path as PredicatePath,
-      month == freezed ? _value.month : month as String,
+      path == freezed
+          ? _value.path
+          : path // ignore: cast_nullable_to_non_nullable
+              as PredicatePath,
+      month == freezed
+          ? _value.month
+          : month // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -5923,10 +6092,11 @@ abstract class DateMonthAfterPredicate implements Predicate {
   factory DateMonthAfterPredicate(PredicatePath path, String month) =
       _$DateMonthAfterPredicate;
 
-  PredicatePath get path;
-  String get month;
+  PredicatePath get path => throw _privateConstructorUsedError;
+  String get month => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $DateMonthAfterPredicateCopyWith<DateMonthAfterPredicate> get copyWith;
+  $DateMonthAfterPredicateCopyWith<DateMonthAfterPredicate> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -5955,8 +6125,14 @@ class _$DateMonthBeforePredicateCopyWithImpl<$Res>
     Object? month = freezed,
   }) {
     return _then(DateMonthBeforePredicate(
-      path == freezed ? _value.path : path as PredicatePath,
-      month == freezed ? _value.month : month as String,
+      path == freezed
+          ? _value.path
+          : path // ignore: cast_nullable_to_non_nullable
+              as PredicatePath,
+      month == freezed
+          ? _value.month
+          : month // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -6165,10 +6341,11 @@ abstract class DateMonthBeforePredicate implements Predicate {
   factory DateMonthBeforePredicate(PredicatePath path, String month) =
       _$DateMonthBeforePredicate;
 
-  PredicatePath get path;
-  String get month;
+  PredicatePath get path => throw _privateConstructorUsedError;
+  String get month => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $DateMonthBeforePredicateCopyWith<DateMonthBeforePredicate> get copyWith;
+  $DateMonthBeforePredicateCopyWith<DateMonthBeforePredicate> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -6196,8 +6373,14 @@ class _$DateYearPredicateCopyWithImpl<$Res>
     Object? year = freezed,
   }) {
     return _then(DateYearPredicate(
-      path == freezed ? _value.path : path as PredicatePath,
-      year == freezed ? _value.year : year as int,
+      path == freezed
+          ? _value.path
+          : path // ignore: cast_nullable_to_non_nullable
+              as PredicatePath,
+      year == freezed
+          ? _value.year
+          : year // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -6404,10 +6587,11 @@ class _$DateYearPredicate implements DateYearPredicate {
 abstract class DateYearPredicate implements Predicate {
   factory DateYearPredicate(PredicatePath path, int year) = _$DateYearPredicate;
 
-  PredicatePath get path;
-  int get year;
+  PredicatePath get path => throw _privateConstructorUsedError;
+  int get year => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $DateYearPredicateCopyWith<DateYearPredicate> get copyWith;
+  $DateYearPredicateCopyWith<DateYearPredicate> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -6435,8 +6619,14 @@ class _$DateHourPredicateCopyWithImpl<$Res>
     Object? hour = freezed,
   }) {
     return _then(DateHourPredicate(
-      path == freezed ? _value.path : path as PredicatePath,
-      hour == freezed ? _value.hour : hour as int,
+      path == freezed
+          ? _value.path
+          : path // ignore: cast_nullable_to_non_nullable
+              as PredicatePath,
+      hour == freezed
+          ? _value.hour
+          : hour // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -6643,10 +6833,11 @@ class _$DateHourPredicate implements DateHourPredicate {
 abstract class DateHourPredicate implements Predicate {
   factory DateHourPredicate(PredicatePath path, int hour) = _$DateHourPredicate;
 
-  PredicatePath get path;
-  int get hour;
+  PredicatePath get path => throw _privateConstructorUsedError;
+  int get hour => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $DateHourPredicateCopyWith<DateHourPredicate> get copyWith;
+  $DateHourPredicateCopyWith<DateHourPredicate> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -6674,8 +6865,14 @@ class _$DateHourAfterPredicateCopyWithImpl<$Res>
     Object? hour = freezed,
   }) {
     return _then(DateHourAfterPredicate(
-      path == freezed ? _value.path : path as PredicatePath,
-      hour == freezed ? _value.hour : hour as int,
+      path == freezed
+          ? _value.path
+          : path // ignore: cast_nullable_to_non_nullable
+              as PredicatePath,
+      hour == freezed
+          ? _value.hour
+          : hour // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -6884,10 +7081,11 @@ abstract class DateHourAfterPredicate implements Predicate {
   factory DateHourAfterPredicate(PredicatePath path, int hour) =
       _$DateHourAfterPredicate;
 
-  PredicatePath get path;
-  int get hour;
+  PredicatePath get path => throw _privateConstructorUsedError;
+  int get hour => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $DateHourAfterPredicateCopyWith<DateHourAfterPredicate> get copyWith;
+  $DateHourAfterPredicateCopyWith<DateHourAfterPredicate> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -6915,8 +7113,14 @@ class _$DateHourBeforePredicateCopyWithImpl<$Res>
     Object? hour = freezed,
   }) {
     return _then(DateHourBeforePredicate(
-      path == freezed ? _value.path : path as PredicatePath,
-      hour == freezed ? _value.hour : hour as int,
+      path == freezed
+          ? _value.path
+          : path // ignore: cast_nullable_to_non_nullable
+              as PredicatePath,
+      hour == freezed
+          ? _value.hour
+          : hour // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -7125,8 +7329,9 @@ abstract class DateHourBeforePredicate implements Predicate {
   factory DateHourBeforePredicate(PredicatePath path, int hour) =
       _$DateHourBeforePredicate;
 
-  PredicatePath get path;
-  int get hour;
+  PredicatePath get path => throw _privateConstructorUsedError;
+  int get hour => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $DateHourBeforePredicateCopyWith<DateHourBeforePredicate> get copyWith;
+  $DateHourBeforePredicateCopyWith<DateHourBeforePredicate> get copyWith =>
+      throw _privateConstructorUsedError;
 }

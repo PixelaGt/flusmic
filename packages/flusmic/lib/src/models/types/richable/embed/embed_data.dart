@@ -6,7 +6,7 @@ part 'embed_data.g.dart';
 ///EmbedData model
 ///
 @freezed
-abstract class EmbedData with _$EmbedData {
+class EmbedData with _$EmbedData {
   ///Deafult factory constructor for EmbedData
   factory EmbedData(
       {@JsonKey(name: 'author_name') required String authorName,

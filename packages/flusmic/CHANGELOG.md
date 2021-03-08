@@ -1,3 +1,7 @@
+## [3.0.0-nullsafety.2]
+* Update models
+* Fix nullability issues for embed images
+
 ## [3.0.0-nullsafety.1]
 * **BREAKING**: Null safety support
 * Improves error management

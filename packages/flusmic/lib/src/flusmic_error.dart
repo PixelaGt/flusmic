@@ -22,13 +22,14 @@ class FlusmicError implements Exception {
 
   /// Exception for failed requests
   factory FlusmicError.fromResponse(Response? response) {
-    if (response == null)
+    if (response == null) {
       return FlusmicError._(
         code: 100,
         humanMessage: 'Unknown error',
         message: 'No response',
         response: 'No response',
       );
+    }
 
     switch (response.statusCode) {
       case 400:

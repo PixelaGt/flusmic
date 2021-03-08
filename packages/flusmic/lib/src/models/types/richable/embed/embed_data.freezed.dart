@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'embed_data.dart';
 
@@ -8,6 +8,10 @@ part of 'embed_data.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 EmbedData _$EmbedDataFromJson(Map<String, dynamic> json) {
   return _EmbedData.fromJson(json);
 }
@@ -60,31 +64,32 @@ const $EmbedData = _$EmbedDataTearOff();
 /// @nodoc
 mixin _$EmbedData {
   @JsonKey(name: 'author_name')
-  String get authorName;
+  String get authorName => throw _privateConstructorUsedError;
   @JsonKey(name: 'author_url')
-  String get authorUrl;
+  String get authorUrl => throw _privateConstructorUsedError;
   @JsonKey(name: 'embed_url')
-  String get embedUrl;
+  String get embedUrl => throw _privateConstructorUsedError;
   @JsonKey(name: 'provider_name')
-  String get providerName;
+  String get providerName => throw _privateConstructorUsedError;
   @JsonKey(name: 'provider_url')
-  String get providerUrl;
+  String get providerUrl => throw _privateConstructorUsedError;
   @JsonKey(name: 'thumbnail_height')
-  double get thumbnailHeight;
+  double get thumbnailHeight => throw _privateConstructorUsedError;
   @JsonKey(name: 'thumbnail_url')
-  String get thumbnailUrl;
+  String get thumbnailUrl => throw _privateConstructorUsedError;
   @JsonKey(name: 'thumbnail_width')
-  double get thumbnailWidth;
-  String get html;
-  String get title;
-  String get type;
-  String get version;
-  double get height;
-  double get width;
+  double get thumbnailWidth => throw _privateConstructorUsedError;
+  String get html => throw _privateConstructorUsedError;
+  String get title => throw _privateConstructorUsedError;
+  String get type => throw _privateConstructorUsedError;
+  String get version => throw _privateConstructorUsedError;
+  double get height => throw _privateConstructorUsedError;
+  double get width => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $EmbedDataCopyWith<EmbedData> get copyWith;
+  $EmbedDataCopyWith<EmbedData> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -134,30 +139,62 @@ class _$EmbedDataCopyWithImpl<$Res> implements $EmbedDataCopyWith<$Res> {
     Object? width = freezed,
   }) {
     return _then(_value.copyWith(
-      authorName:
-          authorName == freezed ? _value.authorName : authorName as String,
-      authorUrl: authorUrl == freezed ? _value.authorUrl : authorUrl as String,
-      embedUrl: embedUrl == freezed ? _value.embedUrl : embedUrl as String,
+      authorName: authorName == freezed
+          ? _value.authorName
+          : authorName // ignore: cast_nullable_to_non_nullable
+              as String,
+      authorUrl: authorUrl == freezed
+          ? _value.authorUrl
+          : authorUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      embedUrl: embedUrl == freezed
+          ? _value.embedUrl
+          : embedUrl // ignore: cast_nullable_to_non_nullable
+              as String,
       providerName: providerName == freezed
           ? _value.providerName
-          : providerName as String,
-      providerUrl:
-          providerUrl == freezed ? _value.providerUrl : providerUrl as String,
+          : providerName // ignore: cast_nullable_to_non_nullable
+              as String,
+      providerUrl: providerUrl == freezed
+          ? _value.providerUrl
+          : providerUrl // ignore: cast_nullable_to_non_nullable
+              as String,
       thumbnailHeight: thumbnailHeight == freezed
           ? _value.thumbnailHeight
-          : thumbnailHeight as double,
+          : thumbnailHeight // ignore: cast_nullable_to_non_nullable
+              as double,
       thumbnailUrl: thumbnailUrl == freezed
           ? _value.thumbnailUrl
-          : thumbnailUrl as String,
+          : thumbnailUrl // ignore: cast_nullable_to_non_nullable
+              as String,
       thumbnailWidth: thumbnailWidth == freezed
           ? _value.thumbnailWidth
-          : thumbnailWidth as double,
-      html: html == freezed ? _value.html : html as String,
-      title: title == freezed ? _value.title : title as String,
-      type: type == freezed ? _value.type : type as String,
-      version: version == freezed ? _value.version : version as String,
-      height: height == freezed ? _value.height : height as double,
-      width: width == freezed ? _value.width : width as double,
+          : thumbnailWidth // ignore: cast_nullable_to_non_nullable
+              as double,
+      html: html == freezed
+          ? _value.html
+          : html // ignore: cast_nullable_to_non_nullable
+              as String,
+      title: title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      version: version == freezed
+          ? _value.version
+          : version // ignore: cast_nullable_to_non_nullable
+              as String,
+      height: height == freezed
+          ? _value.height
+          : height // ignore: cast_nullable_to_non_nullable
+              as double,
+      width: width == freezed
+          ? _value.width
+          : width // ignore: cast_nullable_to_non_nullable
+              as double,
     ));
   }
 }
@@ -212,30 +249,62 @@ class __$EmbedDataCopyWithImpl<$Res> extends _$EmbedDataCopyWithImpl<$Res>
     Object? width = freezed,
   }) {
     return _then(_EmbedData(
-      authorName:
-          authorName == freezed ? _value.authorName : authorName as String,
-      authorUrl: authorUrl == freezed ? _value.authorUrl : authorUrl as String,
-      embedUrl: embedUrl == freezed ? _value.embedUrl : embedUrl as String,
+      authorName: authorName == freezed
+          ? _value.authorName
+          : authorName // ignore: cast_nullable_to_non_nullable
+              as String,
+      authorUrl: authorUrl == freezed
+          ? _value.authorUrl
+          : authorUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      embedUrl: embedUrl == freezed
+          ? _value.embedUrl
+          : embedUrl // ignore: cast_nullable_to_non_nullable
+              as String,
       providerName: providerName == freezed
           ? _value.providerName
-          : providerName as String,
-      providerUrl:
-          providerUrl == freezed ? _value.providerUrl : providerUrl as String,
+          : providerName // ignore: cast_nullable_to_non_nullable
+              as String,
+      providerUrl: providerUrl == freezed
+          ? _value.providerUrl
+          : providerUrl // ignore: cast_nullable_to_non_nullable
+              as String,
       thumbnailHeight: thumbnailHeight == freezed
           ? _value.thumbnailHeight
-          : thumbnailHeight as double,
+          : thumbnailHeight // ignore: cast_nullable_to_non_nullable
+              as double,
       thumbnailUrl: thumbnailUrl == freezed
           ? _value.thumbnailUrl
-          : thumbnailUrl as String,
+          : thumbnailUrl // ignore: cast_nullable_to_non_nullable
+              as String,
       thumbnailWidth: thumbnailWidth == freezed
           ? _value.thumbnailWidth
-          : thumbnailWidth as double,
-      html: html == freezed ? _value.html : html as String,
-      title: title == freezed ? _value.title : title as String,
-      type: type == freezed ? _value.type : type as String,
-      version: version == freezed ? _value.version : version as String,
-      height: height == freezed ? _value.height : height as double,
-      width: width == freezed ? _value.width : width as double,
+          : thumbnailWidth // ignore: cast_nullable_to_non_nullable
+              as double,
+      html: html == freezed
+          ? _value.html
+          : html // ignore: cast_nullable_to_non_nullable
+              as String,
+      title: title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      version: version == freezed
+          ? _value.version
+          : version // ignore: cast_nullable_to_non_nullable
+              as String,
+      height: height == freezed
+          ? _value.height
+          : height // ignore: cast_nullable_to_non_nullable
+              as double,
+      width: width == freezed
+          ? _value.width
+          : width // ignore: cast_nullable_to_non_nullable
+              as double,
     ));
   }
 }
@@ -399,41 +468,42 @@ abstract class _EmbedData implements EmbedData {
 
   @override
   @JsonKey(name: 'author_name')
-  String get authorName;
+  String get authorName => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'author_url')
-  String get authorUrl;
+  String get authorUrl => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'embed_url')
-  String get embedUrl;
+  String get embedUrl => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'provider_name')
-  String get providerName;
+  String get providerName => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'provider_url')
-  String get providerUrl;
+  String get providerUrl => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'thumbnail_height')
-  double get thumbnailHeight;
+  double get thumbnailHeight => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'thumbnail_url')
-  String get thumbnailUrl;
+  String get thumbnailUrl => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'thumbnail_width')
-  double get thumbnailWidth;
+  double get thumbnailWidth => throw _privateConstructorUsedError;
   @override
-  String get html;
+  String get html => throw _privateConstructorUsedError;
   @override
-  String get title;
+  String get title => throw _privateConstructorUsedError;
   @override
-  String get type;
+  String get type => throw _privateConstructorUsedError;
   @override
-  String get version;
+  String get version => throw _privateConstructorUsedError;
   @override
-  double get height;
+  double get height => throw _privateConstructorUsedError;
   @override
-  double get width;
+  double get width => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$EmbedDataCopyWith<_EmbedData> get copyWith;
+  _$EmbedDataCopyWith<_EmbedData> get copyWith =>
+      throw _privateConstructorUsedError;
 }

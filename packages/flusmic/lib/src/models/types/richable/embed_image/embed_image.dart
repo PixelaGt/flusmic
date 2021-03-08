@@ -11,8 +11,12 @@ part 'embed_image.g.dart';
 @JsonSerializable()
 class EmbedImage extends FlusmicImage implements Richable {
   ///Default constructor
-  EmbedImage(String alt, String copyright, Dimension dimensions, String url)
-      : super(alt, copyright, dimensions, url);
+  EmbedImage(
+    String? alt,
+    String? copyright,
+    Dimension dimensions,
+    String url,
+  ) : super(alt, copyright, dimensions, url);
 
   ///Creates a EmbedImage object from json
   factory EmbedImage.fromJson(Map<String, dynamic> json) =>

@@ -7,7 +7,7 @@ part 'predicate.freezed.dart';
 ///Create a new Predicate that handle the data for
 ///querying.
 @freezed
-abstract class Predicate with _$Predicate {
+class Predicate with _$Predicate {
   ///General predicates
 
   ///Any

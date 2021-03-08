@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'api.dart';
 
@@ -8,6 +8,10 @@ part of 'api.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 Api _$ApiFromJson(Map<String, dynamic> json) {
   return _Api.fromJson(json);
 }
@@ -46,18 +50,18 @@ const $Api = _$ApiTearOff();
 /// @nodoc
 mixin _$Api {
   @JsonKey(name: 'oauth_initiate')
-  String? get oauthInitiate;
+  String? get oauthInitiate => throw _privateConstructorUsedError;
   @JsonKey(name: 'oauth_token')
-  String? get oauthToken;
-  List<Language> get languages;
-  List<Ref> get refs;
-  String get license;
-  String get version;
-  Map<String, String>? get types;
+  String? get oauthToken => throw _privateConstructorUsedError;
+  List<Language> get languages => throw _privateConstructorUsedError;
+  List<Ref> get refs => throw _privateConstructorUsedError;
+  String get license => throw _privateConstructorUsedError;
+  String get version => throw _privateConstructorUsedError;
+  Map<String, String>? get types => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ApiCopyWith<Api> get copyWith;
+  $ApiCopyWith<Api> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -95,15 +99,32 @@ class _$ApiCopyWithImpl<$Res> implements $ApiCopyWith<$Res> {
     return _then(_value.copyWith(
       oauthInitiate: oauthInitiate == freezed
           ? _value.oauthInitiate
-          : oauthInitiate as String?,
-      oauthToken:
-          oauthToken == freezed ? _value.oauthToken : oauthToken as String?,
-      languages:
-          languages == freezed ? _value.languages : languages as List<Language>,
-      refs: refs == freezed ? _value.refs : refs as List<Ref>,
-      license: license == freezed ? _value.license : license as String,
-      version: version == freezed ? _value.version : version as String,
-      types: types == freezed ? _value.types : types as Map<String, String>?,
+          : oauthInitiate // ignore: cast_nullable_to_non_nullable
+              as String?,
+      oauthToken: oauthToken == freezed
+          ? _value.oauthToken
+          : oauthToken // ignore: cast_nullable_to_non_nullable
+              as String?,
+      languages: languages == freezed
+          ? _value.languages
+          : languages // ignore: cast_nullable_to_non_nullable
+              as List<Language>,
+      refs: refs == freezed
+          ? _value.refs
+          : refs // ignore: cast_nullable_to_non_nullable
+              as List<Ref>,
+      license: license == freezed
+          ? _value.license
+          : license // ignore: cast_nullable_to_non_nullable
+              as String,
+      version: version == freezed
+          ? _value.version
+          : version // ignore: cast_nullable_to_non_nullable
+              as String,
+      types: types == freezed
+          ? _value.types
+          : types // ignore: cast_nullable_to_non_nullable
+              as Map<String, String>?,
     ));
   }
 }
@@ -145,15 +166,32 @@ class __$ApiCopyWithImpl<$Res> extends _$ApiCopyWithImpl<$Res>
     return _then(_Api(
       oauthInitiate: oauthInitiate == freezed
           ? _value.oauthInitiate
-          : oauthInitiate as String?,
-      oauthToken:
-          oauthToken == freezed ? _value.oauthToken : oauthToken as String?,
-      languages:
-          languages == freezed ? _value.languages : languages as List<Language>,
-      refs: refs == freezed ? _value.refs : refs as List<Ref>,
-      license: license == freezed ? _value.license : license as String,
-      version: version == freezed ? _value.version : version as String,
-      types: types == freezed ? _value.types : types as Map<String, String>?,
+          : oauthInitiate // ignore: cast_nullable_to_non_nullable
+              as String?,
+      oauthToken: oauthToken == freezed
+          ? _value.oauthToken
+          : oauthToken // ignore: cast_nullable_to_non_nullable
+              as String?,
+      languages: languages == freezed
+          ? _value.languages
+          : languages // ignore: cast_nullable_to_non_nullable
+              as List<Language>,
+      refs: refs == freezed
+          ? _value.refs
+          : refs // ignore: cast_nullable_to_non_nullable
+              as List<Ref>,
+      license: license == freezed
+          ? _value.license
+          : license // ignore: cast_nullable_to_non_nullable
+              as String,
+      version: version == freezed
+          ? _value.version
+          : version // ignore: cast_nullable_to_non_nullable
+              as String,
+      types: types == freezed
+          ? _value.types
+          : types // ignore: cast_nullable_to_non_nullable
+              as Map<String, String>?,
     ));
   }
 }
@@ -256,21 +294,21 @@ abstract class _Api implements Api {
 
   @override
   @JsonKey(name: 'oauth_initiate')
-  String? get oauthInitiate;
+  String? get oauthInitiate => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'oauth_token')
-  String? get oauthToken;
+  String? get oauthToken => throw _privateConstructorUsedError;
   @override
-  List<Language> get languages;
+  List<Language> get languages => throw _privateConstructorUsedError;
   @override
-  List<Ref> get refs;
+  List<Ref> get refs => throw _privateConstructorUsedError;
   @override
-  String get license;
+  String get license => throw _privateConstructorUsedError;
   @override
-  String get version;
+  String get version => throw _privateConstructorUsedError;
   @override
-  Map<String, String>? get types;
+  Map<String, String>? get types => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$ApiCopyWith<_Api> get copyWith;
+  _$ApiCopyWith<_Api> get copyWith => throw _privateConstructorUsedError;
 }
