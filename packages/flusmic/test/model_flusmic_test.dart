@@ -146,6 +146,48 @@ void main() {
       final data = SampleModel.fromJson(result.results.first.data!);
       expect(data.content.last, isA<RichableImage>());
     });
+
+    test('heading1 is a richable text', () async {
+      final result = await flusmic.getDocumentById('XpJ8phAAACzK1yQw');
+      final data = SampleModel.fromJson(result.results.first.data!);
+      expect(data.content.first, isA<RichableText>());
+    });
+
+    test('heading2 is a richable text', () async {
+      final result = await flusmic.getDocumentById('XpJ8phAAACzK1yQw');
+      final data = SampleModel.fromJson(result.results.first.data!);
+      expect(data.content[1], isA<RichableText>());
+    });
+
+    test('heading3 is a richable text', () async {
+      final result = await flusmic.getDocumentById('XpJ8phAAACzK1yQw');
+      final data = SampleModel.fromJson(result.results.first.data!);
+      expect(data.content[2], isA<RichableText>());
+    });
+
+    test('heading4 is a richable text', () async {
+      final result = await flusmic.getDocumentById('XpJ8phAAACzK1yQw');
+      final data = SampleModel.fromJson(result.results.first.data!);
+      expect(data.content[3], isA<RichableText>());
+    });
+
+    test('heading5 is a richable text', () async {
+      final result = await flusmic.getDocumentById('XpJ8phAAACzK1yQw');
+      final data = SampleModel.fromJson(result.results.first.data!);
+      expect(data.content[4], isA<RichableText>());
+    });
+
+    test('heading6 is a richable text', () async {
+      final result = await flusmic.getDocumentById('XpJ8phAAACzK1yQw');
+      final data = SampleModel.fromJson(result.results.first.data!);
+      expect(data.content[5], isA<RichableText>());
+    });
+
+    test('paragraph is a richable text', () async {
+      final result = await flusmic.getDocumentById('XpJ8phAAACzK1yQw');
+      final data = SampleModel.fromJson(result.results.first.data!);
+      expect(data.content[6], isA<RichableText>());
+    });
   });
 
   group('linkeable prismic models', () {

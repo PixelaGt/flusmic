@@ -1,3 +1,7 @@
+## [3.0.0-pre2]
+* `RichableText` abstract class created
+* Expose `FlusmicError` for `flusmic_ui`
+
 ## [3.0.0-pre1]
 * **BREAKING** DefaultPredicatePaths are no longer constructors.
 * **BREAKING** New way to work with Rich Text.

@@ -1,6 +1,6 @@
 name: flusmic
 description: A functional and kind of elegant Prismic.io integration for Dart and Flutter.
-version: 3.0.0-pre1
+version: 3.0.0-pre2
 repository: https://github.com/PixelaGt/flusmic
 issue_tracker: https://github.com/PixelaGt/flusmic/issues
 homepage: https://github.com/PixelaGt/flusmic

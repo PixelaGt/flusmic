@@ -3,27 +3,41 @@ import 'package:dio/dio.dart';
 ///Exception for Flusmic
 class FlusmicError implements Exception {
   ///Main constructor
-  FlusmicError({
+  FlusmicError._({
     required this.code,
     required this.humanMessage,
     this.message,
     this.response,
   });
 
-  /// General exception
+  /// Exception for simple use.
+  factory FlusmicError.simple(
+    String humanMessage,
+    String message,
+    dynamic? response,
+  ) {
+    return FlusmicError._(
+      code: 100,
+      humanMessage: humanMessage,
+      message: message,
+      response: response,
+    );
+  }
+
+  /// Exception for failed deserialization exception
   factory FlusmicError.fromException(TypeError exception) {
-    return FlusmicError(
+    return FlusmicError._(
       code: 100,
       humanMessage: 'Unknown error',
       message: exception.toString(),
-      response: exception,
+      response: exception.toString(),
     );
   }
 
   /// Exception for failed requests
   factory FlusmicError.fromResponse(Response? response) {
     if (response == null) {
-      return FlusmicError(
+      return FlusmicError._(
         code: 100,
         humanMessage: 'Unknown error',
         message: 'No response',
@@ -33,15 +47,15 @@ class FlusmicError implements Exception {
 
     switch (response.statusCode) {
       case 400:
-        return FlusmicError(code: 400, humanMessage: 'Bad request');
+        return FlusmicError._(code: 400, humanMessage: 'Bad request');
       case 401:
-        return FlusmicError(code: 401, humanMessage: 'Unauthorized');
+        return FlusmicError._(code: 401, humanMessage: 'Unauthorized');
       case 403:
-        return FlusmicError(code: 403, humanMessage: 'Forbidden');
+        return FlusmicError._(code: 403, humanMessage: 'Forbidden');
       case 500:
-        return FlusmicError(code: 500, humanMessage: 'Server error');
+        return FlusmicError._(code: 500, humanMessage: 'Server error');
       default:
-        return FlusmicError(
+        return FlusmicError._(
           code: 100,
           humanMessage: 'Unknown error',
           message: response.data.toString(),

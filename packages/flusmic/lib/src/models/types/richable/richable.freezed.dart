@@ -281,9 +281,10 @@ class _$RichableHeading1CopyWithImpl<$Res> extends _$RichableCopyWithImpl<$Res>
 }
 
 @JsonSerializable()
+@With.fromString('RichableText')
 
 /// @nodoc
-class _$RichableHeading1 implements RichableHeading1 {
+class _$RichableHeading1 with RichableText implements RichableHeading1 {
   const _$RichableHeading1(
       {required this.spans, required this.text, required this.type});
 
@@ -423,7 +424,7 @@ class _$RichableHeading1 implements RichableHeading1 {
   }
 }
 
-abstract class RichableHeading1 implements Richable {
+abstract class RichableHeading1 implements Richable, RichableText {
   const factory RichableHeading1(
       {required List<Span> spans,
       required String text,
@@ -482,9 +483,10 @@ class _$RichableHeading2CopyWithImpl<$Res> extends _$RichableCopyWithImpl<$Res>
 }
 
 @JsonSerializable()
+@With.fromString('RichableText')
 
 /// @nodoc
-class _$RichableHeading2 implements RichableHeading2 {
+class _$RichableHeading2 with RichableText implements RichableHeading2 {
   const _$RichableHeading2(
       {required this.spans, required this.text, required this.type});
 
@@ -624,7 +626,7 @@ class _$RichableHeading2 implements RichableHeading2 {
   }
 }
 
-abstract class RichableHeading2 implements Richable {
+abstract class RichableHeading2 implements Richable, RichableText {
   const factory RichableHeading2(
       {required List<Span> spans,
       required String text,
@@ -683,9 +685,10 @@ class _$RichableHeading3CopyWithImpl<$Res> extends _$RichableCopyWithImpl<$Res>
 }
 
 @JsonSerializable()
+@With.fromString('RichableText')
 
 /// @nodoc
-class _$RichableHeading3 implements RichableHeading3 {
+class _$RichableHeading3 with RichableText implements RichableHeading3 {
   const _$RichableHeading3(
       {required this.spans, required this.text, required this.type});
 
@@ -825,7 +828,7 @@ class _$RichableHeading3 implements RichableHeading3 {
   }
 }
 
-abstract class RichableHeading3 implements Richable {
+abstract class RichableHeading3 implements Richable, RichableText {
   const factory RichableHeading3(
       {required List<Span> spans,
       required String text,
@@ -884,9 +887,10 @@ class _$RichableHeading4CopyWithImpl<$Res> extends _$RichableCopyWithImpl<$Res>
 }
 
 @JsonSerializable()
+@With.fromString('RichableText')
 
 /// @nodoc
-class _$RichableHeading4 implements RichableHeading4 {
+class _$RichableHeading4 with RichableText implements RichableHeading4 {
   const _$RichableHeading4(
       {required this.spans, required this.text, required this.type});
 
@@ -1026,7 +1030,7 @@ class _$RichableHeading4 implements RichableHeading4 {
   }
 }
 
-abstract class RichableHeading4 implements Richable {
+abstract class RichableHeading4 implements Richable, RichableText {
   const factory RichableHeading4(
       {required List<Span> spans,
       required String text,
@@ -1085,9 +1089,10 @@ class _$RichableHeading5CopyWithImpl<$Res> extends _$RichableCopyWithImpl<$Res>
 }
 
 @JsonSerializable()
+@With.fromString('RichableText')
 
 /// @nodoc
-class _$RichableHeading5 implements RichableHeading5 {
+class _$RichableHeading5 with RichableText implements RichableHeading5 {
   const _$RichableHeading5(
       {required this.spans, required this.text, required this.type});
 
@@ -1227,7 +1232,7 @@ class _$RichableHeading5 implements RichableHeading5 {
   }
 }
 
-abstract class RichableHeading5 implements Richable {
+abstract class RichableHeading5 implements Richable, RichableText {
   const factory RichableHeading5(
       {required List<Span> spans,
       required String text,
@@ -1286,9 +1291,10 @@ class _$RichableHeading6CopyWithImpl<$Res> extends _$RichableCopyWithImpl<$Res>
 }
 
 @JsonSerializable()
+@With.fromString('RichableText')
 
 /// @nodoc
-class _$RichableHeading6 implements RichableHeading6 {
+class _$RichableHeading6 with RichableText implements RichableHeading6 {
   const _$RichableHeading6(
       {required this.spans, required this.text, required this.type});
 
@@ -1428,7 +1434,7 @@ class _$RichableHeading6 implements RichableHeading6 {
   }
 }
 
-abstract class RichableHeading6 implements Richable {
+abstract class RichableHeading6 implements Richable, RichableText {
   const factory RichableHeading6(
       {required List<Span> spans,
       required String text,
@@ -1487,9 +1493,10 @@ class _$RichableParagraphCopyWithImpl<$Res> extends _$RichableCopyWithImpl<$Res>
 }
 
 @JsonSerializable()
+@With.fromString('RichableText')
 
 /// @nodoc
-class _$RichableParagraph implements RichableParagraph {
+class _$RichableParagraph with RichableText implements RichableParagraph {
   const _$RichableParagraph(
       {required this.spans, required this.text, required this.type});
 
@@ -1629,7 +1636,7 @@ class _$RichableParagraph implements RichableParagraph {
   }
 }
 
-abstract class RichableParagraph implements Richable {
+abstract class RichableParagraph implements Richable, RichableText {
   const factory RichableParagraph(
       {required List<Span> spans,
       required String text,
