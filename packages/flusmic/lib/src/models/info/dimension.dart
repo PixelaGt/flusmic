@@ -9,8 +9,10 @@ part 'dimension.g.dart';
 @freezed
 class Dimension with _$Dimension {
   ///Deafult factory constructor for Dimension
-  factory Dimension({required double height, required double width}) =
-      _Dimension;
+  factory Dimension({
+    required double height,
+    required double width,
+  }) = _Dimension;
 
   ///Creates a Dimension object from json
   factory Dimension.fromJson(Map<String, dynamic> json) =>

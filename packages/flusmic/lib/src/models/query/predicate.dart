@@ -144,26 +144,26 @@ class DefaultPredicatePath extends PredicatePath {
   DefaultPredicatePath._(this._path);
 
   ///Default path for document query
-  factory DefaultPredicatePath.document() =>
+  static final DefaultPredicatePath document =
       DefaultPredicatePath._(DefaultPath.document);
 
   ///Default path for id query
-  factory DefaultPredicatePath.id() => DefaultPredicatePath._(DefaultPath.id);
+  static final DefaultPredicatePath id = DefaultPredicatePath._(DefaultPath.id);
 
   ///Default path for tags query
-  factory DefaultPredicatePath.tags() =>
+  static final DefaultPredicatePath tags =
       DefaultPredicatePath._(DefaultPath.tags);
 
   ///Default path for type query
-  factory DefaultPredicatePath.type() =>
+  static final DefaultPredicatePath type =
       DefaultPredicatePath._(DefaultPath.type);
 
   ///Default path for publication date query
-  factory DefaultPredicatePath.firstPublicationDate() =>
+  static final DefaultPredicatePath firstPublicationDate =
       DefaultPredicatePath._(DefaultPath.firstPublicationDate);
 
   ///Default path for last update query
-  factory DefaultPredicatePath.lastPublicationDate() =>
+  static final DefaultPredicatePath lastPublicationDate =
       DefaultPredicatePath._(DefaultPath.lastPublicationDate);
 
   final DefaultPath _path;
