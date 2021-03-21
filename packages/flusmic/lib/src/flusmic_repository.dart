@@ -7,11 +7,13 @@ import 'flusmic_error.dart';
 /// Get documents from Prismic.io
 class Flusmic {
   ///Main constructor
-  Flusmic(
-      {required this.prismicEndpoint,
-      this.defaultLanguage,
-      this.defaultAuthToken}) {
-    _client = Dio(BaseOptions(
+  Flusmic({
+    required this.prismicEndpoint,
+    this.defaultLanguage,
+    this.defaultAuthToken,
+  }) {
+    _client = Dio(
+      BaseOptions(
         baseUrl: prismicEndpoint,
         contentType: 'application/json',
         responseType: ResponseType.json,
@@ -19,7 +21,9 @@ class Flusmic {
           if (defaultAuthToken?.isNotEmpty ?? false)
             'access_token': defaultAuthToken,
           if (defaultLanguage?.isNotEmpty ?? false) 'lang': defaultLanguage
-        }));
+        },
+      ),
+    );
   }
 
   /// Default path for documents
@@ -42,29 +46,34 @@ class Flusmic {
   /// Get the API main document of prismic repository
   Future<Api> getApi({String? authToken}) async {
     try {
-      final response = await _client.get('', queryParameters: {
-        if (defaultAuthToken == null && authToken != null)
-          'access_token': authToken
-      });
+      final response = await _client.get(
+        '',
+        queryParameters: {
+          if (defaultAuthToken == null && authToken != null)
+            'access_token': authToken
+        },
+      );
       return Api.fromJson(response.data);
     } on DioError catch (error) {
       throw FlusmicError.fromResponse(error.response);
-    } on Exception catch (error) {
+    } on TypeError catch (error) {
       throw FlusmicError.fromException(error);
     }
   }
 
   /// Fetch by query
   /// Get result by query using predicates
-  Future<FlusmicResponse> query(List<Predicate> predicates,
-      {List<CustomPredicatePath>? fetch,
-      List<CustomPredicatePath>? fetchLinks,
-      List<Ordering>? orderings,
-      String? after,
-      String? authToken,
-      String? language,
-      int? page,
-      int? pageSize}) async {
+  Future<FlusmicResponse> query(
+    List<Predicate> predicates, {
+    List<CustomPredicatePath>? fetch,
+    List<CustomPredicatePath>? fetchLinks,
+    List<Ordering>? orderings,
+    String? after,
+    String? authToken,
+    String? language,
+    int? page,
+    int? pageSize,
+  }) async {
     try {
       final api = await getApi(authToken: authToken);
       final response = await _client.get(
@@ -81,7 +90,7 @@ class Flusmic {
       return FlusmicResponse.fromJson(response.data);
     } on DioError catch (error) {
       throw FlusmicError.fromResponse(error.response);
-    } on Exception catch (error) {
+    } on TypeError catch (error) {
       throw FlusmicError.fromException(error);
     }
   }
@@ -99,14 +108,14 @@ class Flusmic {
   /// Get all the documents by type using the [slug].
   Future<FlusmicResponse> getDocumentsByType(String slug,
           {String? language, String? authToken, int page = 1}) async =>
-      await query([Predicate.at(DefaultPredicatePath.type(), slug)],
+      await query([Predicate.at(DefaultPredicatePath.type, slug)],
           authToken: authToken, language: language, page: page);
 
   /// Fetch document by id
   /// Get a documents by [id].
   Future<FlusmicResponse> getDocumentById(String id,
       {String? language, String? authToken}) async {
-    return await query([Predicate.at(DefaultPredicatePath.id(), id)],
+    return await query([Predicate.at(DefaultPredicatePath.id, id)],
         authToken: authToken, language: language);
   }
 

@@ -16,7 +16,7 @@ Add Flusmic in your pubspec.yaml file.
 
 ```yaml
 dependencies:
-  flusmic: 3.0.0 /// latest version
+  flusmic: ^3.0.0-pre1 /// latest version
 ```
 
 Create an instance of `Flusmic`:

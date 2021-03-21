@@ -3,7 +3,7 @@ import 'package:dio/dio.dart';
 ///Exception for Flusmic
 class FlusmicError implements Exception {
   ///Main constructor
-  FlusmicError._({
+  FlusmicError({
     required this.code,
     required this.humanMessage,
     this.message,
@@ -11,8 +11,8 @@ class FlusmicError implements Exception {
   });
 
   /// General exception
-  factory FlusmicError.fromException(Exception exception) {
-    return FlusmicError._(
+  factory FlusmicError.fromException(TypeError exception) {
+    return FlusmicError(
       code: 100,
       humanMessage: 'Unknown error',
       message: exception.toString(),
@@ -23,7 +23,7 @@ class FlusmicError implements Exception {
   /// Exception for failed requests
   factory FlusmicError.fromResponse(Response? response) {
     if (response == null) {
-      return FlusmicError._(
+      return FlusmicError(
         code: 100,
         humanMessage: 'Unknown error',
         message: 'No response',
@@ -33,15 +33,15 @@ class FlusmicError implements Exception {
 
     switch (response.statusCode) {
       case 400:
-        return FlusmicError._(code: 400, humanMessage: 'Bad request');
+        return FlusmicError(code: 400, humanMessage: 'Bad request');
       case 401:
-        return FlusmicError._(code: 401, humanMessage: 'Unauthorized');
+        return FlusmicError(code: 401, humanMessage: 'Unauthorized');
       case 403:
-        return FlusmicError._(code: 403, humanMessage: 'Forbidden');
+        return FlusmicError(code: 403, humanMessage: 'Forbidden');
       case 500:
-        return FlusmicError._(code: 500, humanMessage: 'Server error');
+        return FlusmicError(code: 500, humanMessage: 'Server error');
       default:
-        return FlusmicError._(
+        return FlusmicError(
           code: 100,
           humanMessage: 'Unknown error',
           message: response.data.toString(),

@@ -11,6 +11,6 @@ void main() async {
 
   ///For more specific search, you can query by predicates
   final response =
-      await flusmic.query([Predicate.at(DefaultPredicatePath.type(), 'test')]);
+      await flusmic.query([Predicate.at(DefaultPredicatePath.type, 'test')]);
   print("Total of results: ${response.results.length}");
 }

@@ -1,3 +1,16 @@
+## [3.0.0-pre1]
+* **BREAKING** DefaultPredicatePaths are no longer constructors.
+* **BREAKING** New way to work with Rich Text.
+    * New `Richable` class powered by freezed.
+    * Handle Richable types with new clases like: `RichableHeading1`, `RichableParagraph`, `RichableImage`, `RichableEmbed`.
+* **BREAKING** New way to work with Linkeable content.
+    * New `Linkable` class powered by freezed.
+    * Handle Linkeable types with new clases: `DocumentLinkeable`, `MediaLinkeable` and `WebLinkeable`.
+* Improves exception catching.
+* Updated some models to align null safety requirements.
+* Updated dependencies.
+* New tests for models added.
+
 ## [3.0.0-nullsafety.2]
 * Update models
 * Fix nullability issues for embed images
