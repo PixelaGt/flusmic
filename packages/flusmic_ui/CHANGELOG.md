@@ -1,4 +1,4 @@
-## [3.0.0-nullsafety.1]
+## [3.0.0-pre1]
 * `extended_image` added to dependencies.
 * `flusmic` version updated to 3.0.0-pre2.
 * Update dependencies
