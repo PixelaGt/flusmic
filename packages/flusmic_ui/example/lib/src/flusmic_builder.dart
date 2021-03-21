@@ -31,8 +31,8 @@ class _FlusmicBuilderScreenState extends State<FlusmicBuilderScreen> {
                         ]))),
             controller: _flusmicController,
             predicates: [
-              Predicate.at(DefaultPredicatePath.type(), 'test'),
-              Predicate.at(DefaultPredicatePath.id(), 'XpJ8phAAACzK1yQw')
+              Predicate.at(DefaultPredicatePath.type, 'test'),
+              Predicate.at(DefaultPredicatePath.id, 'XpJ8phAAACzK1yQw')
             ]),
         floatingActionButton: FloatingActionButton(
             onPressed: _flusmicController.repeat, child: Icon(Icons.replay)));

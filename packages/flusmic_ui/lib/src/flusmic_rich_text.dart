@@ -84,22 +84,26 @@ class FlusmicRichText extends StatelessWidget {
     return Column(
         children: <Widget>[
           for (var field in richFields)
-            if (field is EmbedImage)
-              InnerRichImage(field,
-                  bottomSeparation: bottomSeparation,
-                  failWidget: failWidget,
-                  fit: imageFit,
-                  loadingWidget: loadingWidget)
-            else if (field is EmbedText)
-              InnerRichText(field,
-                  bottomSeparation: bottomSeparation,
-                  headline1Style: headline1Style,
-                  headline2Style: headline2Style,
-                  headline3Style: headline3Style,
-                  headline4Style: headline4Style,
-                  headline5Style: headline5Style,
-                  headline6Style: headline6Style,
-                  paragraphStyle: paragraphStyle)
+            if (field is RichableImage)
+              InnerRichImage(
+                field,
+                bottomSeparation: bottomSeparation,
+                failWidget: failWidget,
+                fit: imageFit,
+                loadingWidget: loadingWidget,
+              )
+            else if (field is RichableText)
+              InnerRichText(
+                field as RichableText,
+                bottomSeparation: bottomSeparation,
+                headline1Style: headline1Style,
+                headline2Style: headline2Style,
+                headline3Style: headline3Style,
+                headline4Style: headline4Style,
+                headline5Style: headline5Style,
+                headline6Style: headline6Style,
+                paragraphStyle: paragraphStyle,
+              )
             else
               Container()
         ],

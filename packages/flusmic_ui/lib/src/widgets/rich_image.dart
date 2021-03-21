@@ -1,4 +1,4 @@
-import 'package:cached_network_image/cached_network_image.dart';
+import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import '../../flusmic_ui.dart';
 
@@ -25,7 +25,7 @@ class InnerRichImage extends StatelessWidget {
   final BoxFit fit;
 
   ///Image from RichText
-  final EmbedImage image;
+  final RichableImage image;
 
   ///Widget to show while loading image
   final Widget? loadingWidget;
@@ -34,12 +34,17 @@ class InnerRichImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(bottom: bottomSeparation),
-      child: CachedNetworkImage(
-        imageUrl: image.url,
+      child: ExtendedImage.network(
+        image.url,
         fit: fit,
         height: image.dimensions.height,
         width: image.dimensions.width,
-        placeholder: (context, url) => loadingWidget ?? Container(),
+        loadStateChanged: (state) {
+          if (state.extendedImageLoadState == LoadState.loading) {
+            return loadingWidget ?? Container();
+          }
+          return null;
+        },
       ),
     );
   }

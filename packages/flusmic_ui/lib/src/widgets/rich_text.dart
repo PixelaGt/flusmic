@@ -19,7 +19,7 @@ class InnerRichText extends StatefulWidget {
   });
 
   ///Text from RichText
-  final EmbedText text;
+  final RichableText text;
 
   ///Separation between elements
   final double bottomSeparation;
@@ -76,29 +76,40 @@ class _InnerRichTextState extends State<InnerRichText> {
     );
   }
 
+  Richable get field => widget.text as Richable;
+
   List<TextSpan> get _spans => [
         TextSpan(
-          style: _styleByType(widget.text.type),
-          text: widget.text.text,
+          style: _styleByType,
+          text: _textByType,
         ),
       ];
 
-  TextStyle? _styleByType(String type) {
-    switch (type) {
-      case 'heading1':
-        return widget.headline1Style ?? Theme.of(context).textTheme.headline1;
-      case 'heading2':
-        return widget.headline2Style ?? Theme.of(context).textTheme.headline2;
-      case 'heading3':
-        return widget.headline3Style ?? Theme.of(context).textTheme.headline3;
-      case 'heading4':
-        return widget.headline4Style ?? Theme.of(context).textTheme.headline4;
-      case 'heading5':
-        return widget.headline5Style ?? Theme.of(context).textTheme.headline5;
-      case 'heading6':
-        return widget.headline6Style ?? Theme.of(context).textTheme.headline6;
-      default:
-        return widget.paragraphStyle ?? Theme.of(context).textTheme.bodyText2;
-    }
-  }
+  String get _textByType => field.maybeMap(
+        orElse: () => '',
+        heading1: (v) => v.text,
+        heading2: (v) => v.text,
+        heading3: (v) => v.text,
+        heading4: (v) => v.text,
+        heading5: (v) => v.text,
+        heading6: (v) => v.text,
+        paragraph: (v) => v.text,
+      );
+
+  TextStyle? get _styleByType => field.maybeMap(
+        orElse: () =>
+            widget.paragraphStyle ?? Theme.of(context).textTheme.bodyText2,
+        heading1: (v) =>
+            widget.headline1Style ?? Theme.of(context).textTheme.headline1,
+        heading2: (v) =>
+            widget.headline2Style ?? Theme.of(context).textTheme.headline2,
+        heading3: (v) =>
+            widget.headline3Style ?? Theme.of(context).textTheme.headline3,
+        heading4: (v) =>
+            widget.headline4Style ?? Theme.of(context).textTheme.headline4,
+        heading5: (v) =>
+            widget.headline5Style ?? Theme.of(context).textTheme.headline5,
+        heading6: (v) =>
+            widget.headline6Style ?? Theme.of(context).textTheme.headline6,
+      );
 }

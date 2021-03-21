@@ -25,7 +25,7 @@ class _$FlusmicTestTearOff {
       required List<Richable> content,
       required SimpleImage image,
       required Linkeable link,
-      required Media media,
+      required MediaLinkeable media,
       required String date,
       required String timestamp,
       required String color,
@@ -69,7 +69,7 @@ mixin _$FlusmicTest {
   List<Richable> get content => throw _privateConstructorUsedError;
   SimpleImage get image => throw _privateConstructorUsedError;
   Linkeable get link => throw _privateConstructorUsedError;
-  Media get media => throw _privateConstructorUsedError;
+  MediaLinkeable get media => throw _privateConstructorUsedError;
   String get date => throw _privateConstructorUsedError;
   String get timestamp => throw _privateConstructorUsedError;
   String get color => throw _privateConstructorUsedError;
@@ -97,7 +97,7 @@ abstract class $FlusmicTestCopyWith<$Res> {
       List<Richable> content,
       SimpleImage image,
       Linkeable link,
-      Media media,
+      MediaLinkeable media,
       String date,
       String timestamp,
       String color,
@@ -109,7 +109,10 @@ abstract class $FlusmicTestCopyWith<$Res> {
       List<FlusmicNested> repetible,
       Linkeable linked});
 
+  $SimpleImageCopyWith<$Res> get image;
+  $LinkeableCopyWith<$Res> get link;
   $GeopointCopyWith<$Res> get location;
+  $LinkeableCopyWith<$Res> get linked;
 }
 
 /// @nodoc
@@ -158,7 +161,7 @@ class _$FlusmicTestCopyWithImpl<$Res> implements $FlusmicTestCopyWith<$Res> {
       media: media == freezed
           ? _value.media
           : media // ignore: cast_nullable_to_non_nullable
-              as Media,
+              as MediaLinkeable,
       date: date == freezed
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
@@ -203,9 +206,30 @@ class _$FlusmicTestCopyWithImpl<$Res> implements $FlusmicTestCopyWith<$Res> {
   }
 
   @override
+  $SimpleImageCopyWith<$Res> get image {
+    return $SimpleImageCopyWith<$Res>(_value.image, (value) {
+      return _then(_value.copyWith(image: value));
+    });
+  }
+
+  @override
+  $LinkeableCopyWith<$Res> get link {
+    return $LinkeableCopyWith<$Res>(_value.link, (value) {
+      return _then(_value.copyWith(link: value));
+    });
+  }
+
+  @override
   $GeopointCopyWith<$Res> get location {
     return $GeopointCopyWith<$Res>(_value.location, (value) {
       return _then(_value.copyWith(location: value));
+    });
+  }
+
+  @override
+  $LinkeableCopyWith<$Res> get linked {
+    return $LinkeableCopyWith<$Res>(_value.linked, (value) {
+      return _then(_value.copyWith(linked: value));
     });
   }
 }
@@ -222,7 +246,7 @@ abstract class _$FlusmicTestCopyWith<$Res>
       List<Richable> content,
       SimpleImage image,
       Linkeable link,
-      Media media,
+      MediaLinkeable media,
       String date,
       String timestamp,
       String color,
@@ -235,7 +259,13 @@ abstract class _$FlusmicTestCopyWith<$Res>
       Linkeable linked});
 
   @override
+  $SimpleImageCopyWith<$Res> get image;
+  @override
+  $LinkeableCopyWith<$Res> get link;
+  @override
   $GeopointCopyWith<$Res> get location;
+  @override
+  $LinkeableCopyWith<$Res> get linked;
 }
 
 /// @nodoc
@@ -286,7 +316,7 @@ class __$FlusmicTestCopyWithImpl<$Res> extends _$FlusmicTestCopyWithImpl<$Res>
       media: media == freezed
           ? _value.media
           : media // ignore: cast_nullable_to_non_nullable
-              as Media,
+              as MediaLinkeable,
       date: date == freezed
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
@@ -364,7 +394,7 @@ class _$_FlusmicTest implements _FlusmicTest {
   @override
   final Linkeable link;
   @override
-  final Media media;
+  final MediaLinkeable media;
   @override
   final String date;
   @override
@@ -468,7 +498,7 @@ abstract class _FlusmicTest implements FlusmicTest {
       required List<Richable> content,
       required SimpleImage image,
       required Linkeable link,
-      required Media media,
+      required MediaLinkeable media,
       required String date,
       required String timestamp,
       required String color,
@@ -492,7 +522,7 @@ abstract class _FlusmicTest implements FlusmicTest {
   @override
   Linkeable get link => throw _privateConstructorUsedError;
   @override
-  Media get media => throw _privateConstructorUsedError;
+  MediaLinkeable get media => throw _privateConstructorUsedError;
   @override
   String get date => throw _privateConstructorUsedError;
   @override

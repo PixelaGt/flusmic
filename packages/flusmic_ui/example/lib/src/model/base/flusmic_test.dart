@@ -15,7 +15,7 @@ abstract class FlusmicTest with _$FlusmicTest {
     required List<Richable> content,
     required SimpleImage image,
     required Linkeable link,
-    required Media media,
+    required MediaLinkeable media,
     required String date,
     required String timestamp,
     required String color,

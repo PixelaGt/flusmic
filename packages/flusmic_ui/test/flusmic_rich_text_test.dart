@@ -11,7 +11,7 @@ void main() {
       await tester.runAsync(() async {
         final flusmic = FlusmicMock();
         final predicates = [
-          Predicate.any(DefaultPredicatePath.type(), ['test'])
+          Predicate.any(DefaultPredicatePath.type, ['test'])
         ];
         when(() => flusmic.query(predicates)).thenAnswer((invocation) =>
             Future.value(FlusmicResponse.fromJson(mockResponse)));
