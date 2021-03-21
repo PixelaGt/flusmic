@@ -35,8 +35,7 @@ void main() {
   group('day of month predicates with flusmic', () {
     test('day of month', () async {
       final result = await flusmic.query([
-        Predicate.dateDayOfMonth(
-            DefaultPredicatePath.firstPublicationDate(), 12)
+        Predicate.dateDayOfMonth(DefaultPredicatePath.firstPublicationDate, 12)
       ]);
       expect(result.results.length, 2);
     });
@@ -44,7 +43,7 @@ void main() {
     test('after', () async {
       final result = await flusmic.query([
         Predicate.dateDayOfMonthAfter(
-            DefaultPredicatePath.lastPublicationDate(), 9)
+            DefaultPredicatePath.lastPublicationDate, 9)
       ]);
       expect(result.results.length, 2);
     });
@@ -52,7 +51,7 @@ void main() {
     test('before', () async {
       final result = await flusmic.query([
         Predicate.dateDayOfMonthBefore(
-            DefaultPredicatePath.lastPublicationDate(), 9)
+            DefaultPredicatePath.lastPublicationDate, 9)
       ]);
       expect(result.results.length, 0);
     });

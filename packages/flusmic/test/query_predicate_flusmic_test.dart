@@ -7,34 +7,33 @@ void main() {
   group('query predicates with flusmic', () {
     test('at', () async {
       final result = await flusmic
-          .query([Predicate.at(DefaultPredicatePath.type(), 'test')]);
+          .query([Predicate.at(DefaultPredicatePath.type, 'test')]);
       expect(result.results.first.type, 'test');
     });
 
     test('not', () async {
       final result = await flusmic
-          .query([Predicate.not(DefaultPredicatePath.type(), 'test')]);
+          .query([Predicate.not(DefaultPredicatePath.type, 'test')]);
       expect(result.results.length, 0);
     });
 
     test('any', () async {
       final result = await flusmic.query([
-        Predicate.any(DefaultPredicatePath.type(), ['test'])
+        Predicate.any(DefaultPredicatePath.type, ['test'])
       ]);
       expect(result.results.first.type, 'test');
     });
 
     test('in', () async {
       final result = await flusmic.query([
-        Predicate.into(DefaultPredicatePath.id(), ['XpJ8phAAACzK1yQw'])
+        Predicate.into(DefaultPredicatePath.id, ['XpJ8phAAACzK1yQw'])
       ]);
       expect(result.results.first.id, 'XpJ8phAAACzK1yQw');
     });
 
     test('fullText', () async {
-      final result = await flusmic.query([
-        Predicate.fullText(DefaultPredicatePath.document(), 'large content')
-      ]);
+      final result = await flusmic.query(
+          [Predicate.fullText(DefaultPredicatePath.document, 'large content')]);
       expect(result.results.length, 1);
     });
 
