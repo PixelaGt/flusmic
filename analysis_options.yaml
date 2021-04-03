@@ -5,7 +5,6 @@ analyzer:
     - "**.g.dart"
     - "examples/**"
     - "packages/flusmic/lib/example/**"
-    - "packages/flusmic/test/.test_coverage.dart"
     - "packages/flusmic_ui/lib/example/**"
   errors:
     include_file_not_found: ignore

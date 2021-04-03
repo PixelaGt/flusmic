@@ -17,7 +17,7 @@ jobs:
         working-directory: packages/flusmic
     runs-on: ubuntu-latest
     container:
-      image: google/dart:2.10.0
+      image: google/dart:2.12
     steps:
       - uses: actions/checkout@v2
       - name: get dependencies
@@ -25,14 +25,16 @@ jobs:
       - name: valid format
         run: dartfmt --dry-run --set-exit-if-changed .
       - name: analyze
-        run: dartanalyzer .
+        run: dart analyze --fatal-infos --fatal-warnings .
       - name: run tests
-        run: pub run test_coverage
+        run: dart test --coverage=coverage && pub run coverage:format_coverage --lcov --in=coverage --out=coverage/lcov.info --packages=.packages --report-on=lib
       - name: check coverage percentage
         uses: VeryGoodOpenSource/very_good_coverage@v1.1.1
         with:
           path: "./packages/flusmic/coverage/lcov.info"
           min_coverage: 100
-          exclude: "**/*.g.dart **/*.freezed.dart lib/src/models/**"
+          exclude: "**/*.g.dart **/*.freezed.dart"
       - name: upload coverage
         uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODE_COVERAGE }}

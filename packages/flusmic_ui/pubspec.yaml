@@ -11,9 +11,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  extended_image: ^3.0.0
-  common_bloc: ^4.0.0-nullsafety.1
-  flusmic: ^3.0.0-pre2
+  extended_image: ^4.0.0
+  common_bloc: ^4.0.0
+  # flusmic: ^3.0.0-pre2
+  flusmic:
+    path: ../flusmic/
   freezed_annotation: ^0.14.1
   state_notifier: ^0.7.0
 

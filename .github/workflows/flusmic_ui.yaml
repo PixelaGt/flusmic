@@ -18,12 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-java@v1
-        with:
-          java-version: '12.x'
-      - uses: subosito/flutter-action@v1
-        with:
-          channel: 'stable'
+      - uses: subosito/flutter-action@v1.4.0
       - name: get dependencies
         run: flutter packages get
       - name: valid format
@@ -40,3 +35,5 @@ jobs:
           exclude: "**/*.freezed.dart"
       - name: upload coverage
         uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODE_COVERAGE }}

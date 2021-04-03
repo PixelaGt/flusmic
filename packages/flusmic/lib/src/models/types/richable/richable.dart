@@ -7,10 +7,6 @@ import 'embed_data/embed_data.dart';
 part 'richable.freezed.dart';
 part 'richable.g.dart';
 
-/// Abstract class for all text
-/// Richables
-abstract class RichableText {}
-
 ///Base class for items in RichText
 ///
 ///`RichableParagraph`, `RichableImage` or a `RichableEmbed`
@@ -19,7 +15,6 @@ class Richable with _$Richable {
   ///RichableHeading1 model
   ///
   ///Represents a heading1 inside RichText
-  @With.fromString('RichableText')
   const factory Richable.heading1({
     required List<Span> spans,
     required String text,
@@ -29,7 +24,6 @@ class Richable with _$Richable {
   ///RichableHeading2 model
   ///
   ///Represents a heading2 inside RichText
-  @With.fromString('RichableText')
   const factory Richable.heading2({
     required List<Span> spans,
     required String text,
@@ -39,7 +33,6 @@ class Richable with _$Richable {
   ///RichableHeading3 model
   ///
   ///Represents a heading3 inside RichText
-  @With.fromString('RichableText')
   const factory Richable.heading3({
     required List<Span> spans,
     required String text,
@@ -49,7 +42,6 @@ class Richable with _$Richable {
   ///RichableHeading4 model
   ///
   ///Represents a heading4 inside RichText
-  @With.fromString('RichableText')
   const factory Richable.heading4({
     required List<Span> spans,
     required String text,
@@ -59,7 +51,6 @@ class Richable with _$Richable {
   ///RichableHeading5 model
   ///
   ///Represents a heading5 inside RichText
-  @With.fromString('RichableText')
   const factory Richable.heading5({
     required List<Span> spans,
     required String text,
@@ -69,7 +60,6 @@ class Richable with _$Richable {
   ///RichableHeading6 model
   ///
   ///Represents a heading6 inside RichText
-  @With.fromString('RichableText')
   const factory Richable.heading6({
     required List<Span> spans,
     required String text,
@@ -79,7 +69,6 @@ class Richable with _$Richable {
   ///RichableParagraph model
   ///
   ///Represents a paragraph inside RichText
-  @With.fromString('RichableText')
   const factory Richable.paragraph({
     required List<Span> spans,
     required String text,

@@ -19,7 +19,7 @@ class InnerRichText extends StatefulWidget {
   });
 
   ///Text from RichText
-  final RichableText text;
+  final Richable text;
 
   ///Separation between elements
   final double bottomSeparation;
@@ -76,8 +76,6 @@ class _InnerRichTextState extends State<InnerRichText> {
     );
   }
 
-  Richable get field => widget.text as Richable;
-
   List<TextSpan> get _spans => [
         TextSpan(
           style: _styleByType,
@@ -85,31 +83,39 @@ class _InnerRichTextState extends State<InnerRichText> {
         ),
       ];
 
-  String get _textByType => field.maybeMap(
-        orElse: () => '',
-        heading1: (v) => v.text,
-        heading2: (v) => v.text,
-        heading3: (v) => v.text,
-        heading4: (v) => v.text,
-        heading5: (v) => v.text,
-        heading6: (v) => v.text,
-        paragraph: (v) => v.text,
-      );
+  String get _textByType {
+    if (widget.text is RichableHeading1) {
+      return (widget.text as RichableHeading1).text;
+    } else if (widget.text is RichableHeading2) {
+      return (widget.text as RichableHeading2).text;
+    } else if (widget.text is RichableHeading3) {
+      return (widget.text as RichableHeading3).text;
+    } else if (widget.text is RichableHeading4) {
+      return (widget.text as RichableHeading4).text;
+    } else if (widget.text is RichableHeading5) {
+      return (widget.text as RichableHeading5).text;
+    } else if (widget.text is RichableHeading6) {
+      return (widget.text as RichableHeading6).text;
+    } else {
+      return (widget.text as RichableParagraph).text;
+    }
+  }
 
-  TextStyle? get _styleByType => field.maybeMap(
-        orElse: () =>
-            widget.paragraphStyle ?? Theme.of(context).textTheme.bodyText2,
-        heading1: (v) =>
-            widget.headline1Style ?? Theme.of(context).textTheme.headline1,
-        heading2: (v) =>
-            widget.headline2Style ?? Theme.of(context).textTheme.headline2,
-        heading3: (v) =>
-            widget.headline3Style ?? Theme.of(context).textTheme.headline3,
-        heading4: (v) =>
-            widget.headline4Style ?? Theme.of(context).textTheme.headline4,
-        heading5: (v) =>
-            widget.headline5Style ?? Theme.of(context).textTheme.headline5,
-        heading6: (v) =>
-            widget.headline6Style ?? Theme.of(context).textTheme.headline6,
-      );
+  TextStyle? get _styleByType {
+    if (widget.text is RichableHeading1) {
+      return Theme.of(context).textTheme.headline1;
+    } else if (widget.text is RichableHeading2) {
+      return Theme.of(context).textTheme.headline2;
+    } else if (widget.text is RichableHeading3) {
+      return Theme.of(context).textTheme.headline3;
+    } else if (widget.text is RichableHeading4) {
+      return Theme.of(context).textTheme.headline4;
+    } else if (widget.text is RichableHeading5) {
+      return Theme.of(context).textTheme.headline5;
+    } else if (widget.text is RichableHeading6) {
+      return Theme.of(context).textTheme.headline6;
+    } else {
+      return Theme.of(context).textTheme.bodyText2;
+    }
+  }
 }

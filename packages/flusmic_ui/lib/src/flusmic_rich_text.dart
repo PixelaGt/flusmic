@@ -84,17 +84,9 @@ class FlusmicRichText extends StatelessWidget {
     return Column(
         children: <Widget>[
           for (var field in richFields)
-            if (field is RichableImage)
-              InnerRichImage(
+            field.maybeMap(
+              orElse: () => InnerRichText(
                 field,
-                bottomSeparation: bottomSeparation,
-                failWidget: failWidget,
-                fit: imageFit,
-                loadingWidget: loadingWidget,
-              )
-            else if (field is RichableText)
-              InnerRichText(
-                field as RichableText,
                 bottomSeparation: bottomSeparation,
                 headline1Style: headline1Style,
                 headline2Style: headline2Style,
@@ -103,9 +95,39 @@ class FlusmicRichText extends StatelessWidget {
                 headline5Style: headline5Style,
                 headline6Style: headline6Style,
                 paragraphStyle: paragraphStyle,
-              )
-            else
-              Container()
+              ),
+              image: (value) => InnerRichImage(
+                value,
+                bottomSeparation: bottomSeparation,
+                failWidget: failWidget,
+                fit: imageFit,
+                loadingWidget: loadingWidget,
+              ),
+              embed: (value) => Container(),
+              listItem: (value) => Container(),
+            )
+          // if (field is RichableImage)
+          //   InnerRichImage(
+          //     field,
+          //     bottomSeparation: bottomSeparation,
+          //     failWidget: failWidget,
+          //     fit: imageFit,
+          //     loadingWidget: loadingWidget,
+          //   )
+          // else if (field is RichableText)
+          //   InnerRichText(
+          //     field as RichableText,
+          //     bottomSeparation: bottomSeparation,
+          //     headline1Style: headline1Style,
+          //     headline2Style: headline2Style,
+          //     headline3Style: headline3Style,
+          //     headline4Style: headline4Style,
+          //     headline5Style: headline5Style,
+          //     headline6Style: headline6Style,
+          //     paragraphStyle: paragraphStyle,
+          //   )
+          // else
+          //   Container()
         ],
         crossAxisAlignment: crossAlignment,
         mainAxisAlignment: MainAxisAlignment.start,

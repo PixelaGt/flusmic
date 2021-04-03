@@ -78,7 +78,7 @@ class _FlusmicBuilderState extends State<FlusmicBuilder> {
   @override
   void initState() {
     super.initState();
-    _requestBloc.listen((state) {
+    _requestBloc.stream.listen((state) {
       if (mounted) setState(() => _currentState = state);
     });
     flusmicController.addListener((state) => onRepeat());
