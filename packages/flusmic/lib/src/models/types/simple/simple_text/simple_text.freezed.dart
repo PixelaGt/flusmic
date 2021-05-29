@@ -130,9 +130,8 @@ class __$SimpleTextCopyWithImpl<$Res> extends _$SimpleTextCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_SimpleText implements _SimpleText {
   _$_SimpleText({required this.spans, required this.text, required this.type});
 

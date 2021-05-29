@@ -78,12 +78,22 @@ class Richable with _$Richable {
   ///RichableListItem model
   ///
   ///Represents a list-item inside RichText
-  @FreezedUnionValue('o-list-item')
+  @FreezedUnionValue('list-item')
   const factory Richable.listItem({
     required List<Span> spans,
     required String text,
     required String type,
   }) = RichableListItem;
+
+  ///RichableListItem model
+  ///
+  ///Represents a list-item inside RichText
+  @FreezedUnionValue('o-list-item')
+  const factory Richable.orderedListItem({
+    required List<Span> spans,
+    required String text,
+    required String type,
+  }) = RichableOrderedListItem;
 
   ///RichableImage model
   ///

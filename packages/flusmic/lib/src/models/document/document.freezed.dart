@@ -287,9 +287,8 @@ class __$DocumentCopyWithImpl<$Res> extends _$DocumentCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_Document implements _Document {
   _$_Document(
       {@JsonKey(name: 'alternate_languages') this.alternateLanguages,

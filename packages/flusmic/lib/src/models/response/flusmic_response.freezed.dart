@@ -252,9 +252,8 @@ class __$FlusmicResponseCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_FlusmicResponse implements _FlusmicResponse {
   _$_FlusmicResponse(
       {@JsonKey(name: 'next_page') this.nextPage,

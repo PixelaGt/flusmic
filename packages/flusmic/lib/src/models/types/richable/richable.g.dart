@@ -145,6 +145,25 @@ Map<String, dynamic> _$_$RichableListItemToJson(_$RichableListItem instance) =>
       'type': instance.type,
     };
 
+_$RichableOrderedListItem _$_$RichableOrderedListItemFromJson(
+    Map<String, dynamic> json) {
+  return _$RichableOrderedListItem(
+    spans: (json['spans'] as List<dynamic>)
+        .map((e) => Span.fromJson(e as Map<String, dynamic>))
+        .toList(),
+    text: json['text'] as String,
+    type: json['type'] as String,
+  );
+}
+
+Map<String, dynamic> _$_$RichableOrderedListItemToJson(
+        _$RichableOrderedListItem instance) =>
+    <String, dynamic>{
+      'spans': instance.spans,
+      'text': instance.text,
+      'type': instance.type,
+    };
+
 _$RichableImage _$_$RichableImageFromJson(Map<String, dynamic> json) {
   return _$RichableImage(
     alt: json['alt'] as String?,

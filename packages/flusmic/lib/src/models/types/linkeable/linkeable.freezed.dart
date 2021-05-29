@@ -260,10 +260,9 @@ class _$DocumentLinkeableCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 @JsonSerializable()
 @FreezedUnionValue('Document')
-
-/// @nodoc
 class _$DocumentLinkeable implements DocumentLinkeable {
   const _$DocumentLinkeable(
       {@JsonKey(name: 'link_type') required this.linkType,
@@ -523,10 +522,9 @@ class _$MediaLinkeableCopyWithImpl<$Res> extends _$LinkeableCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 @JsonSerializable()
 @FreezedUnionValue('Media')
-
-/// @nodoc
 class _$MediaLinkeable implements MediaLinkeable {
   const _$MediaLinkeable(
       {@JsonKey(name: 'link_type') required this.linkType,
@@ -752,10 +750,9 @@ class _$WebLinkeableCopyWithImpl<$Res> extends _$LinkeableCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 @JsonSerializable()
 @FreezedUnionValue('Web')
-
-/// @nodoc
 class _$WebLinkeable implements WebLinkeable {
   const _$WebLinkeable(
       {@JsonKey(name: 'link_type') required this.linkType, required this.url});

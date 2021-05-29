@@ -114,9 +114,8 @@ class __$LanguageCopyWithImpl<$Res> extends _$LanguageCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_Language implements _Language {
   _$_Language({required this.id, required this.name});
 

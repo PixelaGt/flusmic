@@ -151,9 +151,8 @@ class __$SliceCopyWithImpl<$Res> extends _$SliceCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_Slice implements _Slice {
   _$_Slice(
       {@JsonKey(name: 'slice_label') this.sliceLabel,

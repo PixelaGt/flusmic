@@ -266,9 +266,8 @@ class __$SampleModelCopyWithImpl<$Res> extends _$SampleModelCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_SampleModel implements _SampleModel {
   _$_SampleModel(
       {required this.location,

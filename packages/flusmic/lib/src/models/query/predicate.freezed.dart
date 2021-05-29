@@ -426,6 +426,7 @@ class _$AnyPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$AnyPredicate implements AnyPredicate {
   _$AnyPredicate(this.path, this.values);
 
@@ -672,6 +673,7 @@ class _$AtPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$AtPredicate implements AtPredicate {
   _$AtPredicate(this.path, this.value);
 
@@ -918,6 +920,7 @@ class _$FullTextPredicateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$FullTextPredicate implements FullTextPredicate {
   _$FullTextPredicate(this.path, this.value);
 
@@ -1164,6 +1167,7 @@ class _$GtPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$GtPredicate implements GtPredicate {
   _$GtPredicate(this.path, this.value);
 
@@ -1404,6 +1408,7 @@ class _$HasPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$HasPredicate implements HasPredicate {
   _$HasPredicate(this.path);
 
@@ -1647,6 +1652,7 @@ class _$InRangePredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$InRangePredicate implements InRangePredicate {
   _$InRangePredicate(this.path, this.lowerLimit, this.upperLimit);
 
@@ -1902,6 +1908,7 @@ class _$InPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$InPredicate implements InPredicate {
   _$InPredicate(this.path, this.values);
 
@@ -2147,6 +2154,7 @@ class _$LtPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$LtPredicate implements LtPredicate {
   _$LtPredicate(this.path, this.value);
 
@@ -2387,6 +2395,7 @@ class _$MissingPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$MissingPredicate implements MissingPredicate {
   _$MissingPredicate(this.path);
 
@@ -2636,6 +2645,7 @@ class _$NearPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$NearPredicate implements NearPredicate {
   _$NearPredicate(this.path, this.latitude, this.longitude, this.radius);
 
@@ -2896,6 +2906,7 @@ class _$NotPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$NotPredicate implements NotPredicate {
   _$NotPredicate(this.path, this.value);
 
@@ -3141,6 +3152,7 @@ class _$SimilarPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$SimilarPredicate implements SimilarPredicate {
   _$SimilarPredicate(this.id, this.value);
 
@@ -3387,6 +3399,7 @@ class _$DateAfterPredicateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$DateAfterPredicate implements DateAfterPredicate {
   _$DateAfterPredicate(this.path, this.epoch);
 
@@ -3634,6 +3647,7 @@ class _$DateBeforePredicateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$DateBeforePredicate implements DateBeforePredicate {
   _$DateBeforePredicate(this.path, this.epoch);
 
@@ -3886,6 +3900,7 @@ class _$DateBetweenPredicateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$DateBetweenPredicate implements DateBetweenPredicate {
   _$DateBetweenPredicate(this.path, this.startEpoch, this.endEpoch);
 
@@ -4143,6 +4158,7 @@ class _$DateDayOfMonthPredicateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$DateDayOfMonthPredicate implements DateDayOfMonthPredicate {
   _$DateDayOfMonthPredicate(this.path, this.day);
 
@@ -4394,6 +4410,7 @@ class _$DateDayOfMonthAfterPredicateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$DateDayOfMonthAfterPredicate implements DateDayOfMonthAfterPredicate {
   _$DateDayOfMonthAfterPredicate(this.path, this.day);
 
@@ -4645,6 +4662,7 @@ class _$DateDayOfMonthBeforePredicateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$DateDayOfMonthBeforePredicate implements DateDayOfMonthBeforePredicate {
   _$DateDayOfMonthBeforePredicate(this.path, this.day);
 
@@ -4893,6 +4911,7 @@ class _$DateDayOfWeekPredicateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$DateDayOfWeekPredicate implements DateDayOfWeekPredicate {
   _$DateDayOfWeekPredicate(this.path, this.day);
 
@@ -5143,6 +5162,7 @@ class _$DateDayOfWeekAfterPredicateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$DateDayOfWeekAfterPredicate implements DateDayOfWeekAfterPredicate {
   _$DateDayOfWeekAfterPredicate(this.path, this.day);
 
@@ -5394,6 +5414,7 @@ class _$DateDayOfWeekBeforePredicateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$DateDayOfWeekBeforePredicate implements DateDayOfWeekBeforePredicate {
   _$DateDayOfWeekBeforePredicate(this.path, this.day);
 
@@ -5642,6 +5663,7 @@ class _$DateMonthPredicateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$DateMonthPredicate implements DateMonthPredicate {
   _$DateMonthPredicate(this.path, this.month);
 
@@ -5889,6 +5911,7 @@ class _$DateMonthAfterPredicateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$DateMonthAfterPredicate implements DateMonthAfterPredicate {
   _$DateMonthAfterPredicate(this.path, this.month);
 
@@ -6138,6 +6161,7 @@ class _$DateMonthBeforePredicateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$DateMonthBeforePredicate implements DateMonthBeforePredicate {
   _$DateMonthBeforePredicate(this.path, this.month);
 
@@ -6386,6 +6410,7 @@ class _$DateYearPredicateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$DateYearPredicate implements DateYearPredicate {
   _$DateYearPredicate(this.path, this.year);
 
@@ -6632,6 +6657,7 @@ class _$DateHourPredicateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$DateHourPredicate implements DateHourPredicate {
   _$DateHourPredicate(this.path, this.hour);
 
@@ -6878,6 +6904,7 @@ class _$DateHourAfterPredicateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$DateHourAfterPredicate implements DateHourAfterPredicate {
   _$DateHourAfterPredicate(this.path, this.hour);
 
@@ -7126,6 +7153,7 @@ class _$DateHourBeforePredicateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$DateHourBeforePredicate implements DateHourBeforePredicate {
   _$DateHourBeforePredicate(this.path, this.hour);
 

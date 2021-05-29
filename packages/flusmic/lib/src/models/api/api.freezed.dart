@@ -196,9 +196,8 @@ class __$ApiCopyWithImpl<$Res> extends _$ApiCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_Api implements _Api {
   _$_Api(
       {@JsonKey(name: 'oauth_initiate') required this.oauthInitiate,

@@ -28,8 +28,10 @@ Richable _$RichableFromJson(Map<String, dynamic> json) {
       return RichableHeading6.fromJson(json);
     case 'paragraph':
       return RichableParagraph.fromJson(json);
-    case 'o-list-item':
+    case 'list-item':
       return RichableListItem.fromJson(json);
+    case 'o-list-item':
+      return RichableOrderedListItem.fromJson(json);
     case 'image':
       return RichableImage.fromJson(json);
     case 'embed':
@@ -116,6 +118,15 @@ class _$RichableTearOff {
     );
   }
 
+  RichableOrderedListItem orderedListItem(
+      {required List<Span> spans, required String text, required String type}) {
+    return RichableOrderedListItem(
+      spans: spans,
+      text: text,
+      type: type,
+    );
+  }
+
   RichableImage image(
       {String? alt,
       String? copyright,
@@ -166,6 +177,8 @@ mixin _$Richable {
         paragraph,
     required TResult Function(List<Span> spans, String text, String type)
         listItem,
+    required TResult Function(List<Span> spans, String text, String type)
+        orderedListItem,
     required TResult Function(
             String? alt, String? copyright, Dimension dimensions, String url)
         image,
@@ -184,6 +197,8 @@ mixin _$Richable {
     TResult Function(List<Span> spans, String text, String type)? heading6,
     TResult Function(List<Span> spans, String text, String type)? paragraph,
     TResult Function(List<Span> spans, String text, String type)? listItem,
+    TResult Function(List<Span> spans, String text, String type)?
+        orderedListItem,
     TResult Function(
             String? alt, String? copyright, Dimension dimensions, String url)?
         image,
@@ -202,6 +217,7 @@ mixin _$Richable {
     required TResult Function(RichableHeading6 value) heading6,
     required TResult Function(RichableParagraph value) paragraph,
     required TResult Function(RichableListItem value) listItem,
+    required TResult Function(RichableOrderedListItem value) orderedListItem,
     required TResult Function(RichableImage value) image,
     required TResult Function(RichableEmbed value) embed,
   }) =>
@@ -216,6 +232,7 @@ mixin _$Richable {
     TResult Function(RichableHeading6 value)? heading6,
     TResult Function(RichableParagraph value)? paragraph,
     TResult Function(RichableListItem value)? listItem,
+    TResult Function(RichableOrderedListItem value)? orderedListItem,
     TResult Function(RichableImage value)? image,
     TResult Function(RichableEmbed value)? embed,
     required TResult orElse(),
@@ -280,9 +297,8 @@ class _$RichableHeading1CopyWithImpl<$Res> extends _$RichableCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$RichableHeading1 implements RichableHeading1 {
   const _$RichableHeading1(
       {required this.spans, required this.text, required this.type});
@@ -345,6 +361,8 @@ class _$RichableHeading1 implements RichableHeading1 {
         paragraph,
     required TResult Function(List<Span> spans, String text, String type)
         listItem,
+    required TResult Function(List<Span> spans, String text, String type)
+        orderedListItem,
     required TResult Function(
             String? alt, String? copyright, Dimension dimensions, String url)
         image,
@@ -366,6 +384,8 @@ class _$RichableHeading1 implements RichableHeading1 {
     TResult Function(List<Span> spans, String text, String type)? heading6,
     TResult Function(List<Span> spans, String text, String type)? paragraph,
     TResult Function(List<Span> spans, String text, String type)? listItem,
+    TResult Function(List<Span> spans, String text, String type)?
+        orderedListItem,
     TResult Function(
             String? alt, String? copyright, Dimension dimensions, String url)?
         image,
@@ -390,6 +410,7 @@ class _$RichableHeading1 implements RichableHeading1 {
     required TResult Function(RichableHeading6 value) heading6,
     required TResult Function(RichableParagraph value) paragraph,
     required TResult Function(RichableListItem value) listItem,
+    required TResult Function(RichableOrderedListItem value) orderedListItem,
     required TResult Function(RichableImage value) image,
     required TResult Function(RichableEmbed value) embed,
   }) {
@@ -407,6 +428,7 @@ class _$RichableHeading1 implements RichableHeading1 {
     TResult Function(RichableHeading6 value)? heading6,
     TResult Function(RichableParagraph value)? paragraph,
     TResult Function(RichableListItem value)? listItem,
+    TResult Function(RichableOrderedListItem value)? orderedListItem,
     TResult Function(RichableImage value)? image,
     TResult Function(RichableEmbed value)? embed,
     required TResult orElse(),
@@ -481,9 +503,8 @@ class _$RichableHeading2CopyWithImpl<$Res> extends _$RichableCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$RichableHeading2 implements RichableHeading2 {
   const _$RichableHeading2(
       {required this.spans, required this.text, required this.type});
@@ -546,6 +567,8 @@ class _$RichableHeading2 implements RichableHeading2 {
         paragraph,
     required TResult Function(List<Span> spans, String text, String type)
         listItem,
+    required TResult Function(List<Span> spans, String text, String type)
+        orderedListItem,
     required TResult Function(
             String? alt, String? copyright, Dimension dimensions, String url)
         image,
@@ -567,6 +590,8 @@ class _$RichableHeading2 implements RichableHeading2 {
     TResult Function(List<Span> spans, String text, String type)? heading6,
     TResult Function(List<Span> spans, String text, String type)? paragraph,
     TResult Function(List<Span> spans, String text, String type)? listItem,
+    TResult Function(List<Span> spans, String text, String type)?
+        orderedListItem,
     TResult Function(
             String? alt, String? copyright, Dimension dimensions, String url)?
         image,
@@ -591,6 +616,7 @@ class _$RichableHeading2 implements RichableHeading2 {
     required TResult Function(RichableHeading6 value) heading6,
     required TResult Function(RichableParagraph value) paragraph,
     required TResult Function(RichableListItem value) listItem,
+    required TResult Function(RichableOrderedListItem value) orderedListItem,
     required TResult Function(RichableImage value) image,
     required TResult Function(RichableEmbed value) embed,
   }) {
@@ -608,6 +634,7 @@ class _$RichableHeading2 implements RichableHeading2 {
     TResult Function(RichableHeading6 value)? heading6,
     TResult Function(RichableParagraph value)? paragraph,
     TResult Function(RichableListItem value)? listItem,
+    TResult Function(RichableOrderedListItem value)? orderedListItem,
     TResult Function(RichableImage value)? image,
     TResult Function(RichableEmbed value)? embed,
     required TResult orElse(),
@@ -682,9 +709,8 @@ class _$RichableHeading3CopyWithImpl<$Res> extends _$RichableCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$RichableHeading3 implements RichableHeading3 {
   const _$RichableHeading3(
       {required this.spans, required this.text, required this.type});
@@ -747,6 +773,8 @@ class _$RichableHeading3 implements RichableHeading3 {
         paragraph,
     required TResult Function(List<Span> spans, String text, String type)
         listItem,
+    required TResult Function(List<Span> spans, String text, String type)
+        orderedListItem,
     required TResult Function(
             String? alt, String? copyright, Dimension dimensions, String url)
         image,
@@ -768,6 +796,8 @@ class _$RichableHeading3 implements RichableHeading3 {
     TResult Function(List<Span> spans, String text, String type)? heading6,
     TResult Function(List<Span> spans, String text, String type)? paragraph,
     TResult Function(List<Span> spans, String text, String type)? listItem,
+    TResult Function(List<Span> spans, String text, String type)?
+        orderedListItem,
     TResult Function(
             String? alt, String? copyright, Dimension dimensions, String url)?
         image,
@@ -792,6 +822,7 @@ class _$RichableHeading3 implements RichableHeading3 {
     required TResult Function(RichableHeading6 value) heading6,
     required TResult Function(RichableParagraph value) paragraph,
     required TResult Function(RichableListItem value) listItem,
+    required TResult Function(RichableOrderedListItem value) orderedListItem,
     required TResult Function(RichableImage value) image,
     required TResult Function(RichableEmbed value) embed,
   }) {
@@ -809,6 +840,7 @@ class _$RichableHeading3 implements RichableHeading3 {
     TResult Function(RichableHeading6 value)? heading6,
     TResult Function(RichableParagraph value)? paragraph,
     TResult Function(RichableListItem value)? listItem,
+    TResult Function(RichableOrderedListItem value)? orderedListItem,
     TResult Function(RichableImage value)? image,
     TResult Function(RichableEmbed value)? embed,
     required TResult orElse(),
@@ -883,9 +915,8 @@ class _$RichableHeading4CopyWithImpl<$Res> extends _$RichableCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$RichableHeading4 implements RichableHeading4 {
   const _$RichableHeading4(
       {required this.spans, required this.text, required this.type});
@@ -948,6 +979,8 @@ class _$RichableHeading4 implements RichableHeading4 {
         paragraph,
     required TResult Function(List<Span> spans, String text, String type)
         listItem,
+    required TResult Function(List<Span> spans, String text, String type)
+        orderedListItem,
     required TResult Function(
             String? alt, String? copyright, Dimension dimensions, String url)
         image,
@@ -969,6 +1002,8 @@ class _$RichableHeading4 implements RichableHeading4 {
     TResult Function(List<Span> spans, String text, String type)? heading6,
     TResult Function(List<Span> spans, String text, String type)? paragraph,
     TResult Function(List<Span> spans, String text, String type)? listItem,
+    TResult Function(List<Span> spans, String text, String type)?
+        orderedListItem,
     TResult Function(
             String? alt, String? copyright, Dimension dimensions, String url)?
         image,
@@ -993,6 +1028,7 @@ class _$RichableHeading4 implements RichableHeading4 {
     required TResult Function(RichableHeading6 value) heading6,
     required TResult Function(RichableParagraph value) paragraph,
     required TResult Function(RichableListItem value) listItem,
+    required TResult Function(RichableOrderedListItem value) orderedListItem,
     required TResult Function(RichableImage value) image,
     required TResult Function(RichableEmbed value) embed,
   }) {
@@ -1010,6 +1046,7 @@ class _$RichableHeading4 implements RichableHeading4 {
     TResult Function(RichableHeading6 value)? heading6,
     TResult Function(RichableParagraph value)? paragraph,
     TResult Function(RichableListItem value)? listItem,
+    TResult Function(RichableOrderedListItem value)? orderedListItem,
     TResult Function(RichableImage value)? image,
     TResult Function(RichableEmbed value)? embed,
     required TResult orElse(),
@@ -1084,9 +1121,8 @@ class _$RichableHeading5CopyWithImpl<$Res> extends _$RichableCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$RichableHeading5 implements RichableHeading5 {
   const _$RichableHeading5(
       {required this.spans, required this.text, required this.type});
@@ -1149,6 +1185,8 @@ class _$RichableHeading5 implements RichableHeading5 {
         paragraph,
     required TResult Function(List<Span> spans, String text, String type)
         listItem,
+    required TResult Function(List<Span> spans, String text, String type)
+        orderedListItem,
     required TResult Function(
             String? alt, String? copyright, Dimension dimensions, String url)
         image,
@@ -1170,6 +1208,8 @@ class _$RichableHeading5 implements RichableHeading5 {
     TResult Function(List<Span> spans, String text, String type)? heading6,
     TResult Function(List<Span> spans, String text, String type)? paragraph,
     TResult Function(List<Span> spans, String text, String type)? listItem,
+    TResult Function(List<Span> spans, String text, String type)?
+        orderedListItem,
     TResult Function(
             String? alt, String? copyright, Dimension dimensions, String url)?
         image,
@@ -1194,6 +1234,7 @@ class _$RichableHeading5 implements RichableHeading5 {
     required TResult Function(RichableHeading6 value) heading6,
     required TResult Function(RichableParagraph value) paragraph,
     required TResult Function(RichableListItem value) listItem,
+    required TResult Function(RichableOrderedListItem value) orderedListItem,
     required TResult Function(RichableImage value) image,
     required TResult Function(RichableEmbed value) embed,
   }) {
@@ -1211,6 +1252,7 @@ class _$RichableHeading5 implements RichableHeading5 {
     TResult Function(RichableHeading6 value)? heading6,
     TResult Function(RichableParagraph value)? paragraph,
     TResult Function(RichableListItem value)? listItem,
+    TResult Function(RichableOrderedListItem value)? orderedListItem,
     TResult Function(RichableImage value)? image,
     TResult Function(RichableEmbed value)? embed,
     required TResult orElse(),
@@ -1285,9 +1327,8 @@ class _$RichableHeading6CopyWithImpl<$Res> extends _$RichableCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$RichableHeading6 implements RichableHeading6 {
   const _$RichableHeading6(
       {required this.spans, required this.text, required this.type});
@@ -1350,6 +1391,8 @@ class _$RichableHeading6 implements RichableHeading6 {
         paragraph,
     required TResult Function(List<Span> spans, String text, String type)
         listItem,
+    required TResult Function(List<Span> spans, String text, String type)
+        orderedListItem,
     required TResult Function(
             String? alt, String? copyright, Dimension dimensions, String url)
         image,
@@ -1371,6 +1414,8 @@ class _$RichableHeading6 implements RichableHeading6 {
     TResult Function(List<Span> spans, String text, String type)? heading6,
     TResult Function(List<Span> spans, String text, String type)? paragraph,
     TResult Function(List<Span> spans, String text, String type)? listItem,
+    TResult Function(List<Span> spans, String text, String type)?
+        orderedListItem,
     TResult Function(
             String? alt, String? copyright, Dimension dimensions, String url)?
         image,
@@ -1395,6 +1440,7 @@ class _$RichableHeading6 implements RichableHeading6 {
     required TResult Function(RichableHeading6 value) heading6,
     required TResult Function(RichableParagraph value) paragraph,
     required TResult Function(RichableListItem value) listItem,
+    required TResult Function(RichableOrderedListItem value) orderedListItem,
     required TResult Function(RichableImage value) image,
     required TResult Function(RichableEmbed value) embed,
   }) {
@@ -1412,6 +1458,7 @@ class _$RichableHeading6 implements RichableHeading6 {
     TResult Function(RichableHeading6 value)? heading6,
     TResult Function(RichableParagraph value)? paragraph,
     TResult Function(RichableListItem value)? listItem,
+    TResult Function(RichableOrderedListItem value)? orderedListItem,
     TResult Function(RichableImage value)? image,
     TResult Function(RichableEmbed value)? embed,
     required TResult orElse(),
@@ -1486,9 +1533,8 @@ class _$RichableParagraphCopyWithImpl<$Res> extends _$RichableCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$RichableParagraph implements RichableParagraph {
   const _$RichableParagraph(
       {required this.spans, required this.text, required this.type});
@@ -1551,6 +1597,8 @@ class _$RichableParagraph implements RichableParagraph {
         paragraph,
     required TResult Function(List<Span> spans, String text, String type)
         listItem,
+    required TResult Function(List<Span> spans, String text, String type)
+        orderedListItem,
     required TResult Function(
             String? alt, String? copyright, Dimension dimensions, String url)
         image,
@@ -1572,6 +1620,8 @@ class _$RichableParagraph implements RichableParagraph {
     TResult Function(List<Span> spans, String text, String type)? heading6,
     TResult Function(List<Span> spans, String text, String type)? paragraph,
     TResult Function(List<Span> spans, String text, String type)? listItem,
+    TResult Function(List<Span> spans, String text, String type)?
+        orderedListItem,
     TResult Function(
             String? alt, String? copyright, Dimension dimensions, String url)?
         image,
@@ -1596,6 +1646,7 @@ class _$RichableParagraph implements RichableParagraph {
     required TResult Function(RichableHeading6 value) heading6,
     required TResult Function(RichableParagraph value) paragraph,
     required TResult Function(RichableListItem value) listItem,
+    required TResult Function(RichableOrderedListItem value) orderedListItem,
     required TResult Function(RichableImage value) image,
     required TResult Function(RichableEmbed value) embed,
   }) {
@@ -1613,6 +1664,7 @@ class _$RichableParagraph implements RichableParagraph {
     TResult Function(RichableHeading6 value)? heading6,
     TResult Function(RichableParagraph value)? paragraph,
     TResult Function(RichableListItem value)? listItem,
+    TResult Function(RichableOrderedListItem value)? orderedListItem,
     TResult Function(RichableImage value)? image,
     TResult Function(RichableEmbed value)? embed,
     required TResult orElse(),
@@ -1687,10 +1739,9 @@ class _$RichableListItemCopyWithImpl<$Res> extends _$RichableCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-@FreezedUnionValue('o-list-item')
-
 /// @nodoc
+@JsonSerializable()
+@FreezedUnionValue('list-item')
 class _$RichableListItem implements RichableListItem {
   const _$RichableListItem(
       {required this.spans, required this.text, required this.type});
@@ -1753,6 +1804,8 @@ class _$RichableListItem implements RichableListItem {
         paragraph,
     required TResult Function(List<Span> spans, String text, String type)
         listItem,
+    required TResult Function(List<Span> spans, String text, String type)
+        orderedListItem,
     required TResult Function(
             String? alt, String? copyright, Dimension dimensions, String url)
         image,
@@ -1774,6 +1827,8 @@ class _$RichableListItem implements RichableListItem {
     TResult Function(List<Span> spans, String text, String type)? heading6,
     TResult Function(List<Span> spans, String text, String type)? paragraph,
     TResult Function(List<Span> spans, String text, String type)? listItem,
+    TResult Function(List<Span> spans, String text, String type)?
+        orderedListItem,
     TResult Function(
             String? alt, String? copyright, Dimension dimensions, String url)?
         image,
@@ -1798,6 +1853,7 @@ class _$RichableListItem implements RichableListItem {
     required TResult Function(RichableHeading6 value) heading6,
     required TResult Function(RichableParagraph value) paragraph,
     required TResult Function(RichableListItem value) listItem,
+    required TResult Function(RichableOrderedListItem value) orderedListItem,
     required TResult Function(RichableImage value) image,
     required TResult Function(RichableEmbed value) embed,
   }) {
@@ -1815,6 +1871,7 @@ class _$RichableListItem implements RichableListItem {
     TResult Function(RichableHeading6 value)? heading6,
     TResult Function(RichableParagraph value)? paragraph,
     TResult Function(RichableListItem value)? listItem,
+    TResult Function(RichableOrderedListItem value)? orderedListItem,
     TResult Function(RichableImage value)? image,
     TResult Function(RichableEmbed value)? embed,
     required TResult orElse(),
@@ -1827,7 +1884,7 @@ class _$RichableListItem implements RichableListItem {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$RichableListItemToJson(this)..['type'] = 'o-list-item';
+    return _$_$RichableListItemToJson(this)..['type'] = 'list-item';
   }
 }
 
@@ -1845,6 +1902,215 @@ abstract class RichableListItem implements Richable {
   String get type => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $RichableListItemCopyWith<RichableListItem> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $RichableOrderedListItemCopyWith<$Res> {
+  factory $RichableOrderedListItemCopyWith(RichableOrderedListItem value,
+          $Res Function(RichableOrderedListItem) then) =
+      _$RichableOrderedListItemCopyWithImpl<$Res>;
+  $Res call({List<Span> spans, String text, String type});
+}
+
+/// @nodoc
+class _$RichableOrderedListItemCopyWithImpl<$Res>
+    extends _$RichableCopyWithImpl<$Res>
+    implements $RichableOrderedListItemCopyWith<$Res> {
+  _$RichableOrderedListItemCopyWithImpl(RichableOrderedListItem _value,
+      $Res Function(RichableOrderedListItem) _then)
+      : super(_value, (v) => _then(v as RichableOrderedListItem));
+
+  @override
+  RichableOrderedListItem get _value => super._value as RichableOrderedListItem;
+
+  @override
+  $Res call({
+    Object? spans = freezed,
+    Object? text = freezed,
+    Object? type = freezed,
+  }) {
+    return _then(RichableOrderedListItem(
+      spans: spans == freezed
+          ? _value.spans
+          : spans // ignore: cast_nullable_to_non_nullable
+              as List<Span>,
+      text: text == freezed
+          ? _value.text
+          : text // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+@FreezedUnionValue('o-list-item')
+class _$RichableOrderedListItem implements RichableOrderedListItem {
+  const _$RichableOrderedListItem(
+      {required this.spans, required this.text, required this.type});
+
+  factory _$RichableOrderedListItem.fromJson(Map<String, dynamic> json) =>
+      _$_$RichableOrderedListItemFromJson(json);
+
+  @override
+  final List<Span> spans;
+  @override
+  final String text;
+  @override
+  final String type;
+
+  @override
+  String toString() {
+    return 'Richable.orderedListItem(spans: $spans, text: $text, type: $type)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is RichableOrderedListItem &&
+            (identical(other.spans, spans) ||
+                const DeepCollectionEquality().equals(other.spans, spans)) &&
+            (identical(other.text, text) ||
+                const DeepCollectionEquality().equals(other.text, text)) &&
+            (identical(other.type, type) ||
+                const DeepCollectionEquality().equals(other.type, type)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(spans) ^
+      const DeepCollectionEquality().hash(text) ^
+      const DeepCollectionEquality().hash(type);
+
+  @JsonKey(ignore: true)
+  @override
+  $RichableOrderedListItemCopyWith<RichableOrderedListItem> get copyWith =>
+      _$RichableOrderedListItemCopyWithImpl<RichableOrderedListItem>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<Span> spans, String text, String type)
+        heading1,
+    required TResult Function(List<Span> spans, String text, String type)
+        heading2,
+    required TResult Function(List<Span> spans, String text, String type)
+        heading3,
+    required TResult Function(List<Span> spans, String text, String type)
+        heading4,
+    required TResult Function(List<Span> spans, String text, String type)
+        heading5,
+    required TResult Function(List<Span> spans, String text, String type)
+        heading6,
+    required TResult Function(List<Span> spans, String text, String type)
+        paragraph,
+    required TResult Function(List<Span> spans, String text, String type)
+        listItem,
+    required TResult Function(List<Span> spans, String text, String type)
+        orderedListItem,
+    required TResult Function(
+            String? alt, String? copyright, Dimension dimensions, String url)
+        image,
+    required TResult Function(
+            @JsonKey(name: 'oembed') EmbedData info, String type)
+        embed,
+  }) {
+    return orderedListItem(spans, text, type);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<Span> spans, String text, String type)? heading1,
+    TResult Function(List<Span> spans, String text, String type)? heading2,
+    TResult Function(List<Span> spans, String text, String type)? heading3,
+    TResult Function(List<Span> spans, String text, String type)? heading4,
+    TResult Function(List<Span> spans, String text, String type)? heading5,
+    TResult Function(List<Span> spans, String text, String type)? heading6,
+    TResult Function(List<Span> spans, String text, String type)? paragraph,
+    TResult Function(List<Span> spans, String text, String type)? listItem,
+    TResult Function(List<Span> spans, String text, String type)?
+        orderedListItem,
+    TResult Function(
+            String? alt, String? copyright, Dimension dimensions, String url)?
+        image,
+    TResult Function(@JsonKey(name: 'oembed') EmbedData info, String type)?
+        embed,
+    required TResult orElse(),
+  }) {
+    if (orderedListItem != null) {
+      return orderedListItem(spans, text, type);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(RichableHeading1 value) heading1,
+    required TResult Function(RichableHeading2 value) heading2,
+    required TResult Function(RichableHeading3 value) heading3,
+    required TResult Function(RichableHeading4 value) heading4,
+    required TResult Function(RichableHeading5 value) heading5,
+    required TResult Function(RichableHeading6 value) heading6,
+    required TResult Function(RichableParagraph value) paragraph,
+    required TResult Function(RichableListItem value) listItem,
+    required TResult Function(RichableOrderedListItem value) orderedListItem,
+    required TResult Function(RichableImage value) image,
+    required TResult Function(RichableEmbed value) embed,
+  }) {
+    return orderedListItem(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(RichableHeading1 value)? heading1,
+    TResult Function(RichableHeading2 value)? heading2,
+    TResult Function(RichableHeading3 value)? heading3,
+    TResult Function(RichableHeading4 value)? heading4,
+    TResult Function(RichableHeading5 value)? heading5,
+    TResult Function(RichableHeading6 value)? heading6,
+    TResult Function(RichableParagraph value)? paragraph,
+    TResult Function(RichableListItem value)? listItem,
+    TResult Function(RichableOrderedListItem value)? orderedListItem,
+    TResult Function(RichableImage value)? image,
+    TResult Function(RichableEmbed value)? embed,
+    required TResult orElse(),
+  }) {
+    if (orderedListItem != null) {
+      return orderedListItem(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$RichableOrderedListItemToJson(this)..['type'] = 'o-list-item';
+  }
+}
+
+abstract class RichableOrderedListItem implements Richable {
+  const factory RichableOrderedListItem(
+      {required List<Span> spans,
+      required String text,
+      required String type}) = _$RichableOrderedListItem;
+
+  factory RichableOrderedListItem.fromJson(Map<String, dynamic> json) =
+      _$RichableOrderedListItem.fromJson;
+
+  List<Span> get spans => throw _privateConstructorUsedError;
+  String get text => throw _privateConstructorUsedError;
+  String get type => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $RichableOrderedListItemCopyWith<RichableOrderedListItem> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1903,9 +2169,8 @@ class _$RichableImageCopyWithImpl<$Res> extends _$RichableCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$RichableImage implements RichableImage {
   const _$RichableImage(
       {this.alt, this.copyright, required this.dimensions, required this.url});
@@ -1975,6 +2240,8 @@ class _$RichableImage implements RichableImage {
         paragraph,
     required TResult Function(List<Span> spans, String text, String type)
         listItem,
+    required TResult Function(List<Span> spans, String text, String type)
+        orderedListItem,
     required TResult Function(
             String? alt, String? copyright, Dimension dimensions, String url)
         image,
@@ -1996,6 +2263,8 @@ class _$RichableImage implements RichableImage {
     TResult Function(List<Span> spans, String text, String type)? heading6,
     TResult Function(List<Span> spans, String text, String type)? paragraph,
     TResult Function(List<Span> spans, String text, String type)? listItem,
+    TResult Function(List<Span> spans, String text, String type)?
+        orderedListItem,
     TResult Function(
             String? alt, String? copyright, Dimension dimensions, String url)?
         image,
@@ -2020,6 +2289,7 @@ class _$RichableImage implements RichableImage {
     required TResult Function(RichableHeading6 value) heading6,
     required TResult Function(RichableParagraph value) paragraph,
     required TResult Function(RichableListItem value) listItem,
+    required TResult Function(RichableOrderedListItem value) orderedListItem,
     required TResult Function(RichableImage value) image,
     required TResult Function(RichableEmbed value) embed,
   }) {
@@ -2037,6 +2307,7 @@ class _$RichableImage implements RichableImage {
     TResult Function(RichableHeading6 value)? heading6,
     TResult Function(RichableParagraph value)? paragraph,
     TResult Function(RichableListItem value)? listItem,
+    TResult Function(RichableOrderedListItem value)? orderedListItem,
     TResult Function(RichableImage value)? image,
     TResult Function(RichableEmbed value)? embed,
     required TResult orElse(),
@@ -2117,9 +2388,8 @@ class _$RichableEmbedCopyWithImpl<$Res> extends _$RichableCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$RichableEmbed implements RichableEmbed {
   const _$RichableEmbed(
       {@JsonKey(name: 'oembed') required this.info, required this.type});
@@ -2178,6 +2448,8 @@ class _$RichableEmbed implements RichableEmbed {
         paragraph,
     required TResult Function(List<Span> spans, String text, String type)
         listItem,
+    required TResult Function(List<Span> spans, String text, String type)
+        orderedListItem,
     required TResult Function(
             String? alt, String? copyright, Dimension dimensions, String url)
         image,
@@ -2199,6 +2471,8 @@ class _$RichableEmbed implements RichableEmbed {
     TResult Function(List<Span> spans, String text, String type)? heading6,
     TResult Function(List<Span> spans, String text, String type)? paragraph,
     TResult Function(List<Span> spans, String text, String type)? listItem,
+    TResult Function(List<Span> spans, String text, String type)?
+        orderedListItem,
     TResult Function(
             String? alt, String? copyright, Dimension dimensions, String url)?
         image,
@@ -2223,6 +2497,7 @@ class _$RichableEmbed implements RichableEmbed {
     required TResult Function(RichableHeading6 value) heading6,
     required TResult Function(RichableParagraph value) paragraph,
     required TResult Function(RichableListItem value) listItem,
+    required TResult Function(RichableOrderedListItem value) orderedListItem,
     required TResult Function(RichableImage value) image,
     required TResult Function(RichableEmbed value) embed,
   }) {
@@ -2240,6 +2515,7 @@ class _$RichableEmbed implements RichableEmbed {
     TResult Function(RichableHeading6 value)? heading6,
     TResult Function(RichableParagraph value)? paragraph,
     TResult Function(RichableListItem value)? listItem,
+    TResult Function(RichableOrderedListItem value)? orderedListItem,
     TResult Function(RichableImage value)? image,
     TResult Function(RichableEmbed value)? embed,
     required TResult orElse(),

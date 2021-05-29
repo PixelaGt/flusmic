@@ -158,9 +158,8 @@ class __$SimpleImageCopyWithImpl<$Res> extends _$SimpleImageCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_SimpleImage implements _SimpleImage {
   _$_SimpleImage(
       {this.alt, this.copyright, required this.dimensions, required this.url});

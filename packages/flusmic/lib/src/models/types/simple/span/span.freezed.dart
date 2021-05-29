@@ -125,9 +125,8 @@ class __$SpanCopyWithImpl<$Res> extends _$SpanCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_Span implements _Span {
   _$_Span({required this.type, required this.end, required this.start});
 

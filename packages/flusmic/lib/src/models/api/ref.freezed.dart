@@ -141,9 +141,8 @@ class __$RefCopyWithImpl<$Res> extends _$RefCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_Ref implements _Ref {
   _$_Ref(
       {required this.id,

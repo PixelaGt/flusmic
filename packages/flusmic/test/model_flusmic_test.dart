@@ -69,9 +69,9 @@ void main() {
       final result = await flusmic.getDocumentById('XpJ8phAAACzK1yQw');
       final data = SampleModel.fromJson(result.results.first.data!);
       expect(
-        data.content[1].maybeMap(
+        data.content.first.maybeMap(
           orElse: () => null,
-          heading2: (value) => value.spans.first,
+          paragraph: (value) => value.spans.first,
         ),
         isA<Span>(),
       );
@@ -88,51 +88,57 @@ void main() {
     test('are rich text fields in our content value', () async {
       final result = await flusmic.getDocumentById('XpJ8phAAACzK1yQw');
       final data = SampleModel.fromJson(result.results.first.data!);
-      expect(data.content.length, 12);
+      expect(data.content.length, 18);
     });
 
     test('heading1 rich text prismic model', () async {
       final result = await flusmic.getDocumentById('XpJ8phAAACzK1yQw');
       final data = SampleModel.fromJson(result.results.first.data!);
-      expect(data.content.first, isA<RichableHeading1>());
+      expect(data.content[3], isA<RichableHeading1>());
     });
 
     test('heading2 rich text prismic model', () async {
       final result = await flusmic.getDocumentById('XpJ8phAAACzK1yQw');
       final data = SampleModel.fromJson(result.results.first.data!);
-      expect(data.content[1], isA<RichableHeading2>());
+      expect(data.content[4], isA<RichableHeading2>());
     });
     test('heading3 rich text prismic model', () async {
       final result = await flusmic.getDocumentById('XpJ8phAAACzK1yQw');
       final data = SampleModel.fromJson(result.results.first.data!);
-      expect(data.content[2], isA<RichableHeading3>());
+      expect(data.content[5], isA<RichableHeading3>());
     });
     test('heading4 rich text prismic model', () async {
       final result = await flusmic.getDocumentById('XpJ8phAAACzK1yQw');
       final data = SampleModel.fromJson(result.results.first.data!);
-      expect(data.content[3], isA<RichableHeading4>());
+      expect(data.content[6], isA<RichableHeading4>());
     });
     test('heading5 rich text prismic model', () async {
       final result = await flusmic.getDocumentById('XpJ8phAAACzK1yQw');
       final data = SampleModel.fromJson(result.results.first.data!);
-      expect(data.content[4], isA<RichableHeading5>());
+      expect(data.content[7], isA<RichableHeading5>());
     });
     test('heading6 rich text prismic model', () async {
       final result = await flusmic.getDocumentById('XpJ8phAAACzK1yQw');
       final data = SampleModel.fromJson(result.results.first.data!);
-      expect(data.content[5], isA<RichableHeading6>());
+      expect(data.content[8], isA<RichableHeading6>());
     });
 
     test('paragraph rich text prismic model', () async {
       final result = await flusmic.getDocumentById('XpJ8phAAACzK1yQw');
       final data = SampleModel.fromJson(result.results.first.data!);
-      expect(data.content[6], isA<RichableParagraph>());
+      expect(data.content[9], isA<RichableParagraph>());
+    });
+
+    test('ordered list item rich text prismic model', () async {
+      final result = await flusmic.getDocumentById('XpJ8phAAACzK1yQw');
+      final data = SampleModel.fromJson(result.results.first.data!);
+      expect(data.content[10], isA<RichableOrderedListItem>());
     });
 
     test('list item rich text prismic model', () async {
       final result = await flusmic.getDocumentById('XpJ8phAAACzK1yQw');
       final data = SampleModel.fromJson(result.results.first.data!);
-      expect(data.content[7], isA<RichableListItem>());
+      expect(data.content[13], isA<RichableListItem>());
     });
 
     test('embed rich text prismic model', () async {

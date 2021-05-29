@@ -166,6 +166,7 @@ class _$TypeOrderingCopyWithImpl<$Res> extends _$OrderingCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$TypeOrdering implements TypeOrdering {
   const _$TypeOrdering(this.customType, this.field, {this.descending = false});
 
@@ -317,6 +318,7 @@ class _$DocumentOrderingCopyWithImpl<$Res> extends _$OrderingCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$DocumentOrdering implements DocumentOrdering {
   const _$DocumentOrdering(this.type, {this.descending = false});
 
@@ -460,6 +462,7 @@ class _$FirstPublicationDateOrderingCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$FirstPublicationDateOrdering implements FirstPublicationDateOrdering {
   const _$FirstPublicationDateOrdering({this.descending = false});
 
@@ -596,6 +599,7 @@ class _$LastPublicationDateOrderingCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$LastPublicationDateOrdering implements LastPublicationDateOrdering {
   const _$LastPublicationDateOrdering({this.descending = false});
 

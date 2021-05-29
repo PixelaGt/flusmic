@@ -309,9 +309,8 @@ class __$EmbedDataCopyWithImpl<$Res> extends _$EmbedDataCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_EmbedData implements _EmbedData {
   _$_EmbedData(
       {@JsonKey(name: 'author_name') required this.authorName,

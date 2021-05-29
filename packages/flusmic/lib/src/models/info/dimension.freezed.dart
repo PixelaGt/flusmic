@@ -115,9 +115,8 @@ class __$DimensionCopyWithImpl<$Res> extends _$DimensionCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_Dimension implements _Dimension {
   _$_Dimension({required this.height, required this.width});
 

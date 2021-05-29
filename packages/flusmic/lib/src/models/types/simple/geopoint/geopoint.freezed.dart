@@ -114,9 +114,8 @@ class __$GeopointCopyWithImpl<$Res> extends _$GeopointCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_Geopoint implements _Geopoint {
   _$_Geopoint({required this.latitude, required this.longitude});
 

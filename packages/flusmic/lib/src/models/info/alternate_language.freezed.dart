@@ -133,9 +133,8 @@ class __$AlternateLanguageCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_AlternateLanguage implements _AlternateLanguage {
   _$_AlternateLanguage(
       {required this.id, required this.lang, required this.type});

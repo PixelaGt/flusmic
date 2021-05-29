@@ -9,8 +9,9 @@ void main() {
   group('error from prismic', () {
     test('bad request exception', () async {
       HttpOverrides.runZoned(() {
-        nock('https://flusmic.cdn.prismic.io').get('/api/v2')
-          ..reply(400, 'data');
+        nock('https://flusmic.cdn.prismic.io')
+            .get('/api/v2')
+            .reply(400, 'data');
         final flusmic =
             Flusmic(prismicEndpoint: 'https://flusmic.cdn.prismic.io/api/v2');
         expect(
@@ -22,8 +23,9 @@ void main() {
 
     test('unauthorized exception', () async {
       HttpOverrides.runZoned(() {
-        nock('https://flusmic.cdn.prismic.io').get('/api/v2')
-          ..reply(401, 'data');
+        nock('https://flusmic.cdn.prismic.io')
+            .get('/api/v2')
+            .reply(401, 'data');
         final flusmic =
             Flusmic(prismicEndpoint: 'https://flusmic.cdn.prismic.io/api/v2');
         expect(
@@ -35,8 +37,9 @@ void main() {
 
     test('forbidden exception', () async {
       HttpOverrides.runZoned(() {
-        nock('https://flusmic.cdn.prismic.io').get('/api/v2')
-          ..reply(403, 'data');
+        nock('https://flusmic.cdn.prismic.io')
+            .get('/api/v2')
+            .reply(403, 'data');
         final flusmic =
             Flusmic(prismicEndpoint: 'https://flusmic.cdn.prismic.io/api/v2');
         expect(
@@ -48,8 +51,9 @@ void main() {
 
     test('server error exception', () async {
       HttpOverrides.runZoned(() {
-        nock('https://flusmic.cdn.prismic.io').get('/api/v2')
-          ..reply(500, 'data');
+        nock('https://flusmic.cdn.prismic.io')
+            .get('/api/v2')
+            .reply(500, 'data');
         final flusmic =
             Flusmic(prismicEndpoint: 'https://flusmic.cdn.prismic.io/api/v2');
         expect(
@@ -61,8 +65,9 @@ void main() {
 
     test('unknown network exception', () async {
       HttpOverrides.runZoned(() {
-        nock('https://flusmic.cdn.prismic.io').get('/api/v2')
-          ..reply(422, 'data');
+        nock('https://flusmic.cdn.prismic.io')
+            .get('/api/v2')
+            .reply(422, 'data');
         final flusmic =
             Flusmic(prismicEndpoint: 'https://flusmic.cdn.prismic.io/api/v2');
         expect(() async => await flusmic.getApi(),
@@ -72,12 +77,12 @@ void main() {
 
     test('unknown network exception for query', () async {
       HttpOverrides.runZoned(() {
-        nock('https://flusmic.cdn.prismic.io').get(equals('/api/v2'))
-          ..reply(200, apiResponse,
-              headers: {'Content-Type': 'application/json'});
+        nock('https://flusmic.cdn.prismic.io').get(equals('/api/v2')).reply(
+            200, apiResponse,
+            headers: {'Content-Type': 'application/json'});
         nock('https://flusmic.cdn.prismic.io')
             .get(contains('/api/v2/documents/search?ref='))
-              ..reply(422, 'date');
+            .reply(422, 'date');
         final flusmic =
             Flusmic(prismicEndpoint: 'https://flusmic.cdn.prismic.io/api/v2');
         expect(() async => await flusmic.getRootDocument(),
@@ -87,9 +92,9 @@ void main() {
 
     test('bad api json response exception', () async {
       HttpOverrides.runZoned(() {
-        nock('https://flusmic.cdn.prismic.io').get(equals('/api/v2'))
-          ..reply(200, badApiResponse,
-              headers: {'Content-Type': 'application/json'});
+        nock('https://flusmic.cdn.prismic.io').get(equals('/api/v2')).reply(
+            200, badApiResponse,
+            headers: {'Content-Type': 'application/json'});
         final flusmic =
             Flusmic(prismicEndpoint: 'https://flusmic.cdn.prismic.io/api/v2');
         expect(() async => await flusmic.getApi(), throwsA(isA<Exception>()));
@@ -98,12 +103,12 @@ void main() {
 
     test('bad query json response exception', () async {
       HttpOverrides.runZoned(() {
-        nock('https://flusmic.cdn.prismic.io').get(equals('/api/v2'))
-          ..reply(200, badApiResponse,
-              headers: {'Content-Type': 'application/json'});
+        nock('https://flusmic.cdn.prismic.io').get(equals('/api/v2')).reply(
+            200, badApiResponse,
+            headers: {'Content-Type': 'application/json'});
         nock('https://flusmic.cdn.prismic.io')
             .get(contains('/api/v2/documents/search?ref='))
-              ..reply(422, 'date');
+            .reply(422, 'date');
         final flusmic =
             Flusmic(prismicEndpoint: 'https://flusmic.cdn.prismic.io/api/v2');
         expect(() async => await flusmic.getRootDocument(),

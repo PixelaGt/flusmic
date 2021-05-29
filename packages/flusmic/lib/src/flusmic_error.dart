@@ -14,7 +14,7 @@ class FlusmicError implements Exception {
   factory FlusmicError.simple(
     String humanMessage,
     String message,
-    dynamic? response,
+    dynamic response,
   ) {
     return FlusmicError._(
       code: 100,
@@ -65,7 +65,7 @@ class FlusmicError implements Exception {
   }
 
   ///Response from failed request
-  final dynamic? response;
+  final dynamic response;
 
   ///Readable message
   final String humanMessage;
