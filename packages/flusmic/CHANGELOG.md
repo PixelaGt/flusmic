@@ -1,3 +1,12 @@
+## [3.0.0]
+* 3.0.0 release 🎉
+    * Null safety support.
+    * DefaultPredicatePaths are no longer constructors
+    * New way to work with Rich Text.
+    * New way to work with Linkeable content.
+* Model testing
+* Update dependencies
+
 ## [3.0.0-pre2]
 * `RichableText` abstract class created
 * Expose `FlusmicError` for `flusmic_ui`
