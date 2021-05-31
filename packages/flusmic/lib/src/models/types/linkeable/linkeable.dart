@@ -1,48 +1,54 @@
-import 'package:json_annotation/json_annotation.dart';
-import 'document_reference/document_reference.dart';
-import 'media/media.dart';
-import 'weblink/weblink.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
+part 'linkeable.freezed.dart';
 part 'linkeable.g.dart';
 
 ///Base class for items that reference by link
 ///
-///`Media`, `DocumentReference` and `Weblink`
-@JsonSerializable(createFactory: false)
-abstract class Linkeable {
-  ///The link type of the reference
-  @JsonKey(name: 'link_type')
-  final String linkType;
+///`MediaLinkeable`, `DocumentLinkeable` or `WebLinkeable`
+@Freezed(unionKey: 'link_type', unionValueCase: FreezedUnionCase.snake)
+class Linkeable with _$Linkeable {
+  ///DocumentReference model
+  ///
+  ///Handle a reference to document without content
+  @FreezedUnionValue('Document')
+  const factory Linkeable.document({
+    @JsonKey(name: 'link_type') required String linkType,
+    required List<String> tags,
+    required String id,
+    required String lang,
+    required String slug,
+    required String type,
+    required bool isBroken,
+  }) = DocumentLinkeable;
 
-  ///Default constructor
-  Linkeable(this.linkType);
+  ///Media model
+  ///
+  ///Handle media data from the library
+  @FreezedUnionValue('Media')
+  const factory Linkeable.media({
+    @JsonKey(name: 'link_type') required String linkType,
+    String? height,
+    String? width,
+    required String kind,
+    required String name,
+    required String size,
+    required String url,
+  }) = MediaLinkeable;
+
+  ///Web model
+  ///
+  ///Handle a simple link reference
+  @FreezedUnionValue('Web')
+  const factory Linkeable.web({
+    @JsonKey(name: 'link_type') required String linkType,
+    required String url,
+  }) = WebLinkeable;
 
   ///Creates a Linkeable object from json
   ///
-  ///Can create a `Media`, `DocumentReference`, `Weblink` depending
-  ///on [link_type] from json.
-  factory Linkeable.fromJson(Map<String, dynamic> json) {
-    switch (json['link_type']) {
-      case "Media":
-        return Media.fromJson(json);
-      case "Document":
-        return DocumentReference.fromJson(json);
-      default:
-        return Weblink.fromJson(json);
-    }
-  }
-
-  ///Converts Linkeable object to json
-  ///
-  ///Parse to `Media`, `DocumentReference` or `Weblink`
-  Map<String, dynamic> toJson() {
-    switch (runtimeType) {
-      case Media:
-        return (this as Media).toJson();
-      case DocumentReference:
-        return (this as DocumentReference).toJson();
-      default:
-        return (this as Weblink).toJson();
-    }
-  }
+  ///Can create a `MediaLinkeable`, `DocumentLinkeable` or
+  ///`WebLinkeable` depending on `link_type` from json.
+  factory Linkeable.fromJson(Map<String, dynamic> json) =>
+      _$LinkeableFromJson(json);
 }

@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:meta/meta.dart';
 import '../flusmic.dart';
 import 'flusmic_error.dart';
 
@@ -7,28 +6,14 @@ import 'flusmic_error.dart';
 ///
 /// Get documents from Prismic.io
 class Flusmic {
-  /// Default path for documents
-  final String _documentPath = '/documents/search?ref=';
-
-  /// Default language
-  /// Ex. es-gt
-  final String defaultLanguage;
-
-  ///Default Auth token
-  final String defaultAuthToken;
-
-  /// The prismic API endpoint
-  final String prismicEndpoint;
-
-  /// Http client
-  Dio _client;
-
   ///Main constructor
-  Flusmic(
-      {@required this.prismicEndpoint,
-      this.defaultLanguage,
-      this.defaultAuthToken}) {
-    _client = Dio(BaseOptions(
+  Flusmic({
+    required this.prismicEndpoint,
+    this.defaultLanguage,
+    this.defaultAuthToken,
+  }) {
+    _client = Dio(
+      BaseOptions(
         baseUrl: prismicEndpoint,
         contentType: 'application/json',
         responseType: ResponseType.json,
@@ -36,34 +21,59 @@ class Flusmic {
           if (defaultAuthToken?.isNotEmpty ?? false)
             'access_token': defaultAuthToken,
           if (defaultLanguage?.isNotEmpty ?? false) 'lang': defaultLanguage
-        }));
+        },
+      ),
+    );
   }
+
+  /// Default path for documents
+  final String _documentPath = '/documents/search?ref=';
+
+  /// Default language
+  /// Ex. es-gt
+  final String? defaultLanguage;
+
+  ///Default Auth token
+  final String? defaultAuthToken;
+
+  /// The prismic API endpoint
+  final String prismicEndpoint;
+
+  /// Http client
+  late Dio _client;
 
   /// Fetch API
   /// Get the API main document of prismic repository
-  Future<Api> getApi({String authToken}) async {
+  Future<Api> getApi({String? authToken}) async {
     try {
-      final response = await _client.get('', queryParameters: {
-        if (defaultAuthToken == null && authToken != null)
-          'access_token': authToken
-      });
+      final response = await _client.get(
+        '',
+        queryParameters: {
+          if (defaultAuthToken == null && authToken != null)
+            'access_token': authToken
+        },
+      );
       return Api.fromJson(response.data);
     } on DioError catch (error) {
-      throw manageException(error.response);
+      throw FlusmicError.fromResponse(error.response);
+    } on TypeError catch (error) {
+      throw FlusmicError.fromException(error);
     }
   }
 
   /// Fetch by query
   /// Get result by query using predicates
-  Future<FlusmicResponse> query(List<Predicate> predicates,
-      {List<CustomPredicatePath> fetch,
-      List<CustomPredicatePath> fetchLinks,
-      List<Ordering> orderings,
-      String after,
-      String authToken,
-      String language,
-      int page,
-      int pageSize}) async {
+  Future<FlusmicResponse> query(
+    List<Predicate> predicates, {
+    List<CustomPredicatePath>? fetch,
+    List<CustomPredicatePath>? fetchLinks,
+    List<Ordering>? orderings,
+    String? after,
+    String? authToken,
+    String? language,
+    int? page,
+    int? pageSize,
+  }) async {
     try {
       final api = await getApi(authToken: authToken);
       final response = await _client.get(
@@ -79,7 +89,9 @@ class Flusmic {
               pageSize: pageSize));
       return FlusmicResponse.fromJson(response.data);
     } on DioError catch (error) {
-      throw manageException(error.response);
+      throw FlusmicError.fromResponse(error.response);
+    } on TypeError catch (error) {
+      throw FlusmicError.fromException(error);
     }
   }
 
@@ -89,45 +101,45 @@ class Flusmic {
   ///Get the API root document of prismic repository
   ///Contains all the documents.
   Future<FlusmicResponse> getRootDocument(
-          {String language, String authToken, int page = 1}) async =>
+          {String? language, String? authToken, int page = 1}) async =>
       await query([], authToken: authToken, language: language, page: page);
 
   /// Fetch documents by type
-  /// Get all the documents by [type] using the slug.
+  /// Get all the documents by type using the [slug].
   Future<FlusmicResponse> getDocumentsByType(String slug,
-          {String language, String authToken, int page = 1}) async =>
-      await query([Predicate.at(DefaultPredicatePath.type(), slug)],
+          {String? language, String? authToken, int page = 1}) async =>
+      await query([Predicate.at(DefaultPredicatePath.type, slug)],
           authToken: authToken, language: language, page: page);
 
   /// Fetch document by id
   /// Get a documents by [id].
   Future<FlusmicResponse> getDocumentById(String id,
-      {String language, String authToken}) async {
-    return await query([Predicate.at(DefaultPredicatePath.id(), id)],
+      {String? language, String? authToken}) async {
+    return await query([Predicate.at(DefaultPredicatePath.id, id)],
         authToken: authToken, language: language);
   }
 
   ///Generate params to perform a request.
   Map<String, dynamic> _generateParams(
-          {int page,
-          int pageSize,
-          List<CustomPredicatePath> fetch,
-          List<CustomPredicatePath> fetchLinks,
-          List<Ordering> orderings,
-          String after,
-          String authToken,
-          String language}) =>
+          {int? page,
+          int? pageSize,
+          List<CustomPredicatePath>? fetch,
+          List<CustomPredicatePath>? fetchLinks,
+          List<Ordering>? orderings,
+          String? after,
+          String? authToken,
+          String? language}) =>
       {
         if (after?.isNotEmpty ?? false) 'after': after,
         if (authToken?.isNotEmpty ?? false) 'access_token': authToken,
         if (fetch?.isNotEmpty ?? false)
-          'fetch': fetch.map((f) => f.toString()).toList().join(','),
+          'fetch': fetch?.map((f) => f.toString()).toList().join(','),
         if (fetchLinks?.isNotEmpty ?? false)
-          'fetchLinks': fetchLinks.map((f) => f.toString()).toList().join(','),
+          'fetchLinks': fetchLinks?.map((f) => f.toString()).toList().join(','),
         if (language?.isNotEmpty ?? false) 'lang': language,
         if (orderings?.isNotEmpty ?? false)
           'orderings':
-              '[${orderings.map(_generateOrdering).toList().join(',')}]',
+              '[${orderings?.map(_generateOrdering).toList().join(',')}]',
         if (page != null) 'page': page.toString(),
         if (pageSize != null) 'pageSize': pageSize.toString(),
       };
@@ -135,8 +147,7 @@ class Flusmic {
   ///Generate the API url to perform a request.
   String _generateUrl(List<Predicate> predicates, String apiRef) {
     final queries = predicates.map(_generateQueries).toList();
-    var raw = '$_documentPath$apiRef${queries.join()}';
-    return raw;
+    return '$_documentPath$apiRef${queries.join()}';
   }
 
   ///Convert predicate into query string

@@ -15,17 +15,20 @@ class _FlusmicRichTextScreenState extends State<FlusmicRichTextScreen> {
         body: FlusmicBuilder(
             baseUrl: 'https://flusmic.cdn.prismic.io/api/v2',
             builder: (context, result) => result.map(
-                init: (s) => Container(),
-                loading: (s) => Center(child: CircularProgressIndicator()),
-                error: (s) => Center(child: Text('Hi! I\'m an error :(')),
-                loaded: (s) => SingleChildScrollView(
+                  init: (s) => Container(),
+                  loading: (s) => Center(child: CircularProgressIndicator()),
+                  error: (s) => Center(child: Text('Hi! I\'m an error :(')),
+                  loaded: (s) => SingleChildScrollView(
                     padding: const EdgeInsets.symmetric(horizontal: 16.0),
                     child: FlusmicRichText(
-                        FlusmicTest.fromJson(s.response.results.first.data)
-                            .content))),
+                      FlusmicTest.fromJson(s.response.results.first.data ?? {})
+                          .content,
+                    ),
+                  ),
+                ),
             predicates: [
-              Predicate.at(DefaultPredicatePath.type(), 'test'),
-              Predicate.at(DefaultPredicatePath.id(), 'XpJ8phAAACzK1yQw')
+              Predicate.at(DefaultPredicatePath.type, 'test'),
+              Predicate.at(DefaultPredicatePath.id, 'XpJ8phAAACzK1yQw')
             ]));
   }
 }

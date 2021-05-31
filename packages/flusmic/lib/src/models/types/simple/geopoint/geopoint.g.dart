@@ -10,8 +10,8 @@ part of 'geopoint.dart';
 
 _$_Geopoint _$_$_GeopointFromJson(Map<String, dynamic> json) {
   return _$_Geopoint(
-    latitude: (json['latitude'] as num)?.toDouble(),
-    longitude: (json['longitude'] as num)?.toDouble(),
+    latitude: (json['latitude'] as num).toDouble(),
+    longitude: (json['longitude'] as num).toDouble(),
   );
 }
 

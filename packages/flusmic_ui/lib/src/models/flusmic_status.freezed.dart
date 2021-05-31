@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'flusmic_status.dart';
 
@@ -9,6 +9,10 @@ part of 'flusmic_status.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
 class _$FlusmicStatusTearOff {
   const _$FlusmicStatusTearOff();
 
@@ -33,48 +37,55 @@ class _$FlusmicStatusTearOff {
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $FlusmicStatus = _$FlusmicStatusTearOff();
 
+/// @nodoc
 mixin _$FlusmicStatus {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result init(),
-    @required Result loading(),
-    @required Result error(String error),
-    @required Result loaded(FlusmicResponse response),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() init,
+    required TResult Function() loading,
+    required TResult Function(String error) error,
+    required TResult Function(FlusmicResponse response) loaded,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result init(),
-    Result loading(),
-    Result error(String error),
-    Result loaded(FlusmicResponse response),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function()? loading,
+    TResult Function(String error)? error,
+    TResult Function(FlusmicResponse response)? loaded,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result init(InitFlusmicStatus value),
-    @required Result loading(LoadingFlusmicStatus value),
-    @required Result error(ErrorFlusmicStatus value),
-    @required Result loaded(LoadedFlusmicStatus value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitFlusmicStatus value) init,
+    required TResult Function(LoadingFlusmicStatus value) loading,
+    required TResult Function(ErrorFlusmicStatus value) error,
+    required TResult Function(LoadedFlusmicStatus value) loaded,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result init(InitFlusmicStatus value),
-    Result loading(LoadingFlusmicStatus value),
-    Result error(ErrorFlusmicStatus value),
-    Result loaded(LoadedFlusmicStatus value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitFlusmicStatus value)? init,
+    TResult Function(LoadingFlusmicStatus value)? loading,
+    TResult Function(ErrorFlusmicStatus value)? error,
+    TResult Function(LoadedFlusmicStatus value)? loaded,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $FlusmicStatusCopyWith<$Res> {
   factory $FlusmicStatusCopyWith(
           FlusmicStatus value, $Res Function(FlusmicStatus) then) =
       _$FlusmicStatusCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$FlusmicStatusCopyWithImpl<$Res>
     implements $FlusmicStatusCopyWith<$Res> {
   _$FlusmicStatusCopyWithImpl(this._value, this._then);
@@ -84,12 +95,14 @@ class _$FlusmicStatusCopyWithImpl<$Res>
   final $Res Function(FlusmicStatus) _then;
 }
 
+/// @nodoc
 abstract class $InitFlusmicStatusCopyWith<$Res> {
   factory $InitFlusmicStatusCopyWith(
           InitFlusmicStatus value, $Res Function(InitFlusmicStatus) then) =
       _$InitFlusmicStatusCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$InitFlusmicStatusCopyWithImpl<$Res>
     extends _$FlusmicStatusCopyWithImpl<$Res>
     implements $InitFlusmicStatusCopyWith<$Res> {
@@ -100,6 +113,8 @@ class _$InitFlusmicStatusCopyWithImpl<$Res>
   @override
   InitFlusmicStatus get _value => super._value as InitFlusmicStatus;
 }
+
+/// @nodoc
 
 class _$InitFlusmicStatus implements InitFlusmicStatus {
   _$InitFlusmicStatus();
@@ -119,29 +134,24 @@ class _$InitFlusmicStatus implements InitFlusmicStatus {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result init(),
-    @required Result loading(),
-    @required Result error(String error),
-    @required Result loaded(FlusmicResponse response),
+  TResult when<TResult extends Object?>({
+    required TResult Function() init,
+    required TResult Function() loading,
+    required TResult Function(String error) error,
+    required TResult Function(FlusmicResponse response) loaded,
   }) {
-    assert(init != null);
-    assert(loading != null);
-    assert(error != null);
-    assert(loaded != null);
     return init();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result init(),
-    Result loading(),
-    Result error(String error),
-    Result loaded(FlusmicResponse response),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function()? loading,
+    TResult Function(String error)? error,
+    TResult Function(FlusmicResponse response)? loaded,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (init != null) {
       return init();
     }
@@ -150,29 +160,24 @@ class _$InitFlusmicStatus implements InitFlusmicStatus {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result init(InitFlusmicStatus value),
-    @required Result loading(LoadingFlusmicStatus value),
-    @required Result error(ErrorFlusmicStatus value),
-    @required Result loaded(LoadedFlusmicStatus value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitFlusmicStatus value) init,
+    required TResult Function(LoadingFlusmicStatus value) loading,
+    required TResult Function(ErrorFlusmicStatus value) error,
+    required TResult Function(LoadedFlusmicStatus value) loaded,
   }) {
-    assert(init != null);
-    assert(loading != null);
-    assert(error != null);
-    assert(loaded != null);
     return init(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result init(InitFlusmicStatus value),
-    Result loading(LoadingFlusmicStatus value),
-    Result error(ErrorFlusmicStatus value),
-    Result loaded(LoadedFlusmicStatus value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitFlusmicStatus value)? init,
+    TResult Function(LoadingFlusmicStatus value)? loading,
+    TResult Function(ErrorFlusmicStatus value)? error,
+    TResult Function(LoadedFlusmicStatus value)? loaded,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (init != null) {
       return init(this);
     }
@@ -184,12 +189,14 @@ abstract class InitFlusmicStatus implements FlusmicStatus {
   factory InitFlusmicStatus() = _$InitFlusmicStatus;
 }
 
+/// @nodoc
 abstract class $LoadingFlusmicStatusCopyWith<$Res> {
   factory $LoadingFlusmicStatusCopyWith(LoadingFlusmicStatus value,
           $Res Function(LoadingFlusmicStatus) then) =
       _$LoadingFlusmicStatusCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$LoadingFlusmicStatusCopyWithImpl<$Res>
     extends _$FlusmicStatusCopyWithImpl<$Res>
     implements $LoadingFlusmicStatusCopyWith<$Res> {
@@ -200,6 +207,8 @@ class _$LoadingFlusmicStatusCopyWithImpl<$Res>
   @override
   LoadingFlusmicStatus get _value => super._value as LoadingFlusmicStatus;
 }
+
+/// @nodoc
 
 class _$LoadingFlusmicStatus implements LoadingFlusmicStatus {
   _$LoadingFlusmicStatus();
@@ -219,29 +228,24 @@ class _$LoadingFlusmicStatus implements LoadingFlusmicStatus {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result init(),
-    @required Result loading(),
-    @required Result error(String error),
-    @required Result loaded(FlusmicResponse response),
+  TResult when<TResult extends Object?>({
+    required TResult Function() init,
+    required TResult Function() loading,
+    required TResult Function(String error) error,
+    required TResult Function(FlusmicResponse response) loaded,
   }) {
-    assert(init != null);
-    assert(loading != null);
-    assert(error != null);
-    assert(loaded != null);
     return loading();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result init(),
-    Result loading(),
-    Result error(String error),
-    Result loaded(FlusmicResponse response),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function()? loading,
+    TResult Function(String error)? error,
+    TResult Function(FlusmicResponse response)? loaded,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loading != null) {
       return loading();
     }
@@ -250,29 +254,24 @@ class _$LoadingFlusmicStatus implements LoadingFlusmicStatus {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result init(InitFlusmicStatus value),
-    @required Result loading(LoadingFlusmicStatus value),
-    @required Result error(ErrorFlusmicStatus value),
-    @required Result loaded(LoadedFlusmicStatus value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitFlusmicStatus value) init,
+    required TResult Function(LoadingFlusmicStatus value) loading,
+    required TResult Function(ErrorFlusmicStatus value) error,
+    required TResult Function(LoadedFlusmicStatus value) loaded,
   }) {
-    assert(init != null);
-    assert(loading != null);
-    assert(error != null);
-    assert(loaded != null);
     return loading(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result init(InitFlusmicStatus value),
-    Result loading(LoadingFlusmicStatus value),
-    Result error(ErrorFlusmicStatus value),
-    Result loaded(LoadedFlusmicStatus value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitFlusmicStatus value)? init,
+    TResult Function(LoadingFlusmicStatus value)? loading,
+    TResult Function(ErrorFlusmicStatus value)? error,
+    TResult Function(LoadedFlusmicStatus value)? loaded,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loading != null) {
       return loading(this);
     }
@@ -284,6 +283,7 @@ abstract class LoadingFlusmicStatus implements FlusmicStatus {
   factory LoadingFlusmicStatus() = _$LoadingFlusmicStatus;
 }
 
+/// @nodoc
 abstract class $ErrorFlusmicStatusCopyWith<$Res> {
   factory $ErrorFlusmicStatusCopyWith(
           ErrorFlusmicStatus value, $Res Function(ErrorFlusmicStatus) then) =
@@ -291,6 +291,7 @@ abstract class $ErrorFlusmicStatusCopyWith<$Res> {
   $Res call({String error});
 }
 
+/// @nodoc
 class _$ErrorFlusmicStatusCopyWithImpl<$Res>
     extends _$FlusmicStatusCopyWithImpl<$Res>
     implements $ErrorFlusmicStatusCopyWith<$Res> {
@@ -303,16 +304,21 @@ class _$ErrorFlusmicStatusCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object error = freezed,
+    Object? error = freezed,
   }) {
     return _then(ErrorFlusmicStatus(
-      error == freezed ? _value.error : error as String,
+      error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
+/// @nodoc
+
 class _$ErrorFlusmicStatus implements ErrorFlusmicStatus {
-  _$ErrorFlusmicStatus(this.error) : assert(error != null);
+  _$ErrorFlusmicStatus(this.error);
 
   @override
   final String error;
@@ -334,35 +340,31 @@ class _$ErrorFlusmicStatus implements ErrorFlusmicStatus {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(error);
 
+  @JsonKey(ignore: true)
   @override
   $ErrorFlusmicStatusCopyWith<ErrorFlusmicStatus> get copyWith =>
       _$ErrorFlusmicStatusCopyWithImpl<ErrorFlusmicStatus>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result init(),
-    @required Result loading(),
-    @required Result error(String error),
-    @required Result loaded(FlusmicResponse response),
+  TResult when<TResult extends Object?>({
+    required TResult Function() init,
+    required TResult Function() loading,
+    required TResult Function(String error) error,
+    required TResult Function(FlusmicResponse response) loaded,
   }) {
-    assert(init != null);
-    assert(loading != null);
-    assert(error != null);
-    assert(loaded != null);
     return error(this.error);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result init(),
-    Result loading(),
-    Result error(String error),
-    Result loaded(FlusmicResponse response),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function()? loading,
+    TResult Function(String error)? error,
+    TResult Function(FlusmicResponse response)? loaded,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (error != null) {
       return error(this.error);
     }
@@ -371,29 +373,24 @@ class _$ErrorFlusmicStatus implements ErrorFlusmicStatus {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result init(InitFlusmicStatus value),
-    @required Result loading(LoadingFlusmicStatus value),
-    @required Result error(ErrorFlusmicStatus value),
-    @required Result loaded(LoadedFlusmicStatus value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitFlusmicStatus value) init,
+    required TResult Function(LoadingFlusmicStatus value) loading,
+    required TResult Function(ErrorFlusmicStatus value) error,
+    required TResult Function(LoadedFlusmicStatus value) loaded,
   }) {
-    assert(init != null);
-    assert(loading != null);
-    assert(error != null);
-    assert(loaded != null);
     return error(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result init(InitFlusmicStatus value),
-    Result loading(LoadingFlusmicStatus value),
-    Result error(ErrorFlusmicStatus value),
-    Result loaded(LoadedFlusmicStatus value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitFlusmicStatus value)? init,
+    TResult Function(LoadingFlusmicStatus value)? loading,
+    TResult Function(ErrorFlusmicStatus value)? error,
+    TResult Function(LoadedFlusmicStatus value)? loaded,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (error != null) {
       return error(this);
     }
@@ -404,10 +401,13 @@ class _$ErrorFlusmicStatus implements ErrorFlusmicStatus {
 abstract class ErrorFlusmicStatus implements FlusmicStatus {
   factory ErrorFlusmicStatus(String error) = _$ErrorFlusmicStatus;
 
-  String get error;
-  $ErrorFlusmicStatusCopyWith<ErrorFlusmicStatus> get copyWith;
+  String get error => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ErrorFlusmicStatusCopyWith<ErrorFlusmicStatus> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $LoadedFlusmicStatusCopyWith<$Res> {
   factory $LoadedFlusmicStatusCopyWith(
           LoadedFlusmicStatus value, $Res Function(LoadedFlusmicStatus) then) =
@@ -417,6 +417,7 @@ abstract class $LoadedFlusmicStatusCopyWith<$Res> {
   $FlusmicResponseCopyWith<$Res> get response;
 }
 
+/// @nodoc
 class _$LoadedFlusmicStatusCopyWithImpl<$Res>
     extends _$FlusmicStatusCopyWithImpl<$Res>
     implements $LoadedFlusmicStatusCopyWith<$Res> {
@@ -429,26 +430,28 @@ class _$LoadedFlusmicStatusCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object response = freezed,
+    Object? response = freezed,
   }) {
     return _then(LoadedFlusmicStatus(
-      response == freezed ? _value.response : response as FlusmicResponse,
+      response == freezed
+          ? _value.response
+          : response // ignore: cast_nullable_to_non_nullable
+              as FlusmicResponse,
     ));
   }
 
   @override
   $FlusmicResponseCopyWith<$Res> get response {
-    if (_value.response == null) {
-      return null;
-    }
     return $FlusmicResponseCopyWith<$Res>(_value.response, (value) {
       return _then(_value.copyWith(response: value));
     });
   }
 }
 
+/// @nodoc
+
 class _$LoadedFlusmicStatus implements LoadedFlusmicStatus {
-  _$LoadedFlusmicStatus(this.response) : assert(response != null);
+  _$LoadedFlusmicStatus(this.response);
 
   @override
   final FlusmicResponse response;
@@ -471,35 +474,31 @@ class _$LoadedFlusmicStatus implements LoadedFlusmicStatus {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(response);
 
+  @JsonKey(ignore: true)
   @override
   $LoadedFlusmicStatusCopyWith<LoadedFlusmicStatus> get copyWith =>
       _$LoadedFlusmicStatusCopyWithImpl<LoadedFlusmicStatus>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result init(),
-    @required Result loading(),
-    @required Result error(String error),
-    @required Result loaded(FlusmicResponse response),
+  TResult when<TResult extends Object?>({
+    required TResult Function() init,
+    required TResult Function() loading,
+    required TResult Function(String error) error,
+    required TResult Function(FlusmicResponse response) loaded,
   }) {
-    assert(init != null);
-    assert(loading != null);
-    assert(error != null);
-    assert(loaded != null);
     return loaded(response);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result init(),
-    Result loading(),
-    Result error(String error),
-    Result loaded(FlusmicResponse response),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function()? loading,
+    TResult Function(String error)? error,
+    TResult Function(FlusmicResponse response)? loaded,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loaded != null) {
       return loaded(response);
     }
@@ -508,29 +507,24 @@ class _$LoadedFlusmicStatus implements LoadedFlusmicStatus {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result init(InitFlusmicStatus value),
-    @required Result loading(LoadingFlusmicStatus value),
-    @required Result error(ErrorFlusmicStatus value),
-    @required Result loaded(LoadedFlusmicStatus value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitFlusmicStatus value) init,
+    required TResult Function(LoadingFlusmicStatus value) loading,
+    required TResult Function(ErrorFlusmicStatus value) error,
+    required TResult Function(LoadedFlusmicStatus value) loaded,
   }) {
-    assert(init != null);
-    assert(loading != null);
-    assert(error != null);
-    assert(loaded != null);
     return loaded(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result init(InitFlusmicStatus value),
-    Result loading(LoadingFlusmicStatus value),
-    Result error(ErrorFlusmicStatus value),
-    Result loaded(LoadedFlusmicStatus value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitFlusmicStatus value)? init,
+    TResult Function(LoadingFlusmicStatus value)? loading,
+    TResult Function(ErrorFlusmicStatus value)? error,
+    TResult Function(LoadedFlusmicStatus value)? loaded,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loaded != null) {
       return loaded(this);
     }
@@ -541,6 +535,8 @@ class _$LoadedFlusmicStatus implements LoadedFlusmicStatus {
 abstract class LoadedFlusmicStatus implements FlusmicStatus {
   factory LoadedFlusmicStatus(FlusmicResponse response) = _$LoadedFlusmicStatus;
 
-  FlusmicResponse get response;
-  $LoadedFlusmicStatusCopyWith<LoadedFlusmicStatus> get copyWith;
+  FlusmicResponse get response => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $LoadedFlusmicStatusCopyWith<LoadedFlusmicStatus> get copyWith =>
+      throw _privateConstructorUsedError;
 }

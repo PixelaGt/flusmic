@@ -8,9 +8,12 @@ part 'language.g.dart';
 ///Handles the language info for entrypoint or a
 ///document
 @freezed
-abstract class Language with _$Language {
+class Language with _$Language {
   ///Deafult factory constructor for Language
-  factory Language({@required String id, @required String name}) = _Language;
+  factory Language({
+    required String id,
+    required String name,
+  }) = _Language;
 
   ///Creates a Language object from json
   factory Language.fromJson(Map<String, dynamic> json) =>

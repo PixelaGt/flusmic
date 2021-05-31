@@ -1,22 +1,23 @@
-import 'package:json_annotation/json_annotation.dart';
-import '../../../info/dimension.dart';
-import '../../richable/flusmic_image.dart';
+import 'package:flusmic/src/models/info/dimension.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
+part 'simple_image.freezed.dart';
 part 'simple_image.g.dart';
 
 ///SimpleImage model
 ///
 ///Represents a image inside RichText
-@JsonSerializable()
-class SimpleImage extends FlusmicImage {
+@freezed
+class SimpleImage with _$SimpleImage {
   ///Default constructor
-  SimpleImage(String alt, String copyright, Dimension dimensions, String url)
-      : super(alt, copyright, dimensions, url);
-
-  ///Creates a SimpleImage object from json
-  factory SimpleImage.fromJson(Map<String, dynamic> json) =>
-      _$SimpleImageFromJson(json);
+  factory SimpleImage({
+    String? alt,
+    String? copyright,
+    required Dimension dimensions,
+    required String url,
+  }) = _SimpleImage;
 
   ///Converts SimpleImage object to json
-  Map<String, dynamic> toJson() => _$SimpleImageToJson(this);
+  factory SimpleImage.fromJson(Map<String, dynamic> json) =>
+      _$SimpleImageFromJson(json);
 }

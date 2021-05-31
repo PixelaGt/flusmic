@@ -5,7 +5,7 @@ part 'flusmic_status.freezed.dart';
 
 ///Status for widget interaction
 @freezed
-abstract class FlusmicStatus with _$FlusmicStatus {
+class FlusmicStatus with _$FlusmicStatus {
   ///Initial state
   factory FlusmicStatus.init() = InitFlusmicStatus;
 

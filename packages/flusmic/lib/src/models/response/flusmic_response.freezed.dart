@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'flusmic_response.dart';
 
@@ -8,6 +8,10 @@ part of 'flusmic_response.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 FlusmicResponse _$FlusmicResponseFromJson(Map<String, dynamic> json) {
   return _FlusmicResponse.fromJson(json);
 }
@@ -16,18 +20,17 @@ FlusmicResponse _$FlusmicResponseFromJson(Map<String, dynamic> json) {
 class _$FlusmicResponseTearOff {
   const _$FlusmicResponseTearOff();
 
-// ignore: unused_element
   _FlusmicResponse call(
-      {@JsonKey(name: 'next_page') String nextPage,
-      @JsonKey(name: 'prev_page') String prevPage,
-      @required @JsonKey(name: 'results_per_page') int resultsPerPage,
-      @required @JsonKey(name: 'results_size') int resultsSize,
-      @required @JsonKey(name: 'total_pages') int totalPages,
-      @required @JsonKey(name: 'total_results_size') int totalResultsSize,
-      @required List<Document> results,
-      @required String license,
-      @required String version,
-      @required int page}) {
+      {@JsonKey(name: 'next_page') String? nextPage,
+      @JsonKey(name: 'prev_page') String? prevPage,
+      @JsonKey(name: 'results_per_page') required int resultsPerPage,
+      @JsonKey(name: 'results_size') required int resultsSize,
+      @JsonKey(name: 'total_pages') required int totalPages,
+      @JsonKey(name: 'total_results_size') required int totalResultsSize,
+      required List<Document> results,
+      required String license,
+      required String version,
+      required int page}) {
     return _FlusmicResponse(
       nextPage: nextPage,
       prevPage: prevPage,
@@ -42,37 +45,37 @@ class _$FlusmicResponseTearOff {
     );
   }
 
-// ignore: unused_element
   FlusmicResponse fromJson(Map<String, Object> json) {
     return FlusmicResponse.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $FlusmicResponse = _$FlusmicResponseTearOff();
 
 /// @nodoc
 mixin _$FlusmicResponse {
   @JsonKey(name: 'next_page')
-  String get nextPage;
+  String? get nextPage => throw _privateConstructorUsedError;
   @JsonKey(name: 'prev_page')
-  String get prevPage;
+  String? get prevPage => throw _privateConstructorUsedError;
   @JsonKey(name: 'results_per_page')
-  int get resultsPerPage;
+  int get resultsPerPage => throw _privateConstructorUsedError;
   @JsonKey(name: 'results_size')
-  int get resultsSize;
+  int get resultsSize => throw _privateConstructorUsedError;
   @JsonKey(name: 'total_pages')
-  int get totalPages;
+  int get totalPages => throw _privateConstructorUsedError;
   @JsonKey(name: 'total_results_size')
-  int get totalResultsSize;
-  List<Document> get results;
-  String get license;
-  String get version;
-  int get page;
+  int get totalResultsSize => throw _privateConstructorUsedError;
+  List<Document> get results => throw _privateConstructorUsedError;
+  String get license => throw _privateConstructorUsedError;
+  String get version => throw _privateConstructorUsedError;
+  int get page => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
-  $FlusmicResponseCopyWith<FlusmicResponse> get copyWith;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $FlusmicResponseCopyWith<FlusmicResponse> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -81,8 +84,8 @@ abstract class $FlusmicResponseCopyWith<$Res> {
           FlusmicResponse value, $Res Function(FlusmicResponse) then) =
       _$FlusmicResponseCopyWithImpl<$Res>;
   $Res call(
-      {@JsonKey(name: 'next_page') String nextPage,
-      @JsonKey(name: 'prev_page') String prevPage,
+      {@JsonKey(name: 'next_page') String? nextPage,
+      @JsonKey(name: 'prev_page') String? prevPage,
       @JsonKey(name: 'results_per_page') int resultsPerPage,
       @JsonKey(name: 'results_size') int resultsSize,
       @JsonKey(name: 'total_pages') int totalPages,
@@ -104,33 +107,58 @@ class _$FlusmicResponseCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object nextPage = freezed,
-    Object prevPage = freezed,
-    Object resultsPerPage = freezed,
-    Object resultsSize = freezed,
-    Object totalPages = freezed,
-    Object totalResultsSize = freezed,
-    Object results = freezed,
-    Object license = freezed,
-    Object version = freezed,
-    Object page = freezed,
+    Object? nextPage = freezed,
+    Object? prevPage = freezed,
+    Object? resultsPerPage = freezed,
+    Object? resultsSize = freezed,
+    Object? totalPages = freezed,
+    Object? totalResultsSize = freezed,
+    Object? results = freezed,
+    Object? license = freezed,
+    Object? version = freezed,
+    Object? page = freezed,
   }) {
     return _then(_value.copyWith(
-      nextPage: nextPage == freezed ? _value.nextPage : nextPage as String,
-      prevPage: prevPage == freezed ? _value.prevPage : prevPage as String,
+      nextPage: nextPage == freezed
+          ? _value.nextPage
+          : nextPage // ignore: cast_nullable_to_non_nullable
+              as String?,
+      prevPage: prevPage == freezed
+          ? _value.prevPage
+          : prevPage // ignore: cast_nullable_to_non_nullable
+              as String?,
       resultsPerPage: resultsPerPage == freezed
           ? _value.resultsPerPage
-          : resultsPerPage as int,
-      resultsSize:
-          resultsSize == freezed ? _value.resultsSize : resultsSize as int,
-      totalPages: totalPages == freezed ? _value.totalPages : totalPages as int,
+          : resultsPerPage // ignore: cast_nullable_to_non_nullable
+              as int,
+      resultsSize: resultsSize == freezed
+          ? _value.resultsSize
+          : resultsSize // ignore: cast_nullable_to_non_nullable
+              as int,
+      totalPages: totalPages == freezed
+          ? _value.totalPages
+          : totalPages // ignore: cast_nullable_to_non_nullable
+              as int,
       totalResultsSize: totalResultsSize == freezed
           ? _value.totalResultsSize
-          : totalResultsSize as int,
-      results: results == freezed ? _value.results : results as List<Document>,
-      license: license == freezed ? _value.license : license as String,
-      version: version == freezed ? _value.version : version as String,
-      page: page == freezed ? _value.page : page as int,
+          : totalResultsSize // ignore: cast_nullable_to_non_nullable
+              as int,
+      results: results == freezed
+          ? _value.results
+          : results // ignore: cast_nullable_to_non_nullable
+              as List<Document>,
+      license: license == freezed
+          ? _value.license
+          : license // ignore: cast_nullable_to_non_nullable
+              as String,
+      version: version == freezed
+          ? _value.version
+          : version // ignore: cast_nullable_to_non_nullable
+              as String,
+      page: page == freezed
+          ? _value.page
+          : page // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -143,8 +171,8 @@ abstract class _$FlusmicResponseCopyWith<$Res>
       __$FlusmicResponseCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@JsonKey(name: 'next_page') String nextPage,
-      @JsonKey(name: 'prev_page') String prevPage,
+      {@JsonKey(name: 'next_page') String? nextPage,
+      @JsonKey(name: 'prev_page') String? prevPage,
       @JsonKey(name: 'results_per_page') int resultsPerPage,
       @JsonKey(name: 'results_size') int resultsSize,
       @JsonKey(name: 'total_pages') int totalPages,
@@ -168,70 +196,86 @@ class __$FlusmicResponseCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object nextPage = freezed,
-    Object prevPage = freezed,
-    Object resultsPerPage = freezed,
-    Object resultsSize = freezed,
-    Object totalPages = freezed,
-    Object totalResultsSize = freezed,
-    Object results = freezed,
-    Object license = freezed,
-    Object version = freezed,
-    Object page = freezed,
+    Object? nextPage = freezed,
+    Object? prevPage = freezed,
+    Object? resultsPerPage = freezed,
+    Object? resultsSize = freezed,
+    Object? totalPages = freezed,
+    Object? totalResultsSize = freezed,
+    Object? results = freezed,
+    Object? license = freezed,
+    Object? version = freezed,
+    Object? page = freezed,
   }) {
     return _then(_FlusmicResponse(
-      nextPage: nextPage == freezed ? _value.nextPage : nextPage as String,
-      prevPage: prevPage == freezed ? _value.prevPage : prevPage as String,
+      nextPage: nextPage == freezed
+          ? _value.nextPage
+          : nextPage // ignore: cast_nullable_to_non_nullable
+              as String?,
+      prevPage: prevPage == freezed
+          ? _value.prevPage
+          : prevPage // ignore: cast_nullable_to_non_nullable
+              as String?,
       resultsPerPage: resultsPerPage == freezed
           ? _value.resultsPerPage
-          : resultsPerPage as int,
-      resultsSize:
-          resultsSize == freezed ? _value.resultsSize : resultsSize as int,
-      totalPages: totalPages == freezed ? _value.totalPages : totalPages as int,
+          : resultsPerPage // ignore: cast_nullable_to_non_nullable
+              as int,
+      resultsSize: resultsSize == freezed
+          ? _value.resultsSize
+          : resultsSize // ignore: cast_nullable_to_non_nullable
+              as int,
+      totalPages: totalPages == freezed
+          ? _value.totalPages
+          : totalPages // ignore: cast_nullable_to_non_nullable
+              as int,
       totalResultsSize: totalResultsSize == freezed
           ? _value.totalResultsSize
-          : totalResultsSize as int,
-      results: results == freezed ? _value.results : results as List<Document>,
-      license: license == freezed ? _value.license : license as String,
-      version: version == freezed ? _value.version : version as String,
-      page: page == freezed ? _value.page : page as int,
+          : totalResultsSize // ignore: cast_nullable_to_non_nullable
+              as int,
+      results: results == freezed
+          ? _value.results
+          : results // ignore: cast_nullable_to_non_nullable
+              as List<Document>,
+      license: license == freezed
+          ? _value.license
+          : license // ignore: cast_nullable_to_non_nullable
+              as String,
+      version: version == freezed
+          ? _value.version
+          : version // ignore: cast_nullable_to_non_nullable
+              as String,
+      page: page == freezed
+          ? _value.page
+          : page // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_FlusmicResponse implements _FlusmicResponse {
   _$_FlusmicResponse(
       {@JsonKey(name: 'next_page') this.nextPage,
       @JsonKey(name: 'prev_page') this.prevPage,
-      @required @JsonKey(name: 'results_per_page') this.resultsPerPage,
-      @required @JsonKey(name: 'results_size') this.resultsSize,
-      @required @JsonKey(name: 'total_pages') this.totalPages,
-      @required @JsonKey(name: 'total_results_size') this.totalResultsSize,
-      @required this.results,
-      @required this.license,
-      @required this.version,
-      @required this.page})
-      : assert(resultsPerPage != null),
-        assert(resultsSize != null),
-        assert(totalPages != null),
-        assert(totalResultsSize != null),
-        assert(results != null),
-        assert(license != null),
-        assert(version != null),
-        assert(page != null);
+      @JsonKey(name: 'results_per_page') required this.resultsPerPage,
+      @JsonKey(name: 'results_size') required this.resultsSize,
+      @JsonKey(name: 'total_pages') required this.totalPages,
+      @JsonKey(name: 'total_results_size') required this.totalResultsSize,
+      required this.results,
+      required this.license,
+      required this.version,
+      required this.page});
 
   factory _$_FlusmicResponse.fromJson(Map<String, dynamic> json) =>
       _$_$_FlusmicResponseFromJson(json);
 
   @override
   @JsonKey(name: 'next_page')
-  final String nextPage;
+  final String? nextPage;
   @override
   @JsonKey(name: 'prev_page')
-  final String prevPage;
+  final String? prevPage;
   @override
   @JsonKey(name: 'results_per_page')
   final int resultsPerPage;
@@ -307,6 +351,7 @@ class _$_FlusmicResponse implements _FlusmicResponse {
       const DeepCollectionEquality().hash(version) ^
       const DeepCollectionEquality().hash(page);
 
+  @JsonKey(ignore: true)
   @override
   _$FlusmicResponseCopyWith<_FlusmicResponse> get copyWith =>
       __$FlusmicResponseCopyWithImpl<_FlusmicResponse>(this, _$identity);
@@ -319,46 +364,48 @@ class _$_FlusmicResponse implements _FlusmicResponse {
 
 abstract class _FlusmicResponse implements FlusmicResponse {
   factory _FlusmicResponse(
-      {@JsonKey(name: 'next_page') String nextPage,
-      @JsonKey(name: 'prev_page') String prevPage,
-      @required @JsonKey(name: 'results_per_page') int resultsPerPage,
-      @required @JsonKey(name: 'results_size') int resultsSize,
-      @required @JsonKey(name: 'total_pages') int totalPages,
-      @required @JsonKey(name: 'total_results_size') int totalResultsSize,
-      @required List<Document> results,
-      @required String license,
-      @required String version,
-      @required int page}) = _$_FlusmicResponse;
+      {@JsonKey(name: 'next_page') String? nextPage,
+      @JsonKey(name: 'prev_page') String? prevPage,
+      @JsonKey(name: 'results_per_page') required int resultsPerPage,
+      @JsonKey(name: 'results_size') required int resultsSize,
+      @JsonKey(name: 'total_pages') required int totalPages,
+      @JsonKey(name: 'total_results_size') required int totalResultsSize,
+      required List<Document> results,
+      required String license,
+      required String version,
+      required int page}) = _$_FlusmicResponse;
 
   factory _FlusmicResponse.fromJson(Map<String, dynamic> json) =
       _$_FlusmicResponse.fromJson;
 
   @override
   @JsonKey(name: 'next_page')
-  String get nextPage;
+  String? get nextPage => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'prev_page')
-  String get prevPage;
+  String? get prevPage => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'results_per_page')
-  int get resultsPerPage;
+  int get resultsPerPage => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'results_size')
-  int get resultsSize;
+  int get resultsSize => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'total_pages')
-  int get totalPages;
+  int get totalPages => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'total_results_size')
-  int get totalResultsSize;
+  int get totalResultsSize => throw _privateConstructorUsedError;
   @override
-  List<Document> get results;
+  List<Document> get results => throw _privateConstructorUsedError;
   @override
-  String get license;
+  String get license => throw _privateConstructorUsedError;
   @override
-  String get version;
+  String get version => throw _privateConstructorUsedError;
   @override
-  int get page;
+  int get page => throw _privateConstructorUsedError;
   @override
-  _$FlusmicResponseCopyWith<_FlusmicResponse> get copyWith;
+  @JsonKey(ignore: true)
+  _$FlusmicResponseCopyWith<_FlusmicResponse> get copyWith =>
+      throw _privateConstructorUsedError;
 }

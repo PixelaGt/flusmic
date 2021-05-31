@@ -8,19 +8,19 @@ part of 'simple_image.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-SimpleImage _$SimpleImageFromJson(Map<String, dynamic> json) {
-  return SimpleImage(
-    json['alt'] as String,
-    json['copyright'] as String,
-    FlusmicImage.dimensionFromJson(json['dimensions'] as Map<String, dynamic>),
-    json['url'] as String,
+_$_SimpleImage _$_$_SimpleImageFromJson(Map<String, dynamic> json) {
+  return _$_SimpleImage(
+    alt: json['alt'] as String?,
+    copyright: json['copyright'] as String?,
+    dimensions: Dimension.fromJson(json['dimensions'] as Map<String, dynamic>),
+    url: json['url'] as String,
   );
 }
 
-Map<String, dynamic> _$SimpleImageToJson(SimpleImage instance) =>
+Map<String, dynamic> _$_$_SimpleImageToJson(_$_SimpleImage instance) =>
     <String, dynamic>{
-      'dimensions': FlusmicImage.dimensionToJson(instance.dimensions),
       'alt': instance.alt,
       'copyright': instance.copyright,
+      'dimensions': instance.dimensions,
       'url': instance.url,
     };

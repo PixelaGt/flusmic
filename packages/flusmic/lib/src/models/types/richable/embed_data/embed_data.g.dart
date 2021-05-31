@@ -15,15 +15,15 @@ _$_EmbedData _$_$_EmbedDataFromJson(Map<String, dynamic> json) {
     embedUrl: json['embed_url'] as String,
     providerName: json['provider_name'] as String,
     providerUrl: json['provider_url'] as String,
-    thumbnailHeight: (json['thumbnail_height'] as num)?.toDouble(),
+    thumbnailHeight: (json['thumbnail_height'] as num).toDouble(),
     thumbnailUrl: json['thumbnail_url'] as String,
-    thumbnailWidth: (json['thumbnail_width'] as num)?.toDouble(),
+    thumbnailWidth: (json['thumbnail_width'] as num).toDouble(),
     html: json['html'] as String,
     title: json['title'] as String,
     type: json['type'] as String,
     version: json['version'] as String,
-    height: (json['height'] as num)?.toDouble(),
-    width: (json['width'] as num)?.toDouble(),
+    height: (json['height'] as num).toDouble(),
+    width: (json['width'] as num).toDouble(),
   );
 }
 

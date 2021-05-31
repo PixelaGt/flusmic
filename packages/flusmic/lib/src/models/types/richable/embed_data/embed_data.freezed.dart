@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'embed_data.dart';
 
@@ -8,6 +8,10 @@ part of 'embed_data.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 EmbedData _$EmbedDataFromJson(Map<String, dynamic> json) {
   return _EmbedData.fromJson(json);
 }
@@ -16,22 +20,21 @@ EmbedData _$EmbedDataFromJson(Map<String, dynamic> json) {
 class _$EmbedDataTearOff {
   const _$EmbedDataTearOff();
 
-// ignore: unused_element
   _EmbedData call(
-      {@required @JsonKey(name: 'author_name') String authorName,
-      @required @JsonKey(name: 'author_url') String authorUrl,
-      @required @JsonKey(name: 'embed_url') String embedUrl,
-      @required @JsonKey(name: 'provider_name') String providerName,
-      @required @JsonKey(name: 'provider_url') String providerUrl,
-      @required @JsonKey(name: 'thumbnail_height') double thumbnailHeight,
-      @required @JsonKey(name: 'thumbnail_url') String thumbnailUrl,
-      @required @JsonKey(name: 'thumbnail_width') double thumbnailWidth,
-      @required String html,
-      @required String title,
-      @required String type,
-      @required String version,
-      @required double height,
-      @required double width}) {
+      {@JsonKey(name: 'author_name') required String authorName,
+      @JsonKey(name: 'author_url') required String authorUrl,
+      @JsonKey(name: 'embed_url') required String embedUrl,
+      @JsonKey(name: 'provider_name') required String providerName,
+      @JsonKey(name: 'provider_url') required String providerUrl,
+      @JsonKey(name: 'thumbnail_height') required double thumbnailHeight,
+      @JsonKey(name: 'thumbnail_url') required String thumbnailUrl,
+      @JsonKey(name: 'thumbnail_width') required double thumbnailWidth,
+      required String html,
+      required String title,
+      required String type,
+      required String version,
+      required double height,
+      required double width}) {
     return _EmbedData(
       authorName: authorName,
       authorUrl: authorUrl,
@@ -50,43 +53,43 @@ class _$EmbedDataTearOff {
     );
   }
 
-// ignore: unused_element
   EmbedData fromJson(Map<String, Object> json) {
     return EmbedData.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $EmbedData = _$EmbedDataTearOff();
 
 /// @nodoc
 mixin _$EmbedData {
   @JsonKey(name: 'author_name')
-  String get authorName;
+  String get authorName => throw _privateConstructorUsedError;
   @JsonKey(name: 'author_url')
-  String get authorUrl;
+  String get authorUrl => throw _privateConstructorUsedError;
   @JsonKey(name: 'embed_url')
-  String get embedUrl;
+  String get embedUrl => throw _privateConstructorUsedError;
   @JsonKey(name: 'provider_name')
-  String get providerName;
+  String get providerName => throw _privateConstructorUsedError;
   @JsonKey(name: 'provider_url')
-  String get providerUrl;
+  String get providerUrl => throw _privateConstructorUsedError;
   @JsonKey(name: 'thumbnail_height')
-  double get thumbnailHeight;
+  double get thumbnailHeight => throw _privateConstructorUsedError;
   @JsonKey(name: 'thumbnail_url')
-  String get thumbnailUrl;
+  String get thumbnailUrl => throw _privateConstructorUsedError;
   @JsonKey(name: 'thumbnail_width')
-  double get thumbnailWidth;
-  String get html;
-  String get title;
-  String get type;
-  String get version;
-  double get height;
-  double get width;
+  double get thumbnailWidth => throw _privateConstructorUsedError;
+  String get html => throw _privateConstructorUsedError;
+  String get title => throw _privateConstructorUsedError;
+  String get type => throw _privateConstructorUsedError;
+  String get version => throw _privateConstructorUsedError;
+  double get height => throw _privateConstructorUsedError;
+  double get width => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
-  $EmbedDataCopyWith<EmbedData> get copyWith;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $EmbedDataCopyWith<EmbedData> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -120,46 +123,78 @@ class _$EmbedDataCopyWithImpl<$Res> implements $EmbedDataCopyWith<$Res> {
 
   @override
   $Res call({
-    Object authorName = freezed,
-    Object authorUrl = freezed,
-    Object embedUrl = freezed,
-    Object providerName = freezed,
-    Object providerUrl = freezed,
-    Object thumbnailHeight = freezed,
-    Object thumbnailUrl = freezed,
-    Object thumbnailWidth = freezed,
-    Object html = freezed,
-    Object title = freezed,
-    Object type = freezed,
-    Object version = freezed,
-    Object height = freezed,
-    Object width = freezed,
+    Object? authorName = freezed,
+    Object? authorUrl = freezed,
+    Object? embedUrl = freezed,
+    Object? providerName = freezed,
+    Object? providerUrl = freezed,
+    Object? thumbnailHeight = freezed,
+    Object? thumbnailUrl = freezed,
+    Object? thumbnailWidth = freezed,
+    Object? html = freezed,
+    Object? title = freezed,
+    Object? type = freezed,
+    Object? version = freezed,
+    Object? height = freezed,
+    Object? width = freezed,
   }) {
     return _then(_value.copyWith(
-      authorName:
-          authorName == freezed ? _value.authorName : authorName as String,
-      authorUrl: authorUrl == freezed ? _value.authorUrl : authorUrl as String,
-      embedUrl: embedUrl == freezed ? _value.embedUrl : embedUrl as String,
+      authorName: authorName == freezed
+          ? _value.authorName
+          : authorName // ignore: cast_nullable_to_non_nullable
+              as String,
+      authorUrl: authorUrl == freezed
+          ? _value.authorUrl
+          : authorUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      embedUrl: embedUrl == freezed
+          ? _value.embedUrl
+          : embedUrl // ignore: cast_nullable_to_non_nullable
+              as String,
       providerName: providerName == freezed
           ? _value.providerName
-          : providerName as String,
-      providerUrl:
-          providerUrl == freezed ? _value.providerUrl : providerUrl as String,
+          : providerName // ignore: cast_nullable_to_non_nullable
+              as String,
+      providerUrl: providerUrl == freezed
+          ? _value.providerUrl
+          : providerUrl // ignore: cast_nullable_to_non_nullable
+              as String,
       thumbnailHeight: thumbnailHeight == freezed
           ? _value.thumbnailHeight
-          : thumbnailHeight as double,
+          : thumbnailHeight // ignore: cast_nullable_to_non_nullable
+              as double,
       thumbnailUrl: thumbnailUrl == freezed
           ? _value.thumbnailUrl
-          : thumbnailUrl as String,
+          : thumbnailUrl // ignore: cast_nullable_to_non_nullable
+              as String,
       thumbnailWidth: thumbnailWidth == freezed
           ? _value.thumbnailWidth
-          : thumbnailWidth as double,
-      html: html == freezed ? _value.html : html as String,
-      title: title == freezed ? _value.title : title as String,
-      type: type == freezed ? _value.type : type as String,
-      version: version == freezed ? _value.version : version as String,
-      height: height == freezed ? _value.height : height as double,
-      width: width == freezed ? _value.width : width as double,
+          : thumbnailWidth // ignore: cast_nullable_to_non_nullable
+              as double,
+      html: html == freezed
+          ? _value.html
+          : html // ignore: cast_nullable_to_non_nullable
+              as String,
+      title: title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      version: version == freezed
+          ? _value.version
+          : version // ignore: cast_nullable_to_non_nullable
+              as String,
+      height: height == freezed
+          ? _value.height
+          : height // ignore: cast_nullable_to_non_nullable
+              as double,
+      width: width == freezed
+          ? _value.width
+          : width // ignore: cast_nullable_to_non_nullable
+              as double,
     ));
   }
 }
@@ -198,83 +233,100 @@ class __$EmbedDataCopyWithImpl<$Res> extends _$EmbedDataCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object authorName = freezed,
-    Object authorUrl = freezed,
-    Object embedUrl = freezed,
-    Object providerName = freezed,
-    Object providerUrl = freezed,
-    Object thumbnailHeight = freezed,
-    Object thumbnailUrl = freezed,
-    Object thumbnailWidth = freezed,
-    Object html = freezed,
-    Object title = freezed,
-    Object type = freezed,
-    Object version = freezed,
-    Object height = freezed,
-    Object width = freezed,
+    Object? authorName = freezed,
+    Object? authorUrl = freezed,
+    Object? embedUrl = freezed,
+    Object? providerName = freezed,
+    Object? providerUrl = freezed,
+    Object? thumbnailHeight = freezed,
+    Object? thumbnailUrl = freezed,
+    Object? thumbnailWidth = freezed,
+    Object? html = freezed,
+    Object? title = freezed,
+    Object? type = freezed,
+    Object? version = freezed,
+    Object? height = freezed,
+    Object? width = freezed,
   }) {
     return _then(_EmbedData(
-      authorName:
-          authorName == freezed ? _value.authorName : authorName as String,
-      authorUrl: authorUrl == freezed ? _value.authorUrl : authorUrl as String,
-      embedUrl: embedUrl == freezed ? _value.embedUrl : embedUrl as String,
+      authorName: authorName == freezed
+          ? _value.authorName
+          : authorName // ignore: cast_nullable_to_non_nullable
+              as String,
+      authorUrl: authorUrl == freezed
+          ? _value.authorUrl
+          : authorUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      embedUrl: embedUrl == freezed
+          ? _value.embedUrl
+          : embedUrl // ignore: cast_nullable_to_non_nullable
+              as String,
       providerName: providerName == freezed
           ? _value.providerName
-          : providerName as String,
-      providerUrl:
-          providerUrl == freezed ? _value.providerUrl : providerUrl as String,
+          : providerName // ignore: cast_nullable_to_non_nullable
+              as String,
+      providerUrl: providerUrl == freezed
+          ? _value.providerUrl
+          : providerUrl // ignore: cast_nullable_to_non_nullable
+              as String,
       thumbnailHeight: thumbnailHeight == freezed
           ? _value.thumbnailHeight
-          : thumbnailHeight as double,
+          : thumbnailHeight // ignore: cast_nullable_to_non_nullable
+              as double,
       thumbnailUrl: thumbnailUrl == freezed
           ? _value.thumbnailUrl
-          : thumbnailUrl as String,
+          : thumbnailUrl // ignore: cast_nullable_to_non_nullable
+              as String,
       thumbnailWidth: thumbnailWidth == freezed
           ? _value.thumbnailWidth
-          : thumbnailWidth as double,
-      html: html == freezed ? _value.html : html as String,
-      title: title == freezed ? _value.title : title as String,
-      type: type == freezed ? _value.type : type as String,
-      version: version == freezed ? _value.version : version as String,
-      height: height == freezed ? _value.height : height as double,
-      width: width == freezed ? _value.width : width as double,
+          : thumbnailWidth // ignore: cast_nullable_to_non_nullable
+              as double,
+      html: html == freezed
+          ? _value.html
+          : html // ignore: cast_nullable_to_non_nullable
+              as String,
+      title: title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      version: version == freezed
+          ? _value.version
+          : version // ignore: cast_nullable_to_non_nullable
+              as String,
+      height: height == freezed
+          ? _value.height
+          : height // ignore: cast_nullable_to_non_nullable
+              as double,
+      width: width == freezed
+          ? _value.width
+          : width // ignore: cast_nullable_to_non_nullable
+              as double,
     ));
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_EmbedData implements _EmbedData {
   _$_EmbedData(
-      {@required @JsonKey(name: 'author_name') this.authorName,
-      @required @JsonKey(name: 'author_url') this.authorUrl,
-      @required @JsonKey(name: 'embed_url') this.embedUrl,
-      @required @JsonKey(name: 'provider_name') this.providerName,
-      @required @JsonKey(name: 'provider_url') this.providerUrl,
-      @required @JsonKey(name: 'thumbnail_height') this.thumbnailHeight,
-      @required @JsonKey(name: 'thumbnail_url') this.thumbnailUrl,
-      @required @JsonKey(name: 'thumbnail_width') this.thumbnailWidth,
-      @required this.html,
-      @required this.title,
-      @required this.type,
-      @required this.version,
-      @required this.height,
-      @required this.width})
-      : assert(authorName != null),
-        assert(authorUrl != null),
-        assert(embedUrl != null),
-        assert(providerName != null),
-        assert(providerUrl != null),
-        assert(thumbnailHeight != null),
-        assert(thumbnailUrl != null),
-        assert(thumbnailWidth != null),
-        assert(html != null),
-        assert(title != null),
-        assert(type != null),
-        assert(version != null),
-        assert(height != null),
-        assert(width != null);
+      {@JsonKey(name: 'author_name') required this.authorName,
+      @JsonKey(name: 'author_url') required this.authorUrl,
+      @JsonKey(name: 'embed_url') required this.embedUrl,
+      @JsonKey(name: 'provider_name') required this.providerName,
+      @JsonKey(name: 'provider_url') required this.providerUrl,
+      @JsonKey(name: 'thumbnail_height') required this.thumbnailHeight,
+      @JsonKey(name: 'thumbnail_url') required this.thumbnailUrl,
+      @JsonKey(name: 'thumbnail_width') required this.thumbnailWidth,
+      required this.html,
+      required this.title,
+      required this.type,
+      required this.version,
+      required this.height,
+      required this.width});
 
   factory _$_EmbedData.fromJson(Map<String, dynamic> json) =>
       _$_$_EmbedDataFromJson(json);
@@ -382,6 +434,7 @@ class _$_EmbedData implements _EmbedData {
       const DeepCollectionEquality().hash(height) ^
       const DeepCollectionEquality().hash(width);
 
+  @JsonKey(ignore: true)
   @override
   _$EmbedDataCopyWith<_EmbedData> get copyWith =>
       __$EmbedDataCopyWithImpl<_EmbedData>(this, _$identity);
@@ -394,60 +447,62 @@ class _$_EmbedData implements _EmbedData {
 
 abstract class _EmbedData implements EmbedData {
   factory _EmbedData(
-      {@required @JsonKey(name: 'author_name') String authorName,
-      @required @JsonKey(name: 'author_url') String authorUrl,
-      @required @JsonKey(name: 'embed_url') String embedUrl,
-      @required @JsonKey(name: 'provider_name') String providerName,
-      @required @JsonKey(name: 'provider_url') String providerUrl,
-      @required @JsonKey(name: 'thumbnail_height') double thumbnailHeight,
-      @required @JsonKey(name: 'thumbnail_url') String thumbnailUrl,
-      @required @JsonKey(name: 'thumbnail_width') double thumbnailWidth,
-      @required String html,
-      @required String title,
-      @required String type,
-      @required String version,
-      @required double height,
-      @required double width}) = _$_EmbedData;
+      {@JsonKey(name: 'author_name') required String authorName,
+      @JsonKey(name: 'author_url') required String authorUrl,
+      @JsonKey(name: 'embed_url') required String embedUrl,
+      @JsonKey(name: 'provider_name') required String providerName,
+      @JsonKey(name: 'provider_url') required String providerUrl,
+      @JsonKey(name: 'thumbnail_height') required double thumbnailHeight,
+      @JsonKey(name: 'thumbnail_url') required String thumbnailUrl,
+      @JsonKey(name: 'thumbnail_width') required double thumbnailWidth,
+      required String html,
+      required String title,
+      required String type,
+      required String version,
+      required double height,
+      required double width}) = _$_EmbedData;
 
   factory _EmbedData.fromJson(Map<String, dynamic> json) =
       _$_EmbedData.fromJson;
 
   @override
   @JsonKey(name: 'author_name')
-  String get authorName;
+  String get authorName => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'author_url')
-  String get authorUrl;
+  String get authorUrl => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'embed_url')
-  String get embedUrl;
+  String get embedUrl => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'provider_name')
-  String get providerName;
+  String get providerName => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'provider_url')
-  String get providerUrl;
+  String get providerUrl => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'thumbnail_height')
-  double get thumbnailHeight;
+  double get thumbnailHeight => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'thumbnail_url')
-  String get thumbnailUrl;
+  String get thumbnailUrl => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'thumbnail_width')
-  double get thumbnailWidth;
+  double get thumbnailWidth => throw _privateConstructorUsedError;
   @override
-  String get html;
+  String get html => throw _privateConstructorUsedError;
   @override
-  String get title;
+  String get title => throw _privateConstructorUsedError;
   @override
-  String get type;
+  String get type => throw _privateConstructorUsedError;
   @override
-  String get version;
+  String get version => throw _privateConstructorUsedError;
   @override
-  double get height;
+  double get height => throw _privateConstructorUsedError;
   @override
-  double get width;
+  double get width => throw _privateConstructorUsedError;
   @override
-  _$EmbedDataCopyWith<_EmbedData> get copyWith;
+  @JsonKey(ignore: true)
+  _$EmbedDataCopyWith<_EmbedData> get copyWith =>
+      throw _privateConstructorUsedError;
 }

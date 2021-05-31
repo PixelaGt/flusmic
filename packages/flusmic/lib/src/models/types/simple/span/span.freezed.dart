@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'span.dart';
 
@@ -8,6 +8,10 @@ part of 'span.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 Span _$SpanFromJson(Map<String, dynamic> json) {
   return _Span.fromJson(json);
 }
@@ -16,8 +20,7 @@ Span _$SpanFromJson(Map<String, dynamic> json) {
 class _$SpanTearOff {
   const _$SpanTearOff();
 
-// ignore: unused_element
-  _Span call({@required String type, @required int end, @required int start}) {
+  _Span call({required String type, required int end, required int start}) {
     return _Span(
       type: type,
       end: end,
@@ -25,24 +28,23 @@ class _$SpanTearOff {
     );
   }
 
-// ignore: unused_element
   Span fromJson(Map<String, Object> json) {
     return Span.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $Span = _$SpanTearOff();
 
 /// @nodoc
 mixin _$Span {
-  String get type;
-  int get end;
-  int get start;
+  String get type => throw _privateConstructorUsedError;
+  int get end => throw _privateConstructorUsedError;
+  int get start => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
-  $SpanCopyWith<Span> get copyWith;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $SpanCopyWith<Span> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -62,14 +64,23 @@ class _$SpanCopyWithImpl<$Res> implements $SpanCopyWith<$Res> {
 
   @override
   $Res call({
-    Object type = freezed,
-    Object end = freezed,
-    Object start = freezed,
+    Object? type = freezed,
+    Object? end = freezed,
+    Object? start = freezed,
   }) {
     return _then(_value.copyWith(
-      type: type == freezed ? _value.type : type as String,
-      end: end == freezed ? _value.end : end as int,
-      start: start == freezed ? _value.start : start as int,
+      type: type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      end: end == freezed
+          ? _value.end
+          : end // ignore: cast_nullable_to_non_nullable
+              as int,
+      start: start == freezed
+          ? _value.start
+          : start // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -93,26 +104,31 @@ class __$SpanCopyWithImpl<$Res> extends _$SpanCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object type = freezed,
-    Object end = freezed,
-    Object start = freezed,
+    Object? type = freezed,
+    Object? end = freezed,
+    Object? start = freezed,
   }) {
     return _then(_Span(
-      type: type == freezed ? _value.type : type as String,
-      end: end == freezed ? _value.end : end as int,
-      start: start == freezed ? _value.start : start as int,
+      type: type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      end: end == freezed
+          ? _value.end
+          : end // ignore: cast_nullable_to_non_nullable
+              as int,
+      start: start == freezed
+          ? _value.start
+          : start // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_Span implements _Span {
-  _$_Span({@required this.type, @required this.end, @required this.start})
-      : assert(type != null),
-        assert(end != null),
-        assert(start != null);
+  _$_Span({required this.type, required this.end, required this.start});
 
   factory _$_Span.fromJson(Map<String, dynamic> json) =>
       _$_$_SpanFromJson(json);
@@ -148,6 +164,7 @@ class _$_Span implements _Span {
       const DeepCollectionEquality().hash(end) ^
       const DeepCollectionEquality().hash(start);
 
+  @JsonKey(ignore: true)
   @override
   _$SpanCopyWith<_Span> get copyWith =>
       __$SpanCopyWithImpl<_Span>(this, _$identity);
@@ -159,19 +176,18 @@ class _$_Span implements _Span {
 }
 
 abstract class _Span implements Span {
-  factory _Span(
-      {@required String type,
-      @required int end,
-      @required int start}) = _$_Span;
+  factory _Span({required String type, required int end, required int start}) =
+      _$_Span;
 
   factory _Span.fromJson(Map<String, dynamic> json) = _$_Span.fromJson;
 
   @override
-  String get type;
+  String get type => throw _privateConstructorUsedError;
   @override
-  int get end;
+  int get end => throw _privateConstructorUsedError;
   @override
-  int get start;
+  int get start => throw _privateConstructorUsedError;
   @override
-  _$SpanCopyWith<_Span> get copyWith;
+  @JsonKey(ignore: true)
+  _$SpanCopyWith<_Span> get copyWith => throw _privateConstructorUsedError;
 }

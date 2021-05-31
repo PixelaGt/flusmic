@@ -7,10 +7,12 @@ part 'geopoint.g.dart';
 ///
 ///Represents a map point with coordinates.
 @freezed
-abstract class Geopoint with _$Geopoint {
+class Geopoint with _$Geopoint {
   ///Deafult factory constructor for Geopoint
-  factory Geopoint({@required double latitude, @required double longitude}) =
-      _Geopoint;
+  factory Geopoint({
+    required double latitude,
+    required double longitude,
+  }) = _Geopoint;
 
   ///Creates a Geopoint object from json
   factory Geopoint.fromJson(Map<String, dynamic> json) =>

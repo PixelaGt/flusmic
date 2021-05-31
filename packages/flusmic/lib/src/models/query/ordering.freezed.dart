@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'ordering.dart';
 
@@ -9,11 +9,13 @@ part of 'ordering.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$OrderingTearOff {
   const _$OrderingTearOff();
 
-// ignore: unused_element
   TypeOrdering type(String customType, String field,
       {bool descending = false}) {
     return TypeOrdering(
@@ -23,7 +25,6 @@ class _$OrderingTearOff {
     );
   }
 
-// ignore: unused_element
   DocumentOrdering document(String type, {bool descending = false}) {
     return DocumentOrdering(
       type,
@@ -31,14 +32,12 @@ class _$OrderingTearOff {
     );
   }
 
-// ignore: unused_element
   FirstPublicationDateOrdering firstPublicationDate({bool descending = false}) {
     return FirstPublicationDateOrdering(
       descending: descending,
     );
   }
 
-// ignore: unused_element
   LastPublicationDateOrdering lastPublicationDate({bool descending = false}) {
     return LastPublicationDateOrdering(
       descending: descending,
@@ -47,45 +46,53 @@ class _$OrderingTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $Ordering = _$OrderingTearOff();
 
 /// @nodoc
 mixin _$Ordering {
-  bool get descending;
+  bool get descending => throw _privateConstructorUsedError;
 
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result type(String customType, String field, bool descending),
-    @required Result document(String type, bool descending),
-    @required Result firstPublicationDate(bool descending),
-    @required Result lastPublicationDate(bool descending),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function(String customType, String field, bool descending)
+        type,
+    required TResult Function(String type, bool descending) document,
+    required TResult Function(bool descending) firstPublicationDate,
+    required TResult Function(bool descending) lastPublicationDate,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result type(String customType, String field, bool descending),
-    Result document(String type, bool descending),
-    Result firstPublicationDate(bool descending),
-    Result lastPublicationDate(bool descending),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String customType, String field, bool descending)? type,
+    TResult Function(String type, bool descending)? document,
+    TResult Function(bool descending)? firstPublicationDate,
+    TResult Function(bool descending)? lastPublicationDate,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result type(TypeOrdering value),
-    @required Result document(DocumentOrdering value),
-    @required Result firstPublicationDate(FirstPublicationDateOrdering value),
-    @required Result lastPublicationDate(LastPublicationDateOrdering value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(TypeOrdering value) type,
+    required TResult Function(DocumentOrdering value) document,
+    required TResult Function(FirstPublicationDateOrdering value)
+        firstPublicationDate,
+    required TResult Function(LastPublicationDateOrdering value)
+        lastPublicationDate,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result type(TypeOrdering value),
-    Result document(DocumentOrdering value),
-    Result firstPublicationDate(FirstPublicationDateOrdering value),
-    Result lastPublicationDate(LastPublicationDateOrdering value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TypeOrdering value)? type,
+    TResult Function(DocumentOrdering value)? document,
+    TResult Function(FirstPublicationDateOrdering value)? firstPublicationDate,
+    TResult Function(LastPublicationDateOrdering value)? lastPublicationDate,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 
-  $OrderingCopyWith<Ordering> get copyWith;
+  @JsonKey(ignore: true)
+  $OrderingCopyWith<Ordering> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -105,11 +112,13 @@ class _$OrderingCopyWithImpl<$Res> implements $OrderingCopyWith<$Res> {
 
   @override
   $Res call({
-    Object descending = freezed,
+    Object? descending = freezed,
   }) {
     return _then(_value.copyWith(
-      descending:
-          descending == freezed ? _value.descending : descending as bool,
+      descending: descending == freezed
+          ? _value.descending
+          : descending // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -135,25 +144,31 @@ class _$TypeOrderingCopyWithImpl<$Res> extends _$OrderingCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object customType = freezed,
-    Object field = freezed,
-    Object descending = freezed,
+    Object? customType = freezed,
+    Object? field = freezed,
+    Object? descending = freezed,
   }) {
     return _then(TypeOrdering(
-      customType == freezed ? _value.customType : customType as String,
-      field == freezed ? _value.field : field as String,
-      descending:
-          descending == freezed ? _value.descending : descending as bool,
+      customType == freezed
+          ? _value.customType
+          : customType // ignore: cast_nullable_to_non_nullable
+              as String,
+      field == freezed
+          ? _value.field
+          : field // ignore: cast_nullable_to_non_nullable
+              as String,
+      descending: descending == freezed
+          ? _value.descending
+          : descending // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
 
 /// @nodoc
+
 class _$TypeOrdering implements TypeOrdering {
-  const _$TypeOrdering(this.customType, this.field, {this.descending = false})
-      : assert(customType != null),
-        assert(field != null),
-        assert(descending != null);
+  const _$TypeOrdering(this.customType, this.field, {this.descending = false});
 
   @override
   final String customType;
@@ -189,35 +204,32 @@ class _$TypeOrdering implements TypeOrdering {
       const DeepCollectionEquality().hash(field) ^
       const DeepCollectionEquality().hash(descending);
 
+  @JsonKey(ignore: true)
   @override
   $TypeOrderingCopyWith<TypeOrdering> get copyWith =>
       _$TypeOrderingCopyWithImpl<TypeOrdering>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result type(String customType, String field, bool descending),
-    @required Result document(String type, bool descending),
-    @required Result firstPublicationDate(bool descending),
-    @required Result lastPublicationDate(bool descending),
+  TResult when<TResult extends Object?>({
+    required TResult Function(String customType, String field, bool descending)
+        type,
+    required TResult Function(String type, bool descending) document,
+    required TResult Function(bool descending) firstPublicationDate,
+    required TResult Function(bool descending) lastPublicationDate,
   }) {
-    assert(type != null);
-    assert(document != null);
-    assert(firstPublicationDate != null);
-    assert(lastPublicationDate != null);
     return type(customType, field, descending);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result type(String customType, String field, bool descending),
-    Result document(String type, bool descending),
-    Result firstPublicationDate(bool descending),
-    Result lastPublicationDate(bool descending),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String customType, String field, bool descending)? type,
+    TResult Function(String type, bool descending)? document,
+    TResult Function(bool descending)? firstPublicationDate,
+    TResult Function(bool descending)? lastPublicationDate,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (type != null) {
       return type(customType, field, descending);
     }
@@ -226,29 +238,26 @@ class _$TypeOrdering implements TypeOrdering {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result type(TypeOrdering value),
-    @required Result document(DocumentOrdering value),
-    @required Result firstPublicationDate(FirstPublicationDateOrdering value),
-    @required Result lastPublicationDate(LastPublicationDateOrdering value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(TypeOrdering value) type,
+    required TResult Function(DocumentOrdering value) document,
+    required TResult Function(FirstPublicationDateOrdering value)
+        firstPublicationDate,
+    required TResult Function(LastPublicationDateOrdering value)
+        lastPublicationDate,
   }) {
-    assert(type != null);
-    assert(document != null);
-    assert(firstPublicationDate != null);
-    assert(lastPublicationDate != null);
     return type(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result type(TypeOrdering value),
-    Result document(DocumentOrdering value),
-    Result firstPublicationDate(FirstPublicationDateOrdering value),
-    Result lastPublicationDate(LastPublicationDateOrdering value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TypeOrdering value)? type,
+    TResult Function(DocumentOrdering value)? document,
+    TResult Function(FirstPublicationDateOrdering value)? firstPublicationDate,
+    TResult Function(LastPublicationDateOrdering value)? lastPublicationDate,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (type != null) {
       return type(this);
     }
@@ -260,12 +269,14 @@ abstract class TypeOrdering implements Ordering {
   const factory TypeOrdering(String customType, String field,
       {bool descending}) = _$TypeOrdering;
 
-  String get customType;
-  String get field;
+  String get customType => throw _privateConstructorUsedError;
+  String get field => throw _privateConstructorUsedError;
   @override
-  bool get descending;
+  bool get descending => throw _privateConstructorUsedError;
   @override
-  $TypeOrderingCopyWith<TypeOrdering> get copyWith;
+  @JsonKey(ignore: true)
+  $TypeOrderingCopyWith<TypeOrdering> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -290,22 +301,26 @@ class _$DocumentOrderingCopyWithImpl<$Res> extends _$OrderingCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object type = freezed,
-    Object descending = freezed,
+    Object? type = freezed,
+    Object? descending = freezed,
   }) {
     return _then(DocumentOrdering(
-      type == freezed ? _value.type : type as String,
-      descending:
-          descending == freezed ? _value.descending : descending as bool,
+      type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      descending: descending == freezed
+          ? _value.descending
+          : descending // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
 
 /// @nodoc
+
 class _$DocumentOrdering implements DocumentOrdering {
-  const _$DocumentOrdering(this.type, {this.descending = false})
-      : assert(type != null),
-        assert(descending != null);
+  const _$DocumentOrdering(this.type, {this.descending = false});
 
   @override
   final String type;
@@ -335,35 +350,32 @@ class _$DocumentOrdering implements DocumentOrdering {
       const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(descending);
 
+  @JsonKey(ignore: true)
   @override
   $DocumentOrderingCopyWith<DocumentOrdering> get copyWith =>
       _$DocumentOrderingCopyWithImpl<DocumentOrdering>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result type(String customType, String field, bool descending),
-    @required Result document(String type, bool descending),
-    @required Result firstPublicationDate(bool descending),
-    @required Result lastPublicationDate(bool descending),
+  TResult when<TResult extends Object?>({
+    required TResult Function(String customType, String field, bool descending)
+        type,
+    required TResult Function(String type, bool descending) document,
+    required TResult Function(bool descending) firstPublicationDate,
+    required TResult Function(bool descending) lastPublicationDate,
   }) {
-    assert(type != null);
-    assert(document != null);
-    assert(firstPublicationDate != null);
-    assert(lastPublicationDate != null);
     return document(this.type, descending);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result type(String customType, String field, bool descending),
-    Result document(String type, bool descending),
-    Result firstPublicationDate(bool descending),
-    Result lastPublicationDate(bool descending),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String customType, String field, bool descending)? type,
+    TResult Function(String type, bool descending)? document,
+    TResult Function(bool descending)? firstPublicationDate,
+    TResult Function(bool descending)? lastPublicationDate,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (document != null) {
       return document(this.type, descending);
     }
@@ -372,29 +384,26 @@ class _$DocumentOrdering implements DocumentOrdering {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result type(TypeOrdering value),
-    @required Result document(DocumentOrdering value),
-    @required Result firstPublicationDate(FirstPublicationDateOrdering value),
-    @required Result lastPublicationDate(LastPublicationDateOrdering value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(TypeOrdering value) type,
+    required TResult Function(DocumentOrdering value) document,
+    required TResult Function(FirstPublicationDateOrdering value)
+        firstPublicationDate,
+    required TResult Function(LastPublicationDateOrdering value)
+        lastPublicationDate,
   }) {
-    assert(type != null);
-    assert(document != null);
-    assert(firstPublicationDate != null);
-    assert(lastPublicationDate != null);
     return document(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result type(TypeOrdering value),
-    Result document(DocumentOrdering value),
-    Result firstPublicationDate(FirstPublicationDateOrdering value),
-    Result lastPublicationDate(LastPublicationDateOrdering value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TypeOrdering value)? type,
+    TResult Function(DocumentOrdering value)? document,
+    TResult Function(FirstPublicationDateOrdering value)? firstPublicationDate,
+    TResult Function(LastPublicationDateOrdering value)? lastPublicationDate,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (document != null) {
       return document(this);
     }
@@ -406,11 +415,13 @@ abstract class DocumentOrdering implements Ordering {
   const factory DocumentOrdering(String type, {bool descending}) =
       _$DocumentOrdering;
 
-  String get type;
+  String get type => throw _privateConstructorUsedError;
   @override
-  bool get descending;
+  bool get descending => throw _privateConstructorUsedError;
   @override
-  $DocumentOrderingCopyWith<DocumentOrdering> get copyWith;
+  @JsonKey(ignore: true)
+  $DocumentOrderingCopyWith<DocumentOrdering> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -439,19 +450,21 @@ class _$FirstPublicationDateOrderingCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object descending = freezed,
+    Object? descending = freezed,
   }) {
     return _then(FirstPublicationDateOrdering(
-      descending:
-          descending == freezed ? _value.descending : descending as bool,
+      descending: descending == freezed
+          ? _value.descending
+          : descending // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
 
 /// @nodoc
+
 class _$FirstPublicationDateOrdering implements FirstPublicationDateOrdering {
-  const _$FirstPublicationDateOrdering({this.descending = false})
-      : assert(descending != null);
+  const _$FirstPublicationDateOrdering({this.descending = false});
 
   @JsonKey(defaultValue: false)
   @override
@@ -475,6 +488,7 @@ class _$FirstPublicationDateOrdering implements FirstPublicationDateOrdering {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(descending);
 
+  @JsonKey(ignore: true)
   @override
   $FirstPublicationDateOrderingCopyWith<FirstPublicationDateOrdering>
       get copyWith => _$FirstPublicationDateOrderingCopyWithImpl<
@@ -482,29 +496,25 @@ class _$FirstPublicationDateOrdering implements FirstPublicationDateOrdering {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result type(String customType, String field, bool descending),
-    @required Result document(String type, bool descending),
-    @required Result firstPublicationDate(bool descending),
-    @required Result lastPublicationDate(bool descending),
+  TResult when<TResult extends Object?>({
+    required TResult Function(String customType, String field, bool descending)
+        type,
+    required TResult Function(String type, bool descending) document,
+    required TResult Function(bool descending) firstPublicationDate,
+    required TResult Function(bool descending) lastPublicationDate,
   }) {
-    assert(type != null);
-    assert(document != null);
-    assert(firstPublicationDate != null);
-    assert(lastPublicationDate != null);
     return firstPublicationDate(descending);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result type(String customType, String field, bool descending),
-    Result document(String type, bool descending),
-    Result firstPublicationDate(bool descending),
-    Result lastPublicationDate(bool descending),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String customType, String field, bool descending)? type,
+    TResult Function(String type, bool descending)? document,
+    TResult Function(bool descending)? firstPublicationDate,
+    TResult Function(bool descending)? lastPublicationDate,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (firstPublicationDate != null) {
       return firstPublicationDate(descending);
     }
@@ -513,29 +523,26 @@ class _$FirstPublicationDateOrdering implements FirstPublicationDateOrdering {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result type(TypeOrdering value),
-    @required Result document(DocumentOrdering value),
-    @required Result firstPublicationDate(FirstPublicationDateOrdering value),
-    @required Result lastPublicationDate(LastPublicationDateOrdering value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(TypeOrdering value) type,
+    required TResult Function(DocumentOrdering value) document,
+    required TResult Function(FirstPublicationDateOrdering value)
+        firstPublicationDate,
+    required TResult Function(LastPublicationDateOrdering value)
+        lastPublicationDate,
   }) {
-    assert(type != null);
-    assert(document != null);
-    assert(firstPublicationDate != null);
-    assert(lastPublicationDate != null);
     return firstPublicationDate(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result type(TypeOrdering value),
-    Result document(DocumentOrdering value),
-    Result firstPublicationDate(FirstPublicationDateOrdering value),
-    Result lastPublicationDate(LastPublicationDateOrdering value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TypeOrdering value)? type,
+    TResult Function(DocumentOrdering value)? document,
+    TResult Function(FirstPublicationDateOrdering value)? firstPublicationDate,
+    TResult Function(LastPublicationDateOrdering value)? lastPublicationDate,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (firstPublicationDate != null) {
       return firstPublicationDate(this);
     }
@@ -548,10 +555,11 @@ abstract class FirstPublicationDateOrdering implements Ordering {
       _$FirstPublicationDateOrdering;
 
   @override
-  bool get descending;
+  bool get descending => throw _privateConstructorUsedError;
   @override
+  @JsonKey(ignore: true)
   $FirstPublicationDateOrderingCopyWith<FirstPublicationDateOrdering>
-      get copyWith;
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -579,19 +587,21 @@ class _$LastPublicationDateOrderingCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object descending = freezed,
+    Object? descending = freezed,
   }) {
     return _then(LastPublicationDateOrdering(
-      descending:
-          descending == freezed ? _value.descending : descending as bool,
+      descending: descending == freezed
+          ? _value.descending
+          : descending // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
 
 /// @nodoc
+
 class _$LastPublicationDateOrdering implements LastPublicationDateOrdering {
-  const _$LastPublicationDateOrdering({this.descending = false})
-      : assert(descending != null);
+  const _$LastPublicationDateOrdering({this.descending = false});
 
   @JsonKey(defaultValue: false)
   @override
@@ -615,6 +625,7 @@ class _$LastPublicationDateOrdering implements LastPublicationDateOrdering {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(descending);
 
+  @JsonKey(ignore: true)
   @override
   $LastPublicationDateOrderingCopyWith<LastPublicationDateOrdering>
       get copyWith => _$LastPublicationDateOrderingCopyWithImpl<
@@ -622,29 +633,25 @@ class _$LastPublicationDateOrdering implements LastPublicationDateOrdering {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result type(String customType, String field, bool descending),
-    @required Result document(String type, bool descending),
-    @required Result firstPublicationDate(bool descending),
-    @required Result lastPublicationDate(bool descending),
+  TResult when<TResult extends Object?>({
+    required TResult Function(String customType, String field, bool descending)
+        type,
+    required TResult Function(String type, bool descending) document,
+    required TResult Function(bool descending) firstPublicationDate,
+    required TResult Function(bool descending) lastPublicationDate,
   }) {
-    assert(type != null);
-    assert(document != null);
-    assert(firstPublicationDate != null);
-    assert(lastPublicationDate != null);
     return lastPublicationDate(descending);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result type(String customType, String field, bool descending),
-    Result document(String type, bool descending),
-    Result firstPublicationDate(bool descending),
-    Result lastPublicationDate(bool descending),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String customType, String field, bool descending)? type,
+    TResult Function(String type, bool descending)? document,
+    TResult Function(bool descending)? firstPublicationDate,
+    TResult Function(bool descending)? lastPublicationDate,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (lastPublicationDate != null) {
       return lastPublicationDate(descending);
     }
@@ -653,29 +660,26 @@ class _$LastPublicationDateOrdering implements LastPublicationDateOrdering {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result type(TypeOrdering value),
-    @required Result document(DocumentOrdering value),
-    @required Result firstPublicationDate(FirstPublicationDateOrdering value),
-    @required Result lastPublicationDate(LastPublicationDateOrdering value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(TypeOrdering value) type,
+    required TResult Function(DocumentOrdering value) document,
+    required TResult Function(FirstPublicationDateOrdering value)
+        firstPublicationDate,
+    required TResult Function(LastPublicationDateOrdering value)
+        lastPublicationDate,
   }) {
-    assert(type != null);
-    assert(document != null);
-    assert(firstPublicationDate != null);
-    assert(lastPublicationDate != null);
     return lastPublicationDate(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result type(TypeOrdering value),
-    Result document(DocumentOrdering value),
-    Result firstPublicationDate(FirstPublicationDateOrdering value),
-    Result lastPublicationDate(LastPublicationDateOrdering value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TypeOrdering value)? type,
+    TResult Function(DocumentOrdering value)? document,
+    TResult Function(FirstPublicationDateOrdering value)? firstPublicationDate,
+    TResult Function(LastPublicationDateOrdering value)? lastPublicationDate,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (lastPublicationDate != null) {
       return lastPublicationDate(this);
     }
@@ -688,8 +692,9 @@ abstract class LastPublicationDateOrdering implements Ordering {
       _$LastPublicationDateOrdering;
 
   @override
-  bool get descending;
+  bool get descending => throw _privateConstructorUsedError;
   @override
+  @JsonKey(ignore: true)
   $LastPublicationDateOrderingCopyWith<LastPublicationDateOrdering>
-      get copyWith;
+      get copyWith => throw _privateConstructorUsedError;
 }

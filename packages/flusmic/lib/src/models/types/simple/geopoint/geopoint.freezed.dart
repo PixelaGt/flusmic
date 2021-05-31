@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'geopoint.dart';
 
@@ -8,6 +8,10 @@ part of 'geopoint.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 Geopoint _$GeopointFromJson(Map<String, dynamic> json) {
   return _Geopoint.fromJson(json);
 }
@@ -16,31 +20,30 @@ Geopoint _$GeopointFromJson(Map<String, dynamic> json) {
 class _$GeopointTearOff {
   const _$GeopointTearOff();
 
-// ignore: unused_element
-  _Geopoint call({@required double latitude, @required double longitude}) {
+  _Geopoint call({required double latitude, required double longitude}) {
     return _Geopoint(
       latitude: latitude,
       longitude: longitude,
     );
   }
 
-// ignore: unused_element
   Geopoint fromJson(Map<String, Object> json) {
     return Geopoint.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $Geopoint = _$GeopointTearOff();
 
 /// @nodoc
 mixin _$Geopoint {
-  double get latitude;
-  double get longitude;
+  double get latitude => throw _privateConstructorUsedError;
+  double get longitude => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
-  $GeopointCopyWith<Geopoint> get copyWith;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $GeopointCopyWith<Geopoint> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -60,12 +63,18 @@ class _$GeopointCopyWithImpl<$Res> implements $GeopointCopyWith<$Res> {
 
   @override
   $Res call({
-    Object latitude = freezed,
-    Object longitude = freezed,
+    Object? latitude = freezed,
+    Object? longitude = freezed,
   }) {
     return _then(_value.copyWith(
-      latitude: latitude == freezed ? _value.latitude : latitude as double,
-      longitude: longitude == freezed ? _value.longitude : longitude as double,
+      latitude: latitude == freezed
+          ? _value.latitude
+          : latitude // ignore: cast_nullable_to_non_nullable
+              as double,
+      longitude: longitude == freezed
+          ? _value.longitude
+          : longitude // ignore: cast_nullable_to_non_nullable
+              as double,
     ));
   }
 }
@@ -89,23 +98,26 @@ class __$GeopointCopyWithImpl<$Res> extends _$GeopointCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object latitude = freezed,
-    Object longitude = freezed,
+    Object? latitude = freezed,
+    Object? longitude = freezed,
   }) {
     return _then(_Geopoint(
-      latitude: latitude == freezed ? _value.latitude : latitude as double,
-      longitude: longitude == freezed ? _value.longitude : longitude as double,
+      latitude: latitude == freezed
+          ? _value.latitude
+          : latitude // ignore: cast_nullable_to_non_nullable
+              as double,
+      longitude: longitude == freezed
+          ? _value.longitude
+          : longitude // ignore: cast_nullable_to_non_nullable
+              as double,
     ));
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_Geopoint implements _Geopoint {
-  _$_Geopoint({@required this.latitude, @required this.longitude})
-      : assert(latitude != null),
-        assert(longitude != null);
+  _$_Geopoint({required this.latitude, required this.longitude});
 
   factory _$_Geopoint.fromJson(Map<String, dynamic> json) =>
       _$_$_GeopointFromJson(json);
@@ -138,6 +150,7 @@ class _$_Geopoint implements _Geopoint {
       const DeepCollectionEquality().hash(latitude) ^
       const DeepCollectionEquality().hash(longitude);
 
+  @JsonKey(ignore: true)
   @override
   _$GeopointCopyWith<_Geopoint> get copyWith =>
       __$GeopointCopyWithImpl<_Geopoint>(this, _$identity);
@@ -149,15 +162,17 @@ class _$_Geopoint implements _Geopoint {
 }
 
 abstract class _Geopoint implements Geopoint {
-  factory _Geopoint({@required double latitude, @required double longitude}) =
+  factory _Geopoint({required double latitude, required double longitude}) =
       _$_Geopoint;
 
   factory _Geopoint.fromJson(Map<String, dynamic> json) = _$_Geopoint.fromJson;
 
   @override
-  double get latitude;
+  double get latitude => throw _privateConstructorUsedError;
   @override
-  double get longitude;
+  double get longitude => throw _privateConstructorUsedError;
   @override
-  _$GeopointCopyWith<_Geopoint> get copyWith;
+  @JsonKey(ignore: true)
+  _$GeopointCopyWith<_Geopoint> get copyWith =>
+      throw _privateConstructorUsedError;
 }

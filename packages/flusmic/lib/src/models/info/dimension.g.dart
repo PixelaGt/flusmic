@@ -10,8 +10,8 @@ part of 'dimension.dart';
 
 _$_Dimension _$_$_DimensionFromJson(Map<String, dynamic> json) {
   return _$_Dimension(
-    height: (json['height'] as num)?.toDouble(),
-    width: (json['width'] as num)?.toDouble(),
+    height: (json['height'] as num).toDouble(),
+    width: (json['width'] as num).toDouble(),
   );
 }
 

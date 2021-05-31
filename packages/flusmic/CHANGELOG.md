@@ -1,3 +1,38 @@
+## [3.0.0]
+* 3.0.0 release 🎉
+    * Null safety support.
+    * DefaultPredicatePaths are no longer constructors
+    * New way to work with Rich Text.
+    * New way to work with Linkeable content.
+* Model testing
+* Update dependencies
+
+## [3.0.0-pre2]
+* `RichableText` abstract class created
+* Expose `FlusmicError` for `flusmic_ui`
+
+## [3.0.0-pre1]
+* **BREAKING** DefaultPredicatePaths are no longer constructors.
+* **BREAKING** New way to work with Rich Text.
+    * New `Richable` class powered by freezed.
+    * Handle Richable types with new clases like: `RichableHeading1`, `RichableParagraph`, `RichableImage`, `RichableEmbed`.
+* **BREAKING** New way to work with Linkeable content.
+    * New `Linkable` class powered by freezed.
+    * Handle Linkeable types with new clases: `DocumentLinkeable`, `MediaLinkeable` and `WebLinkeable`.
+* Improves exception catching.
+* Updated some models to align null safety requirements.
+* Updated dependencies.
+* New tests for models added.
+
+## [3.0.0-nullsafety.2]
+* Update models
+* Fix nullability issues for embed images
+
+## [3.0.0-nullsafety.1]
+* **BREAKING**: Null safety support
+* Improves error management
+* Update dependencies
+
 ## [2.1.0]
 * Fix 'des' issue with orderings
 * 'page' param for `getRootDocument` and `getDocumentsByType` methods
