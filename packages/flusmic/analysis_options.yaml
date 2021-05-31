@@ -1,10 +1,9 @@
 include: package:very_good_analysis/analysis_options.yaml
+
 analyzer:
   exclude:
     - "**.freezed.dart"
     - "**.g.dart"
-    - "examples/**"
-    - "packages/flusmic/lib/example/**"
-    - "packages/flusmic_ui/lib/example/**"
+    - "example/**"
   errors:
     include_file_not_found: ignore
