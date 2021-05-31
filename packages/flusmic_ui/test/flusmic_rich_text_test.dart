@@ -28,7 +28,8 @@ void main() {
 }
 
 class FlusmicApp extends StatefulWidget {
-  FlusmicApp({required this.flusmic, required this.predicates});
+  const FlusmicApp({Key? key, required this.flusmic, required this.predicates})
+      : super(key: key);
 
   final Flusmic flusmic;
   final List<Predicate> predicates;
@@ -47,12 +48,9 @@ class _FlusmicAppState extends State<FlusmicApp> {
             flusmic: widget.flusmic,
             baseUrl: 'https://flusmic.cdn.prismic.io/api/v2',
             builder: (context, state) => state.map(
-                  init: (s) => Container(
-                      child: const Text('Initial State', key: Key('initial'))),
-                  loading: (s) => Container(
-                      child: const Text('Loading', key: Key('loading'))),
-                  error: (s) =>
-                      Container(child: const Text('Error', key: Key('error'))),
+                  init: (s) => const Text('Initial State', key: Key('initial')),
+                  loading: (s) => const Text('Loading', key: Key('loading')),
+                  error: (s) => const Text('Error', key: Key('error')),
                   loaded: (s) {
                     final data = s.response.results.first.data;
 

@@ -32,15 +32,16 @@ class FlusmicController extends StateNotifier<FlusmicControllerState> {
 ///Widget for handle Flusmic requests
 class FlusmicBuilder extends StatefulWidget {
   ///Main constructor
-  FlusmicBuilder({
+  const FlusmicBuilder({
+    Key? key,
+    required this.baseUrl,
     required this.builder,
     required this.predicates,
-    required this.baseUrl,
     this.authToken,
     this.controller,
     this.flusmic,
     this.language,
-  });
+  }) : super(key: key);
 
   ///Authorization token
   final String? authToken;

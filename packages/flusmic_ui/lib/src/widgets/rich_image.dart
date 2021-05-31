@@ -7,13 +7,14 @@ import '../../flusmic_ui.dart';
 ///Builds a widget with a image from RichText.
 class InnerRichImage extends StatelessWidget {
   ///Default constructor
-  InnerRichImage(
+  const InnerRichImage(
     this.image, {
+    Key? key,
     this.bottomSeparation = 16.0,
     this.failWidget,
     this.fit = BoxFit.cover,
     this.loadingWidget,
-  });
+  }) : super(key: key);
 
   ///Separation between elements
   final double bottomSeparation;

@@ -115,6 +115,7 @@ class _$InitFlusmicStatusCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$InitFlusmicStatus implements InitFlusmicStatus {
   _$InitFlusmicStatus();
 
@@ -208,6 +209,7 @@ class _$LoadingFlusmicStatusCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$LoadingFlusmicStatus implements LoadingFlusmicStatus {
   _$LoadingFlusmicStatus();
 
@@ -314,6 +316,7 @@ class _$ErrorFlusmicStatusCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$ErrorFlusmicStatus implements ErrorFlusmicStatus {
   _$ErrorFlusmicStatus(this.error);
 
@@ -446,6 +449,7 @@ class _$LoadedFlusmicStatusCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$LoadedFlusmicStatus implements LoadedFlusmicStatus {
   _$LoadedFlusmicStatus(this.response);
 

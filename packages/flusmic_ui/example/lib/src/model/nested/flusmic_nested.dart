@@ -6,7 +6,7 @@ part 'flusmic_nested.g.dart';
 ///FlusmicNested model
 ///
 @freezed
-abstract class FlusmicNested with _$FlusmicNested {
+class FlusmicNested with _$FlusmicNested {
   ///Deafult factory constructor for FlusmicNested
   factory FlusmicNested({
     required String text1,

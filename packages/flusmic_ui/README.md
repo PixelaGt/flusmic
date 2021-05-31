@@ -17,7 +17,7 @@ Add Flusmic in your pubspec.yaml file.
 
 ```yaml
 dependencies:
-  flusmic_ui: 1.1.0 /// latest version
+  flusmic_ui: 3.0.0 /// latest version
 ```
 
 Check [our wiki](https://github.com/PixelaGt/flusmic/wiki/About-Flusmic-ui) to discover more.

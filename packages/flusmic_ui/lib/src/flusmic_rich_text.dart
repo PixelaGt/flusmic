@@ -9,7 +9,7 @@ import 'widgets/rich_text.dart';
 ///Richable can be a `EmbedText` or `EmbedImage`
 class FlusmicRichText extends StatelessWidget {
   ///Deafult constructor
-  FlusmicRichText(
+  const FlusmicRichText(
     this.richFields, {
     Key? key,
     this.bottomSeparation = 8.0,
@@ -82,55 +82,35 @@ class FlusmicRichText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-        children: <Widget>[
-          for (var field in richFields)
-            field.maybeMap(
-              orElse: () => InnerRichText(
-                field,
-                bottomSeparation: bottomSeparation,
-                headline1Style: headline1Style,
-                headline2Style: headline2Style,
-                headline3Style: headline3Style,
-                headline4Style: headline4Style,
-                headline5Style: headline5Style,
-                headline6Style: headline6Style,
-                paragraphStyle: paragraphStyle,
-              ),
-              image: (value) => InnerRichImage(
-                value,
-                bottomSeparation: bottomSeparation,
-                failWidget: failWidget,
-                fit: imageFit,
-                loadingWidget: loadingWidget,
-              ),
-              embed: (value) => Container(),
-              listItem: (value) => Container(),
-            )
-          // if (field is RichableImage)
-          //   InnerRichImage(
-          //     field,
-          //     bottomSeparation: bottomSeparation,
-          //     failWidget: failWidget,
-          //     fit: imageFit,
-          //     loadingWidget: loadingWidget,
-          //   )
-          // else if (field is RichableText)
-          //   InnerRichText(
-          //     field as RichableText,
-          //     bottomSeparation: bottomSeparation,
-          //     headline1Style: headline1Style,
-          //     headline2Style: headline2Style,
-          //     headline3Style: headline3Style,
-          //     headline4Style: headline4Style,
-          //     headline5Style: headline5Style,
-          //     headline6Style: headline6Style,
-          //     paragraphStyle: paragraphStyle,
-          //   )
-          // else
-          //   Container()
-        ],
-        crossAxisAlignment: crossAlignment,
-        mainAxisAlignment: MainAxisAlignment.start,
-        mainAxisSize: MainAxisSize.min);
+      crossAxisAlignment: crossAlignment,
+      mainAxisAlignment: MainAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
+      children: <Widget>[
+        for (var field in richFields)
+          field.maybeMap(
+            orElse: () => InnerRichText(
+              field,
+              bottomSeparation: bottomSeparation,
+              headline1Style: headline1Style,
+              headline2Style: headline2Style,
+              headline3Style: headline3Style,
+              headline4Style: headline4Style,
+              headline5Style: headline5Style,
+              headline6Style: headline6Style,
+              paragraphStyle: paragraphStyle,
+            ),
+            image: (value) => InnerRichImage(
+              value,
+              bottomSeparation: bottomSeparation,
+              failWidget: failWidget,
+              fit: imageFit,
+              loadingWidget: loadingWidget,
+            ),
+            embed: (value) => Container(),
+            listItem: (value) => Container(),
+            orderedListItem: (value) => Container(),
+          )
+      ],
+    );
   }
 }

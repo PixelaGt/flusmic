@@ -8,7 +8,7 @@ part 'flusmic_test.g.dart';
 ///FlusmicTest model
 ///
 @freezed
-abstract class FlusmicTest with _$FlusmicTest {
+class FlusmicTest with _$FlusmicTest {
   ///Deafult factory constructor for FlusmicTest
   factory FlusmicTest({
     required List<Richable> title,

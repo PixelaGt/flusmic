@@ -1,3 +1,10 @@
+## [3.0.0]
+* 3.0.0 release 🎉
+    * Null safety support.
+    * Update `flusmic` to 3.0.0
+    * Full web support
+* Update dependencies
+
 ## [3.0.0-pre1]
 * `extended_image` added to dependencies.
 * `flusmic` version updated to 3.0.0-pre2.

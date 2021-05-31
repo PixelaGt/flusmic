@@ -6,8 +6,9 @@ import '../../flusmic_ui.dart';
 ///Builds a widget with a text and its spans.
 class InnerRichText extends StatefulWidget {
   ///Default constructor
-  InnerRichText(
+  const InnerRichText(
     this.text, {
+    Key? key,
     this.bottomSeparation = 8.0,
     this.headline1Style,
     this.headline2Style,
@@ -16,7 +17,7 @@ class InnerRichText extends StatefulWidget {
     this.headline5Style,
     this.headline6Style,
     this.paragraphStyle,
-  });
+  }) : super(key: key);
 
   ///Text from RichText
   final Richable text;

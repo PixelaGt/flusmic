@@ -102,11 +102,12 @@ void main() {
 }
 
 class FlusmicApp extends StatefulWidget {
-  FlusmicApp({
+  const FlusmicApp({
+    Key? key,
     this.controller,
     this.flusmic,
     this.predicates,
-  });
+  }) : super(key: key);
 
   final Flusmic? flusmic;
   final FlusmicController? controller;
@@ -127,29 +128,21 @@ class _FlusmicAppState extends State<FlusmicApp> {
             baseUrl: 'https://flusmic.cdn.prismic.io/api/v2',
             controller: widget.controller,
             builder: (context, state) => state.map(
-                  init: (s) => Container(
-                    child: const Text(
-                      'Initial State',
-                      key: Key('initial'),
-                    ),
+                  init: (s) => const Text(
+                    'Initial State',
+                    key: Key('initial'),
                   ),
-                  loading: (s) => Container(
-                    child: const Text(
-                      'Loading',
-                      key: Key('loading'),
-                    ),
+                  loading: (s) => const Text(
+                    'Loading',
+                    key: Key('loading'),
                   ),
-                  error: (s) => Container(
-                    child: const Text(
-                      'Error',
-                      key: Key('error'),
-                    ),
+                  error: (s) => const Text(
+                    'Error',
+                    key: Key('error'),
                   ),
-                  loaded: (s) => Container(
-                    child: const Text(
-                      'Loaded',
-                      key: Key('loaded'),
-                    ),
+                  loaded: (s) => const Text(
+                    'Loaded',
+                    key: Key('loaded'),
                   ),
                 ),
             predicates: widget.predicates ?? []),

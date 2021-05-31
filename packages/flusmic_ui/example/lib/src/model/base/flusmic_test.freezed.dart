@@ -361,9 +361,8 @@ class __$FlusmicTestCopyWithImpl<$Res> extends _$FlusmicTestCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_FlusmicTest implements _FlusmicTest {
   _$_FlusmicTest(
       {required this.title,

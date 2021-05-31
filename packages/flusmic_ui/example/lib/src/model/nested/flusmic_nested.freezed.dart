@@ -120,9 +120,8 @@ class __$FlusmicNestedCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_FlusmicNested implements _FlusmicNested {
   _$_FlusmicNested({required this.text1, required this.text2});
 
