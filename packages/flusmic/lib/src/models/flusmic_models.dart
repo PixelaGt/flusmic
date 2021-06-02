@@ -11,6 +11,6 @@ export './types/linkeable/linkeable.dart';
 export './types/richable/richable.dart';
 export './types/simple/geopoint/geopoint.dart';
 export './types/simple/simple_image/simple_image.dart';
-export './types/simple/simple_image/simple_image.dart';
+export './types/simple/simple_text/simple_text.dart';
 export './types/simple/slice/slice.dart';
 export './types/simple/span/span.dart';

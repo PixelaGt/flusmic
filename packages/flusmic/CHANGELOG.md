@@ -1,3 +1,6 @@
+## [3.0.1]
+* Fix import of `SimpleText`
+
 ## [3.0.0]
 * 3.0.0 release 🎉
     * Null safety support.

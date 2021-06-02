@@ -1,7 +1,5 @@
 import 'package:flusmic/flusmic.dart';
-import 'package:flusmic/src/models/types/simple/simple_text/simple_text.dart';
 import 'package:test/test.dart';
-
 import 'sample_model/sample_model.dart';
 
 void main() {
