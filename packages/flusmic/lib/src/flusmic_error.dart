@@ -63,6 +63,11 @@ class FlusmicError implements Exception {
         );
     }
   }
+  
+  @override
+  String toString() {
+    return 'FlusmicError{code: $code, humanMessage: $humanMessage, message: $message, response: $response}';
+  }
 
   ///Response from failed request
   final dynamic response;
