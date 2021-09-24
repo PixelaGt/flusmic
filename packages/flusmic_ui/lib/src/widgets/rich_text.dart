@@ -104,19 +104,19 @@ class _InnerRichTextState extends State<InnerRichText> {
 
   TextStyle? get _styleByType {
     if (widget.text is RichableHeading1) {
-      return headline1Style ?? Theme.of(context).textTheme.headline1;
+      return widget.headline1Style ?? Theme.of(context).textTheme.headline1;
     } else if (widget.text is RichableHeading2) {
-      return headline2Style ?? Theme.of(context).textTheme.headline2;
+      return widget.headline2Style ?? Theme.of(context).textTheme.headline2;
     } else if (widget.text is RichableHeading3) {
-      return headline3Style ?? Theme.of(context).textTheme.headline3;
+      return widget.headline3Style ?? Theme.of(context).textTheme.headline3;
     } else if (widget.text is RichableHeading4) {
-      return headline4Style ?? Theme.of(context).textTheme.headline4;
+      return widget.headline4Style ?? Theme.of(context).textTheme.headline4;
     } else if (widget.text is RichableHeading5) {
-      return headline5Style ?? Theme.of(context).textTheme.headline5;
+      return widget.headline5Style ?? Theme.of(context).textTheme.headline5;
     } else if (widget.text is RichableHeading6) {
-      return headline6Style ?? Theme.of(context).textTheme.headline6;
+      return widget.headline6Style ?? Theme.of(context).textTheme.headline6;
     } else {
-      return paragraphStyle ?? Theme.of(context).textTheme.bodyText2;
+      return widget.paragraphStyle ?? Theme.of(context).textTheme.bodyText2;
     }
   }
 }
