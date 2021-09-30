@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'flusmic_status.dart';
 
@@ -51,6 +52,14 @@ mixin _$FlusmicStatus {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function()? loading,
+    TResult Function(String error)? error,
+    TResult Function(FlusmicResponse response)? loaded,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
     TResult Function()? loading,
@@ -65,6 +74,14 @@ mixin _$FlusmicStatus {
     required TResult Function(LoadingFlusmicStatus value) loading,
     required TResult Function(ErrorFlusmicStatus value) error,
     required TResult Function(LoadedFlusmicStatus value) loaded,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitFlusmicStatus value)? init,
+    TResult Function(LoadingFlusmicStatus value)? loading,
+    TResult Function(ErrorFlusmicStatus value)? error,
+    TResult Function(LoadedFlusmicStatus value)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -145,6 +162,17 @@ class _$InitFlusmicStatus implements InitFlusmicStatus {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function()? loading,
+    TResult Function(String error)? error,
+    TResult Function(FlusmicResponse response)? loaded,
+  }) {
+    return init?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
     TResult Function()? loading,
@@ -167,6 +195,17 @@ class _$InitFlusmicStatus implements InitFlusmicStatus {
     required TResult Function(LoadedFlusmicStatus value) loaded,
   }) {
     return init(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitFlusmicStatus value)? init,
+    TResult Function(LoadingFlusmicStatus value)? loading,
+    TResult Function(ErrorFlusmicStatus value)? error,
+    TResult Function(LoadedFlusmicStatus value)? loaded,
+  }) {
+    return init?.call(this);
   }
 
   @override
@@ -239,6 +278,17 @@ class _$LoadingFlusmicStatus implements LoadingFlusmicStatus {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function()? loading,
+    TResult Function(String error)? error,
+    TResult Function(FlusmicResponse response)? loaded,
+  }) {
+    return loading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
     TResult Function()? loading,
@@ -261,6 +311,17 @@ class _$LoadingFlusmicStatus implements LoadingFlusmicStatus {
     required TResult Function(LoadedFlusmicStatus value) loaded,
   }) {
     return loading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitFlusmicStatus value)? init,
+    TResult Function(LoadingFlusmicStatus value)? loading,
+    TResult Function(ErrorFlusmicStatus value)? error,
+    TResult Function(LoadedFlusmicStatus value)? loaded,
+  }) {
+    return loading?.call(this);
   }
 
   @override
@@ -358,6 +419,17 @@ class _$ErrorFlusmicStatus implements ErrorFlusmicStatus {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function()? loading,
+    TResult Function(String error)? error,
+    TResult Function(FlusmicResponse response)? loaded,
+  }) {
+    return error?.call(this.error);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
     TResult Function()? loading,
@@ -380,6 +452,17 @@ class _$ErrorFlusmicStatus implements ErrorFlusmicStatus {
     required TResult Function(LoadedFlusmicStatus value) loaded,
   }) {
     return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitFlusmicStatus value)? init,
+    TResult Function(LoadingFlusmicStatus value)? loading,
+    TResult Function(ErrorFlusmicStatus value)? error,
+    TResult Function(LoadedFlusmicStatus value)? loaded,
+  }) {
+    return error?.call(this);
   }
 
   @override
@@ -492,6 +575,17 @@ class _$LoadedFlusmicStatus implements LoadedFlusmicStatus {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function()? loading,
+    TResult Function(String error)? error,
+    TResult Function(FlusmicResponse response)? loaded,
+  }) {
+    return loaded?.call(response);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
     TResult Function()? loading,
@@ -514,6 +608,17 @@ class _$LoadedFlusmicStatus implements LoadedFlusmicStatus {
     required TResult Function(LoadedFlusmicStatus value) loaded,
   }) {
     return loaded(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitFlusmicStatus value)? init,
+    TResult Function(LoadingFlusmicStatus value)? loading,
+    TResult Function(ErrorFlusmicStatus value)? error,
+    TResult Function(LoadedFlusmicStatus value)? loaded,
+  }) {
+    return loaded?.call(this);
   }
 
   @override

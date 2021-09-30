@@ -1,8 +1,8 @@
 import 'package:common_bloc/common_bloc.dart';
 import 'package:flusmic/flusmic.dart';
+import 'package:flusmic_ui/src/models/flusmic_status.dart';
 import 'package:flutter/material.dart';
 import 'package:state_notifier/state_notifier.dart';
-import 'models/flusmic_status.dart';
 
 /// Builder function to return a widget based on the current [status].
 typedef BuilderFn = Widget Function(BuildContext context, FlusmicStatus status);
@@ -92,7 +92,7 @@ class _FlusmicBuilderState extends State<FlusmicBuilder> {
     super.dispose();
   }
 
-  Future<FlusmicResponse> _perform() async => await (widget.flusmic ??
+  Future<FlusmicResponse> _perform() async => (widget.flusmic ??
           Flusmic(
             defaultAuthToken: widget.authToken,
             defaultLanguage: widget.language,
@@ -100,8 +100,7 @@ class _FlusmicBuilderState extends State<FlusmicBuilder> {
           ))
       .query(widget.predicates);
 
-  void onRepeat() =>
-      _requestBloc.perform(_perform, 'FlusmicRequest', withLoading: true);
+  void onRepeat() => _requestBloc.perform(_perform, 'FlusmicRequest');
 
   @override
   Widget build(BuildContext context) {
@@ -109,7 +108,7 @@ class _FlusmicBuilderState extends State<FlusmicBuilder> {
       context,
       _currentState.when(
         error: (error) => FlusmicStatus.error(error),
-        loaded: (result, _, __) =>
+        loaded: (dynamic result, _, __) =>
             FlusmicStatus.loaded(result as FlusmicResponse),
         loading: () => FlusmicStatus.loading(),
         uninitialized: () => FlusmicStatus.init(),

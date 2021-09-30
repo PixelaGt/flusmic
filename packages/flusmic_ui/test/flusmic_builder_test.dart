@@ -92,8 +92,7 @@ void main() {
       final predicates = [
         Predicate.any(DefaultPredicatePath.tags, ['test'])
       ];
-      await tester
-          .pumpWidget(FlusmicApp(predicates: predicates, flusmic: null));
+      await tester.pumpWidget(FlusmicApp(predicates: predicates));
       await tester.pumpAndSettle();
 
       expect(find.byKey(const Key('FlusmicApp')), findsOneWidget);
@@ -151,7 +150,7 @@ class _FlusmicAppState extends State<FlusmicApp> {
   }
 }
 
-const Map<String, dynamic> mockResponse = {
+const Map<String, dynamic> mockResponse = <String, dynamic>{
   'page': 1,
   'results_per_page': 20,
   'results_size': 1,
@@ -170,18 +169,22 @@ const Map<String, dynamic> mockResponse = {
       'first_publication_date': '2020-04-12T02:31:16+0000',
       'last_publication_date': '2020-04-12T04:51:29+0000',
       'slugs': ['flusmic-test'],
-      'linked_documents': [],
+      'linked_documents': <dynamic>[],
       'lang': 'en-us',
-      'alternate_languages': [],
+      'alternate_languages': <dynamic>[],
       'data': {
         'title': [
-          {'type': 'heading1', 'text': 'Flusmic Test', 'spans': []}
+          {'type': 'heading1', 'text': 'Flusmic Test', 'spans': <dynamic>[]}
         ],
         'content': [
-          {'type': 'paragraph', 'text': 'This is a large content', 'spans': []},
-          {'type': 'o-list-item', 'text': 'Hello 1', 'spans': []},
-          {'type': 'o-list-item', 'text': 'Hello 2', 'spans': []},
-          {'type': 'o-list-item', 'text': 'Hello 3', 'spans': []}
+          {
+            'type': 'paragraph',
+            'text': 'This is a large content',
+            'spans': <dynamic>[]
+          },
+          {'type': 'o-list-item', 'text': 'Hello 1', 'spans': <dynamic>[]},
+          {'type': 'o-list-item', 'text': 'Hello 2', 'spans': <dynamic>[]},
+          {'type': 'o-list-item', 'text': 'Hello 3', 'spans': <dynamic>[]}
         ],
         'image': {
           'dimensions': {'width': 400, 'height': 400},
