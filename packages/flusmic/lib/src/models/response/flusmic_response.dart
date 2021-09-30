@@ -1,5 +1,5 @@
+import 'package:flusmic/src/models/document/document.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import '../document/document.dart';
 
 part 'flusmic_response.freezed.dart';
 part 'flusmic_response.g.dart';

@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'richable.dart';
 
@@ -13,7 +14,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Richable _$RichableFromJson(Map<String, dynamic> json) {
-  switch (json['type'] as String) {
+  switch (json['type'] as String?) {
     case 'heading1':
       return RichableHeading1.fromJson(json);
     case 'heading2':
@@ -38,7 +39,8 @@ Richable _$RichableFromJson(Map<String, dynamic> json) {
       return RichableEmbed.fromJson(json);
 
     default:
-      throw FallThroughError();
+      throw CheckedFromJsonException(
+          json, 'type', 'Richable', 'Invalid union type "${json['type']}"!');
   }
 }
 
@@ -188,6 +190,25 @@ mixin _$Richable {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(List<Span> spans, String text, String type)? heading1,
+    TResult Function(List<Span> spans, String text, String type)? heading2,
+    TResult Function(List<Span> spans, String text, String type)? heading3,
+    TResult Function(List<Span> spans, String text, String type)? heading4,
+    TResult Function(List<Span> spans, String text, String type)? heading5,
+    TResult Function(List<Span> spans, String text, String type)? heading6,
+    TResult Function(List<Span> spans, String text, String type)? paragraph,
+    TResult Function(List<Span> spans, String text, String type)? listItem,
+    TResult Function(List<Span> spans, String text, String type)?
+        orderedListItem,
+    TResult Function(
+            String? alt, String? copyright, Dimension dimensions, String url)?
+        image,
+    TResult Function(@JsonKey(name: 'oembed') EmbedData info, String type)?
+        embed,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<Span> spans, String text, String type)? heading1,
     TResult Function(List<Span> spans, String text, String type)? heading2,
@@ -220,6 +241,21 @@ mixin _$Richable {
     required TResult Function(RichableOrderedListItem value) orderedListItem,
     required TResult Function(RichableImage value) image,
     required TResult Function(RichableEmbed value) embed,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(RichableHeading1 value)? heading1,
+    TResult Function(RichableHeading2 value)? heading2,
+    TResult Function(RichableHeading3 value)? heading3,
+    TResult Function(RichableHeading4 value)? heading4,
+    TResult Function(RichableHeading5 value)? heading5,
+    TResult Function(RichableHeading6 value)? heading6,
+    TResult Function(RichableParagraph value)? paragraph,
+    TResult Function(RichableListItem value)? listItem,
+    TResult Function(RichableOrderedListItem value)? orderedListItem,
+    TResult Function(RichableImage value)? image,
+    TResult Function(RichableEmbed value)? embed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -304,7 +340,7 @@ class _$RichableHeading1 implements RichableHeading1 {
       {required this.spans, required this.text, required this.type});
 
   factory _$RichableHeading1.fromJson(Map<String, dynamic> json) =>
-      _$_$RichableHeading1FromJson(json);
+      _$$RichableHeading1FromJson(json);
 
   @override
   final List<Span> spans;
@@ -375,6 +411,28 @@ class _$RichableHeading1 implements RichableHeading1 {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(List<Span> spans, String text, String type)? heading1,
+    TResult Function(List<Span> spans, String text, String type)? heading2,
+    TResult Function(List<Span> spans, String text, String type)? heading3,
+    TResult Function(List<Span> spans, String text, String type)? heading4,
+    TResult Function(List<Span> spans, String text, String type)? heading5,
+    TResult Function(List<Span> spans, String text, String type)? heading6,
+    TResult Function(List<Span> spans, String text, String type)? paragraph,
+    TResult Function(List<Span> spans, String text, String type)? listItem,
+    TResult Function(List<Span> spans, String text, String type)?
+        orderedListItem,
+    TResult Function(
+            String? alt, String? copyright, Dimension dimensions, String url)?
+        image,
+    TResult Function(@JsonKey(name: 'oembed') EmbedData info, String type)?
+        embed,
+  }) {
+    return heading1?.call(spans, text, type);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<Span> spans, String text, String type)? heading1,
     TResult Function(List<Span> spans, String text, String type)? heading2,
@@ -419,6 +477,24 @@ class _$RichableHeading1 implements RichableHeading1 {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(RichableHeading1 value)? heading1,
+    TResult Function(RichableHeading2 value)? heading2,
+    TResult Function(RichableHeading3 value)? heading3,
+    TResult Function(RichableHeading4 value)? heading4,
+    TResult Function(RichableHeading5 value)? heading5,
+    TResult Function(RichableHeading6 value)? heading6,
+    TResult Function(RichableParagraph value)? paragraph,
+    TResult Function(RichableListItem value)? listItem,
+    TResult Function(RichableOrderedListItem value)? orderedListItem,
+    TResult Function(RichableImage value)? image,
+    TResult Function(RichableEmbed value)? embed,
+  }) {
+    return heading1?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(RichableHeading1 value)? heading1,
     TResult Function(RichableHeading2 value)? heading2,
@@ -441,7 +517,7 @@ class _$RichableHeading1 implements RichableHeading1 {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$RichableHeading1ToJson(this)..['type'] = 'heading1';
+    return _$$RichableHeading1ToJson(this)..['type'] = 'heading1';
   }
 }
 
@@ -510,7 +586,7 @@ class _$RichableHeading2 implements RichableHeading2 {
       {required this.spans, required this.text, required this.type});
 
   factory _$RichableHeading2.fromJson(Map<String, dynamic> json) =>
-      _$_$RichableHeading2FromJson(json);
+      _$$RichableHeading2FromJson(json);
 
   @override
   final List<Span> spans;
@@ -581,6 +657,28 @@ class _$RichableHeading2 implements RichableHeading2 {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(List<Span> spans, String text, String type)? heading1,
+    TResult Function(List<Span> spans, String text, String type)? heading2,
+    TResult Function(List<Span> spans, String text, String type)? heading3,
+    TResult Function(List<Span> spans, String text, String type)? heading4,
+    TResult Function(List<Span> spans, String text, String type)? heading5,
+    TResult Function(List<Span> spans, String text, String type)? heading6,
+    TResult Function(List<Span> spans, String text, String type)? paragraph,
+    TResult Function(List<Span> spans, String text, String type)? listItem,
+    TResult Function(List<Span> spans, String text, String type)?
+        orderedListItem,
+    TResult Function(
+            String? alt, String? copyright, Dimension dimensions, String url)?
+        image,
+    TResult Function(@JsonKey(name: 'oembed') EmbedData info, String type)?
+        embed,
+  }) {
+    return heading2?.call(spans, text, type);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<Span> spans, String text, String type)? heading1,
     TResult Function(List<Span> spans, String text, String type)? heading2,
@@ -625,6 +723,24 @@ class _$RichableHeading2 implements RichableHeading2 {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(RichableHeading1 value)? heading1,
+    TResult Function(RichableHeading2 value)? heading2,
+    TResult Function(RichableHeading3 value)? heading3,
+    TResult Function(RichableHeading4 value)? heading4,
+    TResult Function(RichableHeading5 value)? heading5,
+    TResult Function(RichableHeading6 value)? heading6,
+    TResult Function(RichableParagraph value)? paragraph,
+    TResult Function(RichableListItem value)? listItem,
+    TResult Function(RichableOrderedListItem value)? orderedListItem,
+    TResult Function(RichableImage value)? image,
+    TResult Function(RichableEmbed value)? embed,
+  }) {
+    return heading2?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(RichableHeading1 value)? heading1,
     TResult Function(RichableHeading2 value)? heading2,
@@ -647,7 +763,7 @@ class _$RichableHeading2 implements RichableHeading2 {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$RichableHeading2ToJson(this)..['type'] = 'heading2';
+    return _$$RichableHeading2ToJson(this)..['type'] = 'heading2';
   }
 }
 
@@ -716,7 +832,7 @@ class _$RichableHeading3 implements RichableHeading3 {
       {required this.spans, required this.text, required this.type});
 
   factory _$RichableHeading3.fromJson(Map<String, dynamic> json) =>
-      _$_$RichableHeading3FromJson(json);
+      _$$RichableHeading3FromJson(json);
 
   @override
   final List<Span> spans;
@@ -787,6 +903,28 @@ class _$RichableHeading3 implements RichableHeading3 {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(List<Span> spans, String text, String type)? heading1,
+    TResult Function(List<Span> spans, String text, String type)? heading2,
+    TResult Function(List<Span> spans, String text, String type)? heading3,
+    TResult Function(List<Span> spans, String text, String type)? heading4,
+    TResult Function(List<Span> spans, String text, String type)? heading5,
+    TResult Function(List<Span> spans, String text, String type)? heading6,
+    TResult Function(List<Span> spans, String text, String type)? paragraph,
+    TResult Function(List<Span> spans, String text, String type)? listItem,
+    TResult Function(List<Span> spans, String text, String type)?
+        orderedListItem,
+    TResult Function(
+            String? alt, String? copyright, Dimension dimensions, String url)?
+        image,
+    TResult Function(@JsonKey(name: 'oembed') EmbedData info, String type)?
+        embed,
+  }) {
+    return heading3?.call(spans, text, type);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<Span> spans, String text, String type)? heading1,
     TResult Function(List<Span> spans, String text, String type)? heading2,
@@ -831,6 +969,24 @@ class _$RichableHeading3 implements RichableHeading3 {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(RichableHeading1 value)? heading1,
+    TResult Function(RichableHeading2 value)? heading2,
+    TResult Function(RichableHeading3 value)? heading3,
+    TResult Function(RichableHeading4 value)? heading4,
+    TResult Function(RichableHeading5 value)? heading5,
+    TResult Function(RichableHeading6 value)? heading6,
+    TResult Function(RichableParagraph value)? paragraph,
+    TResult Function(RichableListItem value)? listItem,
+    TResult Function(RichableOrderedListItem value)? orderedListItem,
+    TResult Function(RichableImage value)? image,
+    TResult Function(RichableEmbed value)? embed,
+  }) {
+    return heading3?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(RichableHeading1 value)? heading1,
     TResult Function(RichableHeading2 value)? heading2,
@@ -853,7 +1009,7 @@ class _$RichableHeading3 implements RichableHeading3 {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$RichableHeading3ToJson(this)..['type'] = 'heading3';
+    return _$$RichableHeading3ToJson(this)..['type'] = 'heading3';
   }
 }
 
@@ -922,7 +1078,7 @@ class _$RichableHeading4 implements RichableHeading4 {
       {required this.spans, required this.text, required this.type});
 
   factory _$RichableHeading4.fromJson(Map<String, dynamic> json) =>
-      _$_$RichableHeading4FromJson(json);
+      _$$RichableHeading4FromJson(json);
 
   @override
   final List<Span> spans;
@@ -993,6 +1149,28 @@ class _$RichableHeading4 implements RichableHeading4 {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(List<Span> spans, String text, String type)? heading1,
+    TResult Function(List<Span> spans, String text, String type)? heading2,
+    TResult Function(List<Span> spans, String text, String type)? heading3,
+    TResult Function(List<Span> spans, String text, String type)? heading4,
+    TResult Function(List<Span> spans, String text, String type)? heading5,
+    TResult Function(List<Span> spans, String text, String type)? heading6,
+    TResult Function(List<Span> spans, String text, String type)? paragraph,
+    TResult Function(List<Span> spans, String text, String type)? listItem,
+    TResult Function(List<Span> spans, String text, String type)?
+        orderedListItem,
+    TResult Function(
+            String? alt, String? copyright, Dimension dimensions, String url)?
+        image,
+    TResult Function(@JsonKey(name: 'oembed') EmbedData info, String type)?
+        embed,
+  }) {
+    return heading4?.call(spans, text, type);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<Span> spans, String text, String type)? heading1,
     TResult Function(List<Span> spans, String text, String type)? heading2,
@@ -1037,6 +1215,24 @@ class _$RichableHeading4 implements RichableHeading4 {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(RichableHeading1 value)? heading1,
+    TResult Function(RichableHeading2 value)? heading2,
+    TResult Function(RichableHeading3 value)? heading3,
+    TResult Function(RichableHeading4 value)? heading4,
+    TResult Function(RichableHeading5 value)? heading5,
+    TResult Function(RichableHeading6 value)? heading6,
+    TResult Function(RichableParagraph value)? paragraph,
+    TResult Function(RichableListItem value)? listItem,
+    TResult Function(RichableOrderedListItem value)? orderedListItem,
+    TResult Function(RichableImage value)? image,
+    TResult Function(RichableEmbed value)? embed,
+  }) {
+    return heading4?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(RichableHeading1 value)? heading1,
     TResult Function(RichableHeading2 value)? heading2,
@@ -1059,7 +1255,7 @@ class _$RichableHeading4 implements RichableHeading4 {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$RichableHeading4ToJson(this)..['type'] = 'heading4';
+    return _$$RichableHeading4ToJson(this)..['type'] = 'heading4';
   }
 }
 
@@ -1128,7 +1324,7 @@ class _$RichableHeading5 implements RichableHeading5 {
       {required this.spans, required this.text, required this.type});
 
   factory _$RichableHeading5.fromJson(Map<String, dynamic> json) =>
-      _$_$RichableHeading5FromJson(json);
+      _$$RichableHeading5FromJson(json);
 
   @override
   final List<Span> spans;
@@ -1199,6 +1395,28 @@ class _$RichableHeading5 implements RichableHeading5 {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(List<Span> spans, String text, String type)? heading1,
+    TResult Function(List<Span> spans, String text, String type)? heading2,
+    TResult Function(List<Span> spans, String text, String type)? heading3,
+    TResult Function(List<Span> spans, String text, String type)? heading4,
+    TResult Function(List<Span> spans, String text, String type)? heading5,
+    TResult Function(List<Span> spans, String text, String type)? heading6,
+    TResult Function(List<Span> spans, String text, String type)? paragraph,
+    TResult Function(List<Span> spans, String text, String type)? listItem,
+    TResult Function(List<Span> spans, String text, String type)?
+        orderedListItem,
+    TResult Function(
+            String? alt, String? copyright, Dimension dimensions, String url)?
+        image,
+    TResult Function(@JsonKey(name: 'oembed') EmbedData info, String type)?
+        embed,
+  }) {
+    return heading5?.call(spans, text, type);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<Span> spans, String text, String type)? heading1,
     TResult Function(List<Span> spans, String text, String type)? heading2,
@@ -1243,6 +1461,24 @@ class _$RichableHeading5 implements RichableHeading5 {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(RichableHeading1 value)? heading1,
+    TResult Function(RichableHeading2 value)? heading2,
+    TResult Function(RichableHeading3 value)? heading3,
+    TResult Function(RichableHeading4 value)? heading4,
+    TResult Function(RichableHeading5 value)? heading5,
+    TResult Function(RichableHeading6 value)? heading6,
+    TResult Function(RichableParagraph value)? paragraph,
+    TResult Function(RichableListItem value)? listItem,
+    TResult Function(RichableOrderedListItem value)? orderedListItem,
+    TResult Function(RichableImage value)? image,
+    TResult Function(RichableEmbed value)? embed,
+  }) {
+    return heading5?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(RichableHeading1 value)? heading1,
     TResult Function(RichableHeading2 value)? heading2,
@@ -1265,7 +1501,7 @@ class _$RichableHeading5 implements RichableHeading5 {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$RichableHeading5ToJson(this)..['type'] = 'heading5';
+    return _$$RichableHeading5ToJson(this)..['type'] = 'heading5';
   }
 }
 
@@ -1334,7 +1570,7 @@ class _$RichableHeading6 implements RichableHeading6 {
       {required this.spans, required this.text, required this.type});
 
   factory _$RichableHeading6.fromJson(Map<String, dynamic> json) =>
-      _$_$RichableHeading6FromJson(json);
+      _$$RichableHeading6FromJson(json);
 
   @override
   final List<Span> spans;
@@ -1405,6 +1641,28 @@ class _$RichableHeading6 implements RichableHeading6 {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(List<Span> spans, String text, String type)? heading1,
+    TResult Function(List<Span> spans, String text, String type)? heading2,
+    TResult Function(List<Span> spans, String text, String type)? heading3,
+    TResult Function(List<Span> spans, String text, String type)? heading4,
+    TResult Function(List<Span> spans, String text, String type)? heading5,
+    TResult Function(List<Span> spans, String text, String type)? heading6,
+    TResult Function(List<Span> spans, String text, String type)? paragraph,
+    TResult Function(List<Span> spans, String text, String type)? listItem,
+    TResult Function(List<Span> spans, String text, String type)?
+        orderedListItem,
+    TResult Function(
+            String? alt, String? copyright, Dimension dimensions, String url)?
+        image,
+    TResult Function(@JsonKey(name: 'oembed') EmbedData info, String type)?
+        embed,
+  }) {
+    return heading6?.call(spans, text, type);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<Span> spans, String text, String type)? heading1,
     TResult Function(List<Span> spans, String text, String type)? heading2,
@@ -1449,6 +1707,24 @@ class _$RichableHeading6 implements RichableHeading6 {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(RichableHeading1 value)? heading1,
+    TResult Function(RichableHeading2 value)? heading2,
+    TResult Function(RichableHeading3 value)? heading3,
+    TResult Function(RichableHeading4 value)? heading4,
+    TResult Function(RichableHeading5 value)? heading5,
+    TResult Function(RichableHeading6 value)? heading6,
+    TResult Function(RichableParagraph value)? paragraph,
+    TResult Function(RichableListItem value)? listItem,
+    TResult Function(RichableOrderedListItem value)? orderedListItem,
+    TResult Function(RichableImage value)? image,
+    TResult Function(RichableEmbed value)? embed,
+  }) {
+    return heading6?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(RichableHeading1 value)? heading1,
     TResult Function(RichableHeading2 value)? heading2,
@@ -1471,7 +1747,7 @@ class _$RichableHeading6 implements RichableHeading6 {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$RichableHeading6ToJson(this)..['type'] = 'heading6';
+    return _$$RichableHeading6ToJson(this)..['type'] = 'heading6';
   }
 }
 
@@ -1540,7 +1816,7 @@ class _$RichableParagraph implements RichableParagraph {
       {required this.spans, required this.text, required this.type});
 
   factory _$RichableParagraph.fromJson(Map<String, dynamic> json) =>
-      _$_$RichableParagraphFromJson(json);
+      _$$RichableParagraphFromJson(json);
 
   @override
   final List<Span> spans;
@@ -1611,6 +1887,28 @@ class _$RichableParagraph implements RichableParagraph {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(List<Span> spans, String text, String type)? heading1,
+    TResult Function(List<Span> spans, String text, String type)? heading2,
+    TResult Function(List<Span> spans, String text, String type)? heading3,
+    TResult Function(List<Span> spans, String text, String type)? heading4,
+    TResult Function(List<Span> spans, String text, String type)? heading5,
+    TResult Function(List<Span> spans, String text, String type)? heading6,
+    TResult Function(List<Span> spans, String text, String type)? paragraph,
+    TResult Function(List<Span> spans, String text, String type)? listItem,
+    TResult Function(List<Span> spans, String text, String type)?
+        orderedListItem,
+    TResult Function(
+            String? alt, String? copyright, Dimension dimensions, String url)?
+        image,
+    TResult Function(@JsonKey(name: 'oembed') EmbedData info, String type)?
+        embed,
+  }) {
+    return paragraph?.call(spans, text, type);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<Span> spans, String text, String type)? heading1,
     TResult Function(List<Span> spans, String text, String type)? heading2,
@@ -1655,6 +1953,24 @@ class _$RichableParagraph implements RichableParagraph {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(RichableHeading1 value)? heading1,
+    TResult Function(RichableHeading2 value)? heading2,
+    TResult Function(RichableHeading3 value)? heading3,
+    TResult Function(RichableHeading4 value)? heading4,
+    TResult Function(RichableHeading5 value)? heading5,
+    TResult Function(RichableHeading6 value)? heading6,
+    TResult Function(RichableParagraph value)? paragraph,
+    TResult Function(RichableListItem value)? listItem,
+    TResult Function(RichableOrderedListItem value)? orderedListItem,
+    TResult Function(RichableImage value)? image,
+    TResult Function(RichableEmbed value)? embed,
+  }) {
+    return paragraph?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(RichableHeading1 value)? heading1,
     TResult Function(RichableHeading2 value)? heading2,
@@ -1677,7 +1993,7 @@ class _$RichableParagraph implements RichableParagraph {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$RichableParagraphToJson(this)..['type'] = 'paragraph';
+    return _$$RichableParagraphToJson(this)..['type'] = 'paragraph';
   }
 }
 
@@ -1747,7 +2063,7 @@ class _$RichableListItem implements RichableListItem {
       {required this.spans, required this.text, required this.type});
 
   factory _$RichableListItem.fromJson(Map<String, dynamic> json) =>
-      _$_$RichableListItemFromJson(json);
+      _$$RichableListItemFromJson(json);
 
   @override
   final List<Span> spans;
@@ -1818,6 +2134,28 @@ class _$RichableListItem implements RichableListItem {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(List<Span> spans, String text, String type)? heading1,
+    TResult Function(List<Span> spans, String text, String type)? heading2,
+    TResult Function(List<Span> spans, String text, String type)? heading3,
+    TResult Function(List<Span> spans, String text, String type)? heading4,
+    TResult Function(List<Span> spans, String text, String type)? heading5,
+    TResult Function(List<Span> spans, String text, String type)? heading6,
+    TResult Function(List<Span> spans, String text, String type)? paragraph,
+    TResult Function(List<Span> spans, String text, String type)? listItem,
+    TResult Function(List<Span> spans, String text, String type)?
+        orderedListItem,
+    TResult Function(
+            String? alt, String? copyright, Dimension dimensions, String url)?
+        image,
+    TResult Function(@JsonKey(name: 'oembed') EmbedData info, String type)?
+        embed,
+  }) {
+    return listItem?.call(spans, text, type);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<Span> spans, String text, String type)? heading1,
     TResult Function(List<Span> spans, String text, String type)? heading2,
@@ -1862,6 +2200,24 @@ class _$RichableListItem implements RichableListItem {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(RichableHeading1 value)? heading1,
+    TResult Function(RichableHeading2 value)? heading2,
+    TResult Function(RichableHeading3 value)? heading3,
+    TResult Function(RichableHeading4 value)? heading4,
+    TResult Function(RichableHeading5 value)? heading5,
+    TResult Function(RichableHeading6 value)? heading6,
+    TResult Function(RichableParagraph value)? paragraph,
+    TResult Function(RichableListItem value)? listItem,
+    TResult Function(RichableOrderedListItem value)? orderedListItem,
+    TResult Function(RichableImage value)? image,
+    TResult Function(RichableEmbed value)? embed,
+  }) {
+    return listItem?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(RichableHeading1 value)? heading1,
     TResult Function(RichableHeading2 value)? heading2,
@@ -1884,7 +2240,7 @@ class _$RichableListItem implements RichableListItem {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$RichableListItemToJson(this)..['type'] = 'list-item';
+    return _$$RichableListItemToJson(this)..['type'] = 'list-item';
   }
 }
 
@@ -1955,7 +2311,7 @@ class _$RichableOrderedListItem implements RichableOrderedListItem {
       {required this.spans, required this.text, required this.type});
 
   factory _$RichableOrderedListItem.fromJson(Map<String, dynamic> json) =>
-      _$_$RichableOrderedListItemFromJson(json);
+      _$$RichableOrderedListItemFromJson(json);
 
   @override
   final List<Span> spans;
@@ -2027,6 +2383,28 @@ class _$RichableOrderedListItem implements RichableOrderedListItem {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(List<Span> spans, String text, String type)? heading1,
+    TResult Function(List<Span> spans, String text, String type)? heading2,
+    TResult Function(List<Span> spans, String text, String type)? heading3,
+    TResult Function(List<Span> spans, String text, String type)? heading4,
+    TResult Function(List<Span> spans, String text, String type)? heading5,
+    TResult Function(List<Span> spans, String text, String type)? heading6,
+    TResult Function(List<Span> spans, String text, String type)? paragraph,
+    TResult Function(List<Span> spans, String text, String type)? listItem,
+    TResult Function(List<Span> spans, String text, String type)?
+        orderedListItem,
+    TResult Function(
+            String? alt, String? copyright, Dimension dimensions, String url)?
+        image,
+    TResult Function(@JsonKey(name: 'oembed') EmbedData info, String type)?
+        embed,
+  }) {
+    return orderedListItem?.call(spans, text, type);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<Span> spans, String text, String type)? heading1,
     TResult Function(List<Span> spans, String text, String type)? heading2,
@@ -2071,6 +2449,24 @@ class _$RichableOrderedListItem implements RichableOrderedListItem {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(RichableHeading1 value)? heading1,
+    TResult Function(RichableHeading2 value)? heading2,
+    TResult Function(RichableHeading3 value)? heading3,
+    TResult Function(RichableHeading4 value)? heading4,
+    TResult Function(RichableHeading5 value)? heading5,
+    TResult Function(RichableHeading6 value)? heading6,
+    TResult Function(RichableParagraph value)? paragraph,
+    TResult Function(RichableListItem value)? listItem,
+    TResult Function(RichableOrderedListItem value)? orderedListItem,
+    TResult Function(RichableImage value)? image,
+    TResult Function(RichableEmbed value)? embed,
+  }) {
+    return orderedListItem?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(RichableHeading1 value)? heading1,
     TResult Function(RichableHeading2 value)? heading2,
@@ -2093,7 +2489,7 @@ class _$RichableOrderedListItem implements RichableOrderedListItem {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$RichableOrderedListItemToJson(this)..['type'] = 'o-list-item';
+    return _$$RichableOrderedListItemToJson(this)..['type'] = 'o-list-item';
   }
 }
 
@@ -2176,7 +2572,7 @@ class _$RichableImage implements RichableImage {
       {this.alt, this.copyright, required this.dimensions, required this.url});
 
   factory _$RichableImage.fromJson(Map<String, dynamic> json) =>
-      _$_$RichableImageFromJson(json);
+      _$$RichableImageFromJson(json);
 
   @override
   final String? alt;
@@ -2254,6 +2650,28 @@ class _$RichableImage implements RichableImage {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(List<Span> spans, String text, String type)? heading1,
+    TResult Function(List<Span> spans, String text, String type)? heading2,
+    TResult Function(List<Span> spans, String text, String type)? heading3,
+    TResult Function(List<Span> spans, String text, String type)? heading4,
+    TResult Function(List<Span> spans, String text, String type)? heading5,
+    TResult Function(List<Span> spans, String text, String type)? heading6,
+    TResult Function(List<Span> spans, String text, String type)? paragraph,
+    TResult Function(List<Span> spans, String text, String type)? listItem,
+    TResult Function(List<Span> spans, String text, String type)?
+        orderedListItem,
+    TResult Function(
+            String? alt, String? copyright, Dimension dimensions, String url)?
+        image,
+    TResult Function(@JsonKey(name: 'oembed') EmbedData info, String type)?
+        embed,
+  }) {
+    return image?.call(alt, copyright, dimensions, url);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<Span> spans, String text, String type)? heading1,
     TResult Function(List<Span> spans, String text, String type)? heading2,
@@ -2298,6 +2716,24 @@ class _$RichableImage implements RichableImage {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(RichableHeading1 value)? heading1,
+    TResult Function(RichableHeading2 value)? heading2,
+    TResult Function(RichableHeading3 value)? heading3,
+    TResult Function(RichableHeading4 value)? heading4,
+    TResult Function(RichableHeading5 value)? heading5,
+    TResult Function(RichableHeading6 value)? heading6,
+    TResult Function(RichableParagraph value)? paragraph,
+    TResult Function(RichableListItem value)? listItem,
+    TResult Function(RichableOrderedListItem value)? orderedListItem,
+    TResult Function(RichableImage value)? image,
+    TResult Function(RichableEmbed value)? embed,
+  }) {
+    return image?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(RichableHeading1 value)? heading1,
     TResult Function(RichableHeading2 value)? heading2,
@@ -2320,7 +2756,7 @@ class _$RichableImage implements RichableImage {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$RichableImageToJson(this)..['type'] = 'image';
+    return _$$RichableImageToJson(this)..['type'] = 'image';
   }
 }
 
@@ -2395,7 +2831,7 @@ class _$RichableEmbed implements RichableEmbed {
       {@JsonKey(name: 'oembed') required this.info, required this.type});
 
   factory _$RichableEmbed.fromJson(Map<String, dynamic> json) =>
-      _$_$RichableEmbedFromJson(json);
+      _$$RichableEmbedFromJson(json);
 
   @override
   @JsonKey(name: 'oembed')
@@ -2462,6 +2898,28 @@ class _$RichableEmbed implements RichableEmbed {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(List<Span> spans, String text, String type)? heading1,
+    TResult Function(List<Span> spans, String text, String type)? heading2,
+    TResult Function(List<Span> spans, String text, String type)? heading3,
+    TResult Function(List<Span> spans, String text, String type)? heading4,
+    TResult Function(List<Span> spans, String text, String type)? heading5,
+    TResult Function(List<Span> spans, String text, String type)? heading6,
+    TResult Function(List<Span> spans, String text, String type)? paragraph,
+    TResult Function(List<Span> spans, String text, String type)? listItem,
+    TResult Function(List<Span> spans, String text, String type)?
+        orderedListItem,
+    TResult Function(
+            String? alt, String? copyright, Dimension dimensions, String url)?
+        image,
+    TResult Function(@JsonKey(name: 'oembed') EmbedData info, String type)?
+        embed,
+  }) {
+    return embed?.call(info, type);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<Span> spans, String text, String type)? heading1,
     TResult Function(List<Span> spans, String text, String type)? heading2,
@@ -2506,6 +2964,24 @@ class _$RichableEmbed implements RichableEmbed {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(RichableHeading1 value)? heading1,
+    TResult Function(RichableHeading2 value)? heading2,
+    TResult Function(RichableHeading3 value)? heading3,
+    TResult Function(RichableHeading4 value)? heading4,
+    TResult Function(RichableHeading5 value)? heading5,
+    TResult Function(RichableHeading6 value)? heading6,
+    TResult Function(RichableParagraph value)? paragraph,
+    TResult Function(RichableListItem value)? listItem,
+    TResult Function(RichableOrderedListItem value)? orderedListItem,
+    TResult Function(RichableImage value)? image,
+    TResult Function(RichableEmbed value)? embed,
+  }) {
+    return embed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(RichableHeading1 value)? heading1,
     TResult Function(RichableHeading2 value)? heading2,
@@ -2528,7 +3004,7 @@ class _$RichableEmbed implements RichableEmbed {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$RichableEmbedToJson(this)..['type'] = 'embed';
+    return _$$RichableEmbedToJson(this)..['type'] = 'embed';
   }
 }
 

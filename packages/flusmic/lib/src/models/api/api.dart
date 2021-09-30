@@ -1,6 +1,6 @@
+import 'package:flusmic/src/models/api/ref.dart';
+import 'package:flusmic/src/models/info/language.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import '../info/language.dart';
-import 'ref.dart';
 
 part 'api.freezed.dart';
 part 'api.g.dart';
@@ -14,11 +14,11 @@ class Api with _$Api {
   factory Api({
     @JsonKey(name: 'oauth_initiate') required String? oauthInitiate,
     @JsonKey(name: 'oauth_token') required String? oauthToken,
+    Map<String, String>? types,
+    String? license,
     required List<Language> languages,
     required List<Ref> refs,
-    required String license,
     required String version,
-    Map<String, String>? types,
   }) = _Api;
 
   ///Creates a Api object from json

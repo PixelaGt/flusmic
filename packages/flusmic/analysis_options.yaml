@@ -6,4 +6,6 @@ analyzer:
     - "**.g.dart"
     - "example/**"
   errors:
+    avoid_catching_errors: ignore
     include_file_not_found: ignore
+    invalid_annotation_target: ignore

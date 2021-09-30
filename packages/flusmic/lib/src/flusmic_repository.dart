@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
-import '../flusmic.dart';
-import 'flusmic_error.dart';
+import 'package:flusmic/flusmic.dart';
+import 'package:flusmic/src/flusmic_error.dart';
 
 /// Flusmic - repository class
 ///
@@ -16,8 +16,7 @@ class Flusmic {
       BaseOptions(
         baseUrl: prismicEndpoint,
         contentType: 'application/json',
-        responseType: ResponseType.json,
-        queryParameters: {
+        queryParameters: <String, dynamic>{
           if (defaultAuthToken?.isNotEmpty ?? false)
             'access_token': defaultAuthToken,
           if (defaultLanguage?.isNotEmpty ?? false) 'lang': defaultLanguage
@@ -46,18 +45,18 @@ class Flusmic {
   /// Get the API main document of prismic repository
   Future<Api> getApi({String? authToken}) async {
     try {
-      final response = await _client.get(
+      final response = await _client.get<dynamic>(
         '',
-        queryParameters: {
+        queryParameters: <String, dynamic>{
           if (defaultAuthToken == null && authToken != null)
             'access_token': authToken
         },
       );
-      return Api.fromJson(response.data);
+      return Api.fromJson(response.data as Map<String, dynamic>);
     } on DioError catch (error) {
       throw FlusmicError.fromResponse(error.response);
     } on TypeError catch (error) {
-      throw FlusmicError.fromException(error);
+      throw FlusmicError.fromError(error);
     }
   }
 
@@ -76,7 +75,7 @@ class Flusmic {
   }) async {
     try {
       final api = await getApi(authToken: authToken);
-      final response = await _client.get(
+      final response = await _client.get<dynamic>(
           _generateUrl(predicates, api.refs.first.ref),
           queryParameters: _generateParams(
               after: after,
@@ -87,11 +86,11 @@ class Flusmic {
               orderings: orderings,
               page: page,
               pageSize: pageSize));
-      return FlusmicResponse.fromJson(response.data);
+      return FlusmicResponse.fromJson(response.data as Map<String, dynamic>);
     } on DioError catch (error) {
       throw FlusmicError.fromResponse(error.response);
     } on TypeError catch (error) {
-      throw FlusmicError.fromException(error);
+      throw FlusmicError.fromError(error);
     }
   }
 
@@ -102,20 +101,20 @@ class Flusmic {
   ///Contains all the documents.
   Future<FlusmicResponse> getRootDocument(
           {String? language, String? authToken, int page = 1}) async =>
-      await query([], authToken: authToken, language: language, page: page);
+      query([], authToken: authToken, language: language, page: page);
 
   /// Fetch documents by type
   /// Get all the documents by type using the [slug].
   Future<FlusmicResponse> getDocumentsByType(String slug,
           {String? language, String? authToken, int page = 1}) async =>
-      await query([Predicate.at(DefaultPredicatePath.type, slug)],
+      query([Predicate.at(DefaultPredicatePath.type, slug)],
           authToken: authToken, language: language, page: page);
 
   /// Fetch document by id
   /// Get a documents by [id].
   Future<FlusmicResponse> getDocumentById(String id,
       {String? language, String? authToken}) async {
-    return await query([Predicate.at(DefaultPredicatePath.id, id)],
+    return query([Predicate.at(DefaultPredicatePath.id, id)],
         authToken: authToken, language: language);
   }
 
@@ -129,7 +128,7 @@ class Flusmic {
           String? after,
           String? authToken,
           String? language}) =>
-      {
+      <String, dynamic>{
         if (after?.isNotEmpty ?? false) 'after': after,
         if (authToken?.isNotEmpty ?? false) 'access_token': authToken,
         if (fetch?.isNotEmpty ?? false)

@@ -8,14 +8,12 @@ part of 'dimension.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Dimension _$_$_DimensionFromJson(Map<String, dynamic> json) {
-  return _$_Dimension(
-    height: (json['height'] as num).toDouble(),
-    width: (json['width'] as num).toDouble(),
-  );
-}
+_$_Dimension _$$_DimensionFromJson(Map<String, dynamic> json) => _$_Dimension(
+      height: (json['height'] as num).toDouble(),
+      width: (json['width'] as num).toDouble(),
+    );
 
-Map<String, dynamic> _$_$_DimensionToJson(_$_Dimension instance) =>
+Map<String, dynamic> _$$_DimensionToJson(_$_Dimension instance) =>
     <String, dynamic>{
       'height': instance.height,
       'width': instance.width,

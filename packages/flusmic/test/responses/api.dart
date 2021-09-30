@@ -8,7 +8,7 @@ const apiResponse = {
     }
   ],
   'integrationFieldsRef': null,
-  'bookmarks': {},
+  'bookmarks': <String, dynamic>{},
   'types': {'test': 'Test'},
   'languages': [
     {'id': 'en-us', 'name': 'English - United States'}
@@ -38,7 +38,7 @@ const apiResponse = {
   'oauth_token': 'https://flusmic.prismic.io/auth/token',
   'version': '8991d98',
   'license': 'All Rights Reserved',
-  'experiments': {'draft': [], 'running': []}
+  'experiments': {'draft': <dynamic>[], 'running': <dynamic>[]}
 };
 
 const badApiResponse = {
@@ -51,7 +51,7 @@ const badApiResponse = {
     }
   ],
   'integrationFieldsRef': null,
-  'bookmarks': {},
+  'bookmarks': <String, dynamic>{},
   'types': {'test': 'Test'},
   'languages': [
     {'id': 'en-us', 'name': 'English - United States'}
@@ -79,6 +79,6 @@ const badApiResponse = {
   },
   'oauth_initiate': 'https://flusmic.prismic.io/auth',
   'oauth_token': 'https://flusmic.prismic.io/auth/token',
-  'version': '8991d98',
-  'experiments': {'draft': [], 'running': []}
+  'version': null,
+  'experiments': {'draft': <dynamic>[], 'running': <dynamic>[]}
 };

@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'api.dart';
 
@@ -23,19 +24,19 @@ class _$ApiTearOff {
   _Api call(
       {@JsonKey(name: 'oauth_initiate') required String? oauthInitiate,
       @JsonKey(name: 'oauth_token') required String? oauthToken,
+      Map<String, String>? types,
+      String? license,
       required List<Language> languages,
       required List<Ref> refs,
-      required String license,
-      required String version,
-      Map<String, String>? types}) {
+      required String version}) {
     return _Api(
       oauthInitiate: oauthInitiate,
       oauthToken: oauthToken,
+      types: types,
+      license: license,
       languages: languages,
       refs: refs,
-      license: license,
       version: version,
-      types: types,
     );
   }
 
@@ -53,11 +54,11 @@ mixin _$Api {
   String? get oauthInitiate => throw _privateConstructorUsedError;
   @JsonKey(name: 'oauth_token')
   String? get oauthToken => throw _privateConstructorUsedError;
+  Map<String, String>? get types => throw _privateConstructorUsedError;
+  String? get license => throw _privateConstructorUsedError;
   List<Language> get languages => throw _privateConstructorUsedError;
   List<Ref> get refs => throw _privateConstructorUsedError;
-  String get license => throw _privateConstructorUsedError;
   String get version => throw _privateConstructorUsedError;
-  Map<String, String>? get types => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -71,11 +72,11 @@ abstract class $ApiCopyWith<$Res> {
   $Res call(
       {@JsonKey(name: 'oauth_initiate') String? oauthInitiate,
       @JsonKey(name: 'oauth_token') String? oauthToken,
+      Map<String, String>? types,
+      String? license,
       List<Language> languages,
       List<Ref> refs,
-      String license,
-      String version,
-      Map<String, String>? types});
+      String version});
 }
 
 /// @nodoc
@@ -90,11 +91,11 @@ class _$ApiCopyWithImpl<$Res> implements $ApiCopyWith<$Res> {
   $Res call({
     Object? oauthInitiate = freezed,
     Object? oauthToken = freezed,
+    Object? types = freezed,
+    Object? license = freezed,
     Object? languages = freezed,
     Object? refs = freezed,
-    Object? license = freezed,
     Object? version = freezed,
-    Object? types = freezed,
   }) {
     return _then(_value.copyWith(
       oauthInitiate: oauthInitiate == freezed
@@ -105,6 +106,14 @@ class _$ApiCopyWithImpl<$Res> implements $ApiCopyWith<$Res> {
           ? _value.oauthToken
           : oauthToken // ignore: cast_nullable_to_non_nullable
               as String?,
+      types: types == freezed
+          ? _value.types
+          : types // ignore: cast_nullable_to_non_nullable
+              as Map<String, String>?,
+      license: license == freezed
+          ? _value.license
+          : license // ignore: cast_nullable_to_non_nullable
+              as String?,
       languages: languages == freezed
           ? _value.languages
           : languages // ignore: cast_nullable_to_non_nullable
@@ -113,18 +122,10 @@ class _$ApiCopyWithImpl<$Res> implements $ApiCopyWith<$Res> {
           ? _value.refs
           : refs // ignore: cast_nullable_to_non_nullable
               as List<Ref>,
-      license: license == freezed
-          ? _value.license
-          : license // ignore: cast_nullable_to_non_nullable
-              as String,
       version: version == freezed
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
               as String,
-      types: types == freezed
-          ? _value.types
-          : types // ignore: cast_nullable_to_non_nullable
-              as Map<String, String>?,
     ));
   }
 }
@@ -137,11 +138,11 @@ abstract class _$ApiCopyWith<$Res> implements $ApiCopyWith<$Res> {
   $Res call(
       {@JsonKey(name: 'oauth_initiate') String? oauthInitiate,
       @JsonKey(name: 'oauth_token') String? oauthToken,
+      Map<String, String>? types,
+      String? license,
       List<Language> languages,
       List<Ref> refs,
-      String license,
-      String version,
-      Map<String, String>? types});
+      String version});
 }
 
 /// @nodoc
@@ -157,11 +158,11 @@ class __$ApiCopyWithImpl<$Res> extends _$ApiCopyWithImpl<$Res>
   $Res call({
     Object? oauthInitiate = freezed,
     Object? oauthToken = freezed,
+    Object? types = freezed,
+    Object? license = freezed,
     Object? languages = freezed,
     Object? refs = freezed,
-    Object? license = freezed,
     Object? version = freezed,
-    Object? types = freezed,
   }) {
     return _then(_Api(
       oauthInitiate: oauthInitiate == freezed
@@ -172,6 +173,14 @@ class __$ApiCopyWithImpl<$Res> extends _$ApiCopyWithImpl<$Res>
           ? _value.oauthToken
           : oauthToken // ignore: cast_nullable_to_non_nullable
               as String?,
+      types: types == freezed
+          ? _value.types
+          : types // ignore: cast_nullable_to_non_nullable
+              as Map<String, String>?,
+      license: license == freezed
+          ? _value.license
+          : license // ignore: cast_nullable_to_non_nullable
+              as String?,
       languages: languages == freezed
           ? _value.languages
           : languages // ignore: cast_nullable_to_non_nullable
@@ -180,18 +189,10 @@ class __$ApiCopyWithImpl<$Res> extends _$ApiCopyWithImpl<$Res>
           ? _value.refs
           : refs // ignore: cast_nullable_to_non_nullable
               as List<Ref>,
-      license: license == freezed
-          ? _value.license
-          : license // ignore: cast_nullable_to_non_nullable
-              as String,
       version: version == freezed
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
               as String,
-      types: types == freezed
-          ? _value.types
-          : types // ignore: cast_nullable_to_non_nullable
-              as Map<String, String>?,
     ));
   }
 }
@@ -202,13 +203,13 @@ class _$_Api implements _Api {
   _$_Api(
       {@JsonKey(name: 'oauth_initiate') required this.oauthInitiate,
       @JsonKey(name: 'oauth_token') required this.oauthToken,
+      this.types,
+      this.license,
       required this.languages,
       required this.refs,
-      required this.license,
-      required this.version,
-      this.types});
+      required this.version});
 
-  factory _$_Api.fromJson(Map<String, dynamic> json) => _$_$_ApiFromJson(json);
+  factory _$_Api.fromJson(Map<String, dynamic> json) => _$$_ApiFromJson(json);
 
   @override
   @JsonKey(name: 'oauth_initiate')
@@ -217,19 +218,19 @@ class _$_Api implements _Api {
   @JsonKey(name: 'oauth_token')
   final String? oauthToken;
   @override
+  final Map<String, String>? types;
+  @override
+  final String? license;
+  @override
   final List<Language> languages;
   @override
   final List<Ref> refs;
   @override
-  final String license;
-  @override
   final String version;
-  @override
-  final Map<String, String>? types;
 
   @override
   String toString() {
-    return 'Api(oauthInitiate: $oauthInitiate, oauthToken: $oauthToken, languages: $languages, refs: $refs, license: $license, version: $version, types: $types)';
+    return 'Api(oauthInitiate: $oauthInitiate, oauthToken: $oauthToken, types: $types, license: $license, languages: $languages, refs: $refs, version: $version)';
   }
 
   @override
@@ -242,19 +243,18 @@ class _$_Api implements _Api {
             (identical(other.oauthToken, oauthToken) ||
                 const DeepCollectionEquality()
                     .equals(other.oauthToken, oauthToken)) &&
+            (identical(other.types, types) ||
+                const DeepCollectionEquality().equals(other.types, types)) &&
+            (identical(other.license, license) ||
+                const DeepCollectionEquality()
+                    .equals(other.license, license)) &&
             (identical(other.languages, languages) ||
                 const DeepCollectionEquality()
                     .equals(other.languages, languages)) &&
             (identical(other.refs, refs) ||
                 const DeepCollectionEquality().equals(other.refs, refs)) &&
-            (identical(other.license, license) ||
-                const DeepCollectionEquality()
-                    .equals(other.license, license)) &&
             (identical(other.version, version) ||
-                const DeepCollectionEquality()
-                    .equals(other.version, version)) &&
-            (identical(other.types, types) ||
-                const DeepCollectionEquality().equals(other.types, types)));
+                const DeepCollectionEquality().equals(other.version, version)));
   }
 
   @override
@@ -262,11 +262,11 @@ class _$_Api implements _Api {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(oauthInitiate) ^
       const DeepCollectionEquality().hash(oauthToken) ^
+      const DeepCollectionEquality().hash(types) ^
+      const DeepCollectionEquality().hash(license) ^
       const DeepCollectionEquality().hash(languages) ^
       const DeepCollectionEquality().hash(refs) ^
-      const DeepCollectionEquality().hash(license) ^
-      const DeepCollectionEquality().hash(version) ^
-      const DeepCollectionEquality().hash(types);
+      const DeepCollectionEquality().hash(version);
 
   @JsonKey(ignore: true)
   @override
@@ -275,7 +275,7 @@ class _$_Api implements _Api {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_ApiToJson(this);
+    return _$$_ApiToJson(this);
   }
 }
 
@@ -283,11 +283,11 @@ abstract class _Api implements Api {
   factory _Api(
       {@JsonKey(name: 'oauth_initiate') required String? oauthInitiate,
       @JsonKey(name: 'oauth_token') required String? oauthToken,
+      Map<String, String>? types,
+      String? license,
       required List<Language> languages,
       required List<Ref> refs,
-      required String license,
-      required String version,
-      Map<String, String>? types}) = _$_Api;
+      required String version}) = _$_Api;
 
   factory _Api.fromJson(Map<String, dynamic> json) = _$_Api.fromJson;
 
@@ -298,15 +298,15 @@ abstract class _Api implements Api {
   @JsonKey(name: 'oauth_token')
   String? get oauthToken => throw _privateConstructorUsedError;
   @override
+  Map<String, String>? get types => throw _privateConstructorUsedError;
+  @override
+  String? get license => throw _privateConstructorUsedError;
+  @override
   List<Language> get languages => throw _privateConstructorUsedError;
   @override
   List<Ref> get refs => throw _privateConstructorUsedError;
   @override
-  String get license => throw _privateConstructorUsedError;
-  @override
   String get version => throw _privateConstructorUsedError;
-  @override
-  Map<String, String>? get types => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$ApiCopyWith<_Api> get copyWith => throw _privateConstructorUsedError;

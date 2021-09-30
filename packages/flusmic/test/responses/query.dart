@@ -17,18 +17,22 @@ const badQueryResponse = {
       'first_publication_date': '2020-04-12T02:40:15+0000',
       'last_publication_date': '2020-04-12T04:51:19+0000',
       'slugs': ['flusmic-test-2', 'flusmic-test'],
-      'linked_documents': [],
+      'linked_documents': <dynamic>[],
       'lang': 'en-us',
-      'alternate_languages': [],
+      'alternate_languages': <dynamic>[],
       'data': {
         'title': [
-          {'type': 'heading1', 'text': 'Flusmic Test 2', 'spans': []}
+          {'type': 'heading1', 'text': 'Flusmic Test 2', 'spans': <dynamic>[]}
         ],
         'content': [
-          {'type': 'paragraph', 'text': 'This is a large content', 'spans': []},
-          {'type': 'o-list-item', 'text': 'Hi 1', 'spans': []},
-          {'type': 'o-list-item', 'text': 'Hi 2', 'spans': []},
-          {'type': 'o-list-item', 'text': 'Hi 3', 'spans': []}
+          {
+            'type': 'paragraph',
+            'text': 'This is a large content',
+            'spans': <dynamic>[]
+          },
+          {'type': 'o-list-item', 'text': 'Hi 1', 'spans': <dynamic>[]},
+          {'type': 'o-list-item', 'text': 'Hi 2', 'spans': <dynamic>[]},
+          {'type': 'o-list-item', 'text': 'Hi 3', 'spans': <dynamic>[]}
         ],
         'image': {
           'dimensions': {'width': 400, 'height': 400},
@@ -69,7 +73,7 @@ const badQueryResponse = {
           'link_type': 'Document',
           'isBroken': false
         },
-        'body': []
+        'body': <dynamic>[]
       }
     },
     {
@@ -82,7 +86,7 @@ const badQueryResponse = {
       'first_publication_date': '2020-04-12T02:31:16+0000',
       'last_publication_date': '2021-04-04T01:37:18+0000',
       'slugs': ['flusmic-test'],
-      'linked_documents': [],
+      'linked_documents': <dynamic>[],
       'lang': 'en-us',
       'alternate_languages': [
         {
@@ -94,7 +98,7 @@ const badQueryResponse = {
       ],
       'data': {
         'title': [
-          {'type': 'heading1', 'text': 'Flusmic Test', 'spans': []}
+          {'type': 'heading1', 'text': 'Flusmic Test', 'spans': <dynamic>[]}
         ],
         'content': [
           {
@@ -112,7 +116,7 @@ const badQueryResponse = {
               {'start': 39, 'end': 46, 'type': 'em'}
             ]
           },
-          {'type': 'heading1', 'text': 'This is a ', 'spans': []},
+          {'type': 'heading1', 'text': 'This is a ', 'spans': <dynamic>[]},
           {
             'type': 'image',
             'url':
@@ -121,7 +125,7 @@ const badQueryResponse = {
             'copyright': null,
             'dimensions': {'width': 400, 'height': 400}
           },
-          {'type': 'heading1', 'text': ' heading 1', 'spans': []},
+          {'type': 'heading1', 'text': ' heading 1', 'spans': <dynamic>[]},
           {
             'type': 'heading2',
             'text': 'This is a heading 2',
@@ -129,17 +133,37 @@ const badQueryResponse = {
               {'start': 0, 'end': 4, 'type': 'strong'}
             ]
           },
-          {'type': 'heading3', 'text': 'This is a heading 3', 'spans': []},
-          {'type': 'heading4', 'text': 'This is a heading 4', 'spans': []},
-          {'type': 'heading5', 'text': 'This is a heading 5', 'spans': []},
-          {'type': 'heading6', 'text': 'This is a heading 6', 'spans': []},
-          {'type': 'paragraph', 'text': 'This is a paragraph', 'spans': []},
-          {'type': 'o-list-item', 'text': 'Hello 1', 'spans': []},
-          {'type': 'o-list-item', 'text': 'Hello 2', 'spans': []},
-          {'type': 'o-list-item', 'text': 'Hello 3', 'spans': []},
-          {'type': 'list-item', 'text': 'Test', 'spans': []},
-          {'type': 'list-item', 'text': 'Test 2', 'spans': []},
-          {'type': 'list-item', 'text': 'Test 3', 'spans': []},
+          {
+            'type': 'heading3',
+            'text': 'This is a heading 3',
+            'spans': <dynamic>[]
+          },
+          {
+            'type': 'heading4',
+            'text': 'This is a heading 4',
+            'spans': <dynamic>[]
+          },
+          {
+            'type': 'heading5',
+            'text': 'This is a heading 5',
+            'spans': <dynamic>[]
+          },
+          {
+            'type': 'heading6',
+            'text': 'This is a heading 6',
+            'spans': <dynamic>[]
+          },
+          {
+            'type': 'paragraph',
+            'text': 'This is a paragraph',
+            'spans': <dynamic>[]
+          },
+          {'type': 'o-list-item', 'text': 'Hello 1', 'spans': <dynamic>[]},
+          {'type': 'o-list-item', 'text': 'Hello 2', 'spans': <dynamic>[]},
+          {'type': 'o-list-item', 'text': 'Hello 3', 'spans': <dynamic>[]},
+          {'type': 'list-item', 'text': 'Test', 'spans': <dynamic>[]},
+          {'type': 'list-item', 'text': 'Test 2', 'spans': <dynamic>[]},
+          {'type': 'list-item', 'text': 'Test 3', 'spans': <dynamic>[]},
           {
             'type': 'embed',
             'oembed': {
@@ -160,7 +184,7 @@ const badQueryResponse = {
               'thumbnail_width': 480,
               'thumbnail_height': 360,
               'html':
-                  '<iframe width=\'480\' height=\'270\' src=\'https://www.youtube.com/embed/rehXxkFsAvs?feature=oembed\' frameborder=\'0\' allow=\'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\' allowfullscreen></iframe>'
+                  "<iframe width='480' height='270' src='https://www.youtube.com/embed/rehXxkFsAvs?feature=oembed' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
             }
           },
           {
@@ -227,7 +251,7 @@ const badQueryResponse = {
                 {
                   'type': 'heading1',
                   'text': 'This is a slice title',
-                  'spans': []
+                  'spans': <dynamic>[]
                 }
               ]
             }

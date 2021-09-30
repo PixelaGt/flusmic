@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'simple_text.dart';
 
@@ -136,7 +137,7 @@ class _$_SimpleText implements _SimpleText {
   _$_SimpleText({required this.spans, required this.text, required this.type});
 
   factory _$_SimpleText.fromJson(Map<String, dynamic> json) =>
-      _$_$_SimpleTextFromJson(json);
+      _$$_SimpleTextFromJson(json);
 
   @override
   final List<Span> spans;
@@ -176,7 +177,7 @@ class _$_SimpleText implements _SimpleText {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_SimpleTextToJson(this);
+    return _$$_SimpleTextToJson(this);
   }
 }
 
