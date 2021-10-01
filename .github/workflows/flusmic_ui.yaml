@@ -38,6 +38,9 @@ jobs:
         with:
           token: ${{ secrets.CODE_COVERAGE }}
   flusmic-ui-score:
+    defaults:
+      run:
+        working-directory: packages/flusmic_ui
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2

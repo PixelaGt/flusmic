@@ -41,6 +41,9 @@ jobs:
         with:
           token: ${{ secrets.CODE_COVERAGE }}
   flusmic-score:
+    defaults:
+        run:
+          working-directory: packages/flusmic
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
