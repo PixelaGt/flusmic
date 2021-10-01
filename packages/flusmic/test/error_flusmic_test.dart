@@ -133,4 +133,21 @@ void main() {
         FlusmicError.simple('An error ocurred', 'failed to load', '').message,
         'failed to load');
   });
+
+  test('message for flusmic error', () async {
+    const humanMessage = 'An error ocurred';
+    const message = 'failed to load';
+    const response = '';
+
+    const codeMessage = 'code: 100, ';
+    const redableMessage = 'humanMessage: $humanMessage, ';
+    const responseMessage = 'message: $message, response: $response';
+    const errorMessage =
+        'FlusmicError{$codeMessage$redableMessage$responseMessage}';
+
+    expect(
+      FlusmicError.simple(humanMessage, message, '').toString(),
+      errorMessage,
+    );
+  });
 }

@@ -66,10 +66,10 @@ class FlusmicError implements Exception {
 
   @override
   String toString() {
-    var message = 'FlusmicError{';
-    message = message += 'code: $code, humanMessage: $humanMessage';
-    message = message += ', message: $message, response: $response}';
-    return message;
+    final codeMessage = 'code: $code, ';
+    final redableMessage = 'humanMessage: $humanMessage, ';
+    final responseMessage = 'message: $message, response: $response';
+    return 'FlusmicError{$codeMessage$redableMessage$responseMessage}';
   }
 
   ///Response from failed request
