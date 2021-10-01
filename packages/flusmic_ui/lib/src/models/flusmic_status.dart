@@ -1,5 +1,5 @@
+import 'package:flusmic_ui/flusmic_ui.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import '../../flusmic_ui.dart';
 
 part 'flusmic_status.freezed.dart';
 

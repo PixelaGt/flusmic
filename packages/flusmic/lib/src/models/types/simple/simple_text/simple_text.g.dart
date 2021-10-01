@@ -8,17 +8,16 @@ part of 'simple_text.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_SimpleText _$_$_SimpleTextFromJson(Map<String, dynamic> json) {
-  return _$_SimpleText(
-    spans: (json['spans'] as List<dynamic>)
-        .map((e) => Span.fromJson(e as Map<String, dynamic>))
-        .toList(),
-    text: json['text'] as String,
-    type: json['type'] as String,
-  );
-}
+_$_SimpleText _$$_SimpleTextFromJson(Map<String, dynamic> json) =>
+    _$_SimpleText(
+      spans: (json['spans'] as List<dynamic>)
+          .map((e) => Span.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      text: json['text'] as String,
+      type: json['type'] as String,
+    );
 
-Map<String, dynamic> _$_$_SimpleTextToJson(_$_SimpleText instance) =>
+Map<String, dynamic> _$$_SimpleTextToJson(_$_SimpleText instance) =>
     <String, dynamic>{
       'spans': instance.spans,
       'text': instance.text,

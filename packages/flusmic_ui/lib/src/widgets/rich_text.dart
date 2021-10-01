@@ -1,5 +1,5 @@
+import 'package:flusmic_ui/flusmic_ui.dart';
 import 'package:flutter/material.dart';
-import '../../flusmic_ui.dart';
 
 ///InnerRichText
 ///

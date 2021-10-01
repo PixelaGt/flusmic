@@ -25,12 +25,12 @@ class FlusmicError implements Exception {
   }
 
   /// Exception for failed deserialization exception
-  factory FlusmicError.fromException(TypeError exception) {
+  factory FlusmicError.fromError(Error error) {
     return FlusmicError._(
       code: 100,
       humanMessage: 'Unknown error',
-      message: exception.toString(),
-      response: exception.toString(),
+      message: error.toString(),
+      response: error.toString(),
     );
   }
 
@@ -63,10 +63,13 @@ class FlusmicError implements Exception {
         );
     }
   }
-  
+
   @override
   String toString() {
-    return 'FlusmicError{code: $code, humanMessage: $humanMessage, message: $message, response: $response}';
+    final codeMessage = 'code: $code, ';
+    final redableMessage = 'humanMessage: $humanMessage, ';
+    final responseMessage = 'message: $message, response: $response';
+    return 'FlusmicError{$codeMessage$redableMessage$responseMessage}';
   }
 
   ///Response from failed request

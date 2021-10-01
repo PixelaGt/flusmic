@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'language.dart';
 
@@ -120,7 +121,7 @@ class _$_Language implements _Language {
   _$_Language({required this.id, required this.name});
 
   factory _$_Language.fromJson(Map<String, dynamic> json) =>
-      _$_$_LanguageFromJson(json);
+      _$$_LanguageFromJson(json);
 
   @override
   final String id;
@@ -155,7 +156,7 @@ class _$_Language implements _Language {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_LanguageToJson(this);
+    return _$$_LanguageToJson(this);
   }
 }
 

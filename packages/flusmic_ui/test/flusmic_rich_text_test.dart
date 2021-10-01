@@ -56,9 +56,10 @@ class _FlusmicAppState extends State<FlusmicApp> {
 
                     final richFields = data != null
                         ? (data['content'] as List)
-                            .map((r) => Richable.fromJson(r))
+                            .map((dynamic r) =>
+                                Richable.fromJson(r as Map<String, dynamic>))
                             .toList()
-                        : [];
+                        : <dynamic>[];
 
                     return SingleChildScrollView(
                       key: const Key('loaded'),
@@ -75,7 +76,7 @@ class _FlusmicAppState extends State<FlusmicApp> {
   }
 }
 
-const Map<String, dynamic> mockResponse = {
+const Map<String, dynamic> mockResponse = <String, dynamic>{
   'page': 1,
   'results_per_page': 20,
   'results_size': 1,
@@ -94,24 +95,52 @@ const Map<String, dynamic> mockResponse = {
       'first_publication_date': '2020-04-12T02:31:16+0000',
       'last_publication_date': '2020-05-31T22:58:52+0000',
       'slugs': ['flusmic-test'],
-      'linked_documents': [],
+      'linked_documents': <dynamic>[],
       'lang': 'en-us',
-      'alternate_languages': [],
+      'alternate_languages': <dynamic>[],
       'data': {
         'title': [
-          {'type': 'heading1', 'text': 'Flusmic Test', 'spans': []}
+          {'type': 'heading1', 'text': 'Flusmic Test', 'spans': <dynamic>[]}
         ],
         'content': [
-          {'type': 'heading1', 'text': 'This is a heading 1', 'spans': []},
-          {'type': 'heading2', 'text': 'This is a heading 1', 'spans': []},
-          {'type': 'heading3', 'text': 'This is a heading 1', 'spans': []},
-          {'type': 'heading4', 'text': 'This is a heading 1', 'spans': []},
-          {'type': 'heading5', 'text': 'This is a heading 5', 'spans': []},
-          {'type': 'heading6', 'text': 'This is a heading 1', 'spans': []},
-          {'type': 'paragraph', 'text': 'This is a paragraph', 'spans': []},
-          {'type': 'o-list-item', 'text': 'Hello 1', 'spans': []},
-          {'type': 'o-list-item', 'text': 'Hello 2', 'spans': []},
-          {'type': 'o-list-item', 'text': 'Hello 3', 'spans': []},
+          {
+            'type': 'heading1',
+            'text': 'This is a heading 1',
+            'spans': <dynamic>[]
+          },
+          {
+            'type': 'heading2',
+            'text': 'This is a heading 1',
+            'spans': <dynamic>[]
+          },
+          {
+            'type': 'heading3',
+            'text': 'This is a heading 1',
+            'spans': <dynamic>[]
+          },
+          {
+            'type': 'heading4',
+            'text': 'This is a heading 1',
+            'spans': <dynamic>[]
+          },
+          {
+            'type': 'heading5',
+            'text': 'This is a heading 5',
+            'spans': <dynamic>[]
+          },
+          {
+            'type': 'heading6',
+            'text': 'This is a heading 1',
+            'spans': <dynamic>[]
+          },
+          {
+            'type': 'paragraph',
+            'text': 'This is a paragraph',
+            'spans': <dynamic>[]
+          },
+          {'type': 'o-list-item', 'text': 'Hello 1', 'spans': <dynamic>[]},
+          {'type': 'o-list-item', 'text': 'Hello 2', 'spans': <dynamic>[]},
+          {'type': 'o-list-item', 'text': 'Hello 3', 'spans': <dynamic>[]},
           {
             'type': 'embed',
             'oembed': {
@@ -131,7 +160,7 @@ const Map<String, dynamic> mockResponse = {
               'version': '1.0',
               'thumbnail_height': 360,
               'html':
-                  '<iframe width=\'480\' height=\'270\' src=\'https://www.youtube.com/embed/rehXxkFsAvs?feature=oembed\' frameborder=\'0\' allow=\'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\' allowfullscreen></iframe>'
+                  "<iframe width='480' height='270' src='https://www.youtube.com/embed/rehXxkFsAvs?feature=oembed' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
             }
           },
           {

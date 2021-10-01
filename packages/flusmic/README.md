@@ -1,5 +1,5 @@
 # flusmic
-[![pub](https://img.shields.io/badge/pub-3.0.1-blue)](https://pub.dev/packages/flusmic)
+[![pub](https://img.shields.io/badge/pub-3.1.0-blue)](https://pub.dev/packages/flusmic)
 ![flusmic](https://github.com/PixelaGt/flusmic/workflows/flusmic/badge.svg?branch=master&event=push)
 [![codecov](https://codecov.io/gh/PixelaGt/flusmic/branch/master/graph/badge.svg)](https://codecov.io/gh/PixelaGt/flusmic)
 [![Project Status: Active](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
@@ -16,7 +16,7 @@ Add Flusmic in your pubspec.yaml file.
 
 ```yaml
 dependencies:
-  flusmic: ^3.0.1 /// latest version
+  flusmic: ^3.1.0 /// latest version
 ```
 
 Create an instance of `Flusmic`:

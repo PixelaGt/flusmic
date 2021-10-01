@@ -17,7 +17,7 @@ void main() {
         final flusmic =
             Flusmic(prismicEndpoint: 'https://flusmic.cdn.prismic.io/api/v2');
         expect(
-            () async => await flusmic.getApi(),
+            () async => flusmic.getApi(),
             throwsA(
                 isA<FlusmicError>().having((e) => e.code, 'bad request', 400)));
       }, createHttpClient: (context) => MockClient());
@@ -31,7 +31,7 @@ void main() {
         final flusmic =
             Flusmic(prismicEndpoint: 'https://flusmic.cdn.prismic.io/api/v2');
         expect(
-            () async => await flusmic.getApi(),
+            () async => flusmic.getApi(),
             throwsA(isA<FlusmicError>()
                 .having((e) => e.code, 'unauthorized', 401)));
       }, createHttpClient: (context) => MockClient());
@@ -45,7 +45,7 @@ void main() {
         final flusmic =
             Flusmic(prismicEndpoint: 'https://flusmic.cdn.prismic.io/api/v2');
         expect(
-            () async => await flusmic.getApi(),
+            () async => flusmic.getApi(),
             throwsA(
                 isA<FlusmicError>().having((e) => e.code, 'forbidden', 403)));
       }, createHttpClient: (context) => MockClient());
@@ -59,7 +59,7 @@ void main() {
         final flusmic =
             Flusmic(prismicEndpoint: 'https://flusmic.cdn.prismic.io/api/v2');
         expect(
-            () async => await flusmic.getApi(),
+            () async => flusmic.getApi(),
             throwsA(isA<FlusmicError>()
                 .having((e) => e.code, 'server error', 500)));
       }, createHttpClient: (context) => MockClient());
@@ -74,7 +74,7 @@ void main() {
             .reply(422, 'data');
         final flusmic =
             Flusmic(prismicEndpoint: 'https://flusmic.cdn.prismic.io/api/v2');
-        expect(() async => await flusmic.getApi(),
+        expect(() async => flusmic.getApi(),
             throwsA(isA<FlusmicError>().having((e) => e.code, 'unknown', 100)));
       }, createHttpClient: (context) => MockClient());
     });
@@ -89,22 +89,24 @@ void main() {
             .reply(422, 'date');
         final flusmic =
             Flusmic(prismicEndpoint: 'https://flusmic.cdn.prismic.io/api/v2');
-        expect(() async => await flusmic.getRootDocument(),
+        expect(() async => flusmic.getRootDocument(),
             throwsA(isA<FlusmicError>().having((e) => e.code, 'unknown', 100)));
       }, createHttpClient: (context) => MockClient());
     });
 
-    test('bad api json response exception', () async {
-      HttpOverrides.runZoned(() {
-        nock('https://flusmic.cdn.prismic.io').get(equals('/api/v2')).reply(
-            200, badApiResponse,
-            headers: {'Content-Type': 'application/json'});
-        final flusmic =
-            Flusmic(prismicEndpoint: 'https://flusmic.cdn.prismic.io/api/v2');
-        expect(
-            () async => await flusmic.getApi(), throwsA(isA<FlusmicError>()));
-      }, createHttpClient: (context) => MockClient());
-    });
+    test(
+      'bad api json response exception',
+      () async {
+        HttpOverrides.runZoned(() {
+          nock('https://flusmic.cdn.prismic.io').get(equals('/api/v2')).reply(
+              200, badApiResponse,
+              headers: {'Content-Type': 'application/json'});
+          final flusmic =
+              Flusmic(prismicEndpoint: 'https://flusmic.cdn.prismic.io/api/v2');
+          expect(() async => flusmic.getApi(), throwsA(isA<FlusmicError>()));
+        }, createHttpClient: (context) => MockClient());
+      },
+    );
 
     test('bad query json response exception', () async {
       HttpOverrides.runZoned(() {
@@ -116,7 +118,7 @@ void main() {
             .reply(200, badQueryResponse);
         final flusmic =
             Flusmic(prismicEndpoint: 'https://flusmic.cdn.prismic.io/api/v2');
-        expect(() async => await flusmic.getRootDocument(),
+        expect(() async => flusmic.getRootDocument(),
             throwsA(isA<FlusmicError>().having((e) => e.code, 'unknown', 100)));
       }, createHttpClient: (context) => MockClient());
     });
@@ -130,5 +132,22 @@ void main() {
     expect(
         FlusmicError.simple('An error ocurred', 'failed to load', '').message,
         'failed to load');
+  });
+
+  test('message for flusmic error', () async {
+    const humanMessage = 'An error ocurred';
+    const message = 'failed to load';
+    const response = '';
+
+    const codeMessage = 'code: 100, ';
+    const redableMessage = 'humanMessage: $humanMessage, ';
+    const responseMessage = 'message: $message, response: $response';
+    const errorMessage =
+        'FlusmicError{$codeMessage$redableMessage$responseMessage}';
+
+    expect(
+      FlusmicError.simple(humanMessage, message, '').toString(),
+      errorMessage,
+    );
   });
 }

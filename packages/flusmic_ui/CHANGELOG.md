@@ -1,3 +1,7 @@
+## [3.1.0]
+* Update dependencies
+* Merged [#21](https://github.com/PixelaGt/flusmic/pull/21) (thanks to @RTodorov)
+
 ## [3.0.0]
 * 3.0.0 release 🎉
     * Null safety support.

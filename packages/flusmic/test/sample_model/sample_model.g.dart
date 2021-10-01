@@ -8,26 +8,25 @@ part of 'sample_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_SampleModel _$_$_SampleModelFromJson(Map<String, dynamic> json) {
-  return _$_SampleModel(
-    location: Geopoint.fromJson(json['location'] as Map<String, dynamic>),
-    link: Linkeable.fromJson(json['link'] as Map<String, dynamic>),
-    linked: Linkeable.fromJson(json['linked'] as Map<String, dynamic>),
-    media: Linkeable.fromJson(json['media'] as Map<String, dynamic>),
-    content: (json['content'] as List<dynamic>)
-        .map((e) => Richable.fromJson(e as Map<String, dynamic>))
-        .toList(),
-    title: (json['title'] as List<dynamic>)
-        .map((e) => SimpleText.fromJson(e as Map<String, dynamic>))
-        .toList(),
-    body: (json['body'] as List<dynamic>)
-        .map((e) => Slice.fromJson(e as Map<String, dynamic>))
-        .toList(),
-    image: SimpleImage.fromJson(json['image'] as Map<String, dynamic>),
-  );
-}
+_$_SampleModel _$$_SampleModelFromJson(Map<String, dynamic> json) =>
+    _$_SampleModel(
+      location: Geopoint.fromJson(json['location'] as Map<String, dynamic>),
+      link: Linkeable.fromJson(json['link'] as Map<String, dynamic>),
+      linked: Linkeable.fromJson(json['linked'] as Map<String, dynamic>),
+      media: Linkeable.fromJson(json['media'] as Map<String, dynamic>),
+      content: (json['content'] as List<dynamic>)
+          .map((e) => Richable.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      title: (json['title'] as List<dynamic>)
+          .map((e) => SimpleText.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      body: (json['body'] as List<dynamic>)
+          .map((e) => Slice.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      image: SimpleImage.fromJson(json['image'] as Map<String, dynamic>),
+    );
 
-Map<String, dynamic> _$_$_SampleModelToJson(_$_SampleModel instance) =>
+Map<String, dynamic> _$$_SampleModelToJson(_$_SampleModel instance) =>
     <String, dynamic>{
       'location': instance.location,
       'link': instance.link,

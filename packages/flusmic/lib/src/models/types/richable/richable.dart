@@ -1,8 +1,7 @@
 import 'package:flusmic/src/models/info/dimension.dart';
+import 'package:flusmic/src/models/types/richable/embed_data/embed_data.dart';
 import 'package:flusmic/src/models/types/simple/span/span.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-
-import 'embed_data/embed_data.dart';
 
 part 'richable.freezed.dart';
 part 'richable.g.dart';

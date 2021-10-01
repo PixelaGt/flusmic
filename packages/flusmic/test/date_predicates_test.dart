@@ -25,7 +25,7 @@ void main() {
       final result = await flusmic.query([
         Predicate.dateBetween(
             CustomPredicatePath('test', 'date'),
-            DateTime(2020, 4, 1).millisecondsSinceEpoch,
+            DateTime(2020, 4).millisecondsSinceEpoch,
             DateTime(2020, 4, 15).millisecondsSinceEpoch)
       ]);
       expect(result.results.length, 1);

@@ -8,28 +8,27 @@ part of 'document.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Document _$_$_DocumentFromJson(Map<String, dynamic> json) {
-  return _$_Document(
-    alternateLanguages: (json['alternate_languages'] as List<dynamic>?)
-        ?.map((e) => AlternateLanguage.fromJson(e as Map<String, dynamic>))
-        .toList(),
-    firstPublicationDate: json['first_publication_date'] as String?,
-    lastPublicationDate: json['last_publication_date'] as String?,
-    linkedDocuments: (json['linked_documents'] as List<dynamic>?)
-        ?.map((e) => e as String)
-        .toList(),
-    tags: (json['tags'] as List<dynamic>).map((e) => e as String).toList(),
-    id: json['id'] as String,
-    lang: json['lang'] as String,
-    type: json['type'] as String,
-    data: json['data'] as Map<String, dynamic>?,
-    slugs: (json['slugs'] as List<dynamic>?)?.map((e) => e as String).toList(),
-    href: json['href'] as String?,
-    uid: json['uid'] as String?,
-  );
-}
+_$_Document _$$_DocumentFromJson(Map<String, dynamic> json) => _$_Document(
+      alternateLanguages: (json['alternate_languages'] as List<dynamic>?)
+          ?.map((e) => AlternateLanguage.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      firstPublicationDate: json['first_publication_date'] as String?,
+      lastPublicationDate: json['last_publication_date'] as String?,
+      linkedDocuments: (json['linked_documents'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+      tags: (json['tags'] as List<dynamic>).map((e) => e as String).toList(),
+      id: json['id'] as String,
+      lang: json['lang'] as String,
+      type: json['type'] as String,
+      data: json['data'] as Map<String, dynamic>?,
+      slugs:
+          (json['slugs'] as List<dynamic>?)?.map((e) => e as String).toList(),
+      href: json['href'] as String?,
+      uid: json['uid'] as String?,
+    );
 
-Map<String, dynamic> _$_$_DocumentToJson(_$_Document instance) =>
+Map<String, dynamic> _$$_DocumentToJson(_$_Document instance) =>
     <String, dynamic>{
       'alternate_languages': instance.alternateLanguages,
       'first_publication_date': instance.firstPublicationDate,

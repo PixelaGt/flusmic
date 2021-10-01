@@ -1,7 +1,7 @@
 import 'package:flusmic/flusmic.dart';
+import 'package:flusmic_ui/src/widgets/rich_image.dart';
+import 'package:flusmic_ui/src/widgets/rich_text.dart';
 import 'package:flutter/material.dart';
-import 'widgets/rich_image.dart';
-import 'widgets/rich_text.dart';
 
 ///FlusmicRichText
 ///
@@ -83,7 +83,6 @@ class FlusmicRichText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: crossAlignment,
-      mainAxisAlignment: MainAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
         for (var field in richFields)

@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'linkeable.dart';
 
@@ -13,7 +14,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Linkeable _$LinkeableFromJson(Map<String, dynamic> json) {
-  switch (json['link_type'] as String) {
+  switch (json['link_type'] as String?) {
     case 'Document':
       return DocumentLinkeable.fromJson(json);
     case 'Media':
@@ -22,7 +23,8 @@ Linkeable _$LinkeableFromJson(Map<String, dynamic> json) {
       return WebLinkeable.fromJson(json);
 
     default:
-      throw FallThroughError();
+      throw CheckedFromJsonException(json, 'link_type', 'Linkeable',
+          'Invalid union type "${json['link_type']}"!');
   }
 }
 
@@ -116,6 +118,30 @@ mixin _$Linkeable {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(
+            @JsonKey(name: 'link_type') String linkType,
+            List<String> tags,
+            String id,
+            String lang,
+            String slug,
+            String type,
+            bool isBroken)?
+        document,
+    TResult Function(
+            @JsonKey(name: 'link_type') String linkType,
+            String? height,
+            String? width,
+            String kind,
+            String name,
+            String size,
+            String url)?
+        media,
+    TResult Function(@JsonKey(name: 'link_type') String linkType, String url)?
+        web,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
             @JsonKey(name: 'link_type') String linkType,
@@ -145,6 +171,13 @@ mixin _$Linkeable {
     required TResult Function(DocumentLinkeable value) document,
     required TResult Function(MediaLinkeable value) media,
     required TResult Function(WebLinkeable value) web,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(DocumentLinkeable value)? document,
+    TResult Function(MediaLinkeable value)? media,
+    TResult Function(WebLinkeable value)? web,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -274,7 +307,7 @@ class _$DocumentLinkeable implements DocumentLinkeable {
       required this.isBroken});
 
   factory _$DocumentLinkeable.fromJson(Map<String, dynamic> json) =>
-      _$_$DocumentLinkeableFromJson(json);
+      _$$DocumentLinkeableFromJson(json);
 
   @override
   @JsonKey(name: 'link_type')
@@ -365,6 +398,33 @@ class _$DocumentLinkeable implements DocumentLinkeable {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(
+            @JsonKey(name: 'link_type') String linkType,
+            List<String> tags,
+            String id,
+            String lang,
+            String slug,
+            String type,
+            bool isBroken)?
+        document,
+    TResult Function(
+            @JsonKey(name: 'link_type') String linkType,
+            String? height,
+            String? width,
+            String kind,
+            String name,
+            String size,
+            String url)?
+        media,
+    TResult Function(@JsonKey(name: 'link_type') String linkType, String url)?
+        web,
+  }) {
+    return document?.call(linkType, tags, id, lang, slug, type, isBroken);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
             @JsonKey(name: 'link_type') String linkType,
@@ -406,6 +466,16 @@ class _$DocumentLinkeable implements DocumentLinkeable {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(DocumentLinkeable value)? document,
+    TResult Function(MediaLinkeable value)? media,
+    TResult Function(WebLinkeable value)? web,
+  }) {
+    return document?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(DocumentLinkeable value)? document,
     TResult Function(MediaLinkeable value)? media,
@@ -420,7 +490,7 @@ class _$DocumentLinkeable implements DocumentLinkeable {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$DocumentLinkeableToJson(this)..['link_type'] = 'Document';
+    return _$$DocumentLinkeableToJson(this)..['link_type'] = 'Document';
   }
 }
 
@@ -536,7 +606,7 @@ class _$MediaLinkeable implements MediaLinkeable {
       required this.url});
 
   factory _$MediaLinkeable.fromJson(Map<String, dynamic> json) =>
-      _$_$MediaLinkeableFromJson(json);
+      _$$MediaLinkeableFromJson(json);
 
   @override
   @JsonKey(name: 'link_type')
@@ -626,6 +696,33 @@ class _$MediaLinkeable implements MediaLinkeable {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(
+            @JsonKey(name: 'link_type') String linkType,
+            List<String> tags,
+            String id,
+            String lang,
+            String slug,
+            String type,
+            bool isBroken)?
+        document,
+    TResult Function(
+            @JsonKey(name: 'link_type') String linkType,
+            String? height,
+            String? width,
+            String kind,
+            String name,
+            String size,
+            String url)?
+        media,
+    TResult Function(@JsonKey(name: 'link_type') String linkType, String url)?
+        web,
+  }) {
+    return media?.call(linkType, height, width, kind, name, size, url);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
             @JsonKey(name: 'link_type') String linkType,
@@ -667,6 +764,16 @@ class _$MediaLinkeable implements MediaLinkeable {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(DocumentLinkeable value)? document,
+    TResult Function(MediaLinkeable value)? media,
+    TResult Function(WebLinkeable value)? web,
+  }) {
+    return media?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(DocumentLinkeable value)? document,
     TResult Function(MediaLinkeable value)? media,
@@ -681,7 +788,7 @@ class _$MediaLinkeable implements MediaLinkeable {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$MediaLinkeableToJson(this)..['link_type'] = 'Media';
+    return _$$MediaLinkeableToJson(this)..['link_type'] = 'Media';
   }
 }
 
@@ -758,7 +865,7 @@ class _$WebLinkeable implements WebLinkeable {
       {@JsonKey(name: 'link_type') required this.linkType, required this.url});
 
   factory _$WebLinkeable.fromJson(Map<String, dynamic> json) =>
-      _$_$WebLinkeableFromJson(json);
+      _$$WebLinkeableFromJson(json);
 
   @override
   @JsonKey(name: 'link_type')
@@ -823,6 +930,33 @@ class _$WebLinkeable implements WebLinkeable {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(
+            @JsonKey(name: 'link_type') String linkType,
+            List<String> tags,
+            String id,
+            String lang,
+            String slug,
+            String type,
+            bool isBroken)?
+        document,
+    TResult Function(
+            @JsonKey(name: 'link_type') String linkType,
+            String? height,
+            String? width,
+            String kind,
+            String name,
+            String size,
+            String url)?
+        media,
+    TResult Function(@JsonKey(name: 'link_type') String linkType, String url)?
+        web,
+  }) {
+    return web?.call(linkType, url);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
             @JsonKey(name: 'link_type') String linkType,
@@ -864,6 +998,16 @@ class _$WebLinkeable implements WebLinkeable {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(DocumentLinkeable value)? document,
+    TResult Function(MediaLinkeable value)? media,
+    TResult Function(WebLinkeable value)? web,
+  }) {
+    return web?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(DocumentLinkeable value)? document,
     TResult Function(MediaLinkeable value)? media,
@@ -878,7 +1022,7 @@ class _$WebLinkeable implements WebLinkeable {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$WebLinkeableToJson(this)..['link_type'] = 'Web';
+    return _$$WebLinkeableToJson(this)..['link_type'] = 'Web';
   }
 }
 

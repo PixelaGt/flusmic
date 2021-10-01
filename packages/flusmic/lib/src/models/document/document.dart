@@ -1,5 +1,5 @@
+import 'package:flusmic/src/models/info/alternate_language.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import '../info/alternate_language.dart';
 
 part 'document.freezed.dart';
 part 'document.g.dart';
