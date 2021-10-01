@@ -51,6 +51,6 @@ jobs:
         run:  flutter pub global activate pana
       - name: Check score
         run: |
-          chmod +x ./scripts/score.sh
-          ./scripts/score.sh
+          chmod +x ../../scripts/score.sh
+          ../../scripts/score.sh
         shell: bash
