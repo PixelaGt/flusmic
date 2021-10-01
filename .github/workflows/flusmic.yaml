@@ -11,30 +11,46 @@ on:
       - ".github/workflows/flusmic.yaml"
 
 jobs:
-  flusmic-build:
+  flusmic-testing:
     defaults:
       run:
         working-directory: packages/flusmic
     runs-on: ubuntu-latest
-    container:
-      image: google/dart:2.12
     steps:
       - uses: actions/checkout@v2
-      - name: get dependencies
+      - uses: dart-lang/setup-dart@v1
+      - name: Get dependencies
         run: pub get
-      - name: valid format
-        run: dartfmt --dry-run --set-exit-if-changed .
-      - name: analyze
+      - name: Format code
+        run: dart format --set-exit-if-changed .
+      - name: Analyze code
         run: dart analyze --fatal-infos --fatal-warnings .
-      - name: run tests
-        run: dart test --coverage=coverage && pub run coverage:format_coverage --lcov --in=coverage --out=coverage/lcov.info --packages=.packages --report-on=lib
-      - name: check coverage percentage
-        uses: VeryGoodOpenSource/very_good_coverage@v1.1.1
+      - name: Testing
+        run: |
+          pub global activate test_coverage
+          export PATH=$PATH:$HOME/.pub-cache/bin
+          test_coverage
+      - name: Check coverage percentage
+        uses: VeryGoodOpenSource/very_good_coverage@v1.2.0
         with:
           path: "./packages/flusmic/coverage/lcov.info"
           min_coverage: 100
-          exclude: "**/*.g.dart **/*.freezed.dart"
+          exclude: "**/*.g.dart **/*.freezed.dart example/**"
       - name: upload coverage
         uses: codecov/codecov-action@v1
         with:
           token: ${{ secrets.CODE_COVERAGE }}
+  flusmic-score:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: subosito/flutter-action@v1.5.3
+      - name: Install dependencies
+        run:  flutter packages get
+      - name: Install pana
+        run:  flutter pub global activate pana
+      - name: Check score
+        run: |
+          chmod +x ./scripts/score.sh
+          ./scripts/score.sh
+        shell: bash

@@ -1,6 +1,6 @@
 name: flusmic_ui
 description: A collection of widgets, utilities and extensions to integrate Flusmic more easy in Flutter.
-version: 3.0.0
+version: 3.1.0
 repository: https://github.com/PixelaGt/flusmic
 issue_tracker: https://github.com/PixelaGt/flusmic/issues
 homepage: https://github.com/PixelaGt/flusmic
@@ -15,7 +15,7 @@ dependencies:
     path: ../flusmic
   flutter:
     sdk: flutter
-  # flusmic: ^3.0.0
+  # flusmic: ^3.1.0
   freezed_annotation: ^0.14.3
   state_notifier: ^0.7.1
 

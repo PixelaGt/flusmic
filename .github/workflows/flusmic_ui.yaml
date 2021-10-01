@@ -11,14 +11,14 @@ on:
       - ".github/workflows/flusmic_ui.yaml"
 
 jobs:
-  flusmic-ui-build:
+  flusmic-ui-testing:
     defaults:
       run:
         working-directory: packages/flusmic_ui
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: subosito/flutter-action@v1.4.0
+      - uses: subosito/flutter-action@v1.5.3
       - name: get dependencies
         run: flutter packages get
       - name: valid format
@@ -28,7 +28,7 @@ jobs:
       - name: run tests
         run: flutter test --no-pub --coverage
       - name: check coverage percentage
-        uses: VeryGoodOpenSource/very_good_coverage@v1.1.1
+        uses: VeryGoodOpenSource/very_good_coverage@v1.2.0
         with:
           path: "./packages/flusmic_ui/coverage/lcov.info"
           min_coverage: 95
@@ -37,3 +37,17 @@ jobs:
         uses: codecov/codecov-action@v1
         with:
           token: ${{ secrets.CODE_COVERAGE }}
+  flusmic-ui-score:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: subosito/flutter-action@v1.5.3
+      - name: Install dependencies
+        run:  flutter packages get
+      - name: Install pana
+        run:  flutter pub global activate pana
+      - name: Check score
+        run: |
+          chmod +x ./scripts/score.sh
+          ./scripts/score.sh
+        shell: bash
