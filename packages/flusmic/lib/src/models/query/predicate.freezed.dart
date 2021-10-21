@@ -512,18 +512,15 @@ class _$AnyPredicate implements AnyPredicate {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is AnyPredicate &&
-            (identical(other.path, path) ||
-                const DeepCollectionEquality().equals(other.path, path)) &&
-            (identical(other.values, values) ||
-                const DeepCollectionEquality().equals(other.values, values)));
+        (other.runtimeType == runtimeType &&
+            other is AnyPredicate &&
+            (identical(other.path, path) || other.path == path) &&
+            const DeepCollectionEquality().equals(other.values, values));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(path) ^
-      const DeepCollectionEquality().hash(values);
+  int get hashCode => Object.hash(
+      runtimeType, path, const DeepCollectionEquality().hash(values));
 
   @JsonKey(ignore: true)
   @override
@@ -772,8 +769,8 @@ abstract class AnyPredicate implements Predicate {
   factory AnyPredicate(PredicatePath path, List<String> values) =
       _$AnyPredicate;
 
-  PredicatePath get path => throw _privateConstructorUsedError;
-  List<String> get values => throw _privateConstructorUsedError;
+  PredicatePath get path;
+  List<String> get values;
   @JsonKey(ignore: true)
   $AnyPredicateCopyWith<AnyPredicate> get copyWith =>
       throw _privateConstructorUsedError;
@@ -833,18 +830,14 @@ class _$AtPredicate implements AtPredicate {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is AtPredicate &&
-            (identical(other.path, path) ||
-                const DeepCollectionEquality().equals(other.path, path)) &&
-            (identical(other.value, value) ||
-                const DeepCollectionEquality().equals(other.value, value)));
+        (other.runtimeType == runtimeType &&
+            other is AtPredicate &&
+            (identical(other.path, path) || other.path == path) &&
+            (identical(other.value, value) || other.value == value));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(path) ^
-      const DeepCollectionEquality().hash(value);
+  int get hashCode => Object.hash(runtimeType, path, value);
 
   @JsonKey(ignore: true)
   @override
@@ -1092,8 +1085,8 @@ class _$AtPredicate implements AtPredicate {
 abstract class AtPredicate implements Predicate {
   factory AtPredicate(PredicatePath path, String value) = _$AtPredicate;
 
-  PredicatePath get path => throw _privateConstructorUsedError;
-  String get value => throw _privateConstructorUsedError;
+  PredicatePath get path;
+  String get value;
   @JsonKey(ignore: true)
   $AtPredicateCopyWith<AtPredicate> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1154,18 +1147,14 @@ class _$FullTextPredicate implements FullTextPredicate {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is FullTextPredicate &&
-            (identical(other.path, path) ||
-                const DeepCollectionEquality().equals(other.path, path)) &&
-            (identical(other.value, value) ||
-                const DeepCollectionEquality().equals(other.value, value)));
+        (other.runtimeType == runtimeType &&
+            other is FullTextPredicate &&
+            (identical(other.path, path) || other.path == path) &&
+            (identical(other.value, value) || other.value == value));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(path) ^
-      const DeepCollectionEquality().hash(value);
+  int get hashCode => Object.hash(runtimeType, path, value);
 
   @JsonKey(ignore: true)
   @override
@@ -1414,8 +1403,8 @@ abstract class FullTextPredicate implements Predicate {
   factory FullTextPredicate(PredicatePath path, String value) =
       _$FullTextPredicate;
 
-  PredicatePath get path => throw _privateConstructorUsedError;
-  String get value => throw _privateConstructorUsedError;
+  PredicatePath get path;
+  String get value;
   @JsonKey(ignore: true)
   $FullTextPredicateCopyWith<FullTextPredicate> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1475,18 +1464,14 @@ class _$GtPredicate implements GtPredicate {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is GtPredicate &&
-            (identical(other.path, path) ||
-                const DeepCollectionEquality().equals(other.path, path)) &&
-            (identical(other.value, value) ||
-                const DeepCollectionEquality().equals(other.value, value)));
+        (other.runtimeType == runtimeType &&
+            other is GtPredicate &&
+            (identical(other.path, path) || other.path == path) &&
+            (identical(other.value, value) || other.value == value));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(path) ^
-      const DeepCollectionEquality().hash(value);
+  int get hashCode => Object.hash(runtimeType, path, value);
 
   @JsonKey(ignore: true)
   @override
@@ -1734,8 +1719,8 @@ class _$GtPredicate implements GtPredicate {
 abstract class GtPredicate implements Predicate {
   factory GtPredicate(PredicatePath path, double value) = _$GtPredicate;
 
-  PredicatePath get path => throw _privateConstructorUsedError;
-  double get value => throw _privateConstructorUsedError;
+  PredicatePath get path;
+  double get value;
   @JsonKey(ignore: true)
   $GtPredicateCopyWith<GtPredicate> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1788,14 +1773,13 @@ class _$HasPredicate implements HasPredicate {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is HasPredicate &&
-            (identical(other.path, path) ||
-                const DeepCollectionEquality().equals(other.path, path)));
+        (other.runtimeType == runtimeType &&
+            other is HasPredicate &&
+            (identical(other.path, path) || other.path == path));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(path);
+  int get hashCode => Object.hash(runtimeType, path);
 
   @JsonKey(ignore: true)
   @override
@@ -2043,7 +2027,7 @@ class _$HasPredicate implements HasPredicate {
 abstract class HasPredicate implements Predicate {
   factory HasPredicate(PredicatePath path) = _$HasPredicate;
 
-  PredicatePath get path => throw _privateConstructorUsedError;
+  PredicatePath get path;
   @JsonKey(ignore: true)
   $HasPredicateCopyWith<HasPredicate> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2110,23 +2094,17 @@ class _$InRangePredicate implements InRangePredicate {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is InRangePredicate &&
-            (identical(other.path, path) ||
-                const DeepCollectionEquality().equals(other.path, path)) &&
+        (other.runtimeType == runtimeType &&
+            other is InRangePredicate &&
+            (identical(other.path, path) || other.path == path) &&
             (identical(other.lowerLimit, lowerLimit) ||
-                const DeepCollectionEquality()
-                    .equals(other.lowerLimit, lowerLimit)) &&
+                other.lowerLimit == lowerLimit) &&
             (identical(other.upperLimit, upperLimit) ||
-                const DeepCollectionEquality()
-                    .equals(other.upperLimit, upperLimit)));
+                other.upperLimit == upperLimit));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(path) ^
-      const DeepCollectionEquality().hash(lowerLimit) ^
-      const DeepCollectionEquality().hash(upperLimit);
+  int get hashCode => Object.hash(runtimeType, path, lowerLimit, upperLimit);
 
   @JsonKey(ignore: true)
   @override
@@ -2376,9 +2354,9 @@ abstract class InRangePredicate implements Predicate {
           PredicatePath path, double lowerLimit, double upperLimit) =
       _$InRangePredicate;
 
-  PredicatePath get path => throw _privateConstructorUsedError;
-  double get lowerLimit => throw _privateConstructorUsedError;
-  double get upperLimit => throw _privateConstructorUsedError;
+  PredicatePath get path;
+  double get lowerLimit;
+  double get upperLimit;
   @JsonKey(ignore: true)
   $InRangePredicateCopyWith<InRangePredicate> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2438,18 +2416,15 @@ class _$InPredicate implements InPredicate {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is InPredicate &&
-            (identical(other.path, path) ||
-                const DeepCollectionEquality().equals(other.path, path)) &&
-            (identical(other.values, values) ||
-                const DeepCollectionEquality().equals(other.values, values)));
+        (other.runtimeType == runtimeType &&
+            other is InPredicate &&
+            (identical(other.path, path) || other.path == path) &&
+            const DeepCollectionEquality().equals(other.values, values));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(path) ^
-      const DeepCollectionEquality().hash(values);
+  int get hashCode => Object.hash(
+      runtimeType, path, const DeepCollectionEquality().hash(values));
 
   @JsonKey(ignore: true)
   @override
@@ -2697,8 +2672,8 @@ class _$InPredicate implements InPredicate {
 abstract class InPredicate implements Predicate {
   factory InPredicate(PredicatePath path, List<String> values) = _$InPredicate;
 
-  PredicatePath get path => throw _privateConstructorUsedError;
-  List<String> get values => throw _privateConstructorUsedError;
+  PredicatePath get path;
+  List<String> get values;
   @JsonKey(ignore: true)
   $InPredicateCopyWith<InPredicate> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2758,18 +2733,14 @@ class _$LtPredicate implements LtPredicate {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is LtPredicate &&
-            (identical(other.path, path) ||
-                const DeepCollectionEquality().equals(other.path, path)) &&
-            (identical(other.value, value) ||
-                const DeepCollectionEquality().equals(other.value, value)));
+        (other.runtimeType == runtimeType &&
+            other is LtPredicate &&
+            (identical(other.path, path) || other.path == path) &&
+            (identical(other.value, value) || other.value == value));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(path) ^
-      const DeepCollectionEquality().hash(value);
+  int get hashCode => Object.hash(runtimeType, path, value);
 
   @JsonKey(ignore: true)
   @override
@@ -3017,8 +2988,8 @@ class _$LtPredicate implements LtPredicate {
 abstract class LtPredicate implements Predicate {
   factory LtPredicate(PredicatePath path, double value) = _$LtPredicate;
 
-  PredicatePath get path => throw _privateConstructorUsedError;
-  double get value => throw _privateConstructorUsedError;
+  PredicatePath get path;
+  double get value;
   @JsonKey(ignore: true)
   $LtPredicateCopyWith<LtPredicate> get copyWith =>
       throw _privateConstructorUsedError;
@@ -3071,14 +3042,13 @@ class _$MissingPredicate implements MissingPredicate {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is MissingPredicate &&
-            (identical(other.path, path) ||
-                const DeepCollectionEquality().equals(other.path, path)));
+        (other.runtimeType == runtimeType &&
+            other is MissingPredicate &&
+            (identical(other.path, path) || other.path == path));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(path);
+  int get hashCode => Object.hash(runtimeType, path);
 
   @JsonKey(ignore: true)
   @override
@@ -3326,7 +3296,7 @@ class _$MissingPredicate implements MissingPredicate {
 abstract class MissingPredicate implements Predicate {
   factory MissingPredicate(PredicatePath path) = _$MissingPredicate;
 
-  PredicatePath get path => throw _privateConstructorUsedError;
+  PredicatePath get path;
   @JsonKey(ignore: true)
   $MissingPredicateCopyWith<MissingPredicate> get copyWith =>
       throw _privateConstructorUsedError;
@@ -3401,26 +3371,19 @@ class _$NearPredicate implements NearPredicate {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is NearPredicate &&
-            (identical(other.path, path) ||
-                const DeepCollectionEquality().equals(other.path, path)) &&
+        (other.runtimeType == runtimeType &&
+            other is NearPredicate &&
+            (identical(other.path, path) || other.path == path) &&
             (identical(other.latitude, latitude) ||
-                const DeepCollectionEquality()
-                    .equals(other.latitude, latitude)) &&
+                other.latitude == latitude) &&
             (identical(other.longitude, longitude) ||
-                const DeepCollectionEquality()
-                    .equals(other.longitude, longitude)) &&
-            (identical(other.radius, radius) ||
-                const DeepCollectionEquality().equals(other.radius, radius)));
+                other.longitude == longitude) &&
+            (identical(other.radius, radius) || other.radius == radius));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(path) ^
-      const DeepCollectionEquality().hash(latitude) ^
-      const DeepCollectionEquality().hash(longitude) ^
-      const DeepCollectionEquality().hash(radius);
+      Object.hash(runtimeType, path, latitude, longitude, radius);
 
   @JsonKey(ignore: true)
   @override
@@ -3669,10 +3632,10 @@ abstract class NearPredicate implements Predicate {
   factory NearPredicate(PredicatePath path, double latitude, double longitude,
       double radius) = _$NearPredicate;
 
-  PredicatePath get path => throw _privateConstructorUsedError;
-  double get latitude => throw _privateConstructorUsedError;
-  double get longitude => throw _privateConstructorUsedError;
-  double get radius => throw _privateConstructorUsedError;
+  PredicatePath get path;
+  double get latitude;
+  double get longitude;
+  double get radius;
   @JsonKey(ignore: true)
   $NearPredicateCopyWith<NearPredicate> get copyWith =>
       throw _privateConstructorUsedError;
@@ -3732,18 +3695,14 @@ class _$NotPredicate implements NotPredicate {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is NotPredicate &&
-            (identical(other.path, path) ||
-                const DeepCollectionEquality().equals(other.path, path)) &&
-            (identical(other.value, value) ||
-                const DeepCollectionEquality().equals(other.value, value)));
+        (other.runtimeType == runtimeType &&
+            other is NotPredicate &&
+            (identical(other.path, path) || other.path == path) &&
+            (identical(other.value, value) || other.value == value));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(path) ^
-      const DeepCollectionEquality().hash(value);
+  int get hashCode => Object.hash(runtimeType, path, value);
 
   @JsonKey(ignore: true)
   @override
@@ -3991,8 +3950,8 @@ class _$NotPredicate implements NotPredicate {
 abstract class NotPredicate implements Predicate {
   factory NotPredicate(PredicatePath path, String value) = _$NotPredicate;
 
-  PredicatePath get path => throw _privateConstructorUsedError;
-  String get value => throw _privateConstructorUsedError;
+  PredicatePath get path;
+  String get value;
   @JsonKey(ignore: true)
   $NotPredicateCopyWith<NotPredicate> get copyWith =>
       throw _privateConstructorUsedError;
@@ -4052,18 +4011,14 @@ class _$SimilarPredicate implements SimilarPredicate {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is SimilarPredicate &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.value, value) ||
-                const DeepCollectionEquality().equals(other.value, value)));
+        (other.runtimeType == runtimeType &&
+            other is SimilarPredicate &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.value, value) || other.value == value));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(value);
+  int get hashCode => Object.hash(runtimeType, id, value);
 
   @JsonKey(ignore: true)
   @override
@@ -4311,8 +4266,8 @@ class _$SimilarPredicate implements SimilarPredicate {
 abstract class SimilarPredicate implements Predicate {
   factory SimilarPredicate(String id, int value) = _$SimilarPredicate;
 
-  String get id => throw _privateConstructorUsedError;
-  int get value => throw _privateConstructorUsedError;
+  String get id;
+  int get value;
   @JsonKey(ignore: true)
   $SimilarPredicateCopyWith<SimilarPredicate> get copyWith =>
       throw _privateConstructorUsedError;
@@ -4373,18 +4328,14 @@ class _$DateAfterPredicate implements DateAfterPredicate {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is DateAfterPredicate &&
-            (identical(other.path, path) ||
-                const DeepCollectionEquality().equals(other.path, path)) &&
-            (identical(other.epoch, epoch) ||
-                const DeepCollectionEquality().equals(other.epoch, epoch)));
+        (other.runtimeType == runtimeType &&
+            other is DateAfterPredicate &&
+            (identical(other.path, path) || other.path == path) &&
+            (identical(other.epoch, epoch) || other.epoch == epoch));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(path) ^
-      const DeepCollectionEquality().hash(epoch);
+  int get hashCode => Object.hash(runtimeType, path, epoch);
 
   @JsonKey(ignore: true)
   @override
@@ -4633,8 +4584,8 @@ abstract class DateAfterPredicate implements Predicate {
   factory DateAfterPredicate(PredicatePath path, int epoch) =
       _$DateAfterPredicate;
 
-  PredicatePath get path => throw _privateConstructorUsedError;
-  int get epoch => throw _privateConstructorUsedError;
+  PredicatePath get path;
+  int get epoch;
   @JsonKey(ignore: true)
   $DateAfterPredicateCopyWith<DateAfterPredicate> get copyWith =>
       throw _privateConstructorUsedError;
@@ -4695,18 +4646,14 @@ class _$DateBeforePredicate implements DateBeforePredicate {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is DateBeforePredicate &&
-            (identical(other.path, path) ||
-                const DeepCollectionEquality().equals(other.path, path)) &&
-            (identical(other.epoch, epoch) ||
-                const DeepCollectionEquality().equals(other.epoch, epoch)));
+        (other.runtimeType == runtimeType &&
+            other is DateBeforePredicate &&
+            (identical(other.path, path) || other.path == path) &&
+            (identical(other.epoch, epoch) || other.epoch == epoch));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(path) ^
-      const DeepCollectionEquality().hash(epoch);
+  int get hashCode => Object.hash(runtimeType, path, epoch);
 
   @JsonKey(ignore: true)
   @override
@@ -4955,8 +4902,8 @@ abstract class DateBeforePredicate implements Predicate {
   factory DateBeforePredicate(PredicatePath path, int epoch) =
       _$DateBeforePredicate;
 
-  PredicatePath get path => throw _privateConstructorUsedError;
-  int get epoch => throw _privateConstructorUsedError;
+  PredicatePath get path;
+  int get epoch;
   @JsonKey(ignore: true)
   $DateBeforePredicateCopyWith<DateBeforePredicate> get copyWith =>
       throw _privateConstructorUsedError;
@@ -5024,23 +4971,17 @@ class _$DateBetweenPredicate implements DateBetweenPredicate {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is DateBetweenPredicate &&
-            (identical(other.path, path) ||
-                const DeepCollectionEquality().equals(other.path, path)) &&
+        (other.runtimeType == runtimeType &&
+            other is DateBetweenPredicate &&
+            (identical(other.path, path) || other.path == path) &&
             (identical(other.startEpoch, startEpoch) ||
-                const DeepCollectionEquality()
-                    .equals(other.startEpoch, startEpoch)) &&
+                other.startEpoch == startEpoch) &&
             (identical(other.endEpoch, endEpoch) ||
-                const DeepCollectionEquality()
-                    .equals(other.endEpoch, endEpoch)));
+                other.endEpoch == endEpoch));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(path) ^
-      const DeepCollectionEquality().hash(startEpoch) ^
-      const DeepCollectionEquality().hash(endEpoch);
+  int get hashCode => Object.hash(runtimeType, path, startEpoch, endEpoch);
 
   @JsonKey(ignore: true)
   @override
@@ -5291,9 +5232,9 @@ abstract class DateBetweenPredicate implements Predicate {
           PredicatePath path, int startEpoch, int endEpoch) =
       _$DateBetweenPredicate;
 
-  PredicatePath get path => throw _privateConstructorUsedError;
-  int get startEpoch => throw _privateConstructorUsedError;
-  int get endEpoch => throw _privateConstructorUsedError;
+  PredicatePath get path;
+  int get startEpoch;
+  int get endEpoch;
   @JsonKey(ignore: true)
   $DateBetweenPredicateCopyWith<DateBetweenPredicate> get copyWith =>
       throw _privateConstructorUsedError;
@@ -5354,18 +5295,14 @@ class _$DateDayOfMonthPredicate implements DateDayOfMonthPredicate {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is DateDayOfMonthPredicate &&
-            (identical(other.path, path) ||
-                const DeepCollectionEquality().equals(other.path, path)) &&
-            (identical(other.day, day) ||
-                const DeepCollectionEquality().equals(other.day, day)));
+        (other.runtimeType == runtimeType &&
+            other is DateDayOfMonthPredicate &&
+            (identical(other.path, path) || other.path == path) &&
+            (identical(other.day, day) || other.day == day));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(path) ^
-      const DeepCollectionEquality().hash(day);
+  int get hashCode => Object.hash(runtimeType, path, day);
 
   @JsonKey(ignore: true)
   @override
@@ -5615,8 +5552,8 @@ abstract class DateDayOfMonthPredicate implements Predicate {
   factory DateDayOfMonthPredicate(PredicatePath path, int day) =
       _$DateDayOfMonthPredicate;
 
-  PredicatePath get path => throw _privateConstructorUsedError;
-  int get day => throw _privateConstructorUsedError;
+  PredicatePath get path;
+  int get day;
   @JsonKey(ignore: true)
   $DateDayOfMonthPredicateCopyWith<DateDayOfMonthPredicate> get copyWith =>
       throw _privateConstructorUsedError;
@@ -5680,18 +5617,14 @@ class _$DateDayOfMonthAfterPredicate implements DateDayOfMonthAfterPredicate {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is DateDayOfMonthAfterPredicate &&
-            (identical(other.path, path) ||
-                const DeepCollectionEquality().equals(other.path, path)) &&
-            (identical(other.day, day) ||
-                const DeepCollectionEquality().equals(other.day, day)));
+        (other.runtimeType == runtimeType &&
+            other is DateDayOfMonthAfterPredicate &&
+            (identical(other.path, path) || other.path == path) &&
+            (identical(other.day, day) || other.day == day));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(path) ^
-      const DeepCollectionEquality().hash(day);
+  int get hashCode => Object.hash(runtimeType, path, day);
 
   @JsonKey(ignore: true)
   @override
@@ -5941,8 +5874,8 @@ abstract class DateDayOfMonthAfterPredicate implements Predicate {
   factory DateDayOfMonthAfterPredicate(PredicatePath path, int day) =
       _$DateDayOfMonthAfterPredicate;
 
-  PredicatePath get path => throw _privateConstructorUsedError;
-  int get day => throw _privateConstructorUsedError;
+  PredicatePath get path;
+  int get day;
   @JsonKey(ignore: true)
   $DateDayOfMonthAfterPredicateCopyWith<DateDayOfMonthAfterPredicate>
       get copyWith => throw _privateConstructorUsedError;
@@ -6006,18 +5939,14 @@ class _$DateDayOfMonthBeforePredicate implements DateDayOfMonthBeforePredicate {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is DateDayOfMonthBeforePredicate &&
-            (identical(other.path, path) ||
-                const DeepCollectionEquality().equals(other.path, path)) &&
-            (identical(other.day, day) ||
-                const DeepCollectionEquality().equals(other.day, day)));
+        (other.runtimeType == runtimeType &&
+            other is DateDayOfMonthBeforePredicate &&
+            (identical(other.path, path) || other.path == path) &&
+            (identical(other.day, day) || other.day == day));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(path) ^
-      const DeepCollectionEquality().hash(day);
+  int get hashCode => Object.hash(runtimeType, path, day);
 
   @JsonKey(ignore: true)
   @override
@@ -6267,8 +6196,8 @@ abstract class DateDayOfMonthBeforePredicate implements Predicate {
   factory DateDayOfMonthBeforePredicate(PredicatePath path, int day) =
       _$DateDayOfMonthBeforePredicate;
 
-  PredicatePath get path => throw _privateConstructorUsedError;
-  int get day => throw _privateConstructorUsedError;
+  PredicatePath get path;
+  int get day;
   @JsonKey(ignore: true)
   $DateDayOfMonthBeforePredicateCopyWith<DateDayOfMonthBeforePredicate>
       get copyWith => throw _privateConstructorUsedError;
@@ -6329,18 +6258,14 @@ class _$DateDayOfWeekPredicate implements DateDayOfWeekPredicate {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is DateDayOfWeekPredicate &&
-            (identical(other.path, path) ||
-                const DeepCollectionEquality().equals(other.path, path)) &&
-            (identical(other.day, day) ||
-                const DeepCollectionEquality().equals(other.day, day)));
+        (other.runtimeType == runtimeType &&
+            other is DateDayOfWeekPredicate &&
+            (identical(other.path, path) || other.path == path) &&
+            (identical(other.day, day) || other.day == day));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(path) ^
-      const DeepCollectionEquality().hash(day);
+  int get hashCode => Object.hash(runtimeType, path, day);
 
   @JsonKey(ignore: true)
   @override
@@ -6590,8 +6515,8 @@ abstract class DateDayOfWeekPredicate implements Predicate {
   factory DateDayOfWeekPredicate(PredicatePath path, String day) =
       _$DateDayOfWeekPredicate;
 
-  PredicatePath get path => throw _privateConstructorUsedError;
-  String get day => throw _privateConstructorUsedError;
+  PredicatePath get path;
+  String get day;
   @JsonKey(ignore: true)
   $DateDayOfWeekPredicateCopyWith<DateDayOfWeekPredicate> get copyWith =>
       throw _privateConstructorUsedError;
@@ -6654,18 +6579,14 @@ class _$DateDayOfWeekAfterPredicate implements DateDayOfWeekAfterPredicate {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is DateDayOfWeekAfterPredicate &&
-            (identical(other.path, path) ||
-                const DeepCollectionEquality().equals(other.path, path)) &&
-            (identical(other.day, day) ||
-                const DeepCollectionEquality().equals(other.day, day)));
+        (other.runtimeType == runtimeType &&
+            other is DateDayOfWeekAfterPredicate &&
+            (identical(other.path, path) || other.path == path) &&
+            (identical(other.day, day) || other.day == day));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(path) ^
-      const DeepCollectionEquality().hash(day);
+  int get hashCode => Object.hash(runtimeType, path, day);
 
   @JsonKey(ignore: true)
   @override
@@ -6915,8 +6836,8 @@ abstract class DateDayOfWeekAfterPredicate implements Predicate {
   factory DateDayOfWeekAfterPredicate(PredicatePath path, String day) =
       _$DateDayOfWeekAfterPredicate;
 
-  PredicatePath get path => throw _privateConstructorUsedError;
-  String get day => throw _privateConstructorUsedError;
+  PredicatePath get path;
+  String get day;
   @JsonKey(ignore: true)
   $DateDayOfWeekAfterPredicateCopyWith<DateDayOfWeekAfterPredicate>
       get copyWith => throw _privateConstructorUsedError;
@@ -6980,18 +6901,14 @@ class _$DateDayOfWeekBeforePredicate implements DateDayOfWeekBeforePredicate {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is DateDayOfWeekBeforePredicate &&
-            (identical(other.path, path) ||
-                const DeepCollectionEquality().equals(other.path, path)) &&
-            (identical(other.day, day) ||
-                const DeepCollectionEquality().equals(other.day, day)));
+        (other.runtimeType == runtimeType &&
+            other is DateDayOfWeekBeforePredicate &&
+            (identical(other.path, path) || other.path == path) &&
+            (identical(other.day, day) || other.day == day));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(path) ^
-      const DeepCollectionEquality().hash(day);
+  int get hashCode => Object.hash(runtimeType, path, day);
 
   @JsonKey(ignore: true)
   @override
@@ -7241,8 +7158,8 @@ abstract class DateDayOfWeekBeforePredicate implements Predicate {
   factory DateDayOfWeekBeforePredicate(PredicatePath path, String day) =
       _$DateDayOfWeekBeforePredicate;
 
-  PredicatePath get path => throw _privateConstructorUsedError;
-  String get day => throw _privateConstructorUsedError;
+  PredicatePath get path;
+  String get day;
   @JsonKey(ignore: true)
   $DateDayOfWeekBeforePredicateCopyWith<DateDayOfWeekBeforePredicate>
       get copyWith => throw _privateConstructorUsedError;
@@ -7303,18 +7220,14 @@ class _$DateMonthPredicate implements DateMonthPredicate {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is DateMonthPredicate &&
-            (identical(other.path, path) ||
-                const DeepCollectionEquality().equals(other.path, path)) &&
-            (identical(other.month, month) ||
-                const DeepCollectionEquality().equals(other.month, month)));
+        (other.runtimeType == runtimeType &&
+            other is DateMonthPredicate &&
+            (identical(other.path, path) || other.path == path) &&
+            (identical(other.month, month) || other.month == month));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(path) ^
-      const DeepCollectionEquality().hash(month);
+  int get hashCode => Object.hash(runtimeType, path, month);
 
   @JsonKey(ignore: true)
   @override
@@ -7563,8 +7476,8 @@ abstract class DateMonthPredicate implements Predicate {
   factory DateMonthPredicate(PredicatePath path, String month) =
       _$DateMonthPredicate;
 
-  PredicatePath get path => throw _privateConstructorUsedError;
-  String get month => throw _privateConstructorUsedError;
+  PredicatePath get path;
+  String get month;
   @JsonKey(ignore: true)
   $DateMonthPredicateCopyWith<DateMonthPredicate> get copyWith =>
       throw _privateConstructorUsedError;
@@ -7625,18 +7538,14 @@ class _$DateMonthAfterPredicate implements DateMonthAfterPredicate {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is DateMonthAfterPredicate &&
-            (identical(other.path, path) ||
-                const DeepCollectionEquality().equals(other.path, path)) &&
-            (identical(other.month, month) ||
-                const DeepCollectionEquality().equals(other.month, month)));
+        (other.runtimeType == runtimeType &&
+            other is DateMonthAfterPredicate &&
+            (identical(other.path, path) || other.path == path) &&
+            (identical(other.month, month) || other.month == month));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(path) ^
-      const DeepCollectionEquality().hash(month);
+  int get hashCode => Object.hash(runtimeType, path, month);
 
   @JsonKey(ignore: true)
   @override
@@ -7886,8 +7795,8 @@ abstract class DateMonthAfterPredicate implements Predicate {
   factory DateMonthAfterPredicate(PredicatePath path, String month) =
       _$DateMonthAfterPredicate;
 
-  PredicatePath get path => throw _privateConstructorUsedError;
-  String get month => throw _privateConstructorUsedError;
+  PredicatePath get path;
+  String get month;
   @JsonKey(ignore: true)
   $DateMonthAfterPredicateCopyWith<DateMonthAfterPredicate> get copyWith =>
       throw _privateConstructorUsedError;
@@ -7949,18 +7858,14 @@ class _$DateMonthBeforePredicate implements DateMonthBeforePredicate {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is DateMonthBeforePredicate &&
-            (identical(other.path, path) ||
-                const DeepCollectionEquality().equals(other.path, path)) &&
-            (identical(other.month, month) ||
-                const DeepCollectionEquality().equals(other.month, month)));
+        (other.runtimeType == runtimeType &&
+            other is DateMonthBeforePredicate &&
+            (identical(other.path, path) || other.path == path) &&
+            (identical(other.month, month) || other.month == month));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(path) ^
-      const DeepCollectionEquality().hash(month);
+  int get hashCode => Object.hash(runtimeType, path, month);
 
   @JsonKey(ignore: true)
   @override
@@ -8210,8 +8115,8 @@ abstract class DateMonthBeforePredicate implements Predicate {
   factory DateMonthBeforePredicate(PredicatePath path, String month) =
       _$DateMonthBeforePredicate;
 
-  PredicatePath get path => throw _privateConstructorUsedError;
-  String get month => throw _privateConstructorUsedError;
+  PredicatePath get path;
+  String get month;
   @JsonKey(ignore: true)
   $DateMonthBeforePredicateCopyWith<DateMonthBeforePredicate> get copyWith =>
       throw _privateConstructorUsedError;
@@ -8272,18 +8177,14 @@ class _$DateYearPredicate implements DateYearPredicate {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is DateYearPredicate &&
-            (identical(other.path, path) ||
-                const DeepCollectionEquality().equals(other.path, path)) &&
-            (identical(other.year, year) ||
-                const DeepCollectionEquality().equals(other.year, year)));
+        (other.runtimeType == runtimeType &&
+            other is DateYearPredicate &&
+            (identical(other.path, path) || other.path == path) &&
+            (identical(other.year, year) || other.year == year));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(path) ^
-      const DeepCollectionEquality().hash(year);
+  int get hashCode => Object.hash(runtimeType, path, year);
 
   @JsonKey(ignore: true)
   @override
@@ -8531,8 +8432,8 @@ class _$DateYearPredicate implements DateYearPredicate {
 abstract class DateYearPredicate implements Predicate {
   factory DateYearPredicate(PredicatePath path, int year) = _$DateYearPredicate;
 
-  PredicatePath get path => throw _privateConstructorUsedError;
-  int get year => throw _privateConstructorUsedError;
+  PredicatePath get path;
+  int get year;
   @JsonKey(ignore: true)
   $DateYearPredicateCopyWith<DateYearPredicate> get copyWith =>
       throw _privateConstructorUsedError;
@@ -8593,18 +8494,14 @@ class _$DateHourPredicate implements DateHourPredicate {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is DateHourPredicate &&
-            (identical(other.path, path) ||
-                const DeepCollectionEquality().equals(other.path, path)) &&
-            (identical(other.hour, hour) ||
-                const DeepCollectionEquality().equals(other.hour, hour)));
+        (other.runtimeType == runtimeType &&
+            other is DateHourPredicate &&
+            (identical(other.path, path) || other.path == path) &&
+            (identical(other.hour, hour) || other.hour == hour));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(path) ^
-      const DeepCollectionEquality().hash(hour);
+  int get hashCode => Object.hash(runtimeType, path, hour);
 
   @JsonKey(ignore: true)
   @override
@@ -8852,8 +8749,8 @@ class _$DateHourPredicate implements DateHourPredicate {
 abstract class DateHourPredicate implements Predicate {
   factory DateHourPredicate(PredicatePath path, int hour) = _$DateHourPredicate;
 
-  PredicatePath get path => throw _privateConstructorUsedError;
-  int get hour => throw _privateConstructorUsedError;
+  PredicatePath get path;
+  int get hour;
   @JsonKey(ignore: true)
   $DateHourPredicateCopyWith<DateHourPredicate> get copyWith =>
       throw _privateConstructorUsedError;
@@ -8914,18 +8811,14 @@ class _$DateHourAfterPredicate implements DateHourAfterPredicate {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is DateHourAfterPredicate &&
-            (identical(other.path, path) ||
-                const DeepCollectionEquality().equals(other.path, path)) &&
-            (identical(other.hour, hour) ||
-                const DeepCollectionEquality().equals(other.hour, hour)));
+        (other.runtimeType == runtimeType &&
+            other is DateHourAfterPredicate &&
+            (identical(other.path, path) || other.path == path) &&
+            (identical(other.hour, hour) || other.hour == hour));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(path) ^
-      const DeepCollectionEquality().hash(hour);
+  int get hashCode => Object.hash(runtimeType, path, hour);
 
   @JsonKey(ignore: true)
   @override
@@ -9175,8 +9068,8 @@ abstract class DateHourAfterPredicate implements Predicate {
   factory DateHourAfterPredicate(PredicatePath path, int hour) =
       _$DateHourAfterPredicate;
 
-  PredicatePath get path => throw _privateConstructorUsedError;
-  int get hour => throw _privateConstructorUsedError;
+  PredicatePath get path;
+  int get hour;
   @JsonKey(ignore: true)
   $DateHourAfterPredicateCopyWith<DateHourAfterPredicate> get copyWith =>
       throw _privateConstructorUsedError;
@@ -9237,18 +9130,14 @@ class _$DateHourBeforePredicate implements DateHourBeforePredicate {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is DateHourBeforePredicate &&
-            (identical(other.path, path) ||
-                const DeepCollectionEquality().equals(other.path, path)) &&
-            (identical(other.hour, hour) ||
-                const DeepCollectionEquality().equals(other.hour, hour)));
+        (other.runtimeType == runtimeType &&
+            other is DateHourBeforePredicate &&
+            (identical(other.path, path) || other.path == path) &&
+            (identical(other.hour, hour) || other.hour == hour));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(path) ^
-      const DeepCollectionEquality().hash(hour);
+  int get hashCode => Object.hash(runtimeType, path, hour);
 
   @JsonKey(ignore: true)
   @override
@@ -9498,8 +9387,8 @@ abstract class DateHourBeforePredicate implements Predicate {
   factory DateHourBeforePredicate(PredicatePath path, int hour) =
       _$DateHourBeforePredicate;
 
-  PredicatePath get path => throw _privateConstructorUsedError;
-  int get hour => throw _privateConstructorUsedError;
+  PredicatePath get path;
+  int get hour;
   @JsonKey(ignore: true)
   $DateHourBeforePredicateCopyWith<DateHourBeforePredicate> get copyWith =>
       throw _privateConstructorUsedError;

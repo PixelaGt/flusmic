@@ -34,7 +34,7 @@ class _$RefTearOff {
     );
   }
 
-  Ref fromJson(Map<String, Object> json) {
+  Ref fromJson(Map<String, Object?> json) {
     return Ref.fromJson(json);
   }
 }
@@ -170,25 +170,17 @@ class _$_Ref implements _Ref {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Ref &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.label, label) ||
-                const DeepCollectionEquality().equals(other.label, label)) &&
-            (identical(other.ref, ref) ||
-                const DeepCollectionEquality().equals(other.ref, ref)) &&
+        (other.runtimeType == runtimeType &&
+            other is _Ref &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.label, label) || other.label == label) &&
+            (identical(other.ref, ref) || other.ref == ref) &&
             (identical(other.isMasterRef, isMasterRef) ||
-                const DeepCollectionEquality()
-                    .equals(other.isMasterRef, isMasterRef)));
+                other.isMasterRef == isMasterRef));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(label) ^
-      const DeepCollectionEquality().hash(ref) ^
-      const DeepCollectionEquality().hash(isMasterRef);
+  int get hashCode => Object.hash(runtimeType, id, label, ref, isMasterRef);
 
   @JsonKey(ignore: true)
   @override
@@ -211,13 +203,13 @@ abstract class _Ref implements Ref {
   factory _Ref.fromJson(Map<String, dynamic> json) = _$_Ref.fromJson;
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  String get label => throw _privateConstructorUsedError;
+  String get label;
   @override
-  String get ref => throw _privateConstructorUsedError;
+  String get ref;
   @override
-  bool get isMasterRef => throw _privateConstructorUsedError;
+  bool get isMasterRef;
   @override
   @JsonKey(ignore: true)
   _$RefCopyWith<_Ref> get copyWith => throw _privateConstructorUsedError;

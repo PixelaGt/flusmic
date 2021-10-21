@@ -34,7 +34,7 @@ class _$SliceTearOff {
     );
   }
 
-  Slice fromJson(Map<String, Object> json) {
+  Slice fromJson(Map<String, Object?> json) {
     return Slice.fromJson(json);
   }
 }
@@ -183,26 +183,23 @@ class _$_Slice implements _Slice {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Slice &&
+        (other.runtimeType == runtimeType &&
+            other is _Slice &&
             (identical(other.sliceLabel, sliceLabel) ||
-                const DeepCollectionEquality()
-                    .equals(other.sliceLabel, sliceLabel)) &&
+                other.sliceLabel == sliceLabel) &&
             (identical(other.sliceType, sliceType) ||
-                const DeepCollectionEquality()
-                    .equals(other.sliceType, sliceType)) &&
-            (identical(other.items, items) ||
-                const DeepCollectionEquality().equals(other.items, items)) &&
-            (identical(other.primary, primary) ||
-                const DeepCollectionEquality().equals(other.primary, primary)));
+                other.sliceType == sliceType) &&
+            const DeepCollectionEquality().equals(other.items, items) &&
+            const DeepCollectionEquality().equals(other.primary, primary));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(sliceLabel) ^
-      const DeepCollectionEquality().hash(sliceType) ^
-      const DeepCollectionEquality().hash(items) ^
-      const DeepCollectionEquality().hash(primary);
+  int get hashCode => Object.hash(
+      runtimeType,
+      sliceLabel,
+      sliceType,
+      const DeepCollectionEquality().hash(items),
+      const DeepCollectionEquality().hash(primary));
 
   @JsonKey(ignore: true)
   @override
@@ -226,14 +223,14 @@ abstract class _Slice implements Slice {
 
   @override
   @JsonKey(name: 'slice_label')
-  String? get sliceLabel => throw _privateConstructorUsedError;
+  String? get sliceLabel;
   @override
   @JsonKey(name: 'slice_type')
-  String? get sliceType => throw _privateConstructorUsedError;
+  String? get sliceType;
   @override
-  List<Map<String, dynamic>>? get items => throw _privateConstructorUsedError;
+  List<Map<String, dynamic>>? get items;
   @override
-  Map<String, dynamic>? get primary => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get primary;
   @override
   @JsonKey(ignore: true)
   _$SliceCopyWith<_Slice> get copyWith => throw _privateConstructorUsedError;

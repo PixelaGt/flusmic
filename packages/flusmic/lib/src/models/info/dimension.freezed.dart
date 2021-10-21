@@ -28,7 +28,7 @@ class _$DimensionTearOff {
     );
   }
 
-  Dimension fromJson(Map<String, Object> json) {
+  Dimension fromJson(Map<String, Object?> json) {
     return Dimension.fromJson(json);
   }
 }
@@ -137,18 +137,14 @@ class _$_Dimension implements _Dimension {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Dimension &&
-            (identical(other.height, height) ||
-                const DeepCollectionEquality().equals(other.height, height)) &&
-            (identical(other.width, width) ||
-                const DeepCollectionEquality().equals(other.width, width)));
+        (other.runtimeType == runtimeType &&
+            other is _Dimension &&
+            (identical(other.height, height) || other.height == height) &&
+            (identical(other.width, width) || other.width == width));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(height) ^
-      const DeepCollectionEquality().hash(width);
+  int get hashCode => Object.hash(runtimeType, height, width);
 
   @JsonKey(ignore: true)
   @override
@@ -169,9 +165,9 @@ abstract class _Dimension implements Dimension {
       _$_Dimension.fromJson;
 
   @override
-  double get height => throw _privateConstructorUsedError;
+  double get height;
   @override
-  double get width => throw _privateConstructorUsedError;
+  double get width;
   @override
   @JsonKey(ignore: true)
   _$DimensionCopyWith<_Dimension> get copyWith =>

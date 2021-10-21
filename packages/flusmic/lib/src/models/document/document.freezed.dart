@@ -54,7 +54,7 @@ class _$DocumentTearOff {
     );
   }
 
-  Document fromJson(Map<String, Object> json) {
+  Document fromJson(Map<String, Object?> json) {
     return Document.fromJson(json);
   }
 }
@@ -345,52 +345,41 @@ class _$_Document implements _Document {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Document &&
-            (identical(other.alternateLanguages, alternateLanguages) ||
-                const DeepCollectionEquality()
-                    .equals(other.alternateLanguages, alternateLanguages)) &&
+        (other.runtimeType == runtimeType &&
+            other is _Document &&
+            const DeepCollectionEquality()
+                .equals(other.alternateLanguages, alternateLanguages) &&
             (identical(other.firstPublicationDate, firstPublicationDate) ||
-                const DeepCollectionEquality().equals(
-                    other.firstPublicationDate, firstPublicationDate)) &&
+                other.firstPublicationDate == firstPublicationDate) &&
             (identical(other.lastPublicationDate, lastPublicationDate) ||
-                const DeepCollectionEquality()
-                    .equals(other.lastPublicationDate, lastPublicationDate)) &&
-            (identical(other.linkedDocuments, linkedDocuments) ||
-                const DeepCollectionEquality()
-                    .equals(other.linkedDocuments, linkedDocuments)) &&
-            (identical(other.tags, tags) ||
-                const DeepCollectionEquality().equals(other.tags, tags)) &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.lang, lang) ||
-                const DeepCollectionEquality().equals(other.lang, lang)) &&
-            (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)) &&
-            (identical(other.data, data) ||
-                const DeepCollectionEquality().equals(other.data, data)) &&
-            (identical(other.slugs, slugs) ||
-                const DeepCollectionEquality().equals(other.slugs, slugs)) &&
-            (identical(other.href, href) ||
-                const DeepCollectionEquality().equals(other.href, href)) &&
-            (identical(other.uid, uid) ||
-                const DeepCollectionEquality().equals(other.uid, uid)));
+                other.lastPublicationDate == lastPublicationDate) &&
+            const DeepCollectionEquality()
+                .equals(other.linkedDocuments, linkedDocuments) &&
+            const DeepCollectionEquality().equals(other.tags, tags) &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.lang, lang) || other.lang == lang) &&
+            (identical(other.type, type) || other.type == type) &&
+            const DeepCollectionEquality().equals(other.data, data) &&
+            const DeepCollectionEquality().equals(other.slugs, slugs) &&
+            (identical(other.href, href) || other.href == href) &&
+            (identical(other.uid, uid) || other.uid == uid));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(alternateLanguages) ^
-      const DeepCollectionEquality().hash(firstPublicationDate) ^
-      const DeepCollectionEquality().hash(lastPublicationDate) ^
-      const DeepCollectionEquality().hash(linkedDocuments) ^
-      const DeepCollectionEquality().hash(tags) ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(lang) ^
-      const DeepCollectionEquality().hash(type) ^
-      const DeepCollectionEquality().hash(data) ^
-      const DeepCollectionEquality().hash(slugs) ^
-      const DeepCollectionEquality().hash(href) ^
-      const DeepCollectionEquality().hash(uid);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(alternateLanguages),
+      firstPublicationDate,
+      lastPublicationDate,
+      const DeepCollectionEquality().hash(linkedDocuments),
+      const DeepCollectionEquality().hash(tags),
+      id,
+      lang,
+      type,
+      const DeepCollectionEquality().hash(data),
+      const DeepCollectionEquality().hash(slugs),
+      href,
+      uid);
 
   @JsonKey(ignore: true)
   @override
@@ -426,33 +415,32 @@ abstract class _Document implements Document {
 
   @override
   @JsonKey(name: 'alternate_languages')
-  List<AlternateLanguage>? get alternateLanguages =>
-      throw _privateConstructorUsedError;
+  List<AlternateLanguage>? get alternateLanguages;
   @override
   @JsonKey(name: 'first_publication_date')
-  String? get firstPublicationDate => throw _privateConstructorUsedError;
+  String? get firstPublicationDate;
   @override
   @JsonKey(name: 'last_publication_date')
-  String? get lastPublicationDate => throw _privateConstructorUsedError;
+  String? get lastPublicationDate;
   @override
   @JsonKey(name: 'linked_documents')
-  List<String>? get linkedDocuments => throw _privateConstructorUsedError;
+  List<String>? get linkedDocuments;
   @override
-  List<String> get tags => throw _privateConstructorUsedError;
+  List<String> get tags;
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  String get lang => throw _privateConstructorUsedError;
+  String get lang;
   @override
-  String get type => throw _privateConstructorUsedError;
+  String get type;
   @override
-  Map<String, dynamic>? get data => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get data;
   @override
-  List<String>? get slugs => throw _privateConstructorUsedError;
+  List<String>? get slugs;
   @override
-  String? get href => throw _privateConstructorUsedError;
+  String? get href;
   @override
-  String? get uid => throw _privateConstructorUsedError;
+  String? get uid;
   @override
   @JsonKey(ignore: true)
   _$DocumentCopyWith<_Document> get copyWith =>

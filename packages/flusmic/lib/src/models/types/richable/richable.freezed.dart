@@ -151,7 +151,7 @@ class _$RichableTearOff {
     );
   }
 
-  Richable fromJson(Map<String, Object> json) {
+  Richable fromJson(Map<String, Object?> json) {
     return Richable.fromJson(json);
   }
 }
@@ -357,21 +357,16 @@ class _$RichableHeading1 implements RichableHeading1 {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is RichableHeading1 &&
-            (identical(other.spans, spans) ||
-                const DeepCollectionEquality().equals(other.spans, spans)) &&
-            (identical(other.text, text) ||
-                const DeepCollectionEquality().equals(other.text, text)) &&
-            (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)));
+        (other.runtimeType == runtimeType &&
+            other is RichableHeading1 &&
+            const DeepCollectionEquality().equals(other.spans, spans) &&
+            (identical(other.text, text) || other.text == text) &&
+            (identical(other.type, type) || other.type == type));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(spans) ^
-      const DeepCollectionEquality().hash(text) ^
-      const DeepCollectionEquality().hash(type);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(spans), text, type);
 
   @JsonKey(ignore: true)
   @override
@@ -530,9 +525,9 @@ abstract class RichableHeading1 implements Richable {
   factory RichableHeading1.fromJson(Map<String, dynamic> json) =
       _$RichableHeading1.fromJson;
 
-  List<Span> get spans => throw _privateConstructorUsedError;
-  String get text => throw _privateConstructorUsedError;
-  String get type => throw _privateConstructorUsedError;
+  List<Span> get spans;
+  String get text;
+  String get type;
   @JsonKey(ignore: true)
   $RichableHeading1CopyWith<RichableHeading1> get copyWith =>
       throw _privateConstructorUsedError;
@@ -603,21 +598,16 @@ class _$RichableHeading2 implements RichableHeading2 {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is RichableHeading2 &&
-            (identical(other.spans, spans) ||
-                const DeepCollectionEquality().equals(other.spans, spans)) &&
-            (identical(other.text, text) ||
-                const DeepCollectionEquality().equals(other.text, text)) &&
-            (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)));
+        (other.runtimeType == runtimeType &&
+            other is RichableHeading2 &&
+            const DeepCollectionEquality().equals(other.spans, spans) &&
+            (identical(other.text, text) || other.text == text) &&
+            (identical(other.type, type) || other.type == type));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(spans) ^
-      const DeepCollectionEquality().hash(text) ^
-      const DeepCollectionEquality().hash(type);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(spans), text, type);
 
   @JsonKey(ignore: true)
   @override
@@ -776,9 +766,9 @@ abstract class RichableHeading2 implements Richable {
   factory RichableHeading2.fromJson(Map<String, dynamic> json) =
       _$RichableHeading2.fromJson;
 
-  List<Span> get spans => throw _privateConstructorUsedError;
-  String get text => throw _privateConstructorUsedError;
-  String get type => throw _privateConstructorUsedError;
+  List<Span> get spans;
+  String get text;
+  String get type;
   @JsonKey(ignore: true)
   $RichableHeading2CopyWith<RichableHeading2> get copyWith =>
       throw _privateConstructorUsedError;
@@ -849,21 +839,16 @@ class _$RichableHeading3 implements RichableHeading3 {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is RichableHeading3 &&
-            (identical(other.spans, spans) ||
-                const DeepCollectionEquality().equals(other.spans, spans)) &&
-            (identical(other.text, text) ||
-                const DeepCollectionEquality().equals(other.text, text)) &&
-            (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)));
+        (other.runtimeType == runtimeType &&
+            other is RichableHeading3 &&
+            const DeepCollectionEquality().equals(other.spans, spans) &&
+            (identical(other.text, text) || other.text == text) &&
+            (identical(other.type, type) || other.type == type));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(spans) ^
-      const DeepCollectionEquality().hash(text) ^
-      const DeepCollectionEquality().hash(type);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(spans), text, type);
 
   @JsonKey(ignore: true)
   @override
@@ -1022,9 +1007,9 @@ abstract class RichableHeading3 implements Richable {
   factory RichableHeading3.fromJson(Map<String, dynamic> json) =
       _$RichableHeading3.fromJson;
 
-  List<Span> get spans => throw _privateConstructorUsedError;
-  String get text => throw _privateConstructorUsedError;
-  String get type => throw _privateConstructorUsedError;
+  List<Span> get spans;
+  String get text;
+  String get type;
   @JsonKey(ignore: true)
   $RichableHeading3CopyWith<RichableHeading3> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1095,21 +1080,16 @@ class _$RichableHeading4 implements RichableHeading4 {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is RichableHeading4 &&
-            (identical(other.spans, spans) ||
-                const DeepCollectionEquality().equals(other.spans, spans)) &&
-            (identical(other.text, text) ||
-                const DeepCollectionEquality().equals(other.text, text)) &&
-            (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)));
+        (other.runtimeType == runtimeType &&
+            other is RichableHeading4 &&
+            const DeepCollectionEquality().equals(other.spans, spans) &&
+            (identical(other.text, text) || other.text == text) &&
+            (identical(other.type, type) || other.type == type));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(spans) ^
-      const DeepCollectionEquality().hash(text) ^
-      const DeepCollectionEquality().hash(type);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(spans), text, type);
 
   @JsonKey(ignore: true)
   @override
@@ -1268,9 +1248,9 @@ abstract class RichableHeading4 implements Richable {
   factory RichableHeading4.fromJson(Map<String, dynamic> json) =
       _$RichableHeading4.fromJson;
 
-  List<Span> get spans => throw _privateConstructorUsedError;
-  String get text => throw _privateConstructorUsedError;
-  String get type => throw _privateConstructorUsedError;
+  List<Span> get spans;
+  String get text;
+  String get type;
   @JsonKey(ignore: true)
   $RichableHeading4CopyWith<RichableHeading4> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1341,21 +1321,16 @@ class _$RichableHeading5 implements RichableHeading5 {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is RichableHeading5 &&
-            (identical(other.spans, spans) ||
-                const DeepCollectionEquality().equals(other.spans, spans)) &&
-            (identical(other.text, text) ||
-                const DeepCollectionEquality().equals(other.text, text)) &&
-            (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)));
+        (other.runtimeType == runtimeType &&
+            other is RichableHeading5 &&
+            const DeepCollectionEquality().equals(other.spans, spans) &&
+            (identical(other.text, text) || other.text == text) &&
+            (identical(other.type, type) || other.type == type));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(spans) ^
-      const DeepCollectionEquality().hash(text) ^
-      const DeepCollectionEquality().hash(type);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(spans), text, type);
 
   @JsonKey(ignore: true)
   @override
@@ -1514,9 +1489,9 @@ abstract class RichableHeading5 implements Richable {
   factory RichableHeading5.fromJson(Map<String, dynamic> json) =
       _$RichableHeading5.fromJson;
 
-  List<Span> get spans => throw _privateConstructorUsedError;
-  String get text => throw _privateConstructorUsedError;
-  String get type => throw _privateConstructorUsedError;
+  List<Span> get spans;
+  String get text;
+  String get type;
   @JsonKey(ignore: true)
   $RichableHeading5CopyWith<RichableHeading5> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1587,21 +1562,16 @@ class _$RichableHeading6 implements RichableHeading6 {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is RichableHeading6 &&
-            (identical(other.spans, spans) ||
-                const DeepCollectionEquality().equals(other.spans, spans)) &&
-            (identical(other.text, text) ||
-                const DeepCollectionEquality().equals(other.text, text)) &&
-            (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)));
+        (other.runtimeType == runtimeType &&
+            other is RichableHeading6 &&
+            const DeepCollectionEquality().equals(other.spans, spans) &&
+            (identical(other.text, text) || other.text == text) &&
+            (identical(other.type, type) || other.type == type));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(spans) ^
-      const DeepCollectionEquality().hash(text) ^
-      const DeepCollectionEquality().hash(type);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(spans), text, type);
 
   @JsonKey(ignore: true)
   @override
@@ -1760,9 +1730,9 @@ abstract class RichableHeading6 implements Richable {
   factory RichableHeading6.fromJson(Map<String, dynamic> json) =
       _$RichableHeading6.fromJson;
 
-  List<Span> get spans => throw _privateConstructorUsedError;
-  String get text => throw _privateConstructorUsedError;
-  String get type => throw _privateConstructorUsedError;
+  List<Span> get spans;
+  String get text;
+  String get type;
   @JsonKey(ignore: true)
   $RichableHeading6CopyWith<RichableHeading6> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1833,21 +1803,16 @@ class _$RichableParagraph implements RichableParagraph {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is RichableParagraph &&
-            (identical(other.spans, spans) ||
-                const DeepCollectionEquality().equals(other.spans, spans)) &&
-            (identical(other.text, text) ||
-                const DeepCollectionEquality().equals(other.text, text)) &&
-            (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)));
+        (other.runtimeType == runtimeType &&
+            other is RichableParagraph &&
+            const DeepCollectionEquality().equals(other.spans, spans) &&
+            (identical(other.text, text) || other.text == text) &&
+            (identical(other.type, type) || other.type == type));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(spans) ^
-      const DeepCollectionEquality().hash(text) ^
-      const DeepCollectionEquality().hash(type);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(spans), text, type);
 
   @JsonKey(ignore: true)
   @override
@@ -2006,9 +1971,9 @@ abstract class RichableParagraph implements Richable {
   factory RichableParagraph.fromJson(Map<String, dynamic> json) =
       _$RichableParagraph.fromJson;
 
-  List<Span> get spans => throw _privateConstructorUsedError;
-  String get text => throw _privateConstructorUsedError;
-  String get type => throw _privateConstructorUsedError;
+  List<Span> get spans;
+  String get text;
+  String get type;
   @JsonKey(ignore: true)
   $RichableParagraphCopyWith<RichableParagraph> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2080,21 +2045,16 @@ class _$RichableListItem implements RichableListItem {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is RichableListItem &&
-            (identical(other.spans, spans) ||
-                const DeepCollectionEquality().equals(other.spans, spans)) &&
-            (identical(other.text, text) ||
-                const DeepCollectionEquality().equals(other.text, text)) &&
-            (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)));
+        (other.runtimeType == runtimeType &&
+            other is RichableListItem &&
+            const DeepCollectionEquality().equals(other.spans, spans) &&
+            (identical(other.text, text) || other.text == text) &&
+            (identical(other.type, type) || other.type == type));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(spans) ^
-      const DeepCollectionEquality().hash(text) ^
-      const DeepCollectionEquality().hash(type);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(spans), text, type);
 
   @JsonKey(ignore: true)
   @override
@@ -2253,9 +2213,9 @@ abstract class RichableListItem implements Richable {
   factory RichableListItem.fromJson(Map<String, dynamic> json) =
       _$RichableListItem.fromJson;
 
-  List<Span> get spans => throw _privateConstructorUsedError;
-  String get text => throw _privateConstructorUsedError;
-  String get type => throw _privateConstructorUsedError;
+  List<Span> get spans;
+  String get text;
+  String get type;
   @JsonKey(ignore: true)
   $RichableListItemCopyWith<RichableListItem> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2328,21 +2288,16 @@ class _$RichableOrderedListItem implements RichableOrderedListItem {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is RichableOrderedListItem &&
-            (identical(other.spans, spans) ||
-                const DeepCollectionEquality().equals(other.spans, spans)) &&
-            (identical(other.text, text) ||
-                const DeepCollectionEquality().equals(other.text, text)) &&
-            (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)));
+        (other.runtimeType == runtimeType &&
+            other is RichableOrderedListItem &&
+            const DeepCollectionEquality().equals(other.spans, spans) &&
+            (identical(other.text, text) || other.text == text) &&
+            (identical(other.type, type) || other.type == type));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(spans) ^
-      const DeepCollectionEquality().hash(text) ^
-      const DeepCollectionEquality().hash(type);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(spans), text, type);
 
   @JsonKey(ignore: true)
   @override
@@ -2502,9 +2457,9 @@ abstract class RichableOrderedListItem implements Richable {
   factory RichableOrderedListItem.fromJson(Map<String, dynamic> json) =
       _$RichableOrderedListItem.fromJson;
 
-  List<Span> get spans => throw _privateConstructorUsedError;
-  String get text => throw _privateConstructorUsedError;
-  String get type => throw _privateConstructorUsedError;
+  List<Span> get spans;
+  String get text;
+  String get type;
   @JsonKey(ignore: true)
   $RichableOrderedListItemCopyWith<RichableOrderedListItem> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2591,26 +2546,18 @@ class _$RichableImage implements RichableImage {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is RichableImage &&
-            (identical(other.alt, alt) ||
-                const DeepCollectionEquality().equals(other.alt, alt)) &&
+        (other.runtimeType == runtimeType &&
+            other is RichableImage &&
+            (identical(other.alt, alt) || other.alt == alt) &&
             (identical(other.copyright, copyright) ||
-                const DeepCollectionEquality()
-                    .equals(other.copyright, copyright)) &&
+                other.copyright == copyright) &&
             (identical(other.dimensions, dimensions) ||
-                const DeepCollectionEquality()
-                    .equals(other.dimensions, dimensions)) &&
-            (identical(other.url, url) ||
-                const DeepCollectionEquality().equals(other.url, url)));
+                other.dimensions == dimensions) &&
+            (identical(other.url, url) || other.url == url));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(alt) ^
-      const DeepCollectionEquality().hash(copyright) ^
-      const DeepCollectionEquality().hash(dimensions) ^
-      const DeepCollectionEquality().hash(url);
+  int get hashCode => Object.hash(runtimeType, alt, copyright, dimensions, url);
 
   @JsonKey(ignore: true)
   @override
@@ -2770,10 +2717,10 @@ abstract class RichableImage implements Richable {
   factory RichableImage.fromJson(Map<String, dynamic> json) =
       _$RichableImage.fromJson;
 
-  String? get alt => throw _privateConstructorUsedError;
-  String? get copyright => throw _privateConstructorUsedError;
-  Dimension get dimensions => throw _privateConstructorUsedError;
-  String get url => throw _privateConstructorUsedError;
+  String? get alt;
+  String? get copyright;
+  Dimension get dimensions;
+  String get url;
   @JsonKey(ignore: true)
   $RichableImageCopyWith<RichableImage> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2847,18 +2794,14 @@ class _$RichableEmbed implements RichableEmbed {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is RichableEmbed &&
-            (identical(other.info, info) ||
-                const DeepCollectionEquality().equals(other.info, info)) &&
-            (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)));
+        (other.runtimeType == runtimeType &&
+            other is RichableEmbed &&
+            (identical(other.info, info) || other.info == info) &&
+            (identical(other.type, type) || other.type == type));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(info) ^
-      const DeepCollectionEquality().hash(type);
+  int get hashCode => Object.hash(runtimeType, info, type);
 
   @JsonKey(ignore: true)
   @override
@@ -3017,8 +2960,8 @@ abstract class RichableEmbed implements Richable {
       _$RichableEmbed.fromJson;
 
   @JsonKey(name: 'oembed')
-  EmbedData get info => throw _privateConstructorUsedError;
-  String get type => throw _privateConstructorUsedError;
+  EmbedData get info;
+  String get type;
   @JsonKey(ignore: true)
   $RichableEmbedCopyWith<RichableEmbed> get copyWith =>
       throw _privateConstructorUsedError;

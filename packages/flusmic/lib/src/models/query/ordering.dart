@@ -9,18 +9,25 @@ part 'ordering.freezed.dart';
 @freezed
 class Ordering with _$Ordering {
   ///Custom type Ordering constructor
-  const factory Ordering.type(String customType, String field,
-      {@Default(false) bool descending}) = TypeOrdering;
+  const factory Ordering.type(
+    String customType,
+    String field, {
+    @Default(false) bool descending,
+  }) = TypeOrdering;
 
   ///Document Ordering constructor
-  const factory Ordering.document(String type,
-      {@Default(false) bool descending}) = DocumentOrdering;
+  const factory Ordering.document(
+    String type, {
+    @Default(false) bool descending,
+  }) = DocumentOrdering;
 
   ///First publication date Ordering constructor
-  const factory Ordering.firstPublicationDate(
-      {@Default(false) bool descending}) = FirstPublicationDateOrdering;
+  const factory Ordering.firstPublicationDate({
+    @Default(false) bool descending,
+  }) = FirstPublicationDateOrdering;
 
   ///Last publication date Ordering constructor
-  const factory Ordering.lastPublicationDate(
-      {@Default(false) bool descending}) = LastPublicationDateOrdering;
+  const factory Ordering.lastPublicationDate({
+    @Default(false) bool descending,
+  }) = LastPublicationDateOrdering;
 }

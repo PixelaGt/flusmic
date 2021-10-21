@@ -46,7 +46,7 @@ class _$FlusmicResponseTearOff {
     );
   }
 
-  FlusmicResponse fromJson(Map<String, Object> json) {
+  FlusmicResponse fromJson(Map<String, Object?> json) {
     return FlusmicResponse.fromJson(json);
   }
 }
@@ -306,51 +306,39 @@ class _$_FlusmicResponse implements _FlusmicResponse {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _FlusmicResponse &&
+        (other.runtimeType == runtimeType &&
+            other is _FlusmicResponse &&
             (identical(other.nextPage, nextPage) ||
-                const DeepCollectionEquality()
-                    .equals(other.nextPage, nextPage)) &&
+                other.nextPage == nextPage) &&
             (identical(other.prevPage, prevPage) ||
-                const DeepCollectionEquality()
-                    .equals(other.prevPage, prevPage)) &&
+                other.prevPage == prevPage) &&
             (identical(other.resultsPerPage, resultsPerPage) ||
-                const DeepCollectionEquality()
-                    .equals(other.resultsPerPage, resultsPerPage)) &&
+                other.resultsPerPage == resultsPerPage) &&
             (identical(other.resultsSize, resultsSize) ||
-                const DeepCollectionEquality()
-                    .equals(other.resultsSize, resultsSize)) &&
+                other.resultsSize == resultsSize) &&
             (identical(other.totalPages, totalPages) ||
-                const DeepCollectionEquality()
-                    .equals(other.totalPages, totalPages)) &&
+                other.totalPages == totalPages) &&
             (identical(other.totalResultsSize, totalResultsSize) ||
-                const DeepCollectionEquality()
-                    .equals(other.totalResultsSize, totalResultsSize)) &&
-            (identical(other.results, results) ||
-                const DeepCollectionEquality()
-                    .equals(other.results, results)) &&
-            (identical(other.license, license) ||
-                const DeepCollectionEquality()
-                    .equals(other.license, license)) &&
-            (identical(other.version, version) ||
-                const DeepCollectionEquality()
-                    .equals(other.version, version)) &&
-            (identical(other.page, page) ||
-                const DeepCollectionEquality().equals(other.page, page)));
+                other.totalResultsSize == totalResultsSize) &&
+            const DeepCollectionEquality().equals(other.results, results) &&
+            (identical(other.license, license) || other.license == license) &&
+            (identical(other.version, version) || other.version == version) &&
+            (identical(other.page, page) || other.page == page));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(nextPage) ^
-      const DeepCollectionEquality().hash(prevPage) ^
-      const DeepCollectionEquality().hash(resultsPerPage) ^
-      const DeepCollectionEquality().hash(resultsSize) ^
-      const DeepCollectionEquality().hash(totalPages) ^
-      const DeepCollectionEquality().hash(totalResultsSize) ^
-      const DeepCollectionEquality().hash(results) ^
-      const DeepCollectionEquality().hash(license) ^
-      const DeepCollectionEquality().hash(version) ^
-      const DeepCollectionEquality().hash(page);
+  int get hashCode => Object.hash(
+      runtimeType,
+      nextPage,
+      prevPage,
+      resultsPerPage,
+      resultsSize,
+      totalPages,
+      totalResultsSize,
+      const DeepCollectionEquality().hash(results),
+      license,
+      version,
+      page);
 
   @JsonKey(ignore: true)
   @override
@@ -381,30 +369,30 @@ abstract class _FlusmicResponse implements FlusmicResponse {
 
   @override
   @JsonKey(name: 'next_page')
-  String? get nextPage => throw _privateConstructorUsedError;
+  String? get nextPage;
   @override
   @JsonKey(name: 'prev_page')
-  String? get prevPage => throw _privateConstructorUsedError;
+  String? get prevPage;
   @override
   @JsonKey(name: 'results_per_page')
-  int get resultsPerPage => throw _privateConstructorUsedError;
+  int get resultsPerPage;
   @override
   @JsonKey(name: 'results_size')
-  int get resultsSize => throw _privateConstructorUsedError;
+  int get resultsSize;
   @override
   @JsonKey(name: 'total_pages')
-  int get totalPages => throw _privateConstructorUsedError;
+  int get totalPages;
   @override
   @JsonKey(name: 'total_results_size')
-  int get totalResultsSize => throw _privateConstructorUsedError;
+  int get totalResultsSize;
   @override
-  List<Document> get results => throw _privateConstructorUsedError;
+  List<Document> get results;
   @override
-  String get license => throw _privateConstructorUsedError;
+  String get license;
   @override
-  String get version => throw _privateConstructorUsedError;
+  String get version;
   @override
-  int get page => throw _privateConstructorUsedError;
+  int get page;
   @override
   @JsonKey(ignore: true)
   _$FlusmicResponseCopyWith<_FlusmicResponse> get copyWith =>

@@ -203,23 +203,17 @@ class _$TypeOrdering implements TypeOrdering {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is TypeOrdering &&
+        (other.runtimeType == runtimeType &&
+            other is TypeOrdering &&
             (identical(other.customType, customType) ||
-                const DeepCollectionEquality()
-                    .equals(other.customType, customType)) &&
-            (identical(other.field, field) ||
-                const DeepCollectionEquality().equals(other.field, field)) &&
+                other.customType == customType) &&
+            (identical(other.field, field) || other.field == field) &&
             (identical(other.descending, descending) ||
-                const DeepCollectionEquality()
-                    .equals(other.descending, descending)));
+                other.descending == descending));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(customType) ^
-      const DeepCollectionEquality().hash(field) ^
-      const DeepCollectionEquality().hash(descending);
+  int get hashCode => Object.hash(runtimeType, customType, field, descending);
 
   @JsonKey(ignore: true)
   @override
@@ -308,10 +302,10 @@ abstract class TypeOrdering implements Ordering {
   const factory TypeOrdering(String customType, String field,
       {bool descending}) = _$TypeOrdering;
 
-  String get customType => throw _privateConstructorUsedError;
-  String get field => throw _privateConstructorUsedError;
+  String get customType;
+  String get field;
   @override
-  bool get descending => throw _privateConstructorUsedError;
+  bool get descending;
   @override
   @JsonKey(ignore: true)
   $TypeOrderingCopyWith<TypeOrdering> get copyWith =>
@@ -375,19 +369,15 @@ class _$DocumentOrdering implements DocumentOrdering {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is DocumentOrdering &&
-            (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)) &&
+        (other.runtimeType == runtimeType &&
+            other is DocumentOrdering &&
+            (identical(other.type, type) || other.type == type) &&
             (identical(other.descending, descending) ||
-                const DeepCollectionEquality()
-                    .equals(other.descending, descending)));
+                other.descending == descending));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(type) ^
-      const DeepCollectionEquality().hash(descending);
+  int get hashCode => Object.hash(runtimeType, type, descending);
 
   @JsonKey(ignore: true)
   @override
@@ -476,9 +466,9 @@ abstract class DocumentOrdering implements Ordering {
   const factory DocumentOrdering(String type, {bool descending}) =
       _$DocumentOrdering;
 
-  String get type => throw _privateConstructorUsedError;
+  String get type;
   @override
-  bool get descending => throw _privateConstructorUsedError;
+  bool get descending;
   @override
   @JsonKey(ignore: true)
   $DocumentOrderingCopyWith<DocumentOrdering> get copyWith =>
@@ -539,15 +529,14 @@ class _$FirstPublicationDateOrdering implements FirstPublicationDateOrdering {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is FirstPublicationDateOrdering &&
+        (other.runtimeType == runtimeType &&
+            other is FirstPublicationDateOrdering &&
             (identical(other.descending, descending) ||
-                const DeepCollectionEquality()
-                    .equals(other.descending, descending)));
+                other.descending == descending));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(descending);
+  int get hashCode => Object.hash(runtimeType, descending);
 
   @JsonKey(ignore: true)
   @override
@@ -638,7 +627,7 @@ abstract class FirstPublicationDateOrdering implements Ordering {
       _$FirstPublicationDateOrdering;
 
   @override
-  bool get descending => throw _privateConstructorUsedError;
+  bool get descending;
   @override
   @JsonKey(ignore: true)
   $FirstPublicationDateOrderingCopyWith<FirstPublicationDateOrdering>
@@ -698,15 +687,14 @@ class _$LastPublicationDateOrdering implements LastPublicationDateOrdering {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is LastPublicationDateOrdering &&
+        (other.runtimeType == runtimeType &&
+            other is LastPublicationDateOrdering &&
             (identical(other.descending, descending) ||
-                const DeepCollectionEquality()
-                    .equals(other.descending, descending)));
+                other.descending == descending));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(descending);
+  int get hashCode => Object.hash(runtimeType, descending);
 
   @JsonKey(ignore: true)
   @override
@@ -797,7 +785,7 @@ abstract class LastPublicationDateOrdering implements Ordering {
       _$LastPublicationDateOrdering;
 
   @override
-  bool get descending => throw _privateConstructorUsedError;
+  bool get descending;
   @override
   @JsonKey(ignore: true)
   $LastPublicationDateOrderingCopyWith<LastPublicationDateOrdering>

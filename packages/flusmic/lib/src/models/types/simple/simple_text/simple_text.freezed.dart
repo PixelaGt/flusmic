@@ -30,7 +30,7 @@ class _$SimpleTextTearOff {
     );
   }
 
-  SimpleText fromJson(Map<String, Object> json) {
+  SimpleText fromJson(Map<String, Object?> json) {
     return SimpleText.fromJson(json);
   }
 }
@@ -154,21 +154,16 @@ class _$_SimpleText implements _SimpleText {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _SimpleText &&
-            (identical(other.spans, spans) ||
-                const DeepCollectionEquality().equals(other.spans, spans)) &&
-            (identical(other.text, text) ||
-                const DeepCollectionEquality().equals(other.text, text)) &&
-            (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)));
+        (other.runtimeType == runtimeType &&
+            other is _SimpleText &&
+            const DeepCollectionEquality().equals(other.spans, spans) &&
+            (identical(other.text, text) || other.text == text) &&
+            (identical(other.type, type) || other.type == type));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(spans) ^
-      const DeepCollectionEquality().hash(text) ^
-      const DeepCollectionEquality().hash(type);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(spans), text, type);
 
   @JsonKey(ignore: true)
   @override
@@ -191,11 +186,11 @@ abstract class _SimpleText implements SimpleText {
       _$_SimpleText.fromJson;
 
   @override
-  List<Span> get spans => throw _privateConstructorUsedError;
+  List<Span> get spans;
   @override
-  String get text => throw _privateConstructorUsedError;
+  String get text;
   @override
-  String get type => throw _privateConstructorUsedError;
+  String get type;
   @override
   @JsonKey(ignore: true)
   _$SimpleTextCopyWith<_SimpleText> get copyWith =>
