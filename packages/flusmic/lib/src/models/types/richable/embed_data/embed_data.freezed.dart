@@ -54,7 +54,7 @@ class _$EmbedDataTearOff {
     );
   }
 
-  EmbedData fromJson(Map<String, Object> json) {
+  EmbedData fromJson(Map<String, Object?> json) {
     return EmbedData.fromJson(json);
   }
 }
@@ -377,63 +377,49 @@ class _$_EmbedData implements _EmbedData {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _EmbedData &&
+        (other.runtimeType == runtimeType &&
+            other is _EmbedData &&
             (identical(other.authorName, authorName) ||
-                const DeepCollectionEquality()
-                    .equals(other.authorName, authorName)) &&
+                other.authorName == authorName) &&
             (identical(other.authorUrl, authorUrl) ||
-                const DeepCollectionEquality()
-                    .equals(other.authorUrl, authorUrl)) &&
+                other.authorUrl == authorUrl) &&
             (identical(other.embedUrl, embedUrl) ||
-                const DeepCollectionEquality()
-                    .equals(other.embedUrl, embedUrl)) &&
+                other.embedUrl == embedUrl) &&
             (identical(other.providerName, providerName) ||
-                const DeepCollectionEquality()
-                    .equals(other.providerName, providerName)) &&
+                other.providerName == providerName) &&
             (identical(other.providerUrl, providerUrl) ||
-                const DeepCollectionEquality()
-                    .equals(other.providerUrl, providerUrl)) &&
+                other.providerUrl == providerUrl) &&
             (identical(other.thumbnailHeight, thumbnailHeight) ||
-                const DeepCollectionEquality()
-                    .equals(other.thumbnailHeight, thumbnailHeight)) &&
+                other.thumbnailHeight == thumbnailHeight) &&
             (identical(other.thumbnailUrl, thumbnailUrl) ||
-                const DeepCollectionEquality()
-                    .equals(other.thumbnailUrl, thumbnailUrl)) &&
+                other.thumbnailUrl == thumbnailUrl) &&
             (identical(other.thumbnailWidth, thumbnailWidth) ||
-                const DeepCollectionEquality()
-                    .equals(other.thumbnailWidth, thumbnailWidth)) &&
-            (identical(other.html, html) ||
-                const DeepCollectionEquality().equals(other.html, html)) &&
-            (identical(other.title, title) ||
-                const DeepCollectionEquality().equals(other.title, title)) &&
-            (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)) &&
-            (identical(other.version, version) ||
-                const DeepCollectionEquality()
-                    .equals(other.version, version)) &&
-            (identical(other.height, height) ||
-                const DeepCollectionEquality().equals(other.height, height)) &&
-            (identical(other.width, width) ||
-                const DeepCollectionEquality().equals(other.width, width)));
+                other.thumbnailWidth == thumbnailWidth) &&
+            (identical(other.html, html) || other.html == html) &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.version, version) || other.version == version) &&
+            (identical(other.height, height) || other.height == height) &&
+            (identical(other.width, width) || other.width == width));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(authorName) ^
-      const DeepCollectionEquality().hash(authorUrl) ^
-      const DeepCollectionEquality().hash(embedUrl) ^
-      const DeepCollectionEquality().hash(providerName) ^
-      const DeepCollectionEquality().hash(providerUrl) ^
-      const DeepCollectionEquality().hash(thumbnailHeight) ^
-      const DeepCollectionEquality().hash(thumbnailUrl) ^
-      const DeepCollectionEquality().hash(thumbnailWidth) ^
-      const DeepCollectionEquality().hash(html) ^
-      const DeepCollectionEquality().hash(title) ^
-      const DeepCollectionEquality().hash(type) ^
-      const DeepCollectionEquality().hash(version) ^
-      const DeepCollectionEquality().hash(height) ^
-      const DeepCollectionEquality().hash(width);
+  int get hashCode => Object.hash(
+      runtimeType,
+      authorName,
+      authorUrl,
+      embedUrl,
+      providerName,
+      providerUrl,
+      thumbnailHeight,
+      thumbnailUrl,
+      thumbnailWidth,
+      html,
+      title,
+      type,
+      version,
+      height,
+      width);
 
   @JsonKey(ignore: true)
   @override
@@ -468,40 +454,40 @@ abstract class _EmbedData implements EmbedData {
 
   @override
   @JsonKey(name: 'author_name')
-  String get authorName => throw _privateConstructorUsedError;
+  String get authorName;
   @override
   @JsonKey(name: 'author_url')
-  String get authorUrl => throw _privateConstructorUsedError;
+  String get authorUrl;
   @override
   @JsonKey(name: 'embed_url')
-  String get embedUrl => throw _privateConstructorUsedError;
+  String get embedUrl;
   @override
   @JsonKey(name: 'provider_name')
-  String get providerName => throw _privateConstructorUsedError;
+  String get providerName;
   @override
   @JsonKey(name: 'provider_url')
-  String get providerUrl => throw _privateConstructorUsedError;
+  String get providerUrl;
   @override
   @JsonKey(name: 'thumbnail_height')
-  double get thumbnailHeight => throw _privateConstructorUsedError;
+  double get thumbnailHeight;
   @override
   @JsonKey(name: 'thumbnail_url')
-  String get thumbnailUrl => throw _privateConstructorUsedError;
+  String get thumbnailUrl;
   @override
   @JsonKey(name: 'thumbnail_width')
-  double get thumbnailWidth => throw _privateConstructorUsedError;
+  double get thumbnailWidth;
   @override
-  String get html => throw _privateConstructorUsedError;
+  String get html;
   @override
-  String get title => throw _privateConstructorUsedError;
+  String get title;
   @override
-  String get type => throw _privateConstructorUsedError;
+  String get type;
   @override
-  String get version => throw _privateConstructorUsedError;
+  String get version;
   @override
-  double get height => throw _privateConstructorUsedError;
+  double get height;
   @override
-  double get width => throw _privateConstructorUsedError;
+  double get width;
   @override
   @JsonKey(ignore: true)
   _$EmbedDataCopyWith<_EmbedData> get copyWith =>

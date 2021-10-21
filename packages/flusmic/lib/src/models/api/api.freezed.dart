@@ -40,7 +40,7 @@ class _$ApiTearOff {
     );
   }
 
-  Api fromJson(Map<String, Object> json) {
+  Api fromJson(Map<String, Object?> json) {
     return Api.fromJson(json);
   }
 }
@@ -236,37 +236,29 @@ class _$_Api implements _Api {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Api &&
+        (other.runtimeType == runtimeType &&
+            other is _Api &&
             (identical(other.oauthInitiate, oauthInitiate) ||
-                const DeepCollectionEquality()
-                    .equals(other.oauthInitiate, oauthInitiate)) &&
+                other.oauthInitiate == oauthInitiate) &&
             (identical(other.oauthToken, oauthToken) ||
-                const DeepCollectionEquality()
-                    .equals(other.oauthToken, oauthToken)) &&
-            (identical(other.types, types) ||
-                const DeepCollectionEquality().equals(other.types, types)) &&
-            (identical(other.license, license) ||
-                const DeepCollectionEquality()
-                    .equals(other.license, license)) &&
-            (identical(other.languages, languages) ||
-                const DeepCollectionEquality()
-                    .equals(other.languages, languages)) &&
-            (identical(other.refs, refs) ||
-                const DeepCollectionEquality().equals(other.refs, refs)) &&
-            (identical(other.version, version) ||
-                const DeepCollectionEquality().equals(other.version, version)));
+                other.oauthToken == oauthToken) &&
+            const DeepCollectionEquality().equals(other.types, types) &&
+            (identical(other.license, license) || other.license == license) &&
+            const DeepCollectionEquality().equals(other.languages, languages) &&
+            const DeepCollectionEquality().equals(other.refs, refs) &&
+            (identical(other.version, version) || other.version == version));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(oauthInitiate) ^
-      const DeepCollectionEquality().hash(oauthToken) ^
-      const DeepCollectionEquality().hash(types) ^
-      const DeepCollectionEquality().hash(license) ^
-      const DeepCollectionEquality().hash(languages) ^
-      const DeepCollectionEquality().hash(refs) ^
-      const DeepCollectionEquality().hash(version);
+  int get hashCode => Object.hash(
+      runtimeType,
+      oauthInitiate,
+      oauthToken,
+      const DeepCollectionEquality().hash(types),
+      license,
+      const DeepCollectionEquality().hash(languages),
+      const DeepCollectionEquality().hash(refs),
+      version);
 
   @JsonKey(ignore: true)
   @override
@@ -293,20 +285,20 @@ abstract class _Api implements Api {
 
   @override
   @JsonKey(name: 'oauth_initiate')
-  String? get oauthInitiate => throw _privateConstructorUsedError;
+  String? get oauthInitiate;
   @override
   @JsonKey(name: 'oauth_token')
-  String? get oauthToken => throw _privateConstructorUsedError;
+  String? get oauthToken;
   @override
-  Map<String, String>? get types => throw _privateConstructorUsedError;
+  Map<String, String>? get types;
   @override
-  String? get license => throw _privateConstructorUsedError;
+  String? get license;
   @override
-  List<Language> get languages => throw _privateConstructorUsedError;
+  List<Language> get languages;
   @override
-  List<Ref> get refs => throw _privateConstructorUsedError;
+  List<Ref> get refs;
   @override
-  String get version => throw _privateConstructorUsedError;
+  String get version;
   @override
   @JsonKey(ignore: true)
   _$ApiCopyWith<_Api> get copyWith => throw _privateConstructorUsedError;

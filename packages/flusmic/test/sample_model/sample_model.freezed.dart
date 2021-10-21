@@ -42,7 +42,7 @@ class _$SampleModelTearOff {
     );
   }
 
-  SampleModel fromJson(Map<String, Object> json) {
+  SampleModel fromJson(Map<String, Object?> json) {
     return SampleModel.fromJson(json);
   }
 }
@@ -308,38 +308,30 @@ class _$_SampleModel implements _SampleModel {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _SampleModel &&
+        (other.runtimeType == runtimeType &&
+            other is _SampleModel &&
             (identical(other.location, location) ||
-                const DeepCollectionEquality()
-                    .equals(other.location, location)) &&
-            (identical(other.link, link) ||
-                const DeepCollectionEquality().equals(other.link, link)) &&
-            (identical(other.linked, linked) ||
-                const DeepCollectionEquality().equals(other.linked, linked)) &&
-            (identical(other.media, media) ||
-                const DeepCollectionEquality().equals(other.media, media)) &&
-            (identical(other.content, content) ||
-                const DeepCollectionEquality()
-                    .equals(other.content, content)) &&
-            (identical(other.title, title) ||
-                const DeepCollectionEquality().equals(other.title, title)) &&
-            (identical(other.body, body) ||
-                const DeepCollectionEquality().equals(other.body, body)) &&
-            (identical(other.image, image) ||
-                const DeepCollectionEquality().equals(other.image, image)));
+                other.location == location) &&
+            (identical(other.link, link) || other.link == link) &&
+            (identical(other.linked, linked) || other.linked == linked) &&
+            (identical(other.media, media) || other.media == media) &&
+            const DeepCollectionEquality().equals(other.content, content) &&
+            const DeepCollectionEquality().equals(other.title, title) &&
+            const DeepCollectionEquality().equals(other.body, body) &&
+            (identical(other.image, image) || other.image == image));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(location) ^
-      const DeepCollectionEquality().hash(link) ^
-      const DeepCollectionEquality().hash(linked) ^
-      const DeepCollectionEquality().hash(media) ^
-      const DeepCollectionEquality().hash(content) ^
-      const DeepCollectionEquality().hash(title) ^
-      const DeepCollectionEquality().hash(body) ^
-      const DeepCollectionEquality().hash(image);
+  int get hashCode => Object.hash(
+      runtimeType,
+      location,
+      link,
+      linked,
+      media,
+      const DeepCollectionEquality().hash(content),
+      const DeepCollectionEquality().hash(title),
+      const DeepCollectionEquality().hash(body),
+      image);
 
   @JsonKey(ignore: true)
   @override
@@ -367,21 +359,21 @@ abstract class _SampleModel implements SampleModel {
       _$_SampleModel.fromJson;
 
   @override
-  Geopoint get location => throw _privateConstructorUsedError;
+  Geopoint get location;
   @override
-  Linkeable get link => throw _privateConstructorUsedError;
+  Linkeable get link;
   @override
-  Linkeable get linked => throw _privateConstructorUsedError;
+  Linkeable get linked;
   @override
-  Linkeable get media => throw _privateConstructorUsedError;
+  Linkeable get media;
   @override
-  List<Richable> get content => throw _privateConstructorUsedError;
+  List<Richable> get content;
   @override
-  List<SimpleText> get title => throw _privateConstructorUsedError;
+  List<SimpleText> get title;
   @override
-  List<Slice> get body => throw _privateConstructorUsedError;
+  List<Slice> get body;
   @override
-  SimpleImage get image => throw _privateConstructorUsedError;
+  SimpleImage get image;
   @override
   @JsonKey(ignore: true)
   _$SampleModelCopyWith<_SampleModel> get copyWith =>

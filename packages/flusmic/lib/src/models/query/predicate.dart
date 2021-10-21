@@ -28,8 +28,10 @@ class Predicate with _$Predicate {
 
   ///In Range
   factory Predicate.inRange(
-          PredicatePath path, double lowerLimit, double upperLimit) =
-      InRangePredicate;
+    PredicatePath path,
+    double lowerLimit,
+    double upperLimit,
+  ) = InRangePredicate;
 
   ///In
   factory Predicate.into(PredicatePath path, List<String> values) = InPredicate;
@@ -41,8 +43,12 @@ class Predicate with _$Predicate {
   factory Predicate.missing(PredicatePath path) = MissingPredicate;
 
   ///Near
-  factory Predicate.near(PredicatePath path, double latitude, double longitude,
-      double radius) = NearPredicate;
+  factory Predicate.near(
+    PredicatePath path,
+    double latitude,
+    double longitude,
+    double radius,
+  ) = NearPredicate;
 
   ///Not
   factory Predicate.not(PredicatePath path, String value) = NotPredicate;
@@ -62,7 +68,10 @@ class Predicate with _$Predicate {
 
   ///Between
   factory Predicate.dateBetween(
-      PredicatePath path, int startEpoch, int endEpoch) = DateBetweenPredicate;
+    PredicatePath path,
+    int startEpoch,
+    int endEpoch,
+  ) = DateBetweenPredicate;
 
   ///Day of month
   factory Predicate.dateDayOfMonth(PredicatePath path, int day) =
@@ -183,8 +192,6 @@ class DefaultPredicatePath extends PredicatePath {
         return 'document.first_publication_date';
       case DefaultPath.lastPublicationDate:
         return 'document.last_publication_date';
-      default:
-        return '';
     }
   }
 }

@@ -79,7 +79,7 @@ class _$LinkeableTearOff {
     );
   }
 
-  Linkeable fromJson(Map<String, Object> json) {
+  Linkeable fromJson(Map<String, Object?> json) {
     return Linkeable.fromJson(json);
   }
 }
@@ -333,35 +333,29 @@ class _$DocumentLinkeable implements DocumentLinkeable {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is DocumentLinkeable &&
+        (other.runtimeType == runtimeType &&
+            other is DocumentLinkeable &&
             (identical(other.linkType, linkType) ||
-                const DeepCollectionEquality()
-                    .equals(other.linkType, linkType)) &&
-            (identical(other.tags, tags) ||
-                const DeepCollectionEquality().equals(other.tags, tags)) &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.lang, lang) ||
-                const DeepCollectionEquality().equals(other.lang, lang)) &&
-            (identical(other.slug, slug) ||
-                const DeepCollectionEquality().equals(other.slug, slug)) &&
-            (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)) &&
+                other.linkType == linkType) &&
+            const DeepCollectionEquality().equals(other.tags, tags) &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.lang, lang) || other.lang == lang) &&
+            (identical(other.slug, slug) || other.slug == slug) &&
+            (identical(other.type, type) || other.type == type) &&
             (identical(other.isBroken, isBroken) ||
-                const DeepCollectionEquality()
-                    .equals(other.isBroken, isBroken)));
+                other.isBroken == isBroken));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(linkType) ^
-      const DeepCollectionEquality().hash(tags) ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(lang) ^
-      const DeepCollectionEquality().hash(slug) ^
-      const DeepCollectionEquality().hash(type) ^
-      const DeepCollectionEquality().hash(isBroken);
+  int get hashCode => Object.hash(
+      runtimeType,
+      linkType,
+      const DeepCollectionEquality().hash(tags),
+      id,
+      lang,
+      slug,
+      type,
+      isBroken);
 
   @JsonKey(ignore: true)
   @override
@@ -509,13 +503,13 @@ abstract class DocumentLinkeable implements Linkeable {
 
   @override
   @JsonKey(name: 'link_type')
-  String get linkType => throw _privateConstructorUsedError;
-  List<String> get tags => throw _privateConstructorUsedError;
-  String get id => throw _privateConstructorUsedError;
-  String get lang => throw _privateConstructorUsedError;
-  String get slug => throw _privateConstructorUsedError;
-  String get type => throw _privateConstructorUsedError;
-  bool get isBroken => throw _privateConstructorUsedError;
+  String get linkType;
+  List<String> get tags;
+  String get id;
+  String get lang;
+  String get slug;
+  String get type;
+  bool get isBroken;
   @override
   @JsonKey(ignore: true)
   $DocumentLinkeableCopyWith<DocumentLinkeable> get copyWith =>
@@ -632,34 +626,21 @@ class _$MediaLinkeable implements MediaLinkeable {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is MediaLinkeable &&
+        (other.runtimeType == runtimeType &&
+            other is MediaLinkeable &&
             (identical(other.linkType, linkType) ||
-                const DeepCollectionEquality()
-                    .equals(other.linkType, linkType)) &&
-            (identical(other.height, height) ||
-                const DeepCollectionEquality().equals(other.height, height)) &&
-            (identical(other.width, width) ||
-                const DeepCollectionEquality().equals(other.width, width)) &&
-            (identical(other.kind, kind) ||
-                const DeepCollectionEquality().equals(other.kind, kind)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.size, size) ||
-                const DeepCollectionEquality().equals(other.size, size)) &&
-            (identical(other.url, url) ||
-                const DeepCollectionEquality().equals(other.url, url)));
+                other.linkType == linkType) &&
+            (identical(other.height, height) || other.height == height) &&
+            (identical(other.width, width) || other.width == width) &&
+            (identical(other.kind, kind) || other.kind == kind) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.size, size) || other.size == size) &&
+            (identical(other.url, url) || other.url == url));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(linkType) ^
-      const DeepCollectionEquality().hash(height) ^
-      const DeepCollectionEquality().hash(width) ^
-      const DeepCollectionEquality().hash(kind) ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(size) ^
-      const DeepCollectionEquality().hash(url);
+      Object.hash(runtimeType, linkType, height, width, kind, name, size, url);
 
   @JsonKey(ignore: true)
   @override
@@ -807,13 +788,13 @@ abstract class MediaLinkeable implements Linkeable {
 
   @override
   @JsonKey(name: 'link_type')
-  String get linkType => throw _privateConstructorUsedError;
-  String? get height => throw _privateConstructorUsedError;
-  String? get width => throw _privateConstructorUsedError;
-  String get kind => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  String get size => throw _privateConstructorUsedError;
-  String get url => throw _privateConstructorUsedError;
+  String get linkType;
+  String? get height;
+  String? get width;
+  String get kind;
+  String get name;
+  String get size;
+  String get url;
   @override
   @JsonKey(ignore: true)
   $MediaLinkeableCopyWith<MediaLinkeable> get copyWith =>
@@ -881,19 +862,15 @@ class _$WebLinkeable implements WebLinkeable {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is WebLinkeable &&
+        (other.runtimeType == runtimeType &&
+            other is WebLinkeable &&
             (identical(other.linkType, linkType) ||
-                const DeepCollectionEquality()
-                    .equals(other.linkType, linkType)) &&
-            (identical(other.url, url) ||
-                const DeepCollectionEquality().equals(other.url, url)));
+                other.linkType == linkType) &&
+            (identical(other.url, url) || other.url == url));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(linkType) ^
-      const DeepCollectionEquality().hash(url);
+  int get hashCode => Object.hash(runtimeType, linkType, url);
 
   @JsonKey(ignore: true)
   @override
@@ -1036,8 +1013,8 @@ abstract class WebLinkeable implements Linkeable {
 
   @override
   @JsonKey(name: 'link_type')
-  String get linkType => throw _privateConstructorUsedError;
-  String get url => throw _privateConstructorUsedError;
+  String get linkType;
+  String get url;
   @override
   @JsonKey(ignore: true)
   $WebLinkeableCopyWith<WebLinkeable> get copyWith =>

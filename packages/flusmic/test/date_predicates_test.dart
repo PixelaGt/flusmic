@@ -7,16 +7,20 @@ void main() {
   group('date predicates with flusmic', () {
     test('after', () async {
       final result = await flusmic.query([
-        Predicate.dateAfter(CustomPredicatePath('test', 'date'),
-            DateTime(2020, 4, 8).millisecondsSinceEpoch)
+        Predicate.dateAfter(
+          CustomPredicatePath('test', 'date'),
+          DateTime(2020, 4, 8).millisecondsSinceEpoch,
+        )
       ]);
       expect(result.results.length, 1);
     });
 
     test('before', () async {
       final result = await flusmic.query([
-        Predicate.dateBefore(CustomPredicatePath('test', 'date'),
-            DateTime(2020, 4, 8).millisecondsSinceEpoch)
+        Predicate.dateBefore(
+          CustomPredicatePath('test', 'date'),
+          DateTime(2020, 4, 8).millisecondsSinceEpoch,
+        )
       ]);
       expect(result.results.length, 1);
     });
@@ -24,9 +28,10 @@ void main() {
     test('between', () async {
       final result = await flusmic.query([
         Predicate.dateBetween(
-            CustomPredicatePath('test', 'date'),
-            DateTime(2020, 4).millisecondsSinceEpoch,
-            DateTime(2020, 4, 15).millisecondsSinceEpoch)
+          CustomPredicatePath('test', 'date'),
+          DateTime(2020, 4).millisecondsSinceEpoch,
+          DateTime(2020, 4, 15).millisecondsSinceEpoch,
+        )
       ]);
       expect(result.results.length, 1);
     });
@@ -43,7 +48,9 @@ void main() {
     test('after', () async {
       final result = await flusmic.query([
         Predicate.dateDayOfMonthAfter(
-            DefaultPredicatePath.lastPublicationDate, 2)
+          DefaultPredicatePath.lastPublicationDate,
+          2,
+        )
       ]);
       expect(result.results.length, 2);
     });
@@ -51,7 +58,9 @@ void main() {
     test('before', () async {
       final result = await flusmic.query([
         Predicate.dateDayOfMonthBefore(
-            DefaultPredicatePath.lastPublicationDate, 2)
+          DefaultPredicatePath.lastPublicationDate,
+          2,
+        )
       ]);
       expect(result.results.length, 0);
     });
@@ -68,7 +77,9 @@ void main() {
     test('after', () async {
       final result = await flusmic.query([
         Predicate.dateDayOfWeekAfter(
-            CustomPredicatePath('test', 'date'), 'monday')
+          CustomPredicatePath('test', 'date'),
+          'monday',
+        )
       ]);
       expect(result.results.length, 2);
     });
@@ -76,7 +87,9 @@ void main() {
     test('before', () async {
       final result = await flusmic.query([
         Predicate.dateDayOfWeekBefore(
-            CustomPredicatePath('test', 'date'), 'sun')
+          CustomPredicatePath('test', 'date'),
+          'sun',
+        )
       ]);
       expect(result.results.length, 2);
     });
@@ -85,7 +98,8 @@ void main() {
   group('month predicates with flusmic', () {
     test('month', () async {
       final result = await flusmic.query(
-          [Predicate.dateMonth(CustomPredicatePath('test', 'date'), 'April')]);
+        [Predicate.dateMonth(CustomPredicatePath('test', 'date'), 'April')],
+      );
       expect(result.results.length, 1);
     });
 
@@ -107,7 +121,8 @@ void main() {
   group('year predicates with flusmic', () {
     test('year', () async {
       final result = await flusmic.query(
-          [Predicate.dateYear(CustomPredicatePath('test', 'date'), 2020)]);
+        [Predicate.dateYear(CustomPredicatePath('test', 'date'), 2020)],
+      );
       expect(result.results.length, 2);
     });
   });
@@ -121,13 +136,15 @@ void main() {
 
     test('after', () async {
       final result = await flusmic.query(
-          [Predicate.hourAfter(CustomPredicatePath('test', 'date'), 23)]);
+        [Predicate.hourAfter(CustomPredicatePath('test', 'date'), 23)],
+      );
       expect(result.results.length, 0);
     });
 
     test('before', () async {
       final result = await flusmic.query(
-          [Predicate.hourBefore(CustomPredicatePath('test', 'date'), 1)]);
+        [Predicate.hourBefore(CustomPredicatePath('test', 'date'), 1)],
+      );
       expect(result.results.length, 2);
     });
   });

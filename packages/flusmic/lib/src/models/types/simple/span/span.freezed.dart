@@ -29,7 +29,7 @@ class _$SpanTearOff {
     );
   }
 
-  Span fromJson(Map<String, Object> json) {
+  Span fromJson(Map<String, Object?> json) {
     return Span.fromJson(json);
   }
 }
@@ -148,21 +148,15 @@ class _$_Span implements _Span {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Span &&
-            (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)) &&
-            (identical(other.end, end) ||
-                const DeepCollectionEquality().equals(other.end, end)) &&
-            (identical(other.start, start) ||
-                const DeepCollectionEquality().equals(other.start, start)));
+        (other.runtimeType == runtimeType &&
+            other is _Span &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.end, end) || other.end == end) &&
+            (identical(other.start, start) || other.start == start));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(type) ^
-      const DeepCollectionEquality().hash(end) ^
-      const DeepCollectionEquality().hash(start);
+  int get hashCode => Object.hash(runtimeType, type, end, start);
 
   @JsonKey(ignore: true)
   @override
@@ -182,11 +176,11 @@ abstract class _Span implements Span {
   factory _Span.fromJson(Map<String, dynamic> json) = _$_Span.fromJson;
 
   @override
-  String get type => throw _privateConstructorUsedError;
+  String get type;
   @override
-  int get end => throw _privateConstructorUsedError;
+  int get end;
   @override
-  int get start => throw _privateConstructorUsedError;
+  int get start;
   @override
   @JsonKey(ignore: true)
   _$SpanCopyWith<_Span> get copyWith => throw _privateConstructorUsedError;

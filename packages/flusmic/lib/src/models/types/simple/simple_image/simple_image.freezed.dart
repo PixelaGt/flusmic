@@ -34,7 +34,7 @@ class _$SimpleImageTearOff {
     );
   }
 
-  SimpleImage fromJson(Map<String, Object> json) {
+  SimpleImage fromJson(Map<String, Object?> json) {
     return SimpleImage.fromJson(json);
   }
 }
@@ -185,26 +185,18 @@ class _$_SimpleImage implements _SimpleImage {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _SimpleImage &&
-            (identical(other.alt, alt) ||
-                const DeepCollectionEquality().equals(other.alt, alt)) &&
+        (other.runtimeType == runtimeType &&
+            other is _SimpleImage &&
+            (identical(other.alt, alt) || other.alt == alt) &&
             (identical(other.copyright, copyright) ||
-                const DeepCollectionEquality()
-                    .equals(other.copyright, copyright)) &&
+                other.copyright == copyright) &&
             (identical(other.dimensions, dimensions) ||
-                const DeepCollectionEquality()
-                    .equals(other.dimensions, dimensions)) &&
-            (identical(other.url, url) ||
-                const DeepCollectionEquality().equals(other.url, url)));
+                other.dimensions == dimensions) &&
+            (identical(other.url, url) || other.url == url));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(alt) ^
-      const DeepCollectionEquality().hash(copyright) ^
-      const DeepCollectionEquality().hash(dimensions) ^
-      const DeepCollectionEquality().hash(url);
+  int get hashCode => Object.hash(runtimeType, alt, copyright, dimensions, url);
 
   @JsonKey(ignore: true)
   @override
@@ -228,13 +220,13 @@ abstract class _SimpleImage implements SimpleImage {
       _$_SimpleImage.fromJson;
 
   @override
-  String? get alt => throw _privateConstructorUsedError;
+  String? get alt;
   @override
-  String? get copyright => throw _privateConstructorUsedError;
+  String? get copyright;
   @override
-  Dimension get dimensions => throw _privateConstructorUsedError;
+  Dimension get dimensions;
   @override
-  String get url => throw _privateConstructorUsedError;
+  String get url;
   @override
   @JsonKey(ignore: true)
   _$SimpleImageCopyWith<_SimpleImage> get copyWith =>

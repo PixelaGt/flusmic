@@ -20,7 +20,8 @@ void main() {
 
     test('in range', () async {
       final result = await flusmic.query(
-          [Predicate.inRange(CustomPredicatePath('test', 'number'), 5, 9)]);
+        [Predicate.inRange(CustomPredicatePath('test', 'number'), 5, 9)],
+      );
       expect(result.results.length, 1);
     });
   });

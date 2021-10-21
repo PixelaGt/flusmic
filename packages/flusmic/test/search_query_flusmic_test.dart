@@ -16,40 +16,47 @@ void main() {
     });
 
     test('auth', () async {
-      final result = await flusmic.query([
-        Predicate.any(DefaultPredicatePath.tags, ['test'])
-      ], authToken: authToken);
+      final result = await flusmic.query(
+        [
+          Predicate.any(DefaultPredicatePath.tags, ['test'])
+        ],
+        authToken: authToken,
+      );
       expect(result.results.length, 2);
     });
 
     test('after', () async {
       final result = await flusmic.query(
-          [Predicate.at(DefaultPredicatePath.type, 'test')],
-          after: 'XpJ_XxAAAJ2-1zBY');
+        [Predicate.at(DefaultPredicatePath.type, 'test')],
+        after: 'XpJ_XxAAAJ2-1zBY',
+      );
       expect(result.results.first.id, 'XpJ8phAAACzK1yQw');
     });
 
     test('fetch', () async {
       final result = await flusmic.query(
-          [Predicate.at(DefaultPredicatePath.type, 'test')],
-          fetch: [CustomPredicatePath('test', 'title', fetch: true)]);
+        [Predicate.at(DefaultPredicatePath.type, 'test')],
+        fetch: [CustomPredicatePath('test', 'title', fetch: true)],
+      );
       expect(result.results.length, 2);
     });
 
     test('fetchLinks', () async {
-      final result = await flusmic.query([
-        Predicate.at(DefaultPredicatePath.type, 'test'),
-        Predicate.at(DefaultPredicatePath.id, 'XpJ_XxAAAJ2-1zBY')
-      ], fetchLinks: [
-        CustomPredicatePath('test', 'color', fetch: true)
-      ]);
+      final result = await flusmic.query(
+        [
+          Predicate.at(DefaultPredicatePath.type, 'test'),
+          Predicate.at(DefaultPredicatePath.id, 'XpJ_XxAAAJ2-1zBY')
+        ],
+        fetchLinks: [CustomPredicatePath('test', 'color', fetch: true)],
+      );
       expect(result.results.length, 1);
     });
 
     test('lang', () async {
       final result = await flusmic.query(
-          [Predicate.at(DefaultPredicatePath.type, 'test')],
-          language: 'en-us');
+        [Predicate.at(DefaultPredicatePath.type, 'test')],
+        language: 'en-us',
+      );
       expect(result.results.length, 2);
     });
 
@@ -61,8 +68,9 @@ void main() {
 
     test('pageSize', () async {
       final result = await flusmic.query(
-          [Predicate.at(DefaultPredicatePath.type, 'test')],
-          pageSize: 2);
+        [Predicate.at(DefaultPredicatePath.type, 'test')],
+        pageSize: 2,
+      );
       expect(result.results.length, 2);
     });
   });
@@ -72,56 +80,64 @@ void main() {
         Flusmic(prismicEndpoint: 'https://flusmic.cdn.prismic.io/api/v2');
     test('document orderings', () async {
       final result = await flusmic.query(
-          [Predicate.at(DefaultPredicatePath.type, 'test')],
-          orderings: const [Ordering.document('first_publication_date')]);
+        [Predicate.at(DefaultPredicatePath.type, 'test')],
+        orderings: const [Ordering.document('first_publication_date')],
+      );
       expect(result.results.length, 2);
     });
     test('document orderings desc', () async {
-      final result = await flusmic.query([
-        Predicate.at(DefaultPredicatePath.type, 'test')
-      ], orderings: const [
-        Ordering.document('first_publication_date', descending: true)
-      ]);
+      final result = await flusmic.query(
+        [Predicate.at(DefaultPredicatePath.type, 'test')],
+        orderings: const [
+          Ordering.document('first_publication_date', descending: true)
+        ],
+      );
       expect(result.results.length, 2);
     });
     test('first publication date orderings', () async {
       final result = await flusmic.query(
-          [Predicate.at(DefaultPredicatePath.type, 'test')],
-          orderings: const [Ordering.firstPublicationDate()]);
+        [Predicate.at(DefaultPredicatePath.type, 'test')],
+        orderings: const [Ordering.firstPublicationDate()],
+      );
       expect(result.results.length, 2);
     });
 
     test('first publication date orderings desc', () async {
       final result = await flusmic.query(
-          [Predicate.at(DefaultPredicatePath.type, 'test')],
-          orderings: const [Ordering.firstPublicationDate(descending: true)]);
+        [Predicate.at(DefaultPredicatePath.type, 'test')],
+        orderings: const [Ordering.firstPublicationDate(descending: true)],
+      );
       expect(result.results.length, 2);
     });
 
     test('last publication date orderings', () async {
       final result = await flusmic.query(
-          [Predicate.at(DefaultPredicatePath.type, 'test')],
-          orderings: const [Ordering.lastPublicationDate()]);
+        [Predicate.at(DefaultPredicatePath.type, 'test')],
+        orderings: const [Ordering.lastPublicationDate()],
+      );
       expect(result.results.length, 2);
     });
 
     test('last publication date orderings desc', () async {
       final result = await flusmic.query(
-          [Predicate.at(DefaultPredicatePath.type, 'test')],
-          orderings: const [Ordering.lastPublicationDate(descending: true)]);
+        [Predicate.at(DefaultPredicatePath.type, 'test')],
+        orderings: const [Ordering.lastPublicationDate(descending: true)],
+      );
       expect(result.results.length, 2);
     });
     test('type orderings', () async {
       final result = await flusmic.query(
-          [Predicate.at(DefaultPredicatePath.type, 'test')],
-          orderings: const [Ordering.type('test', 'number')]);
+        [Predicate.at(DefaultPredicatePath.type, 'test')],
+        orderings: const [Ordering.type('test', 'number')],
+      );
       expect(result.results.length, 2);
     });
 
     test('type orderings desc', () async {
       final result = await flusmic.query(
-          [Predicate.at(DefaultPredicatePath.type, 'test')],
-          orderings: const [Ordering.type('test', 'number', descending: true)]);
+        [Predicate.at(DefaultPredicatePath.type, 'test')],
+        orderings: const [Ordering.type('test', 'number', descending: true)],
+      );
       expect(result.results.length, 2);
     });
   });
@@ -129,18 +145,23 @@ void main() {
   group('query with flusmic with default values', () {
     test('default auth', () async {
       final flusmic = Flusmic(
-          defaultAuthToken: authToken,
-          prismicEndpoint: 'https://flusmic.cdn.prismic.io/api/v2');
-      final result = await flusmic.query([
-        Predicate.any(DefaultPredicatePath.tags, ['test'])
-      ], authToken: authToken);
+        defaultAuthToken: authToken,
+        prismicEndpoint: 'https://flusmic.cdn.prismic.io/api/v2',
+      );
+      final result = await flusmic.query(
+        [
+          Predicate.any(DefaultPredicatePath.tags, ['test'])
+        ],
+        authToken: authToken,
+      );
       expect(result.results.length, 2);
     });
 
     test('default language', () async {
       final flusmic = Flusmic(
-          defaultAuthToken: authToken,
-          prismicEndpoint: 'https://flusmic.cdn.prismic.io/api/v2');
+        defaultAuthToken: authToken,
+        prismicEndpoint: 'https://flusmic.cdn.prismic.io/api/v2',
+      );
       final result = await flusmic
           .query([Predicate.at(DefaultPredicatePath.type, 'test')]);
       expect(result.results.length, 2);

@@ -33,7 +33,8 @@ void main() {
 
     test('fullText', () async {
       final result = await flusmic.query(
-          [Predicate.fullText(DefaultPredicatePath.document, 'large content')]);
+        [Predicate.fullText(DefaultPredicatePath.document, 'large content')],
+      );
       expect(result.results.length, 1);
     });
 
@@ -58,7 +59,11 @@ void main() {
     test('near', () async {
       final result = await flusmic.query([
         Predicate.near(
-            CustomPredicatePath('test', 'location'), 14.845122, -91.523895, 20)
+          CustomPredicatePath('test', 'location'),
+          14.845122,
+          -91.523895,
+          20,
+        )
       ]);
       expect(result.results.length, 2);
     });

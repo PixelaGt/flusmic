@@ -1,3 +1,7 @@
+## [3.1.1]
+* Update dependencies
+* Fix new lint rules 
+
 ## [3.1.0]
 * Update dependencies
 * Merged [#20](https://github.com/PixelaGt/flusmic/pull/20) (thanks to @jaumard)

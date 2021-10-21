@@ -30,7 +30,7 @@ class _$AlternateLanguageTearOff {
     );
   }
 
-  AlternateLanguage fromJson(Map<String, Object> json) {
+  AlternateLanguage fromJson(Map<String, Object?> json) {
     return AlternateLanguage.fromJson(json);
   }
 }
@@ -158,21 +158,15 @@ class _$_AlternateLanguage implements _AlternateLanguage {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _AlternateLanguage &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.lang, lang) ||
-                const DeepCollectionEquality().equals(other.lang, lang)) &&
-            (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)));
+        (other.runtimeType == runtimeType &&
+            other is _AlternateLanguage &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.lang, lang) || other.lang == lang) &&
+            (identical(other.type, type) || other.type == type));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(lang) ^
-      const DeepCollectionEquality().hash(type);
+  int get hashCode => Object.hash(runtimeType, id, lang, type);
 
   @JsonKey(ignore: true)
   @override
@@ -195,11 +189,11 @@ abstract class _AlternateLanguage implements AlternateLanguage {
       _$_AlternateLanguage.fromJson;
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  String get lang => throw _privateConstructorUsedError;
+  String get lang;
   @override
-  String get type => throw _privateConstructorUsedError;
+  String get type;
   @override
   @JsonKey(ignore: true)
   _$AlternateLanguageCopyWith<_AlternateLanguage> get copyWith =>
