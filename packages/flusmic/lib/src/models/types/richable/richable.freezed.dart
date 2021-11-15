@@ -14,7 +14,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Richable _$RichableFromJson(Map<String, dynamic> json) {
-  switch (json['type'] as String?) {
+  switch (json['type']) {
     case 'heading1':
       return RichableHeading1.fromJson(json);
     case 'heading2':
@@ -512,7 +512,7 @@ class _$RichableHeading1 implements RichableHeading1 {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$RichableHeading1ToJson(this)..['type'] = 'heading1';
+    return _$$RichableHeading1ToJson(this);
   }
 }
 
@@ -753,7 +753,7 @@ class _$RichableHeading2 implements RichableHeading2 {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$RichableHeading2ToJson(this)..['type'] = 'heading2';
+    return _$$RichableHeading2ToJson(this);
   }
 }
 
@@ -994,7 +994,7 @@ class _$RichableHeading3 implements RichableHeading3 {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$RichableHeading3ToJson(this)..['type'] = 'heading3';
+    return _$$RichableHeading3ToJson(this);
   }
 }
 
@@ -1235,7 +1235,7 @@ class _$RichableHeading4 implements RichableHeading4 {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$RichableHeading4ToJson(this)..['type'] = 'heading4';
+    return _$$RichableHeading4ToJson(this);
   }
 }
 
@@ -1476,7 +1476,7 @@ class _$RichableHeading5 implements RichableHeading5 {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$RichableHeading5ToJson(this)..['type'] = 'heading5';
+    return _$$RichableHeading5ToJson(this);
   }
 }
 
@@ -1717,7 +1717,7 @@ class _$RichableHeading6 implements RichableHeading6 {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$RichableHeading6ToJson(this)..['type'] = 'heading6';
+    return _$$RichableHeading6ToJson(this);
   }
 }
 
@@ -1958,7 +1958,7 @@ class _$RichableParagraph implements RichableParagraph {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$RichableParagraphToJson(this)..['type'] = 'paragraph';
+    return _$$RichableParagraphToJson(this);
   }
 }
 
@@ -2200,7 +2200,7 @@ class _$RichableListItem implements RichableListItem {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$RichableListItemToJson(this)..['type'] = 'list-item';
+    return _$$RichableListItemToJson(this);
   }
 }
 
@@ -2444,7 +2444,7 @@ class _$RichableOrderedListItem implements RichableOrderedListItem {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$RichableOrderedListItemToJson(this)..['type'] = 'o-list-item';
+    return _$$RichableOrderedListItemToJson(this);
   }
 }
 
@@ -2524,7 +2524,12 @@ class _$RichableImageCopyWithImpl<$Res> extends _$RichableCopyWithImpl<$Res>
 @JsonSerializable()
 class _$RichableImage implements RichableImage {
   const _$RichableImage(
-      {this.alt, this.copyright, required this.dimensions, required this.url});
+      {this.alt,
+      this.copyright,
+      required this.dimensions,
+      required this.url,
+      String? $type})
+      : $type = $type ?? 'image';
 
   factory _$RichableImage.fromJson(Map<String, dynamic> json) =>
       _$$RichableImageFromJson(json);
@@ -2537,6 +2542,9 @@ class _$RichableImage implements RichableImage {
   final Dimension dimensions;
   @override
   final String url;
+
+  @JsonKey(name: 'type')
+  final String $type;
 
   @override
   String toString() {
@@ -2703,7 +2711,7 @@ class _$RichableImage implements RichableImage {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$RichableImageToJson(this)..['type'] = 'image';
+    return _$$RichableImageToJson(this);
   }
 }
 
@@ -2947,7 +2955,7 @@ class _$RichableEmbed implements RichableEmbed {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$RichableEmbedToJson(this)..['type'] = 'embed';
+    return _$$RichableEmbedToJson(this);
   }
 }
 

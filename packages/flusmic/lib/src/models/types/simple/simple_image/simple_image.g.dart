@@ -21,6 +21,6 @@ Map<String, dynamic> _$$_SimpleImageToJson(_$_SimpleImage instance) =>
     <String, dynamic>{
       'alt': instance.alt,
       'copyright': instance.copyright,
-      'dimensions': instance.dimensions,
+      'dimensions': instance.dimensions.toJson(),
       'url': instance.url,
     };

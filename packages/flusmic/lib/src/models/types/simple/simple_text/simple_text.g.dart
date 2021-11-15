@@ -19,7 +19,7 @@ _$_SimpleText _$$_SimpleTextFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$_SimpleTextToJson(_$_SimpleText instance) =>
     <String, dynamic>{
-      'spans': instance.spans,
+      'spans': instance.spans.map((e) => e.toJson()).toList(),
       'text': instance.text,
       'type': instance.type,
     };

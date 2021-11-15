@@ -1,6 +1,6 @@
 name: flusmic
 description: A functional and kind of elegant Prismic.io integration for Dart and Flutter.
-version: 3.1.1
+version: 3.1.2
 repository: https://github.com/PixelaGt/flusmic
 issue_tracker: https://github.com/PixelaGt/flusmic/issues
 homepage: https://github.com/PixelaGt/flusmic
@@ -9,16 +9,16 @@ environment:
   sdk: '>=2.12.0 <3.0.0'
 
 dependencies:
-  analyzer: ^2.6.0
-  dio: ^4.0.0
+  analyzer: ^2.7.0
+  dio: ^4.0.3
   freezed_annotation: ^0.15.0
   json_annotation: ^4.3.0
 
 dev_dependencies:
-  build_runner: ^2.1.4
+  build_runner: ^2.1.5
   coverage: ^1.0.3
-  freezed: ^0.15.0+1
-  json_serializable: ^6.0.0
+  freezed: ^0.15.1+1
+  json_serializable: ^6.0.1
   nock: ^1.2.0
-  test: ^1.19.0
+  test: ^1.19.3
   very_good_analysis: ^2.4.0

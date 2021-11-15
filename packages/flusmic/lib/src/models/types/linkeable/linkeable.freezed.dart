@@ -14,7 +14,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Linkeable _$LinkeableFromJson(Map<String, dynamic> json) {
-  switch (json['link_type'] as String?) {
+  switch (json['link_type']) {
     case 'Document':
       return DocumentLinkeable.fromJson(json);
     case 'Media':
@@ -33,34 +33,30 @@ class _$LinkeableTearOff {
   const _$LinkeableTearOff();
 
   DocumentLinkeable document(
-      {@JsonKey(name: 'link_type') required String linkType,
+      {@JsonKey(name: 'type') required String documentType,
       required List<String> tags,
       required String id,
       required String lang,
       required String slug,
-      required String type,
       required bool isBroken}) {
     return DocumentLinkeable(
-      linkType: linkType,
+      documentType: documentType,
       tags: tags,
       id: id,
       lang: lang,
       slug: slug,
-      type: type,
       isBroken: isBroken,
     );
   }
 
   MediaLinkeable media(
-      {@JsonKey(name: 'link_type') required String linkType,
-      String? height,
+      {String? height,
       String? width,
       required String kind,
       required String name,
       required String size,
       required String url}) {
     return MediaLinkeable(
-      linkType: linkType,
       height: height,
       width: width,
       kind: kind,
@@ -70,11 +66,8 @@ class _$LinkeableTearOff {
     );
   }
 
-  WebLinkeable web(
-      {@JsonKey(name: 'link_type') required String linkType,
-      required String url}) {
+  WebLinkeable web({required String url}) {
     return WebLinkeable(
-      linkType: linkType,
       url: url,
     );
   }
@@ -89,80 +82,52 @@ const $Linkeable = _$LinkeableTearOff();
 
 /// @nodoc
 mixin _$Linkeable {
-  @JsonKey(name: 'link_type')
-  String get linkType => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            @JsonKey(name: 'link_type') String linkType,
+            @JsonKey(name: 'type') String documentType,
             List<String> tags,
             String id,
             String lang,
             String slug,
-            String type,
             bool isBroken)
         document,
-    required TResult Function(
-            @JsonKey(name: 'link_type') String linkType,
-            String? height,
-            String? width,
-            String kind,
-            String name,
-            String size,
-            String url)
+    required TResult Function(String? height, String? width, String kind,
+            String name, String size, String url)
         media,
-    required TResult Function(
-            @JsonKey(name: 'link_type') String linkType, String url)
-        web,
+    required TResult Function(String url) web,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(
-            @JsonKey(name: 'link_type') String linkType,
+            @JsonKey(name: 'type') String documentType,
             List<String> tags,
             String id,
             String lang,
             String slug,
-            String type,
             bool isBroken)?
         document,
-    TResult Function(
-            @JsonKey(name: 'link_type') String linkType,
-            String? height,
-            String? width,
-            String kind,
-            String name,
-            String size,
-            String url)?
+    TResult Function(String? height, String? width, String kind, String name,
+            String size, String url)?
         media,
-    TResult Function(@JsonKey(name: 'link_type') String linkType, String url)?
-        web,
+    TResult Function(String url)? web,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
-            @JsonKey(name: 'link_type') String linkType,
+            @JsonKey(name: 'type') String documentType,
             List<String> tags,
             String id,
             String lang,
             String slug,
-            String type,
             bool isBroken)?
         document,
-    TResult Function(
-            @JsonKey(name: 'link_type') String linkType,
-            String? height,
-            String? width,
-            String kind,
-            String name,
-            String size,
-            String url)?
+    TResult Function(String? height, String? width, String kind, String name,
+            String size, String url)?
         media,
-    TResult Function(@JsonKey(name: 'link_type') String linkType, String url)?
-        web,
+    TResult Function(String url)? web,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -189,16 +154,12 @@ mixin _$Linkeable {
   }) =>
       throw _privateConstructorUsedError;
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $LinkeableCopyWith<Linkeable> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $LinkeableCopyWith<$Res> {
   factory $LinkeableCopyWith(Linkeable value, $Res Function(Linkeable) then) =
       _$LinkeableCopyWithImpl<$Res>;
-  $Res call({@JsonKey(name: 'link_type') String linkType});
 }
 
 /// @nodoc
@@ -208,34 +169,19 @@ class _$LinkeableCopyWithImpl<$Res> implements $LinkeableCopyWith<$Res> {
   final Linkeable _value;
   // ignore: unused_field
   final $Res Function(Linkeable) _then;
-
-  @override
-  $Res call({
-    Object? linkType = freezed,
-  }) {
-    return _then(_value.copyWith(
-      linkType: linkType == freezed
-          ? _value.linkType
-          : linkType // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
 }
 
 /// @nodoc
-abstract class $DocumentLinkeableCopyWith<$Res>
-    implements $LinkeableCopyWith<$Res> {
+abstract class $DocumentLinkeableCopyWith<$Res> {
   factory $DocumentLinkeableCopyWith(
           DocumentLinkeable value, $Res Function(DocumentLinkeable) then) =
       _$DocumentLinkeableCopyWithImpl<$Res>;
-  @override
   $Res call(
-      {@JsonKey(name: 'link_type') String linkType,
+      {@JsonKey(name: 'type') String documentType,
       List<String> tags,
       String id,
       String lang,
       String slug,
-      String type,
       bool isBroken});
 }
 
@@ -252,18 +198,17 @@ class _$DocumentLinkeableCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? linkType = freezed,
+    Object? documentType = freezed,
     Object? tags = freezed,
     Object? id = freezed,
     Object? lang = freezed,
     Object? slug = freezed,
-    Object? type = freezed,
     Object? isBroken = freezed,
   }) {
     return _then(DocumentLinkeable(
-      linkType: linkType == freezed
-          ? _value.linkType
-          : linkType // ignore: cast_nullable_to_non_nullable
+      documentType: documentType == freezed
+          ? _value.documentType
+          : documentType // ignore: cast_nullable_to_non_nullable
               as String,
       tags: tags == freezed
           ? _value.tags
@@ -281,10 +226,6 @@ class _$DocumentLinkeableCopyWithImpl<$Res>
           ? _value.slug
           : slug // ignore: cast_nullable_to_non_nullable
               as String,
-      type: type == freezed
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String,
       isBroken: isBroken == freezed
           ? _value.isBroken
           : isBroken // ignore: cast_nullable_to_non_nullable
@@ -298,20 +239,21 @@ class _$DocumentLinkeableCopyWithImpl<$Res>
 @FreezedUnionValue('Document')
 class _$DocumentLinkeable implements DocumentLinkeable {
   const _$DocumentLinkeable(
-      {@JsonKey(name: 'link_type') required this.linkType,
+      {@JsonKey(name: 'type') required this.documentType,
       required this.tags,
       required this.id,
       required this.lang,
       required this.slug,
-      required this.type,
-      required this.isBroken});
+      required this.isBroken,
+      String? $type})
+      : $type = $type ?? 'Document';
 
   factory _$DocumentLinkeable.fromJson(Map<String, dynamic> json) =>
       _$$DocumentLinkeableFromJson(json);
 
-  @override
-  @JsonKey(name: 'link_type')
-  final String linkType;
+  @override // @JsonKey(name: 'link_type') required String linkType,
+  @JsonKey(name: 'type')
+  final String documentType;
   @override
   final List<String> tags;
   @override
@@ -321,13 +263,14 @@ class _$DocumentLinkeable implements DocumentLinkeable {
   @override
   final String slug;
   @override
-  final String type;
-  @override
   final bool isBroken;
+
+  @JsonKey(name: 'link_type')
+  final String $type;
 
   @override
   String toString() {
-    return 'Linkeable.document(linkType: $linkType, tags: $tags, id: $id, lang: $lang, slug: $slug, type: $type, isBroken: $isBroken)';
+    return 'Linkeable.document(documentType: $documentType, tags: $tags, id: $id, lang: $lang, slug: $slug, isBroken: $isBroken)';
   }
 
   @override
@@ -335,27 +278,19 @@ class _$DocumentLinkeable implements DocumentLinkeable {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is DocumentLinkeable &&
-            (identical(other.linkType, linkType) ||
-                other.linkType == linkType) &&
+            (identical(other.documentType, documentType) ||
+                other.documentType == documentType) &&
             const DeepCollectionEquality().equals(other.tags, tags) &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.lang, lang) || other.lang == lang) &&
             (identical(other.slug, slug) || other.slug == slug) &&
-            (identical(other.type, type) || other.type == type) &&
             (identical(other.isBroken, isBroken) ||
                 other.isBroken == isBroken));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      linkType,
-      const DeepCollectionEquality().hash(tags),
-      id,
-      lang,
-      slug,
-      type,
-      isBroken);
+  int get hashCode => Object.hash(runtimeType, documentType,
+      const DeepCollectionEquality().hash(tags), id, lang, slug, isBroken);
 
   @JsonKey(ignore: true)
   @override
@@ -366,84 +301,59 @@ class _$DocumentLinkeable implements DocumentLinkeable {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            @JsonKey(name: 'link_type') String linkType,
+            @JsonKey(name: 'type') String documentType,
             List<String> tags,
             String id,
             String lang,
             String slug,
-            String type,
             bool isBroken)
         document,
-    required TResult Function(
-            @JsonKey(name: 'link_type') String linkType,
-            String? height,
-            String? width,
-            String kind,
-            String name,
-            String size,
-            String url)
+    required TResult Function(String? height, String? width, String kind,
+            String name, String size, String url)
         media,
-    required TResult Function(
-            @JsonKey(name: 'link_type') String linkType, String url)
-        web,
+    required TResult Function(String url) web,
   }) {
-    return document(linkType, tags, id, lang, slug, type, isBroken);
+    return document(documentType, tags, id, lang, slug, isBroken);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(
-            @JsonKey(name: 'link_type') String linkType,
+            @JsonKey(name: 'type') String documentType,
             List<String> tags,
             String id,
             String lang,
             String slug,
-            String type,
             bool isBroken)?
         document,
-    TResult Function(
-            @JsonKey(name: 'link_type') String linkType,
-            String? height,
-            String? width,
-            String kind,
-            String name,
-            String size,
-            String url)?
+    TResult Function(String? height, String? width, String kind, String name,
+            String size, String url)?
         media,
-    TResult Function(@JsonKey(name: 'link_type') String linkType, String url)?
-        web,
+    TResult Function(String url)? web,
   }) {
-    return document?.call(linkType, tags, id, lang, slug, type, isBroken);
+    return document?.call(documentType, tags, id, lang, slug, isBroken);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
-            @JsonKey(name: 'link_type') String linkType,
+            @JsonKey(name: 'type') String documentType,
             List<String> tags,
             String id,
             String lang,
             String slug,
-            String type,
             bool isBroken)?
         document,
-    TResult Function(
-            @JsonKey(name: 'link_type') String linkType,
-            String? height,
-            String? width,
-            String kind,
-            String name,
-            String size,
-            String url)?
+    TResult Function(String? height, String? width, String kind, String name,
+            String size, String url)?
         media,
-    TResult Function(@JsonKey(name: 'link_type') String linkType, String url)?
-        web,
+    TResult Function(String url)? web,
     required TResult orElse(),
   }) {
     if (document != null) {
-      return document(linkType, tags, id, lang, slug, type, isBroken);
+      return document(documentType, tags, id, lang, slug, isBroken);
     }
     return orElse();
   }
@@ -484,48 +394,42 @@ class _$DocumentLinkeable implements DocumentLinkeable {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$DocumentLinkeableToJson(this)..['link_type'] = 'Document';
+    return _$$DocumentLinkeableToJson(this);
   }
 }
 
 abstract class DocumentLinkeable implements Linkeable {
   const factory DocumentLinkeable(
-      {@JsonKey(name: 'link_type') required String linkType,
+      {@JsonKey(name: 'type') required String documentType,
       required List<String> tags,
       required String id,
       required String lang,
       required String slug,
-      required String type,
       required bool isBroken}) = _$DocumentLinkeable;
 
   factory DocumentLinkeable.fromJson(Map<String, dynamic> json) =
       _$DocumentLinkeable.fromJson;
 
-  @override
-  @JsonKey(name: 'link_type')
-  String get linkType;
+// @JsonKey(name: 'link_type') required String linkType,
+  @JsonKey(name: 'type')
+  String get documentType;
   List<String> get tags;
   String get id;
   String get lang;
   String get slug;
-  String get type;
   bool get isBroken;
-  @override
   @JsonKey(ignore: true)
   $DocumentLinkeableCopyWith<DocumentLinkeable> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $MediaLinkeableCopyWith<$Res>
-    implements $LinkeableCopyWith<$Res> {
+abstract class $MediaLinkeableCopyWith<$Res> {
   factory $MediaLinkeableCopyWith(
           MediaLinkeable value, $Res Function(MediaLinkeable) then) =
       _$MediaLinkeableCopyWithImpl<$Res>;
-  @override
   $Res call(
-      {@JsonKey(name: 'link_type') String linkType,
-      String? height,
+      {String? height,
       String? width,
       String kind,
       String name,
@@ -545,7 +449,6 @@ class _$MediaLinkeableCopyWithImpl<$Res> extends _$LinkeableCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? linkType = freezed,
     Object? height = freezed,
     Object? width = freezed,
     Object? kind = freezed,
@@ -554,10 +457,6 @@ class _$MediaLinkeableCopyWithImpl<$Res> extends _$LinkeableCopyWithImpl<$Res>
     Object? url = freezed,
   }) {
     return _then(MediaLinkeable(
-      linkType: linkType == freezed
-          ? _value.linkType
-          : linkType // ignore: cast_nullable_to_non_nullable
-              as String,
       height: height == freezed
           ? _value.height
           : height // ignore: cast_nullable_to_non_nullable
@@ -591,21 +490,19 @@ class _$MediaLinkeableCopyWithImpl<$Res> extends _$LinkeableCopyWithImpl<$Res>
 @FreezedUnionValue('Media')
 class _$MediaLinkeable implements MediaLinkeable {
   const _$MediaLinkeable(
-      {@JsonKey(name: 'link_type') required this.linkType,
-      this.height,
+      {this.height,
       this.width,
       required this.kind,
       required this.name,
       required this.size,
-      required this.url});
+      required this.url,
+      String? $type})
+      : $type = $type ?? 'Media';
 
   factory _$MediaLinkeable.fromJson(Map<String, dynamic> json) =>
       _$$MediaLinkeableFromJson(json);
 
-  @override
-  @JsonKey(name: 'link_type')
-  final String linkType;
-  @override
+  @override // @JsonKey(name: 'link_type') required String linkType,
   final String? height;
   @override
   final String? width;
@@ -618,9 +515,12 @@ class _$MediaLinkeable implements MediaLinkeable {
   @override
   final String url;
 
+  @JsonKey(name: 'link_type')
+  final String $type;
+
   @override
   String toString() {
-    return 'Linkeable.media(linkType: $linkType, height: $height, width: $width, kind: $kind, name: $name, size: $size, url: $url)';
+    return 'Linkeable.media(height: $height, width: $width, kind: $kind, name: $name, size: $size, url: $url)';
   }
 
   @override
@@ -628,8 +528,6 @@ class _$MediaLinkeable implements MediaLinkeable {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is MediaLinkeable &&
-            (identical(other.linkType, linkType) ||
-                other.linkType == linkType) &&
             (identical(other.height, height) || other.height == height) &&
             (identical(other.width, width) || other.width == width) &&
             (identical(other.kind, kind) || other.kind == kind) &&
@@ -640,7 +538,7 @@ class _$MediaLinkeable implements MediaLinkeable {
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, linkType, height, width, kind, name, size, url);
+      Object.hash(runtimeType, height, width, kind, name, size, url);
 
   @JsonKey(ignore: true)
   @override
@@ -651,84 +549,59 @@ class _$MediaLinkeable implements MediaLinkeable {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            @JsonKey(name: 'link_type') String linkType,
+            @JsonKey(name: 'type') String documentType,
             List<String> tags,
             String id,
             String lang,
             String slug,
-            String type,
             bool isBroken)
         document,
-    required TResult Function(
-            @JsonKey(name: 'link_type') String linkType,
-            String? height,
-            String? width,
-            String kind,
-            String name,
-            String size,
-            String url)
+    required TResult Function(String? height, String? width, String kind,
+            String name, String size, String url)
         media,
-    required TResult Function(
-            @JsonKey(name: 'link_type') String linkType, String url)
-        web,
+    required TResult Function(String url) web,
   }) {
-    return media(linkType, height, width, kind, name, size, url);
+    return media(height, width, kind, name, size, url);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(
-            @JsonKey(name: 'link_type') String linkType,
+            @JsonKey(name: 'type') String documentType,
             List<String> tags,
             String id,
             String lang,
             String slug,
-            String type,
             bool isBroken)?
         document,
-    TResult Function(
-            @JsonKey(name: 'link_type') String linkType,
-            String? height,
-            String? width,
-            String kind,
-            String name,
-            String size,
-            String url)?
+    TResult Function(String? height, String? width, String kind, String name,
+            String size, String url)?
         media,
-    TResult Function(@JsonKey(name: 'link_type') String linkType, String url)?
-        web,
+    TResult Function(String url)? web,
   }) {
-    return media?.call(linkType, height, width, kind, name, size, url);
+    return media?.call(height, width, kind, name, size, url);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
-            @JsonKey(name: 'link_type') String linkType,
+            @JsonKey(name: 'type') String documentType,
             List<String> tags,
             String id,
             String lang,
             String slug,
-            String type,
             bool isBroken)?
         document,
-    TResult Function(
-            @JsonKey(name: 'link_type') String linkType,
-            String? height,
-            String? width,
-            String kind,
-            String name,
-            String size,
-            String url)?
+    TResult Function(String? height, String? width, String kind, String name,
+            String size, String url)?
         media,
-    TResult Function(@JsonKey(name: 'link_type') String linkType, String url)?
-        web,
+    TResult Function(String url)? web,
     required TResult orElse(),
   }) {
     if (media != null) {
-      return media(linkType, height, width, kind, name, size, url);
+      return media(height, width, kind, name, size, url);
     }
     return orElse();
   }
@@ -769,14 +642,13 @@ class _$MediaLinkeable implements MediaLinkeable {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$MediaLinkeableToJson(this)..['link_type'] = 'Media';
+    return _$$MediaLinkeableToJson(this);
   }
 }
 
 abstract class MediaLinkeable implements Linkeable {
   const factory MediaLinkeable(
-      {@JsonKey(name: 'link_type') required String linkType,
-      String? height,
+      {String? height,
       String? width,
       required String kind,
       required String name,
@@ -786,28 +658,24 @@ abstract class MediaLinkeable implements Linkeable {
   factory MediaLinkeable.fromJson(Map<String, dynamic> json) =
       _$MediaLinkeable.fromJson;
 
-  @override
-  @JsonKey(name: 'link_type')
-  String get linkType;
+// @JsonKey(name: 'link_type') required String linkType,
   String? get height;
   String? get width;
   String get kind;
   String get name;
   String get size;
   String get url;
-  @override
   @JsonKey(ignore: true)
   $MediaLinkeableCopyWith<MediaLinkeable> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $WebLinkeableCopyWith<$Res> implements $LinkeableCopyWith<$Res> {
+abstract class $WebLinkeableCopyWith<$Res> {
   factory $WebLinkeableCopyWith(
           WebLinkeable value, $Res Function(WebLinkeable) then) =
       _$WebLinkeableCopyWithImpl<$Res>;
-  @override
-  $Res call({@JsonKey(name: 'link_type') String linkType, String url});
+  $Res call({String url});
 }
 
 /// @nodoc
@@ -822,14 +690,9 @@ class _$WebLinkeableCopyWithImpl<$Res> extends _$LinkeableCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? linkType = freezed,
     Object? url = freezed,
   }) {
     return _then(WebLinkeable(
-      linkType: linkType == freezed
-          ? _value.linkType
-          : linkType // ignore: cast_nullable_to_non_nullable
-              as String,
       url: url == freezed
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
@@ -842,21 +705,21 @@ class _$WebLinkeableCopyWithImpl<$Res> extends _$LinkeableCopyWithImpl<$Res>
 @JsonSerializable()
 @FreezedUnionValue('Web')
 class _$WebLinkeable implements WebLinkeable {
-  const _$WebLinkeable(
-      {@JsonKey(name: 'link_type') required this.linkType, required this.url});
+  const _$WebLinkeable({required this.url, String? $type})
+      : $type = $type ?? 'Web';
 
   factory _$WebLinkeable.fromJson(Map<String, dynamic> json) =>
       _$$WebLinkeableFromJson(json);
 
-  @override
-  @JsonKey(name: 'link_type')
-  final String linkType;
-  @override
+  @override // @JsonKey(name: 'link_type') required String linkType,
   final String url;
+
+  @JsonKey(name: 'link_type')
+  final String $type;
 
   @override
   String toString() {
-    return 'Linkeable.web(linkType: $linkType, url: $url)';
+    return 'Linkeable.web(url: $url)';
   }
 
   @override
@@ -864,13 +727,11 @@ class _$WebLinkeable implements WebLinkeable {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is WebLinkeable &&
-            (identical(other.linkType, linkType) ||
-                other.linkType == linkType) &&
             (identical(other.url, url) || other.url == url));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, linkType, url);
+  int get hashCode => Object.hash(runtimeType, url);
 
   @JsonKey(ignore: true)
   @override
@@ -881,84 +742,59 @@ class _$WebLinkeable implements WebLinkeable {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            @JsonKey(name: 'link_type') String linkType,
+            @JsonKey(name: 'type') String documentType,
             List<String> tags,
             String id,
             String lang,
             String slug,
-            String type,
             bool isBroken)
         document,
-    required TResult Function(
-            @JsonKey(name: 'link_type') String linkType,
-            String? height,
-            String? width,
-            String kind,
-            String name,
-            String size,
-            String url)
+    required TResult Function(String? height, String? width, String kind,
+            String name, String size, String url)
         media,
-    required TResult Function(
-            @JsonKey(name: 'link_type') String linkType, String url)
-        web,
+    required TResult Function(String url) web,
   }) {
-    return web(linkType, url);
+    return web(url);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(
-            @JsonKey(name: 'link_type') String linkType,
+            @JsonKey(name: 'type') String documentType,
             List<String> tags,
             String id,
             String lang,
             String slug,
-            String type,
             bool isBroken)?
         document,
-    TResult Function(
-            @JsonKey(name: 'link_type') String linkType,
-            String? height,
-            String? width,
-            String kind,
-            String name,
-            String size,
-            String url)?
+    TResult Function(String? height, String? width, String kind, String name,
+            String size, String url)?
         media,
-    TResult Function(@JsonKey(name: 'link_type') String linkType, String url)?
-        web,
+    TResult Function(String url)? web,
   }) {
-    return web?.call(linkType, url);
+    return web?.call(url);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
-            @JsonKey(name: 'link_type') String linkType,
+            @JsonKey(name: 'type') String documentType,
             List<String> tags,
             String id,
             String lang,
             String slug,
-            String type,
             bool isBroken)?
         document,
-    TResult Function(
-            @JsonKey(name: 'link_type') String linkType,
-            String? height,
-            String? width,
-            String kind,
-            String name,
-            String size,
-            String url)?
+    TResult Function(String? height, String? width, String kind, String name,
+            String size, String url)?
         media,
-    TResult Function(@JsonKey(name: 'link_type') String linkType, String url)?
-        web,
+    TResult Function(String url)? web,
     required TResult orElse(),
   }) {
     if (web != null) {
-      return web(linkType, url);
+      return web(url);
     }
     return orElse();
   }
@@ -999,23 +835,18 @@ class _$WebLinkeable implements WebLinkeable {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$WebLinkeableToJson(this)..['link_type'] = 'Web';
+    return _$$WebLinkeableToJson(this);
   }
 }
 
 abstract class WebLinkeable implements Linkeable {
-  const factory WebLinkeable(
-      {@JsonKey(name: 'link_type') required String linkType,
-      required String url}) = _$WebLinkeable;
+  const factory WebLinkeable({required String url}) = _$WebLinkeable;
 
   factory WebLinkeable.fromJson(Map<String, dynamic> json) =
       _$WebLinkeable.fromJson;
 
-  @override
-  @JsonKey(name: 'link_type')
-  String get linkType;
+// @JsonKey(name: 'link_type') required String linkType,
   String get url;
-  @override
   @JsonKey(ignore: true)
   $WebLinkeableCopyWith<WebLinkeable> get copyWith =>
       throw _privateConstructorUsedError;

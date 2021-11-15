@@ -19,7 +19,7 @@ _$RichableHeading1 _$$RichableHeading1FromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$RichableHeading1ToJson(_$RichableHeading1 instance) =>
     <String, dynamic>{
-      'spans': instance.spans,
+      'spans': instance.spans.map((e) => e.toJson()).toList(),
       'text': instance.text,
       'type': instance.type,
     };
@@ -35,7 +35,7 @@ _$RichableHeading2 _$$RichableHeading2FromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$RichableHeading2ToJson(_$RichableHeading2 instance) =>
     <String, dynamic>{
-      'spans': instance.spans,
+      'spans': instance.spans.map((e) => e.toJson()).toList(),
       'text': instance.text,
       'type': instance.type,
     };
@@ -51,7 +51,7 @@ _$RichableHeading3 _$$RichableHeading3FromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$RichableHeading3ToJson(_$RichableHeading3 instance) =>
     <String, dynamic>{
-      'spans': instance.spans,
+      'spans': instance.spans.map((e) => e.toJson()).toList(),
       'text': instance.text,
       'type': instance.type,
     };
@@ -67,7 +67,7 @@ _$RichableHeading4 _$$RichableHeading4FromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$RichableHeading4ToJson(_$RichableHeading4 instance) =>
     <String, dynamic>{
-      'spans': instance.spans,
+      'spans': instance.spans.map((e) => e.toJson()).toList(),
       'text': instance.text,
       'type': instance.type,
     };
@@ -83,7 +83,7 @@ _$RichableHeading5 _$$RichableHeading5FromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$RichableHeading5ToJson(_$RichableHeading5 instance) =>
     <String, dynamic>{
-      'spans': instance.spans,
+      'spans': instance.spans.map((e) => e.toJson()).toList(),
       'text': instance.text,
       'type': instance.type,
     };
@@ -99,7 +99,7 @@ _$RichableHeading6 _$$RichableHeading6FromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$RichableHeading6ToJson(_$RichableHeading6 instance) =>
     <String, dynamic>{
-      'spans': instance.spans,
+      'spans': instance.spans.map((e) => e.toJson()).toList(),
       'text': instance.text,
       'type': instance.type,
     };
@@ -115,7 +115,7 @@ _$RichableParagraph _$$RichableParagraphFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$RichableParagraphToJson(_$RichableParagraph instance) =>
     <String, dynamic>{
-      'spans': instance.spans,
+      'spans': instance.spans.map((e) => e.toJson()).toList(),
       'text': instance.text,
       'type': instance.type,
     };
@@ -131,7 +131,7 @@ _$RichableListItem _$$RichableListItemFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$RichableListItemToJson(_$RichableListItem instance) =>
     <String, dynamic>{
-      'spans': instance.spans,
+      'spans': instance.spans.map((e) => e.toJson()).toList(),
       'text': instance.text,
       'type': instance.type,
     };
@@ -149,7 +149,7 @@ _$RichableOrderedListItem _$$RichableOrderedListItemFromJson(
 Map<String, dynamic> _$$RichableOrderedListItemToJson(
         _$RichableOrderedListItem instance) =>
     <String, dynamic>{
-      'spans': instance.spans,
+      'spans': instance.spans.map((e) => e.toJson()).toList(),
       'text': instance.text,
       'type': instance.type,
     };
@@ -161,14 +161,16 @@ _$RichableImage _$$RichableImageFromJson(Map<String, dynamic> json) =>
       dimensions:
           Dimension.fromJson(json['dimensions'] as Map<String, dynamic>),
       url: json['url'] as String,
+      $type: json['type'] as String?,
     );
 
 Map<String, dynamic> _$$RichableImageToJson(_$RichableImage instance) =>
     <String, dynamic>{
       'alt': instance.alt,
       'copyright': instance.copyright,
-      'dimensions': instance.dimensions,
+      'dimensions': instance.dimensions.toJson(),
       'url': instance.url,
+      'type': instance.$type,
     };
 
 _$RichableEmbed _$$RichableEmbedFromJson(Map<String, dynamic> json) =>
@@ -179,6 +181,6 @@ _$RichableEmbed _$$RichableEmbedFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$RichableEmbedToJson(_$RichableEmbed instance) =>
     <String, dynamic>{
-      'oembed': instance.info,
+      'oembed': instance.info.toJson(),
       'type': instance.type,
     };

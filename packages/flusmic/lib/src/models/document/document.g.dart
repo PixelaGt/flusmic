@@ -30,7 +30,8 @@ _$_Document _$$_DocumentFromJson(Map<String, dynamic> json) => _$_Document(
 
 Map<String, dynamic> _$$_DocumentToJson(_$_Document instance) =>
     <String, dynamic>{
-      'alternate_languages': instance.alternateLanguages,
+      'alternate_languages':
+          instance.alternateLanguages?.map((e) => e.toJson()).toList(),
       'first_publication_date': instance.firstPublicationDate,
       'last_publication_date': instance.lastPublicationDate,
       'linked_documents': instance.linkedDocuments,
