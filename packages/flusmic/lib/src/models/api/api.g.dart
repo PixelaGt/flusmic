@@ -29,7 +29,7 @@ Map<String, dynamic> _$$_ApiToJson(_$_Api instance) => <String, dynamic>{
       'oauth_token': instance.oauthToken,
       'types': instance.types,
       'license': instance.license,
-      'languages': instance.languages,
-      'refs': instance.refs,
+      'languages': instance.languages.map((e) => e.toJson()).toList(),
+      'refs': instance.refs.map((e) => e.toJson()).toList(),
       'version': instance.version,
     };

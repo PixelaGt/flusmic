@@ -32,7 +32,7 @@ Map<String, dynamic> _$$_FlusmicResponseToJson(_$_FlusmicResponse instance) =>
       'results_size': instance.resultsSize,
       'total_pages': instance.totalPages,
       'total_results_size': instance.totalResultsSize,
-      'results': instance.results,
+      'results': instance.results.map((e) => e.toJson()).toList(),
       'license': instance.license,
       'version': instance.version,
       'page': instance.page,

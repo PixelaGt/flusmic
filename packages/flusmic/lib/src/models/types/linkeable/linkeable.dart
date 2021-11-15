@@ -13,12 +13,12 @@ class Linkeable with _$Linkeable {
   ///Handle a reference to document without content
   @FreezedUnionValue('Document')
   const factory Linkeable.document({
-    @JsonKey(name: 'link_type') required String linkType,
+    // @JsonKey(name: 'link_type') required String linkType,
+    @JsonKey(name: 'type') required String documentType,
     required List<String> tags,
     required String id,
     required String lang,
     required String slug,
-    required String type,
     required bool isBroken,
   }) = DocumentLinkeable;
 
@@ -27,7 +27,7 @@ class Linkeable with _$Linkeable {
   ///Handle media data from the library
   @FreezedUnionValue('Media')
   const factory Linkeable.media({
-    @JsonKey(name: 'link_type') required String linkType,
+    // @JsonKey(name: 'link_type') required String linkType,
     String? height,
     String? width,
     required String kind,
@@ -41,7 +41,7 @@ class Linkeable with _$Linkeable {
   ///Handle a simple link reference
   @FreezedUnionValue('Web')
   const factory Linkeable.web({
-    @JsonKey(name: 'link_type') required String linkType,
+    // @JsonKey(name: 'link_type') required String linkType,
     required String url,
   }) = WebLinkeable;
 

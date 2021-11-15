@@ -1,3 +1,7 @@
+## [3.1.2]
+* Update dependencies
+* Fix serialization for models
+
 ## [3.1.1]
 * Update dependencies
 * Fix new lint rules 

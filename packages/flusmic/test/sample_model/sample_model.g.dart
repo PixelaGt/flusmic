@@ -28,12 +28,12 @@ _$_SampleModel _$$_SampleModelFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$_SampleModelToJson(_$_SampleModel instance) =>
     <String, dynamic>{
-      'location': instance.location,
-      'link': instance.link,
-      'linked': instance.linked,
-      'media': instance.media,
-      'content': instance.content,
-      'title': instance.title,
-      'body': instance.body,
-      'image': instance.image,
+      'location': instance.location.toJson(),
+      'link': instance.link.toJson(),
+      'linked': instance.linked.toJson(),
+      'media': instance.media.toJson(),
+      'content': instance.content.map((e) => e.toJson()).toList(),
+      'title': instance.title.map((e) => e.toJson()).toList(),
+      'body': instance.body.map((e) => e.toJson()).toList(),
+      'image': instance.image.toJson(),
     };
