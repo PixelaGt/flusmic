@@ -72,6 +72,7 @@ class Flusmic {
     String? language,
     int? page,
     int? pageSize,
+    String? graphQuery,
   }) async {
     try {
       final api = await getApi(authToken: authToken);
@@ -86,6 +87,7 @@ class Flusmic {
           orderings: orderings,
           page: page,
           pageSize: pageSize,
+          graphQuery: graphQuery,
         ),
       );
       return FlusmicResponse.fromJson(response.data as Map<String, dynamic>);
@@ -147,6 +149,7 @@ class Flusmic {
     String? after,
     String? authToken,
     String? language,
+    String? graphQuery,
   }) =>
       <String, dynamic>{
         if (after?.isNotEmpty ?? false) 'after': after,
@@ -161,6 +164,7 @@ class Flusmic {
               '[${orderings?.map(_generateOrdering).toList().join(',')}]',
         if (page != null) 'page': page.toString(),
         if (pageSize != null) 'pageSize': pageSize.toString(),
+        if (graphQuery?.isNotEmpty ?? false) 'graphQuery': graphQuery,
       };
 
   ///Generate the API url to perform a request.
