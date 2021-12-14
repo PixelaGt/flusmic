@@ -138,12 +138,15 @@ class _$_Language implements _Language {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Language &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name));
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.name, name));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, name);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(name));
 
   @JsonKey(ignore: true)
   @override

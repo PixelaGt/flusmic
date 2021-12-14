@@ -7,14 +7,14 @@ packages:
       name: _fe_analyzer_shared
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "22.0.0"
+    version: "31.0.0"
   analyzer:
     dependency: transitive
     description:
       name: analyzer
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.7.1"
+    version: "2.8.0"
   async:
     dependency: transitive
     description:
@@ -63,7 +63,7 @@ packages:
       name: dio
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "4.0.0"
+    version: "4.0.4"
   file:
     dependency: transitive
     description:
@@ -77,14 +77,14 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "3.0.0"
+    version: "3.1.2"
   freezed_annotation:
     dependency: transitive
     description:
       name: freezed_annotation
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.14.2"
+    version: "1.1.0"
   glob:
     dependency: transitive
     description:
@@ -105,14 +105,14 @@ packages:
       name: json_annotation
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "4.0.1"
+    version: "4.4.0"
   meta:
     dependency: transitive
     description:
       name: meta
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.3.0"
+    version: "1.7.0"
   package_config:
     dependency: transitive
     description:
@@ -184,4 +184,4 @@ packages:
     source: hosted
     version: "3.1.0"
 sdks:
-  dart: ">=2.12.0 <3.0.0"
+  dart: ">=2.14.0 <3.0.0"

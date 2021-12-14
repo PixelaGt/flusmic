@@ -514,13 +514,15 @@ class _$AnyPredicate implements AnyPredicate {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is AnyPredicate &&
-            (identical(other.path, path) || other.path == path) &&
+            const DeepCollectionEquality().equals(other.path, path) &&
             const DeepCollectionEquality().equals(other.values, values));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, path, const DeepCollectionEquality().hash(values));
+      runtimeType,
+      const DeepCollectionEquality().hash(path),
+      const DeepCollectionEquality().hash(values));
 
   @JsonKey(ignore: true)
   @override
@@ -832,12 +834,15 @@ class _$AtPredicate implements AtPredicate {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is AtPredicate &&
-            (identical(other.path, path) || other.path == path) &&
-            (identical(other.value, value) || other.value == value));
+            const DeepCollectionEquality().equals(other.path, path) &&
+            const DeepCollectionEquality().equals(other.value, value));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, path, value);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(path),
+      const DeepCollectionEquality().hash(value));
 
   @JsonKey(ignore: true)
   @override
@@ -1149,12 +1154,15 @@ class _$FullTextPredicate implements FullTextPredicate {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is FullTextPredicate &&
-            (identical(other.path, path) || other.path == path) &&
-            (identical(other.value, value) || other.value == value));
+            const DeepCollectionEquality().equals(other.path, path) &&
+            const DeepCollectionEquality().equals(other.value, value));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, path, value);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(path),
+      const DeepCollectionEquality().hash(value));
 
   @JsonKey(ignore: true)
   @override
@@ -1466,12 +1474,15 @@ class _$GtPredicate implements GtPredicate {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is GtPredicate &&
-            (identical(other.path, path) || other.path == path) &&
-            (identical(other.value, value) || other.value == value));
+            const DeepCollectionEquality().equals(other.path, path) &&
+            const DeepCollectionEquality().equals(other.value, value));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, path, value);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(path),
+      const DeepCollectionEquality().hash(value));
 
   @JsonKey(ignore: true)
   @override
@@ -1775,11 +1786,12 @@ class _$HasPredicate implements HasPredicate {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is HasPredicate &&
-            (identical(other.path, path) || other.path == path));
+            const DeepCollectionEquality().equals(other.path, path));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, path);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(path));
 
   @JsonKey(ignore: true)
   @override
@@ -2096,15 +2108,19 @@ class _$InRangePredicate implements InRangePredicate {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is InRangePredicate &&
-            (identical(other.path, path) || other.path == path) &&
-            (identical(other.lowerLimit, lowerLimit) ||
-                other.lowerLimit == lowerLimit) &&
-            (identical(other.upperLimit, upperLimit) ||
-                other.upperLimit == upperLimit));
+            const DeepCollectionEquality().equals(other.path, path) &&
+            const DeepCollectionEquality()
+                .equals(other.lowerLimit, lowerLimit) &&
+            const DeepCollectionEquality()
+                .equals(other.upperLimit, upperLimit));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, path, lowerLimit, upperLimit);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(path),
+      const DeepCollectionEquality().hash(lowerLimit),
+      const DeepCollectionEquality().hash(upperLimit));
 
   @JsonKey(ignore: true)
   @override
@@ -2418,13 +2434,15 @@ class _$InPredicate implements InPredicate {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is InPredicate &&
-            (identical(other.path, path) || other.path == path) &&
+            const DeepCollectionEquality().equals(other.path, path) &&
             const DeepCollectionEquality().equals(other.values, values));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, path, const DeepCollectionEquality().hash(values));
+      runtimeType,
+      const DeepCollectionEquality().hash(path),
+      const DeepCollectionEquality().hash(values));
 
   @JsonKey(ignore: true)
   @override
@@ -2735,12 +2753,15 @@ class _$LtPredicate implements LtPredicate {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is LtPredicate &&
-            (identical(other.path, path) || other.path == path) &&
-            (identical(other.value, value) || other.value == value));
+            const DeepCollectionEquality().equals(other.path, path) &&
+            const DeepCollectionEquality().equals(other.value, value));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, path, value);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(path),
+      const DeepCollectionEquality().hash(value));
 
   @JsonKey(ignore: true)
   @override
@@ -3044,11 +3065,12 @@ class _$MissingPredicate implements MissingPredicate {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is MissingPredicate &&
-            (identical(other.path, path) || other.path == path));
+            const DeepCollectionEquality().equals(other.path, path));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, path);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(path));
 
   @JsonKey(ignore: true)
   @override
@@ -3373,17 +3395,19 @@ class _$NearPredicate implements NearPredicate {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is NearPredicate &&
-            (identical(other.path, path) || other.path == path) &&
-            (identical(other.latitude, latitude) ||
-                other.latitude == latitude) &&
-            (identical(other.longitude, longitude) ||
-                other.longitude == longitude) &&
-            (identical(other.radius, radius) || other.radius == radius));
+            const DeepCollectionEquality().equals(other.path, path) &&
+            const DeepCollectionEquality().equals(other.latitude, latitude) &&
+            const DeepCollectionEquality().equals(other.longitude, longitude) &&
+            const DeepCollectionEquality().equals(other.radius, radius));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, path, latitude, longitude, radius);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(path),
+      const DeepCollectionEquality().hash(latitude),
+      const DeepCollectionEquality().hash(longitude),
+      const DeepCollectionEquality().hash(radius));
 
   @JsonKey(ignore: true)
   @override
@@ -3697,12 +3721,15 @@ class _$NotPredicate implements NotPredicate {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is NotPredicate &&
-            (identical(other.path, path) || other.path == path) &&
-            (identical(other.value, value) || other.value == value));
+            const DeepCollectionEquality().equals(other.path, path) &&
+            const DeepCollectionEquality().equals(other.value, value));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, path, value);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(path),
+      const DeepCollectionEquality().hash(value));
 
   @JsonKey(ignore: true)
   @override
@@ -4013,12 +4040,15 @@ class _$SimilarPredicate implements SimilarPredicate {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is SimilarPredicate &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.value, value) || other.value == value));
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.value, value));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, value);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(value));
 
   @JsonKey(ignore: true)
   @override
@@ -4330,12 +4360,15 @@ class _$DateAfterPredicate implements DateAfterPredicate {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is DateAfterPredicate &&
-            (identical(other.path, path) || other.path == path) &&
-            (identical(other.epoch, epoch) || other.epoch == epoch));
+            const DeepCollectionEquality().equals(other.path, path) &&
+            const DeepCollectionEquality().equals(other.epoch, epoch));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, path, epoch);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(path),
+      const DeepCollectionEquality().hash(epoch));
 
   @JsonKey(ignore: true)
   @override
@@ -4648,12 +4681,15 @@ class _$DateBeforePredicate implements DateBeforePredicate {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is DateBeforePredicate &&
-            (identical(other.path, path) || other.path == path) &&
-            (identical(other.epoch, epoch) || other.epoch == epoch));
+            const DeepCollectionEquality().equals(other.path, path) &&
+            const DeepCollectionEquality().equals(other.epoch, epoch));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, path, epoch);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(path),
+      const DeepCollectionEquality().hash(epoch));
 
   @JsonKey(ignore: true)
   @override
@@ -4973,15 +5009,18 @@ class _$DateBetweenPredicate implements DateBetweenPredicate {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is DateBetweenPredicate &&
-            (identical(other.path, path) || other.path == path) &&
-            (identical(other.startEpoch, startEpoch) ||
-                other.startEpoch == startEpoch) &&
-            (identical(other.endEpoch, endEpoch) ||
-                other.endEpoch == endEpoch));
+            const DeepCollectionEquality().equals(other.path, path) &&
+            const DeepCollectionEquality()
+                .equals(other.startEpoch, startEpoch) &&
+            const DeepCollectionEquality().equals(other.endEpoch, endEpoch));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, path, startEpoch, endEpoch);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(path),
+      const DeepCollectionEquality().hash(startEpoch),
+      const DeepCollectionEquality().hash(endEpoch));
 
   @JsonKey(ignore: true)
   @override
@@ -5297,12 +5336,15 @@ class _$DateDayOfMonthPredicate implements DateDayOfMonthPredicate {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is DateDayOfMonthPredicate &&
-            (identical(other.path, path) || other.path == path) &&
-            (identical(other.day, day) || other.day == day));
+            const DeepCollectionEquality().equals(other.path, path) &&
+            const DeepCollectionEquality().equals(other.day, day));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, path, day);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(path),
+      const DeepCollectionEquality().hash(day));
 
   @JsonKey(ignore: true)
   @override
@@ -5619,12 +5661,15 @@ class _$DateDayOfMonthAfterPredicate implements DateDayOfMonthAfterPredicate {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is DateDayOfMonthAfterPredicate &&
-            (identical(other.path, path) || other.path == path) &&
-            (identical(other.day, day) || other.day == day));
+            const DeepCollectionEquality().equals(other.path, path) &&
+            const DeepCollectionEquality().equals(other.day, day));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, path, day);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(path),
+      const DeepCollectionEquality().hash(day));
 
   @JsonKey(ignore: true)
   @override
@@ -5941,12 +5986,15 @@ class _$DateDayOfMonthBeforePredicate implements DateDayOfMonthBeforePredicate {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is DateDayOfMonthBeforePredicate &&
-            (identical(other.path, path) || other.path == path) &&
-            (identical(other.day, day) || other.day == day));
+            const DeepCollectionEquality().equals(other.path, path) &&
+            const DeepCollectionEquality().equals(other.day, day));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, path, day);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(path),
+      const DeepCollectionEquality().hash(day));
 
   @JsonKey(ignore: true)
   @override
@@ -6260,12 +6308,15 @@ class _$DateDayOfWeekPredicate implements DateDayOfWeekPredicate {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is DateDayOfWeekPredicate &&
-            (identical(other.path, path) || other.path == path) &&
-            (identical(other.day, day) || other.day == day));
+            const DeepCollectionEquality().equals(other.path, path) &&
+            const DeepCollectionEquality().equals(other.day, day));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, path, day);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(path),
+      const DeepCollectionEquality().hash(day));
 
   @JsonKey(ignore: true)
   @override
@@ -6581,12 +6632,15 @@ class _$DateDayOfWeekAfterPredicate implements DateDayOfWeekAfterPredicate {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is DateDayOfWeekAfterPredicate &&
-            (identical(other.path, path) || other.path == path) &&
-            (identical(other.day, day) || other.day == day));
+            const DeepCollectionEquality().equals(other.path, path) &&
+            const DeepCollectionEquality().equals(other.day, day));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, path, day);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(path),
+      const DeepCollectionEquality().hash(day));
 
   @JsonKey(ignore: true)
   @override
@@ -6903,12 +6957,15 @@ class _$DateDayOfWeekBeforePredicate implements DateDayOfWeekBeforePredicate {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is DateDayOfWeekBeforePredicate &&
-            (identical(other.path, path) || other.path == path) &&
-            (identical(other.day, day) || other.day == day));
+            const DeepCollectionEquality().equals(other.path, path) &&
+            const DeepCollectionEquality().equals(other.day, day));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, path, day);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(path),
+      const DeepCollectionEquality().hash(day));
 
   @JsonKey(ignore: true)
   @override
@@ -7222,12 +7279,15 @@ class _$DateMonthPredicate implements DateMonthPredicate {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is DateMonthPredicate &&
-            (identical(other.path, path) || other.path == path) &&
-            (identical(other.month, month) || other.month == month));
+            const DeepCollectionEquality().equals(other.path, path) &&
+            const DeepCollectionEquality().equals(other.month, month));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, path, month);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(path),
+      const DeepCollectionEquality().hash(month));
 
   @JsonKey(ignore: true)
   @override
@@ -7540,12 +7600,15 @@ class _$DateMonthAfterPredicate implements DateMonthAfterPredicate {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is DateMonthAfterPredicate &&
-            (identical(other.path, path) || other.path == path) &&
-            (identical(other.month, month) || other.month == month));
+            const DeepCollectionEquality().equals(other.path, path) &&
+            const DeepCollectionEquality().equals(other.month, month));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, path, month);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(path),
+      const DeepCollectionEquality().hash(month));
 
   @JsonKey(ignore: true)
   @override
@@ -7860,12 +7923,15 @@ class _$DateMonthBeforePredicate implements DateMonthBeforePredicate {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is DateMonthBeforePredicate &&
-            (identical(other.path, path) || other.path == path) &&
-            (identical(other.month, month) || other.month == month));
+            const DeepCollectionEquality().equals(other.path, path) &&
+            const DeepCollectionEquality().equals(other.month, month));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, path, month);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(path),
+      const DeepCollectionEquality().hash(month));
 
   @JsonKey(ignore: true)
   @override
@@ -8179,12 +8245,15 @@ class _$DateYearPredicate implements DateYearPredicate {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is DateYearPredicate &&
-            (identical(other.path, path) || other.path == path) &&
-            (identical(other.year, year) || other.year == year));
+            const DeepCollectionEquality().equals(other.path, path) &&
+            const DeepCollectionEquality().equals(other.year, year));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, path, year);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(path),
+      const DeepCollectionEquality().hash(year));
 
   @JsonKey(ignore: true)
   @override
@@ -8496,12 +8565,15 @@ class _$DateHourPredicate implements DateHourPredicate {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is DateHourPredicate &&
-            (identical(other.path, path) || other.path == path) &&
-            (identical(other.hour, hour) || other.hour == hour));
+            const DeepCollectionEquality().equals(other.path, path) &&
+            const DeepCollectionEquality().equals(other.hour, hour));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, path, hour);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(path),
+      const DeepCollectionEquality().hash(hour));
 
   @JsonKey(ignore: true)
   @override
@@ -8813,12 +8885,15 @@ class _$DateHourAfterPredicate implements DateHourAfterPredicate {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is DateHourAfterPredicate &&
-            (identical(other.path, path) || other.path == path) &&
-            (identical(other.hour, hour) || other.hour == hour));
+            const DeepCollectionEquality().equals(other.path, path) &&
+            const DeepCollectionEquality().equals(other.hour, hour));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, path, hour);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(path),
+      const DeepCollectionEquality().hash(hour));
 
   @JsonKey(ignore: true)
   @override
@@ -9132,12 +9207,15 @@ class _$DateHourBeforePredicate implements DateHourBeforePredicate {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is DateHourBeforePredicate &&
-            (identical(other.path, path) || other.path == path) &&
-            (identical(other.hour, hour) || other.hour == hour));
+            const DeepCollectionEquality().equals(other.path, path) &&
+            const DeepCollectionEquality().equals(other.hour, hour));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, path, hour);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(path),
+      const DeepCollectionEquality().hash(hour));
 
   @JsonKey(ignore: true)
   @override

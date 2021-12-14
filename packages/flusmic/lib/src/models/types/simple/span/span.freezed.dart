@@ -150,13 +150,17 @@ class _$_Span implements _Span {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Span &&
-            (identical(other.type, type) || other.type == type) &&
-            (identical(other.end, end) || other.end == end) &&
-            (identical(other.start, start) || other.start == start));
+            const DeepCollectionEquality().equals(other.type, type) &&
+            const DeepCollectionEquality().equals(other.end, end) &&
+            const DeepCollectionEquality().equals(other.start, start));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, type, end, start);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(type),
+      const DeepCollectionEquality().hash(end),
+      const DeepCollectionEquality().hash(start));
 
   @JsonKey(ignore: true)
   @override

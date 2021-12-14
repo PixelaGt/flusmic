@@ -185,10 +185,9 @@ class _$_Slice implements _Slice {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Slice &&
-            (identical(other.sliceLabel, sliceLabel) ||
-                other.sliceLabel == sliceLabel) &&
-            (identical(other.sliceType, sliceType) ||
-                other.sliceType == sliceType) &&
+            const DeepCollectionEquality()
+                .equals(other.sliceLabel, sliceLabel) &&
+            const DeepCollectionEquality().equals(other.sliceType, sliceType) &&
             const DeepCollectionEquality().equals(other.items, items) &&
             const DeepCollectionEquality().equals(other.primary, primary));
   }
@@ -196,8 +195,8 @@ class _$_Slice implements _Slice {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      sliceLabel,
-      sliceType,
+      const DeepCollectionEquality().hash(sliceLabel),
+      const DeepCollectionEquality().hash(sliceType),
       const DeepCollectionEquality().hash(items),
       const DeepCollectionEquality().hash(primary));
 

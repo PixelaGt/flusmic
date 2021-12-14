@@ -138,14 +138,15 @@ class _$_Geopoint implements _Geopoint {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Geopoint &&
-            (identical(other.latitude, latitude) ||
-                other.latitude == latitude) &&
-            (identical(other.longitude, longitude) ||
-                other.longitude == longitude));
+            const DeepCollectionEquality().equals(other.latitude, latitude) &&
+            const DeepCollectionEquality().equals(other.longitude, longitude));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, latitude, longitude);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(latitude),
+      const DeepCollectionEquality().hash(longitude));
 
   @JsonKey(ignore: true)
   @override

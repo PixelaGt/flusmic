@@ -360,13 +360,16 @@ class _$RichableHeading1 implements RichableHeading1 {
         (other.runtimeType == runtimeType &&
             other is RichableHeading1 &&
             const DeepCollectionEquality().equals(other.spans, spans) &&
-            (identical(other.text, text) || other.text == text) &&
-            (identical(other.type, type) || other.type == type));
+            const DeepCollectionEquality().equals(other.text, text) &&
+            const DeepCollectionEquality().equals(other.type, type));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(spans), text, type);
+      runtimeType,
+      const DeepCollectionEquality().hash(spans),
+      const DeepCollectionEquality().hash(text),
+      const DeepCollectionEquality().hash(type));
 
   @JsonKey(ignore: true)
   @override
@@ -601,13 +604,16 @@ class _$RichableHeading2 implements RichableHeading2 {
         (other.runtimeType == runtimeType &&
             other is RichableHeading2 &&
             const DeepCollectionEquality().equals(other.spans, spans) &&
-            (identical(other.text, text) || other.text == text) &&
-            (identical(other.type, type) || other.type == type));
+            const DeepCollectionEquality().equals(other.text, text) &&
+            const DeepCollectionEquality().equals(other.type, type));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(spans), text, type);
+      runtimeType,
+      const DeepCollectionEquality().hash(spans),
+      const DeepCollectionEquality().hash(text),
+      const DeepCollectionEquality().hash(type));
 
   @JsonKey(ignore: true)
   @override
@@ -842,13 +848,16 @@ class _$RichableHeading3 implements RichableHeading3 {
         (other.runtimeType == runtimeType &&
             other is RichableHeading3 &&
             const DeepCollectionEquality().equals(other.spans, spans) &&
-            (identical(other.text, text) || other.text == text) &&
-            (identical(other.type, type) || other.type == type));
+            const DeepCollectionEquality().equals(other.text, text) &&
+            const DeepCollectionEquality().equals(other.type, type));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(spans), text, type);
+      runtimeType,
+      const DeepCollectionEquality().hash(spans),
+      const DeepCollectionEquality().hash(text),
+      const DeepCollectionEquality().hash(type));
 
   @JsonKey(ignore: true)
   @override
@@ -1083,13 +1092,16 @@ class _$RichableHeading4 implements RichableHeading4 {
         (other.runtimeType == runtimeType &&
             other is RichableHeading4 &&
             const DeepCollectionEquality().equals(other.spans, spans) &&
-            (identical(other.text, text) || other.text == text) &&
-            (identical(other.type, type) || other.type == type));
+            const DeepCollectionEquality().equals(other.text, text) &&
+            const DeepCollectionEquality().equals(other.type, type));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(spans), text, type);
+      runtimeType,
+      const DeepCollectionEquality().hash(spans),
+      const DeepCollectionEquality().hash(text),
+      const DeepCollectionEquality().hash(type));
 
   @JsonKey(ignore: true)
   @override
@@ -1324,13 +1336,16 @@ class _$RichableHeading5 implements RichableHeading5 {
         (other.runtimeType == runtimeType &&
             other is RichableHeading5 &&
             const DeepCollectionEquality().equals(other.spans, spans) &&
-            (identical(other.text, text) || other.text == text) &&
-            (identical(other.type, type) || other.type == type));
+            const DeepCollectionEquality().equals(other.text, text) &&
+            const DeepCollectionEquality().equals(other.type, type));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(spans), text, type);
+      runtimeType,
+      const DeepCollectionEquality().hash(spans),
+      const DeepCollectionEquality().hash(text),
+      const DeepCollectionEquality().hash(type));
 
   @JsonKey(ignore: true)
   @override
@@ -1565,13 +1580,16 @@ class _$RichableHeading6 implements RichableHeading6 {
         (other.runtimeType == runtimeType &&
             other is RichableHeading6 &&
             const DeepCollectionEquality().equals(other.spans, spans) &&
-            (identical(other.text, text) || other.text == text) &&
-            (identical(other.type, type) || other.type == type));
+            const DeepCollectionEquality().equals(other.text, text) &&
+            const DeepCollectionEquality().equals(other.type, type));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(spans), text, type);
+      runtimeType,
+      const DeepCollectionEquality().hash(spans),
+      const DeepCollectionEquality().hash(text),
+      const DeepCollectionEquality().hash(type));
 
   @JsonKey(ignore: true)
   @override
@@ -1806,13 +1824,16 @@ class _$RichableParagraph implements RichableParagraph {
         (other.runtimeType == runtimeType &&
             other is RichableParagraph &&
             const DeepCollectionEquality().equals(other.spans, spans) &&
-            (identical(other.text, text) || other.text == text) &&
-            (identical(other.type, type) || other.type == type));
+            const DeepCollectionEquality().equals(other.text, text) &&
+            const DeepCollectionEquality().equals(other.type, type));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(spans), text, type);
+      runtimeType,
+      const DeepCollectionEquality().hash(spans),
+      const DeepCollectionEquality().hash(text),
+      const DeepCollectionEquality().hash(type));
 
   @JsonKey(ignore: true)
   @override
@@ -2048,13 +2069,16 @@ class _$RichableListItem implements RichableListItem {
         (other.runtimeType == runtimeType &&
             other is RichableListItem &&
             const DeepCollectionEquality().equals(other.spans, spans) &&
-            (identical(other.text, text) || other.text == text) &&
-            (identical(other.type, type) || other.type == type));
+            const DeepCollectionEquality().equals(other.text, text) &&
+            const DeepCollectionEquality().equals(other.type, type));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(spans), text, type);
+      runtimeType,
+      const DeepCollectionEquality().hash(spans),
+      const DeepCollectionEquality().hash(text),
+      const DeepCollectionEquality().hash(type));
 
   @JsonKey(ignore: true)
   @override
@@ -2291,13 +2315,16 @@ class _$RichableOrderedListItem implements RichableOrderedListItem {
         (other.runtimeType == runtimeType &&
             other is RichableOrderedListItem &&
             const DeepCollectionEquality().equals(other.spans, spans) &&
-            (identical(other.text, text) || other.text == text) &&
-            (identical(other.type, type) || other.type == type));
+            const DeepCollectionEquality().equals(other.text, text) &&
+            const DeepCollectionEquality().equals(other.type, type));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(spans), text, type);
+      runtimeType,
+      const DeepCollectionEquality().hash(spans),
+      const DeepCollectionEquality().hash(text),
+      const DeepCollectionEquality().hash(type));
 
   @JsonKey(ignore: true)
   @override
@@ -2556,16 +2583,20 @@ class _$RichableImage implements RichableImage {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is RichableImage &&
-            (identical(other.alt, alt) || other.alt == alt) &&
-            (identical(other.copyright, copyright) ||
-                other.copyright == copyright) &&
-            (identical(other.dimensions, dimensions) ||
-                other.dimensions == dimensions) &&
-            (identical(other.url, url) || other.url == url));
+            const DeepCollectionEquality().equals(other.alt, alt) &&
+            const DeepCollectionEquality().equals(other.copyright, copyright) &&
+            const DeepCollectionEquality()
+                .equals(other.dimensions, dimensions) &&
+            const DeepCollectionEquality().equals(other.url, url));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, alt, copyright, dimensions, url);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(alt),
+      const DeepCollectionEquality().hash(copyright),
+      const DeepCollectionEquality().hash(dimensions),
+      const DeepCollectionEquality().hash(url));
 
   @JsonKey(ignore: true)
   @override
@@ -2804,12 +2835,15 @@ class _$RichableEmbed implements RichableEmbed {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is RichableEmbed &&
-            (identical(other.info, info) || other.info == info) &&
-            (identical(other.type, type) || other.type == type));
+            const DeepCollectionEquality().equals(other.info, info) &&
+            const DeepCollectionEquality().equals(other.type, type));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, info, type);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(info),
+      const DeepCollectionEquality().hash(type));
 
   @JsonKey(ignore: true)
   @override

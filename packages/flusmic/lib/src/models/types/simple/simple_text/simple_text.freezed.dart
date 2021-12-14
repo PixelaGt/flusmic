@@ -157,13 +157,16 @@ class _$_SimpleText implements _SimpleText {
         (other.runtimeType == runtimeType &&
             other is _SimpleText &&
             const DeepCollectionEquality().equals(other.spans, spans) &&
-            (identical(other.text, text) || other.text == text) &&
-            (identical(other.type, type) || other.type == type));
+            const DeepCollectionEquality().equals(other.text, text) &&
+            const DeepCollectionEquality().equals(other.type, type));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(spans), text, type);
+      runtimeType,
+      const DeepCollectionEquality().hash(spans),
+      const DeepCollectionEquality().hash(text),
+      const DeepCollectionEquality().hash(type));
 
   @JsonKey(ignore: true)
   @override

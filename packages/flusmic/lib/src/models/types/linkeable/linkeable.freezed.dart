@@ -278,19 +278,24 @@ class _$DocumentLinkeable implements DocumentLinkeable {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is DocumentLinkeable &&
-            (identical(other.documentType, documentType) ||
-                other.documentType == documentType) &&
+            const DeepCollectionEquality()
+                .equals(other.documentType, documentType) &&
             const DeepCollectionEquality().equals(other.tags, tags) &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.lang, lang) || other.lang == lang) &&
-            (identical(other.slug, slug) || other.slug == slug) &&
-            (identical(other.isBroken, isBroken) ||
-                other.isBroken == isBroken));
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.lang, lang) &&
+            const DeepCollectionEquality().equals(other.slug, slug) &&
+            const DeepCollectionEquality().equals(other.isBroken, isBroken));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, documentType,
-      const DeepCollectionEquality().hash(tags), id, lang, slug, isBroken);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(documentType),
+      const DeepCollectionEquality().hash(tags),
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(lang),
+      const DeepCollectionEquality().hash(slug),
+      const DeepCollectionEquality().hash(isBroken));
 
   @JsonKey(ignore: true)
   @override
@@ -528,17 +533,23 @@ class _$MediaLinkeable implements MediaLinkeable {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is MediaLinkeable &&
-            (identical(other.height, height) || other.height == height) &&
-            (identical(other.width, width) || other.width == width) &&
-            (identical(other.kind, kind) || other.kind == kind) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.size, size) || other.size == size) &&
-            (identical(other.url, url) || other.url == url));
+            const DeepCollectionEquality().equals(other.height, height) &&
+            const DeepCollectionEquality().equals(other.width, width) &&
+            const DeepCollectionEquality().equals(other.kind, kind) &&
+            const DeepCollectionEquality().equals(other.name, name) &&
+            const DeepCollectionEquality().equals(other.size, size) &&
+            const DeepCollectionEquality().equals(other.url, url));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, height, width, kind, name, size, url);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(height),
+      const DeepCollectionEquality().hash(width),
+      const DeepCollectionEquality().hash(kind),
+      const DeepCollectionEquality().hash(name),
+      const DeepCollectionEquality().hash(size),
+      const DeepCollectionEquality().hash(url));
 
   @JsonKey(ignore: true)
   @override
@@ -727,11 +738,12 @@ class _$WebLinkeable implements WebLinkeable {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is WebLinkeable &&
-            (identical(other.url, url) || other.url == url));
+            const DeepCollectionEquality().equals(other.url, url));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, url);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(url));
 
   @JsonKey(ignore: true)
   @override
