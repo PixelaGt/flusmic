@@ -1,5 +1,4 @@
 import 'package:flusmic/src/models/flusmic_models.dart';
-import 'package:flusmic/src/models/types/simple/simple_text/simple_text.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'sample_model.freezed.dart';
