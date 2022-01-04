@@ -34,16 +34,6 @@ class FlusmicError implements Exception {
     );
   }
 
-  /// Exception for failed deserialization exception
-  factory FlusmicError.fromException(Exception exception) {
-    return FlusmicError._(
-      code: 100,
-      humanMessage: 'Unknown error',
-      message: exception.toString(),
-      response: exception.toString(),
-    );
-  }
-
   /// Exception for failed requests
   factory FlusmicError.fromResponse(Response? response) {
     if (response == null) {
