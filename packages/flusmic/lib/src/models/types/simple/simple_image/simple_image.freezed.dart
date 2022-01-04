@@ -187,16 +187,20 @@ class _$_SimpleImage implements _SimpleImage {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _SimpleImage &&
-            (identical(other.alt, alt) || other.alt == alt) &&
-            (identical(other.copyright, copyright) ||
-                other.copyright == copyright) &&
-            (identical(other.dimensions, dimensions) ||
-                other.dimensions == dimensions) &&
-            (identical(other.url, url) || other.url == url));
+            const DeepCollectionEquality().equals(other.alt, alt) &&
+            const DeepCollectionEquality().equals(other.copyright, copyright) &&
+            const DeepCollectionEquality()
+                .equals(other.dimensions, dimensions) &&
+            const DeepCollectionEquality().equals(other.url, url));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, alt, copyright, dimensions, url);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(alt),
+      const DeepCollectionEquality().hash(copyright),
+      const DeepCollectionEquality().hash(dimensions),
+      const DeepCollectionEquality().hash(url));
 
   @JsonKey(ignore: true)
   @override

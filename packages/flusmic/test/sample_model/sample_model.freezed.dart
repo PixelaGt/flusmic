@@ -310,28 +310,27 @@ class _$_SampleModel implements _SampleModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _SampleModel &&
-            (identical(other.location, location) ||
-                other.location == location) &&
-            (identical(other.link, link) || other.link == link) &&
-            (identical(other.linked, linked) || other.linked == linked) &&
-            (identical(other.media, media) || other.media == media) &&
+            const DeepCollectionEquality().equals(other.location, location) &&
+            const DeepCollectionEquality().equals(other.link, link) &&
+            const DeepCollectionEquality().equals(other.linked, linked) &&
+            const DeepCollectionEquality().equals(other.media, media) &&
             const DeepCollectionEquality().equals(other.content, content) &&
             const DeepCollectionEquality().equals(other.title, title) &&
             const DeepCollectionEquality().equals(other.body, body) &&
-            (identical(other.image, image) || other.image == image));
+            const DeepCollectionEquality().equals(other.image, image));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      location,
-      link,
-      linked,
-      media,
+      const DeepCollectionEquality().hash(location),
+      const DeepCollectionEquality().hash(link),
+      const DeepCollectionEquality().hash(linked),
+      const DeepCollectionEquality().hash(media),
       const DeepCollectionEquality().hash(content),
       const DeepCollectionEquality().hash(title),
       const DeepCollectionEquality().hash(body),
-      image);
+      const DeepCollectionEquality().hash(image));
 
   @JsonKey(ignore: true)
   @override

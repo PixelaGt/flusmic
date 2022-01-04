@@ -349,37 +349,37 @@ class _$_Document implements _Document {
             other is _Document &&
             const DeepCollectionEquality()
                 .equals(other.alternateLanguages, alternateLanguages) &&
-            (identical(other.firstPublicationDate, firstPublicationDate) ||
-                other.firstPublicationDate == firstPublicationDate) &&
-            (identical(other.lastPublicationDate, lastPublicationDate) ||
-                other.lastPublicationDate == lastPublicationDate) &&
+            const DeepCollectionEquality()
+                .equals(other.firstPublicationDate, firstPublicationDate) &&
+            const DeepCollectionEquality()
+                .equals(other.lastPublicationDate, lastPublicationDate) &&
             const DeepCollectionEquality()
                 .equals(other.linkedDocuments, linkedDocuments) &&
             const DeepCollectionEquality().equals(other.tags, tags) &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.lang, lang) || other.lang == lang) &&
-            (identical(other.type, type) || other.type == type) &&
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.lang, lang) &&
+            const DeepCollectionEquality().equals(other.type, type) &&
             const DeepCollectionEquality().equals(other.data, data) &&
             const DeepCollectionEquality().equals(other.slugs, slugs) &&
-            (identical(other.href, href) || other.href == href) &&
-            (identical(other.uid, uid) || other.uid == uid));
+            const DeepCollectionEquality().equals(other.href, href) &&
+            const DeepCollectionEquality().equals(other.uid, uid));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(alternateLanguages),
-      firstPublicationDate,
-      lastPublicationDate,
+      const DeepCollectionEquality().hash(firstPublicationDate),
+      const DeepCollectionEquality().hash(lastPublicationDate),
       const DeepCollectionEquality().hash(linkedDocuments),
       const DeepCollectionEquality().hash(tags),
-      id,
-      lang,
-      type,
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(lang),
+      const DeepCollectionEquality().hash(type),
       const DeepCollectionEquality().hash(data),
       const DeepCollectionEquality().hash(slugs),
-      href,
-      uid);
+      const DeepCollectionEquality().hash(href),
+      const DeepCollectionEquality().hash(uid));
 
   @JsonKey(ignore: true)
   @override

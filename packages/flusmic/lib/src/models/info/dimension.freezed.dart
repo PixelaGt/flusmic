@@ -139,12 +139,15 @@ class _$_Dimension implements _Dimension {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Dimension &&
-            (identical(other.height, height) || other.height == height) &&
-            (identical(other.width, width) || other.width == width));
+            const DeepCollectionEquality().equals(other.height, height) &&
+            const DeepCollectionEquality().equals(other.width, width));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, height, width);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(height),
+      const DeepCollectionEquality().hash(width));
 
   @JsonKey(ignore: true)
   @override
