@@ -10,6 +10,7 @@ part 'document.g.dart';
 @freezed
 class Document with _$Document {
   ///Deafult factory constructor for Document
+  // coverage:ignore-start
   factory Document({
     @JsonKey(name: 'alternate_languages')
         List<AlternateLanguage>? alternateLanguages,
@@ -25,6 +26,7 @@ class Document with _$Document {
     String? href,
     String? uid,
   }) = _Document;
+  // coverage:ignore-end
 
   ///Creates a Document object from json
   factory Document.fromJson(Map<String, dynamic> json) =>
