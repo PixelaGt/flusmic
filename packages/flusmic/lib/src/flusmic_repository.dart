@@ -1,6 +1,5 @@
 import 'package:dio/dio.dart';
 import 'package:flusmic/flusmic.dart';
-import 'package:flusmic/src/flusmic_error.dart';
 
 /// Flusmic - repository class
 ///

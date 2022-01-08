@@ -1,3 +1,7 @@
+## [3.1.3]
+* Update dependencies
+* `any_map` and `checked` build option enabled for model generation
+
 ## [3.1.2]
 * Update dependencies
 * Fix serialization for models
@@ -142,4 +146,3 @@
 ## [0.0.1] 
 * Prismic.io integration for flutter
 * First release.
-

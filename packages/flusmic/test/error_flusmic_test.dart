@@ -1,6 +1,5 @@
 import 'dart:io';
 import 'package:flusmic/flusmic.dart';
-import 'package:flusmic/src/flusmic_error.dart';
 import 'package:nock/nock.dart';
 import 'package:nock/src/overrides.dart';
 import 'package:test/test.dart';
