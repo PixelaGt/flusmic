@@ -1,7 +1,6 @@
 ## [3.1.3]
 * Update dependencies
 * `any_map` and `checked` build option enabled for model generation
-* `CheckedFromJsonException` added to FlusmicError
 
 ## [3.1.2]
 * Update dependencies
