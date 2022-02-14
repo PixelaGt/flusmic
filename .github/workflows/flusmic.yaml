@@ -55,5 +55,5 @@ jobs:
       - name: Check score
         run: |
           chmod +x ../../scripts/score.sh
-          ../../scripts/score.sh
+          ../../scripts/score.sh 110
         shell: bash
