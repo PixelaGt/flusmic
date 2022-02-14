@@ -34,7 +34,7 @@ jobs:
         uses: VeryGoodOpenSource/very_good_coverage@v1.2.0
         with:
           path: "./packages/flusmic/coverage/lcov.info"
-          min_coverage: 75
+          min_coverage: 95
           exclude: "**/*.g.dart **/*.freezed.dart example/**"
       - name: upload coverage
         uses: codecov/codecov-action@v1
@@ -55,5 +55,5 @@ jobs:
       - name: Check score
         run: |
           chmod +x ../../scripts/score.sh
-          ../../scripts/score.sh
+          ../../scripts/score.sh 110
         shell: bash
