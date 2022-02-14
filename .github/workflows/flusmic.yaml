@@ -34,7 +34,7 @@ jobs:
         uses: VeryGoodOpenSource/very_good_coverage@v1.2.0
         with:
           path: "./packages/flusmic/coverage/lcov.info"
-          min_coverage: 75
+          min_coverage: 95
           exclude: "**/*.g.dart **/*.freezed.dart example/**"
       - name: upload coverage
         uses: codecov/codecov-action@v1
