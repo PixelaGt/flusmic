@@ -1,3 +1,7 @@
+## [3.2.0]
+* New `graphQuery` method to interact with (fetchLinks v2)[https://prismic.io/docs/technologies/graphquery-rest-api] (thanks to @BghinC for starting this)
+* Update dependencies
+
 ## [3.1.3]
 * Update dependencies
 * `any_map` and `checked` build option enabled for model generation

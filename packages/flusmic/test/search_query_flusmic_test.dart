@@ -73,6 +73,19 @@ void main() {
       );
       expect(result.results.length, 2);
     });
+
+    test('graph query', () async {
+      const query = '''
+      {
+        test {
+          title
+        }
+      }
+      ''';
+      final result = await flusmic.graphQuery(query);
+      expect(result.results.length, 2);
+      expect(result.results.first.data!.length, 1);
+    });
   });
 
   group('ordering with flusmic', () {
