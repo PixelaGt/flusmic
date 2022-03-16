@@ -30,10 +30,10 @@ class Linkeable with _$Linkeable {
     // @JsonKey(name: 'link_type') required String linkType,
     String? height,
     String? width,
-    required String kind,
-    required String name,
-    required String size,
-    required String url,
+    String? kind,
+    String? name,
+    String? size,
+    String? url,
   }) = MediaLinkeable;
 
   ///Web model

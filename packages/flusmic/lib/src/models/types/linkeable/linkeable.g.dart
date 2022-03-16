@@ -34,10 +34,10 @@ _$MediaLinkeable _$$MediaLinkeableFromJson(Map<String, dynamic> json) =>
     _$MediaLinkeable(
       height: json['height'] as String?,
       width: json['width'] as String?,
-      kind: json['kind'] as String,
-      name: json['name'] as String,
-      size: json['size'] as String,
-      url: json['url'] as String,
+      kind: json['kind'] as String?,
+      name: json['name'] as String?,
+      size: json['size'] as String?,
+      url: json['url'] as String?,
       $type: json['link_type'] as String?,
     );
 
