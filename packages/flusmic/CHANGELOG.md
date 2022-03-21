@@ -1,3 +1,7 @@
+## [3.2.1]
+* Fix `Linkeable` model to accept nullables
+* Update dependencies
+
 ## [3.2.0]
 * New `graphQuery` method to interact with [fetchLinks v2](https://prismic.io/docs/technologies/graphquery-rest-api) (thanks to @BghinC for starting this)
 * Update dependencies
