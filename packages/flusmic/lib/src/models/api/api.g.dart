@@ -8,20 +8,38 @@ part of 'api.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Api _$$_ApiFromJson(Map<String, dynamic> json) => _$_Api(
-      oauthInitiate: json['oauth_initiate'] as String?,
-      oauthToken: json['oauth_token'] as String?,
-      types: (json['types'] as Map<String, dynamic>?)?.map(
-        (k, e) => MapEntry(k, e as String),
-      ),
-      license: json['license'] as String?,
-      languages: (json['languages'] as List<dynamic>)
-          .map((e) => Language.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      refs: (json['refs'] as List<dynamic>)
-          .map((e) => Ref.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      version: json['version'] as String,
+_$_Api _$$_ApiFromJson(Map json) => $checkedCreate(
+      r'_$_Api',
+      json,
+      ($checkedConvert) {
+        final val = _$_Api(
+          oauthInitiate: $checkedConvert('oauth_initiate', (v) => v as String?),
+          oauthToken: $checkedConvert('oauth_token', (v) => v as String?),
+          types: $checkedConvert(
+              'types',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e as String),
+                  )),
+          license: $checkedConvert('license', (v) => v as String?),
+          languages: $checkedConvert(
+              'languages',
+              (v) => (v as List<dynamic>)
+                  .map((e) =>
+                      Language.fromJson(Map<String, dynamic>.from(e as Map)))
+                  .toList()),
+          refs: $checkedConvert(
+              'refs',
+              (v) => (v as List<dynamic>)
+                  .map((e) => Ref.fromJson(Map<String, dynamic>.from(e as Map)))
+                  .toList()),
+          version: $checkedConvert('version', (v) => v as String),
+        );
+        return val;
+      },
+      fieldKeyMap: const {
+        'oauthInitiate': 'oauth_initiate',
+        'oauthToken': 'oauth_token'
+      },
     );
 
 Map<String, dynamic> _$$_ApiToJson(_$_Api instance) => <String, dynamic>{

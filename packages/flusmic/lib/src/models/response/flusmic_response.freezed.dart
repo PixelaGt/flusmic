@@ -12,48 +12,11 @@ part of 'flusmic_response.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 FlusmicResponse _$FlusmicResponseFromJson(Map<String, dynamic> json) {
   return _FlusmicResponse.fromJson(json);
 }
-
-/// @nodoc
-class _$FlusmicResponseTearOff {
-  const _$FlusmicResponseTearOff();
-
-  _FlusmicResponse call(
-      {@JsonKey(name: 'next_page') String? nextPage,
-      @JsonKey(name: 'prev_page') String? prevPage,
-      @JsonKey(name: 'results_per_page') required int resultsPerPage,
-      @JsonKey(name: 'results_size') required int resultsSize,
-      @JsonKey(name: 'total_pages') required int totalPages,
-      @JsonKey(name: 'total_results_size') required int totalResultsSize,
-      required List<Document> results,
-      required String license,
-      required String version,
-      required int page}) {
-    return _FlusmicResponse(
-      nextPage: nextPage,
-      prevPage: prevPage,
-      resultsPerPage: resultsPerPage,
-      resultsSize: resultsSize,
-      totalPages: totalPages,
-      totalResultsSize: totalResultsSize,
-      results: results,
-      license: license,
-      version: version,
-      page: page,
-    );
-  }
-
-  FlusmicResponse fromJson(Map<String, Object?> json) {
-    return FlusmicResponse.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $FlusmicResponse = _$FlusmicResponseTearOff();
 
 /// @nodoc
 mixin _$FlusmicResponse {
@@ -264,10 +227,11 @@ class _$_FlusmicResponse implements _FlusmicResponse {
       @JsonKey(name: 'results_size') required this.resultsSize,
       @JsonKey(name: 'total_pages') required this.totalPages,
       @JsonKey(name: 'total_results_size') required this.totalResultsSize,
-      required this.results,
+      required final List<Document> results,
       required this.license,
       required this.version,
-      required this.page});
+      required this.page})
+      : _results = results;
 
   factory _$_FlusmicResponse.fromJson(Map<String, dynamic> json) =>
       _$$_FlusmicResponseFromJson(json);
@@ -290,8 +254,13 @@ class _$_FlusmicResponse implements _FlusmicResponse {
   @override
   @JsonKey(name: 'total_results_size')
   final int totalResultsSize;
+  final List<Document> _results;
   @override
-  final List<Document> results;
+  List<Document> get results {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_results);
+  }
+
   @override
   final String license;
   @override
@@ -325,6 +294,7 @@ class _$_FlusmicResponse implements _FlusmicResponse {
             const DeepCollectionEquality().equals(other.page, page));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -352,46 +322,46 @@ class _$_FlusmicResponse implements _FlusmicResponse {
 
 abstract class _FlusmicResponse implements FlusmicResponse {
   factory _FlusmicResponse(
-      {@JsonKey(name: 'next_page') String? nextPage,
-      @JsonKey(name: 'prev_page') String? prevPage,
-      @JsonKey(name: 'results_per_page') required int resultsPerPage,
-      @JsonKey(name: 'results_size') required int resultsSize,
-      @JsonKey(name: 'total_pages') required int totalPages,
-      @JsonKey(name: 'total_results_size') required int totalResultsSize,
-      required List<Document> results,
-      required String license,
-      required String version,
-      required int page}) = _$_FlusmicResponse;
+      {@JsonKey(name: 'next_page') final String? nextPage,
+      @JsonKey(name: 'prev_page') final String? prevPage,
+      @JsonKey(name: 'results_per_page') required final int resultsPerPage,
+      @JsonKey(name: 'results_size') required final int resultsSize,
+      @JsonKey(name: 'total_pages') required final int totalPages,
+      @JsonKey(name: 'total_results_size') required final int totalResultsSize,
+      required final List<Document> results,
+      required final String license,
+      required final String version,
+      required final int page}) = _$_FlusmicResponse;
 
   factory _FlusmicResponse.fromJson(Map<String, dynamic> json) =
       _$_FlusmicResponse.fromJson;
 
   @override
   @JsonKey(name: 'next_page')
-  String? get nextPage;
+  String? get nextPage => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'prev_page')
-  String? get prevPage;
+  String? get prevPage => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'results_per_page')
-  int get resultsPerPage;
+  int get resultsPerPage => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'results_size')
-  int get resultsSize;
+  int get resultsSize => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'total_pages')
-  int get totalPages;
+  int get totalPages => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'total_results_size')
-  int get totalResultsSize;
+  int get totalResultsSize => throw _privateConstructorUsedError;
   @override
-  List<Document> get results;
+  List<Document> get results => throw _privateConstructorUsedError;
   @override
-  String get license;
+  String get license => throw _privateConstructorUsedError;
   @override
-  String get version;
+  String get version => throw _privateConstructorUsedError;
   @override
-  int get page;
+  int get page => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$FlusmicResponseCopyWith<_FlusmicResponse> get copyWith =>

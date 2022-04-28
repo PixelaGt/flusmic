@@ -12,7 +12,7 @@ part of 'linkeable.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Linkeable _$LinkeableFromJson(Map<String, dynamic> json) {
   switch (json['link_type']) {
@@ -28,58 +28,6 @@ Linkeable _$LinkeableFromJson(Map<String, dynamic> json) {
           'Invalid union type "${json['link_type']}"!');
   }
 }
-
-/// @nodoc
-class _$LinkeableTearOff {
-  const _$LinkeableTearOff();
-
-  DocumentLinkeable document(
-      {@JsonKey(name: 'type') required String documentType,
-      required List<String> tags,
-      required String id,
-      required String lang,
-      required String slug,
-      required bool isBroken}) {
-    return DocumentLinkeable(
-      documentType: documentType,
-      tags: tags,
-      id: id,
-      lang: lang,
-      slug: slug,
-      isBroken: isBroken,
-    );
-  }
-
-  MediaLinkeable media(
-      {String? height,
-      String? width,
-      String? kind,
-      String? name,
-      String? size,
-      String? url}) {
-    return MediaLinkeable(
-      height: height,
-      width: width,
-      kind: kind,
-      name: name,
-      size: size,
-      url: url,
-    );
-  }
-
-  WebLinkeable web({required String url}) {
-    return WebLinkeable(
-      url: url,
-    );
-  }
-
-  Linkeable fromJson(Map<String, Object?> json) {
-    return Linkeable.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Linkeable = _$LinkeableTearOff();
 
 /// @nodoc
 mixin _$Linkeable {
@@ -237,26 +185,32 @@ class _$DocumentLinkeableCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-@FreezedUnionValue('Document')
 class _$DocumentLinkeable implements DocumentLinkeable {
   const _$DocumentLinkeable(
       {@JsonKey(name: 'type') required this.documentType,
-      required this.tags,
+      required final List<String> tags,
       required this.id,
       required this.lang,
       required this.slug,
       required this.isBroken,
-      String? $type})
-      : $type = $type ?? 'Document';
+      final String? $type})
+      : _tags = tags,
+        $type = $type ?? 'Document';
 
   factory _$DocumentLinkeable.fromJson(Map<String, dynamic> json) =>
       _$$DocumentLinkeableFromJson(json);
 
-  @override // @JsonKey(name: 'link_type') required String linkType,
+// @JsonKey(name: 'link_type') required String linkType,
+  @override
   @JsonKey(name: 'type')
   final String documentType;
+  final List<String> _tags;
   @override
-  final List<String> tags;
+  List<String> get tags {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_tags);
+  }
+
   @override
   final String id;
   @override
@@ -288,6 +242,7 @@ class _$DocumentLinkeable implements DocumentLinkeable {
             const DeepCollectionEquality().equals(other.isBroken, isBroken));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -406,24 +361,24 @@ class _$DocumentLinkeable implements DocumentLinkeable {
 
 abstract class DocumentLinkeable implements Linkeable {
   const factory DocumentLinkeable(
-      {@JsonKey(name: 'type') required String documentType,
-      required List<String> tags,
-      required String id,
-      required String lang,
-      required String slug,
-      required bool isBroken}) = _$DocumentLinkeable;
+      {@JsonKey(name: 'type') required final String documentType,
+      required final List<String> tags,
+      required final String id,
+      required final String lang,
+      required final String slug,
+      required final bool isBroken}) = _$DocumentLinkeable;
 
   factory DocumentLinkeable.fromJson(Map<String, dynamic> json) =
       _$DocumentLinkeable.fromJson;
 
 // @JsonKey(name: 'link_type') required String linkType,
   @JsonKey(name: 'type')
-  String get documentType;
-  List<String> get tags;
-  String get id;
-  String get lang;
-  String get slug;
-  bool get isBroken;
+  String get documentType => throw _privateConstructorUsedError;
+  List<String> get tags => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
+  String get lang => throw _privateConstructorUsedError;
+  String get slug => throw _privateConstructorUsedError;
+  bool get isBroken => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $DocumentLinkeableCopyWith<DocumentLinkeable> get copyWith =>
       throw _privateConstructorUsedError;
@@ -493,7 +448,6 @@ class _$MediaLinkeableCopyWithImpl<$Res> extends _$LinkeableCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-@FreezedUnionValue('Media')
 class _$MediaLinkeable implements MediaLinkeable {
   const _$MediaLinkeable(
       {this.height,
@@ -502,13 +456,14 @@ class _$MediaLinkeable implements MediaLinkeable {
       this.name,
       this.size,
       this.url,
-      String? $type})
+      final String? $type})
       : $type = $type ?? 'Media';
 
   factory _$MediaLinkeable.fromJson(Map<String, dynamic> json) =>
       _$$MediaLinkeableFromJson(json);
 
-  @override // @JsonKey(name: 'link_type') required String linkType,
+// @JsonKey(name: 'link_type') required String linkType,
+  @override
   final String? height;
   @override
   final String? width;
@@ -542,6 +497,7 @@ class _$MediaLinkeable implements MediaLinkeable {
             const DeepCollectionEquality().equals(other.url, url));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -660,23 +616,23 @@ class _$MediaLinkeable implements MediaLinkeable {
 
 abstract class MediaLinkeable implements Linkeable {
   const factory MediaLinkeable(
-      {String? height,
-      String? width,
-      String? kind,
-      String? name,
-      String? size,
-      String? url}) = _$MediaLinkeable;
+      {final String? height,
+      final String? width,
+      final String? kind,
+      final String? name,
+      final String? size,
+      final String? url}) = _$MediaLinkeable;
 
   factory MediaLinkeable.fromJson(Map<String, dynamic> json) =
       _$MediaLinkeable.fromJson;
 
 // @JsonKey(name: 'link_type') required String linkType,
-  String? get height;
-  String? get width;
-  String? get kind;
-  String? get name;
-  String? get size;
-  String? get url;
+  String? get height => throw _privateConstructorUsedError;
+  String? get width => throw _privateConstructorUsedError;
+  String? get kind => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
+  String? get size => throw _privateConstructorUsedError;
+  String? get url => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $MediaLinkeableCopyWith<MediaLinkeable> get copyWith =>
       throw _privateConstructorUsedError;
@@ -715,15 +671,15 @@ class _$WebLinkeableCopyWithImpl<$Res> extends _$LinkeableCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-@FreezedUnionValue('Web')
 class _$WebLinkeable implements WebLinkeable {
-  const _$WebLinkeable({required this.url, String? $type})
+  const _$WebLinkeable({required this.url, final String? $type})
       : $type = $type ?? 'Web';
 
   factory _$WebLinkeable.fromJson(Map<String, dynamic> json) =>
       _$$WebLinkeableFromJson(json);
 
-  @override // @JsonKey(name: 'link_type') required String linkType,
+// @JsonKey(name: 'link_type') required String linkType,
+  @override
   final String url;
 
   @JsonKey(name: 'link_type')
@@ -742,6 +698,7 @@ class _$WebLinkeable implements WebLinkeable {
             const DeepCollectionEquality().equals(other.url, url));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(url));
@@ -853,13 +810,13 @@ class _$WebLinkeable implements WebLinkeable {
 }
 
 abstract class WebLinkeable implements Linkeable {
-  const factory WebLinkeable({required String url}) = _$WebLinkeable;
+  const factory WebLinkeable({required final String url}) = _$WebLinkeable;
 
   factory WebLinkeable.fromJson(Map<String, dynamic> json) =
       _$WebLinkeable.fromJson;
 
 // @JsonKey(name: 'link_type') required String linkType,
-  String get url;
+  String get url => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $WebLinkeableCopyWith<WebLinkeable> get copyWith =>
       throw _privateConstructorUsedError;

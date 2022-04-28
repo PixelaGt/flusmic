@@ -12,31 +12,11 @@ part of 'span.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Span _$SpanFromJson(Map<String, dynamic> json) {
   return _Span.fromJson(json);
 }
-
-/// @nodoc
-class _$SpanTearOff {
-  const _$SpanTearOff();
-
-  _Span call({required String type, required int end, required int start}) {
-    return _Span(
-      type: type,
-      end: end,
-      start: start,
-    );
-  }
-
-  Span fromJson(Map<String, Object?> json) {
-    return Span.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Span = _$SpanTearOff();
 
 /// @nodoc
 mixin _$Span {
@@ -156,6 +136,7 @@ class _$_Span implements _Span {
             const DeepCollectionEquality().equals(other.start, start));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -175,17 +156,19 @@ class _$_Span implements _Span {
 }
 
 abstract class _Span implements Span {
-  factory _Span({required String type, required int end, required int start}) =
-      _$_Span;
+  factory _Span(
+      {required final String type,
+      required final int end,
+      required final int start}) = _$_Span;
 
   factory _Span.fromJson(Map<String, dynamic> json) = _$_Span.fromJson;
 
   @override
-  String get type;
+  String get type => throw _privateConstructorUsedError;
   @override
-  int get end;
+  int get end => throw _privateConstructorUsedError;
   @override
-  int get start;
+  int get start => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$SpanCopyWith<_Span> get copyWith => throw _privateConstructorUsedError;

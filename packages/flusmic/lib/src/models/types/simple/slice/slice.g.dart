@@ -8,13 +8,30 @@ part of 'slice.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Slice _$$_SliceFromJson(Map<String, dynamic> json) => _$_Slice(
-      sliceLabel: json['slice_label'] as String?,
-      sliceType: json['slice_type'] as String?,
-      items: (json['items'] as List<dynamic>?)
-          ?.map((e) => e as Map<String, dynamic>)
-          .toList(),
-      primary: json['primary'] as Map<String, dynamic>?,
+_$_Slice _$$_SliceFromJson(Map json) => $checkedCreate(
+      r'_$_Slice',
+      json,
+      ($checkedConvert) {
+        final val = _$_Slice(
+          sliceLabel: $checkedConvert('slice_label', (v) => v as String?),
+          sliceType: $checkedConvert('slice_type', (v) => v as String?),
+          items: $checkedConvert(
+              'items',
+              (v) => (v as List<dynamic>?)
+                  ?.map((e) => Map<String, dynamic>.from(e as Map))
+                  .toList()),
+          primary: $checkedConvert(
+              'primary',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+      fieldKeyMap: const {
+        'sliceLabel': 'slice_label',
+        'sliceType': 'slice_type'
+      },
     );
 
 Map<String, dynamic> _$$_SliceToJson(_$_Slice instance) => <String, dynamic>{

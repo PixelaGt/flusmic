@@ -12,56 +12,11 @@ part of 'document.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Document _$DocumentFromJson(Map<String, dynamic> json) {
   return _Document.fromJson(json);
 }
-
-/// @nodoc
-class _$DocumentTearOff {
-  const _$DocumentTearOff();
-
-  _Document call(
-      {@JsonKey(name: 'alternate_languages')
-          List<AlternateLanguage>? alternateLanguages,
-      @JsonKey(name: 'first_publication_date')
-          String? firstPublicationDate,
-      @JsonKey(name: 'last_publication_date')
-          String? lastPublicationDate,
-      @JsonKey(name: 'linked_documents')
-          List<String>? linkedDocuments,
-      required List<String> tags,
-      required String id,
-      required String lang,
-      required String type,
-      Map<String, dynamic>? data,
-      List<String>? slugs,
-      String? href,
-      String? uid}) {
-    return _Document(
-      alternateLanguages: alternateLanguages,
-      firstPublicationDate: firstPublicationDate,
-      lastPublicationDate: lastPublicationDate,
-      linkedDocuments: linkedDocuments,
-      tags: tags,
-      id: id,
-      lang: lang,
-      type: type,
-      data: data,
-      slugs: slugs,
-      href: href,
-      uid: uid,
-    );
-  }
-
-  Document fromJson(Map<String, Object?> json) {
-    return Document.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Document = _$DocumentTearOff();
 
 /// @nodoc
 mixin _$Document {
@@ -293,46 +248,90 @@ class __$DocumentCopyWithImpl<$Res> extends _$DocumentCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_Document implements _Document {
   _$_Document(
-      {@JsonKey(name: 'alternate_languages') this.alternateLanguages,
-      @JsonKey(name: 'first_publication_date') this.firstPublicationDate,
-      @JsonKey(name: 'last_publication_date') this.lastPublicationDate,
-      @JsonKey(name: 'linked_documents') this.linkedDocuments,
-      required this.tags,
+      {@JsonKey(name: 'alternate_languages')
+          final List<AlternateLanguage>? alternateLanguages,
+      @JsonKey(name: 'first_publication_date')
+          this.firstPublicationDate,
+      @JsonKey(name: 'last_publication_date')
+          this.lastPublicationDate,
+      @JsonKey(name: 'linked_documents')
+          final List<String>? linkedDocuments,
+      required final List<String> tags,
       required this.id,
       required this.lang,
       required this.type,
-      this.data,
-      this.slugs,
+      final Map<String, dynamic>? data,
+      final List<String>? slugs,
       this.href,
-      this.uid});
+      this.uid})
+      : _alternateLanguages = alternateLanguages,
+        _linkedDocuments = linkedDocuments,
+        _tags = tags,
+        _data = data,
+        _slugs = slugs;
 
   factory _$_Document.fromJson(Map<String, dynamic> json) =>
       _$$_DocumentFromJson(json);
 
+  @JsonKey(name: 'alternate_languages')
+  final List<AlternateLanguage>? _alternateLanguages;
   @override
   @JsonKey(name: 'alternate_languages')
-  final List<AlternateLanguage>? alternateLanguages;
+  List<AlternateLanguage>? get alternateLanguages {
+    final value = _alternateLanguages;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   @JsonKey(name: 'first_publication_date')
   final String? firstPublicationDate;
   @override
   @JsonKey(name: 'last_publication_date')
   final String? lastPublicationDate;
+  @JsonKey(name: 'linked_documents')
+  final List<String>? _linkedDocuments;
   @override
   @JsonKey(name: 'linked_documents')
-  final List<String>? linkedDocuments;
+  List<String>? get linkedDocuments {
+    final value = _linkedDocuments;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<String> _tags;
   @override
-  final List<String> tags;
+  List<String> get tags {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_tags);
+  }
+
   @override
   final String id;
   @override
   final String lang;
   @override
   final String type;
+  final Map<String, dynamic>? _data;
   @override
-  final Map<String, dynamic>? data;
+  Map<String, dynamic>? get data {
+    final value = _data;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
+  final List<String>? _slugs;
   @override
-  final List<String>? slugs;
+  List<String>? get slugs {
+    final value = _slugs;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   final String? href;
   @override
@@ -366,6 +365,7 @@ class _$_Document implements _Document {
             const DeepCollectionEquality().equals(other.uid, uid));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -396,52 +396,53 @@ class _$_Document implements _Document {
 abstract class _Document implements Document {
   factory _Document(
       {@JsonKey(name: 'alternate_languages')
-          List<AlternateLanguage>? alternateLanguages,
+          final List<AlternateLanguage>? alternateLanguages,
       @JsonKey(name: 'first_publication_date')
-          String? firstPublicationDate,
+          final String? firstPublicationDate,
       @JsonKey(name: 'last_publication_date')
-          String? lastPublicationDate,
+          final String? lastPublicationDate,
       @JsonKey(name: 'linked_documents')
-          List<String>? linkedDocuments,
-      required List<String> tags,
-      required String id,
-      required String lang,
-      required String type,
-      Map<String, dynamic>? data,
-      List<String>? slugs,
-      String? href,
-      String? uid}) = _$_Document;
+          final List<String>? linkedDocuments,
+      required final List<String> tags,
+      required final String id,
+      required final String lang,
+      required final String type,
+      final Map<String, dynamic>? data,
+      final List<String>? slugs,
+      final String? href,
+      final String? uid}) = _$_Document;
 
   factory _Document.fromJson(Map<String, dynamic> json) = _$_Document.fromJson;
 
   @override
   @JsonKey(name: 'alternate_languages')
-  List<AlternateLanguage>? get alternateLanguages;
+  List<AlternateLanguage>? get alternateLanguages =>
+      throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'first_publication_date')
-  String? get firstPublicationDate;
+  String? get firstPublicationDate => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'last_publication_date')
-  String? get lastPublicationDate;
+  String? get lastPublicationDate => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'linked_documents')
-  List<String>? get linkedDocuments;
+  List<String>? get linkedDocuments => throw _privateConstructorUsedError;
   @override
-  List<String> get tags;
+  List<String> get tags => throw _privateConstructorUsedError;
   @override
-  String get id;
+  String get id => throw _privateConstructorUsedError;
   @override
-  String get lang;
+  String get lang => throw _privateConstructorUsedError;
   @override
-  String get type;
+  String get type => throw _privateConstructorUsedError;
   @override
-  Map<String, dynamic>? get data;
+  Map<String, dynamic>? get data => throw _privateConstructorUsedError;
   @override
-  List<String>? get slugs;
+  List<String>? get slugs => throw _privateConstructorUsedError;
   @override
-  String? get href;
+  String? get href => throw _privateConstructorUsedError;
   @override
-  String? get uid;
+  String? get uid => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$DocumentCopyWith<_Document> get copyWith =>

@@ -12,30 +12,11 @@ part of 'dimension.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Dimension _$DimensionFromJson(Map<String, dynamic> json) {
   return _Dimension.fromJson(json);
 }
-
-/// @nodoc
-class _$DimensionTearOff {
-  const _$DimensionTearOff();
-
-  _Dimension call({required double height, required double width}) {
-    return _Dimension(
-      height: height,
-      width: width,
-    );
-  }
-
-  Dimension fromJson(Map<String, Object?> json) {
-    return Dimension.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Dimension = _$DimensionTearOff();
 
 /// @nodoc
 mixin _$Dimension {
@@ -144,6 +125,7 @@ class _$_Dimension implements _Dimension {
             const DeepCollectionEquality().equals(other.width, width));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -162,16 +144,17 @@ class _$_Dimension implements _Dimension {
 }
 
 abstract class _Dimension implements Dimension {
-  factory _Dimension({required double height, required double width}) =
-      _$_Dimension;
+  factory _Dimension(
+      {required final double height,
+      required final double width}) = _$_Dimension;
 
   factory _Dimension.fromJson(Map<String, dynamic> json) =
       _$_Dimension.fromJson;
 
   @override
-  double get height;
+  double get height => throw _privateConstructorUsedError;
   @override
-  double get width;
+  double get width => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$DimensionCopyWith<_Dimension> get copyWith =>

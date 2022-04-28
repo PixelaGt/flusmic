@@ -12,36 +12,11 @@ part of 'ref.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Ref _$RefFromJson(Map<String, dynamic> json) {
   return _Ref.fromJson(json);
 }
-
-/// @nodoc
-class _$RefTearOff {
-  const _$RefTearOff();
-
-  _Ref call(
-      {required String id,
-      required String label,
-      required String ref,
-      required bool isMasterRef}) {
-    return _Ref(
-      id: id,
-      label: label,
-      ref: ref,
-      isMasterRef: isMasterRef,
-    );
-  }
-
-  Ref fromJson(Map<String, Object?> json) {
-    return Ref.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Ref = _$RefTearOff();
 
 /// @nodoc
 mixin _$Ref {
@@ -180,6 +155,7 @@ class _$_Ref implements _Ref {
                 .equals(other.isMasterRef, isMasterRef));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -201,21 +177,21 @@ class _$_Ref implements _Ref {
 
 abstract class _Ref implements Ref {
   factory _Ref(
-      {required String id,
-      required String label,
-      required String ref,
-      required bool isMasterRef}) = _$_Ref;
+      {required final String id,
+      required final String label,
+      required final String ref,
+      required final bool isMasterRef}) = _$_Ref;
 
   factory _Ref.fromJson(Map<String, dynamic> json) = _$_Ref.fromJson;
 
   @override
-  String get id;
+  String get id => throw _privateConstructorUsedError;
   @override
-  String get label;
+  String get label => throw _privateConstructorUsedError;
   @override
-  String get ref;
+  String get ref => throw _privateConstructorUsedError;
   @override
-  bool get isMasterRef;
+  bool get isMasterRef => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$RefCopyWith<_Ref> get copyWith => throw _privateConstructorUsedError;

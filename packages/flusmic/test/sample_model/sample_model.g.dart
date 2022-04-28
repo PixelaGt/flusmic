@@ -8,22 +8,42 @@ part of 'sample_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_SampleModel _$$_SampleModelFromJson(Map<String, dynamic> json) =>
-    _$_SampleModel(
-      location: Geopoint.fromJson(json['location'] as Map<String, dynamic>),
-      link: Linkeable.fromJson(json['link'] as Map<String, dynamic>),
-      linked: Linkeable.fromJson(json['linked'] as Map<String, dynamic>),
-      media: Linkeable.fromJson(json['media'] as Map<String, dynamic>),
-      content: (json['content'] as List<dynamic>)
-          .map((e) => Richable.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      title: (json['title'] as List<dynamic>)
-          .map((e) => SimpleText.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      body: (json['body'] as List<dynamic>)
-          .map((e) => Slice.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      image: SimpleImage.fromJson(json['image'] as Map<String, dynamic>),
+_$_SampleModel _$$_SampleModelFromJson(Map json) => $checkedCreate(
+      r'_$_SampleModel',
+      json,
+      ($checkedConvert) {
+        final val = _$_SampleModel(
+          location: $checkedConvert('location',
+              (v) => Geopoint.fromJson(Map<String, dynamic>.from(v as Map))),
+          link: $checkedConvert('link',
+              (v) => Linkeable.fromJson(Map<String, dynamic>.from(v as Map))),
+          linked: $checkedConvert('linked',
+              (v) => Linkeable.fromJson(Map<String, dynamic>.from(v as Map))),
+          media: $checkedConvert('media',
+              (v) => Linkeable.fromJson(Map<String, dynamic>.from(v as Map))),
+          content: $checkedConvert(
+              'content',
+              (v) => (v as List<dynamic>)
+                  .map((e) =>
+                      Richable.fromJson(Map<String, dynamic>.from(e as Map)))
+                  .toList()),
+          title: $checkedConvert(
+              'title',
+              (v) => (v as List<dynamic>)
+                  .map((e) =>
+                      SimpleText.fromJson(Map<String, dynamic>.from(e as Map)))
+                  .toList()),
+          body: $checkedConvert(
+              'body',
+              (v) => (v as List<dynamic>)
+                  .map((e) =>
+                      Slice.fromJson(Map<String, dynamic>.from(e as Map)))
+                  .toList()),
+          image: $checkedConvert('image',
+              (v) => SimpleImage.fromJson(Map<String, dynamic>.from(v as Map))),
+        );
+        return val;
+      },
     );
 
 Map<String, dynamic> _$$_SampleModelToJson(_$_SampleModel instance) =>

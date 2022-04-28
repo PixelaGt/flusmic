@@ -12,220 +12,7 @@ part of 'predicate.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$PredicateTearOff {
-  const _$PredicateTearOff();
-
-  AnyPredicate any(PredicatePath path, List<String> values) {
-    return AnyPredicate(
-      path,
-      values,
-    );
-  }
-
-  AtPredicate at(PredicatePath path, String value) {
-    return AtPredicate(
-      path,
-      value,
-    );
-  }
-
-  FullTextPredicate fullText(PredicatePath path, String value) {
-    return FullTextPredicate(
-      path,
-      value,
-    );
-  }
-
-  GtPredicate gt(PredicatePath path, double value) {
-    return GtPredicate(
-      path,
-      value,
-    );
-  }
-
-  HasPredicate has(PredicatePath path) {
-    return HasPredicate(
-      path,
-    );
-  }
-
-  InRangePredicate inRange(
-      PredicatePath path, double lowerLimit, double upperLimit) {
-    return InRangePredicate(
-      path,
-      lowerLimit,
-      upperLimit,
-    );
-  }
-
-  InPredicate into(PredicatePath path, List<String> values) {
-    return InPredicate(
-      path,
-      values,
-    );
-  }
-
-  LtPredicate lt(PredicatePath path, double value) {
-    return LtPredicate(
-      path,
-      value,
-    );
-  }
-
-  MissingPredicate missing(PredicatePath path) {
-    return MissingPredicate(
-      path,
-    );
-  }
-
-  NearPredicate near(
-      PredicatePath path, double latitude, double longitude, double radius) {
-    return NearPredicate(
-      path,
-      latitude,
-      longitude,
-      radius,
-    );
-  }
-
-  NotPredicate not(PredicatePath path, String value) {
-    return NotPredicate(
-      path,
-      value,
-    );
-  }
-
-  SimilarPredicate similar(String id, int value) {
-    return SimilarPredicate(
-      id,
-      value,
-    );
-  }
-
-  DateAfterPredicate dateAfter(PredicatePath path, int epoch) {
-    return DateAfterPredicate(
-      path,
-      epoch,
-    );
-  }
-
-  DateBeforePredicate dateBefore(PredicatePath path, int epoch) {
-    return DateBeforePredicate(
-      path,
-      epoch,
-    );
-  }
-
-  DateBetweenPredicate dateBetween(
-      PredicatePath path, int startEpoch, int endEpoch) {
-    return DateBetweenPredicate(
-      path,
-      startEpoch,
-      endEpoch,
-    );
-  }
-
-  DateDayOfMonthPredicate dateDayOfMonth(PredicatePath path, int day) {
-    return DateDayOfMonthPredicate(
-      path,
-      day,
-    );
-  }
-
-  DateDayOfMonthAfterPredicate dateDayOfMonthAfter(
-      PredicatePath path, int day) {
-    return DateDayOfMonthAfterPredicate(
-      path,
-      day,
-    );
-  }
-
-  DateDayOfMonthBeforePredicate dateDayOfMonthBefore(
-      PredicatePath path, int day) {
-    return DateDayOfMonthBeforePredicate(
-      path,
-      day,
-    );
-  }
-
-  DateDayOfWeekPredicate dateDayOfWeek(PredicatePath path, String day) {
-    return DateDayOfWeekPredicate(
-      path,
-      day,
-    );
-  }
-
-  DateDayOfWeekAfterPredicate dateDayOfWeekAfter(
-      PredicatePath path, String day) {
-    return DateDayOfWeekAfterPredicate(
-      path,
-      day,
-    );
-  }
-
-  DateDayOfWeekBeforePredicate dateDayOfWeekBefore(
-      PredicatePath path, String day) {
-    return DateDayOfWeekBeforePredicate(
-      path,
-      day,
-    );
-  }
-
-  DateMonthPredicate dateMonth(PredicatePath path, String month) {
-    return DateMonthPredicate(
-      path,
-      month,
-    );
-  }
-
-  DateMonthAfterPredicate dateMonthAfter(PredicatePath path, String month) {
-    return DateMonthAfterPredicate(
-      path,
-      month,
-    );
-  }
-
-  DateMonthBeforePredicate dateMonthBefore(PredicatePath path, String month) {
-    return DateMonthBeforePredicate(
-      path,
-      month,
-    );
-  }
-
-  DateYearPredicate dateYear(PredicatePath path, int year) {
-    return DateYearPredicate(
-      path,
-      year,
-    );
-  }
-
-  DateHourPredicate hour(PredicatePath path, int hour) {
-    return DateHourPredicate(
-      path,
-      hour,
-    );
-  }
-
-  DateHourAfterPredicate hourAfter(PredicatePath path, int hour) {
-    return DateHourAfterPredicate(
-      path,
-      hour,
-    );
-  }
-
-  DateHourBeforePredicate hourBefore(PredicatePath path, int hour) {
-    return DateHourBeforePredicate(
-      path,
-      hour,
-    );
-  }
-}
-
-/// @nodoc
-const $Predicate = _$PredicateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$Predicate {
@@ -498,12 +285,16 @@ class _$AnyPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$AnyPredicate implements AnyPredicate {
-  _$AnyPredicate(this.path, this.values);
+  _$AnyPredicate(this.path, final List<String> values) : _values = values;
 
   @override
   final PredicatePath path;
+  final List<String> _values;
   @override
-  final List<String> values;
+  List<String> get values {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_values);
+  }
 
   @override
   String toString() {
@@ -769,11 +560,11 @@ class _$AnyPredicate implements AnyPredicate {
 }
 
 abstract class AnyPredicate implements Predicate {
-  factory AnyPredicate(PredicatePath path, List<String> values) =
+  factory AnyPredicate(final PredicatePath path, final List<String> values) =
       _$AnyPredicate;
 
-  PredicatePath get path;
-  List<String> get values;
+  PredicatePath get path => throw _privateConstructorUsedError;
+  List<String> get values => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $AnyPredicateCopyWith<AnyPredicate> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1089,10 +880,11 @@ class _$AtPredicate implements AtPredicate {
 }
 
 abstract class AtPredicate implements Predicate {
-  factory AtPredicate(PredicatePath path, String value) = _$AtPredicate;
+  factory AtPredicate(final PredicatePath path, final String value) =
+      _$AtPredicate;
 
-  PredicatePath get path;
-  String get value;
+  PredicatePath get path => throw _privateConstructorUsedError;
+  String get value => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $AtPredicateCopyWith<AtPredicate> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1409,11 +1201,11 @@ class _$FullTextPredicate implements FullTextPredicate {
 }
 
 abstract class FullTextPredicate implements Predicate {
-  factory FullTextPredicate(PredicatePath path, String value) =
+  factory FullTextPredicate(final PredicatePath path, final String value) =
       _$FullTextPredicate;
 
-  PredicatePath get path;
-  String get value;
+  PredicatePath get path => throw _privateConstructorUsedError;
+  String get value => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $FullTextPredicateCopyWith<FullTextPredicate> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1729,10 +1521,11 @@ class _$GtPredicate implements GtPredicate {
 }
 
 abstract class GtPredicate implements Predicate {
-  factory GtPredicate(PredicatePath path, double value) = _$GtPredicate;
+  factory GtPredicate(final PredicatePath path, final double value) =
+      _$GtPredicate;
 
-  PredicatePath get path;
-  double get value;
+  PredicatePath get path => throw _privateConstructorUsedError;
+  double get value => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $GtPredicateCopyWith<GtPredicate> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2038,9 +1831,9 @@ class _$HasPredicate implements HasPredicate {
 }
 
 abstract class HasPredicate implements Predicate {
-  factory HasPredicate(PredicatePath path) = _$HasPredicate;
+  factory HasPredicate(final PredicatePath path) = _$HasPredicate;
 
-  PredicatePath get path;
+  PredicatePath get path => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $HasPredicateCopyWith<HasPredicate> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2367,13 +2160,12 @@ class _$InRangePredicate implements InRangePredicate {
 }
 
 abstract class InRangePredicate implements Predicate {
-  factory InRangePredicate(
-          PredicatePath path, double lowerLimit, double upperLimit) =
-      _$InRangePredicate;
+  factory InRangePredicate(final PredicatePath path, final double lowerLimit,
+      final double upperLimit) = _$InRangePredicate;
 
-  PredicatePath get path;
-  double get lowerLimit;
-  double get upperLimit;
+  PredicatePath get path => throw _privateConstructorUsedError;
+  double get lowerLimit => throw _privateConstructorUsedError;
+  double get upperLimit => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $InRangePredicateCopyWith<InRangePredicate> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2418,12 +2210,16 @@ class _$InPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$InPredicate implements InPredicate {
-  _$InPredicate(this.path, this.values);
+  _$InPredicate(this.path, final List<String> values) : _values = values;
 
   @override
   final PredicatePath path;
+  final List<String> _values;
   @override
-  final List<String> values;
+  List<String> get values {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_values);
+  }
 
   @override
   String toString() {
@@ -2689,10 +2485,11 @@ class _$InPredicate implements InPredicate {
 }
 
 abstract class InPredicate implements Predicate {
-  factory InPredicate(PredicatePath path, List<String> values) = _$InPredicate;
+  factory InPredicate(final PredicatePath path, final List<String> values) =
+      _$InPredicate;
 
-  PredicatePath get path;
-  List<String> get values;
+  PredicatePath get path => throw _privateConstructorUsedError;
+  List<String> get values => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $InPredicateCopyWith<InPredicate> get copyWith =>
       throw _privateConstructorUsedError;
@@ -3008,10 +2805,11 @@ class _$LtPredicate implements LtPredicate {
 }
 
 abstract class LtPredicate implements Predicate {
-  factory LtPredicate(PredicatePath path, double value) = _$LtPredicate;
+  factory LtPredicate(final PredicatePath path, final double value) =
+      _$LtPredicate;
 
-  PredicatePath get path;
-  double get value;
+  PredicatePath get path => throw _privateConstructorUsedError;
+  double get value => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $LtPredicateCopyWith<LtPredicate> get copyWith =>
       throw _privateConstructorUsedError;
@@ -3317,9 +3115,9 @@ class _$MissingPredicate implements MissingPredicate {
 }
 
 abstract class MissingPredicate implements Predicate {
-  factory MissingPredicate(PredicatePath path) = _$MissingPredicate;
+  factory MissingPredicate(final PredicatePath path) = _$MissingPredicate;
 
-  PredicatePath get path;
+  PredicatePath get path => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $MissingPredicateCopyWith<MissingPredicate> get copyWith =>
       throw _privateConstructorUsedError;
@@ -3654,13 +3452,13 @@ class _$NearPredicate implements NearPredicate {
 }
 
 abstract class NearPredicate implements Predicate {
-  factory NearPredicate(PredicatePath path, double latitude, double longitude,
-      double radius) = _$NearPredicate;
+  factory NearPredicate(final PredicatePath path, final double latitude,
+      final double longitude, final double radius) = _$NearPredicate;
 
-  PredicatePath get path;
-  double get latitude;
-  double get longitude;
-  double get radius;
+  PredicatePath get path => throw _privateConstructorUsedError;
+  double get latitude => throw _privateConstructorUsedError;
+  double get longitude => throw _privateConstructorUsedError;
+  double get radius => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $NearPredicateCopyWith<NearPredicate> get copyWith =>
       throw _privateConstructorUsedError;
@@ -3976,10 +3774,11 @@ class _$NotPredicate implements NotPredicate {
 }
 
 abstract class NotPredicate implements Predicate {
-  factory NotPredicate(PredicatePath path, String value) = _$NotPredicate;
+  factory NotPredicate(final PredicatePath path, final String value) =
+      _$NotPredicate;
 
-  PredicatePath get path;
-  String get value;
+  PredicatePath get path => throw _privateConstructorUsedError;
+  String get value => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $NotPredicateCopyWith<NotPredicate> get copyWith =>
       throw _privateConstructorUsedError;
@@ -4295,10 +4094,11 @@ class _$SimilarPredicate implements SimilarPredicate {
 }
 
 abstract class SimilarPredicate implements Predicate {
-  factory SimilarPredicate(String id, int value) = _$SimilarPredicate;
+  factory SimilarPredicate(final String id, final int value) =
+      _$SimilarPredicate;
 
-  String get id;
-  int get value;
+  String get id => throw _privateConstructorUsedError;
+  int get value => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $SimilarPredicateCopyWith<SimilarPredicate> get copyWith =>
       throw _privateConstructorUsedError;
@@ -4615,11 +4415,11 @@ class _$DateAfterPredicate implements DateAfterPredicate {
 }
 
 abstract class DateAfterPredicate implements Predicate {
-  factory DateAfterPredicate(PredicatePath path, int epoch) =
+  factory DateAfterPredicate(final PredicatePath path, final int epoch) =
       _$DateAfterPredicate;
 
-  PredicatePath get path;
-  int get epoch;
+  PredicatePath get path => throw _privateConstructorUsedError;
+  int get epoch => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $DateAfterPredicateCopyWith<DateAfterPredicate> get copyWith =>
       throw _privateConstructorUsedError;
@@ -4936,11 +4736,11 @@ class _$DateBeforePredicate implements DateBeforePredicate {
 }
 
 abstract class DateBeforePredicate implements Predicate {
-  factory DateBeforePredicate(PredicatePath path, int epoch) =
+  factory DateBeforePredicate(final PredicatePath path, final int epoch) =
       _$DateBeforePredicate;
 
-  PredicatePath get path;
-  int get epoch;
+  PredicatePath get path => throw _privateConstructorUsedError;
+  int get epoch => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $DateBeforePredicateCopyWith<DateBeforePredicate> get copyWith =>
       throw _privateConstructorUsedError;
@@ -5269,12 +5069,12 @@ class _$DateBetweenPredicate implements DateBetweenPredicate {
 
 abstract class DateBetweenPredicate implements Predicate {
   factory DateBetweenPredicate(
-          PredicatePath path, int startEpoch, int endEpoch) =
+          final PredicatePath path, final int startEpoch, final int endEpoch) =
       _$DateBetweenPredicate;
 
-  PredicatePath get path;
-  int get startEpoch;
-  int get endEpoch;
+  PredicatePath get path => throw _privateConstructorUsedError;
+  int get startEpoch => throw _privateConstructorUsedError;
+  int get endEpoch => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $DateBetweenPredicateCopyWith<DateBetweenPredicate> get copyWith =>
       throw _privateConstructorUsedError;
@@ -5592,11 +5392,11 @@ class _$DateDayOfMonthPredicate implements DateDayOfMonthPredicate {
 }
 
 abstract class DateDayOfMonthPredicate implements Predicate {
-  factory DateDayOfMonthPredicate(PredicatePath path, int day) =
+  factory DateDayOfMonthPredicate(final PredicatePath path, final int day) =
       _$DateDayOfMonthPredicate;
 
-  PredicatePath get path;
-  int get day;
+  PredicatePath get path => throw _privateConstructorUsedError;
+  int get day => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $DateDayOfMonthPredicateCopyWith<DateDayOfMonthPredicate> get copyWith =>
       throw _privateConstructorUsedError;
@@ -5917,11 +5717,11 @@ class _$DateDayOfMonthAfterPredicate implements DateDayOfMonthAfterPredicate {
 }
 
 abstract class DateDayOfMonthAfterPredicate implements Predicate {
-  factory DateDayOfMonthAfterPredicate(PredicatePath path, int day) =
-      _$DateDayOfMonthAfterPredicate;
+  factory DateDayOfMonthAfterPredicate(
+      final PredicatePath path, final int day) = _$DateDayOfMonthAfterPredicate;
 
-  PredicatePath get path;
-  int get day;
+  PredicatePath get path => throw _privateConstructorUsedError;
+  int get day => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $DateDayOfMonthAfterPredicateCopyWith<DateDayOfMonthAfterPredicate>
       get copyWith => throw _privateConstructorUsedError;
@@ -6242,11 +6042,12 @@ class _$DateDayOfMonthBeforePredicate implements DateDayOfMonthBeforePredicate {
 }
 
 abstract class DateDayOfMonthBeforePredicate implements Predicate {
-  factory DateDayOfMonthBeforePredicate(PredicatePath path, int day) =
+  factory DateDayOfMonthBeforePredicate(
+          final PredicatePath path, final int day) =
       _$DateDayOfMonthBeforePredicate;
 
-  PredicatePath get path;
-  int get day;
+  PredicatePath get path => throw _privateConstructorUsedError;
+  int get day => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $DateDayOfMonthBeforePredicateCopyWith<DateDayOfMonthBeforePredicate>
       get copyWith => throw _privateConstructorUsedError;
@@ -6564,11 +6365,11 @@ class _$DateDayOfWeekPredicate implements DateDayOfWeekPredicate {
 }
 
 abstract class DateDayOfWeekPredicate implements Predicate {
-  factory DateDayOfWeekPredicate(PredicatePath path, String day) =
+  factory DateDayOfWeekPredicate(final PredicatePath path, final String day) =
       _$DateDayOfWeekPredicate;
 
-  PredicatePath get path;
-  String get day;
+  PredicatePath get path => throw _privateConstructorUsedError;
+  String get day => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $DateDayOfWeekPredicateCopyWith<DateDayOfWeekPredicate> get copyWith =>
       throw _privateConstructorUsedError;
@@ -6888,11 +6689,12 @@ class _$DateDayOfWeekAfterPredicate implements DateDayOfWeekAfterPredicate {
 }
 
 abstract class DateDayOfWeekAfterPredicate implements Predicate {
-  factory DateDayOfWeekAfterPredicate(PredicatePath path, String day) =
+  factory DateDayOfWeekAfterPredicate(
+          final PredicatePath path, final String day) =
       _$DateDayOfWeekAfterPredicate;
 
-  PredicatePath get path;
-  String get day;
+  PredicatePath get path => throw _privateConstructorUsedError;
+  String get day => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $DateDayOfWeekAfterPredicateCopyWith<DateDayOfWeekAfterPredicate>
       get copyWith => throw _privateConstructorUsedError;
@@ -7213,11 +7015,12 @@ class _$DateDayOfWeekBeforePredicate implements DateDayOfWeekBeforePredicate {
 }
 
 abstract class DateDayOfWeekBeforePredicate implements Predicate {
-  factory DateDayOfWeekBeforePredicate(PredicatePath path, String day) =
+  factory DateDayOfWeekBeforePredicate(
+          final PredicatePath path, final String day) =
       _$DateDayOfWeekBeforePredicate;
 
-  PredicatePath get path;
-  String get day;
+  PredicatePath get path => throw _privateConstructorUsedError;
+  String get day => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $DateDayOfWeekBeforePredicateCopyWith<DateDayOfWeekBeforePredicate>
       get copyWith => throw _privateConstructorUsedError;
@@ -7534,11 +7337,11 @@ class _$DateMonthPredicate implements DateMonthPredicate {
 }
 
 abstract class DateMonthPredicate implements Predicate {
-  factory DateMonthPredicate(PredicatePath path, String month) =
+  factory DateMonthPredicate(final PredicatePath path, final String month) =
       _$DateMonthPredicate;
 
-  PredicatePath get path;
-  String get month;
+  PredicatePath get path => throw _privateConstructorUsedError;
+  String get month => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $DateMonthPredicateCopyWith<DateMonthPredicate> get copyWith =>
       throw _privateConstructorUsedError;
@@ -7856,11 +7659,11 @@ class _$DateMonthAfterPredicate implements DateMonthAfterPredicate {
 }
 
 abstract class DateMonthAfterPredicate implements Predicate {
-  factory DateMonthAfterPredicate(PredicatePath path, String month) =
-      _$DateMonthAfterPredicate;
+  factory DateMonthAfterPredicate(
+      final PredicatePath path, final String month) = _$DateMonthAfterPredicate;
 
-  PredicatePath get path;
-  String get month;
+  PredicatePath get path => throw _privateConstructorUsedError;
+  String get month => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $DateMonthAfterPredicateCopyWith<DateMonthAfterPredicate> get copyWith =>
       throw _privateConstructorUsedError;
@@ -8179,11 +7982,12 @@ class _$DateMonthBeforePredicate implements DateMonthBeforePredicate {
 }
 
 abstract class DateMonthBeforePredicate implements Predicate {
-  factory DateMonthBeforePredicate(PredicatePath path, String month) =
+  factory DateMonthBeforePredicate(
+          final PredicatePath path, final String month) =
       _$DateMonthBeforePredicate;
 
-  PredicatePath get path;
-  String get month;
+  PredicatePath get path => throw _privateConstructorUsedError;
+  String get month => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $DateMonthBeforePredicateCopyWith<DateMonthBeforePredicate> get copyWith =>
       throw _privateConstructorUsedError;
@@ -8500,10 +8304,11 @@ class _$DateYearPredicate implements DateYearPredicate {
 }
 
 abstract class DateYearPredicate implements Predicate {
-  factory DateYearPredicate(PredicatePath path, int year) = _$DateYearPredicate;
+  factory DateYearPredicate(final PredicatePath path, final int year) =
+      _$DateYearPredicate;
 
-  PredicatePath get path;
-  int get year;
+  PredicatePath get path => throw _privateConstructorUsedError;
+  int get year => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $DateYearPredicateCopyWith<DateYearPredicate> get copyWith =>
       throw _privateConstructorUsedError;
@@ -8820,10 +8625,11 @@ class _$DateHourPredicate implements DateHourPredicate {
 }
 
 abstract class DateHourPredicate implements Predicate {
-  factory DateHourPredicate(PredicatePath path, int hour) = _$DateHourPredicate;
+  factory DateHourPredicate(final PredicatePath path, final int hour) =
+      _$DateHourPredicate;
 
-  PredicatePath get path;
-  int get hour;
+  PredicatePath get path => throw _privateConstructorUsedError;
+  int get hour => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $DateHourPredicateCopyWith<DateHourPredicate> get copyWith =>
       throw _privateConstructorUsedError;
@@ -9141,11 +8947,11 @@ class _$DateHourAfterPredicate implements DateHourAfterPredicate {
 }
 
 abstract class DateHourAfterPredicate implements Predicate {
-  factory DateHourAfterPredicate(PredicatePath path, int hour) =
+  factory DateHourAfterPredicate(final PredicatePath path, final int hour) =
       _$DateHourAfterPredicate;
 
-  PredicatePath get path;
-  int get hour;
+  PredicatePath get path => throw _privateConstructorUsedError;
+  int get hour => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $DateHourAfterPredicateCopyWith<DateHourAfterPredicate> get copyWith =>
       throw _privateConstructorUsedError;
@@ -9463,11 +9269,11 @@ class _$DateHourBeforePredicate implements DateHourBeforePredicate {
 }
 
 abstract class DateHourBeforePredicate implements Predicate {
-  factory DateHourBeforePredicate(PredicatePath path, int hour) =
+  factory DateHourBeforePredicate(final PredicatePath path, final int hour) =
       _$DateHourBeforePredicate;
 
-  PredicatePath get path;
-  int get hour;
+  PredicatePath get path => throw _privateConstructorUsedError;
+  int get hour => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $DateHourBeforePredicateCopyWith<DateHourBeforePredicate> get copyWith =>
       throw _privateConstructorUsedError;

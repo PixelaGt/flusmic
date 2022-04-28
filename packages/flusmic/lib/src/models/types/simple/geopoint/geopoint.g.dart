@@ -8,9 +8,16 @@ part of 'geopoint.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Geopoint _$$_GeopointFromJson(Map<String, dynamic> json) => _$_Geopoint(
-      latitude: (json['latitude'] as num).toDouble(),
-      longitude: (json['longitude'] as num).toDouble(),
+_$_Geopoint _$$_GeopointFromJson(Map json) => $checkedCreate(
+      r'_$_Geopoint',
+      json,
+      ($checkedConvert) {
+        final val = _$_Geopoint(
+          latitude: $checkedConvert('latitude', (v) => (v as num).toDouble()),
+          longitude: $checkedConvert('longitude', (v) => (v as num).toDouble()),
+        );
+        return val;
+      },
     );
 
 Map<String, dynamic> _$$_GeopointToJson(_$_Geopoint instance) =>

@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flusmic/flusmic.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 /// Flusmic - repository class
 ///
@@ -56,6 +57,8 @@ class Flusmic {
       throw FlusmicError.fromResponse(error.response);
     } on TypeError catch (error) {
       throw FlusmicError.fromError(error);
+    } on CheckedFromJsonException catch (error) {
+      throw FlusmicError.fromException(error);
     }
   }
 
@@ -94,6 +97,8 @@ class Flusmic {
       throw FlusmicError.fromResponse(error.response);
     } on TypeError catch (error) {
       throw FlusmicError.fromError(error);
+    } on CheckedFromJsonException catch (error) {
+      throw FlusmicError.fromException(error);
     }
   }
 
@@ -127,6 +132,8 @@ class Flusmic {
       throw FlusmicError.fromResponse(error.response);
     } on TypeError catch (error) {
       throw FlusmicError.fromError(error);
+    } on CheckedFromJsonException catch (error) {
+      throw FlusmicError.fromException(error);
     }
   }
 
