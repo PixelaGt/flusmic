@@ -12,32 +12,11 @@ part of 'simple_text.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 SimpleText _$SimpleTextFromJson(Map<String, dynamic> json) {
   return _SimpleText.fromJson(json);
 }
-
-/// @nodoc
-class _$SimpleTextTearOff {
-  const _$SimpleTextTearOff();
-
-  _SimpleText call(
-      {required List<Span> spans, required String text, required String type}) {
-    return _SimpleText(
-      spans: spans,
-      text: text,
-      type: type,
-    );
-  }
-
-  SimpleText fromJson(Map<String, Object?> json) {
-    return SimpleText.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $SimpleText = _$SimpleTextTearOff();
 
 /// @nodoc
 mixin _$SimpleText {
@@ -135,13 +114,20 @@ class __$SimpleTextCopyWithImpl<$Res> extends _$SimpleTextCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_SimpleText implements _SimpleText {
-  _$_SimpleText({required this.spans, required this.text, required this.type});
+  _$_SimpleText(
+      {required final List<Span> spans, required this.text, required this.type})
+      : _spans = spans;
 
   factory _$_SimpleText.fromJson(Map<String, dynamic> json) =>
       _$$_SimpleTextFromJson(json);
 
+  final List<Span> _spans;
   @override
-  final List<Span> spans;
+  List<Span> get spans {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_spans);
+  }
+
   @override
   final String text;
   @override
@@ -162,6 +148,7 @@ class _$_SimpleText implements _SimpleText {
             const DeepCollectionEquality().equals(other.type, type));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -182,19 +169,19 @@ class _$_SimpleText implements _SimpleText {
 
 abstract class _SimpleText implements SimpleText {
   factory _SimpleText(
-      {required List<Span> spans,
-      required String text,
-      required String type}) = _$_SimpleText;
+      {required final List<Span> spans,
+      required final String text,
+      required final String type}) = _$_SimpleText;
 
   factory _SimpleText.fromJson(Map<String, dynamic> json) =
       _$_SimpleText.fromJson;
 
   @override
-  List<Span> get spans;
+  List<Span> get spans => throw _privateConstructorUsedError;
   @override
-  String get text;
+  String get text => throw _privateConstructorUsedError;
   @override
-  String get type;
+  String get type => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$SimpleTextCopyWith<_SimpleText> get copyWith =>

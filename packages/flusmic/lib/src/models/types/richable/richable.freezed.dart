@@ -12,7 +12,7 @@ part of 'richable.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Richable _$RichableFromJson(Map<String, dynamic> json) {
   switch (json['type']) {
@@ -44,121 +44,6 @@ Richable _$RichableFromJson(Map<String, dynamic> json) {
           json, 'type', 'Richable', 'Invalid union type "${json['type']}"!');
   }
 }
-
-/// @nodoc
-class _$RichableTearOff {
-  const _$RichableTearOff();
-
-  RichableHeading1 heading1(
-      {required List<Span> spans, required String text, required String type}) {
-    return RichableHeading1(
-      spans: spans,
-      text: text,
-      type: type,
-    );
-  }
-
-  RichableHeading2 heading2(
-      {required List<Span> spans, required String text, required String type}) {
-    return RichableHeading2(
-      spans: spans,
-      text: text,
-      type: type,
-    );
-  }
-
-  RichableHeading3 heading3(
-      {required List<Span> spans, required String text, required String type}) {
-    return RichableHeading3(
-      spans: spans,
-      text: text,
-      type: type,
-    );
-  }
-
-  RichableHeading4 heading4(
-      {required List<Span> spans, required String text, required String type}) {
-    return RichableHeading4(
-      spans: spans,
-      text: text,
-      type: type,
-    );
-  }
-
-  RichableHeading5 heading5(
-      {required List<Span> spans, required String text, required String type}) {
-    return RichableHeading5(
-      spans: spans,
-      text: text,
-      type: type,
-    );
-  }
-
-  RichableHeading6 heading6(
-      {required List<Span> spans, required String text, required String type}) {
-    return RichableHeading6(
-      spans: spans,
-      text: text,
-      type: type,
-    );
-  }
-
-  RichableParagraph paragraph(
-      {required List<Span> spans, required String text, required String type}) {
-    return RichableParagraph(
-      spans: spans,
-      text: text,
-      type: type,
-    );
-  }
-
-  RichableListItem listItem(
-      {required List<Span> spans, required String text, required String type}) {
-    return RichableListItem(
-      spans: spans,
-      text: text,
-      type: type,
-    );
-  }
-
-  RichableOrderedListItem orderedListItem(
-      {required List<Span> spans, required String text, required String type}) {
-    return RichableOrderedListItem(
-      spans: spans,
-      text: text,
-      type: type,
-    );
-  }
-
-  RichableImage image(
-      {String? alt,
-      String? copyright,
-      required Dimension dimensions,
-      required String url}) {
-    return RichableImage(
-      alt: alt,
-      copyright: copyright,
-      dimensions: dimensions,
-      url: url,
-    );
-  }
-
-  RichableEmbed embed(
-      {@JsonKey(name: 'oembed') required EmbedData info,
-      required String type}) {
-    return RichableEmbed(
-      info: info,
-      type: type,
-    );
-  }
-
-  Richable fromJson(Map<String, Object?> json) {
-    return Richable.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Richable = _$RichableTearOff();
 
 /// @nodoc
 mixin _$Richable {
@@ -338,13 +223,19 @@ class _$RichableHeading1CopyWithImpl<$Res> extends _$RichableCopyWithImpl<$Res>
 @JsonSerializable()
 class _$RichableHeading1 implements RichableHeading1 {
   const _$RichableHeading1(
-      {required this.spans, required this.text, required this.type});
+      {required final List<Span> spans, required this.text, required this.type})
+      : _spans = spans;
 
   factory _$RichableHeading1.fromJson(Map<String, dynamic> json) =>
       _$$RichableHeading1FromJson(json);
 
+  final List<Span> _spans;
   @override
-  final List<Span> spans;
+  List<Span> get spans {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_spans);
+  }
+
   @override
   final String text;
   @override
@@ -365,6 +256,7 @@ class _$RichableHeading1 implements RichableHeading1 {
             const DeepCollectionEquality().equals(other.type, type));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -522,16 +414,16 @@ class _$RichableHeading1 implements RichableHeading1 {
 
 abstract class RichableHeading1 implements Richable {
   const factory RichableHeading1(
-      {required List<Span> spans,
-      required String text,
-      required String type}) = _$RichableHeading1;
+      {required final List<Span> spans,
+      required final String text,
+      required final String type}) = _$RichableHeading1;
 
   factory RichableHeading1.fromJson(Map<String, dynamic> json) =
       _$RichableHeading1.fromJson;
 
-  List<Span> get spans;
-  String get text;
-  String get type;
+  List<Span> get spans => throw _privateConstructorUsedError;
+  String get text => throw _privateConstructorUsedError;
+  String get type => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $RichableHeading1CopyWith<RichableHeading1> get copyWith =>
       throw _privateConstructorUsedError;
@@ -582,13 +474,19 @@ class _$RichableHeading2CopyWithImpl<$Res> extends _$RichableCopyWithImpl<$Res>
 @JsonSerializable()
 class _$RichableHeading2 implements RichableHeading2 {
   const _$RichableHeading2(
-      {required this.spans, required this.text, required this.type});
+      {required final List<Span> spans, required this.text, required this.type})
+      : _spans = spans;
 
   factory _$RichableHeading2.fromJson(Map<String, dynamic> json) =>
       _$$RichableHeading2FromJson(json);
 
+  final List<Span> _spans;
   @override
-  final List<Span> spans;
+  List<Span> get spans {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_spans);
+  }
+
   @override
   final String text;
   @override
@@ -609,6 +507,7 @@ class _$RichableHeading2 implements RichableHeading2 {
             const DeepCollectionEquality().equals(other.type, type));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -766,16 +665,16 @@ class _$RichableHeading2 implements RichableHeading2 {
 
 abstract class RichableHeading2 implements Richable {
   const factory RichableHeading2(
-      {required List<Span> spans,
-      required String text,
-      required String type}) = _$RichableHeading2;
+      {required final List<Span> spans,
+      required final String text,
+      required final String type}) = _$RichableHeading2;
 
   factory RichableHeading2.fromJson(Map<String, dynamic> json) =
       _$RichableHeading2.fromJson;
 
-  List<Span> get spans;
-  String get text;
-  String get type;
+  List<Span> get spans => throw _privateConstructorUsedError;
+  String get text => throw _privateConstructorUsedError;
+  String get type => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $RichableHeading2CopyWith<RichableHeading2> get copyWith =>
       throw _privateConstructorUsedError;
@@ -826,13 +725,19 @@ class _$RichableHeading3CopyWithImpl<$Res> extends _$RichableCopyWithImpl<$Res>
 @JsonSerializable()
 class _$RichableHeading3 implements RichableHeading3 {
   const _$RichableHeading3(
-      {required this.spans, required this.text, required this.type});
+      {required final List<Span> spans, required this.text, required this.type})
+      : _spans = spans;
 
   factory _$RichableHeading3.fromJson(Map<String, dynamic> json) =>
       _$$RichableHeading3FromJson(json);
 
+  final List<Span> _spans;
   @override
-  final List<Span> spans;
+  List<Span> get spans {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_spans);
+  }
+
   @override
   final String text;
   @override
@@ -853,6 +758,7 @@ class _$RichableHeading3 implements RichableHeading3 {
             const DeepCollectionEquality().equals(other.type, type));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -1010,16 +916,16 @@ class _$RichableHeading3 implements RichableHeading3 {
 
 abstract class RichableHeading3 implements Richable {
   const factory RichableHeading3(
-      {required List<Span> spans,
-      required String text,
-      required String type}) = _$RichableHeading3;
+      {required final List<Span> spans,
+      required final String text,
+      required final String type}) = _$RichableHeading3;
 
   factory RichableHeading3.fromJson(Map<String, dynamic> json) =
       _$RichableHeading3.fromJson;
 
-  List<Span> get spans;
-  String get text;
-  String get type;
+  List<Span> get spans => throw _privateConstructorUsedError;
+  String get text => throw _privateConstructorUsedError;
+  String get type => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $RichableHeading3CopyWith<RichableHeading3> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1070,13 +976,19 @@ class _$RichableHeading4CopyWithImpl<$Res> extends _$RichableCopyWithImpl<$Res>
 @JsonSerializable()
 class _$RichableHeading4 implements RichableHeading4 {
   const _$RichableHeading4(
-      {required this.spans, required this.text, required this.type});
+      {required final List<Span> spans, required this.text, required this.type})
+      : _spans = spans;
 
   factory _$RichableHeading4.fromJson(Map<String, dynamic> json) =>
       _$$RichableHeading4FromJson(json);
 
+  final List<Span> _spans;
   @override
-  final List<Span> spans;
+  List<Span> get spans {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_spans);
+  }
+
   @override
   final String text;
   @override
@@ -1097,6 +1009,7 @@ class _$RichableHeading4 implements RichableHeading4 {
             const DeepCollectionEquality().equals(other.type, type));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -1254,16 +1167,16 @@ class _$RichableHeading4 implements RichableHeading4 {
 
 abstract class RichableHeading4 implements Richable {
   const factory RichableHeading4(
-      {required List<Span> spans,
-      required String text,
-      required String type}) = _$RichableHeading4;
+      {required final List<Span> spans,
+      required final String text,
+      required final String type}) = _$RichableHeading4;
 
   factory RichableHeading4.fromJson(Map<String, dynamic> json) =
       _$RichableHeading4.fromJson;
 
-  List<Span> get spans;
-  String get text;
-  String get type;
+  List<Span> get spans => throw _privateConstructorUsedError;
+  String get text => throw _privateConstructorUsedError;
+  String get type => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $RichableHeading4CopyWith<RichableHeading4> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1314,13 +1227,19 @@ class _$RichableHeading5CopyWithImpl<$Res> extends _$RichableCopyWithImpl<$Res>
 @JsonSerializable()
 class _$RichableHeading5 implements RichableHeading5 {
   const _$RichableHeading5(
-      {required this.spans, required this.text, required this.type});
+      {required final List<Span> spans, required this.text, required this.type})
+      : _spans = spans;
 
   factory _$RichableHeading5.fromJson(Map<String, dynamic> json) =>
       _$$RichableHeading5FromJson(json);
 
+  final List<Span> _spans;
   @override
-  final List<Span> spans;
+  List<Span> get spans {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_spans);
+  }
+
   @override
   final String text;
   @override
@@ -1341,6 +1260,7 @@ class _$RichableHeading5 implements RichableHeading5 {
             const DeepCollectionEquality().equals(other.type, type));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -1498,16 +1418,16 @@ class _$RichableHeading5 implements RichableHeading5 {
 
 abstract class RichableHeading5 implements Richable {
   const factory RichableHeading5(
-      {required List<Span> spans,
-      required String text,
-      required String type}) = _$RichableHeading5;
+      {required final List<Span> spans,
+      required final String text,
+      required final String type}) = _$RichableHeading5;
 
   factory RichableHeading5.fromJson(Map<String, dynamic> json) =
       _$RichableHeading5.fromJson;
 
-  List<Span> get spans;
-  String get text;
-  String get type;
+  List<Span> get spans => throw _privateConstructorUsedError;
+  String get text => throw _privateConstructorUsedError;
+  String get type => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $RichableHeading5CopyWith<RichableHeading5> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1558,13 +1478,19 @@ class _$RichableHeading6CopyWithImpl<$Res> extends _$RichableCopyWithImpl<$Res>
 @JsonSerializable()
 class _$RichableHeading6 implements RichableHeading6 {
   const _$RichableHeading6(
-      {required this.spans, required this.text, required this.type});
+      {required final List<Span> spans, required this.text, required this.type})
+      : _spans = spans;
 
   factory _$RichableHeading6.fromJson(Map<String, dynamic> json) =>
       _$$RichableHeading6FromJson(json);
 
+  final List<Span> _spans;
   @override
-  final List<Span> spans;
+  List<Span> get spans {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_spans);
+  }
+
   @override
   final String text;
   @override
@@ -1585,6 +1511,7 @@ class _$RichableHeading6 implements RichableHeading6 {
             const DeepCollectionEquality().equals(other.type, type));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -1742,16 +1669,16 @@ class _$RichableHeading6 implements RichableHeading6 {
 
 abstract class RichableHeading6 implements Richable {
   const factory RichableHeading6(
-      {required List<Span> spans,
-      required String text,
-      required String type}) = _$RichableHeading6;
+      {required final List<Span> spans,
+      required final String text,
+      required final String type}) = _$RichableHeading6;
 
   factory RichableHeading6.fromJson(Map<String, dynamic> json) =
       _$RichableHeading6.fromJson;
 
-  List<Span> get spans;
-  String get text;
-  String get type;
+  List<Span> get spans => throw _privateConstructorUsedError;
+  String get text => throw _privateConstructorUsedError;
+  String get type => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $RichableHeading6CopyWith<RichableHeading6> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1802,13 +1729,19 @@ class _$RichableParagraphCopyWithImpl<$Res> extends _$RichableCopyWithImpl<$Res>
 @JsonSerializable()
 class _$RichableParagraph implements RichableParagraph {
   const _$RichableParagraph(
-      {required this.spans, required this.text, required this.type});
+      {required final List<Span> spans, required this.text, required this.type})
+      : _spans = spans;
 
   factory _$RichableParagraph.fromJson(Map<String, dynamic> json) =>
       _$$RichableParagraphFromJson(json);
 
+  final List<Span> _spans;
   @override
-  final List<Span> spans;
+  List<Span> get spans {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_spans);
+  }
+
   @override
   final String text;
   @override
@@ -1829,6 +1762,7 @@ class _$RichableParagraph implements RichableParagraph {
             const DeepCollectionEquality().equals(other.type, type));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -1986,16 +1920,16 @@ class _$RichableParagraph implements RichableParagraph {
 
 abstract class RichableParagraph implements Richable {
   const factory RichableParagraph(
-      {required List<Span> spans,
-      required String text,
-      required String type}) = _$RichableParagraph;
+      {required final List<Span> spans,
+      required final String text,
+      required final String type}) = _$RichableParagraph;
 
   factory RichableParagraph.fromJson(Map<String, dynamic> json) =
       _$RichableParagraph.fromJson;
 
-  List<Span> get spans;
-  String get text;
-  String get type;
+  List<Span> get spans => throw _privateConstructorUsedError;
+  String get text => throw _privateConstructorUsedError;
+  String get type => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $RichableParagraphCopyWith<RichableParagraph> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2044,16 +1978,21 @@ class _$RichableListItemCopyWithImpl<$Res> extends _$RichableCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-@FreezedUnionValue('list-item')
 class _$RichableListItem implements RichableListItem {
   const _$RichableListItem(
-      {required this.spans, required this.text, required this.type});
+      {required final List<Span> spans, required this.text, required this.type})
+      : _spans = spans;
 
   factory _$RichableListItem.fromJson(Map<String, dynamic> json) =>
       _$$RichableListItemFromJson(json);
 
+  final List<Span> _spans;
   @override
-  final List<Span> spans;
+  List<Span> get spans {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_spans);
+  }
+
   @override
   final String text;
   @override
@@ -2074,6 +2013,7 @@ class _$RichableListItem implements RichableListItem {
             const DeepCollectionEquality().equals(other.type, type));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -2231,16 +2171,16 @@ class _$RichableListItem implements RichableListItem {
 
 abstract class RichableListItem implements Richable {
   const factory RichableListItem(
-      {required List<Span> spans,
-      required String text,
-      required String type}) = _$RichableListItem;
+      {required final List<Span> spans,
+      required final String text,
+      required final String type}) = _$RichableListItem;
 
   factory RichableListItem.fromJson(Map<String, dynamic> json) =
       _$RichableListItem.fromJson;
 
-  List<Span> get spans;
-  String get text;
-  String get type;
+  List<Span> get spans => throw _privateConstructorUsedError;
+  String get text => throw _privateConstructorUsedError;
+  String get type => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $RichableListItemCopyWith<RichableListItem> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2290,16 +2230,21 @@ class _$RichableOrderedListItemCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-@FreezedUnionValue('o-list-item')
 class _$RichableOrderedListItem implements RichableOrderedListItem {
   const _$RichableOrderedListItem(
-      {required this.spans, required this.text, required this.type});
+      {required final List<Span> spans, required this.text, required this.type})
+      : _spans = spans;
 
   factory _$RichableOrderedListItem.fromJson(Map<String, dynamic> json) =>
       _$$RichableOrderedListItemFromJson(json);
 
+  final List<Span> _spans;
   @override
-  final List<Span> spans;
+  List<Span> get spans {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_spans);
+  }
+
   @override
   final String text;
   @override
@@ -2320,6 +2265,7 @@ class _$RichableOrderedListItem implements RichableOrderedListItem {
             const DeepCollectionEquality().equals(other.type, type));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -2478,16 +2424,16 @@ class _$RichableOrderedListItem implements RichableOrderedListItem {
 
 abstract class RichableOrderedListItem implements Richable {
   const factory RichableOrderedListItem(
-      {required List<Span> spans,
-      required String text,
-      required String type}) = _$RichableOrderedListItem;
+      {required final List<Span> spans,
+      required final String text,
+      required final String type}) = _$RichableOrderedListItem;
 
   factory RichableOrderedListItem.fromJson(Map<String, dynamic> json) =
       _$RichableOrderedListItem.fromJson;
 
-  List<Span> get spans;
-  String get text;
-  String get type;
+  List<Span> get spans => throw _privateConstructorUsedError;
+  String get text => throw _privateConstructorUsedError;
+  String get type => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $RichableOrderedListItemCopyWith<RichableOrderedListItem> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2556,7 +2502,7 @@ class _$RichableImage implements RichableImage {
       this.copyright,
       required this.dimensions,
       required this.url,
-      String? $type})
+      final String? $type})
       : $type = $type ?? 'image';
 
   factory _$RichableImage.fromJson(Map<String, dynamic> json) =>
@@ -2591,6 +2537,7 @@ class _$RichableImage implements RichableImage {
             const DeepCollectionEquality().equals(other.url, url));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -2749,18 +2696,18 @@ class _$RichableImage implements RichableImage {
 
 abstract class RichableImage implements Richable {
   const factory RichableImage(
-      {String? alt,
-      String? copyright,
-      required Dimension dimensions,
-      required String url}) = _$RichableImage;
+      {final String? alt,
+      final String? copyright,
+      required final Dimension dimensions,
+      required final String url}) = _$RichableImage;
 
   factory RichableImage.fromJson(Map<String, dynamic> json) =
       _$RichableImage.fromJson;
 
-  String? get alt;
-  String? get copyright;
-  Dimension get dimensions;
-  String get url;
+  String? get alt => throw _privateConstructorUsedError;
+  String? get copyright => throw _privateConstructorUsedError;
+  Dimension get dimensions => throw _privateConstructorUsedError;
+  String get url => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $RichableImageCopyWith<RichableImage> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2840,6 +2787,7 @@ class _$RichableEmbed implements RichableEmbed {
             const DeepCollectionEquality().equals(other.type, type));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -2996,15 +2944,15 @@ class _$RichableEmbed implements RichableEmbed {
 
 abstract class RichableEmbed implements Richable {
   const factory RichableEmbed(
-      {@JsonKey(name: 'oembed') required EmbedData info,
-      required String type}) = _$RichableEmbed;
+      {@JsonKey(name: 'oembed') required final EmbedData info,
+      required final String type}) = _$RichableEmbed;
 
   factory RichableEmbed.fromJson(Map<String, dynamic> json) =
       _$RichableEmbed.fromJson;
 
   @JsonKey(name: 'oembed')
-  EmbedData get info;
-  String get type;
+  EmbedData get info => throw _privateConstructorUsedError;
+  String get type => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $RichableEmbedCopyWith<RichableEmbed> get copyWith =>
       throw _privateConstructorUsedError;

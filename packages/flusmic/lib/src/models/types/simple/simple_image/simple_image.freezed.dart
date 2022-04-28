@@ -12,36 +12,11 @@ part of 'simple_image.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 SimpleImage _$SimpleImageFromJson(Map<String, dynamic> json) {
   return _SimpleImage.fromJson(json);
 }
-
-/// @nodoc
-class _$SimpleImageTearOff {
-  const _$SimpleImageTearOff();
-
-  _SimpleImage call(
-      {String? alt,
-      String? copyright,
-      required Dimension dimensions,
-      required String url}) {
-    return _SimpleImage(
-      alt: alt,
-      copyright: copyright,
-      dimensions: dimensions,
-      url: url,
-    );
-  }
-
-  SimpleImage fromJson(Map<String, Object?> json) {
-    return SimpleImage.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $SimpleImage = _$SimpleImageTearOff();
 
 /// @nodoc
 mixin _$SimpleImage {
@@ -195,6 +170,7 @@ class _$_SimpleImage implements _SimpleImage {
             const DeepCollectionEquality().equals(other.url, url));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -216,22 +192,22 @@ class _$_SimpleImage implements _SimpleImage {
 
 abstract class _SimpleImage implements SimpleImage {
   factory _SimpleImage(
-      {String? alt,
-      String? copyright,
-      required Dimension dimensions,
-      required String url}) = _$_SimpleImage;
+      {final String? alt,
+      final String? copyright,
+      required final Dimension dimensions,
+      required final String url}) = _$_SimpleImage;
 
   factory _SimpleImage.fromJson(Map<String, dynamic> json) =
       _$_SimpleImage.fromJson;
 
   @override
-  String? get alt;
+  String? get alt => throw _privateConstructorUsedError;
   @override
-  String? get copyright;
+  String? get copyright => throw _privateConstructorUsedError;
   @override
-  Dimension get dimensions;
+  Dimension get dimensions => throw _privateConstructorUsedError;
   @override
-  String get url;
+  String get url => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$SimpleImageCopyWith<_SimpleImage> get copyWith =>

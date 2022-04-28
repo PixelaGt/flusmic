@@ -3,6 +3,8 @@ targets:
     builders:
       json_serializable:
           options:
+            any_map: true
+            checked: true
             explicit_to_json: true
       source_gen|combining_builder:
         options:

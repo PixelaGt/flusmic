@@ -12,30 +12,11 @@ part of 'language.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Language _$LanguageFromJson(Map<String, dynamic> json) {
   return _Language.fromJson(json);
 }
-
-/// @nodoc
-class _$LanguageTearOff {
-  const _$LanguageTearOff();
-
-  _Language call({required String id, required String name}) {
-    return _Language(
-      id: id,
-      name: name,
-    );
-  }
-
-  Language fromJson(Map<String, Object?> json) {
-    return Language.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Language = _$LanguageTearOff();
 
 /// @nodoc
 mixin _$Language {
@@ -143,6 +124,7 @@ class _$_Language implements _Language {
             const DeepCollectionEquality().equals(other.name, name));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -161,14 +143,15 @@ class _$_Language implements _Language {
 }
 
 abstract class _Language implements Language {
-  factory _Language({required String id, required String name}) = _$_Language;
+  factory _Language({required final String id, required final String name}) =
+      _$_Language;
 
   factory _Language.fromJson(Map<String, dynamic> json) = _$_Language.fromJson;
 
   @override
-  String get id;
+  String get id => throw _privateConstructorUsedError;
   @override
-  String get name;
+  String get name => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$LanguageCopyWith<_Language> get copyWith =>

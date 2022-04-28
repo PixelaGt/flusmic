@@ -1,3 +1,7 @@
+## [3.2.2]
+* Add check for json deserialization
+* Update dependencies
+
 ## [3.2.1]
 * Fix `Linkeable` model to accept nullables
 * Update dependencies

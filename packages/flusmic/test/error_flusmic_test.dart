@@ -86,7 +86,7 @@ void main() {
   });
 
   group('unknown errors from prismic', () {
-    test('unknown network exception', () async {
+    test('unknown network exception for api', () async {
       HttpOverrides.runZoned(
         () {
           nock('https://flusmic.cdn.prismic.io')
@@ -160,6 +160,78 @@ void main() {
         createHttpClient: (context) => MockClient(),
       );
     });
+
+    test('bad type response for api', () async {
+      HttpOverrides.runZoned(
+        () {
+          nock('https://flusmic.cdn.prismic.io')
+              .get(equals('/api/v2'))
+              .reply(200, badApiResponse);
+          final flusmic = Flusmic(
+            prismicEndpoint: 'https://flusmic.cdn.prismic.io/api/v2',
+          );
+          expect(() async => flusmic.getApi(), throwsA(isA<FlusmicError>()));
+        },
+        createHttpClient: (context) => MockClient(),
+      );
+    });
+
+    test('bad type response for query', () async {
+      HttpOverrides.runZoned(
+        () {
+          nock('https://flusmic.cdn.prismic.io').get(equals('/api/v2')).reply(
+            200,
+            apiResponse,
+            headers: {'Content-Type': 'application/json'},
+          );
+          nock('https://flusmic.cdn.prismic.io')
+              .get(contains('/api/v2/documents/search?ref='))
+              .reply(200, badQueryResponse);
+          final flusmic =
+              Flusmic(prismicEndpoint: 'https://flusmic.cdn.prismic.io/api/v2');
+          expect(
+            () async => flusmic.getRootDocument(),
+            throwsA(
+              isA<FlusmicError>().having((e) => e.code, 'unknown', 100),
+            ),
+          );
+        },
+        createHttpClient: (context) => MockClient(),
+      );
+    });
+
+    test('bad type response for graph query', () async {
+      HttpOverrides.runZoned(
+        () {
+          nock('https://flusmic.cdn.prismic.io').get(equals('/api/v2')).reply(
+            200,
+            apiResponse,
+            headers: {'Content-Type': 'application/json'},
+          );
+          nock('https://flusmic.cdn.prismic.io')
+              .get(contains('/api/v2/documents/search?ref='))
+              .reply(200, badQueryResponse);
+          final flusmic =
+              Flusmic(prismicEndpoint: 'https://flusmic.cdn.prismic.io/api/v2');
+          expect(
+            () async => flusmic.graphQuery(
+              '''
+              {
+                test {
+                  title
+                }
+              }
+              ''',
+            ),
+            throwsA(
+              isA<FlusmicError>().having((e) => e.code, 'unknown', 100),
+            ),
+          );
+        },
+        createHttpClient: (context) => MockClient(),
+      );
+    });
+
     test(
       'bad json response exception for api',
       () async {
@@ -190,7 +262,11 @@ void main() {
           );
           nock('https://flusmic.cdn.prismic.io')
               .get(contains('/api/v2/documents/search?ref='))
-              .reply(200, badQueryResponse);
+              .reply(
+            200,
+            badQueryResponse,
+            headers: {'Content-Type': 'application/json'},
+          );
           final flusmic =
               Flusmic(prismicEndpoint: 'https://flusmic.cdn.prismic.io/api/v2');
           expect(
@@ -214,7 +290,11 @@ void main() {
           );
           nock('https://flusmic.cdn.prismic.io')
               .get(contains('/api/v2/documents/search?ref='))
-              .reply(200, badQueryResponse);
+              .reply(
+            200,
+            badQueryResponse,
+            headers: {'Content-Type': 'application/json'},
+          );
           final flusmic =
               Flusmic(prismicEndpoint: 'https://flusmic.cdn.prismic.io/api/v2');
           expect(

@@ -12,48 +12,11 @@ part of 'ordering.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$OrderingTearOff {
-  const _$OrderingTearOff();
-
-  TypeOrdering type(String customType, String field,
-      {bool descending = false}) {
-    return TypeOrdering(
-      customType,
-      field,
-      descending: descending,
-    );
-  }
-
-  DocumentOrdering document(String type, {bool descending = false}) {
-    return DocumentOrdering(
-      type,
-      descending: descending,
-    );
-  }
-
-  FirstPublicationDateOrdering firstPublicationDate({bool descending = false}) {
-    return FirstPublicationDateOrdering(
-      descending: descending,
-    );
-  }
-
-  LastPublicationDateOrdering lastPublicationDate({bool descending = false}) {
-    return LastPublicationDateOrdering(
-      descending: descending,
-    );
-  }
-}
-
-/// @nodoc
-const $Ordering = _$OrderingTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$Ordering {
   bool get descending => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String customType, String field, bool descending)
@@ -192,8 +155,8 @@ class _$TypeOrdering implements TypeOrdering {
   final String customType;
   @override
   final String field;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool descending;
 
   @override
@@ -304,13 +267,13 @@ class _$TypeOrdering implements TypeOrdering {
 }
 
 abstract class TypeOrdering implements Ordering {
-  const factory TypeOrdering(String customType, String field,
-      {bool descending}) = _$TypeOrdering;
+  const factory TypeOrdering(final String customType, final String field,
+      {final bool descending}) = _$TypeOrdering;
 
-  String get customType;
-  String get field;
+  String get customType => throw _privateConstructorUsedError;
+  String get field => throw _privateConstructorUsedError;
   @override
-  bool get descending;
+  bool get descending => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   $TypeOrderingCopyWith<TypeOrdering> get copyWith =>
@@ -362,8 +325,8 @@ class _$DocumentOrdering implements DocumentOrdering {
 
   @override
   final String type;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool descending;
 
   @override
@@ -471,12 +434,12 @@ class _$DocumentOrdering implements DocumentOrdering {
 }
 
 abstract class DocumentOrdering implements Ordering {
-  const factory DocumentOrdering(String type, {bool descending}) =
+  const factory DocumentOrdering(final String type, {final bool descending}) =
       _$DocumentOrdering;
 
-  String get type;
+  String get type => throw _privateConstructorUsedError;
   @override
-  bool get descending;
+  bool get descending => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   $DocumentOrderingCopyWith<DocumentOrdering> get copyWith =>
@@ -525,8 +488,8 @@ class _$FirstPublicationDateOrderingCopyWithImpl<$Res>
 class _$FirstPublicationDateOrdering implements FirstPublicationDateOrdering {
   const _$FirstPublicationDateOrdering({this.descending = false});
 
-  @JsonKey()
   @override
+  @JsonKey()
   final bool descending;
 
   @override
@@ -632,11 +595,11 @@ class _$FirstPublicationDateOrdering implements FirstPublicationDateOrdering {
 }
 
 abstract class FirstPublicationDateOrdering implements Ordering {
-  const factory FirstPublicationDateOrdering({bool descending}) =
+  const factory FirstPublicationDateOrdering({final bool descending}) =
       _$FirstPublicationDateOrdering;
 
   @override
-  bool get descending;
+  bool get descending => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   $FirstPublicationDateOrderingCopyWith<FirstPublicationDateOrdering>
@@ -684,8 +647,8 @@ class _$LastPublicationDateOrderingCopyWithImpl<$Res>
 class _$LastPublicationDateOrdering implements LastPublicationDateOrdering {
   const _$LastPublicationDateOrdering({this.descending = false});
 
-  @JsonKey()
   @override
+  @JsonKey()
   final bool descending;
 
   @override
@@ -791,11 +754,11 @@ class _$LastPublicationDateOrdering implements LastPublicationDateOrdering {
 }
 
 abstract class LastPublicationDateOrdering implements Ordering {
-  const factory LastPublicationDateOrdering({bool descending}) =
+  const factory LastPublicationDateOrdering({final bool descending}) =
       _$LastPublicationDateOrdering;
 
   @override
-  bool get descending;
+  bool get descending => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   $LastPublicationDateOrderingCopyWith<LastPublicationDateOrdering>

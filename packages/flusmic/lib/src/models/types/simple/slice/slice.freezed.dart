@@ -12,36 +12,11 @@ part of 'slice.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Slice _$SliceFromJson(Map<String, dynamic> json) {
   return _Slice.fromJson(json);
 }
-
-/// @nodoc
-class _$SliceTearOff {
-  const _$SliceTearOff();
-
-  _Slice call(
-      {@JsonKey(name: 'slice_label') String? sliceLabel,
-      @JsonKey(name: 'slice_type') required String? sliceType,
-      List<Map<String, dynamic>>? items,
-      Map<String, dynamic>? primary}) {
-    return _Slice(
-      sliceLabel: sliceLabel,
-      sliceType: sliceType,
-      items: items,
-      primary: primary,
-    );
-  }
-
-  Slice fromJson(Map<String, Object?> json) {
-    return Slice.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Slice = _$SliceTearOff();
 
 /// @nodoc
 mixin _$Slice {
@@ -159,8 +134,10 @@ class _$_Slice implements _Slice {
   _$_Slice(
       {@JsonKey(name: 'slice_label') this.sliceLabel,
       @JsonKey(name: 'slice_type') required this.sliceType,
-      this.items,
-      this.primary});
+      final List<Map<String, dynamic>>? items,
+      final Map<String, dynamic>? primary})
+      : _items = items,
+        _primary = primary;
 
   factory _$_Slice.fromJson(Map<String, dynamic> json) =>
       _$$_SliceFromJson(json);
@@ -171,10 +148,23 @@ class _$_Slice implements _Slice {
   @override
   @JsonKey(name: 'slice_type')
   final String? sliceType;
+  final List<Map<String, dynamic>>? _items;
   @override
-  final List<Map<String, dynamic>>? items;
+  List<Map<String, dynamic>>? get items {
+    final value = _items;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final Map<String, dynamic>? _primary;
   @override
-  final Map<String, dynamic>? primary;
+  Map<String, dynamic>? get primary {
+    final value = _primary;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
 
   @override
   String toString() {
@@ -193,6 +183,7 @@ class _$_Slice implements _Slice {
             const DeepCollectionEquality().equals(other.primary, primary));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -214,23 +205,23 @@ class _$_Slice implements _Slice {
 
 abstract class _Slice implements Slice {
   factory _Slice(
-      {@JsonKey(name: 'slice_label') String? sliceLabel,
-      @JsonKey(name: 'slice_type') required String? sliceType,
-      List<Map<String, dynamic>>? items,
-      Map<String, dynamic>? primary}) = _$_Slice;
+      {@JsonKey(name: 'slice_label') final String? sliceLabel,
+      @JsonKey(name: 'slice_type') required final String? sliceType,
+      final List<Map<String, dynamic>>? items,
+      final Map<String, dynamic>? primary}) = _$_Slice;
 
   factory _Slice.fromJson(Map<String, dynamic> json) = _$_Slice.fromJson;
 
   @override
   @JsonKey(name: 'slice_label')
-  String? get sliceLabel;
+  String? get sliceLabel => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'slice_type')
-  String? get sliceType;
+  String? get sliceType => throw _privateConstructorUsedError;
   @override
-  List<Map<String, dynamic>>? get items;
+  List<Map<String, dynamic>>? get items => throw _privateConstructorUsedError;
   @override
-  Map<String, dynamic>? get primary;
+  Map<String, dynamic>? get primary => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$SliceCopyWith<_Slice> get copyWith => throw _privateConstructorUsedError;

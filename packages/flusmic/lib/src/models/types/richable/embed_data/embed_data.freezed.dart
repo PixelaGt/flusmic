@@ -12,56 +12,11 @@ part of 'embed_data.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 EmbedData _$EmbedDataFromJson(Map<String, dynamic> json) {
   return _EmbedData.fromJson(json);
 }
-
-/// @nodoc
-class _$EmbedDataTearOff {
-  const _$EmbedDataTearOff();
-
-  _EmbedData call(
-      {@JsonKey(name: 'author_name') required String authorName,
-      @JsonKey(name: 'author_url') required String authorUrl,
-      @JsonKey(name: 'embed_url') required String embedUrl,
-      @JsonKey(name: 'provider_name') required String providerName,
-      @JsonKey(name: 'provider_url') required String providerUrl,
-      @JsonKey(name: 'thumbnail_height') required double thumbnailHeight,
-      @JsonKey(name: 'thumbnail_url') required String thumbnailUrl,
-      @JsonKey(name: 'thumbnail_width') required double thumbnailWidth,
-      required String html,
-      required String title,
-      required String type,
-      required String version,
-      required double height,
-      required double width}) {
-    return _EmbedData(
-      authorName: authorName,
-      authorUrl: authorUrl,
-      embedUrl: embedUrl,
-      providerName: providerName,
-      providerUrl: providerUrl,
-      thumbnailHeight: thumbnailHeight,
-      thumbnailUrl: thumbnailUrl,
-      thumbnailWidth: thumbnailWidth,
-      html: html,
-      title: title,
-      type: type,
-      version: version,
-      height: height,
-      width: width,
-    );
-  }
-
-  EmbedData fromJson(Map<String, Object?> json) {
-    return EmbedData.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $EmbedData = _$EmbedDataTearOff();
 
 /// @nodoc
 mixin _$EmbedData {
@@ -402,6 +357,7 @@ class _$_EmbedData implements _EmbedData {
             const DeepCollectionEquality().equals(other.width, width));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -433,60 +389,60 @@ class _$_EmbedData implements _EmbedData {
 
 abstract class _EmbedData implements EmbedData {
   factory _EmbedData(
-      {@JsonKey(name: 'author_name') required String authorName,
-      @JsonKey(name: 'author_url') required String authorUrl,
-      @JsonKey(name: 'embed_url') required String embedUrl,
-      @JsonKey(name: 'provider_name') required String providerName,
-      @JsonKey(name: 'provider_url') required String providerUrl,
-      @JsonKey(name: 'thumbnail_height') required double thumbnailHeight,
-      @JsonKey(name: 'thumbnail_url') required String thumbnailUrl,
-      @JsonKey(name: 'thumbnail_width') required double thumbnailWidth,
-      required String html,
-      required String title,
-      required String type,
-      required String version,
-      required double height,
-      required double width}) = _$_EmbedData;
+      {@JsonKey(name: 'author_name') required final String authorName,
+      @JsonKey(name: 'author_url') required final String authorUrl,
+      @JsonKey(name: 'embed_url') required final String embedUrl,
+      @JsonKey(name: 'provider_name') required final String providerName,
+      @JsonKey(name: 'provider_url') required final String providerUrl,
+      @JsonKey(name: 'thumbnail_height') required final double thumbnailHeight,
+      @JsonKey(name: 'thumbnail_url') required final String thumbnailUrl,
+      @JsonKey(name: 'thumbnail_width') required final double thumbnailWidth,
+      required final String html,
+      required final String title,
+      required final String type,
+      required final String version,
+      required final double height,
+      required final double width}) = _$_EmbedData;
 
   factory _EmbedData.fromJson(Map<String, dynamic> json) =
       _$_EmbedData.fromJson;
 
   @override
   @JsonKey(name: 'author_name')
-  String get authorName;
+  String get authorName => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'author_url')
-  String get authorUrl;
+  String get authorUrl => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'embed_url')
-  String get embedUrl;
+  String get embedUrl => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'provider_name')
-  String get providerName;
+  String get providerName => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'provider_url')
-  String get providerUrl;
+  String get providerUrl => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'thumbnail_height')
-  double get thumbnailHeight;
+  double get thumbnailHeight => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'thumbnail_url')
-  String get thumbnailUrl;
+  String get thumbnailUrl => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'thumbnail_width')
-  double get thumbnailWidth;
+  double get thumbnailWidth => throw _privateConstructorUsedError;
   @override
-  String get html;
+  String get html => throw _privateConstructorUsedError;
   @override
-  String get title;
+  String get title => throw _privateConstructorUsedError;
   @override
-  String get type;
+  String get type => throw _privateConstructorUsedError;
   @override
-  String get version;
+  String get version => throw _privateConstructorUsedError;
   @override
-  double get height;
+  double get height => throw _privateConstructorUsedError;
   @override
-  double get width;
+  double get width => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$EmbedDataCopyWith<_EmbedData> get copyWith =>

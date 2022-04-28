@@ -8,20 +8,38 @@ part of 'flusmic_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_FlusmicResponse _$$_FlusmicResponseFromJson(Map<String, dynamic> json) =>
-    _$_FlusmicResponse(
-      nextPage: json['next_page'] as String?,
-      prevPage: json['prev_page'] as String?,
-      resultsPerPage: json['results_per_page'] as int,
-      resultsSize: json['results_size'] as int,
-      totalPages: json['total_pages'] as int,
-      totalResultsSize: json['total_results_size'] as int,
-      results: (json['results'] as List<dynamic>)
-          .map((e) => Document.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      license: json['license'] as String,
-      version: json['version'] as String,
-      page: json['page'] as int,
+_$_FlusmicResponse _$$_FlusmicResponseFromJson(Map json) => $checkedCreate(
+      r'_$_FlusmicResponse',
+      json,
+      ($checkedConvert) {
+        final val = _$_FlusmicResponse(
+          nextPage: $checkedConvert('next_page', (v) => v as String?),
+          prevPage: $checkedConvert('prev_page', (v) => v as String?),
+          resultsPerPage: $checkedConvert('results_per_page', (v) => v as int),
+          resultsSize: $checkedConvert('results_size', (v) => v as int),
+          totalPages: $checkedConvert('total_pages', (v) => v as int),
+          totalResultsSize:
+              $checkedConvert('total_results_size', (v) => v as int),
+          results: $checkedConvert(
+              'results',
+              (v) => (v as List<dynamic>)
+                  .map((e) =>
+                      Document.fromJson(Map<String, dynamic>.from(e as Map)))
+                  .toList()),
+          license: $checkedConvert('license', (v) => v as String),
+          version: $checkedConvert('version', (v) => v as String),
+          page: $checkedConvert('page', (v) => v as int),
+        );
+        return val;
+      },
+      fieldKeyMap: const {
+        'nextPage': 'next_page',
+        'prevPage': 'prev_page',
+        'resultsPerPage': 'results_per_page',
+        'resultsSize': 'results_size',
+        'totalPages': 'total_pages',
+        'totalResultsSize': 'total_results_size'
+      },
     );
 
 Map<String, dynamic> _$$_FlusmicResponseToJson(_$_FlusmicResponse instance) =>

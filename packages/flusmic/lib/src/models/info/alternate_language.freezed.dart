@@ -12,32 +12,11 @@ part of 'alternate_language.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 AlternateLanguage _$AlternateLanguageFromJson(Map<String, dynamic> json) {
   return _AlternateLanguage.fromJson(json);
 }
-
-/// @nodoc
-class _$AlternateLanguageTearOff {
-  const _$AlternateLanguageTearOff();
-
-  _AlternateLanguage call(
-      {required String id, required String lang, required String type}) {
-    return _AlternateLanguage(
-      id: id,
-      lang: lang,
-      type: type,
-    );
-  }
-
-  AlternateLanguage fromJson(Map<String, Object?> json) {
-    return AlternateLanguage.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $AlternateLanguage = _$AlternateLanguageTearOff();
 
 /// @nodoc
 mixin _$AlternateLanguage {
@@ -166,6 +145,7 @@ class _$_AlternateLanguage implements _AlternateLanguage {
             const DeepCollectionEquality().equals(other.type, type));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -186,19 +166,19 @@ class _$_AlternateLanguage implements _AlternateLanguage {
 
 abstract class _AlternateLanguage implements AlternateLanguage {
   factory _AlternateLanguage(
-      {required String id,
-      required String lang,
-      required String type}) = _$_AlternateLanguage;
+      {required final String id,
+      required final String lang,
+      required final String type}) = _$_AlternateLanguage;
 
   factory _AlternateLanguage.fromJson(Map<String, dynamic> json) =
       _$_AlternateLanguage.fromJson;
 
   @override
-  String get id;
+  String get id => throw _privateConstructorUsedError;
   @override
-  String get lang;
+  String get lang => throw _privateConstructorUsedError;
   @override
-  String get type;
+  String get type => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$AlternateLanguageCopyWith<_AlternateLanguage> get copyWith =>

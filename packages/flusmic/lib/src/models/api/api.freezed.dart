@@ -12,42 +12,11 @@ part of 'api.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Api _$ApiFromJson(Map<String, dynamic> json) {
   return _Api.fromJson(json);
 }
-
-/// @nodoc
-class _$ApiTearOff {
-  const _$ApiTearOff();
-
-  _Api call(
-      {@JsonKey(name: 'oauth_initiate') required String? oauthInitiate,
-      @JsonKey(name: 'oauth_token') required String? oauthToken,
-      Map<String, String>? types,
-      String? license,
-      required List<Language> languages,
-      required List<Ref> refs,
-      required String version}) {
-    return _Api(
-      oauthInitiate: oauthInitiate,
-      oauthToken: oauthToken,
-      types: types,
-      license: license,
-      languages: languages,
-      refs: refs,
-      version: version,
-    );
-  }
-
-  Api fromJson(Map<String, Object?> json) {
-    return Api.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Api = _$ApiTearOff();
 
 /// @nodoc
 mixin _$Api {
@@ -204,11 +173,14 @@ class _$_Api implements _Api {
   _$_Api(
       {@JsonKey(name: 'oauth_initiate') required this.oauthInitiate,
       @JsonKey(name: 'oauth_token') required this.oauthToken,
-      this.types,
+      final Map<String, String>? types,
       this.license,
-      required this.languages,
-      required this.refs,
-      required this.version});
+      required final List<Language> languages,
+      required final List<Ref> refs,
+      required this.version})
+      : _types = types,
+        _languages = languages,
+        _refs = refs;
 
   factory _$_Api.fromJson(Map<String, dynamic> json) => _$$_ApiFromJson(json);
 
@@ -218,14 +190,31 @@ class _$_Api implements _Api {
   @override
   @JsonKey(name: 'oauth_token')
   final String? oauthToken;
+  final Map<String, String>? _types;
   @override
-  final Map<String, String>? types;
+  Map<String, String>? get types {
+    final value = _types;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
   @override
   final String? license;
+  final List<Language> _languages;
   @override
-  final List<Language> languages;
+  List<Language> get languages {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_languages);
+  }
+
+  final List<Ref> _refs;
   @override
-  final List<Ref> refs;
+  List<Ref> get refs {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_refs);
+  }
+
   @override
   final String version;
 
@@ -250,6 +239,7 @@ class _$_Api implements _Api {
             const DeepCollectionEquality().equals(other.version, version));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -274,32 +264,32 @@ class _$_Api implements _Api {
 
 abstract class _Api implements Api {
   factory _Api(
-      {@JsonKey(name: 'oauth_initiate') required String? oauthInitiate,
-      @JsonKey(name: 'oauth_token') required String? oauthToken,
-      Map<String, String>? types,
-      String? license,
-      required List<Language> languages,
-      required List<Ref> refs,
-      required String version}) = _$_Api;
+      {@JsonKey(name: 'oauth_initiate') required final String? oauthInitiate,
+      @JsonKey(name: 'oauth_token') required final String? oauthToken,
+      final Map<String, String>? types,
+      final String? license,
+      required final List<Language> languages,
+      required final List<Ref> refs,
+      required final String version}) = _$_Api;
 
   factory _Api.fromJson(Map<String, dynamic> json) = _$_Api.fromJson;
 
   @override
   @JsonKey(name: 'oauth_initiate')
-  String? get oauthInitiate;
+  String? get oauthInitiate => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'oauth_token')
-  String? get oauthToken;
+  String? get oauthToken => throw _privateConstructorUsedError;
   @override
-  Map<String, String>? get types;
+  Map<String, String>? get types => throw _privateConstructorUsedError;
   @override
-  String? get license;
+  String? get license => throw _privateConstructorUsedError;
   @override
-  List<Language> get languages;
+  List<Language> get languages => throw _privateConstructorUsedError;
   @override
-  List<Ref> get refs;
+  List<Ref> get refs => throw _privateConstructorUsedError;
   @override
-  String get version;
+  String get version => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$ApiCopyWith<_Api> get copyWith => throw _privateConstructorUsedError;

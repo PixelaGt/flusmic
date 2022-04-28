@@ -12,44 +12,11 @@ part of 'sample_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 SampleModel _$SampleModelFromJson(Map<String, dynamic> json) {
   return _SampleModel.fromJson(json);
 }
-
-/// @nodoc
-class _$SampleModelTearOff {
-  const _$SampleModelTearOff();
-
-  _SampleModel call(
-      {required Geopoint location,
-      required Linkeable link,
-      required Linkeable linked,
-      required Linkeable media,
-      required List<Richable> content,
-      required List<SimpleText> title,
-      required List<Slice> body,
-      required SimpleImage image}) {
-    return _SampleModel(
-      location: location,
-      link: link,
-      linked: linked,
-      media: media,
-      content: content,
-      title: title,
-      body: body,
-      image: image,
-    );
-  }
-
-  SampleModel fromJson(Map<String, Object?> json) {
-    return SampleModel.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $SampleModel = _$SampleModelTearOff();
 
 /// @nodoc
 mixin _$SampleModel {
@@ -276,10 +243,13 @@ class _$_SampleModel implements _SampleModel {
       required this.link,
       required this.linked,
       required this.media,
-      required this.content,
-      required this.title,
-      required this.body,
-      required this.image});
+      required final List<Richable> content,
+      required final List<SimpleText> title,
+      required final List<Slice> body,
+      required this.image})
+      : _content = content,
+        _title = title,
+        _body = body;
 
   factory _$_SampleModel.fromJson(Map<String, dynamic> json) =>
       _$$_SampleModelFromJson(json);
@@ -292,12 +262,27 @@ class _$_SampleModel implements _SampleModel {
   final Linkeable linked;
   @override
   final Linkeable media;
+  final List<Richable> _content;
   @override
-  final List<Richable> content;
+  List<Richable> get content {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_content);
+  }
+
+  final List<SimpleText> _title;
   @override
-  final List<SimpleText> title;
+  List<SimpleText> get title {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_title);
+  }
+
+  final List<Slice> _body;
   @override
-  final List<Slice> body;
+  List<Slice> get body {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_body);
+  }
+
   @override
   final SimpleImage image;
 
@@ -321,6 +306,7 @@ class _$_SampleModel implements _SampleModel {
             const DeepCollectionEquality().equals(other.image, image));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -346,34 +332,34 @@ class _$_SampleModel implements _SampleModel {
 
 abstract class _SampleModel implements SampleModel {
   factory _SampleModel(
-      {required Geopoint location,
-      required Linkeable link,
-      required Linkeable linked,
-      required Linkeable media,
-      required List<Richable> content,
-      required List<SimpleText> title,
-      required List<Slice> body,
-      required SimpleImage image}) = _$_SampleModel;
+      {required final Geopoint location,
+      required final Linkeable link,
+      required final Linkeable linked,
+      required final Linkeable media,
+      required final List<Richable> content,
+      required final List<SimpleText> title,
+      required final List<Slice> body,
+      required final SimpleImage image}) = _$_SampleModel;
 
   factory _SampleModel.fromJson(Map<String, dynamic> json) =
       _$_SampleModel.fromJson;
 
   @override
-  Geopoint get location;
+  Geopoint get location => throw _privateConstructorUsedError;
   @override
-  Linkeable get link;
+  Linkeable get link => throw _privateConstructorUsedError;
   @override
-  Linkeable get linked;
+  Linkeable get linked => throw _privateConstructorUsedError;
   @override
-  Linkeable get media;
+  Linkeable get media => throw _privateConstructorUsedError;
   @override
-  List<Richable> get content;
+  List<Richable> get content => throw _privateConstructorUsedError;
   @override
-  List<SimpleText> get title;
+  List<SimpleText> get title => throw _privateConstructorUsedError;
   @override
-  List<Slice> get body;
+  List<Slice> get body => throw _privateConstructorUsedError;
   @override
-  SimpleImage get image;
+  SimpleImage get image => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$SampleModelCopyWith<_SampleModel> get copyWith =>

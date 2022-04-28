@@ -12,30 +12,11 @@ part of 'geopoint.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Geopoint _$GeopointFromJson(Map<String, dynamic> json) {
   return _Geopoint.fromJson(json);
 }
-
-/// @nodoc
-class _$GeopointTearOff {
-  const _$GeopointTearOff();
-
-  _Geopoint call({required double latitude, required double longitude}) {
-    return _Geopoint(
-      latitude: latitude,
-      longitude: longitude,
-    );
-  }
-
-  Geopoint fromJson(Map<String, Object?> json) {
-    return Geopoint.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Geopoint = _$GeopointTearOff();
 
 /// @nodoc
 mixin _$Geopoint {
@@ -143,6 +124,7 @@ class _$_Geopoint implements _Geopoint {
             const DeepCollectionEquality().equals(other.longitude, longitude));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -161,15 +143,16 @@ class _$_Geopoint implements _Geopoint {
 }
 
 abstract class _Geopoint implements Geopoint {
-  factory _Geopoint({required double latitude, required double longitude}) =
-      _$_Geopoint;
+  factory _Geopoint(
+      {required final double latitude,
+      required final double longitude}) = _$_Geopoint;
 
   factory _Geopoint.fromJson(Map<String, dynamic> json) = _$_Geopoint.fromJson;
 
   @override
-  double get latitude;
+  double get latitude => throw _privateConstructorUsedError;
   @override
-  double get longitude;
+  double get longitude => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$GeopointCopyWith<_Geopoint> get copyWith =>

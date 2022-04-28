@@ -8,21 +8,40 @@ part of 'embed_data.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_EmbedData _$$_EmbedDataFromJson(Map<String, dynamic> json) => _$_EmbedData(
-      authorName: json['author_name'] as String,
-      authorUrl: json['author_url'] as String,
-      embedUrl: json['embed_url'] as String,
-      providerName: json['provider_name'] as String,
-      providerUrl: json['provider_url'] as String,
-      thumbnailHeight: (json['thumbnail_height'] as num).toDouble(),
-      thumbnailUrl: json['thumbnail_url'] as String,
-      thumbnailWidth: (json['thumbnail_width'] as num).toDouble(),
-      html: json['html'] as String,
-      title: json['title'] as String,
-      type: json['type'] as String,
-      version: json['version'] as String,
-      height: (json['height'] as num).toDouble(),
-      width: (json['width'] as num).toDouble(),
+_$_EmbedData _$$_EmbedDataFromJson(Map json) => $checkedCreate(
+      r'_$_EmbedData',
+      json,
+      ($checkedConvert) {
+        final val = _$_EmbedData(
+          authorName: $checkedConvert('author_name', (v) => v as String),
+          authorUrl: $checkedConvert('author_url', (v) => v as String),
+          embedUrl: $checkedConvert('embed_url', (v) => v as String),
+          providerName: $checkedConvert('provider_name', (v) => v as String),
+          providerUrl: $checkedConvert('provider_url', (v) => v as String),
+          thumbnailHeight:
+              $checkedConvert('thumbnail_height', (v) => (v as num).toDouble()),
+          thumbnailUrl: $checkedConvert('thumbnail_url', (v) => v as String),
+          thumbnailWidth:
+              $checkedConvert('thumbnail_width', (v) => (v as num).toDouble()),
+          html: $checkedConvert('html', (v) => v as String),
+          title: $checkedConvert('title', (v) => v as String),
+          type: $checkedConvert('type', (v) => v as String),
+          version: $checkedConvert('version', (v) => v as String),
+          height: $checkedConvert('height', (v) => (v as num).toDouble()),
+          width: $checkedConvert('width', (v) => (v as num).toDouble()),
+        );
+        return val;
+      },
+      fieldKeyMap: const {
+        'authorName': 'author_name',
+        'authorUrl': 'author_url',
+        'embedUrl': 'embed_url',
+        'providerName': 'provider_name',
+        'providerUrl': 'provider_url',
+        'thumbnailHeight': 'thumbnail_height',
+        'thumbnailUrl': 'thumbnail_url',
+        'thumbnailWidth': 'thumbnail_width'
+      },
     );
 
 Map<String, dynamic> _$$_EmbedDataToJson(_$_EmbedData instance) =>

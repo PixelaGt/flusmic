@@ -8,10 +8,17 @@ part of 'span.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Span _$$_SpanFromJson(Map<String, dynamic> json) => _$_Span(
-      type: json['type'] as String,
-      end: json['end'] as int,
-      start: json['start'] as int,
+_$_Span _$$_SpanFromJson(Map json) => $checkedCreate(
+      r'_$_Span',
+      json,
+      ($checkedConvert) {
+        final val = _$_Span(
+          type: $checkedConvert('type', (v) => v as String),
+          end: $checkedConvert('end', (v) => v as int),
+          start: $checkedConvert('start', (v) => v as int),
+        );
+        return val;
+      },
     );
 
 Map<String, dynamic> _$$_SpanToJson(_$_Span instance) => <String, dynamic>{

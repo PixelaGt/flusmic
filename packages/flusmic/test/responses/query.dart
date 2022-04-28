@@ -1,7 +1,7 @@
 const badQueryResponse = {
   'page': 1,
   'results_per_page': 20,
-  'results_size': 2,
+  'results_size': '2',
   'total_results_size': 2,
   'total_pages': 1,
   'next_page': null,

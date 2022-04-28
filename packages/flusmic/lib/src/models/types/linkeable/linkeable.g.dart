@@ -8,15 +8,23 @@ part of 'linkeable.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$DocumentLinkeable _$$DocumentLinkeableFromJson(Map<String, dynamic> json) =>
-    _$DocumentLinkeable(
-      documentType: json['type'] as String,
-      tags: (json['tags'] as List<dynamic>).map((e) => e as String).toList(),
-      id: json['id'] as String,
-      lang: json['lang'] as String,
-      slug: json['slug'] as String,
-      isBroken: json['isBroken'] as bool,
-      $type: json['link_type'] as String?,
+_$DocumentLinkeable _$$DocumentLinkeableFromJson(Map json) => $checkedCreate(
+      r'_$DocumentLinkeable',
+      json,
+      ($checkedConvert) {
+        final val = _$DocumentLinkeable(
+          documentType: $checkedConvert('type', (v) => v as String),
+          tags: $checkedConvert('tags',
+              (v) => (v as List<dynamic>).map((e) => e as String).toList()),
+          id: $checkedConvert('id', (v) => v as String),
+          lang: $checkedConvert('lang', (v) => v as String),
+          slug: $checkedConvert('slug', (v) => v as String),
+          isBroken: $checkedConvert('isBroken', (v) => v as bool),
+          $type: $checkedConvert('link_type', (v) => v as String?),
+        );
+        return val;
+      },
+      fieldKeyMap: const {'documentType': 'type', r'$type': 'link_type'},
     );
 
 Map<String, dynamic> _$$DocumentLinkeableToJson(_$DocumentLinkeable instance) =>
@@ -30,15 +38,22 @@ Map<String, dynamic> _$$DocumentLinkeableToJson(_$DocumentLinkeable instance) =>
       'link_type': instance.$type,
     };
 
-_$MediaLinkeable _$$MediaLinkeableFromJson(Map<String, dynamic> json) =>
-    _$MediaLinkeable(
-      height: json['height'] as String?,
-      width: json['width'] as String?,
-      kind: json['kind'] as String?,
-      name: json['name'] as String?,
-      size: json['size'] as String?,
-      url: json['url'] as String?,
-      $type: json['link_type'] as String?,
+_$MediaLinkeable _$$MediaLinkeableFromJson(Map json) => $checkedCreate(
+      r'_$MediaLinkeable',
+      json,
+      ($checkedConvert) {
+        final val = _$MediaLinkeable(
+          height: $checkedConvert('height', (v) => v as String?),
+          width: $checkedConvert('width', (v) => v as String?),
+          kind: $checkedConvert('kind', (v) => v as String?),
+          name: $checkedConvert('name', (v) => v as String?),
+          size: $checkedConvert('size', (v) => v as String?),
+          url: $checkedConvert('url', (v) => v as String?),
+          $type: $checkedConvert('link_type', (v) => v as String?),
+        );
+        return val;
+      },
+      fieldKeyMap: const {r'$type': 'link_type'},
     );
 
 Map<String, dynamic> _$$MediaLinkeableToJson(_$MediaLinkeable instance) =>
@@ -52,10 +67,17 @@ Map<String, dynamic> _$$MediaLinkeableToJson(_$MediaLinkeable instance) =>
       'link_type': instance.$type,
     };
 
-_$WebLinkeable _$$WebLinkeableFromJson(Map<String, dynamic> json) =>
-    _$WebLinkeable(
-      url: json['url'] as String,
-      $type: json['link_type'] as String?,
+_$WebLinkeable _$$WebLinkeableFromJson(Map json) => $checkedCreate(
+      r'_$WebLinkeable',
+      json,
+      ($checkedConvert) {
+        final val = _$WebLinkeable(
+          url: $checkedConvert('url', (v) => v as String),
+          $type: $checkedConvert('link_type', (v) => v as String?),
+        );
+        return val;
+      },
+      fieldKeyMap: const {r'$type': 'link_type'},
     );
 
 Map<String, dynamic> _$$WebLinkeableToJson(_$WebLinkeable instance) =>
