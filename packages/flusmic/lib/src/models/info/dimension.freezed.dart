@@ -63,29 +63,30 @@ class _$DimensionCopyWithImpl<$Res> implements $DimensionCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$DimensionCopyWith<$Res> implements $DimensionCopyWith<$Res> {
-  factory _$DimensionCopyWith(
-          _Dimension value, $Res Function(_Dimension) then) =
-      __$DimensionCopyWithImpl<$Res>;
+abstract class _$$_DimensionCopyWith<$Res> implements $DimensionCopyWith<$Res> {
+  factory _$$_DimensionCopyWith(
+          _$_Dimension value, $Res Function(_$_Dimension) then) =
+      __$$_DimensionCopyWithImpl<$Res>;
   @override
   $Res call({double height, double width});
 }
 
 /// @nodoc
-class __$DimensionCopyWithImpl<$Res> extends _$DimensionCopyWithImpl<$Res>
-    implements _$DimensionCopyWith<$Res> {
-  __$DimensionCopyWithImpl(_Dimension _value, $Res Function(_Dimension) _then)
-      : super(_value, (v) => _then(v as _Dimension));
+class __$$_DimensionCopyWithImpl<$Res> extends _$DimensionCopyWithImpl<$Res>
+    implements _$$_DimensionCopyWith<$Res> {
+  __$$_DimensionCopyWithImpl(
+      _$_Dimension _value, $Res Function(_$_Dimension) _then)
+      : super(_value, (v) => _then(v as _$_Dimension));
 
   @override
-  _Dimension get _value => super._value as _Dimension;
+  _$_Dimension get _value => super._value as _$_Dimension;
 
   @override
   $Res call({
     Object? height = freezed,
     Object? width = freezed,
   }) {
-    return _then(_Dimension(
+    return _then(_$_Dimension(
       height: height == freezed
           ? _value.height
           : height // ignore: cast_nullable_to_non_nullable
@@ -120,7 +121,7 @@ class _$_Dimension implements _Dimension {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Dimension &&
+            other is _$_Dimension &&
             const DeepCollectionEquality().equals(other.height, height) &&
             const DeepCollectionEquality().equals(other.width, width));
   }
@@ -134,8 +135,8 @@ class _$_Dimension implements _Dimension {
 
   @JsonKey(ignore: true)
   @override
-  _$DimensionCopyWith<_Dimension> get copyWith =>
-      __$DimensionCopyWithImpl<_Dimension>(this, _$identity);
+  _$$_DimensionCopyWith<_$_Dimension> get copyWith =>
+      __$$_DimensionCopyWithImpl<_$_Dimension>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -157,6 +158,6 @@ abstract class _Dimension implements Dimension {
   double get width => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$DimensionCopyWith<_Dimension> get copyWith =>
+  _$$_DimensionCopyWith<_$_Dimension> get copyWith =>
       throw _privateConstructorUsedError;
 }

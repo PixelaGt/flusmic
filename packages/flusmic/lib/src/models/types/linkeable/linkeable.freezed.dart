@@ -121,10 +121,10 @@ class _$LinkeableCopyWithImpl<$Res> implements $LinkeableCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class $DocumentLinkeableCopyWith<$Res> {
-  factory $DocumentLinkeableCopyWith(
-          DocumentLinkeable value, $Res Function(DocumentLinkeable) then) =
-      _$DocumentLinkeableCopyWithImpl<$Res>;
+abstract class _$$DocumentLinkeableCopyWith<$Res> {
+  factory _$$DocumentLinkeableCopyWith(
+          _$DocumentLinkeable value, $Res Function(_$DocumentLinkeable) then) =
+      __$$DocumentLinkeableCopyWithImpl<$Res>;
   $Res call(
       {@JsonKey(name: 'type') String documentType,
       List<String> tags,
@@ -135,15 +135,15 @@ abstract class $DocumentLinkeableCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$DocumentLinkeableCopyWithImpl<$Res>
+class __$$DocumentLinkeableCopyWithImpl<$Res>
     extends _$LinkeableCopyWithImpl<$Res>
-    implements $DocumentLinkeableCopyWith<$Res> {
-  _$DocumentLinkeableCopyWithImpl(
-      DocumentLinkeable _value, $Res Function(DocumentLinkeable) _then)
-      : super(_value, (v) => _then(v as DocumentLinkeable));
+    implements _$$DocumentLinkeableCopyWith<$Res> {
+  __$$DocumentLinkeableCopyWithImpl(
+      _$DocumentLinkeable _value, $Res Function(_$DocumentLinkeable) _then)
+      : super(_value, (v) => _then(v as _$DocumentLinkeable));
 
   @override
-  DocumentLinkeable get _value => super._value as DocumentLinkeable;
+  _$DocumentLinkeable get _value => super._value as _$DocumentLinkeable;
 
   @override
   $Res call({
@@ -154,13 +154,13 @@ class _$DocumentLinkeableCopyWithImpl<$Res>
     Object? slug = freezed,
     Object? isBroken = freezed,
   }) {
-    return _then(DocumentLinkeable(
+    return _then(_$DocumentLinkeable(
       documentType: documentType == freezed
           ? _value.documentType
           : documentType // ignore: cast_nullable_to_non_nullable
               as String,
       tags: tags == freezed
-          ? _value.tags
+          ? _value._tags
           : tags // ignore: cast_nullable_to_non_nullable
               as List<String>,
       id: id == freezed
@@ -232,10 +232,10 @@ class _$DocumentLinkeable implements DocumentLinkeable {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is DocumentLinkeable &&
+            other is _$DocumentLinkeable &&
             const DeepCollectionEquality()
                 .equals(other.documentType, documentType) &&
-            const DeepCollectionEquality().equals(other.tags, tags) &&
+            const DeepCollectionEquality().equals(other._tags, _tags) &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.lang, lang) &&
             const DeepCollectionEquality().equals(other.slug, slug) &&
@@ -247,7 +247,7 @@ class _$DocumentLinkeable implements DocumentLinkeable {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(documentType),
-      const DeepCollectionEquality().hash(tags),
+      const DeepCollectionEquality().hash(_tags),
       const DeepCollectionEquality().hash(id),
       const DeepCollectionEquality().hash(lang),
       const DeepCollectionEquality().hash(slug),
@@ -255,8 +255,8 @@ class _$DocumentLinkeable implements DocumentLinkeable {
 
   @JsonKey(ignore: true)
   @override
-  $DocumentLinkeableCopyWith<DocumentLinkeable> get copyWith =>
-      _$DocumentLinkeableCopyWithImpl<DocumentLinkeable>(this, _$identity);
+  _$$DocumentLinkeableCopyWith<_$DocumentLinkeable> get copyWith =>
+      __$$DocumentLinkeableCopyWithImpl<_$DocumentLinkeable>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -380,15 +380,15 @@ abstract class DocumentLinkeable implements Linkeable {
   String get slug => throw _privateConstructorUsedError;
   bool get isBroken => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $DocumentLinkeableCopyWith<DocumentLinkeable> get copyWith =>
+  _$$DocumentLinkeableCopyWith<_$DocumentLinkeable> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $MediaLinkeableCopyWith<$Res> {
-  factory $MediaLinkeableCopyWith(
-          MediaLinkeable value, $Res Function(MediaLinkeable) then) =
-      _$MediaLinkeableCopyWithImpl<$Res>;
+abstract class _$$MediaLinkeableCopyWith<$Res> {
+  factory _$$MediaLinkeableCopyWith(
+          _$MediaLinkeable value, $Res Function(_$MediaLinkeable) then) =
+      __$$MediaLinkeableCopyWithImpl<$Res>;
   $Res call(
       {String? height,
       String? width,
@@ -399,14 +399,14 @@ abstract class $MediaLinkeableCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$MediaLinkeableCopyWithImpl<$Res> extends _$LinkeableCopyWithImpl<$Res>
-    implements $MediaLinkeableCopyWith<$Res> {
-  _$MediaLinkeableCopyWithImpl(
-      MediaLinkeable _value, $Res Function(MediaLinkeable) _then)
-      : super(_value, (v) => _then(v as MediaLinkeable));
+class __$$MediaLinkeableCopyWithImpl<$Res> extends _$LinkeableCopyWithImpl<$Res>
+    implements _$$MediaLinkeableCopyWith<$Res> {
+  __$$MediaLinkeableCopyWithImpl(
+      _$MediaLinkeable _value, $Res Function(_$MediaLinkeable) _then)
+      : super(_value, (v) => _then(v as _$MediaLinkeable));
 
   @override
-  MediaLinkeable get _value => super._value as MediaLinkeable;
+  _$MediaLinkeable get _value => super._value as _$MediaLinkeable;
 
   @override
   $Res call({
@@ -417,7 +417,7 @@ class _$MediaLinkeableCopyWithImpl<$Res> extends _$LinkeableCopyWithImpl<$Res>
     Object? size = freezed,
     Object? url = freezed,
   }) {
-    return _then(MediaLinkeable(
+    return _then(_$MediaLinkeable(
       height: height == freezed
           ? _value.height
           : height // ignore: cast_nullable_to_non_nullable
@@ -488,7 +488,7 @@ class _$MediaLinkeable implements MediaLinkeable {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is MediaLinkeable &&
+            other is _$MediaLinkeable &&
             const DeepCollectionEquality().equals(other.height, height) &&
             const DeepCollectionEquality().equals(other.width, width) &&
             const DeepCollectionEquality().equals(other.kind, kind) &&
@@ -510,8 +510,8 @@ class _$MediaLinkeable implements MediaLinkeable {
 
   @JsonKey(ignore: true)
   @override
-  $MediaLinkeableCopyWith<MediaLinkeable> get copyWith =>
-      _$MediaLinkeableCopyWithImpl<MediaLinkeable>(this, _$identity);
+  _$$MediaLinkeableCopyWith<_$MediaLinkeable> get copyWith =>
+      __$$MediaLinkeableCopyWithImpl<_$MediaLinkeable>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -634,33 +634,33 @@ abstract class MediaLinkeable implements Linkeable {
   String? get size => throw _privateConstructorUsedError;
   String? get url => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $MediaLinkeableCopyWith<MediaLinkeable> get copyWith =>
+  _$$MediaLinkeableCopyWith<_$MediaLinkeable> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $WebLinkeableCopyWith<$Res> {
-  factory $WebLinkeableCopyWith(
-          WebLinkeable value, $Res Function(WebLinkeable) then) =
-      _$WebLinkeableCopyWithImpl<$Res>;
+abstract class _$$WebLinkeableCopyWith<$Res> {
+  factory _$$WebLinkeableCopyWith(
+          _$WebLinkeable value, $Res Function(_$WebLinkeable) then) =
+      __$$WebLinkeableCopyWithImpl<$Res>;
   $Res call({String url});
 }
 
 /// @nodoc
-class _$WebLinkeableCopyWithImpl<$Res> extends _$LinkeableCopyWithImpl<$Res>
-    implements $WebLinkeableCopyWith<$Res> {
-  _$WebLinkeableCopyWithImpl(
-      WebLinkeable _value, $Res Function(WebLinkeable) _then)
-      : super(_value, (v) => _then(v as WebLinkeable));
+class __$$WebLinkeableCopyWithImpl<$Res> extends _$LinkeableCopyWithImpl<$Res>
+    implements _$$WebLinkeableCopyWith<$Res> {
+  __$$WebLinkeableCopyWithImpl(
+      _$WebLinkeable _value, $Res Function(_$WebLinkeable) _then)
+      : super(_value, (v) => _then(v as _$WebLinkeable));
 
   @override
-  WebLinkeable get _value => super._value as WebLinkeable;
+  _$WebLinkeable get _value => super._value as _$WebLinkeable;
 
   @override
   $Res call({
     Object? url = freezed,
   }) {
-    return _then(WebLinkeable(
+    return _then(_$WebLinkeable(
       url: url == freezed
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
@@ -694,7 +694,7 @@ class _$WebLinkeable implements WebLinkeable {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is WebLinkeable &&
+            other is _$WebLinkeable &&
             const DeepCollectionEquality().equals(other.url, url));
   }
 
@@ -705,8 +705,8 @@ class _$WebLinkeable implements WebLinkeable {
 
   @JsonKey(ignore: true)
   @override
-  $WebLinkeableCopyWith<WebLinkeable> get copyWith =>
-      _$WebLinkeableCopyWithImpl<WebLinkeable>(this, _$identity);
+  _$$WebLinkeableCopyWith<_$WebLinkeable> get copyWith =>
+      __$$WebLinkeableCopyWithImpl<_$WebLinkeable>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -818,6 +818,6 @@ abstract class WebLinkeable implements Linkeable {
 // @JsonKey(name: 'link_type') required String linkType,
   String get url => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $WebLinkeableCopyWith<WebLinkeable> get copyWith =>
+  _$$WebLinkeableCopyWith<_$WebLinkeable> get copyWith =>
       throw _privateConstructorUsedError;
 }

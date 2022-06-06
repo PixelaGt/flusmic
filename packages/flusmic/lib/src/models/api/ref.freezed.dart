@@ -74,21 +74,21 @@ class _$RefCopyWithImpl<$Res> implements $RefCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$RefCopyWith<$Res> implements $RefCopyWith<$Res> {
-  factory _$RefCopyWith(_Ref value, $Res Function(_Ref) then) =
-      __$RefCopyWithImpl<$Res>;
+abstract class _$$_RefCopyWith<$Res> implements $RefCopyWith<$Res> {
+  factory _$$_RefCopyWith(_$_Ref value, $Res Function(_$_Ref) then) =
+      __$$_RefCopyWithImpl<$Res>;
   @override
   $Res call({String id, String label, String ref, bool isMasterRef});
 }
 
 /// @nodoc
-class __$RefCopyWithImpl<$Res> extends _$RefCopyWithImpl<$Res>
-    implements _$RefCopyWith<$Res> {
-  __$RefCopyWithImpl(_Ref _value, $Res Function(_Ref) _then)
-      : super(_value, (v) => _then(v as _Ref));
+class __$$_RefCopyWithImpl<$Res> extends _$RefCopyWithImpl<$Res>
+    implements _$$_RefCopyWith<$Res> {
+  __$$_RefCopyWithImpl(_$_Ref _value, $Res Function(_$_Ref) _then)
+      : super(_value, (v) => _then(v as _$_Ref));
 
   @override
-  _Ref get _value => super._value as _Ref;
+  _$_Ref get _value => super._value as _$_Ref;
 
   @override
   $Res call({
@@ -97,7 +97,7 @@ class __$RefCopyWithImpl<$Res> extends _$RefCopyWithImpl<$Res>
     Object? ref = freezed,
     Object? isMasterRef = freezed,
   }) {
-    return _then(_Ref(
+    return _then(_$_Ref(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -147,7 +147,7 @@ class _$_Ref implements _Ref {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Ref &&
+            other is _$_Ref &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.label, label) &&
             const DeepCollectionEquality().equals(other.ref, ref) &&
@@ -166,8 +166,8 @@ class _$_Ref implements _Ref {
 
   @JsonKey(ignore: true)
   @override
-  _$RefCopyWith<_Ref> get copyWith =>
-      __$RefCopyWithImpl<_Ref>(this, _$identity);
+  _$$_RefCopyWith<_$_Ref> get copyWith =>
+      __$$_RefCopyWithImpl<_$_Ref>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -194,5 +194,5 @@ abstract class _Ref implements Ref {
   bool get isMasterRef => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$RefCopyWith<_Ref> get copyWith => throw _privateConstructorUsedError;
+  _$$_RefCopyWith<_$_Ref> get copyWith => throw _privateConstructorUsedError;
 }

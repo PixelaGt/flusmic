@@ -157,10 +157,10 @@ class _$EmbedDataCopyWithImpl<$Res> implements $EmbedDataCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$EmbedDataCopyWith<$Res> implements $EmbedDataCopyWith<$Res> {
-  factory _$EmbedDataCopyWith(
-          _EmbedData value, $Res Function(_EmbedData) then) =
-      __$EmbedDataCopyWithImpl<$Res>;
+abstract class _$$_EmbedDataCopyWith<$Res> implements $EmbedDataCopyWith<$Res> {
+  factory _$$_EmbedDataCopyWith(
+          _$_EmbedData value, $Res Function(_$_EmbedData) then) =
+      __$$_EmbedDataCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: 'author_name') String authorName,
@@ -180,13 +180,14 @@ abstract class _$EmbedDataCopyWith<$Res> implements $EmbedDataCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$EmbedDataCopyWithImpl<$Res> extends _$EmbedDataCopyWithImpl<$Res>
-    implements _$EmbedDataCopyWith<$Res> {
-  __$EmbedDataCopyWithImpl(_EmbedData _value, $Res Function(_EmbedData) _then)
-      : super(_value, (v) => _then(v as _EmbedData));
+class __$$_EmbedDataCopyWithImpl<$Res> extends _$EmbedDataCopyWithImpl<$Res>
+    implements _$$_EmbedDataCopyWith<$Res> {
+  __$$_EmbedDataCopyWithImpl(
+      _$_EmbedData _value, $Res Function(_$_EmbedData) _then)
+      : super(_value, (v) => _then(v as _$_EmbedData));
 
   @override
-  _EmbedData get _value => super._value as _EmbedData;
+  _$_EmbedData get _value => super._value as _$_EmbedData;
 
   @override
   $Res call({
@@ -205,7 +206,7 @@ class __$EmbedDataCopyWithImpl<$Res> extends _$EmbedDataCopyWithImpl<$Res>
     Object? height = freezed,
     Object? width = freezed,
   }) {
-    return _then(_EmbedData(
+    return _then(_$_EmbedData(
       authorName: authorName == freezed
           ? _value.authorName
           : authorName // ignore: cast_nullable_to_non_nullable
@@ -334,7 +335,7 @@ class _$_EmbedData implements _EmbedData {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _EmbedData &&
+            other is _$_EmbedData &&
             const DeepCollectionEquality()
                 .equals(other.authorName, authorName) &&
             const DeepCollectionEquality().equals(other.authorUrl, authorUrl) &&
@@ -378,8 +379,8 @@ class _$_EmbedData implements _EmbedData {
 
   @JsonKey(ignore: true)
   @override
-  _$EmbedDataCopyWith<_EmbedData> get copyWith =>
-      __$EmbedDataCopyWithImpl<_EmbedData>(this, _$identity);
+  _$$_EmbedDataCopyWith<_$_EmbedData> get copyWith =>
+      __$$_EmbedDataCopyWithImpl<_$_EmbedData>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -445,6 +446,6 @@ abstract class _EmbedData implements EmbedData {
   double get width => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$EmbedDataCopyWith<_EmbedData> get copyWith =>
+  _$$_EmbedDataCopyWith<_$_EmbedData> get copyWith =>
       throw _privateConstructorUsedError;
 }

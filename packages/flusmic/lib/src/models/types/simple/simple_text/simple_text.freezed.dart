@@ -70,23 +70,24 @@ class _$SimpleTextCopyWithImpl<$Res> implements $SimpleTextCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$SimpleTextCopyWith<$Res> implements $SimpleTextCopyWith<$Res> {
-  factory _$SimpleTextCopyWith(
-          _SimpleText value, $Res Function(_SimpleText) then) =
-      __$SimpleTextCopyWithImpl<$Res>;
+abstract class _$$_SimpleTextCopyWith<$Res>
+    implements $SimpleTextCopyWith<$Res> {
+  factory _$$_SimpleTextCopyWith(
+          _$_SimpleText value, $Res Function(_$_SimpleText) then) =
+      __$$_SimpleTextCopyWithImpl<$Res>;
   @override
   $Res call({List<Span> spans, String text, String type});
 }
 
 /// @nodoc
-class __$SimpleTextCopyWithImpl<$Res> extends _$SimpleTextCopyWithImpl<$Res>
-    implements _$SimpleTextCopyWith<$Res> {
-  __$SimpleTextCopyWithImpl(
-      _SimpleText _value, $Res Function(_SimpleText) _then)
-      : super(_value, (v) => _then(v as _SimpleText));
+class __$$_SimpleTextCopyWithImpl<$Res> extends _$SimpleTextCopyWithImpl<$Res>
+    implements _$$_SimpleTextCopyWith<$Res> {
+  __$$_SimpleTextCopyWithImpl(
+      _$_SimpleText _value, $Res Function(_$_SimpleText) _then)
+      : super(_value, (v) => _then(v as _$_SimpleText));
 
   @override
-  _SimpleText get _value => super._value as _SimpleText;
+  _$_SimpleText get _value => super._value as _$_SimpleText;
 
   @override
   $Res call({
@@ -94,9 +95,9 @@ class __$SimpleTextCopyWithImpl<$Res> extends _$SimpleTextCopyWithImpl<$Res>
     Object? text = freezed,
     Object? type = freezed,
   }) {
-    return _then(_SimpleText(
+    return _then(_$_SimpleText(
       spans: spans == freezed
-          ? _value.spans
+          ? _value._spans
           : spans // ignore: cast_nullable_to_non_nullable
               as List<Span>,
       text: text == freezed
@@ -142,8 +143,8 @@ class _$_SimpleText implements _SimpleText {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SimpleText &&
-            const DeepCollectionEquality().equals(other.spans, spans) &&
+            other is _$_SimpleText &&
+            const DeepCollectionEquality().equals(other._spans, _spans) &&
             const DeepCollectionEquality().equals(other.text, text) &&
             const DeepCollectionEquality().equals(other.type, type));
   }
@@ -152,14 +153,14 @@ class _$_SimpleText implements _SimpleText {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(spans),
+      const DeepCollectionEquality().hash(_spans),
       const DeepCollectionEquality().hash(text),
       const DeepCollectionEquality().hash(type));
 
   @JsonKey(ignore: true)
   @override
-  _$SimpleTextCopyWith<_SimpleText> get copyWith =>
-      __$SimpleTextCopyWithImpl<_SimpleText>(this, _$identity);
+  _$$_SimpleTextCopyWith<_$_SimpleText> get copyWith =>
+      __$$_SimpleTextCopyWithImpl<_$_SimpleText>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -184,6 +185,6 @@ abstract class _SimpleText implements SimpleText {
   String get type => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$SimpleTextCopyWith<_SimpleText> get copyWith =>
+  _$$_SimpleTextCopyWith<_$_SimpleText> get copyWith =>
       throw _privateConstructorUsedError;
 }

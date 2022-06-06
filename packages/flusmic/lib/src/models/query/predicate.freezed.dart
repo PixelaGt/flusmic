@@ -247,35 +247,35 @@ class _$PredicateCopyWithImpl<$Res> implements $PredicateCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class $AnyPredicateCopyWith<$Res> {
-  factory $AnyPredicateCopyWith(
-          AnyPredicate value, $Res Function(AnyPredicate) then) =
-      _$AnyPredicateCopyWithImpl<$Res>;
+abstract class _$$AnyPredicateCopyWith<$Res> {
+  factory _$$AnyPredicateCopyWith(
+          _$AnyPredicate value, $Res Function(_$AnyPredicate) then) =
+      __$$AnyPredicateCopyWithImpl<$Res>;
   $Res call({PredicatePath path, List<String> values});
 }
 
 /// @nodoc
-class _$AnyPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
-    implements $AnyPredicateCopyWith<$Res> {
-  _$AnyPredicateCopyWithImpl(
-      AnyPredicate _value, $Res Function(AnyPredicate) _then)
-      : super(_value, (v) => _then(v as AnyPredicate));
+class __$$AnyPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
+    implements _$$AnyPredicateCopyWith<$Res> {
+  __$$AnyPredicateCopyWithImpl(
+      _$AnyPredicate _value, $Res Function(_$AnyPredicate) _then)
+      : super(_value, (v) => _then(v as _$AnyPredicate));
 
   @override
-  AnyPredicate get _value => super._value as AnyPredicate;
+  _$AnyPredicate get _value => super._value as _$AnyPredicate;
 
   @override
   $Res call({
     Object? path = freezed,
     Object? values = freezed,
   }) {
-    return _then(AnyPredicate(
+    return _then(_$AnyPredicate(
       path == freezed
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
               as PredicatePath,
       values == freezed
-          ? _value.values
+          ? _value._values
           : values // ignore: cast_nullable_to_non_nullable
               as List<String>,
     ));
@@ -305,21 +305,21 @@ class _$AnyPredicate implements AnyPredicate {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is AnyPredicate &&
+            other is _$AnyPredicate &&
             const DeepCollectionEquality().equals(other.path, path) &&
-            const DeepCollectionEquality().equals(other.values, values));
+            const DeepCollectionEquality().equals(other._values, _values));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(path),
-      const DeepCollectionEquality().hash(values));
+      const DeepCollectionEquality().hash(_values));
 
   @JsonKey(ignore: true)
   @override
-  $AnyPredicateCopyWith<AnyPredicate> get copyWith =>
-      _$AnyPredicateCopyWithImpl<AnyPredicate>(this, _$identity);
+  _$$AnyPredicateCopyWith<_$AnyPredicate> get copyWith =>
+      __$$AnyPredicateCopyWithImpl<_$AnyPredicate>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -566,34 +566,34 @@ abstract class AnyPredicate implements Predicate {
   PredicatePath get path => throw _privateConstructorUsedError;
   List<String> get values => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $AnyPredicateCopyWith<AnyPredicate> get copyWith =>
+  _$$AnyPredicateCopyWith<_$AnyPredicate> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $AtPredicateCopyWith<$Res> {
-  factory $AtPredicateCopyWith(
-          AtPredicate value, $Res Function(AtPredicate) then) =
-      _$AtPredicateCopyWithImpl<$Res>;
+abstract class _$$AtPredicateCopyWith<$Res> {
+  factory _$$AtPredicateCopyWith(
+          _$AtPredicate value, $Res Function(_$AtPredicate) then) =
+      __$$AtPredicateCopyWithImpl<$Res>;
   $Res call({PredicatePath path, String value});
 }
 
 /// @nodoc
-class _$AtPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
-    implements $AtPredicateCopyWith<$Res> {
-  _$AtPredicateCopyWithImpl(
-      AtPredicate _value, $Res Function(AtPredicate) _then)
-      : super(_value, (v) => _then(v as AtPredicate));
+class __$$AtPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
+    implements _$$AtPredicateCopyWith<$Res> {
+  __$$AtPredicateCopyWithImpl(
+      _$AtPredicate _value, $Res Function(_$AtPredicate) _then)
+      : super(_value, (v) => _then(v as _$AtPredicate));
 
   @override
-  AtPredicate get _value => super._value as AtPredicate;
+  _$AtPredicate get _value => super._value as _$AtPredicate;
 
   @override
   $Res call({
     Object? path = freezed,
     Object? value = freezed,
   }) {
-    return _then(AtPredicate(
+    return _then(_$AtPredicate(
       path == freezed
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
@@ -625,7 +625,7 @@ class _$AtPredicate implements AtPredicate {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is AtPredicate &&
+            other is _$AtPredicate &&
             const DeepCollectionEquality().equals(other.path, path) &&
             const DeepCollectionEquality().equals(other.value, value));
   }
@@ -638,8 +638,8 @@ class _$AtPredicate implements AtPredicate {
 
   @JsonKey(ignore: true)
   @override
-  $AtPredicateCopyWith<AtPredicate> get copyWith =>
-      _$AtPredicateCopyWithImpl<AtPredicate>(this, _$identity);
+  _$$AtPredicateCopyWith<_$AtPredicate> get copyWith =>
+      __$$AtPredicateCopyWithImpl<_$AtPredicate>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -886,35 +886,35 @@ abstract class AtPredicate implements Predicate {
   PredicatePath get path => throw _privateConstructorUsedError;
   String get value => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $AtPredicateCopyWith<AtPredicate> get copyWith =>
+  _$$AtPredicateCopyWith<_$AtPredicate> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $FullTextPredicateCopyWith<$Res> {
-  factory $FullTextPredicateCopyWith(
-          FullTextPredicate value, $Res Function(FullTextPredicate) then) =
-      _$FullTextPredicateCopyWithImpl<$Res>;
+abstract class _$$FullTextPredicateCopyWith<$Res> {
+  factory _$$FullTextPredicateCopyWith(
+          _$FullTextPredicate value, $Res Function(_$FullTextPredicate) then) =
+      __$$FullTextPredicateCopyWithImpl<$Res>;
   $Res call({PredicatePath path, String value});
 }
 
 /// @nodoc
-class _$FullTextPredicateCopyWithImpl<$Res>
+class __$$FullTextPredicateCopyWithImpl<$Res>
     extends _$PredicateCopyWithImpl<$Res>
-    implements $FullTextPredicateCopyWith<$Res> {
-  _$FullTextPredicateCopyWithImpl(
-      FullTextPredicate _value, $Res Function(FullTextPredicate) _then)
-      : super(_value, (v) => _then(v as FullTextPredicate));
+    implements _$$FullTextPredicateCopyWith<$Res> {
+  __$$FullTextPredicateCopyWithImpl(
+      _$FullTextPredicate _value, $Res Function(_$FullTextPredicate) _then)
+      : super(_value, (v) => _then(v as _$FullTextPredicate));
 
   @override
-  FullTextPredicate get _value => super._value as FullTextPredicate;
+  _$FullTextPredicate get _value => super._value as _$FullTextPredicate;
 
   @override
   $Res call({
     Object? path = freezed,
     Object? value = freezed,
   }) {
-    return _then(FullTextPredicate(
+    return _then(_$FullTextPredicate(
       path == freezed
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
@@ -946,7 +946,7 @@ class _$FullTextPredicate implements FullTextPredicate {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is FullTextPredicate &&
+            other is _$FullTextPredicate &&
             const DeepCollectionEquality().equals(other.path, path) &&
             const DeepCollectionEquality().equals(other.value, value));
   }
@@ -959,8 +959,8 @@ class _$FullTextPredicate implements FullTextPredicate {
 
   @JsonKey(ignore: true)
   @override
-  $FullTextPredicateCopyWith<FullTextPredicate> get copyWith =>
-      _$FullTextPredicateCopyWithImpl<FullTextPredicate>(this, _$identity);
+  _$$FullTextPredicateCopyWith<_$FullTextPredicate> get copyWith =>
+      __$$FullTextPredicateCopyWithImpl<_$FullTextPredicate>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1207,34 +1207,34 @@ abstract class FullTextPredicate implements Predicate {
   PredicatePath get path => throw _privateConstructorUsedError;
   String get value => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $FullTextPredicateCopyWith<FullTextPredicate> get copyWith =>
+  _$$FullTextPredicateCopyWith<_$FullTextPredicate> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $GtPredicateCopyWith<$Res> {
-  factory $GtPredicateCopyWith(
-          GtPredicate value, $Res Function(GtPredicate) then) =
-      _$GtPredicateCopyWithImpl<$Res>;
+abstract class _$$GtPredicateCopyWith<$Res> {
+  factory _$$GtPredicateCopyWith(
+          _$GtPredicate value, $Res Function(_$GtPredicate) then) =
+      __$$GtPredicateCopyWithImpl<$Res>;
   $Res call({PredicatePath path, double value});
 }
 
 /// @nodoc
-class _$GtPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
-    implements $GtPredicateCopyWith<$Res> {
-  _$GtPredicateCopyWithImpl(
-      GtPredicate _value, $Res Function(GtPredicate) _then)
-      : super(_value, (v) => _then(v as GtPredicate));
+class __$$GtPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
+    implements _$$GtPredicateCopyWith<$Res> {
+  __$$GtPredicateCopyWithImpl(
+      _$GtPredicate _value, $Res Function(_$GtPredicate) _then)
+      : super(_value, (v) => _then(v as _$GtPredicate));
 
   @override
-  GtPredicate get _value => super._value as GtPredicate;
+  _$GtPredicate get _value => super._value as _$GtPredicate;
 
   @override
   $Res call({
     Object? path = freezed,
     Object? value = freezed,
   }) {
-    return _then(GtPredicate(
+    return _then(_$GtPredicate(
       path == freezed
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
@@ -1266,7 +1266,7 @@ class _$GtPredicate implements GtPredicate {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is GtPredicate &&
+            other is _$GtPredicate &&
             const DeepCollectionEquality().equals(other.path, path) &&
             const DeepCollectionEquality().equals(other.value, value));
   }
@@ -1279,8 +1279,8 @@ class _$GtPredicate implements GtPredicate {
 
   @JsonKey(ignore: true)
   @override
-  $GtPredicateCopyWith<GtPredicate> get copyWith =>
-      _$GtPredicateCopyWithImpl<GtPredicate>(this, _$identity);
+  _$$GtPredicateCopyWith<_$GtPredicate> get copyWith =>
+      __$$GtPredicateCopyWithImpl<_$GtPredicate>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1527,33 +1527,33 @@ abstract class GtPredicate implements Predicate {
   PredicatePath get path => throw _privateConstructorUsedError;
   double get value => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $GtPredicateCopyWith<GtPredicate> get copyWith =>
+  _$$GtPredicateCopyWith<_$GtPredicate> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $HasPredicateCopyWith<$Res> {
-  factory $HasPredicateCopyWith(
-          HasPredicate value, $Res Function(HasPredicate) then) =
-      _$HasPredicateCopyWithImpl<$Res>;
+abstract class _$$HasPredicateCopyWith<$Res> {
+  factory _$$HasPredicateCopyWith(
+          _$HasPredicate value, $Res Function(_$HasPredicate) then) =
+      __$$HasPredicateCopyWithImpl<$Res>;
   $Res call({PredicatePath path});
 }
 
 /// @nodoc
-class _$HasPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
-    implements $HasPredicateCopyWith<$Res> {
-  _$HasPredicateCopyWithImpl(
-      HasPredicate _value, $Res Function(HasPredicate) _then)
-      : super(_value, (v) => _then(v as HasPredicate));
+class __$$HasPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
+    implements _$$HasPredicateCopyWith<$Res> {
+  __$$HasPredicateCopyWithImpl(
+      _$HasPredicate _value, $Res Function(_$HasPredicate) _then)
+      : super(_value, (v) => _then(v as _$HasPredicate));
 
   @override
-  HasPredicate get _value => super._value as HasPredicate;
+  _$HasPredicate get _value => super._value as _$HasPredicate;
 
   @override
   $Res call({
     Object? path = freezed,
   }) {
-    return _then(HasPredicate(
+    return _then(_$HasPredicate(
       path == freezed
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
@@ -1579,7 +1579,7 @@ class _$HasPredicate implements HasPredicate {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is HasPredicate &&
+            other is _$HasPredicate &&
             const DeepCollectionEquality().equals(other.path, path));
   }
 
@@ -1589,8 +1589,8 @@ class _$HasPredicate implements HasPredicate {
 
   @JsonKey(ignore: true)
   @override
-  $HasPredicateCopyWith<HasPredicate> get copyWith =>
-      _$HasPredicateCopyWithImpl<HasPredicate>(this, _$identity);
+  _$$HasPredicateCopyWith<_$HasPredicate> get copyWith =>
+      __$$HasPredicateCopyWithImpl<_$HasPredicate>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1835,27 +1835,28 @@ abstract class HasPredicate implements Predicate {
 
   PredicatePath get path => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $HasPredicateCopyWith<HasPredicate> get copyWith =>
+  _$$HasPredicateCopyWith<_$HasPredicate> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $InRangePredicateCopyWith<$Res> {
-  factory $InRangePredicateCopyWith(
-          InRangePredicate value, $Res Function(InRangePredicate) then) =
-      _$InRangePredicateCopyWithImpl<$Res>;
+abstract class _$$InRangePredicateCopyWith<$Res> {
+  factory _$$InRangePredicateCopyWith(
+          _$InRangePredicate value, $Res Function(_$InRangePredicate) then) =
+      __$$InRangePredicateCopyWithImpl<$Res>;
   $Res call({PredicatePath path, double lowerLimit, double upperLimit});
 }
 
 /// @nodoc
-class _$InRangePredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
-    implements $InRangePredicateCopyWith<$Res> {
-  _$InRangePredicateCopyWithImpl(
-      InRangePredicate _value, $Res Function(InRangePredicate) _then)
-      : super(_value, (v) => _then(v as InRangePredicate));
+class __$$InRangePredicateCopyWithImpl<$Res>
+    extends _$PredicateCopyWithImpl<$Res>
+    implements _$$InRangePredicateCopyWith<$Res> {
+  __$$InRangePredicateCopyWithImpl(
+      _$InRangePredicate _value, $Res Function(_$InRangePredicate) _then)
+      : super(_value, (v) => _then(v as _$InRangePredicate));
 
   @override
-  InRangePredicate get _value => super._value as InRangePredicate;
+  _$InRangePredicate get _value => super._value as _$InRangePredicate;
 
   @override
   $Res call({
@@ -1863,7 +1864,7 @@ class _$InRangePredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
     Object? lowerLimit = freezed,
     Object? upperLimit = freezed,
   }) {
-    return _then(InRangePredicate(
+    return _then(_$InRangePredicate(
       path == freezed
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
@@ -1901,7 +1902,7 @@ class _$InRangePredicate implements InRangePredicate {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is InRangePredicate &&
+            other is _$InRangePredicate &&
             const DeepCollectionEquality().equals(other.path, path) &&
             const DeepCollectionEquality()
                 .equals(other.lowerLimit, lowerLimit) &&
@@ -1918,8 +1919,8 @@ class _$InRangePredicate implements InRangePredicate {
 
   @JsonKey(ignore: true)
   @override
-  $InRangePredicateCopyWith<InRangePredicate> get copyWith =>
-      _$InRangePredicateCopyWithImpl<InRangePredicate>(this, _$identity);
+  _$$InRangePredicateCopyWith<_$InRangePredicate> get copyWith =>
+      __$$InRangePredicateCopyWithImpl<_$InRangePredicate>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2167,40 +2168,40 @@ abstract class InRangePredicate implements Predicate {
   double get lowerLimit => throw _privateConstructorUsedError;
   double get upperLimit => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $InRangePredicateCopyWith<InRangePredicate> get copyWith =>
+  _$$InRangePredicateCopyWith<_$InRangePredicate> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $InPredicateCopyWith<$Res> {
-  factory $InPredicateCopyWith(
-          InPredicate value, $Res Function(InPredicate) then) =
-      _$InPredicateCopyWithImpl<$Res>;
+abstract class _$$InPredicateCopyWith<$Res> {
+  factory _$$InPredicateCopyWith(
+          _$InPredicate value, $Res Function(_$InPredicate) then) =
+      __$$InPredicateCopyWithImpl<$Res>;
   $Res call({PredicatePath path, List<String> values});
 }
 
 /// @nodoc
-class _$InPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
-    implements $InPredicateCopyWith<$Res> {
-  _$InPredicateCopyWithImpl(
-      InPredicate _value, $Res Function(InPredicate) _then)
-      : super(_value, (v) => _then(v as InPredicate));
+class __$$InPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
+    implements _$$InPredicateCopyWith<$Res> {
+  __$$InPredicateCopyWithImpl(
+      _$InPredicate _value, $Res Function(_$InPredicate) _then)
+      : super(_value, (v) => _then(v as _$InPredicate));
 
   @override
-  InPredicate get _value => super._value as InPredicate;
+  _$InPredicate get _value => super._value as _$InPredicate;
 
   @override
   $Res call({
     Object? path = freezed,
     Object? values = freezed,
   }) {
-    return _then(InPredicate(
+    return _then(_$InPredicate(
       path == freezed
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
               as PredicatePath,
       values == freezed
-          ? _value.values
+          ? _value._values
           : values // ignore: cast_nullable_to_non_nullable
               as List<String>,
     ));
@@ -2230,21 +2231,21 @@ class _$InPredicate implements InPredicate {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is InPredicate &&
+            other is _$InPredicate &&
             const DeepCollectionEquality().equals(other.path, path) &&
-            const DeepCollectionEquality().equals(other.values, values));
+            const DeepCollectionEquality().equals(other._values, _values));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(path),
-      const DeepCollectionEquality().hash(values));
+      const DeepCollectionEquality().hash(_values));
 
   @JsonKey(ignore: true)
   @override
-  $InPredicateCopyWith<InPredicate> get copyWith =>
-      _$InPredicateCopyWithImpl<InPredicate>(this, _$identity);
+  _$$InPredicateCopyWith<_$InPredicate> get copyWith =>
+      __$$InPredicateCopyWithImpl<_$InPredicate>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2491,34 +2492,34 @@ abstract class InPredicate implements Predicate {
   PredicatePath get path => throw _privateConstructorUsedError;
   List<String> get values => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $InPredicateCopyWith<InPredicate> get copyWith =>
+  _$$InPredicateCopyWith<_$InPredicate> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $LtPredicateCopyWith<$Res> {
-  factory $LtPredicateCopyWith(
-          LtPredicate value, $Res Function(LtPredicate) then) =
-      _$LtPredicateCopyWithImpl<$Res>;
+abstract class _$$LtPredicateCopyWith<$Res> {
+  factory _$$LtPredicateCopyWith(
+          _$LtPredicate value, $Res Function(_$LtPredicate) then) =
+      __$$LtPredicateCopyWithImpl<$Res>;
   $Res call({PredicatePath path, double value});
 }
 
 /// @nodoc
-class _$LtPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
-    implements $LtPredicateCopyWith<$Res> {
-  _$LtPredicateCopyWithImpl(
-      LtPredicate _value, $Res Function(LtPredicate) _then)
-      : super(_value, (v) => _then(v as LtPredicate));
+class __$$LtPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
+    implements _$$LtPredicateCopyWith<$Res> {
+  __$$LtPredicateCopyWithImpl(
+      _$LtPredicate _value, $Res Function(_$LtPredicate) _then)
+      : super(_value, (v) => _then(v as _$LtPredicate));
 
   @override
-  LtPredicate get _value => super._value as LtPredicate;
+  _$LtPredicate get _value => super._value as _$LtPredicate;
 
   @override
   $Res call({
     Object? path = freezed,
     Object? value = freezed,
   }) {
-    return _then(LtPredicate(
+    return _then(_$LtPredicate(
       path == freezed
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
@@ -2550,7 +2551,7 @@ class _$LtPredicate implements LtPredicate {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is LtPredicate &&
+            other is _$LtPredicate &&
             const DeepCollectionEquality().equals(other.path, path) &&
             const DeepCollectionEquality().equals(other.value, value));
   }
@@ -2563,8 +2564,8 @@ class _$LtPredicate implements LtPredicate {
 
   @JsonKey(ignore: true)
   @override
-  $LtPredicateCopyWith<LtPredicate> get copyWith =>
-      _$LtPredicateCopyWithImpl<LtPredicate>(this, _$identity);
+  _$$LtPredicateCopyWith<_$LtPredicate> get copyWith =>
+      __$$LtPredicateCopyWithImpl<_$LtPredicate>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2811,33 +2812,34 @@ abstract class LtPredicate implements Predicate {
   PredicatePath get path => throw _privateConstructorUsedError;
   double get value => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $LtPredicateCopyWith<LtPredicate> get copyWith =>
+  _$$LtPredicateCopyWith<_$LtPredicate> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $MissingPredicateCopyWith<$Res> {
-  factory $MissingPredicateCopyWith(
-          MissingPredicate value, $Res Function(MissingPredicate) then) =
-      _$MissingPredicateCopyWithImpl<$Res>;
+abstract class _$$MissingPredicateCopyWith<$Res> {
+  factory _$$MissingPredicateCopyWith(
+          _$MissingPredicate value, $Res Function(_$MissingPredicate) then) =
+      __$$MissingPredicateCopyWithImpl<$Res>;
   $Res call({PredicatePath path});
 }
 
 /// @nodoc
-class _$MissingPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
-    implements $MissingPredicateCopyWith<$Res> {
-  _$MissingPredicateCopyWithImpl(
-      MissingPredicate _value, $Res Function(MissingPredicate) _then)
-      : super(_value, (v) => _then(v as MissingPredicate));
+class __$$MissingPredicateCopyWithImpl<$Res>
+    extends _$PredicateCopyWithImpl<$Res>
+    implements _$$MissingPredicateCopyWith<$Res> {
+  __$$MissingPredicateCopyWithImpl(
+      _$MissingPredicate _value, $Res Function(_$MissingPredicate) _then)
+      : super(_value, (v) => _then(v as _$MissingPredicate));
 
   @override
-  MissingPredicate get _value => super._value as MissingPredicate;
+  _$MissingPredicate get _value => super._value as _$MissingPredicate;
 
   @override
   $Res call({
     Object? path = freezed,
   }) {
-    return _then(MissingPredicate(
+    return _then(_$MissingPredicate(
       path == freezed
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
@@ -2863,7 +2865,7 @@ class _$MissingPredicate implements MissingPredicate {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is MissingPredicate &&
+            other is _$MissingPredicate &&
             const DeepCollectionEquality().equals(other.path, path));
   }
 
@@ -2873,8 +2875,8 @@ class _$MissingPredicate implements MissingPredicate {
 
   @JsonKey(ignore: true)
   @override
-  $MissingPredicateCopyWith<MissingPredicate> get copyWith =>
-      _$MissingPredicateCopyWithImpl<MissingPredicate>(this, _$identity);
+  _$$MissingPredicateCopyWith<_$MissingPredicate> get copyWith =>
+      __$$MissingPredicateCopyWithImpl<_$MissingPredicate>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -3119,28 +3121,28 @@ abstract class MissingPredicate implements Predicate {
 
   PredicatePath get path => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $MissingPredicateCopyWith<MissingPredicate> get copyWith =>
+  _$$MissingPredicateCopyWith<_$MissingPredicate> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $NearPredicateCopyWith<$Res> {
-  factory $NearPredicateCopyWith(
-          NearPredicate value, $Res Function(NearPredicate) then) =
-      _$NearPredicateCopyWithImpl<$Res>;
+abstract class _$$NearPredicateCopyWith<$Res> {
+  factory _$$NearPredicateCopyWith(
+          _$NearPredicate value, $Res Function(_$NearPredicate) then) =
+      __$$NearPredicateCopyWithImpl<$Res>;
   $Res call(
       {PredicatePath path, double latitude, double longitude, double radius});
 }
 
 /// @nodoc
-class _$NearPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
-    implements $NearPredicateCopyWith<$Res> {
-  _$NearPredicateCopyWithImpl(
-      NearPredicate _value, $Res Function(NearPredicate) _then)
-      : super(_value, (v) => _then(v as NearPredicate));
+class __$$NearPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
+    implements _$$NearPredicateCopyWith<$Res> {
+  __$$NearPredicateCopyWithImpl(
+      _$NearPredicate _value, $Res Function(_$NearPredicate) _then)
+      : super(_value, (v) => _then(v as _$NearPredicate));
 
   @override
-  NearPredicate get _value => super._value as NearPredicate;
+  _$NearPredicate get _value => super._value as _$NearPredicate;
 
   @override
   $Res call({
@@ -3149,7 +3151,7 @@ class _$NearPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
     Object? longitude = freezed,
     Object? radius = freezed,
   }) {
-    return _then(NearPredicate(
+    return _then(_$NearPredicate(
       path == freezed
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
@@ -3193,7 +3195,7 @@ class _$NearPredicate implements NearPredicate {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is NearPredicate &&
+            other is _$NearPredicate &&
             const DeepCollectionEquality().equals(other.path, path) &&
             const DeepCollectionEquality().equals(other.latitude, latitude) &&
             const DeepCollectionEquality().equals(other.longitude, longitude) &&
@@ -3210,8 +3212,8 @@ class _$NearPredicate implements NearPredicate {
 
   @JsonKey(ignore: true)
   @override
-  $NearPredicateCopyWith<NearPredicate> get copyWith =>
-      _$NearPredicateCopyWithImpl<NearPredicate>(this, _$identity);
+  _$$NearPredicateCopyWith<_$NearPredicate> get copyWith =>
+      __$$NearPredicateCopyWithImpl<_$NearPredicate>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -3460,34 +3462,34 @@ abstract class NearPredicate implements Predicate {
   double get longitude => throw _privateConstructorUsedError;
   double get radius => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $NearPredicateCopyWith<NearPredicate> get copyWith =>
+  _$$NearPredicateCopyWith<_$NearPredicate> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $NotPredicateCopyWith<$Res> {
-  factory $NotPredicateCopyWith(
-          NotPredicate value, $Res Function(NotPredicate) then) =
-      _$NotPredicateCopyWithImpl<$Res>;
+abstract class _$$NotPredicateCopyWith<$Res> {
+  factory _$$NotPredicateCopyWith(
+          _$NotPredicate value, $Res Function(_$NotPredicate) then) =
+      __$$NotPredicateCopyWithImpl<$Res>;
   $Res call({PredicatePath path, String value});
 }
 
 /// @nodoc
-class _$NotPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
-    implements $NotPredicateCopyWith<$Res> {
-  _$NotPredicateCopyWithImpl(
-      NotPredicate _value, $Res Function(NotPredicate) _then)
-      : super(_value, (v) => _then(v as NotPredicate));
+class __$$NotPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
+    implements _$$NotPredicateCopyWith<$Res> {
+  __$$NotPredicateCopyWithImpl(
+      _$NotPredicate _value, $Res Function(_$NotPredicate) _then)
+      : super(_value, (v) => _then(v as _$NotPredicate));
 
   @override
-  NotPredicate get _value => super._value as NotPredicate;
+  _$NotPredicate get _value => super._value as _$NotPredicate;
 
   @override
   $Res call({
     Object? path = freezed,
     Object? value = freezed,
   }) {
-    return _then(NotPredicate(
+    return _then(_$NotPredicate(
       path == freezed
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
@@ -3519,7 +3521,7 @@ class _$NotPredicate implements NotPredicate {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is NotPredicate &&
+            other is _$NotPredicate &&
             const DeepCollectionEquality().equals(other.path, path) &&
             const DeepCollectionEquality().equals(other.value, value));
   }
@@ -3532,8 +3534,8 @@ class _$NotPredicate implements NotPredicate {
 
   @JsonKey(ignore: true)
   @override
-  $NotPredicateCopyWith<NotPredicate> get copyWith =>
-      _$NotPredicateCopyWithImpl<NotPredicate>(this, _$identity);
+  _$$NotPredicateCopyWith<_$NotPredicate> get copyWith =>
+      __$$NotPredicateCopyWithImpl<_$NotPredicate>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -3780,34 +3782,35 @@ abstract class NotPredicate implements Predicate {
   PredicatePath get path => throw _privateConstructorUsedError;
   String get value => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $NotPredicateCopyWith<NotPredicate> get copyWith =>
+  _$$NotPredicateCopyWith<_$NotPredicate> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SimilarPredicateCopyWith<$Res> {
-  factory $SimilarPredicateCopyWith(
-          SimilarPredicate value, $Res Function(SimilarPredicate) then) =
-      _$SimilarPredicateCopyWithImpl<$Res>;
+abstract class _$$SimilarPredicateCopyWith<$Res> {
+  factory _$$SimilarPredicateCopyWith(
+          _$SimilarPredicate value, $Res Function(_$SimilarPredicate) then) =
+      __$$SimilarPredicateCopyWithImpl<$Res>;
   $Res call({String id, int value});
 }
 
 /// @nodoc
-class _$SimilarPredicateCopyWithImpl<$Res> extends _$PredicateCopyWithImpl<$Res>
-    implements $SimilarPredicateCopyWith<$Res> {
-  _$SimilarPredicateCopyWithImpl(
-      SimilarPredicate _value, $Res Function(SimilarPredicate) _then)
-      : super(_value, (v) => _then(v as SimilarPredicate));
+class __$$SimilarPredicateCopyWithImpl<$Res>
+    extends _$PredicateCopyWithImpl<$Res>
+    implements _$$SimilarPredicateCopyWith<$Res> {
+  __$$SimilarPredicateCopyWithImpl(
+      _$SimilarPredicate _value, $Res Function(_$SimilarPredicate) _then)
+      : super(_value, (v) => _then(v as _$SimilarPredicate));
 
   @override
-  SimilarPredicate get _value => super._value as SimilarPredicate;
+  _$SimilarPredicate get _value => super._value as _$SimilarPredicate;
 
   @override
   $Res call({
     Object? id = freezed,
     Object? value = freezed,
   }) {
-    return _then(SimilarPredicate(
+    return _then(_$SimilarPredicate(
       id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -3839,7 +3842,7 @@ class _$SimilarPredicate implements SimilarPredicate {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is SimilarPredicate &&
+            other is _$SimilarPredicate &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.value, value));
   }
@@ -3852,8 +3855,8 @@ class _$SimilarPredicate implements SimilarPredicate {
 
   @JsonKey(ignore: true)
   @override
-  $SimilarPredicateCopyWith<SimilarPredicate> get copyWith =>
-      _$SimilarPredicateCopyWithImpl<SimilarPredicate>(this, _$identity);
+  _$$SimilarPredicateCopyWith<_$SimilarPredicate> get copyWith =>
+      __$$SimilarPredicateCopyWithImpl<_$SimilarPredicate>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -4100,35 +4103,35 @@ abstract class SimilarPredicate implements Predicate {
   String get id => throw _privateConstructorUsedError;
   int get value => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $SimilarPredicateCopyWith<SimilarPredicate> get copyWith =>
+  _$$SimilarPredicateCopyWith<_$SimilarPredicate> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $DateAfterPredicateCopyWith<$Res> {
-  factory $DateAfterPredicateCopyWith(
-          DateAfterPredicate value, $Res Function(DateAfterPredicate) then) =
-      _$DateAfterPredicateCopyWithImpl<$Res>;
+abstract class _$$DateAfterPredicateCopyWith<$Res> {
+  factory _$$DateAfterPredicateCopyWith(_$DateAfterPredicate value,
+          $Res Function(_$DateAfterPredicate) then) =
+      __$$DateAfterPredicateCopyWithImpl<$Res>;
   $Res call({PredicatePath path, int epoch});
 }
 
 /// @nodoc
-class _$DateAfterPredicateCopyWithImpl<$Res>
+class __$$DateAfterPredicateCopyWithImpl<$Res>
     extends _$PredicateCopyWithImpl<$Res>
-    implements $DateAfterPredicateCopyWith<$Res> {
-  _$DateAfterPredicateCopyWithImpl(
-      DateAfterPredicate _value, $Res Function(DateAfterPredicate) _then)
-      : super(_value, (v) => _then(v as DateAfterPredicate));
+    implements _$$DateAfterPredicateCopyWith<$Res> {
+  __$$DateAfterPredicateCopyWithImpl(
+      _$DateAfterPredicate _value, $Res Function(_$DateAfterPredicate) _then)
+      : super(_value, (v) => _then(v as _$DateAfterPredicate));
 
   @override
-  DateAfterPredicate get _value => super._value as DateAfterPredicate;
+  _$DateAfterPredicate get _value => super._value as _$DateAfterPredicate;
 
   @override
   $Res call({
     Object? path = freezed,
     Object? epoch = freezed,
   }) {
-    return _then(DateAfterPredicate(
+    return _then(_$DateAfterPredicate(
       path == freezed
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
@@ -4160,7 +4163,7 @@ class _$DateAfterPredicate implements DateAfterPredicate {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is DateAfterPredicate &&
+            other is _$DateAfterPredicate &&
             const DeepCollectionEquality().equals(other.path, path) &&
             const DeepCollectionEquality().equals(other.epoch, epoch));
   }
@@ -4173,8 +4176,9 @@ class _$DateAfterPredicate implements DateAfterPredicate {
 
   @JsonKey(ignore: true)
   @override
-  $DateAfterPredicateCopyWith<DateAfterPredicate> get copyWith =>
-      _$DateAfterPredicateCopyWithImpl<DateAfterPredicate>(this, _$identity);
+  _$$DateAfterPredicateCopyWith<_$DateAfterPredicate> get copyWith =>
+      __$$DateAfterPredicateCopyWithImpl<_$DateAfterPredicate>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -4421,35 +4425,35 @@ abstract class DateAfterPredicate implements Predicate {
   PredicatePath get path => throw _privateConstructorUsedError;
   int get epoch => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $DateAfterPredicateCopyWith<DateAfterPredicate> get copyWith =>
+  _$$DateAfterPredicateCopyWith<_$DateAfterPredicate> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $DateBeforePredicateCopyWith<$Res> {
-  factory $DateBeforePredicateCopyWith(
-          DateBeforePredicate value, $Res Function(DateBeforePredicate) then) =
-      _$DateBeforePredicateCopyWithImpl<$Res>;
+abstract class _$$DateBeforePredicateCopyWith<$Res> {
+  factory _$$DateBeforePredicateCopyWith(_$DateBeforePredicate value,
+          $Res Function(_$DateBeforePredicate) then) =
+      __$$DateBeforePredicateCopyWithImpl<$Res>;
   $Res call({PredicatePath path, int epoch});
 }
 
 /// @nodoc
-class _$DateBeforePredicateCopyWithImpl<$Res>
+class __$$DateBeforePredicateCopyWithImpl<$Res>
     extends _$PredicateCopyWithImpl<$Res>
-    implements $DateBeforePredicateCopyWith<$Res> {
-  _$DateBeforePredicateCopyWithImpl(
-      DateBeforePredicate _value, $Res Function(DateBeforePredicate) _then)
-      : super(_value, (v) => _then(v as DateBeforePredicate));
+    implements _$$DateBeforePredicateCopyWith<$Res> {
+  __$$DateBeforePredicateCopyWithImpl(
+      _$DateBeforePredicate _value, $Res Function(_$DateBeforePredicate) _then)
+      : super(_value, (v) => _then(v as _$DateBeforePredicate));
 
   @override
-  DateBeforePredicate get _value => super._value as DateBeforePredicate;
+  _$DateBeforePredicate get _value => super._value as _$DateBeforePredicate;
 
   @override
   $Res call({
     Object? path = freezed,
     Object? epoch = freezed,
   }) {
-    return _then(DateBeforePredicate(
+    return _then(_$DateBeforePredicate(
       path == freezed
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
@@ -4481,7 +4485,7 @@ class _$DateBeforePredicate implements DateBeforePredicate {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is DateBeforePredicate &&
+            other is _$DateBeforePredicate &&
             const DeepCollectionEquality().equals(other.path, path) &&
             const DeepCollectionEquality().equals(other.epoch, epoch));
   }
@@ -4494,8 +4498,9 @@ class _$DateBeforePredicate implements DateBeforePredicate {
 
   @JsonKey(ignore: true)
   @override
-  $DateBeforePredicateCopyWith<DateBeforePredicate> get copyWith =>
-      _$DateBeforePredicateCopyWithImpl<DateBeforePredicate>(this, _$identity);
+  _$$DateBeforePredicateCopyWith<_$DateBeforePredicate> get copyWith =>
+      __$$DateBeforePredicateCopyWithImpl<_$DateBeforePredicate>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -4742,28 +4747,28 @@ abstract class DateBeforePredicate implements Predicate {
   PredicatePath get path => throw _privateConstructorUsedError;
   int get epoch => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $DateBeforePredicateCopyWith<DateBeforePredicate> get copyWith =>
+  _$$DateBeforePredicateCopyWith<_$DateBeforePredicate> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $DateBetweenPredicateCopyWith<$Res> {
-  factory $DateBetweenPredicateCopyWith(DateBetweenPredicate value,
-          $Res Function(DateBetweenPredicate) then) =
-      _$DateBetweenPredicateCopyWithImpl<$Res>;
+abstract class _$$DateBetweenPredicateCopyWith<$Res> {
+  factory _$$DateBetweenPredicateCopyWith(_$DateBetweenPredicate value,
+          $Res Function(_$DateBetweenPredicate) then) =
+      __$$DateBetweenPredicateCopyWithImpl<$Res>;
   $Res call({PredicatePath path, int startEpoch, int endEpoch});
 }
 
 /// @nodoc
-class _$DateBetweenPredicateCopyWithImpl<$Res>
+class __$$DateBetweenPredicateCopyWithImpl<$Res>
     extends _$PredicateCopyWithImpl<$Res>
-    implements $DateBetweenPredicateCopyWith<$Res> {
-  _$DateBetweenPredicateCopyWithImpl(
-      DateBetweenPredicate _value, $Res Function(DateBetweenPredicate) _then)
-      : super(_value, (v) => _then(v as DateBetweenPredicate));
+    implements _$$DateBetweenPredicateCopyWith<$Res> {
+  __$$DateBetweenPredicateCopyWithImpl(_$DateBetweenPredicate _value,
+      $Res Function(_$DateBetweenPredicate) _then)
+      : super(_value, (v) => _then(v as _$DateBetweenPredicate));
 
   @override
-  DateBetweenPredicate get _value => super._value as DateBetweenPredicate;
+  _$DateBetweenPredicate get _value => super._value as _$DateBetweenPredicate;
 
   @override
   $Res call({
@@ -4771,7 +4776,7 @@ class _$DateBetweenPredicateCopyWithImpl<$Res>
     Object? startEpoch = freezed,
     Object? endEpoch = freezed,
   }) {
-    return _then(DateBetweenPredicate(
+    return _then(_$DateBetweenPredicate(
       path == freezed
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
@@ -4809,7 +4814,7 @@ class _$DateBetweenPredicate implements DateBetweenPredicate {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is DateBetweenPredicate &&
+            other is _$DateBetweenPredicate &&
             const DeepCollectionEquality().equals(other.path, path) &&
             const DeepCollectionEquality()
                 .equals(other.startEpoch, startEpoch) &&
@@ -4825,8 +4830,8 @@ class _$DateBetweenPredicate implements DateBetweenPredicate {
 
   @JsonKey(ignore: true)
   @override
-  $DateBetweenPredicateCopyWith<DateBetweenPredicate> get copyWith =>
-      _$DateBetweenPredicateCopyWithImpl<DateBetweenPredicate>(
+  _$$DateBetweenPredicateCopyWith<_$DateBetweenPredicate> get copyWith =>
+      __$$DateBetweenPredicateCopyWithImpl<_$DateBetweenPredicate>(
           this, _$identity);
 
   @override
@@ -5076,35 +5081,36 @@ abstract class DateBetweenPredicate implements Predicate {
   int get startEpoch => throw _privateConstructorUsedError;
   int get endEpoch => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $DateBetweenPredicateCopyWith<DateBetweenPredicate> get copyWith =>
+  _$$DateBetweenPredicateCopyWith<_$DateBetweenPredicate> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $DateDayOfMonthPredicateCopyWith<$Res> {
-  factory $DateDayOfMonthPredicateCopyWith(DateDayOfMonthPredicate value,
-          $Res Function(DateDayOfMonthPredicate) then) =
-      _$DateDayOfMonthPredicateCopyWithImpl<$Res>;
+abstract class _$$DateDayOfMonthPredicateCopyWith<$Res> {
+  factory _$$DateDayOfMonthPredicateCopyWith(_$DateDayOfMonthPredicate value,
+          $Res Function(_$DateDayOfMonthPredicate) then) =
+      __$$DateDayOfMonthPredicateCopyWithImpl<$Res>;
   $Res call({PredicatePath path, int day});
 }
 
 /// @nodoc
-class _$DateDayOfMonthPredicateCopyWithImpl<$Res>
+class __$$DateDayOfMonthPredicateCopyWithImpl<$Res>
     extends _$PredicateCopyWithImpl<$Res>
-    implements $DateDayOfMonthPredicateCopyWith<$Res> {
-  _$DateDayOfMonthPredicateCopyWithImpl(DateDayOfMonthPredicate _value,
-      $Res Function(DateDayOfMonthPredicate) _then)
-      : super(_value, (v) => _then(v as DateDayOfMonthPredicate));
+    implements _$$DateDayOfMonthPredicateCopyWith<$Res> {
+  __$$DateDayOfMonthPredicateCopyWithImpl(_$DateDayOfMonthPredicate _value,
+      $Res Function(_$DateDayOfMonthPredicate) _then)
+      : super(_value, (v) => _then(v as _$DateDayOfMonthPredicate));
 
   @override
-  DateDayOfMonthPredicate get _value => super._value as DateDayOfMonthPredicate;
+  _$DateDayOfMonthPredicate get _value =>
+      super._value as _$DateDayOfMonthPredicate;
 
   @override
   $Res call({
     Object? path = freezed,
     Object? day = freezed,
   }) {
-    return _then(DateDayOfMonthPredicate(
+    return _then(_$DateDayOfMonthPredicate(
       path == freezed
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
@@ -5136,7 +5142,7 @@ class _$DateDayOfMonthPredicate implements DateDayOfMonthPredicate {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is DateDayOfMonthPredicate &&
+            other is _$DateDayOfMonthPredicate &&
             const DeepCollectionEquality().equals(other.path, path) &&
             const DeepCollectionEquality().equals(other.day, day));
   }
@@ -5149,8 +5155,8 @@ class _$DateDayOfMonthPredicate implements DateDayOfMonthPredicate {
 
   @JsonKey(ignore: true)
   @override
-  $DateDayOfMonthPredicateCopyWith<DateDayOfMonthPredicate> get copyWith =>
-      _$DateDayOfMonthPredicateCopyWithImpl<DateDayOfMonthPredicate>(
+  _$$DateDayOfMonthPredicateCopyWith<_$DateDayOfMonthPredicate> get copyWith =>
+      __$$DateDayOfMonthPredicateCopyWithImpl<_$DateDayOfMonthPredicate>(
           this, _$identity);
 
   @override
@@ -5398,38 +5404,38 @@ abstract class DateDayOfMonthPredicate implements Predicate {
   PredicatePath get path => throw _privateConstructorUsedError;
   int get day => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $DateDayOfMonthPredicateCopyWith<DateDayOfMonthPredicate> get copyWith =>
+  _$$DateDayOfMonthPredicateCopyWith<_$DateDayOfMonthPredicate> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $DateDayOfMonthAfterPredicateCopyWith<$Res> {
-  factory $DateDayOfMonthAfterPredicateCopyWith(
-          DateDayOfMonthAfterPredicate value,
-          $Res Function(DateDayOfMonthAfterPredicate) then) =
-      _$DateDayOfMonthAfterPredicateCopyWithImpl<$Res>;
+abstract class _$$DateDayOfMonthAfterPredicateCopyWith<$Res> {
+  factory _$$DateDayOfMonthAfterPredicateCopyWith(
+          _$DateDayOfMonthAfterPredicate value,
+          $Res Function(_$DateDayOfMonthAfterPredicate) then) =
+      __$$DateDayOfMonthAfterPredicateCopyWithImpl<$Res>;
   $Res call({PredicatePath path, int day});
 }
 
 /// @nodoc
-class _$DateDayOfMonthAfterPredicateCopyWithImpl<$Res>
+class __$$DateDayOfMonthAfterPredicateCopyWithImpl<$Res>
     extends _$PredicateCopyWithImpl<$Res>
-    implements $DateDayOfMonthAfterPredicateCopyWith<$Res> {
-  _$DateDayOfMonthAfterPredicateCopyWithImpl(
-      DateDayOfMonthAfterPredicate _value,
-      $Res Function(DateDayOfMonthAfterPredicate) _then)
-      : super(_value, (v) => _then(v as DateDayOfMonthAfterPredicate));
+    implements _$$DateDayOfMonthAfterPredicateCopyWith<$Res> {
+  __$$DateDayOfMonthAfterPredicateCopyWithImpl(
+      _$DateDayOfMonthAfterPredicate _value,
+      $Res Function(_$DateDayOfMonthAfterPredicate) _then)
+      : super(_value, (v) => _then(v as _$DateDayOfMonthAfterPredicate));
 
   @override
-  DateDayOfMonthAfterPredicate get _value =>
-      super._value as DateDayOfMonthAfterPredicate;
+  _$DateDayOfMonthAfterPredicate get _value =>
+      super._value as _$DateDayOfMonthAfterPredicate;
 
   @override
   $Res call({
     Object? path = freezed,
     Object? day = freezed,
   }) {
-    return _then(DateDayOfMonthAfterPredicate(
+    return _then(_$DateDayOfMonthAfterPredicate(
       path == freezed
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
@@ -5461,7 +5467,7 @@ class _$DateDayOfMonthAfterPredicate implements DateDayOfMonthAfterPredicate {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is DateDayOfMonthAfterPredicate &&
+            other is _$DateDayOfMonthAfterPredicate &&
             const DeepCollectionEquality().equals(other.path, path) &&
             const DeepCollectionEquality().equals(other.day, day));
   }
@@ -5474,9 +5480,9 @@ class _$DateDayOfMonthAfterPredicate implements DateDayOfMonthAfterPredicate {
 
   @JsonKey(ignore: true)
   @override
-  $DateDayOfMonthAfterPredicateCopyWith<DateDayOfMonthAfterPredicate>
-      get copyWith => _$DateDayOfMonthAfterPredicateCopyWithImpl<
-          DateDayOfMonthAfterPredicate>(this, _$identity);
+  _$$DateDayOfMonthAfterPredicateCopyWith<_$DateDayOfMonthAfterPredicate>
+      get copyWith => __$$DateDayOfMonthAfterPredicateCopyWithImpl<
+          _$DateDayOfMonthAfterPredicate>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -5723,38 +5729,38 @@ abstract class DateDayOfMonthAfterPredicate implements Predicate {
   PredicatePath get path => throw _privateConstructorUsedError;
   int get day => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $DateDayOfMonthAfterPredicateCopyWith<DateDayOfMonthAfterPredicate>
+  _$$DateDayOfMonthAfterPredicateCopyWith<_$DateDayOfMonthAfterPredicate>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $DateDayOfMonthBeforePredicateCopyWith<$Res> {
-  factory $DateDayOfMonthBeforePredicateCopyWith(
-          DateDayOfMonthBeforePredicate value,
-          $Res Function(DateDayOfMonthBeforePredicate) then) =
-      _$DateDayOfMonthBeforePredicateCopyWithImpl<$Res>;
+abstract class _$$DateDayOfMonthBeforePredicateCopyWith<$Res> {
+  factory _$$DateDayOfMonthBeforePredicateCopyWith(
+          _$DateDayOfMonthBeforePredicate value,
+          $Res Function(_$DateDayOfMonthBeforePredicate) then) =
+      __$$DateDayOfMonthBeforePredicateCopyWithImpl<$Res>;
   $Res call({PredicatePath path, int day});
 }
 
 /// @nodoc
-class _$DateDayOfMonthBeforePredicateCopyWithImpl<$Res>
+class __$$DateDayOfMonthBeforePredicateCopyWithImpl<$Res>
     extends _$PredicateCopyWithImpl<$Res>
-    implements $DateDayOfMonthBeforePredicateCopyWith<$Res> {
-  _$DateDayOfMonthBeforePredicateCopyWithImpl(
-      DateDayOfMonthBeforePredicate _value,
-      $Res Function(DateDayOfMonthBeforePredicate) _then)
-      : super(_value, (v) => _then(v as DateDayOfMonthBeforePredicate));
+    implements _$$DateDayOfMonthBeforePredicateCopyWith<$Res> {
+  __$$DateDayOfMonthBeforePredicateCopyWithImpl(
+      _$DateDayOfMonthBeforePredicate _value,
+      $Res Function(_$DateDayOfMonthBeforePredicate) _then)
+      : super(_value, (v) => _then(v as _$DateDayOfMonthBeforePredicate));
 
   @override
-  DateDayOfMonthBeforePredicate get _value =>
-      super._value as DateDayOfMonthBeforePredicate;
+  _$DateDayOfMonthBeforePredicate get _value =>
+      super._value as _$DateDayOfMonthBeforePredicate;
 
   @override
   $Res call({
     Object? path = freezed,
     Object? day = freezed,
   }) {
-    return _then(DateDayOfMonthBeforePredicate(
+    return _then(_$DateDayOfMonthBeforePredicate(
       path == freezed
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
@@ -5786,7 +5792,7 @@ class _$DateDayOfMonthBeforePredicate implements DateDayOfMonthBeforePredicate {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is DateDayOfMonthBeforePredicate &&
+            other is _$DateDayOfMonthBeforePredicate &&
             const DeepCollectionEquality().equals(other.path, path) &&
             const DeepCollectionEquality().equals(other.day, day));
   }
@@ -5799,9 +5805,9 @@ class _$DateDayOfMonthBeforePredicate implements DateDayOfMonthBeforePredicate {
 
   @JsonKey(ignore: true)
   @override
-  $DateDayOfMonthBeforePredicateCopyWith<DateDayOfMonthBeforePredicate>
-      get copyWith => _$DateDayOfMonthBeforePredicateCopyWithImpl<
-          DateDayOfMonthBeforePredicate>(this, _$identity);
+  _$$DateDayOfMonthBeforePredicateCopyWith<_$DateDayOfMonthBeforePredicate>
+      get copyWith => __$$DateDayOfMonthBeforePredicateCopyWithImpl<
+          _$DateDayOfMonthBeforePredicate>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -6049,35 +6055,36 @@ abstract class DateDayOfMonthBeforePredicate implements Predicate {
   PredicatePath get path => throw _privateConstructorUsedError;
   int get day => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $DateDayOfMonthBeforePredicateCopyWith<DateDayOfMonthBeforePredicate>
+  _$$DateDayOfMonthBeforePredicateCopyWith<_$DateDayOfMonthBeforePredicate>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $DateDayOfWeekPredicateCopyWith<$Res> {
-  factory $DateDayOfWeekPredicateCopyWith(DateDayOfWeekPredicate value,
-          $Res Function(DateDayOfWeekPredicate) then) =
-      _$DateDayOfWeekPredicateCopyWithImpl<$Res>;
+abstract class _$$DateDayOfWeekPredicateCopyWith<$Res> {
+  factory _$$DateDayOfWeekPredicateCopyWith(_$DateDayOfWeekPredicate value,
+          $Res Function(_$DateDayOfWeekPredicate) then) =
+      __$$DateDayOfWeekPredicateCopyWithImpl<$Res>;
   $Res call({PredicatePath path, String day});
 }
 
 /// @nodoc
-class _$DateDayOfWeekPredicateCopyWithImpl<$Res>
+class __$$DateDayOfWeekPredicateCopyWithImpl<$Res>
     extends _$PredicateCopyWithImpl<$Res>
-    implements $DateDayOfWeekPredicateCopyWith<$Res> {
-  _$DateDayOfWeekPredicateCopyWithImpl(DateDayOfWeekPredicate _value,
-      $Res Function(DateDayOfWeekPredicate) _then)
-      : super(_value, (v) => _then(v as DateDayOfWeekPredicate));
+    implements _$$DateDayOfWeekPredicateCopyWith<$Res> {
+  __$$DateDayOfWeekPredicateCopyWithImpl(_$DateDayOfWeekPredicate _value,
+      $Res Function(_$DateDayOfWeekPredicate) _then)
+      : super(_value, (v) => _then(v as _$DateDayOfWeekPredicate));
 
   @override
-  DateDayOfWeekPredicate get _value => super._value as DateDayOfWeekPredicate;
+  _$DateDayOfWeekPredicate get _value =>
+      super._value as _$DateDayOfWeekPredicate;
 
   @override
   $Res call({
     Object? path = freezed,
     Object? day = freezed,
   }) {
-    return _then(DateDayOfWeekPredicate(
+    return _then(_$DateDayOfWeekPredicate(
       path == freezed
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
@@ -6109,7 +6116,7 @@ class _$DateDayOfWeekPredicate implements DateDayOfWeekPredicate {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is DateDayOfWeekPredicate &&
+            other is _$DateDayOfWeekPredicate &&
             const DeepCollectionEquality().equals(other.path, path) &&
             const DeepCollectionEquality().equals(other.day, day));
   }
@@ -6122,8 +6129,8 @@ class _$DateDayOfWeekPredicate implements DateDayOfWeekPredicate {
 
   @JsonKey(ignore: true)
   @override
-  $DateDayOfWeekPredicateCopyWith<DateDayOfWeekPredicate> get copyWith =>
-      _$DateDayOfWeekPredicateCopyWithImpl<DateDayOfWeekPredicate>(
+  _$$DateDayOfWeekPredicateCopyWith<_$DateDayOfWeekPredicate> get copyWith =>
+      __$$DateDayOfWeekPredicateCopyWithImpl<_$DateDayOfWeekPredicate>(
           this, _$identity);
 
   @override
@@ -6371,37 +6378,38 @@ abstract class DateDayOfWeekPredicate implements Predicate {
   PredicatePath get path => throw _privateConstructorUsedError;
   String get day => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $DateDayOfWeekPredicateCopyWith<DateDayOfWeekPredicate> get copyWith =>
+  _$$DateDayOfWeekPredicateCopyWith<_$DateDayOfWeekPredicate> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $DateDayOfWeekAfterPredicateCopyWith<$Res> {
-  factory $DateDayOfWeekAfterPredicateCopyWith(
-          DateDayOfWeekAfterPredicate value,
-          $Res Function(DateDayOfWeekAfterPredicate) then) =
-      _$DateDayOfWeekAfterPredicateCopyWithImpl<$Res>;
+abstract class _$$DateDayOfWeekAfterPredicateCopyWith<$Res> {
+  factory _$$DateDayOfWeekAfterPredicateCopyWith(
+          _$DateDayOfWeekAfterPredicate value,
+          $Res Function(_$DateDayOfWeekAfterPredicate) then) =
+      __$$DateDayOfWeekAfterPredicateCopyWithImpl<$Res>;
   $Res call({PredicatePath path, String day});
 }
 
 /// @nodoc
-class _$DateDayOfWeekAfterPredicateCopyWithImpl<$Res>
+class __$$DateDayOfWeekAfterPredicateCopyWithImpl<$Res>
     extends _$PredicateCopyWithImpl<$Res>
-    implements $DateDayOfWeekAfterPredicateCopyWith<$Res> {
-  _$DateDayOfWeekAfterPredicateCopyWithImpl(DateDayOfWeekAfterPredicate _value,
-      $Res Function(DateDayOfWeekAfterPredicate) _then)
-      : super(_value, (v) => _then(v as DateDayOfWeekAfterPredicate));
+    implements _$$DateDayOfWeekAfterPredicateCopyWith<$Res> {
+  __$$DateDayOfWeekAfterPredicateCopyWithImpl(
+      _$DateDayOfWeekAfterPredicate _value,
+      $Res Function(_$DateDayOfWeekAfterPredicate) _then)
+      : super(_value, (v) => _then(v as _$DateDayOfWeekAfterPredicate));
 
   @override
-  DateDayOfWeekAfterPredicate get _value =>
-      super._value as DateDayOfWeekAfterPredicate;
+  _$DateDayOfWeekAfterPredicate get _value =>
+      super._value as _$DateDayOfWeekAfterPredicate;
 
   @override
   $Res call({
     Object? path = freezed,
     Object? day = freezed,
   }) {
-    return _then(DateDayOfWeekAfterPredicate(
+    return _then(_$DateDayOfWeekAfterPredicate(
       path == freezed
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
@@ -6433,7 +6441,7 @@ class _$DateDayOfWeekAfterPredicate implements DateDayOfWeekAfterPredicate {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is DateDayOfWeekAfterPredicate &&
+            other is _$DateDayOfWeekAfterPredicate &&
             const DeepCollectionEquality().equals(other.path, path) &&
             const DeepCollectionEquality().equals(other.day, day));
   }
@@ -6446,9 +6454,9 @@ class _$DateDayOfWeekAfterPredicate implements DateDayOfWeekAfterPredicate {
 
   @JsonKey(ignore: true)
   @override
-  $DateDayOfWeekAfterPredicateCopyWith<DateDayOfWeekAfterPredicate>
-      get copyWith => _$DateDayOfWeekAfterPredicateCopyWithImpl<
-          DateDayOfWeekAfterPredicate>(this, _$identity);
+  _$$DateDayOfWeekAfterPredicateCopyWith<_$DateDayOfWeekAfterPredicate>
+      get copyWith => __$$DateDayOfWeekAfterPredicateCopyWithImpl<
+          _$DateDayOfWeekAfterPredicate>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -6696,38 +6704,38 @@ abstract class DateDayOfWeekAfterPredicate implements Predicate {
   PredicatePath get path => throw _privateConstructorUsedError;
   String get day => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $DateDayOfWeekAfterPredicateCopyWith<DateDayOfWeekAfterPredicate>
+  _$$DateDayOfWeekAfterPredicateCopyWith<_$DateDayOfWeekAfterPredicate>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $DateDayOfWeekBeforePredicateCopyWith<$Res> {
-  factory $DateDayOfWeekBeforePredicateCopyWith(
-          DateDayOfWeekBeforePredicate value,
-          $Res Function(DateDayOfWeekBeforePredicate) then) =
-      _$DateDayOfWeekBeforePredicateCopyWithImpl<$Res>;
+abstract class _$$DateDayOfWeekBeforePredicateCopyWith<$Res> {
+  factory _$$DateDayOfWeekBeforePredicateCopyWith(
+          _$DateDayOfWeekBeforePredicate value,
+          $Res Function(_$DateDayOfWeekBeforePredicate) then) =
+      __$$DateDayOfWeekBeforePredicateCopyWithImpl<$Res>;
   $Res call({PredicatePath path, String day});
 }
 
 /// @nodoc
-class _$DateDayOfWeekBeforePredicateCopyWithImpl<$Res>
+class __$$DateDayOfWeekBeforePredicateCopyWithImpl<$Res>
     extends _$PredicateCopyWithImpl<$Res>
-    implements $DateDayOfWeekBeforePredicateCopyWith<$Res> {
-  _$DateDayOfWeekBeforePredicateCopyWithImpl(
-      DateDayOfWeekBeforePredicate _value,
-      $Res Function(DateDayOfWeekBeforePredicate) _then)
-      : super(_value, (v) => _then(v as DateDayOfWeekBeforePredicate));
+    implements _$$DateDayOfWeekBeforePredicateCopyWith<$Res> {
+  __$$DateDayOfWeekBeforePredicateCopyWithImpl(
+      _$DateDayOfWeekBeforePredicate _value,
+      $Res Function(_$DateDayOfWeekBeforePredicate) _then)
+      : super(_value, (v) => _then(v as _$DateDayOfWeekBeforePredicate));
 
   @override
-  DateDayOfWeekBeforePredicate get _value =>
-      super._value as DateDayOfWeekBeforePredicate;
+  _$DateDayOfWeekBeforePredicate get _value =>
+      super._value as _$DateDayOfWeekBeforePredicate;
 
   @override
   $Res call({
     Object? path = freezed,
     Object? day = freezed,
   }) {
-    return _then(DateDayOfWeekBeforePredicate(
+    return _then(_$DateDayOfWeekBeforePredicate(
       path == freezed
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
@@ -6759,7 +6767,7 @@ class _$DateDayOfWeekBeforePredicate implements DateDayOfWeekBeforePredicate {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is DateDayOfWeekBeforePredicate &&
+            other is _$DateDayOfWeekBeforePredicate &&
             const DeepCollectionEquality().equals(other.path, path) &&
             const DeepCollectionEquality().equals(other.day, day));
   }
@@ -6772,9 +6780,9 @@ class _$DateDayOfWeekBeforePredicate implements DateDayOfWeekBeforePredicate {
 
   @JsonKey(ignore: true)
   @override
-  $DateDayOfWeekBeforePredicateCopyWith<DateDayOfWeekBeforePredicate>
-      get copyWith => _$DateDayOfWeekBeforePredicateCopyWithImpl<
-          DateDayOfWeekBeforePredicate>(this, _$identity);
+  _$$DateDayOfWeekBeforePredicateCopyWith<_$DateDayOfWeekBeforePredicate>
+      get copyWith => __$$DateDayOfWeekBeforePredicateCopyWithImpl<
+          _$DateDayOfWeekBeforePredicate>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -7022,35 +7030,35 @@ abstract class DateDayOfWeekBeforePredicate implements Predicate {
   PredicatePath get path => throw _privateConstructorUsedError;
   String get day => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $DateDayOfWeekBeforePredicateCopyWith<DateDayOfWeekBeforePredicate>
+  _$$DateDayOfWeekBeforePredicateCopyWith<_$DateDayOfWeekBeforePredicate>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $DateMonthPredicateCopyWith<$Res> {
-  factory $DateMonthPredicateCopyWith(
-          DateMonthPredicate value, $Res Function(DateMonthPredicate) then) =
-      _$DateMonthPredicateCopyWithImpl<$Res>;
+abstract class _$$DateMonthPredicateCopyWith<$Res> {
+  factory _$$DateMonthPredicateCopyWith(_$DateMonthPredicate value,
+          $Res Function(_$DateMonthPredicate) then) =
+      __$$DateMonthPredicateCopyWithImpl<$Res>;
   $Res call({PredicatePath path, String month});
 }
 
 /// @nodoc
-class _$DateMonthPredicateCopyWithImpl<$Res>
+class __$$DateMonthPredicateCopyWithImpl<$Res>
     extends _$PredicateCopyWithImpl<$Res>
-    implements $DateMonthPredicateCopyWith<$Res> {
-  _$DateMonthPredicateCopyWithImpl(
-      DateMonthPredicate _value, $Res Function(DateMonthPredicate) _then)
-      : super(_value, (v) => _then(v as DateMonthPredicate));
+    implements _$$DateMonthPredicateCopyWith<$Res> {
+  __$$DateMonthPredicateCopyWithImpl(
+      _$DateMonthPredicate _value, $Res Function(_$DateMonthPredicate) _then)
+      : super(_value, (v) => _then(v as _$DateMonthPredicate));
 
   @override
-  DateMonthPredicate get _value => super._value as DateMonthPredicate;
+  _$DateMonthPredicate get _value => super._value as _$DateMonthPredicate;
 
   @override
   $Res call({
     Object? path = freezed,
     Object? month = freezed,
   }) {
-    return _then(DateMonthPredicate(
+    return _then(_$DateMonthPredicate(
       path == freezed
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
@@ -7082,7 +7090,7 @@ class _$DateMonthPredicate implements DateMonthPredicate {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is DateMonthPredicate &&
+            other is _$DateMonthPredicate &&
             const DeepCollectionEquality().equals(other.path, path) &&
             const DeepCollectionEquality().equals(other.month, month));
   }
@@ -7095,8 +7103,9 @@ class _$DateMonthPredicate implements DateMonthPredicate {
 
   @JsonKey(ignore: true)
   @override
-  $DateMonthPredicateCopyWith<DateMonthPredicate> get copyWith =>
-      _$DateMonthPredicateCopyWithImpl<DateMonthPredicate>(this, _$identity);
+  _$$DateMonthPredicateCopyWith<_$DateMonthPredicate> get copyWith =>
+      __$$DateMonthPredicateCopyWithImpl<_$DateMonthPredicate>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -7343,35 +7352,36 @@ abstract class DateMonthPredicate implements Predicate {
   PredicatePath get path => throw _privateConstructorUsedError;
   String get month => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $DateMonthPredicateCopyWith<DateMonthPredicate> get copyWith =>
+  _$$DateMonthPredicateCopyWith<_$DateMonthPredicate> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $DateMonthAfterPredicateCopyWith<$Res> {
-  factory $DateMonthAfterPredicateCopyWith(DateMonthAfterPredicate value,
-          $Res Function(DateMonthAfterPredicate) then) =
-      _$DateMonthAfterPredicateCopyWithImpl<$Res>;
+abstract class _$$DateMonthAfterPredicateCopyWith<$Res> {
+  factory _$$DateMonthAfterPredicateCopyWith(_$DateMonthAfterPredicate value,
+          $Res Function(_$DateMonthAfterPredicate) then) =
+      __$$DateMonthAfterPredicateCopyWithImpl<$Res>;
   $Res call({PredicatePath path, String month});
 }
 
 /// @nodoc
-class _$DateMonthAfterPredicateCopyWithImpl<$Res>
+class __$$DateMonthAfterPredicateCopyWithImpl<$Res>
     extends _$PredicateCopyWithImpl<$Res>
-    implements $DateMonthAfterPredicateCopyWith<$Res> {
-  _$DateMonthAfterPredicateCopyWithImpl(DateMonthAfterPredicate _value,
-      $Res Function(DateMonthAfterPredicate) _then)
-      : super(_value, (v) => _then(v as DateMonthAfterPredicate));
+    implements _$$DateMonthAfterPredicateCopyWith<$Res> {
+  __$$DateMonthAfterPredicateCopyWithImpl(_$DateMonthAfterPredicate _value,
+      $Res Function(_$DateMonthAfterPredicate) _then)
+      : super(_value, (v) => _then(v as _$DateMonthAfterPredicate));
 
   @override
-  DateMonthAfterPredicate get _value => super._value as DateMonthAfterPredicate;
+  _$DateMonthAfterPredicate get _value =>
+      super._value as _$DateMonthAfterPredicate;
 
   @override
   $Res call({
     Object? path = freezed,
     Object? month = freezed,
   }) {
-    return _then(DateMonthAfterPredicate(
+    return _then(_$DateMonthAfterPredicate(
       path == freezed
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
@@ -7403,7 +7413,7 @@ class _$DateMonthAfterPredicate implements DateMonthAfterPredicate {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is DateMonthAfterPredicate &&
+            other is _$DateMonthAfterPredicate &&
             const DeepCollectionEquality().equals(other.path, path) &&
             const DeepCollectionEquality().equals(other.month, month));
   }
@@ -7416,8 +7426,8 @@ class _$DateMonthAfterPredicate implements DateMonthAfterPredicate {
 
   @JsonKey(ignore: true)
   @override
-  $DateMonthAfterPredicateCopyWith<DateMonthAfterPredicate> get copyWith =>
-      _$DateMonthAfterPredicateCopyWithImpl<DateMonthAfterPredicate>(
+  _$$DateMonthAfterPredicateCopyWith<_$DateMonthAfterPredicate> get copyWith =>
+      __$$DateMonthAfterPredicateCopyWithImpl<_$DateMonthAfterPredicate>(
           this, _$identity);
 
   @override
@@ -7665,36 +7675,36 @@ abstract class DateMonthAfterPredicate implements Predicate {
   PredicatePath get path => throw _privateConstructorUsedError;
   String get month => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $DateMonthAfterPredicateCopyWith<DateMonthAfterPredicate> get copyWith =>
+  _$$DateMonthAfterPredicateCopyWith<_$DateMonthAfterPredicate> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $DateMonthBeforePredicateCopyWith<$Res> {
-  factory $DateMonthBeforePredicateCopyWith(DateMonthBeforePredicate value,
-          $Res Function(DateMonthBeforePredicate) then) =
-      _$DateMonthBeforePredicateCopyWithImpl<$Res>;
+abstract class _$$DateMonthBeforePredicateCopyWith<$Res> {
+  factory _$$DateMonthBeforePredicateCopyWith(_$DateMonthBeforePredicate value,
+          $Res Function(_$DateMonthBeforePredicate) then) =
+      __$$DateMonthBeforePredicateCopyWithImpl<$Res>;
   $Res call({PredicatePath path, String month});
 }
 
 /// @nodoc
-class _$DateMonthBeforePredicateCopyWithImpl<$Res>
+class __$$DateMonthBeforePredicateCopyWithImpl<$Res>
     extends _$PredicateCopyWithImpl<$Res>
-    implements $DateMonthBeforePredicateCopyWith<$Res> {
-  _$DateMonthBeforePredicateCopyWithImpl(DateMonthBeforePredicate _value,
-      $Res Function(DateMonthBeforePredicate) _then)
-      : super(_value, (v) => _then(v as DateMonthBeforePredicate));
+    implements _$$DateMonthBeforePredicateCopyWith<$Res> {
+  __$$DateMonthBeforePredicateCopyWithImpl(_$DateMonthBeforePredicate _value,
+      $Res Function(_$DateMonthBeforePredicate) _then)
+      : super(_value, (v) => _then(v as _$DateMonthBeforePredicate));
 
   @override
-  DateMonthBeforePredicate get _value =>
-      super._value as DateMonthBeforePredicate;
+  _$DateMonthBeforePredicate get _value =>
+      super._value as _$DateMonthBeforePredicate;
 
   @override
   $Res call({
     Object? path = freezed,
     Object? month = freezed,
   }) {
-    return _then(DateMonthBeforePredicate(
+    return _then(_$DateMonthBeforePredicate(
       path == freezed
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
@@ -7726,7 +7736,7 @@ class _$DateMonthBeforePredicate implements DateMonthBeforePredicate {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is DateMonthBeforePredicate &&
+            other is _$DateMonthBeforePredicate &&
             const DeepCollectionEquality().equals(other.path, path) &&
             const DeepCollectionEquality().equals(other.month, month));
   }
@@ -7739,9 +7749,10 @@ class _$DateMonthBeforePredicate implements DateMonthBeforePredicate {
 
   @JsonKey(ignore: true)
   @override
-  $DateMonthBeforePredicateCopyWith<DateMonthBeforePredicate> get copyWith =>
-      _$DateMonthBeforePredicateCopyWithImpl<DateMonthBeforePredicate>(
-          this, _$identity);
+  _$$DateMonthBeforePredicateCopyWith<_$DateMonthBeforePredicate>
+      get copyWith =>
+          __$$DateMonthBeforePredicateCopyWithImpl<_$DateMonthBeforePredicate>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -7989,35 +8000,35 @@ abstract class DateMonthBeforePredicate implements Predicate {
   PredicatePath get path => throw _privateConstructorUsedError;
   String get month => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $DateMonthBeforePredicateCopyWith<DateMonthBeforePredicate> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$DateMonthBeforePredicateCopyWith<_$DateMonthBeforePredicate>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $DateYearPredicateCopyWith<$Res> {
-  factory $DateYearPredicateCopyWith(
-          DateYearPredicate value, $Res Function(DateYearPredicate) then) =
-      _$DateYearPredicateCopyWithImpl<$Res>;
+abstract class _$$DateYearPredicateCopyWith<$Res> {
+  factory _$$DateYearPredicateCopyWith(
+          _$DateYearPredicate value, $Res Function(_$DateYearPredicate) then) =
+      __$$DateYearPredicateCopyWithImpl<$Res>;
   $Res call({PredicatePath path, int year});
 }
 
 /// @nodoc
-class _$DateYearPredicateCopyWithImpl<$Res>
+class __$$DateYearPredicateCopyWithImpl<$Res>
     extends _$PredicateCopyWithImpl<$Res>
-    implements $DateYearPredicateCopyWith<$Res> {
-  _$DateYearPredicateCopyWithImpl(
-      DateYearPredicate _value, $Res Function(DateYearPredicate) _then)
-      : super(_value, (v) => _then(v as DateYearPredicate));
+    implements _$$DateYearPredicateCopyWith<$Res> {
+  __$$DateYearPredicateCopyWithImpl(
+      _$DateYearPredicate _value, $Res Function(_$DateYearPredicate) _then)
+      : super(_value, (v) => _then(v as _$DateYearPredicate));
 
   @override
-  DateYearPredicate get _value => super._value as DateYearPredicate;
+  _$DateYearPredicate get _value => super._value as _$DateYearPredicate;
 
   @override
   $Res call({
     Object? path = freezed,
     Object? year = freezed,
   }) {
-    return _then(DateYearPredicate(
+    return _then(_$DateYearPredicate(
       path == freezed
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
@@ -8049,7 +8060,7 @@ class _$DateYearPredicate implements DateYearPredicate {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is DateYearPredicate &&
+            other is _$DateYearPredicate &&
             const DeepCollectionEquality().equals(other.path, path) &&
             const DeepCollectionEquality().equals(other.year, year));
   }
@@ -8062,8 +8073,8 @@ class _$DateYearPredicate implements DateYearPredicate {
 
   @JsonKey(ignore: true)
   @override
-  $DateYearPredicateCopyWith<DateYearPredicate> get copyWith =>
-      _$DateYearPredicateCopyWithImpl<DateYearPredicate>(this, _$identity);
+  _$$DateYearPredicateCopyWith<_$DateYearPredicate> get copyWith =>
+      __$$DateYearPredicateCopyWithImpl<_$DateYearPredicate>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -8310,35 +8321,35 @@ abstract class DateYearPredicate implements Predicate {
   PredicatePath get path => throw _privateConstructorUsedError;
   int get year => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $DateYearPredicateCopyWith<DateYearPredicate> get copyWith =>
+  _$$DateYearPredicateCopyWith<_$DateYearPredicate> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $DateHourPredicateCopyWith<$Res> {
-  factory $DateHourPredicateCopyWith(
-          DateHourPredicate value, $Res Function(DateHourPredicate) then) =
-      _$DateHourPredicateCopyWithImpl<$Res>;
+abstract class _$$DateHourPredicateCopyWith<$Res> {
+  factory _$$DateHourPredicateCopyWith(
+          _$DateHourPredicate value, $Res Function(_$DateHourPredicate) then) =
+      __$$DateHourPredicateCopyWithImpl<$Res>;
   $Res call({PredicatePath path, int hour});
 }
 
 /// @nodoc
-class _$DateHourPredicateCopyWithImpl<$Res>
+class __$$DateHourPredicateCopyWithImpl<$Res>
     extends _$PredicateCopyWithImpl<$Res>
-    implements $DateHourPredicateCopyWith<$Res> {
-  _$DateHourPredicateCopyWithImpl(
-      DateHourPredicate _value, $Res Function(DateHourPredicate) _then)
-      : super(_value, (v) => _then(v as DateHourPredicate));
+    implements _$$DateHourPredicateCopyWith<$Res> {
+  __$$DateHourPredicateCopyWithImpl(
+      _$DateHourPredicate _value, $Res Function(_$DateHourPredicate) _then)
+      : super(_value, (v) => _then(v as _$DateHourPredicate));
 
   @override
-  DateHourPredicate get _value => super._value as DateHourPredicate;
+  _$DateHourPredicate get _value => super._value as _$DateHourPredicate;
 
   @override
   $Res call({
     Object? path = freezed,
     Object? hour = freezed,
   }) {
-    return _then(DateHourPredicate(
+    return _then(_$DateHourPredicate(
       path == freezed
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
@@ -8370,7 +8381,7 @@ class _$DateHourPredicate implements DateHourPredicate {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is DateHourPredicate &&
+            other is _$DateHourPredicate &&
             const DeepCollectionEquality().equals(other.path, path) &&
             const DeepCollectionEquality().equals(other.hour, hour));
   }
@@ -8383,8 +8394,8 @@ class _$DateHourPredicate implements DateHourPredicate {
 
   @JsonKey(ignore: true)
   @override
-  $DateHourPredicateCopyWith<DateHourPredicate> get copyWith =>
-      _$DateHourPredicateCopyWithImpl<DateHourPredicate>(this, _$identity);
+  _$$DateHourPredicateCopyWith<_$DateHourPredicate> get copyWith =>
+      __$$DateHourPredicateCopyWithImpl<_$DateHourPredicate>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -8631,35 +8642,36 @@ abstract class DateHourPredicate implements Predicate {
   PredicatePath get path => throw _privateConstructorUsedError;
   int get hour => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $DateHourPredicateCopyWith<DateHourPredicate> get copyWith =>
+  _$$DateHourPredicateCopyWith<_$DateHourPredicate> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $DateHourAfterPredicateCopyWith<$Res> {
-  factory $DateHourAfterPredicateCopyWith(DateHourAfterPredicate value,
-          $Res Function(DateHourAfterPredicate) then) =
-      _$DateHourAfterPredicateCopyWithImpl<$Res>;
+abstract class _$$DateHourAfterPredicateCopyWith<$Res> {
+  factory _$$DateHourAfterPredicateCopyWith(_$DateHourAfterPredicate value,
+          $Res Function(_$DateHourAfterPredicate) then) =
+      __$$DateHourAfterPredicateCopyWithImpl<$Res>;
   $Res call({PredicatePath path, int hour});
 }
 
 /// @nodoc
-class _$DateHourAfterPredicateCopyWithImpl<$Res>
+class __$$DateHourAfterPredicateCopyWithImpl<$Res>
     extends _$PredicateCopyWithImpl<$Res>
-    implements $DateHourAfterPredicateCopyWith<$Res> {
-  _$DateHourAfterPredicateCopyWithImpl(DateHourAfterPredicate _value,
-      $Res Function(DateHourAfterPredicate) _then)
-      : super(_value, (v) => _then(v as DateHourAfterPredicate));
+    implements _$$DateHourAfterPredicateCopyWith<$Res> {
+  __$$DateHourAfterPredicateCopyWithImpl(_$DateHourAfterPredicate _value,
+      $Res Function(_$DateHourAfterPredicate) _then)
+      : super(_value, (v) => _then(v as _$DateHourAfterPredicate));
 
   @override
-  DateHourAfterPredicate get _value => super._value as DateHourAfterPredicate;
+  _$DateHourAfterPredicate get _value =>
+      super._value as _$DateHourAfterPredicate;
 
   @override
   $Res call({
     Object? path = freezed,
     Object? hour = freezed,
   }) {
-    return _then(DateHourAfterPredicate(
+    return _then(_$DateHourAfterPredicate(
       path == freezed
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
@@ -8691,7 +8703,7 @@ class _$DateHourAfterPredicate implements DateHourAfterPredicate {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is DateHourAfterPredicate &&
+            other is _$DateHourAfterPredicate &&
             const DeepCollectionEquality().equals(other.path, path) &&
             const DeepCollectionEquality().equals(other.hour, hour));
   }
@@ -8704,8 +8716,8 @@ class _$DateHourAfterPredicate implements DateHourAfterPredicate {
 
   @JsonKey(ignore: true)
   @override
-  $DateHourAfterPredicateCopyWith<DateHourAfterPredicate> get copyWith =>
-      _$DateHourAfterPredicateCopyWithImpl<DateHourAfterPredicate>(
+  _$$DateHourAfterPredicateCopyWith<_$DateHourAfterPredicate> get copyWith =>
+      __$$DateHourAfterPredicateCopyWithImpl<_$DateHourAfterPredicate>(
           this, _$identity);
 
   @override
@@ -8953,35 +8965,36 @@ abstract class DateHourAfterPredicate implements Predicate {
   PredicatePath get path => throw _privateConstructorUsedError;
   int get hour => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $DateHourAfterPredicateCopyWith<DateHourAfterPredicate> get copyWith =>
+  _$$DateHourAfterPredicateCopyWith<_$DateHourAfterPredicate> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $DateHourBeforePredicateCopyWith<$Res> {
-  factory $DateHourBeforePredicateCopyWith(DateHourBeforePredicate value,
-          $Res Function(DateHourBeforePredicate) then) =
-      _$DateHourBeforePredicateCopyWithImpl<$Res>;
+abstract class _$$DateHourBeforePredicateCopyWith<$Res> {
+  factory _$$DateHourBeforePredicateCopyWith(_$DateHourBeforePredicate value,
+          $Res Function(_$DateHourBeforePredicate) then) =
+      __$$DateHourBeforePredicateCopyWithImpl<$Res>;
   $Res call({PredicatePath path, int hour});
 }
 
 /// @nodoc
-class _$DateHourBeforePredicateCopyWithImpl<$Res>
+class __$$DateHourBeforePredicateCopyWithImpl<$Res>
     extends _$PredicateCopyWithImpl<$Res>
-    implements $DateHourBeforePredicateCopyWith<$Res> {
-  _$DateHourBeforePredicateCopyWithImpl(DateHourBeforePredicate _value,
-      $Res Function(DateHourBeforePredicate) _then)
-      : super(_value, (v) => _then(v as DateHourBeforePredicate));
+    implements _$$DateHourBeforePredicateCopyWith<$Res> {
+  __$$DateHourBeforePredicateCopyWithImpl(_$DateHourBeforePredicate _value,
+      $Res Function(_$DateHourBeforePredicate) _then)
+      : super(_value, (v) => _then(v as _$DateHourBeforePredicate));
 
   @override
-  DateHourBeforePredicate get _value => super._value as DateHourBeforePredicate;
+  _$DateHourBeforePredicate get _value =>
+      super._value as _$DateHourBeforePredicate;
 
   @override
   $Res call({
     Object? path = freezed,
     Object? hour = freezed,
   }) {
-    return _then(DateHourBeforePredicate(
+    return _then(_$DateHourBeforePredicate(
       path == freezed
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
@@ -9013,7 +9026,7 @@ class _$DateHourBeforePredicate implements DateHourBeforePredicate {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is DateHourBeforePredicate &&
+            other is _$DateHourBeforePredicate &&
             const DeepCollectionEquality().equals(other.path, path) &&
             const DeepCollectionEquality().equals(other.hour, hour));
   }
@@ -9026,8 +9039,8 @@ class _$DateHourBeforePredicate implements DateHourBeforePredicate {
 
   @JsonKey(ignore: true)
   @override
-  $DateHourBeforePredicateCopyWith<DateHourBeforePredicate> get copyWith =>
-      _$DateHourBeforePredicateCopyWithImpl<DateHourBeforePredicate>(
+  _$$DateHourBeforePredicateCopyWith<_$DateHourBeforePredicate> get copyWith =>
+      __$$DateHourBeforePredicateCopyWithImpl<_$DateHourBeforePredicate>(
           this, _$identity);
 
   @override
@@ -9275,6 +9288,6 @@ abstract class DateHourBeforePredicate implements Predicate {
   PredicatePath get path => throw _privateConstructorUsedError;
   int get hour => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $DateHourBeforePredicateCopyWith<DateHourBeforePredicate> get copyWith =>
+  _$$DateHourBeforePredicateCopyWith<_$DateHourBeforePredicate> get copyWith =>
       throw _privateConstructorUsedError;
 }

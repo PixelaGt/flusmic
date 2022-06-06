@@ -80,9 +80,9 @@ class _$SliceCopyWithImpl<$Res> implements $SliceCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$SliceCopyWith<$Res> implements $SliceCopyWith<$Res> {
-  factory _$SliceCopyWith(_Slice value, $Res Function(_Slice) then) =
-      __$SliceCopyWithImpl<$Res>;
+abstract class _$$_SliceCopyWith<$Res> implements $SliceCopyWith<$Res> {
+  factory _$$_SliceCopyWith(_$_Slice value, $Res Function(_$_Slice) then) =
+      __$$_SliceCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: 'slice_label') String? sliceLabel,
@@ -92,13 +92,13 @@ abstract class _$SliceCopyWith<$Res> implements $SliceCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$SliceCopyWithImpl<$Res> extends _$SliceCopyWithImpl<$Res>
-    implements _$SliceCopyWith<$Res> {
-  __$SliceCopyWithImpl(_Slice _value, $Res Function(_Slice) _then)
-      : super(_value, (v) => _then(v as _Slice));
+class __$$_SliceCopyWithImpl<$Res> extends _$SliceCopyWithImpl<$Res>
+    implements _$$_SliceCopyWith<$Res> {
+  __$$_SliceCopyWithImpl(_$_Slice _value, $Res Function(_$_Slice) _then)
+      : super(_value, (v) => _then(v as _$_Slice));
 
   @override
-  _Slice get _value => super._value as _Slice;
+  _$_Slice get _value => super._value as _$_Slice;
 
   @override
   $Res call({
@@ -107,7 +107,7 @@ class __$SliceCopyWithImpl<$Res> extends _$SliceCopyWithImpl<$Res>
     Object? items = freezed,
     Object? primary = freezed,
   }) {
-    return _then(_Slice(
+    return _then(_$_Slice(
       sliceLabel: sliceLabel == freezed
           ? _value.sliceLabel
           : sliceLabel // ignore: cast_nullable_to_non_nullable
@@ -117,11 +117,11 @@ class __$SliceCopyWithImpl<$Res> extends _$SliceCopyWithImpl<$Res>
           : sliceType // ignore: cast_nullable_to_non_nullable
               as String?,
       items: items == freezed
-          ? _value.items
+          ? _value._items
           : items // ignore: cast_nullable_to_non_nullable
               as List<Map<String, dynamic>>?,
       primary: primary == freezed
-          ? _value.primary
+          ? _value._primary
           : primary // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
@@ -175,12 +175,12 @@ class _$_Slice implements _Slice {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Slice &&
+            other is _$_Slice &&
             const DeepCollectionEquality()
                 .equals(other.sliceLabel, sliceLabel) &&
             const DeepCollectionEquality().equals(other.sliceType, sliceType) &&
-            const DeepCollectionEquality().equals(other.items, items) &&
-            const DeepCollectionEquality().equals(other.primary, primary));
+            const DeepCollectionEquality().equals(other._items, _items) &&
+            const DeepCollectionEquality().equals(other._primary, _primary));
   }
 
   @JsonKey(ignore: true)
@@ -189,13 +189,13 @@ class _$_Slice implements _Slice {
       runtimeType,
       const DeepCollectionEquality().hash(sliceLabel),
       const DeepCollectionEquality().hash(sliceType),
-      const DeepCollectionEquality().hash(items),
-      const DeepCollectionEquality().hash(primary));
+      const DeepCollectionEquality().hash(_items),
+      const DeepCollectionEquality().hash(_primary));
 
   @JsonKey(ignore: true)
   @override
-  _$SliceCopyWith<_Slice> get copyWith =>
-      __$SliceCopyWithImpl<_Slice>(this, _$identity);
+  _$$_SliceCopyWith<_$_Slice> get copyWith =>
+      __$$_SliceCopyWithImpl<_$_Slice>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -224,5 +224,6 @@ abstract class _Slice implements Slice {
   Map<String, dynamic>? get primary => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$SliceCopyWith<_Slice> get copyWith => throw _privateConstructorUsedError;
+  _$$_SliceCopyWith<_$_Slice> get copyWith =>
+      throw _privateConstructorUsedError;
 }

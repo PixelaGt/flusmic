@@ -71,25 +71,25 @@ class _$AlternateLanguageCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$AlternateLanguageCopyWith<$Res>
+abstract class _$$_AlternateLanguageCopyWith<$Res>
     implements $AlternateLanguageCopyWith<$Res> {
-  factory _$AlternateLanguageCopyWith(
-          _AlternateLanguage value, $Res Function(_AlternateLanguage) then) =
-      __$AlternateLanguageCopyWithImpl<$Res>;
+  factory _$$_AlternateLanguageCopyWith(_$_AlternateLanguage value,
+          $Res Function(_$_AlternateLanguage) then) =
+      __$$_AlternateLanguageCopyWithImpl<$Res>;
   @override
   $Res call({String id, String lang, String type});
 }
 
 /// @nodoc
-class __$AlternateLanguageCopyWithImpl<$Res>
+class __$$_AlternateLanguageCopyWithImpl<$Res>
     extends _$AlternateLanguageCopyWithImpl<$Res>
-    implements _$AlternateLanguageCopyWith<$Res> {
-  __$AlternateLanguageCopyWithImpl(
-      _AlternateLanguage _value, $Res Function(_AlternateLanguage) _then)
-      : super(_value, (v) => _then(v as _AlternateLanguage));
+    implements _$$_AlternateLanguageCopyWith<$Res> {
+  __$$_AlternateLanguageCopyWithImpl(
+      _$_AlternateLanguage _value, $Res Function(_$_AlternateLanguage) _then)
+      : super(_value, (v) => _then(v as _$_AlternateLanguage));
 
   @override
-  _AlternateLanguage get _value => super._value as _AlternateLanguage;
+  _$_AlternateLanguage get _value => super._value as _$_AlternateLanguage;
 
   @override
   $Res call({
@@ -97,7 +97,7 @@ class __$AlternateLanguageCopyWithImpl<$Res>
     Object? lang = freezed,
     Object? type = freezed,
   }) {
-    return _then(_AlternateLanguage(
+    return _then(_$_AlternateLanguage(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -139,7 +139,7 @@ class _$_AlternateLanguage implements _AlternateLanguage {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _AlternateLanguage &&
+            other is _$_AlternateLanguage &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.lang, lang) &&
             const DeepCollectionEquality().equals(other.type, type));
@@ -155,8 +155,9 @@ class _$_AlternateLanguage implements _AlternateLanguage {
 
   @JsonKey(ignore: true)
   @override
-  _$AlternateLanguageCopyWith<_AlternateLanguage> get copyWith =>
-      __$AlternateLanguageCopyWithImpl<_AlternateLanguage>(this, _$identity);
+  _$$_AlternateLanguageCopyWith<_$_AlternateLanguage> get copyWith =>
+      __$$_AlternateLanguageCopyWithImpl<_$_AlternateLanguage>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -181,6 +182,6 @@ abstract class _AlternateLanguage implements AlternateLanguage {
   String get type => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$AlternateLanguageCopyWith<_AlternateLanguage> get copyWith =>
+  _$$_AlternateLanguageCopyWith<_$_AlternateLanguage> get copyWith =>
       throw _privateConstructorUsedError;
 }

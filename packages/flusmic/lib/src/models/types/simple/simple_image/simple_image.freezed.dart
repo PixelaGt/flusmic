@@ -85,11 +85,11 @@ class _$SimpleImageCopyWithImpl<$Res> implements $SimpleImageCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$SimpleImageCopyWith<$Res>
+abstract class _$$_SimpleImageCopyWith<$Res>
     implements $SimpleImageCopyWith<$Res> {
-  factory _$SimpleImageCopyWith(
-          _SimpleImage value, $Res Function(_SimpleImage) then) =
-      __$SimpleImageCopyWithImpl<$Res>;
+  factory _$$_SimpleImageCopyWith(
+          _$_SimpleImage value, $Res Function(_$_SimpleImage) then) =
+      __$$_SimpleImageCopyWithImpl<$Res>;
   @override
   $Res call({String? alt, String? copyright, Dimension dimensions, String url});
 
@@ -98,14 +98,14 @@ abstract class _$SimpleImageCopyWith<$Res>
 }
 
 /// @nodoc
-class __$SimpleImageCopyWithImpl<$Res> extends _$SimpleImageCopyWithImpl<$Res>
-    implements _$SimpleImageCopyWith<$Res> {
-  __$SimpleImageCopyWithImpl(
-      _SimpleImage _value, $Res Function(_SimpleImage) _then)
-      : super(_value, (v) => _then(v as _SimpleImage));
+class __$$_SimpleImageCopyWithImpl<$Res> extends _$SimpleImageCopyWithImpl<$Res>
+    implements _$$_SimpleImageCopyWith<$Res> {
+  __$$_SimpleImageCopyWithImpl(
+      _$_SimpleImage _value, $Res Function(_$_SimpleImage) _then)
+      : super(_value, (v) => _then(v as _$_SimpleImage));
 
   @override
-  _SimpleImage get _value => super._value as _SimpleImage;
+  _$_SimpleImage get _value => super._value as _$_SimpleImage;
 
   @override
   $Res call({
@@ -114,7 +114,7 @@ class __$SimpleImageCopyWithImpl<$Res> extends _$SimpleImageCopyWithImpl<$Res>
     Object? dimensions = freezed,
     Object? url = freezed,
   }) {
-    return _then(_SimpleImage(
+    return _then(_$_SimpleImage(
       alt: alt == freezed
           ? _value.alt
           : alt // ignore: cast_nullable_to_non_nullable
@@ -162,7 +162,7 @@ class _$_SimpleImage implements _SimpleImage {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SimpleImage &&
+            other is _$_SimpleImage &&
             const DeepCollectionEquality().equals(other.alt, alt) &&
             const DeepCollectionEquality().equals(other.copyright, copyright) &&
             const DeepCollectionEquality()
@@ -181,8 +181,8 @@ class _$_SimpleImage implements _SimpleImage {
 
   @JsonKey(ignore: true)
   @override
-  _$SimpleImageCopyWith<_SimpleImage> get copyWith =>
-      __$SimpleImageCopyWithImpl<_SimpleImage>(this, _$identity);
+  _$$_SimpleImageCopyWith<_$_SimpleImage> get copyWith =>
+      __$$_SimpleImageCopyWithImpl<_$_SimpleImage>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -210,6 +210,6 @@ abstract class _SimpleImage implements SimpleImage {
   String get url => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$SimpleImageCopyWith<_SimpleImage> get copyWith =>
+  _$$_SimpleImageCopyWith<_$_SimpleImage> get copyWith =>
       throw _privateConstructorUsedError;
 }

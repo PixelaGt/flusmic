@@ -63,28 +63,30 @@ class _$LanguageCopyWithImpl<$Res> implements $LanguageCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$LanguageCopyWith<$Res> implements $LanguageCopyWith<$Res> {
-  factory _$LanguageCopyWith(_Language value, $Res Function(_Language) then) =
-      __$LanguageCopyWithImpl<$Res>;
+abstract class _$$_LanguageCopyWith<$Res> implements $LanguageCopyWith<$Res> {
+  factory _$$_LanguageCopyWith(
+          _$_Language value, $Res Function(_$_Language) then) =
+      __$$_LanguageCopyWithImpl<$Res>;
   @override
   $Res call({String id, String name});
 }
 
 /// @nodoc
-class __$LanguageCopyWithImpl<$Res> extends _$LanguageCopyWithImpl<$Res>
-    implements _$LanguageCopyWith<$Res> {
-  __$LanguageCopyWithImpl(_Language _value, $Res Function(_Language) _then)
-      : super(_value, (v) => _then(v as _Language));
+class __$$_LanguageCopyWithImpl<$Res> extends _$LanguageCopyWithImpl<$Res>
+    implements _$$_LanguageCopyWith<$Res> {
+  __$$_LanguageCopyWithImpl(
+      _$_Language _value, $Res Function(_$_Language) _then)
+      : super(_value, (v) => _then(v as _$_Language));
 
   @override
-  _Language get _value => super._value as _Language;
+  _$_Language get _value => super._value as _$_Language;
 
   @override
   $Res call({
     Object? id = freezed,
     Object? name = freezed,
   }) {
-    return _then(_Language(
+    return _then(_$_Language(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -119,7 +121,7 @@ class _$_Language implements _Language {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Language &&
+            other is _$_Language &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.name, name));
   }
@@ -133,8 +135,8 @@ class _$_Language implements _Language {
 
   @JsonKey(ignore: true)
   @override
-  _$LanguageCopyWith<_Language> get copyWith =>
-      __$LanguageCopyWithImpl<_Language>(this, _$identity);
+  _$$_LanguageCopyWith<_$_Language> get copyWith =>
+      __$$_LanguageCopyWithImpl<_$_Language>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -154,6 +156,6 @@ abstract class _Language implements Language {
   String get name => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$LanguageCopyWith<_Language> get copyWith =>
+  _$$_LanguageCopyWith<_$_Language> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -101,9 +101,9 @@ class _$ApiCopyWithImpl<$Res> implements $ApiCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$ApiCopyWith<$Res> implements $ApiCopyWith<$Res> {
-  factory _$ApiCopyWith(_Api value, $Res Function(_Api) then) =
-      __$ApiCopyWithImpl<$Res>;
+abstract class _$$_ApiCopyWith<$Res> implements $ApiCopyWith<$Res> {
+  factory _$$_ApiCopyWith(_$_Api value, $Res Function(_$_Api) then) =
+      __$$_ApiCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: 'oauth_initiate') String? oauthInitiate,
@@ -116,13 +116,13 @@ abstract class _$ApiCopyWith<$Res> implements $ApiCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$ApiCopyWithImpl<$Res> extends _$ApiCopyWithImpl<$Res>
-    implements _$ApiCopyWith<$Res> {
-  __$ApiCopyWithImpl(_Api _value, $Res Function(_Api) _then)
-      : super(_value, (v) => _then(v as _Api));
+class __$$_ApiCopyWithImpl<$Res> extends _$ApiCopyWithImpl<$Res>
+    implements _$$_ApiCopyWith<$Res> {
+  __$$_ApiCopyWithImpl(_$_Api _value, $Res Function(_$_Api) _then)
+      : super(_value, (v) => _then(v as _$_Api));
 
   @override
-  _Api get _value => super._value as _Api;
+  _$_Api get _value => super._value as _$_Api;
 
   @override
   $Res call({
@@ -134,7 +134,7 @@ class __$ApiCopyWithImpl<$Res> extends _$ApiCopyWithImpl<$Res>
     Object? refs = freezed,
     Object? version = freezed,
   }) {
-    return _then(_Api(
+    return _then(_$_Api(
       oauthInitiate: oauthInitiate == freezed
           ? _value.oauthInitiate
           : oauthInitiate // ignore: cast_nullable_to_non_nullable
@@ -144,7 +144,7 @@ class __$ApiCopyWithImpl<$Res> extends _$ApiCopyWithImpl<$Res>
           : oauthToken // ignore: cast_nullable_to_non_nullable
               as String?,
       types: types == freezed
-          ? _value.types
+          ? _value._types
           : types // ignore: cast_nullable_to_non_nullable
               as Map<String, String>?,
       license: license == freezed
@@ -152,11 +152,11 @@ class __$ApiCopyWithImpl<$Res> extends _$ApiCopyWithImpl<$Res>
           : license // ignore: cast_nullable_to_non_nullable
               as String?,
       languages: languages == freezed
-          ? _value.languages
+          ? _value._languages
           : languages // ignore: cast_nullable_to_non_nullable
               as List<Language>,
       refs: refs == freezed
-          ? _value.refs
+          ? _value._refs
           : refs // ignore: cast_nullable_to_non_nullable
               as List<Ref>,
       version: version == freezed
@@ -227,15 +227,16 @@ class _$_Api implements _Api {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Api &&
+            other is _$_Api &&
             const DeepCollectionEquality()
                 .equals(other.oauthInitiate, oauthInitiate) &&
             const DeepCollectionEquality()
                 .equals(other.oauthToken, oauthToken) &&
-            const DeepCollectionEquality().equals(other.types, types) &&
+            const DeepCollectionEquality().equals(other._types, _types) &&
             const DeepCollectionEquality().equals(other.license, license) &&
-            const DeepCollectionEquality().equals(other.languages, languages) &&
-            const DeepCollectionEquality().equals(other.refs, refs) &&
+            const DeepCollectionEquality()
+                .equals(other._languages, _languages) &&
+            const DeepCollectionEquality().equals(other._refs, _refs) &&
             const DeepCollectionEquality().equals(other.version, version));
   }
 
@@ -245,16 +246,16 @@ class _$_Api implements _Api {
       runtimeType,
       const DeepCollectionEquality().hash(oauthInitiate),
       const DeepCollectionEquality().hash(oauthToken),
-      const DeepCollectionEquality().hash(types),
+      const DeepCollectionEquality().hash(_types),
       const DeepCollectionEquality().hash(license),
-      const DeepCollectionEquality().hash(languages),
-      const DeepCollectionEquality().hash(refs),
+      const DeepCollectionEquality().hash(_languages),
+      const DeepCollectionEquality().hash(_refs),
       const DeepCollectionEquality().hash(version));
 
   @JsonKey(ignore: true)
   @override
-  _$ApiCopyWith<_Api> get copyWith =>
-      __$ApiCopyWithImpl<_Api>(this, _$identity);
+  _$$_ApiCopyWith<_$_Api> get copyWith =>
+      __$$_ApiCopyWithImpl<_$_Api>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -292,5 +293,5 @@ abstract class _Api implements Api {
   String get version => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$ApiCopyWith<_Api> get copyWith => throw _privateConstructorUsedError;
+  _$$_ApiCopyWith<_$_Api> get copyWith => throw _privateConstructorUsedError;
 }

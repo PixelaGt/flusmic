@@ -63,28 +63,30 @@ class _$GeopointCopyWithImpl<$Res> implements $GeopointCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$GeopointCopyWith<$Res> implements $GeopointCopyWith<$Res> {
-  factory _$GeopointCopyWith(_Geopoint value, $Res Function(_Geopoint) then) =
-      __$GeopointCopyWithImpl<$Res>;
+abstract class _$$_GeopointCopyWith<$Res> implements $GeopointCopyWith<$Res> {
+  factory _$$_GeopointCopyWith(
+          _$_Geopoint value, $Res Function(_$_Geopoint) then) =
+      __$$_GeopointCopyWithImpl<$Res>;
   @override
   $Res call({double latitude, double longitude});
 }
 
 /// @nodoc
-class __$GeopointCopyWithImpl<$Res> extends _$GeopointCopyWithImpl<$Res>
-    implements _$GeopointCopyWith<$Res> {
-  __$GeopointCopyWithImpl(_Geopoint _value, $Res Function(_Geopoint) _then)
-      : super(_value, (v) => _then(v as _Geopoint));
+class __$$_GeopointCopyWithImpl<$Res> extends _$GeopointCopyWithImpl<$Res>
+    implements _$$_GeopointCopyWith<$Res> {
+  __$$_GeopointCopyWithImpl(
+      _$_Geopoint _value, $Res Function(_$_Geopoint) _then)
+      : super(_value, (v) => _then(v as _$_Geopoint));
 
   @override
-  _Geopoint get _value => super._value as _Geopoint;
+  _$_Geopoint get _value => super._value as _$_Geopoint;
 
   @override
   $Res call({
     Object? latitude = freezed,
     Object? longitude = freezed,
   }) {
-    return _then(_Geopoint(
+    return _then(_$_Geopoint(
       latitude: latitude == freezed
           ? _value.latitude
           : latitude // ignore: cast_nullable_to_non_nullable
@@ -119,7 +121,7 @@ class _$_Geopoint implements _Geopoint {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Geopoint &&
+            other is _$_Geopoint &&
             const DeepCollectionEquality().equals(other.latitude, latitude) &&
             const DeepCollectionEquality().equals(other.longitude, longitude));
   }
@@ -133,8 +135,8 @@ class _$_Geopoint implements _Geopoint {
 
   @JsonKey(ignore: true)
   @override
-  _$GeopointCopyWith<_Geopoint> get copyWith =>
-      __$GeopointCopyWithImpl<_Geopoint>(this, _$identity);
+  _$$_GeopointCopyWith<_$_Geopoint> get copyWith =>
+      __$$_GeopointCopyWithImpl<_$_Geopoint>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -155,6 +157,6 @@ abstract class _Geopoint implements Geopoint {
   double get longitude => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$GeopointCopyWith<_Geopoint> get copyWith =>
+  _$$_GeopointCopyWith<_$_Geopoint> get copyWith =>
       throw _privateConstructorUsedError;
 }

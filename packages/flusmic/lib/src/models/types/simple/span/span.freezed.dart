@@ -68,21 +68,21 @@ class _$SpanCopyWithImpl<$Res> implements $SpanCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$SpanCopyWith<$Res> implements $SpanCopyWith<$Res> {
-  factory _$SpanCopyWith(_Span value, $Res Function(_Span) then) =
-      __$SpanCopyWithImpl<$Res>;
+abstract class _$$_SpanCopyWith<$Res> implements $SpanCopyWith<$Res> {
+  factory _$$_SpanCopyWith(_$_Span value, $Res Function(_$_Span) then) =
+      __$$_SpanCopyWithImpl<$Res>;
   @override
   $Res call({String type, int end, int start});
 }
 
 /// @nodoc
-class __$SpanCopyWithImpl<$Res> extends _$SpanCopyWithImpl<$Res>
-    implements _$SpanCopyWith<$Res> {
-  __$SpanCopyWithImpl(_Span _value, $Res Function(_Span) _then)
-      : super(_value, (v) => _then(v as _Span));
+class __$$_SpanCopyWithImpl<$Res> extends _$SpanCopyWithImpl<$Res>
+    implements _$$_SpanCopyWith<$Res> {
+  __$$_SpanCopyWithImpl(_$_Span _value, $Res Function(_$_Span) _then)
+      : super(_value, (v) => _then(v as _$_Span));
 
   @override
-  _Span get _value => super._value as _Span;
+  _$_Span get _value => super._value as _$_Span;
 
   @override
   $Res call({
@@ -90,7 +90,7 @@ class __$SpanCopyWithImpl<$Res> extends _$SpanCopyWithImpl<$Res>
     Object? end = freezed,
     Object? start = freezed,
   }) {
-    return _then(_Span(
+    return _then(_$_Span(
       type: type == freezed
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -130,7 +130,7 @@ class _$_Span implements _Span {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Span &&
+            other is _$_Span &&
             const DeepCollectionEquality().equals(other.type, type) &&
             const DeepCollectionEquality().equals(other.end, end) &&
             const DeepCollectionEquality().equals(other.start, start));
@@ -146,8 +146,8 @@ class _$_Span implements _Span {
 
   @JsonKey(ignore: true)
   @override
-  _$SpanCopyWith<_Span> get copyWith =>
-      __$SpanCopyWithImpl<_Span>(this, _$identity);
+  _$$_SpanCopyWith<_$_Span> get copyWith =>
+      __$$_SpanCopyWithImpl<_$_Span>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -171,5 +171,5 @@ abstract class _Span implements Span {
   int get start => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$SpanCopyWith<_Span> get copyWith => throw _privateConstructorUsedError;
+  _$$_SpanCopyWith<_$_Span> get copyWith => throw _privateConstructorUsedError;
 }
