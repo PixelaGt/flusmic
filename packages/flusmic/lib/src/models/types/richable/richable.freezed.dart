@@ -179,22 +179,23 @@ class _$RichableCopyWithImpl<$Res> implements $RichableCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class $RichableHeading1CopyWith<$Res> {
-  factory $RichableHeading1CopyWith(
-          RichableHeading1 value, $Res Function(RichableHeading1) then) =
-      _$RichableHeading1CopyWithImpl<$Res>;
+abstract class _$$RichableHeading1CopyWith<$Res> {
+  factory _$$RichableHeading1CopyWith(
+          _$RichableHeading1 value, $Res Function(_$RichableHeading1) then) =
+      __$$RichableHeading1CopyWithImpl<$Res>;
   $Res call({List<Span> spans, String text, String type});
 }
 
 /// @nodoc
-class _$RichableHeading1CopyWithImpl<$Res> extends _$RichableCopyWithImpl<$Res>
-    implements $RichableHeading1CopyWith<$Res> {
-  _$RichableHeading1CopyWithImpl(
-      RichableHeading1 _value, $Res Function(RichableHeading1) _then)
-      : super(_value, (v) => _then(v as RichableHeading1));
+class __$$RichableHeading1CopyWithImpl<$Res>
+    extends _$RichableCopyWithImpl<$Res>
+    implements _$$RichableHeading1CopyWith<$Res> {
+  __$$RichableHeading1CopyWithImpl(
+      _$RichableHeading1 _value, $Res Function(_$RichableHeading1) _then)
+      : super(_value, (v) => _then(v as _$RichableHeading1));
 
   @override
-  RichableHeading1 get _value => super._value as RichableHeading1;
+  _$RichableHeading1 get _value => super._value as _$RichableHeading1;
 
   @override
   $Res call({
@@ -202,9 +203,9 @@ class _$RichableHeading1CopyWithImpl<$Res> extends _$RichableCopyWithImpl<$Res>
     Object? text = freezed,
     Object? type = freezed,
   }) {
-    return _then(RichableHeading1(
+    return _then(_$RichableHeading1(
       spans: spans == freezed
-          ? _value.spans
+          ? _value._spans
           : spans // ignore: cast_nullable_to_non_nullable
               as List<Span>,
       text: text == freezed
@@ -250,8 +251,8 @@ class _$RichableHeading1 implements RichableHeading1 {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is RichableHeading1 &&
-            const DeepCollectionEquality().equals(other.spans, spans) &&
+            other is _$RichableHeading1 &&
+            const DeepCollectionEquality().equals(other._spans, _spans) &&
             const DeepCollectionEquality().equals(other.text, text) &&
             const DeepCollectionEquality().equals(other.type, type));
   }
@@ -260,14 +261,14 @@ class _$RichableHeading1 implements RichableHeading1 {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(spans),
+      const DeepCollectionEquality().hash(_spans),
       const DeepCollectionEquality().hash(text),
       const DeepCollectionEquality().hash(type));
 
   @JsonKey(ignore: true)
   @override
-  $RichableHeading1CopyWith<RichableHeading1> get copyWith =>
-      _$RichableHeading1CopyWithImpl<RichableHeading1>(this, _$identity);
+  _$$RichableHeading1CopyWith<_$RichableHeading1> get copyWith =>
+      __$$RichableHeading1CopyWithImpl<_$RichableHeading1>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -425,27 +426,28 @@ abstract class RichableHeading1 implements Richable {
   String get text => throw _privateConstructorUsedError;
   String get type => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $RichableHeading1CopyWith<RichableHeading1> get copyWith =>
+  _$$RichableHeading1CopyWith<_$RichableHeading1> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $RichableHeading2CopyWith<$Res> {
-  factory $RichableHeading2CopyWith(
-          RichableHeading2 value, $Res Function(RichableHeading2) then) =
-      _$RichableHeading2CopyWithImpl<$Res>;
+abstract class _$$RichableHeading2CopyWith<$Res> {
+  factory _$$RichableHeading2CopyWith(
+          _$RichableHeading2 value, $Res Function(_$RichableHeading2) then) =
+      __$$RichableHeading2CopyWithImpl<$Res>;
   $Res call({List<Span> spans, String text, String type});
 }
 
 /// @nodoc
-class _$RichableHeading2CopyWithImpl<$Res> extends _$RichableCopyWithImpl<$Res>
-    implements $RichableHeading2CopyWith<$Res> {
-  _$RichableHeading2CopyWithImpl(
-      RichableHeading2 _value, $Res Function(RichableHeading2) _then)
-      : super(_value, (v) => _then(v as RichableHeading2));
+class __$$RichableHeading2CopyWithImpl<$Res>
+    extends _$RichableCopyWithImpl<$Res>
+    implements _$$RichableHeading2CopyWith<$Res> {
+  __$$RichableHeading2CopyWithImpl(
+      _$RichableHeading2 _value, $Res Function(_$RichableHeading2) _then)
+      : super(_value, (v) => _then(v as _$RichableHeading2));
 
   @override
-  RichableHeading2 get _value => super._value as RichableHeading2;
+  _$RichableHeading2 get _value => super._value as _$RichableHeading2;
 
   @override
   $Res call({
@@ -453,9 +455,9 @@ class _$RichableHeading2CopyWithImpl<$Res> extends _$RichableCopyWithImpl<$Res>
     Object? text = freezed,
     Object? type = freezed,
   }) {
-    return _then(RichableHeading2(
+    return _then(_$RichableHeading2(
       spans: spans == freezed
-          ? _value.spans
+          ? _value._spans
           : spans // ignore: cast_nullable_to_non_nullable
               as List<Span>,
       text: text == freezed
@@ -501,8 +503,8 @@ class _$RichableHeading2 implements RichableHeading2 {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is RichableHeading2 &&
-            const DeepCollectionEquality().equals(other.spans, spans) &&
+            other is _$RichableHeading2 &&
+            const DeepCollectionEquality().equals(other._spans, _spans) &&
             const DeepCollectionEquality().equals(other.text, text) &&
             const DeepCollectionEquality().equals(other.type, type));
   }
@@ -511,14 +513,14 @@ class _$RichableHeading2 implements RichableHeading2 {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(spans),
+      const DeepCollectionEquality().hash(_spans),
       const DeepCollectionEquality().hash(text),
       const DeepCollectionEquality().hash(type));
 
   @JsonKey(ignore: true)
   @override
-  $RichableHeading2CopyWith<RichableHeading2> get copyWith =>
-      _$RichableHeading2CopyWithImpl<RichableHeading2>(this, _$identity);
+  _$$RichableHeading2CopyWith<_$RichableHeading2> get copyWith =>
+      __$$RichableHeading2CopyWithImpl<_$RichableHeading2>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -676,27 +678,28 @@ abstract class RichableHeading2 implements Richable {
   String get text => throw _privateConstructorUsedError;
   String get type => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $RichableHeading2CopyWith<RichableHeading2> get copyWith =>
+  _$$RichableHeading2CopyWith<_$RichableHeading2> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $RichableHeading3CopyWith<$Res> {
-  factory $RichableHeading3CopyWith(
-          RichableHeading3 value, $Res Function(RichableHeading3) then) =
-      _$RichableHeading3CopyWithImpl<$Res>;
+abstract class _$$RichableHeading3CopyWith<$Res> {
+  factory _$$RichableHeading3CopyWith(
+          _$RichableHeading3 value, $Res Function(_$RichableHeading3) then) =
+      __$$RichableHeading3CopyWithImpl<$Res>;
   $Res call({List<Span> spans, String text, String type});
 }
 
 /// @nodoc
-class _$RichableHeading3CopyWithImpl<$Res> extends _$RichableCopyWithImpl<$Res>
-    implements $RichableHeading3CopyWith<$Res> {
-  _$RichableHeading3CopyWithImpl(
-      RichableHeading3 _value, $Res Function(RichableHeading3) _then)
-      : super(_value, (v) => _then(v as RichableHeading3));
+class __$$RichableHeading3CopyWithImpl<$Res>
+    extends _$RichableCopyWithImpl<$Res>
+    implements _$$RichableHeading3CopyWith<$Res> {
+  __$$RichableHeading3CopyWithImpl(
+      _$RichableHeading3 _value, $Res Function(_$RichableHeading3) _then)
+      : super(_value, (v) => _then(v as _$RichableHeading3));
 
   @override
-  RichableHeading3 get _value => super._value as RichableHeading3;
+  _$RichableHeading3 get _value => super._value as _$RichableHeading3;
 
   @override
   $Res call({
@@ -704,9 +707,9 @@ class _$RichableHeading3CopyWithImpl<$Res> extends _$RichableCopyWithImpl<$Res>
     Object? text = freezed,
     Object? type = freezed,
   }) {
-    return _then(RichableHeading3(
+    return _then(_$RichableHeading3(
       spans: spans == freezed
-          ? _value.spans
+          ? _value._spans
           : spans // ignore: cast_nullable_to_non_nullable
               as List<Span>,
       text: text == freezed
@@ -752,8 +755,8 @@ class _$RichableHeading3 implements RichableHeading3 {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is RichableHeading3 &&
-            const DeepCollectionEquality().equals(other.spans, spans) &&
+            other is _$RichableHeading3 &&
+            const DeepCollectionEquality().equals(other._spans, _spans) &&
             const DeepCollectionEquality().equals(other.text, text) &&
             const DeepCollectionEquality().equals(other.type, type));
   }
@@ -762,14 +765,14 @@ class _$RichableHeading3 implements RichableHeading3 {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(spans),
+      const DeepCollectionEquality().hash(_spans),
       const DeepCollectionEquality().hash(text),
       const DeepCollectionEquality().hash(type));
 
   @JsonKey(ignore: true)
   @override
-  $RichableHeading3CopyWith<RichableHeading3> get copyWith =>
-      _$RichableHeading3CopyWithImpl<RichableHeading3>(this, _$identity);
+  _$$RichableHeading3CopyWith<_$RichableHeading3> get copyWith =>
+      __$$RichableHeading3CopyWithImpl<_$RichableHeading3>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -927,27 +930,28 @@ abstract class RichableHeading3 implements Richable {
   String get text => throw _privateConstructorUsedError;
   String get type => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $RichableHeading3CopyWith<RichableHeading3> get copyWith =>
+  _$$RichableHeading3CopyWith<_$RichableHeading3> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $RichableHeading4CopyWith<$Res> {
-  factory $RichableHeading4CopyWith(
-          RichableHeading4 value, $Res Function(RichableHeading4) then) =
-      _$RichableHeading4CopyWithImpl<$Res>;
+abstract class _$$RichableHeading4CopyWith<$Res> {
+  factory _$$RichableHeading4CopyWith(
+          _$RichableHeading4 value, $Res Function(_$RichableHeading4) then) =
+      __$$RichableHeading4CopyWithImpl<$Res>;
   $Res call({List<Span> spans, String text, String type});
 }
 
 /// @nodoc
-class _$RichableHeading4CopyWithImpl<$Res> extends _$RichableCopyWithImpl<$Res>
-    implements $RichableHeading4CopyWith<$Res> {
-  _$RichableHeading4CopyWithImpl(
-      RichableHeading4 _value, $Res Function(RichableHeading4) _then)
-      : super(_value, (v) => _then(v as RichableHeading4));
+class __$$RichableHeading4CopyWithImpl<$Res>
+    extends _$RichableCopyWithImpl<$Res>
+    implements _$$RichableHeading4CopyWith<$Res> {
+  __$$RichableHeading4CopyWithImpl(
+      _$RichableHeading4 _value, $Res Function(_$RichableHeading4) _then)
+      : super(_value, (v) => _then(v as _$RichableHeading4));
 
   @override
-  RichableHeading4 get _value => super._value as RichableHeading4;
+  _$RichableHeading4 get _value => super._value as _$RichableHeading4;
 
   @override
   $Res call({
@@ -955,9 +959,9 @@ class _$RichableHeading4CopyWithImpl<$Res> extends _$RichableCopyWithImpl<$Res>
     Object? text = freezed,
     Object? type = freezed,
   }) {
-    return _then(RichableHeading4(
+    return _then(_$RichableHeading4(
       spans: spans == freezed
-          ? _value.spans
+          ? _value._spans
           : spans // ignore: cast_nullable_to_non_nullable
               as List<Span>,
       text: text == freezed
@@ -1003,8 +1007,8 @@ class _$RichableHeading4 implements RichableHeading4 {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is RichableHeading4 &&
-            const DeepCollectionEquality().equals(other.spans, spans) &&
+            other is _$RichableHeading4 &&
+            const DeepCollectionEquality().equals(other._spans, _spans) &&
             const DeepCollectionEquality().equals(other.text, text) &&
             const DeepCollectionEquality().equals(other.type, type));
   }
@@ -1013,14 +1017,14 @@ class _$RichableHeading4 implements RichableHeading4 {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(spans),
+      const DeepCollectionEquality().hash(_spans),
       const DeepCollectionEquality().hash(text),
       const DeepCollectionEquality().hash(type));
 
   @JsonKey(ignore: true)
   @override
-  $RichableHeading4CopyWith<RichableHeading4> get copyWith =>
-      _$RichableHeading4CopyWithImpl<RichableHeading4>(this, _$identity);
+  _$$RichableHeading4CopyWith<_$RichableHeading4> get copyWith =>
+      __$$RichableHeading4CopyWithImpl<_$RichableHeading4>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1178,27 +1182,28 @@ abstract class RichableHeading4 implements Richable {
   String get text => throw _privateConstructorUsedError;
   String get type => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $RichableHeading4CopyWith<RichableHeading4> get copyWith =>
+  _$$RichableHeading4CopyWith<_$RichableHeading4> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $RichableHeading5CopyWith<$Res> {
-  factory $RichableHeading5CopyWith(
-          RichableHeading5 value, $Res Function(RichableHeading5) then) =
-      _$RichableHeading5CopyWithImpl<$Res>;
+abstract class _$$RichableHeading5CopyWith<$Res> {
+  factory _$$RichableHeading5CopyWith(
+          _$RichableHeading5 value, $Res Function(_$RichableHeading5) then) =
+      __$$RichableHeading5CopyWithImpl<$Res>;
   $Res call({List<Span> spans, String text, String type});
 }
 
 /// @nodoc
-class _$RichableHeading5CopyWithImpl<$Res> extends _$RichableCopyWithImpl<$Res>
-    implements $RichableHeading5CopyWith<$Res> {
-  _$RichableHeading5CopyWithImpl(
-      RichableHeading5 _value, $Res Function(RichableHeading5) _then)
-      : super(_value, (v) => _then(v as RichableHeading5));
+class __$$RichableHeading5CopyWithImpl<$Res>
+    extends _$RichableCopyWithImpl<$Res>
+    implements _$$RichableHeading5CopyWith<$Res> {
+  __$$RichableHeading5CopyWithImpl(
+      _$RichableHeading5 _value, $Res Function(_$RichableHeading5) _then)
+      : super(_value, (v) => _then(v as _$RichableHeading5));
 
   @override
-  RichableHeading5 get _value => super._value as RichableHeading5;
+  _$RichableHeading5 get _value => super._value as _$RichableHeading5;
 
   @override
   $Res call({
@@ -1206,9 +1211,9 @@ class _$RichableHeading5CopyWithImpl<$Res> extends _$RichableCopyWithImpl<$Res>
     Object? text = freezed,
     Object? type = freezed,
   }) {
-    return _then(RichableHeading5(
+    return _then(_$RichableHeading5(
       spans: spans == freezed
-          ? _value.spans
+          ? _value._spans
           : spans // ignore: cast_nullable_to_non_nullable
               as List<Span>,
       text: text == freezed
@@ -1254,8 +1259,8 @@ class _$RichableHeading5 implements RichableHeading5 {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is RichableHeading5 &&
-            const DeepCollectionEquality().equals(other.spans, spans) &&
+            other is _$RichableHeading5 &&
+            const DeepCollectionEquality().equals(other._spans, _spans) &&
             const DeepCollectionEquality().equals(other.text, text) &&
             const DeepCollectionEquality().equals(other.type, type));
   }
@@ -1264,14 +1269,14 @@ class _$RichableHeading5 implements RichableHeading5 {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(spans),
+      const DeepCollectionEquality().hash(_spans),
       const DeepCollectionEquality().hash(text),
       const DeepCollectionEquality().hash(type));
 
   @JsonKey(ignore: true)
   @override
-  $RichableHeading5CopyWith<RichableHeading5> get copyWith =>
-      _$RichableHeading5CopyWithImpl<RichableHeading5>(this, _$identity);
+  _$$RichableHeading5CopyWith<_$RichableHeading5> get copyWith =>
+      __$$RichableHeading5CopyWithImpl<_$RichableHeading5>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1429,27 +1434,28 @@ abstract class RichableHeading5 implements Richable {
   String get text => throw _privateConstructorUsedError;
   String get type => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $RichableHeading5CopyWith<RichableHeading5> get copyWith =>
+  _$$RichableHeading5CopyWith<_$RichableHeading5> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $RichableHeading6CopyWith<$Res> {
-  factory $RichableHeading6CopyWith(
-          RichableHeading6 value, $Res Function(RichableHeading6) then) =
-      _$RichableHeading6CopyWithImpl<$Res>;
+abstract class _$$RichableHeading6CopyWith<$Res> {
+  factory _$$RichableHeading6CopyWith(
+          _$RichableHeading6 value, $Res Function(_$RichableHeading6) then) =
+      __$$RichableHeading6CopyWithImpl<$Res>;
   $Res call({List<Span> spans, String text, String type});
 }
 
 /// @nodoc
-class _$RichableHeading6CopyWithImpl<$Res> extends _$RichableCopyWithImpl<$Res>
-    implements $RichableHeading6CopyWith<$Res> {
-  _$RichableHeading6CopyWithImpl(
-      RichableHeading6 _value, $Res Function(RichableHeading6) _then)
-      : super(_value, (v) => _then(v as RichableHeading6));
+class __$$RichableHeading6CopyWithImpl<$Res>
+    extends _$RichableCopyWithImpl<$Res>
+    implements _$$RichableHeading6CopyWith<$Res> {
+  __$$RichableHeading6CopyWithImpl(
+      _$RichableHeading6 _value, $Res Function(_$RichableHeading6) _then)
+      : super(_value, (v) => _then(v as _$RichableHeading6));
 
   @override
-  RichableHeading6 get _value => super._value as RichableHeading6;
+  _$RichableHeading6 get _value => super._value as _$RichableHeading6;
 
   @override
   $Res call({
@@ -1457,9 +1463,9 @@ class _$RichableHeading6CopyWithImpl<$Res> extends _$RichableCopyWithImpl<$Res>
     Object? text = freezed,
     Object? type = freezed,
   }) {
-    return _then(RichableHeading6(
+    return _then(_$RichableHeading6(
       spans: spans == freezed
-          ? _value.spans
+          ? _value._spans
           : spans // ignore: cast_nullable_to_non_nullable
               as List<Span>,
       text: text == freezed
@@ -1505,8 +1511,8 @@ class _$RichableHeading6 implements RichableHeading6 {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is RichableHeading6 &&
-            const DeepCollectionEquality().equals(other.spans, spans) &&
+            other is _$RichableHeading6 &&
+            const DeepCollectionEquality().equals(other._spans, _spans) &&
             const DeepCollectionEquality().equals(other.text, text) &&
             const DeepCollectionEquality().equals(other.type, type));
   }
@@ -1515,14 +1521,14 @@ class _$RichableHeading6 implements RichableHeading6 {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(spans),
+      const DeepCollectionEquality().hash(_spans),
       const DeepCollectionEquality().hash(text),
       const DeepCollectionEquality().hash(type));
 
   @JsonKey(ignore: true)
   @override
-  $RichableHeading6CopyWith<RichableHeading6> get copyWith =>
-      _$RichableHeading6CopyWithImpl<RichableHeading6>(this, _$identity);
+  _$$RichableHeading6CopyWith<_$RichableHeading6> get copyWith =>
+      __$$RichableHeading6CopyWithImpl<_$RichableHeading6>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1680,27 +1686,28 @@ abstract class RichableHeading6 implements Richable {
   String get text => throw _privateConstructorUsedError;
   String get type => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $RichableHeading6CopyWith<RichableHeading6> get copyWith =>
+  _$$RichableHeading6CopyWith<_$RichableHeading6> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $RichableParagraphCopyWith<$Res> {
-  factory $RichableParagraphCopyWith(
-          RichableParagraph value, $Res Function(RichableParagraph) then) =
-      _$RichableParagraphCopyWithImpl<$Res>;
+abstract class _$$RichableParagraphCopyWith<$Res> {
+  factory _$$RichableParagraphCopyWith(
+          _$RichableParagraph value, $Res Function(_$RichableParagraph) then) =
+      __$$RichableParagraphCopyWithImpl<$Res>;
   $Res call({List<Span> spans, String text, String type});
 }
 
 /// @nodoc
-class _$RichableParagraphCopyWithImpl<$Res> extends _$RichableCopyWithImpl<$Res>
-    implements $RichableParagraphCopyWith<$Res> {
-  _$RichableParagraphCopyWithImpl(
-      RichableParagraph _value, $Res Function(RichableParagraph) _then)
-      : super(_value, (v) => _then(v as RichableParagraph));
+class __$$RichableParagraphCopyWithImpl<$Res>
+    extends _$RichableCopyWithImpl<$Res>
+    implements _$$RichableParagraphCopyWith<$Res> {
+  __$$RichableParagraphCopyWithImpl(
+      _$RichableParagraph _value, $Res Function(_$RichableParagraph) _then)
+      : super(_value, (v) => _then(v as _$RichableParagraph));
 
   @override
-  RichableParagraph get _value => super._value as RichableParagraph;
+  _$RichableParagraph get _value => super._value as _$RichableParagraph;
 
   @override
   $Res call({
@@ -1708,9 +1715,9 @@ class _$RichableParagraphCopyWithImpl<$Res> extends _$RichableCopyWithImpl<$Res>
     Object? text = freezed,
     Object? type = freezed,
   }) {
-    return _then(RichableParagraph(
+    return _then(_$RichableParagraph(
       spans: spans == freezed
-          ? _value.spans
+          ? _value._spans
           : spans // ignore: cast_nullable_to_non_nullable
               as List<Span>,
       text: text == freezed
@@ -1756,8 +1763,8 @@ class _$RichableParagraph implements RichableParagraph {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is RichableParagraph &&
-            const DeepCollectionEquality().equals(other.spans, spans) &&
+            other is _$RichableParagraph &&
+            const DeepCollectionEquality().equals(other._spans, _spans) &&
             const DeepCollectionEquality().equals(other.text, text) &&
             const DeepCollectionEquality().equals(other.type, type));
   }
@@ -1766,14 +1773,14 @@ class _$RichableParagraph implements RichableParagraph {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(spans),
+      const DeepCollectionEquality().hash(_spans),
       const DeepCollectionEquality().hash(text),
       const DeepCollectionEquality().hash(type));
 
   @JsonKey(ignore: true)
   @override
-  $RichableParagraphCopyWith<RichableParagraph> get copyWith =>
-      _$RichableParagraphCopyWithImpl<RichableParagraph>(this, _$identity);
+  _$$RichableParagraphCopyWith<_$RichableParagraph> get copyWith =>
+      __$$RichableParagraphCopyWithImpl<_$RichableParagraph>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1931,27 +1938,28 @@ abstract class RichableParagraph implements Richable {
   String get text => throw _privateConstructorUsedError;
   String get type => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $RichableParagraphCopyWith<RichableParagraph> get copyWith =>
+  _$$RichableParagraphCopyWith<_$RichableParagraph> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $RichableListItemCopyWith<$Res> {
-  factory $RichableListItemCopyWith(
-          RichableListItem value, $Res Function(RichableListItem) then) =
-      _$RichableListItemCopyWithImpl<$Res>;
+abstract class _$$RichableListItemCopyWith<$Res> {
+  factory _$$RichableListItemCopyWith(
+          _$RichableListItem value, $Res Function(_$RichableListItem) then) =
+      __$$RichableListItemCopyWithImpl<$Res>;
   $Res call({List<Span> spans, String text, String type});
 }
 
 /// @nodoc
-class _$RichableListItemCopyWithImpl<$Res> extends _$RichableCopyWithImpl<$Res>
-    implements $RichableListItemCopyWith<$Res> {
-  _$RichableListItemCopyWithImpl(
-      RichableListItem _value, $Res Function(RichableListItem) _then)
-      : super(_value, (v) => _then(v as RichableListItem));
+class __$$RichableListItemCopyWithImpl<$Res>
+    extends _$RichableCopyWithImpl<$Res>
+    implements _$$RichableListItemCopyWith<$Res> {
+  __$$RichableListItemCopyWithImpl(
+      _$RichableListItem _value, $Res Function(_$RichableListItem) _then)
+      : super(_value, (v) => _then(v as _$RichableListItem));
 
   @override
-  RichableListItem get _value => super._value as RichableListItem;
+  _$RichableListItem get _value => super._value as _$RichableListItem;
 
   @override
   $Res call({
@@ -1959,9 +1967,9 @@ class _$RichableListItemCopyWithImpl<$Res> extends _$RichableCopyWithImpl<$Res>
     Object? text = freezed,
     Object? type = freezed,
   }) {
-    return _then(RichableListItem(
+    return _then(_$RichableListItem(
       spans: spans == freezed
-          ? _value.spans
+          ? _value._spans
           : spans // ignore: cast_nullable_to_non_nullable
               as List<Span>,
       text: text == freezed
@@ -2007,8 +2015,8 @@ class _$RichableListItem implements RichableListItem {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is RichableListItem &&
-            const DeepCollectionEquality().equals(other.spans, spans) &&
+            other is _$RichableListItem &&
+            const DeepCollectionEquality().equals(other._spans, _spans) &&
             const DeepCollectionEquality().equals(other.text, text) &&
             const DeepCollectionEquality().equals(other.type, type));
   }
@@ -2017,14 +2025,14 @@ class _$RichableListItem implements RichableListItem {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(spans),
+      const DeepCollectionEquality().hash(_spans),
       const DeepCollectionEquality().hash(text),
       const DeepCollectionEquality().hash(type));
 
   @JsonKey(ignore: true)
   @override
-  $RichableListItemCopyWith<RichableListItem> get copyWith =>
-      _$RichableListItemCopyWithImpl<RichableListItem>(this, _$identity);
+  _$$RichableListItemCopyWith<_$RichableListItem> get copyWith =>
+      __$$RichableListItemCopyWithImpl<_$RichableListItem>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2182,28 +2190,29 @@ abstract class RichableListItem implements Richable {
   String get text => throw _privateConstructorUsedError;
   String get type => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $RichableListItemCopyWith<RichableListItem> get copyWith =>
+  _$$RichableListItemCopyWith<_$RichableListItem> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $RichableOrderedListItemCopyWith<$Res> {
-  factory $RichableOrderedListItemCopyWith(RichableOrderedListItem value,
-          $Res Function(RichableOrderedListItem) then) =
-      _$RichableOrderedListItemCopyWithImpl<$Res>;
+abstract class _$$RichableOrderedListItemCopyWith<$Res> {
+  factory _$$RichableOrderedListItemCopyWith(_$RichableOrderedListItem value,
+          $Res Function(_$RichableOrderedListItem) then) =
+      __$$RichableOrderedListItemCopyWithImpl<$Res>;
   $Res call({List<Span> spans, String text, String type});
 }
 
 /// @nodoc
-class _$RichableOrderedListItemCopyWithImpl<$Res>
+class __$$RichableOrderedListItemCopyWithImpl<$Res>
     extends _$RichableCopyWithImpl<$Res>
-    implements $RichableOrderedListItemCopyWith<$Res> {
-  _$RichableOrderedListItemCopyWithImpl(RichableOrderedListItem _value,
-      $Res Function(RichableOrderedListItem) _then)
-      : super(_value, (v) => _then(v as RichableOrderedListItem));
+    implements _$$RichableOrderedListItemCopyWith<$Res> {
+  __$$RichableOrderedListItemCopyWithImpl(_$RichableOrderedListItem _value,
+      $Res Function(_$RichableOrderedListItem) _then)
+      : super(_value, (v) => _then(v as _$RichableOrderedListItem));
 
   @override
-  RichableOrderedListItem get _value => super._value as RichableOrderedListItem;
+  _$RichableOrderedListItem get _value =>
+      super._value as _$RichableOrderedListItem;
 
   @override
   $Res call({
@@ -2211,9 +2220,9 @@ class _$RichableOrderedListItemCopyWithImpl<$Res>
     Object? text = freezed,
     Object? type = freezed,
   }) {
-    return _then(RichableOrderedListItem(
+    return _then(_$RichableOrderedListItem(
       spans: spans == freezed
-          ? _value.spans
+          ? _value._spans
           : spans // ignore: cast_nullable_to_non_nullable
               as List<Span>,
       text: text == freezed
@@ -2259,8 +2268,8 @@ class _$RichableOrderedListItem implements RichableOrderedListItem {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is RichableOrderedListItem &&
-            const DeepCollectionEquality().equals(other.spans, spans) &&
+            other is _$RichableOrderedListItem &&
+            const DeepCollectionEquality().equals(other._spans, _spans) &&
             const DeepCollectionEquality().equals(other.text, text) &&
             const DeepCollectionEquality().equals(other.type, type));
   }
@@ -2269,14 +2278,14 @@ class _$RichableOrderedListItem implements RichableOrderedListItem {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(spans),
+      const DeepCollectionEquality().hash(_spans),
       const DeepCollectionEquality().hash(text),
       const DeepCollectionEquality().hash(type));
 
   @JsonKey(ignore: true)
   @override
-  $RichableOrderedListItemCopyWith<RichableOrderedListItem> get copyWith =>
-      _$RichableOrderedListItemCopyWithImpl<RichableOrderedListItem>(
+  _$$RichableOrderedListItemCopyWith<_$RichableOrderedListItem> get copyWith =>
+      __$$RichableOrderedListItemCopyWithImpl<_$RichableOrderedListItem>(
           this, _$identity);
 
   @override
@@ -2435,29 +2444,29 @@ abstract class RichableOrderedListItem implements Richable {
   String get text => throw _privateConstructorUsedError;
   String get type => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $RichableOrderedListItemCopyWith<RichableOrderedListItem> get copyWith =>
+  _$$RichableOrderedListItemCopyWith<_$RichableOrderedListItem> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $RichableImageCopyWith<$Res> {
-  factory $RichableImageCopyWith(
-          RichableImage value, $Res Function(RichableImage) then) =
-      _$RichableImageCopyWithImpl<$Res>;
+abstract class _$$RichableImageCopyWith<$Res> {
+  factory _$$RichableImageCopyWith(
+          _$RichableImage value, $Res Function(_$RichableImage) then) =
+      __$$RichableImageCopyWithImpl<$Res>;
   $Res call({String? alt, String? copyright, Dimension dimensions, String url});
 
   $DimensionCopyWith<$Res> get dimensions;
 }
 
 /// @nodoc
-class _$RichableImageCopyWithImpl<$Res> extends _$RichableCopyWithImpl<$Res>
-    implements $RichableImageCopyWith<$Res> {
-  _$RichableImageCopyWithImpl(
-      RichableImage _value, $Res Function(RichableImage) _then)
-      : super(_value, (v) => _then(v as RichableImage));
+class __$$RichableImageCopyWithImpl<$Res> extends _$RichableCopyWithImpl<$Res>
+    implements _$$RichableImageCopyWith<$Res> {
+  __$$RichableImageCopyWithImpl(
+      _$RichableImage _value, $Res Function(_$RichableImage) _then)
+      : super(_value, (v) => _then(v as _$RichableImage));
 
   @override
-  RichableImage get _value => super._value as RichableImage;
+  _$RichableImage get _value => super._value as _$RichableImage;
 
   @override
   $Res call({
@@ -2466,7 +2475,7 @@ class _$RichableImageCopyWithImpl<$Res> extends _$RichableCopyWithImpl<$Res>
     Object? dimensions = freezed,
     Object? url = freezed,
   }) {
-    return _then(RichableImage(
+    return _then(_$RichableImage(
       alt: alt == freezed
           ? _value.alt
           : alt // ignore: cast_nullable_to_non_nullable
@@ -2529,7 +2538,7 @@ class _$RichableImage implements RichableImage {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is RichableImage &&
+            other is _$RichableImage &&
             const DeepCollectionEquality().equals(other.alt, alt) &&
             const DeepCollectionEquality().equals(other.copyright, copyright) &&
             const DeepCollectionEquality()
@@ -2548,8 +2557,8 @@ class _$RichableImage implements RichableImage {
 
   @JsonKey(ignore: true)
   @override
-  $RichableImageCopyWith<RichableImage> get copyWith =>
-      _$RichableImageCopyWithImpl<RichableImage>(this, _$identity);
+  _$$RichableImageCopyWith<_$RichableImage> get copyWith =>
+      __$$RichableImageCopyWithImpl<_$RichableImage>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2709,36 +2718,36 @@ abstract class RichableImage implements Richable {
   Dimension get dimensions => throw _privateConstructorUsedError;
   String get url => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $RichableImageCopyWith<RichableImage> get copyWith =>
+  _$$RichableImageCopyWith<_$RichableImage> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $RichableEmbedCopyWith<$Res> {
-  factory $RichableEmbedCopyWith(
-          RichableEmbed value, $Res Function(RichableEmbed) then) =
-      _$RichableEmbedCopyWithImpl<$Res>;
+abstract class _$$RichableEmbedCopyWith<$Res> {
+  factory _$$RichableEmbedCopyWith(
+          _$RichableEmbed value, $Res Function(_$RichableEmbed) then) =
+      __$$RichableEmbedCopyWithImpl<$Res>;
   $Res call({@JsonKey(name: 'oembed') EmbedData info, String type});
 
   $EmbedDataCopyWith<$Res> get info;
 }
 
 /// @nodoc
-class _$RichableEmbedCopyWithImpl<$Res> extends _$RichableCopyWithImpl<$Res>
-    implements $RichableEmbedCopyWith<$Res> {
-  _$RichableEmbedCopyWithImpl(
-      RichableEmbed _value, $Res Function(RichableEmbed) _then)
-      : super(_value, (v) => _then(v as RichableEmbed));
+class __$$RichableEmbedCopyWithImpl<$Res> extends _$RichableCopyWithImpl<$Res>
+    implements _$$RichableEmbedCopyWith<$Res> {
+  __$$RichableEmbedCopyWithImpl(
+      _$RichableEmbed _value, $Res Function(_$RichableEmbed) _then)
+      : super(_value, (v) => _then(v as _$RichableEmbed));
 
   @override
-  RichableEmbed get _value => super._value as RichableEmbed;
+  _$RichableEmbed get _value => super._value as _$RichableEmbed;
 
   @override
   $Res call({
     Object? info = freezed,
     Object? type = freezed,
   }) {
-    return _then(RichableEmbed(
+    return _then(_$RichableEmbed(
       info: info == freezed
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
@@ -2782,7 +2791,7 @@ class _$RichableEmbed implements RichableEmbed {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is RichableEmbed &&
+            other is _$RichableEmbed &&
             const DeepCollectionEquality().equals(other.info, info) &&
             const DeepCollectionEquality().equals(other.type, type));
   }
@@ -2796,8 +2805,8 @@ class _$RichableEmbed implements RichableEmbed {
 
   @JsonKey(ignore: true)
   @override
-  $RichableEmbedCopyWith<RichableEmbed> get copyWith =>
-      _$RichableEmbedCopyWithImpl<RichableEmbed>(this, _$identity);
+  _$$RichableEmbedCopyWith<_$RichableEmbed> get copyWith =>
+      __$$RichableEmbedCopyWithImpl<_$RichableEmbed>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2954,6 +2963,6 @@ abstract class RichableEmbed implements Richable {
   EmbedData get info => throw _privateConstructorUsedError;
   String get type => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $RichableEmbedCopyWith<RichableEmbed> get copyWith =>
+  _$$RichableEmbedCopyWith<_$RichableEmbed> get copyWith =>
       throw _privateConstructorUsedError;
 }

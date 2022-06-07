@@ -105,23 +105,24 @@ class _$OrderingCopyWithImpl<$Res> implements $OrderingCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class $TypeOrderingCopyWith<$Res> implements $OrderingCopyWith<$Res> {
-  factory $TypeOrderingCopyWith(
-          TypeOrdering value, $Res Function(TypeOrdering) then) =
-      _$TypeOrderingCopyWithImpl<$Res>;
+abstract class _$$TypeOrderingCopyWith<$Res>
+    implements $OrderingCopyWith<$Res> {
+  factory _$$TypeOrderingCopyWith(
+          _$TypeOrdering value, $Res Function(_$TypeOrdering) then) =
+      __$$TypeOrderingCopyWithImpl<$Res>;
   @override
   $Res call({String customType, String field, bool descending});
 }
 
 /// @nodoc
-class _$TypeOrderingCopyWithImpl<$Res> extends _$OrderingCopyWithImpl<$Res>
-    implements $TypeOrderingCopyWith<$Res> {
-  _$TypeOrderingCopyWithImpl(
-      TypeOrdering _value, $Res Function(TypeOrdering) _then)
-      : super(_value, (v) => _then(v as TypeOrdering));
+class __$$TypeOrderingCopyWithImpl<$Res> extends _$OrderingCopyWithImpl<$Res>
+    implements _$$TypeOrderingCopyWith<$Res> {
+  __$$TypeOrderingCopyWithImpl(
+      _$TypeOrdering _value, $Res Function(_$TypeOrdering) _then)
+      : super(_value, (v) => _then(v as _$TypeOrdering));
 
   @override
-  TypeOrdering get _value => super._value as TypeOrdering;
+  _$TypeOrdering get _value => super._value as _$TypeOrdering;
 
   @override
   $Res call({
@@ -129,7 +130,7 @@ class _$TypeOrderingCopyWithImpl<$Res> extends _$OrderingCopyWithImpl<$Res>
     Object? field = freezed,
     Object? descending = freezed,
   }) {
-    return _then(TypeOrdering(
+    return _then(_$TypeOrdering(
       customType == freezed
           ? _value.customType
           : customType // ignore: cast_nullable_to_non_nullable
@@ -168,7 +169,7 @@ class _$TypeOrdering implements TypeOrdering {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is TypeOrdering &&
+            other is _$TypeOrdering &&
             const DeepCollectionEquality()
                 .equals(other.customType, customType) &&
             const DeepCollectionEquality().equals(other.field, field) &&
@@ -185,8 +186,8 @@ class _$TypeOrdering implements TypeOrdering {
 
   @JsonKey(ignore: true)
   @override
-  $TypeOrderingCopyWith<TypeOrdering> get copyWith =>
-      _$TypeOrderingCopyWithImpl<TypeOrdering>(this, _$identity);
+  _$$TypeOrderingCopyWith<_$TypeOrdering> get copyWith =>
+      __$$TypeOrderingCopyWithImpl<_$TypeOrdering>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -276,36 +277,37 @@ abstract class TypeOrdering implements Ordering {
   bool get descending => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $TypeOrderingCopyWith<TypeOrdering> get copyWith =>
+  _$$TypeOrderingCopyWith<_$TypeOrdering> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $DocumentOrderingCopyWith<$Res>
+abstract class _$$DocumentOrderingCopyWith<$Res>
     implements $OrderingCopyWith<$Res> {
-  factory $DocumentOrderingCopyWith(
-          DocumentOrdering value, $Res Function(DocumentOrdering) then) =
-      _$DocumentOrderingCopyWithImpl<$Res>;
+  factory _$$DocumentOrderingCopyWith(
+          _$DocumentOrdering value, $Res Function(_$DocumentOrdering) then) =
+      __$$DocumentOrderingCopyWithImpl<$Res>;
   @override
   $Res call({String type, bool descending});
 }
 
 /// @nodoc
-class _$DocumentOrderingCopyWithImpl<$Res> extends _$OrderingCopyWithImpl<$Res>
-    implements $DocumentOrderingCopyWith<$Res> {
-  _$DocumentOrderingCopyWithImpl(
-      DocumentOrdering _value, $Res Function(DocumentOrdering) _then)
-      : super(_value, (v) => _then(v as DocumentOrdering));
+class __$$DocumentOrderingCopyWithImpl<$Res>
+    extends _$OrderingCopyWithImpl<$Res>
+    implements _$$DocumentOrderingCopyWith<$Res> {
+  __$$DocumentOrderingCopyWithImpl(
+      _$DocumentOrdering _value, $Res Function(_$DocumentOrdering) _then)
+      : super(_value, (v) => _then(v as _$DocumentOrdering));
 
   @override
-  DocumentOrdering get _value => super._value as DocumentOrdering;
+  _$DocumentOrdering get _value => super._value as _$DocumentOrdering;
 
   @override
   $Res call({
     Object? type = freezed,
     Object? descending = freezed,
   }) {
-    return _then(DocumentOrdering(
+    return _then(_$DocumentOrdering(
       type == freezed
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -338,7 +340,7 @@ class _$DocumentOrdering implements DocumentOrdering {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is DocumentOrdering &&
+            other is _$DocumentOrdering &&
             const DeepCollectionEquality().equals(other.type, type) &&
             const DeepCollectionEquality()
                 .equals(other.descending, descending));
@@ -352,8 +354,8 @@ class _$DocumentOrdering implements DocumentOrdering {
 
   @JsonKey(ignore: true)
   @override
-  $DocumentOrderingCopyWith<DocumentOrdering> get copyWith =>
-      _$DocumentOrderingCopyWithImpl<DocumentOrdering>(this, _$identity);
+  _$$DocumentOrderingCopyWith<_$DocumentOrdering> get copyWith =>
+      __$$DocumentOrderingCopyWithImpl<_$DocumentOrdering>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -442,39 +444,39 @@ abstract class DocumentOrdering implements Ordering {
   bool get descending => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $DocumentOrderingCopyWith<DocumentOrdering> get copyWith =>
+  _$$DocumentOrderingCopyWith<_$DocumentOrdering> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $FirstPublicationDateOrderingCopyWith<$Res>
+abstract class _$$FirstPublicationDateOrderingCopyWith<$Res>
     implements $OrderingCopyWith<$Res> {
-  factory $FirstPublicationDateOrderingCopyWith(
-          FirstPublicationDateOrdering value,
-          $Res Function(FirstPublicationDateOrdering) then) =
-      _$FirstPublicationDateOrderingCopyWithImpl<$Res>;
+  factory _$$FirstPublicationDateOrderingCopyWith(
+          _$FirstPublicationDateOrdering value,
+          $Res Function(_$FirstPublicationDateOrdering) then) =
+      __$$FirstPublicationDateOrderingCopyWithImpl<$Res>;
   @override
   $Res call({bool descending});
 }
 
 /// @nodoc
-class _$FirstPublicationDateOrderingCopyWithImpl<$Res>
+class __$$FirstPublicationDateOrderingCopyWithImpl<$Res>
     extends _$OrderingCopyWithImpl<$Res>
-    implements $FirstPublicationDateOrderingCopyWith<$Res> {
-  _$FirstPublicationDateOrderingCopyWithImpl(
-      FirstPublicationDateOrdering _value,
-      $Res Function(FirstPublicationDateOrdering) _then)
-      : super(_value, (v) => _then(v as FirstPublicationDateOrdering));
+    implements _$$FirstPublicationDateOrderingCopyWith<$Res> {
+  __$$FirstPublicationDateOrderingCopyWithImpl(
+      _$FirstPublicationDateOrdering _value,
+      $Res Function(_$FirstPublicationDateOrdering) _then)
+      : super(_value, (v) => _then(v as _$FirstPublicationDateOrdering));
 
   @override
-  FirstPublicationDateOrdering get _value =>
-      super._value as FirstPublicationDateOrdering;
+  _$FirstPublicationDateOrdering get _value =>
+      super._value as _$FirstPublicationDateOrdering;
 
   @override
   $Res call({
     Object? descending = freezed,
   }) {
-    return _then(FirstPublicationDateOrdering(
+    return _then(_$FirstPublicationDateOrdering(
       descending: descending == freezed
           ? _value.descending
           : descending // ignore: cast_nullable_to_non_nullable
@@ -501,7 +503,7 @@ class _$FirstPublicationDateOrdering implements FirstPublicationDateOrdering {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is FirstPublicationDateOrdering &&
+            other is _$FirstPublicationDateOrdering &&
             const DeepCollectionEquality()
                 .equals(other.descending, descending));
   }
@@ -512,9 +514,9 @@ class _$FirstPublicationDateOrdering implements FirstPublicationDateOrdering {
 
   @JsonKey(ignore: true)
   @override
-  $FirstPublicationDateOrderingCopyWith<FirstPublicationDateOrdering>
-      get copyWith => _$FirstPublicationDateOrderingCopyWithImpl<
-          FirstPublicationDateOrdering>(this, _$identity);
+  _$$FirstPublicationDateOrderingCopyWith<_$FirstPublicationDateOrdering>
+      get copyWith => __$$FirstPublicationDateOrderingCopyWithImpl<
+          _$FirstPublicationDateOrdering>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -602,38 +604,39 @@ abstract class FirstPublicationDateOrdering implements Ordering {
   bool get descending => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $FirstPublicationDateOrderingCopyWith<FirstPublicationDateOrdering>
+  _$$FirstPublicationDateOrderingCopyWith<_$FirstPublicationDateOrdering>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $LastPublicationDateOrderingCopyWith<$Res>
+abstract class _$$LastPublicationDateOrderingCopyWith<$Res>
     implements $OrderingCopyWith<$Res> {
-  factory $LastPublicationDateOrderingCopyWith(
-          LastPublicationDateOrdering value,
-          $Res Function(LastPublicationDateOrdering) then) =
-      _$LastPublicationDateOrderingCopyWithImpl<$Res>;
+  factory _$$LastPublicationDateOrderingCopyWith(
+          _$LastPublicationDateOrdering value,
+          $Res Function(_$LastPublicationDateOrdering) then) =
+      __$$LastPublicationDateOrderingCopyWithImpl<$Res>;
   @override
   $Res call({bool descending});
 }
 
 /// @nodoc
-class _$LastPublicationDateOrderingCopyWithImpl<$Res>
+class __$$LastPublicationDateOrderingCopyWithImpl<$Res>
     extends _$OrderingCopyWithImpl<$Res>
-    implements $LastPublicationDateOrderingCopyWith<$Res> {
-  _$LastPublicationDateOrderingCopyWithImpl(LastPublicationDateOrdering _value,
-      $Res Function(LastPublicationDateOrdering) _then)
-      : super(_value, (v) => _then(v as LastPublicationDateOrdering));
+    implements _$$LastPublicationDateOrderingCopyWith<$Res> {
+  __$$LastPublicationDateOrderingCopyWithImpl(
+      _$LastPublicationDateOrdering _value,
+      $Res Function(_$LastPublicationDateOrdering) _then)
+      : super(_value, (v) => _then(v as _$LastPublicationDateOrdering));
 
   @override
-  LastPublicationDateOrdering get _value =>
-      super._value as LastPublicationDateOrdering;
+  _$LastPublicationDateOrdering get _value =>
+      super._value as _$LastPublicationDateOrdering;
 
   @override
   $Res call({
     Object? descending = freezed,
   }) {
-    return _then(LastPublicationDateOrdering(
+    return _then(_$LastPublicationDateOrdering(
       descending: descending == freezed
           ? _value.descending
           : descending // ignore: cast_nullable_to_non_nullable
@@ -660,7 +663,7 @@ class _$LastPublicationDateOrdering implements LastPublicationDateOrdering {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is LastPublicationDateOrdering &&
+            other is _$LastPublicationDateOrdering &&
             const DeepCollectionEquality()
                 .equals(other.descending, descending));
   }
@@ -671,9 +674,9 @@ class _$LastPublicationDateOrdering implements LastPublicationDateOrdering {
 
   @JsonKey(ignore: true)
   @override
-  $LastPublicationDateOrderingCopyWith<LastPublicationDateOrdering>
-      get copyWith => _$LastPublicationDateOrderingCopyWithImpl<
-          LastPublicationDateOrdering>(this, _$identity);
+  _$$LastPublicationDateOrderingCopyWith<_$LastPublicationDateOrdering>
+      get copyWith => __$$LastPublicationDateOrderingCopyWithImpl<
+          _$LastPublicationDateOrdering>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -761,6 +764,6 @@ abstract class LastPublicationDateOrdering implements Ordering {
   bool get descending => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $LastPublicationDateOrderingCopyWith<LastPublicationDateOrdering>
+  _$$LastPublicationDateOrderingCopyWith<_$LastPublicationDateOrdering>
       get copyWith => throw _privateConstructorUsedError;
 }

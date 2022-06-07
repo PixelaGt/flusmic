@@ -149,11 +149,11 @@ class _$SampleModelCopyWithImpl<$Res> implements $SampleModelCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$SampleModelCopyWith<$Res>
+abstract class _$$_SampleModelCopyWith<$Res>
     implements $SampleModelCopyWith<$Res> {
-  factory _$SampleModelCopyWith(
-          _SampleModel value, $Res Function(_SampleModel) then) =
-      __$SampleModelCopyWithImpl<$Res>;
+  factory _$$_SampleModelCopyWith(
+          _$_SampleModel value, $Res Function(_$_SampleModel) then) =
+      __$$_SampleModelCopyWithImpl<$Res>;
   @override
   $Res call(
       {Geopoint location,
@@ -178,14 +178,14 @@ abstract class _$SampleModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$SampleModelCopyWithImpl<$Res> extends _$SampleModelCopyWithImpl<$Res>
-    implements _$SampleModelCopyWith<$Res> {
-  __$SampleModelCopyWithImpl(
-      _SampleModel _value, $Res Function(_SampleModel) _then)
-      : super(_value, (v) => _then(v as _SampleModel));
+class __$$_SampleModelCopyWithImpl<$Res> extends _$SampleModelCopyWithImpl<$Res>
+    implements _$$_SampleModelCopyWith<$Res> {
+  __$$_SampleModelCopyWithImpl(
+      _$_SampleModel _value, $Res Function(_$_SampleModel) _then)
+      : super(_value, (v) => _then(v as _$_SampleModel));
 
   @override
-  _SampleModel get _value => super._value as _SampleModel;
+  _$_SampleModel get _value => super._value as _$_SampleModel;
 
   @override
   $Res call({
@@ -198,7 +198,7 @@ class __$SampleModelCopyWithImpl<$Res> extends _$SampleModelCopyWithImpl<$Res>
     Object? body = freezed,
     Object? image = freezed,
   }) {
-    return _then(_SampleModel(
+    return _then(_$_SampleModel(
       location: location == freezed
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
@@ -216,15 +216,15 @@ class __$SampleModelCopyWithImpl<$Res> extends _$SampleModelCopyWithImpl<$Res>
           : media // ignore: cast_nullable_to_non_nullable
               as Linkeable,
       content: content == freezed
-          ? _value.content
+          ? _value._content
           : content // ignore: cast_nullable_to_non_nullable
               as List<Richable>,
       title: title == freezed
-          ? _value.title
+          ? _value._title
           : title // ignore: cast_nullable_to_non_nullable
               as List<SimpleText>,
       body: body == freezed
-          ? _value.body
+          ? _value._body
           : body // ignore: cast_nullable_to_non_nullable
               as List<Slice>,
       image: image == freezed
@@ -295,14 +295,14 @@ class _$_SampleModel implements _SampleModel {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SampleModel &&
+            other is _$_SampleModel &&
             const DeepCollectionEquality().equals(other.location, location) &&
             const DeepCollectionEquality().equals(other.link, link) &&
             const DeepCollectionEquality().equals(other.linked, linked) &&
             const DeepCollectionEquality().equals(other.media, media) &&
-            const DeepCollectionEquality().equals(other.content, content) &&
-            const DeepCollectionEquality().equals(other.title, title) &&
-            const DeepCollectionEquality().equals(other.body, body) &&
+            const DeepCollectionEquality().equals(other._content, _content) &&
+            const DeepCollectionEquality().equals(other._title, _title) &&
+            const DeepCollectionEquality().equals(other._body, _body) &&
             const DeepCollectionEquality().equals(other.image, image));
   }
 
@@ -314,15 +314,15 @@ class _$_SampleModel implements _SampleModel {
       const DeepCollectionEquality().hash(link),
       const DeepCollectionEquality().hash(linked),
       const DeepCollectionEquality().hash(media),
-      const DeepCollectionEquality().hash(content),
-      const DeepCollectionEquality().hash(title),
-      const DeepCollectionEquality().hash(body),
+      const DeepCollectionEquality().hash(_content),
+      const DeepCollectionEquality().hash(_title),
+      const DeepCollectionEquality().hash(_body),
       const DeepCollectionEquality().hash(image));
 
   @JsonKey(ignore: true)
   @override
-  _$SampleModelCopyWith<_SampleModel> get copyWith =>
-      __$SampleModelCopyWithImpl<_SampleModel>(this, _$identity);
+  _$$_SampleModelCopyWith<_$_SampleModel> get copyWith =>
+      __$$_SampleModelCopyWithImpl<_$_SampleModel>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -362,6 +362,6 @@ abstract class _SampleModel implements SampleModel {
   SimpleImage get image => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$SampleModelCopyWith<_SampleModel> get copyWith =>
+  _$$_SampleModelCopyWith<_$_SampleModel> get copyWith =>
       throw _privateConstructorUsedError;
 }

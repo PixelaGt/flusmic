@@ -129,11 +129,11 @@ class _$FlusmicResponseCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$FlusmicResponseCopyWith<$Res>
+abstract class _$$_FlusmicResponseCopyWith<$Res>
     implements $FlusmicResponseCopyWith<$Res> {
-  factory _$FlusmicResponseCopyWith(
-          _FlusmicResponse value, $Res Function(_FlusmicResponse) then) =
-      __$FlusmicResponseCopyWithImpl<$Res>;
+  factory _$$_FlusmicResponseCopyWith(
+          _$_FlusmicResponse value, $Res Function(_$_FlusmicResponse) then) =
+      __$$_FlusmicResponseCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: 'next_page') String? nextPage,
@@ -149,15 +149,15 @@ abstract class _$FlusmicResponseCopyWith<$Res>
 }
 
 /// @nodoc
-class __$FlusmicResponseCopyWithImpl<$Res>
+class __$$_FlusmicResponseCopyWithImpl<$Res>
     extends _$FlusmicResponseCopyWithImpl<$Res>
-    implements _$FlusmicResponseCopyWith<$Res> {
-  __$FlusmicResponseCopyWithImpl(
-      _FlusmicResponse _value, $Res Function(_FlusmicResponse) _then)
-      : super(_value, (v) => _then(v as _FlusmicResponse));
+    implements _$$_FlusmicResponseCopyWith<$Res> {
+  __$$_FlusmicResponseCopyWithImpl(
+      _$_FlusmicResponse _value, $Res Function(_$_FlusmicResponse) _then)
+      : super(_value, (v) => _then(v as _$_FlusmicResponse));
 
   @override
-  _FlusmicResponse get _value => super._value as _FlusmicResponse;
+  _$_FlusmicResponse get _value => super._value as _$_FlusmicResponse;
 
   @override
   $Res call({
@@ -172,7 +172,7 @@ class __$FlusmicResponseCopyWithImpl<$Res>
     Object? version = freezed,
     Object? page = freezed,
   }) {
-    return _then(_FlusmicResponse(
+    return _then(_$_FlusmicResponse(
       nextPage: nextPage == freezed
           ? _value.nextPage
           : nextPage // ignore: cast_nullable_to_non_nullable
@@ -198,7 +198,7 @@ class __$FlusmicResponseCopyWithImpl<$Res>
           : totalResultsSize // ignore: cast_nullable_to_non_nullable
               as int,
       results: results == freezed
-          ? _value.results
+          ? _value._results
           : results // ignore: cast_nullable_to_non_nullable
               as List<Document>,
       license: license == freezed
@@ -277,7 +277,7 @@ class _$_FlusmicResponse implements _FlusmicResponse {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _FlusmicResponse &&
+            other is _$_FlusmicResponse &&
             const DeepCollectionEquality().equals(other.nextPage, nextPage) &&
             const DeepCollectionEquality().equals(other.prevPage, prevPage) &&
             const DeepCollectionEquality()
@@ -288,7 +288,7 @@ class _$_FlusmicResponse implements _FlusmicResponse {
                 .equals(other.totalPages, totalPages) &&
             const DeepCollectionEquality()
                 .equals(other.totalResultsSize, totalResultsSize) &&
-            const DeepCollectionEquality().equals(other.results, results) &&
+            const DeepCollectionEquality().equals(other._results, _results) &&
             const DeepCollectionEquality().equals(other.license, license) &&
             const DeepCollectionEquality().equals(other.version, version) &&
             const DeepCollectionEquality().equals(other.page, page));
@@ -304,15 +304,15 @@ class _$_FlusmicResponse implements _FlusmicResponse {
       const DeepCollectionEquality().hash(resultsSize),
       const DeepCollectionEquality().hash(totalPages),
       const DeepCollectionEquality().hash(totalResultsSize),
-      const DeepCollectionEquality().hash(results),
+      const DeepCollectionEquality().hash(_results),
       const DeepCollectionEquality().hash(license),
       const DeepCollectionEquality().hash(version),
       const DeepCollectionEquality().hash(page));
 
   @JsonKey(ignore: true)
   @override
-  _$FlusmicResponseCopyWith<_FlusmicResponse> get copyWith =>
-      __$FlusmicResponseCopyWithImpl<_FlusmicResponse>(this, _$identity);
+  _$$_FlusmicResponseCopyWith<_$_FlusmicResponse> get copyWith =>
+      __$$_FlusmicResponseCopyWithImpl<_$_FlusmicResponse>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -364,6 +364,6 @@ abstract class _FlusmicResponse implements FlusmicResponse {
   int get page => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$FlusmicResponseCopyWith<_FlusmicResponse> get copyWith =>
+  _$$_FlusmicResponseCopyWith<_$_FlusmicResponse> get copyWith =>
       throw _privateConstructorUsedError;
 }

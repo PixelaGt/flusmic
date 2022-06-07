@@ -20,16 +20,15 @@ jobs:
       - uses: actions/checkout@v2
       - uses: dart-lang/setup-dart@v1
       - name: Get dependencies
-        run: pub get
+        run: dart pub get
       - name: Format code
         run: dart format --set-exit-if-changed .
       - name: Analyze code
         run: dart analyze --fatal-infos --fatal-warnings .
       - name: Testing
         run: |
-          pub global activate test_coverage
-          export PATH=$PATH:$HOME/.pub-cache/bin
-          test_coverage
+          dart pub global activate coverage 1.2.0
+          dart test --coverage=coverage && dart pub global run coverage:format_coverage --lcov --in=coverage --out=coverage/lcov.info --packages=.packages --report-on=lib
       - name: Check coverage percentage
         uses: VeryGoodOpenSource/very_good_coverage@v1.2.0
         with:

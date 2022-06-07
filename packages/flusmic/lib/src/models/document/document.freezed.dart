@@ -144,9 +144,10 @@ class _$DocumentCopyWithImpl<$Res> implements $DocumentCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$DocumentCopyWith<$Res> implements $DocumentCopyWith<$Res> {
-  factory _$DocumentCopyWith(_Document value, $Res Function(_Document) then) =
-      __$DocumentCopyWithImpl<$Res>;
+abstract class _$$_DocumentCopyWith<$Res> implements $DocumentCopyWith<$Res> {
+  factory _$$_DocumentCopyWith(
+          _$_Document value, $Res Function(_$_Document) then) =
+      __$$_DocumentCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: 'alternate_languages')
@@ -168,13 +169,14 @@ abstract class _$DocumentCopyWith<$Res> implements $DocumentCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$DocumentCopyWithImpl<$Res> extends _$DocumentCopyWithImpl<$Res>
-    implements _$DocumentCopyWith<$Res> {
-  __$DocumentCopyWithImpl(_Document _value, $Res Function(_Document) _then)
-      : super(_value, (v) => _then(v as _Document));
+class __$$_DocumentCopyWithImpl<$Res> extends _$DocumentCopyWithImpl<$Res>
+    implements _$$_DocumentCopyWith<$Res> {
+  __$$_DocumentCopyWithImpl(
+      _$_Document _value, $Res Function(_$_Document) _then)
+      : super(_value, (v) => _then(v as _$_Document));
 
   @override
-  _Document get _value => super._value as _Document;
+  _$_Document get _value => super._value as _$_Document;
 
   @override
   $Res call({
@@ -191,9 +193,9 @@ class __$DocumentCopyWithImpl<$Res> extends _$DocumentCopyWithImpl<$Res>
     Object? href = freezed,
     Object? uid = freezed,
   }) {
-    return _then(_Document(
+    return _then(_$_Document(
       alternateLanguages: alternateLanguages == freezed
-          ? _value.alternateLanguages
+          ? _value._alternateLanguages
           : alternateLanguages // ignore: cast_nullable_to_non_nullable
               as List<AlternateLanguage>?,
       firstPublicationDate: firstPublicationDate == freezed
@@ -205,11 +207,11 @@ class __$DocumentCopyWithImpl<$Res> extends _$DocumentCopyWithImpl<$Res>
           : lastPublicationDate // ignore: cast_nullable_to_non_nullable
               as String?,
       linkedDocuments: linkedDocuments == freezed
-          ? _value.linkedDocuments
+          ? _value._linkedDocuments
           : linkedDocuments // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       tags: tags == freezed
-          ? _value.tags
+          ? _value._tags
           : tags // ignore: cast_nullable_to_non_nullable
               as List<String>,
       id: id == freezed
@@ -225,11 +227,11 @@ class __$DocumentCopyWithImpl<$Res> extends _$DocumentCopyWithImpl<$Res>
           : type // ignore: cast_nullable_to_non_nullable
               as String,
       data: data == freezed
-          ? _value.data
+          ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
       slugs: slugs == freezed
-          ? _value.slugs
+          ? _value._slugs
           : slugs // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       href: href == freezed
@@ -273,7 +275,6 @@ class _$_Document implements _Document {
   factory _$_Document.fromJson(Map<String, dynamic> json) =>
       _$$_DocumentFromJson(json);
 
-  @JsonKey(name: 'alternate_languages')
   final List<AlternateLanguage>? _alternateLanguages;
   @override
   @JsonKey(name: 'alternate_languages')
@@ -290,7 +291,6 @@ class _$_Document implements _Document {
   @override
   @JsonKey(name: 'last_publication_date')
   final String? lastPublicationDate;
-  @JsonKey(name: 'linked_documents')
   final List<String>? _linkedDocuments;
   @override
   @JsonKey(name: 'linked_documents')
@@ -346,21 +346,21 @@ class _$_Document implements _Document {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Document &&
+            other is _$_Document &&
             const DeepCollectionEquality()
-                .equals(other.alternateLanguages, alternateLanguages) &&
+                .equals(other._alternateLanguages, _alternateLanguages) &&
             const DeepCollectionEquality()
                 .equals(other.firstPublicationDate, firstPublicationDate) &&
             const DeepCollectionEquality()
                 .equals(other.lastPublicationDate, lastPublicationDate) &&
             const DeepCollectionEquality()
-                .equals(other.linkedDocuments, linkedDocuments) &&
-            const DeepCollectionEquality().equals(other.tags, tags) &&
+                .equals(other._linkedDocuments, _linkedDocuments) &&
+            const DeepCollectionEquality().equals(other._tags, _tags) &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.lang, lang) &&
             const DeepCollectionEquality().equals(other.type, type) &&
-            const DeepCollectionEquality().equals(other.data, data) &&
-            const DeepCollectionEquality().equals(other.slugs, slugs) &&
+            const DeepCollectionEquality().equals(other._data, _data) &&
+            const DeepCollectionEquality().equals(other._slugs, _slugs) &&
             const DeepCollectionEquality().equals(other.href, href) &&
             const DeepCollectionEquality().equals(other.uid, uid));
   }
@@ -369,23 +369,23 @@ class _$_Document implements _Document {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(alternateLanguages),
+      const DeepCollectionEquality().hash(_alternateLanguages),
       const DeepCollectionEquality().hash(firstPublicationDate),
       const DeepCollectionEquality().hash(lastPublicationDate),
-      const DeepCollectionEquality().hash(linkedDocuments),
-      const DeepCollectionEquality().hash(tags),
+      const DeepCollectionEquality().hash(_linkedDocuments),
+      const DeepCollectionEquality().hash(_tags),
       const DeepCollectionEquality().hash(id),
       const DeepCollectionEquality().hash(lang),
       const DeepCollectionEquality().hash(type),
-      const DeepCollectionEquality().hash(data),
-      const DeepCollectionEquality().hash(slugs),
+      const DeepCollectionEquality().hash(_data),
+      const DeepCollectionEquality().hash(_slugs),
       const DeepCollectionEquality().hash(href),
       const DeepCollectionEquality().hash(uid));
 
   @JsonKey(ignore: true)
   @override
-  _$DocumentCopyWith<_Document> get copyWith =>
-      __$DocumentCopyWithImpl<_Document>(this, _$identity);
+  _$$_DocumentCopyWith<_$_Document> get copyWith =>
+      __$$_DocumentCopyWithImpl<_$_Document>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -445,6 +445,6 @@ abstract class _Document implements Document {
   String? get uid => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$DocumentCopyWith<_Document> get copyWith =>
+  _$$_DocumentCopyWith<_$_Document> get copyWith =>
       throw _privateConstructorUsedError;
 }

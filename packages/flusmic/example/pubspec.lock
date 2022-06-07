@@ -28,14 +28,14 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "3.2.1"
+    version: "3.2.3"
   freezed_annotation:
     dependency: transitive
     description:
       name: freezed_annotation
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.1"
+    version: "2.0.3"
   http_parser:
     dependency: transitive
     description:

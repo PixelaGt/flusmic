@@ -1,3 +1,6 @@
+## [3.2.3]
+* Update dependencies
+
 ## [3.2.2]
 * Add check for json deserialization
 * Update dependencies
