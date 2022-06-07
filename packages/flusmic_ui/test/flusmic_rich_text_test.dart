@@ -13,8 +13,11 @@ void main() {
         final predicates = [
           Predicate.any(DefaultPredicatePath.type, ['test'])
         ];
-        when(() => flusmic.query(predicates)).thenAnswer((invocation) =>
-            Future.value(FlusmicResponse.fromJson(mockResponse)));
+        when(() => flusmic.query(predicates)).thenAnswer(
+          (invocation) => Future.value(
+            FlusmicResponse.fromJson(mockResponse),
+          ),
+        );
         await tester
             .pumpWidget(FlusmicApp(flusmic: flusmic, predicates: predicates));
         await tester.pumpAndSettle();
@@ -35,7 +38,7 @@ class FlusmicApp extends StatefulWidget {
   final List<Predicate> predicates;
 
   @override
-  _FlusmicAppState createState() => _FlusmicAppState();
+  State<FlusmicApp> createState() => _FlusmicAppState();
 }
 
 class _FlusmicAppState extends State<FlusmicApp> {
@@ -45,32 +48,35 @@ class _FlusmicAppState extends State<FlusmicApp> {
       home: Scaffold(
         key: const Key('FlusmicApp'),
         body: FlusmicBuilder(
-            flusmic: widget.flusmic,
-            baseUrl: 'https://flusmic.cdn.prismic.io/api/v2',
-            builder: (context, state) => state.map(
-                  init: (s) => const Text('Initial State', key: Key('initial')),
-                  loading: (s) => const Text('Loading', key: Key('loading')),
-                  error: (s) => const Text('Error', key: Key('error')),
-                  loaded: (s) {
-                    final data = s.response.results.first.data;
+          flusmic: widget.flusmic,
+          baseUrl: 'https://flusmic.cdn.prismic.io/api/v2',
+          builder: (context, state) => state.map(
+            init: (s) => const Text('Initial State', key: Key('initial')),
+            loading: (s) => const Text('Loading', key: Key('loading')),
+            error: (s) => const Text('Error', key: Key('error')),
+            loaded: (s) {
+              final data = s.response.results.first.data;
 
-                    final richFields = data != null
-                        ? (data['content'] as List)
-                            .map((dynamic r) =>
-                                Richable.fromJson(r as Map<String, dynamic>))
-                            .toList()
-                        : <dynamic>[];
+              final richFields = data != null
+                  ? (data['content'] as List)
+                      .map(
+                        (dynamic r) =>
+                            Richable.fromJson(r as Map<String, dynamic>),
+                      )
+                      .toList()
+                  : <dynamic>[];
 
-                    return SingleChildScrollView(
-                      key: const Key('loaded'),
-                      child: FlusmicRichText(
-                        richFields as List<Richable>,
-                        key: const Key('rich-text'),
-                      ),
-                    );
-                  },
+              return SingleChildScrollView(
+                key: const Key('loaded'),
+                child: FlusmicRichText(
+                  richFields as List<Richable>,
+                  key: const Key('rich-text'),
                 ),
-            predicates: widget.predicates),
+              );
+            },
+          ),
+          predicates: widget.predicates,
+        ),
       ),
     );
   }

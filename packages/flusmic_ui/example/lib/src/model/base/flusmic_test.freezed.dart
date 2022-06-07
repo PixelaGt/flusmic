@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'flusmic_test.dart';
@@ -11,58 +12,11 @@ part of 'flusmic_test.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 FlusmicTest _$FlusmicTestFromJson(Map<String, dynamic> json) {
   return _FlusmicTest.fromJson(json);
 }
-
-/// @nodoc
-class _$FlusmicTestTearOff {
-  const _$FlusmicTestTearOff();
-
-  _FlusmicTest call(
-      {required List<Richable> title,
-      required List<Richable> content,
-      required SimpleImage image,
-      required Linkeable link,
-      required MediaLinkeable media,
-      required String date,
-      required String timestamp,
-      required String color,
-      required double number,
-      required String text,
-      required String option,
-      required bool boolean,
-      required Geopoint location,
-      required List<FlusmicNested> repetible,
-      required Linkeable linked}) {
-    return _FlusmicTest(
-      title: title,
-      content: content,
-      image: image,
-      link: link,
-      media: media,
-      date: date,
-      timestamp: timestamp,
-      color: color,
-      number: number,
-      text: text,
-      option: option,
-      boolean: boolean,
-      location: location,
-      repetible: repetible,
-      linked: linked,
-    );
-  }
-
-  FlusmicTest fromJson(Map<String, Object> json) {
-    return FlusmicTest.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $FlusmicTest = _$FlusmicTestTearOff();
 
 /// @nodoc
 mixin _$FlusmicTest {
@@ -236,11 +190,11 @@ class _$FlusmicTestCopyWithImpl<$Res> implements $FlusmicTestCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$FlusmicTestCopyWith<$Res>
+abstract class _$$_FlusmicTestCopyWith<$Res>
     implements $FlusmicTestCopyWith<$Res> {
-  factory _$FlusmicTestCopyWith(
-          _FlusmicTest value, $Res Function(_FlusmicTest) then) =
-      __$FlusmicTestCopyWithImpl<$Res>;
+  factory _$$_FlusmicTestCopyWith(
+          _$_FlusmicTest value, $Res Function(_$_FlusmicTest) then) =
+      __$$_FlusmicTestCopyWithImpl<$Res>;
   @override
   $Res call(
       {List<Richable> title,
@@ -270,14 +224,14 @@ abstract class _$FlusmicTestCopyWith<$Res>
 }
 
 /// @nodoc
-class __$FlusmicTestCopyWithImpl<$Res> extends _$FlusmicTestCopyWithImpl<$Res>
-    implements _$FlusmicTestCopyWith<$Res> {
-  __$FlusmicTestCopyWithImpl(
-      _FlusmicTest _value, $Res Function(_FlusmicTest) _then)
-      : super(_value, (v) => _then(v as _FlusmicTest));
+class __$$_FlusmicTestCopyWithImpl<$Res> extends _$FlusmicTestCopyWithImpl<$Res>
+    implements _$$_FlusmicTestCopyWith<$Res> {
+  __$$_FlusmicTestCopyWithImpl(
+      _$_FlusmicTest _value, $Res Function(_$_FlusmicTest) _then)
+      : super(_value, (v) => _then(v as _$_FlusmicTest));
 
   @override
-  _FlusmicTest get _value => super._value as _FlusmicTest;
+  _$_FlusmicTest get _value => super._value as _$_FlusmicTest;
 
   @override
   $Res call({
@@ -297,13 +251,13 @@ class __$FlusmicTestCopyWithImpl<$Res> extends _$FlusmicTestCopyWithImpl<$Res>
     Object? repetible = freezed,
     Object? linked = freezed,
   }) {
-    return _then(_FlusmicTest(
+    return _then(_$_FlusmicTest(
       title: title == freezed
-          ? _value.title
+          ? _value._title
           : title // ignore: cast_nullable_to_non_nullable
               as List<Richable>,
       content: content == freezed
-          ? _value.content
+          ? _value._content
           : content // ignore: cast_nullable_to_non_nullable
               as List<Richable>,
       image: image == freezed
@@ -351,7 +305,7 @@ class __$FlusmicTestCopyWithImpl<$Res> extends _$FlusmicTestCopyWithImpl<$Res>
           : location // ignore: cast_nullable_to_non_nullable
               as Geopoint,
       repetible: repetible == freezed
-          ? _value.repetible
+          ? _value._repetible
           : repetible // ignore: cast_nullable_to_non_nullable
               as List<FlusmicNested>,
       linked: linked == freezed
@@ -366,8 +320,8 @@ class __$FlusmicTestCopyWithImpl<$Res> extends _$FlusmicTestCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_FlusmicTest implements _FlusmicTest {
   _$_FlusmicTest(
-      {required this.title,
-      required this.content,
+      {required final List<Richable> title,
+      required final List<Richable> content,
       required this.image,
       required this.link,
       required this.media,
@@ -379,16 +333,29 @@ class _$_FlusmicTest implements _FlusmicTest {
       required this.option,
       required this.boolean,
       required this.location,
-      required this.repetible,
-      required this.linked});
+      required final List<FlusmicNested> repetible,
+      required this.linked})
+      : _title = title,
+        _content = content,
+        _repetible = repetible;
 
   factory _$_FlusmicTest.fromJson(Map<String, dynamic> json) =>
       _$$_FlusmicTestFromJson(json);
 
+  final List<Richable> _title;
   @override
-  final List<Richable> title;
+  List<Richable> get title {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_title);
+  }
+
+  final List<Richable> _content;
   @override
-  final List<Richable> content;
+  List<Richable> get content {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_content);
+  }
+
   @override
   final SimpleImage image;
   @override
@@ -411,8 +378,13 @@ class _$_FlusmicTest implements _FlusmicTest {
   final bool boolean;
   @override
   final Geopoint location;
+  final List<FlusmicNested> _repetible;
   @override
-  final List<FlusmicNested> repetible;
+  List<FlusmicNested> get repetible {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_repetible);
+  }
+
   @override
   final Linkeable linked;
 
@@ -424,67 +396,50 @@ class _$_FlusmicTest implements _FlusmicTest {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _FlusmicTest &&
-            (identical(other.title, title) ||
-                const DeepCollectionEquality().equals(other.title, title)) &&
-            (identical(other.content, content) ||
-                const DeepCollectionEquality()
-                    .equals(other.content, content)) &&
-            (identical(other.image, image) ||
-                const DeepCollectionEquality().equals(other.image, image)) &&
-            (identical(other.link, link) ||
-                const DeepCollectionEquality().equals(other.link, link)) &&
-            (identical(other.media, media) ||
-                const DeepCollectionEquality().equals(other.media, media)) &&
-            (identical(other.date, date) ||
-                const DeepCollectionEquality().equals(other.date, date)) &&
-            (identical(other.timestamp, timestamp) ||
-                const DeepCollectionEquality()
-                    .equals(other.timestamp, timestamp)) &&
-            (identical(other.color, color) ||
-                const DeepCollectionEquality().equals(other.color, color)) &&
-            (identical(other.number, number) ||
-                const DeepCollectionEquality().equals(other.number, number)) &&
-            (identical(other.text, text) ||
-                const DeepCollectionEquality().equals(other.text, text)) &&
-            (identical(other.option, option) ||
-                const DeepCollectionEquality().equals(other.option, option)) &&
-            (identical(other.boolean, boolean) ||
-                const DeepCollectionEquality()
-                    .equals(other.boolean, boolean)) &&
-            (identical(other.location, location) ||
-                const DeepCollectionEquality()
-                    .equals(other.location, location)) &&
-            (identical(other.repetible, repetible) ||
-                const DeepCollectionEquality()
-                    .equals(other.repetible, repetible)) &&
-            (identical(other.linked, linked) ||
-                const DeepCollectionEquality().equals(other.linked, linked)));
+        (other.runtimeType == runtimeType &&
+            other is _$_FlusmicTest &&
+            const DeepCollectionEquality().equals(other._title, _title) &&
+            const DeepCollectionEquality().equals(other._content, _content) &&
+            const DeepCollectionEquality().equals(other.image, image) &&
+            const DeepCollectionEquality().equals(other.link, link) &&
+            const DeepCollectionEquality().equals(other.media, media) &&
+            const DeepCollectionEquality().equals(other.date, date) &&
+            const DeepCollectionEquality().equals(other.timestamp, timestamp) &&
+            const DeepCollectionEquality().equals(other.color, color) &&
+            const DeepCollectionEquality().equals(other.number, number) &&
+            const DeepCollectionEquality().equals(other.text, text) &&
+            const DeepCollectionEquality().equals(other.option, option) &&
+            const DeepCollectionEquality().equals(other.boolean, boolean) &&
+            const DeepCollectionEquality().equals(other.location, location) &&
+            const DeepCollectionEquality()
+                .equals(other._repetible, _repetible) &&
+            const DeepCollectionEquality().equals(other.linked, linked));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(title) ^
-      const DeepCollectionEquality().hash(content) ^
-      const DeepCollectionEquality().hash(image) ^
-      const DeepCollectionEquality().hash(link) ^
-      const DeepCollectionEquality().hash(media) ^
-      const DeepCollectionEquality().hash(date) ^
-      const DeepCollectionEquality().hash(timestamp) ^
-      const DeepCollectionEquality().hash(color) ^
-      const DeepCollectionEquality().hash(number) ^
-      const DeepCollectionEquality().hash(text) ^
-      const DeepCollectionEquality().hash(option) ^
-      const DeepCollectionEquality().hash(boolean) ^
-      const DeepCollectionEquality().hash(location) ^
-      const DeepCollectionEquality().hash(repetible) ^
-      const DeepCollectionEquality().hash(linked);
 
   @JsonKey(ignore: true)
   @override
-  _$FlusmicTestCopyWith<_FlusmicTest> get copyWith =>
-      __$FlusmicTestCopyWithImpl<_FlusmicTest>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_title),
+      const DeepCollectionEquality().hash(_content),
+      const DeepCollectionEquality().hash(image),
+      const DeepCollectionEquality().hash(link),
+      const DeepCollectionEquality().hash(media),
+      const DeepCollectionEquality().hash(date),
+      const DeepCollectionEquality().hash(timestamp),
+      const DeepCollectionEquality().hash(color),
+      const DeepCollectionEquality().hash(number),
+      const DeepCollectionEquality().hash(text),
+      const DeepCollectionEquality().hash(option),
+      const DeepCollectionEquality().hash(boolean),
+      const DeepCollectionEquality().hash(location),
+      const DeepCollectionEquality().hash(_repetible),
+      const DeepCollectionEquality().hash(linked));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_FlusmicTestCopyWith<_$_FlusmicTest> get copyWith =>
+      __$$_FlusmicTestCopyWithImpl<_$_FlusmicTest>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -494,21 +449,21 @@ class _$_FlusmicTest implements _FlusmicTest {
 
 abstract class _FlusmicTest implements FlusmicTest {
   factory _FlusmicTest(
-      {required List<Richable> title,
-      required List<Richable> content,
-      required SimpleImage image,
-      required Linkeable link,
-      required MediaLinkeable media,
-      required String date,
-      required String timestamp,
-      required String color,
-      required double number,
-      required String text,
-      required String option,
-      required bool boolean,
-      required Geopoint location,
-      required List<FlusmicNested> repetible,
-      required Linkeable linked}) = _$_FlusmicTest;
+      {required final List<Richable> title,
+      required final List<Richable> content,
+      required final SimpleImage image,
+      required final Linkeable link,
+      required final MediaLinkeable media,
+      required final String date,
+      required final String timestamp,
+      required final String color,
+      required final double number,
+      required final String text,
+      required final String option,
+      required final bool boolean,
+      required final Geopoint location,
+      required final List<FlusmicNested> repetible,
+      required final Linkeable linked}) = _$_FlusmicTest;
 
   factory _FlusmicTest.fromJson(Map<String, dynamic> json) =
       _$_FlusmicTest.fromJson;
@@ -545,6 +500,6 @@ abstract class _FlusmicTest implements FlusmicTest {
   Linkeable get linked => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$FlusmicTestCopyWith<_FlusmicTest> get copyWith =>
+  _$$_FlusmicTestCopyWith<_$_FlusmicTest> get copyWith =>
       throw _privateConstructorUsedError;
 }

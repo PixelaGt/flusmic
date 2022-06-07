@@ -61,7 +61,7 @@ class InnerRichText extends StatefulWidget {
   final TextStyle? paragraphStyle;
 
   @override
-  _InnerRichTextState createState() => _InnerRichTextState();
+  State<InnerRichText> createState() => _InnerRichTextState();
 }
 
 class _InnerRichTextState extends State<InnerRichText> {
