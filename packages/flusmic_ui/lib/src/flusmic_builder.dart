@@ -65,7 +65,7 @@ class FlusmicBuilder extends StatefulWidget {
   final String? language;
 
   @override
-  _FlusmicBuilderState createState() => _FlusmicBuilderState();
+  State<FlusmicBuilder> createState() => _FlusmicBuilderState();
 }
 
 class _FlusmicBuilderState extends State<FlusmicBuilder> {

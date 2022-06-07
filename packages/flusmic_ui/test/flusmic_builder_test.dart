@@ -1,6 +1,5 @@
 import 'package:flusmic_ui/flusmic_ui.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
@@ -15,14 +14,20 @@ void main() {
           Predicate.any(DefaultPredicatePath.tags, ['test'])
         ];
 
-        when(() => flusmic.query(predicates)).thenAnswer((invocation) =>
-            Future.delayed(const Duration(seconds: 30),
-                () => FlusmicResponse.fromJson(mockResponse)));
+        when(() => flusmic.query(predicates)).thenAnswer(
+          (invocation) => Future.delayed(
+            const Duration(seconds: 30),
+            () => FlusmicResponse.fromJson(mockResponse),
+          ),
+        );
 
         await tester
             .pumpWidget(FlusmicApp(flusmic: flusmic, predicates: predicates));
-        await tester.pumpAndSettle(const Duration(seconds: 10),
-            EnginePhase.build, const Duration(minutes: 1));
+        await tester.pumpAndSettle(
+          const Duration(seconds: 10),
+          EnginePhase.build,
+          const Duration(minutes: 1),
+        );
 
         expect(find.byKey(const Key('FlusmicApp')), findsOneWidget);
         expect(find.byKey(const Key('loading')), findsOneWidget);
@@ -36,7 +41,10 @@ void main() {
       ];
 
       when(() => flusmic.query(predicates)).thenAnswer(
-          (invocation) => Future.value(FlusmicResponse.fromJson(mockResponse)));
+        (invocation) => Future.value(
+          FlusmicResponse.fromJson(mockResponse),
+        ),
+      );
 
       await tester
           .pumpWidget(FlusmicApp(flusmic: flusmic, predicates: predicates));
@@ -54,12 +62,18 @@ void main() {
       ];
 
       when(() => flusmic.query(predicates)).thenAnswer(
-          (invocation) => Future.value(FlusmicResponse.fromJson(mockResponse)));
+        (invocation) => Future.value(
+          FlusmicResponse.fromJson(mockResponse),
+        ),
+      );
 
-      await tester.pumpWidget(FlusmicApp(
+      await tester.pumpWidget(
+        FlusmicApp(
           flusmic: flusmic,
           predicates: predicates,
-          controller: flusmicController));
+          controller: flusmicController,
+        ),
+      );
       await tester.pumpAndSettle();
 
       flusmicController.repeat();
@@ -113,7 +127,7 @@ class FlusmicApp extends StatefulWidget {
   final List<Predicate>? predicates;
 
   @override
-  _FlusmicAppState createState() => _FlusmicAppState();
+  State<FlusmicApp> createState() => _FlusmicAppState();
 }
 
 class _FlusmicAppState extends State<FlusmicApp> {
@@ -123,28 +137,29 @@ class _FlusmicAppState extends State<FlusmicApp> {
       home: Scaffold(
         key: const Key('FlusmicApp'),
         body: FlusmicBuilder(
-            flusmic: widget.flusmic,
-            baseUrl: 'https://flusmic.cdn.prismic.io/api/v2',
-            controller: widget.controller,
-            builder: (context, state) => state.map(
-                  init: (s) => const Text(
-                    'Initial State',
-                    key: Key('initial'),
-                  ),
-                  loading: (s) => const Text(
-                    'Loading',
-                    key: Key('loading'),
-                  ),
-                  error: (s) => const Text(
-                    'Error',
-                    key: Key('error'),
-                  ),
-                  loaded: (s) => const Text(
-                    'Loaded',
-                    key: Key('loaded'),
-                  ),
-                ),
-            predicates: widget.predicates ?? []),
+          flusmic: widget.flusmic,
+          baseUrl: 'https://flusmic.cdn.prismic.io/api/v2',
+          controller: widget.controller,
+          builder: (context, state) => state.map(
+            init: (s) => const Text(
+              'Initial State',
+              key: Key('initial'),
+            ),
+            loading: (s) => const Text(
+              'Loading',
+              key: Key('loading'),
+            ),
+            error: (s) => const Text(
+              'Error',
+              key: Key('error'),
+            ),
+            loaded: (s) => const Text(
+              'Loaded',
+              key: Key('loaded'),
+            ),
+          ),
+          predicates: widget.predicates ?? [],
+        ),
       ),
     );
   }

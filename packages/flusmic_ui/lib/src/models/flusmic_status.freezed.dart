@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'flusmic_status.dart';
@@ -11,35 +12,7 @@ part of 'flusmic_status.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$FlusmicStatusTearOff {
-  const _$FlusmicStatusTearOff();
-
-  InitFlusmicStatus init() {
-    return InitFlusmicStatus();
-  }
-
-  LoadingFlusmicStatus loading() {
-    return LoadingFlusmicStatus();
-  }
-
-  ErrorFlusmicStatus error(String error) {
-    return ErrorFlusmicStatus(
-      error,
-    );
-  }
-
-  LoadedFlusmicStatus loaded(FlusmicResponse response) {
-    return LoadedFlusmicStatus(
-      response,
-    );
-  }
-}
-
-/// @nodoc
-const $FlusmicStatus = _$FlusmicStatusTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$FlusmicStatus {
@@ -113,22 +86,22 @@ class _$FlusmicStatusCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $InitFlusmicStatusCopyWith<$Res> {
-  factory $InitFlusmicStatusCopyWith(
-          InitFlusmicStatus value, $Res Function(InitFlusmicStatus) then) =
-      _$InitFlusmicStatusCopyWithImpl<$Res>;
+abstract class _$$InitFlusmicStatusCopyWith<$Res> {
+  factory _$$InitFlusmicStatusCopyWith(
+          _$InitFlusmicStatus value, $Res Function(_$InitFlusmicStatus) then) =
+      __$$InitFlusmicStatusCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$InitFlusmicStatusCopyWithImpl<$Res>
+class __$$InitFlusmicStatusCopyWithImpl<$Res>
     extends _$FlusmicStatusCopyWithImpl<$Res>
-    implements $InitFlusmicStatusCopyWith<$Res> {
-  _$InitFlusmicStatusCopyWithImpl(
-      InitFlusmicStatus _value, $Res Function(InitFlusmicStatus) _then)
-      : super(_value, (v) => _then(v as InitFlusmicStatus));
+    implements _$$InitFlusmicStatusCopyWith<$Res> {
+  __$$InitFlusmicStatusCopyWithImpl(
+      _$InitFlusmicStatus _value, $Res Function(_$InitFlusmicStatus) _then)
+      : super(_value, (v) => _then(v as _$InitFlusmicStatus));
 
   @override
-  InitFlusmicStatus get _value => super._value as InitFlusmicStatus;
+  _$InitFlusmicStatus get _value => super._value as _$InitFlusmicStatus;
 }
 
 /// @nodoc
@@ -143,7 +116,8 @@ class _$InitFlusmicStatus implements InitFlusmicStatus {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is InitFlusmicStatus);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$InitFlusmicStatus);
   }
 
   @override
@@ -229,22 +203,22 @@ abstract class InitFlusmicStatus implements FlusmicStatus {
 }
 
 /// @nodoc
-abstract class $LoadingFlusmicStatusCopyWith<$Res> {
-  factory $LoadingFlusmicStatusCopyWith(LoadingFlusmicStatus value,
-          $Res Function(LoadingFlusmicStatus) then) =
-      _$LoadingFlusmicStatusCopyWithImpl<$Res>;
+abstract class _$$LoadingFlusmicStatusCopyWith<$Res> {
+  factory _$$LoadingFlusmicStatusCopyWith(_$LoadingFlusmicStatus value,
+          $Res Function(_$LoadingFlusmicStatus) then) =
+      __$$LoadingFlusmicStatusCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$LoadingFlusmicStatusCopyWithImpl<$Res>
+class __$$LoadingFlusmicStatusCopyWithImpl<$Res>
     extends _$FlusmicStatusCopyWithImpl<$Res>
-    implements $LoadingFlusmicStatusCopyWith<$Res> {
-  _$LoadingFlusmicStatusCopyWithImpl(
-      LoadingFlusmicStatus _value, $Res Function(LoadingFlusmicStatus) _then)
-      : super(_value, (v) => _then(v as LoadingFlusmicStatus));
+    implements _$$LoadingFlusmicStatusCopyWith<$Res> {
+  __$$LoadingFlusmicStatusCopyWithImpl(_$LoadingFlusmicStatus _value,
+      $Res Function(_$LoadingFlusmicStatus) _then)
+      : super(_value, (v) => _then(v as _$LoadingFlusmicStatus));
 
   @override
-  LoadingFlusmicStatus get _value => super._value as LoadingFlusmicStatus;
+  _$LoadingFlusmicStatus get _value => super._value as _$LoadingFlusmicStatus;
 }
 
 /// @nodoc
@@ -259,7 +233,8 @@ class _$LoadingFlusmicStatus implements LoadingFlusmicStatus {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is LoadingFlusmicStatus);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$LoadingFlusmicStatus);
   }
 
   @override
@@ -345,29 +320,29 @@ abstract class LoadingFlusmicStatus implements FlusmicStatus {
 }
 
 /// @nodoc
-abstract class $ErrorFlusmicStatusCopyWith<$Res> {
-  factory $ErrorFlusmicStatusCopyWith(
-          ErrorFlusmicStatus value, $Res Function(ErrorFlusmicStatus) then) =
-      _$ErrorFlusmicStatusCopyWithImpl<$Res>;
+abstract class _$$ErrorFlusmicStatusCopyWith<$Res> {
+  factory _$$ErrorFlusmicStatusCopyWith(_$ErrorFlusmicStatus value,
+          $Res Function(_$ErrorFlusmicStatus) then) =
+      __$$ErrorFlusmicStatusCopyWithImpl<$Res>;
   $Res call({String error});
 }
 
 /// @nodoc
-class _$ErrorFlusmicStatusCopyWithImpl<$Res>
+class __$$ErrorFlusmicStatusCopyWithImpl<$Res>
     extends _$FlusmicStatusCopyWithImpl<$Res>
-    implements $ErrorFlusmicStatusCopyWith<$Res> {
-  _$ErrorFlusmicStatusCopyWithImpl(
-      ErrorFlusmicStatus _value, $Res Function(ErrorFlusmicStatus) _then)
-      : super(_value, (v) => _then(v as ErrorFlusmicStatus));
+    implements _$$ErrorFlusmicStatusCopyWith<$Res> {
+  __$$ErrorFlusmicStatusCopyWithImpl(
+      _$ErrorFlusmicStatus _value, $Res Function(_$ErrorFlusmicStatus) _then)
+      : super(_value, (v) => _then(v as _$ErrorFlusmicStatus));
 
   @override
-  ErrorFlusmicStatus get _value => super._value as ErrorFlusmicStatus;
+  _$ErrorFlusmicStatus get _value => super._value as _$ErrorFlusmicStatus;
 
   @override
   $Res call({
     Object? error = freezed,
   }) {
-    return _then(ErrorFlusmicStatus(
+    return _then(_$ErrorFlusmicStatus(
       error == freezed
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -392,19 +367,20 @@ class _$ErrorFlusmicStatus implements ErrorFlusmicStatus {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is ErrorFlusmicStatus &&
-            (identical(other.error, error) ||
-                const DeepCollectionEquality().equals(other.error, error)));
+        (other.runtimeType == runtimeType &&
+            other is _$ErrorFlusmicStatus &&
+            const DeepCollectionEquality().equals(other.error, error));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(error);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
 
   @JsonKey(ignore: true)
   @override
-  $ErrorFlusmicStatusCopyWith<ErrorFlusmicStatus> get copyWith =>
-      _$ErrorFlusmicStatusCopyWithImpl<ErrorFlusmicStatus>(this, _$identity);
+  _$$ErrorFlusmicStatusCopyWith<_$ErrorFlusmicStatus> get copyWith =>
+      __$$ErrorFlusmicStatusCopyWithImpl<_$ErrorFlusmicStatus>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -482,40 +458,40 @@ class _$ErrorFlusmicStatus implements ErrorFlusmicStatus {
 }
 
 abstract class ErrorFlusmicStatus implements FlusmicStatus {
-  factory ErrorFlusmicStatus(String error) = _$ErrorFlusmicStatus;
+  factory ErrorFlusmicStatus(final String error) = _$ErrorFlusmicStatus;
 
   String get error => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ErrorFlusmicStatusCopyWith<ErrorFlusmicStatus> get copyWith =>
+  _$$ErrorFlusmicStatusCopyWith<_$ErrorFlusmicStatus> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $LoadedFlusmicStatusCopyWith<$Res> {
-  factory $LoadedFlusmicStatusCopyWith(
-          LoadedFlusmicStatus value, $Res Function(LoadedFlusmicStatus) then) =
-      _$LoadedFlusmicStatusCopyWithImpl<$Res>;
+abstract class _$$LoadedFlusmicStatusCopyWith<$Res> {
+  factory _$$LoadedFlusmicStatusCopyWith(_$LoadedFlusmicStatus value,
+          $Res Function(_$LoadedFlusmicStatus) then) =
+      __$$LoadedFlusmicStatusCopyWithImpl<$Res>;
   $Res call({FlusmicResponse response});
 
   $FlusmicResponseCopyWith<$Res> get response;
 }
 
 /// @nodoc
-class _$LoadedFlusmicStatusCopyWithImpl<$Res>
+class __$$LoadedFlusmicStatusCopyWithImpl<$Res>
     extends _$FlusmicStatusCopyWithImpl<$Res>
-    implements $LoadedFlusmicStatusCopyWith<$Res> {
-  _$LoadedFlusmicStatusCopyWithImpl(
-      LoadedFlusmicStatus _value, $Res Function(LoadedFlusmicStatus) _then)
-      : super(_value, (v) => _then(v as LoadedFlusmicStatus));
+    implements _$$LoadedFlusmicStatusCopyWith<$Res> {
+  __$$LoadedFlusmicStatusCopyWithImpl(
+      _$LoadedFlusmicStatus _value, $Res Function(_$LoadedFlusmicStatus) _then)
+      : super(_value, (v) => _then(v as _$LoadedFlusmicStatus));
 
   @override
-  LoadedFlusmicStatus get _value => super._value as LoadedFlusmicStatus;
+  _$LoadedFlusmicStatus get _value => super._value as _$LoadedFlusmicStatus;
 
   @override
   $Res call({
     Object? response = freezed,
   }) {
-    return _then(LoadedFlusmicStatus(
+    return _then(_$LoadedFlusmicStatus(
       response == freezed
           ? _value.response
           : response // ignore: cast_nullable_to_non_nullable
@@ -547,20 +523,20 @@ class _$LoadedFlusmicStatus implements LoadedFlusmicStatus {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is LoadedFlusmicStatus &&
-            (identical(other.response, response) ||
-                const DeepCollectionEquality()
-                    .equals(other.response, response)));
+        (other.runtimeType == runtimeType &&
+            other is _$LoadedFlusmicStatus &&
+            const DeepCollectionEquality().equals(other.response, response));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(response);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(response));
 
   @JsonKey(ignore: true)
   @override
-  $LoadedFlusmicStatusCopyWith<LoadedFlusmicStatus> get copyWith =>
-      _$LoadedFlusmicStatusCopyWithImpl<LoadedFlusmicStatus>(this, _$identity);
+  _$$LoadedFlusmicStatusCopyWith<_$LoadedFlusmicStatus> get copyWith =>
+      __$$LoadedFlusmicStatusCopyWithImpl<_$LoadedFlusmicStatus>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -638,10 +614,11 @@ class _$LoadedFlusmicStatus implements LoadedFlusmicStatus {
 }
 
 abstract class LoadedFlusmicStatus implements FlusmicStatus {
-  factory LoadedFlusmicStatus(FlusmicResponse response) = _$LoadedFlusmicStatus;
+  factory LoadedFlusmicStatus(final FlusmicResponse response) =
+      _$LoadedFlusmicStatus;
 
   FlusmicResponse get response => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $LoadedFlusmicStatusCopyWith<LoadedFlusmicStatus> get copyWith =>
+  _$$LoadedFlusmicStatusCopyWith<_$LoadedFlusmicStatus> get copyWith =>
       throw _privateConstructorUsedError;
 }

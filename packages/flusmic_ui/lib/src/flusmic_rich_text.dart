@@ -106,7 +106,6 @@ class FlusmicRichText extends StatelessWidget {
               loadingWidget: loadingWidget,
             ),
             embed: (value) => Container(),
-            listItem: (value) => Container(),
             orderedListItem: (value) => Container(),
           )
       ],
