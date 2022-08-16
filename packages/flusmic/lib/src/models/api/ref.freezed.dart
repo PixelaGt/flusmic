@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'ref.dart';
 
@@ -33,43 +33,46 @@ mixin _$Ref {
 /// @nodoc
 abstract class $RefCopyWith<$Res> {
   factory $RefCopyWith(Ref value, $Res Function(Ref) then) =
-      _$RefCopyWithImpl<$Res>;
+      _$RefCopyWithImpl<$Res, Ref>;
+  @useResult
   $Res call({String id, String label, String ref, bool isMasterRef});
 }
 
 /// @nodoc
-class _$RefCopyWithImpl<$Res> implements $RefCopyWith<$Res> {
+class _$RefCopyWithImpl<$Res, $Val extends Ref> implements $RefCopyWith<$Res> {
   _$RefCopyWithImpl(this._value, this._then);
 
-  final Ref _value;
   // ignore: unused_field
-  final $Res Function(Ref) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? label = freezed,
-    Object? ref = freezed,
-    Object? isMasterRef = freezed,
+    Object? id = null,
+    Object? label = null,
+    Object? ref = null,
+    Object? isMasterRef = null,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      label: label == freezed
+      label: null == label
           ? _value.label
           : label // ignore: cast_nullable_to_non_nullable
               as String,
-      ref: ref == freezed
+      ref: null == ref
           ? _value.ref
           : ref // ignore: cast_nullable_to_non_nullable
               as String,
-      isMasterRef: isMasterRef == freezed
+      isMasterRef: null == isMasterRef
           ? _value.isMasterRef
           : isMasterRef // ignore: cast_nullable_to_non_nullable
               as bool,
-    ));
+    ) as $Val);
   }
 }
 
@@ -78,39 +81,38 @@ abstract class _$$_RefCopyWith<$Res> implements $RefCopyWith<$Res> {
   factory _$$_RefCopyWith(_$_Ref value, $Res Function(_$_Ref) then) =
       __$$_RefCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String id, String label, String ref, bool isMasterRef});
 }
 
 /// @nodoc
-class __$$_RefCopyWithImpl<$Res> extends _$RefCopyWithImpl<$Res>
+class __$$_RefCopyWithImpl<$Res> extends _$RefCopyWithImpl<$Res, _$_Ref>
     implements _$$_RefCopyWith<$Res> {
   __$$_RefCopyWithImpl(_$_Ref _value, $Res Function(_$_Ref) _then)
-      : super(_value, (v) => _then(v as _$_Ref));
+      : super(_value, _then);
 
-  @override
-  _$_Ref get _value => super._value as _$_Ref;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? label = freezed,
-    Object? ref = freezed,
-    Object? isMasterRef = freezed,
+    Object? id = null,
+    Object? label = null,
+    Object? ref = null,
+    Object? isMasterRef = null,
   }) {
     return _then(_$_Ref(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      label: label == freezed
+      label: null == label
           ? _value.label
           : label // ignore: cast_nullable_to_non_nullable
               as String,
-      ref: ref == freezed
+      ref: null == ref
           ? _value.ref
           : ref // ignore: cast_nullable_to_non_nullable
               as String,
-      isMasterRef: isMasterRef == freezed
+      isMasterRef: null == isMasterRef
           ? _value.isMasterRef
           : isMasterRef // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -148,30 +150,28 @@ class _$_Ref implements _Ref {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Ref &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.label, label) &&
-            const DeepCollectionEquality().equals(other.ref, ref) &&
-            const DeepCollectionEquality()
-                .equals(other.isMasterRef, isMasterRef));
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.label, label) || other.label == label) &&
+            (identical(other.ref, ref) || other.ref == ref) &&
+            (identical(other.isMasterRef, isMasterRef) ||
+                other.isMasterRef == isMasterRef));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(label),
-      const DeepCollectionEquality().hash(ref),
-      const DeepCollectionEquality().hash(isMasterRef));
+  int get hashCode => Object.hash(runtimeType, id, label, ref, isMasterRef);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_RefCopyWith<_$_Ref> get copyWith =>
       __$$_RefCopyWithImpl<_$_Ref>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_RefToJson(this);
+    return _$$_RefToJson(
+      this,
+    );
   }
 }
 
@@ -185,13 +185,13 @@ abstract class _Ref implements Ref {
   factory _Ref.fromJson(Map<String, dynamic> json) = _$_Ref.fromJson;
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  String get label => throw _privateConstructorUsedError;
+  String get label;
   @override
-  String get ref => throw _privateConstructorUsedError;
+  String get ref;
   @override
-  bool get isMasterRef => throw _privateConstructorUsedError;
+  bool get isMasterRef;
   @override
   @JsonKey(ignore: true)
   _$$_RefCopyWith<_$_Ref> get copyWith => throw _privateConstructorUsedError;

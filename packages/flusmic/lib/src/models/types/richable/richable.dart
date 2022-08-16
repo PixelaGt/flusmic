@@ -98,10 +98,10 @@ class Richable with _$Richable {
   ///
   ///Represents a image inside RichText
   const factory Richable.image({
-    String? alt,
-    String? copyright,
     required Dimension dimensions,
     required String url,
+    String? alt,
+    String? copyright,
   }) = RichableImage;
 
   ///RichableEmbed model

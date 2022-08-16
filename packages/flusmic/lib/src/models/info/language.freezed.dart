@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'language.dart';
 
@@ -32,33 +32,37 @@ mixin _$Language {
 /// @nodoc
 abstract class $LanguageCopyWith<$Res> {
   factory $LanguageCopyWith(Language value, $Res Function(Language) then) =
-      _$LanguageCopyWithImpl<$Res>;
+      _$LanguageCopyWithImpl<$Res, Language>;
+  @useResult
   $Res call({String id, String name});
 }
 
 /// @nodoc
-class _$LanguageCopyWithImpl<$Res> implements $LanguageCopyWith<$Res> {
+class _$LanguageCopyWithImpl<$Res, $Val extends Language>
+    implements $LanguageCopyWith<$Res> {
   _$LanguageCopyWithImpl(this._value, this._then);
 
-  final Language _value;
   // ignore: unused_field
-  final $Res Function(Language) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
+    Object? id = null,
+    Object? name = null,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
@@ -68,30 +72,30 @@ abstract class _$$_LanguageCopyWith<$Res> implements $LanguageCopyWith<$Res> {
           _$_Language value, $Res Function(_$_Language) then) =
       __$$_LanguageCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String id, String name});
 }
 
 /// @nodoc
-class __$$_LanguageCopyWithImpl<$Res> extends _$LanguageCopyWithImpl<$Res>
+class __$$_LanguageCopyWithImpl<$Res>
+    extends _$LanguageCopyWithImpl<$Res, _$_Language>
     implements _$$_LanguageCopyWith<$Res> {
   __$$_LanguageCopyWithImpl(
       _$_Language _value, $Res Function(_$_Language) _then)
-      : super(_value, (v) => _then(v as _$_Language));
+      : super(_value, _then);
 
-  @override
-  _$_Language get _value => super._value as _$_Language;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
+    Object? id = null,
+    Object? name = null,
   }) {
     return _then(_$_Language(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
@@ -122,25 +126,25 @@ class _$_Language implements _Language {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Language &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.name, name));
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(name));
+  int get hashCode => Object.hash(runtimeType, id, name);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_LanguageCopyWith<_$_Language> get copyWith =>
       __$$_LanguageCopyWithImpl<_$_Language>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_LanguageToJson(this);
+    return _$$_LanguageToJson(
+      this,
+    );
   }
 }
 
@@ -151,9 +155,9 @@ abstract class _Language implements Language {
   factory _Language.fromJson(Map<String, dynamic> json) = _$_Language.fromJson;
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  String get name => throw _privateConstructorUsedError;
+  String get name;
   @override
   @JsonKey(ignore: true)
   _$$_LanguageCopyWith<_$_Language> get copyWith =>

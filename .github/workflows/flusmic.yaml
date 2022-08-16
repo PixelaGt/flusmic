@@ -27,8 +27,8 @@ jobs:
         run: dart analyze --fatal-infos --fatal-warnings .
       - name: Testing
         run: |
-          dart pub global activate coverage 1.2.0
-          dart test --coverage=coverage && dart pub global run coverage:format_coverage --lcov --in=coverage --out=coverage/lcov.info --packages=.packages --report-on=lib
+          dart pub global activate coverage 1.6.1
+          dart test --coverage=coverage && dart pub global run coverage:format_coverage --lcov --in=coverage --out=coverage/lcov.info --report-on=lib
       - name: Check coverage percentage
         uses: VeryGoodOpenSource/very_good_coverage@v1.2.0
         with:

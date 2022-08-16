@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'linkeable.dart';
 
@@ -49,7 +49,7 @@ mixin _$Linkeable {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
+    TResult? Function(
             @JsonKey(name: 'type') String documentType,
             List<String> tags,
             String id,
@@ -57,10 +57,10 @@ mixin _$Linkeable {
             String slug,
             bool isBroken)?
         document,
-    TResult Function(String? height, String? width, String? kind, String? name,
+    TResult? Function(String? height, String? width, String? kind, String? name,
             String? size, String? url)?
         media,
-    TResult Function(String url)? web,
+    TResult? Function(String url)? web,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -89,9 +89,9 @@ mixin _$Linkeable {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(DocumentLinkeable value)? document,
-    TResult Function(MediaLinkeable value)? media,
-    TResult Function(WebLinkeable value)? web,
+    TResult? Function(DocumentLinkeable value)? document,
+    TResult? Function(MediaLinkeable value)? media,
+    TResult? Function(WebLinkeable value)? web,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -108,16 +108,18 @@ mixin _$Linkeable {
 /// @nodoc
 abstract class $LinkeableCopyWith<$Res> {
   factory $LinkeableCopyWith(Linkeable value, $Res Function(Linkeable) then) =
-      _$LinkeableCopyWithImpl<$Res>;
+      _$LinkeableCopyWithImpl<$Res, Linkeable>;
 }
 
 /// @nodoc
-class _$LinkeableCopyWithImpl<$Res> implements $LinkeableCopyWith<$Res> {
+class _$LinkeableCopyWithImpl<$Res, $Val extends Linkeable>
+    implements $LinkeableCopyWith<$Res> {
   _$LinkeableCopyWithImpl(this._value, this._then);
 
-  final Linkeable _value;
   // ignore: unused_field
-  final $Res Function(Linkeable) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -125,6 +127,7 @@ abstract class _$$DocumentLinkeableCopyWith<$Res> {
   factory _$$DocumentLinkeableCopyWith(
           _$DocumentLinkeable value, $Res Function(_$DocumentLinkeable) then) =
       __$$DocumentLinkeableCopyWithImpl<$Res>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'type') String documentType,
       List<String> tags,
@@ -136,46 +139,44 @@ abstract class _$$DocumentLinkeableCopyWith<$Res> {
 
 /// @nodoc
 class __$$DocumentLinkeableCopyWithImpl<$Res>
-    extends _$LinkeableCopyWithImpl<$Res>
+    extends _$LinkeableCopyWithImpl<$Res, _$DocumentLinkeable>
     implements _$$DocumentLinkeableCopyWith<$Res> {
   __$$DocumentLinkeableCopyWithImpl(
       _$DocumentLinkeable _value, $Res Function(_$DocumentLinkeable) _then)
-      : super(_value, (v) => _then(v as _$DocumentLinkeable));
+      : super(_value, _then);
 
-  @override
-  _$DocumentLinkeable get _value => super._value as _$DocumentLinkeable;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? documentType = freezed,
-    Object? tags = freezed,
-    Object? id = freezed,
-    Object? lang = freezed,
-    Object? slug = freezed,
-    Object? isBroken = freezed,
+    Object? documentType = null,
+    Object? tags = null,
+    Object? id = null,
+    Object? lang = null,
+    Object? slug = null,
+    Object? isBroken = null,
   }) {
     return _then(_$DocumentLinkeable(
-      documentType: documentType == freezed
+      documentType: null == documentType
           ? _value.documentType
           : documentType // ignore: cast_nullable_to_non_nullable
               as String,
-      tags: tags == freezed
+      tags: null == tags
           ? _value._tags
           : tags // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      lang: lang == freezed
+      lang: null == lang
           ? _value.lang
           : lang // ignore: cast_nullable_to_non_nullable
               as String,
-      slug: slug == freezed
+      slug: null == slug
           ? _value.slug
           : slug // ignore: cast_nullable_to_non_nullable
               as String,
-      isBroken: isBroken == freezed
+      isBroken: null == isBroken
           ? _value.isBroken
           : isBroken // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -207,6 +208,7 @@ class _$DocumentLinkeable implements DocumentLinkeable {
   final List<String> _tags;
   @override
   List<String> get tags {
+    if (_tags is EqualUnmodifiableListView) return _tags;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_tags);
   }
@@ -233,28 +235,24 @@ class _$DocumentLinkeable implements DocumentLinkeable {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DocumentLinkeable &&
-            const DeepCollectionEquality()
-                .equals(other.documentType, documentType) &&
+            (identical(other.documentType, documentType) ||
+                other.documentType == documentType) &&
             const DeepCollectionEquality().equals(other._tags, _tags) &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.lang, lang) &&
-            const DeepCollectionEquality().equals(other.slug, slug) &&
-            const DeepCollectionEquality().equals(other.isBroken, isBroken));
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.lang, lang) || other.lang == lang) &&
+            (identical(other.slug, slug) || other.slug == slug) &&
+            (identical(other.isBroken, isBroken) ||
+                other.isBroken == isBroken));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(documentType),
-      const DeepCollectionEquality().hash(_tags),
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(lang),
-      const DeepCollectionEquality().hash(slug),
-      const DeepCollectionEquality().hash(isBroken));
+  int get hashCode => Object.hash(runtimeType, documentType,
+      const DeepCollectionEquality().hash(_tags), id, lang, slug, isBroken);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$DocumentLinkeableCopyWith<_$DocumentLinkeable> get copyWith =>
       __$$DocumentLinkeableCopyWithImpl<_$DocumentLinkeable>(this, _$identity);
 
@@ -280,7 +278,7 @@ class _$DocumentLinkeable implements DocumentLinkeable {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
+    TResult? Function(
             @JsonKey(name: 'type') String documentType,
             List<String> tags,
             String id,
@@ -288,10 +286,10 @@ class _$DocumentLinkeable implements DocumentLinkeable {
             String slug,
             bool isBroken)?
         document,
-    TResult Function(String? height, String? width, String? kind, String? name,
+    TResult? Function(String? height, String? width, String? kind, String? name,
             String? size, String? url)?
         media,
-    TResult Function(String url)? web,
+    TResult? Function(String url)? web,
   }) {
     return document?.call(documentType, tags, id, lang, slug, isBroken);
   }
@@ -332,9 +330,9 @@ class _$DocumentLinkeable implements DocumentLinkeable {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(DocumentLinkeable value)? document,
-    TResult Function(MediaLinkeable value)? media,
-    TResult Function(WebLinkeable value)? web,
+    TResult? Function(DocumentLinkeable value)? document,
+    TResult? Function(MediaLinkeable value)? media,
+    TResult? Function(WebLinkeable value)? web,
   }) {
     return document?.call(this);
   }
@@ -355,7 +353,9 @@ class _$DocumentLinkeable implements DocumentLinkeable {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$DocumentLinkeableToJson(this);
+    return _$$DocumentLinkeableToJson(
+      this,
+    );
   }
 }
 
@@ -373,12 +373,12 @@ abstract class DocumentLinkeable implements Linkeable {
 
 // @JsonKey(name: 'link_type') required String linkType,
   @JsonKey(name: 'type')
-  String get documentType => throw _privateConstructorUsedError;
-  List<String> get tags => throw _privateConstructorUsedError;
-  String get id => throw _privateConstructorUsedError;
-  String get lang => throw _privateConstructorUsedError;
-  String get slug => throw _privateConstructorUsedError;
-  bool get isBroken => throw _privateConstructorUsedError;
+  String get documentType;
+  List<String> get tags;
+  String get id;
+  String get lang;
+  String get slug;
+  bool get isBroken;
   @JsonKey(ignore: true)
   _$$DocumentLinkeableCopyWith<_$DocumentLinkeable> get copyWith =>
       throw _privateConstructorUsedError;
@@ -389,6 +389,7 @@ abstract class _$$MediaLinkeableCopyWith<$Res> {
   factory _$$MediaLinkeableCopyWith(
           _$MediaLinkeable value, $Res Function(_$MediaLinkeable) then) =
       __$$MediaLinkeableCopyWithImpl<$Res>;
+  @useResult
   $Res call(
       {String? height,
       String? width,
@@ -399,15 +400,14 @@ abstract class _$$MediaLinkeableCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$MediaLinkeableCopyWithImpl<$Res> extends _$LinkeableCopyWithImpl<$Res>
+class __$$MediaLinkeableCopyWithImpl<$Res>
+    extends _$LinkeableCopyWithImpl<$Res, _$MediaLinkeable>
     implements _$$MediaLinkeableCopyWith<$Res> {
   __$$MediaLinkeableCopyWithImpl(
       _$MediaLinkeable _value, $Res Function(_$MediaLinkeable) _then)
-      : super(_value, (v) => _then(v as _$MediaLinkeable));
+      : super(_value, _then);
 
-  @override
-  _$MediaLinkeable get _value => super._value as _$MediaLinkeable;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? height = freezed,
@@ -418,27 +418,27 @@ class __$$MediaLinkeableCopyWithImpl<$Res> extends _$LinkeableCopyWithImpl<$Res>
     Object? url = freezed,
   }) {
     return _then(_$MediaLinkeable(
-      height: height == freezed
+      height: freezed == height
           ? _value.height
           : height // ignore: cast_nullable_to_non_nullable
               as String?,
-      width: width == freezed
+      width: freezed == width
           ? _value.width
           : width // ignore: cast_nullable_to_non_nullable
               as String?,
-      kind: kind == freezed
+      kind: freezed == kind
           ? _value.kind
           : kind // ignore: cast_nullable_to_non_nullable
               as String?,
-      name: name == freezed
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
-      size: size == freezed
+      size: freezed == size
           ? _value.size
           : size // ignore: cast_nullable_to_non_nullable
               as String?,
-      url: url == freezed
+      url: freezed == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -489,27 +489,22 @@ class _$MediaLinkeable implements MediaLinkeable {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MediaLinkeable &&
-            const DeepCollectionEquality().equals(other.height, height) &&
-            const DeepCollectionEquality().equals(other.width, width) &&
-            const DeepCollectionEquality().equals(other.kind, kind) &&
-            const DeepCollectionEquality().equals(other.name, name) &&
-            const DeepCollectionEquality().equals(other.size, size) &&
-            const DeepCollectionEquality().equals(other.url, url));
+            (identical(other.height, height) || other.height == height) &&
+            (identical(other.width, width) || other.width == width) &&
+            (identical(other.kind, kind) || other.kind == kind) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.size, size) || other.size == size) &&
+            (identical(other.url, url) || other.url == url));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(height),
-      const DeepCollectionEquality().hash(width),
-      const DeepCollectionEquality().hash(kind),
-      const DeepCollectionEquality().hash(name),
-      const DeepCollectionEquality().hash(size),
-      const DeepCollectionEquality().hash(url));
+  int get hashCode =>
+      Object.hash(runtimeType, height, width, kind, name, size, url);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$MediaLinkeableCopyWith<_$MediaLinkeable> get copyWith =>
       __$$MediaLinkeableCopyWithImpl<_$MediaLinkeable>(this, _$identity);
 
@@ -535,7 +530,7 @@ class _$MediaLinkeable implements MediaLinkeable {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
+    TResult? Function(
             @JsonKey(name: 'type') String documentType,
             List<String> tags,
             String id,
@@ -543,10 +538,10 @@ class _$MediaLinkeable implements MediaLinkeable {
             String slug,
             bool isBroken)?
         document,
-    TResult Function(String? height, String? width, String? kind, String? name,
+    TResult? Function(String? height, String? width, String? kind, String? name,
             String? size, String? url)?
         media,
-    TResult Function(String url)? web,
+    TResult? Function(String url)? web,
   }) {
     return media?.call(height, width, kind, name, size, url);
   }
@@ -587,9 +582,9 @@ class _$MediaLinkeable implements MediaLinkeable {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(DocumentLinkeable value)? document,
-    TResult Function(MediaLinkeable value)? media,
-    TResult Function(WebLinkeable value)? web,
+    TResult? Function(DocumentLinkeable value)? document,
+    TResult? Function(MediaLinkeable value)? media,
+    TResult? Function(WebLinkeable value)? web,
   }) {
     return media?.call(this);
   }
@@ -610,7 +605,9 @@ class _$MediaLinkeable implements MediaLinkeable {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$MediaLinkeableToJson(this);
+    return _$$MediaLinkeableToJson(
+      this,
+    );
   }
 }
 
@@ -627,12 +624,12 @@ abstract class MediaLinkeable implements Linkeable {
       _$MediaLinkeable.fromJson;
 
 // @JsonKey(name: 'link_type') required String linkType,
-  String? get height => throw _privateConstructorUsedError;
-  String? get width => throw _privateConstructorUsedError;
-  String? get kind => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
-  String? get size => throw _privateConstructorUsedError;
-  String? get url => throw _privateConstructorUsedError;
+  String? get height;
+  String? get width;
+  String? get kind;
+  String? get name;
+  String? get size;
+  String? get url;
   @JsonKey(ignore: true)
   _$$MediaLinkeableCopyWith<_$MediaLinkeable> get copyWith =>
       throw _privateConstructorUsedError;
@@ -643,25 +640,25 @@ abstract class _$$WebLinkeableCopyWith<$Res> {
   factory _$$WebLinkeableCopyWith(
           _$WebLinkeable value, $Res Function(_$WebLinkeable) then) =
       __$$WebLinkeableCopyWithImpl<$Res>;
+  @useResult
   $Res call({String url});
 }
 
 /// @nodoc
-class __$$WebLinkeableCopyWithImpl<$Res> extends _$LinkeableCopyWithImpl<$Res>
+class __$$WebLinkeableCopyWithImpl<$Res>
+    extends _$LinkeableCopyWithImpl<$Res, _$WebLinkeable>
     implements _$$WebLinkeableCopyWith<$Res> {
   __$$WebLinkeableCopyWithImpl(
       _$WebLinkeable _value, $Res Function(_$WebLinkeable) _then)
-      : super(_value, (v) => _then(v as _$WebLinkeable));
+      : super(_value, _then);
 
-  @override
-  _$WebLinkeable get _value => super._value as _$WebLinkeable;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? url = freezed,
+    Object? url = null,
   }) {
     return _then(_$WebLinkeable(
-      url: url == freezed
+      url: null == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String,
@@ -695,16 +692,16 @@ class _$WebLinkeable implements WebLinkeable {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$WebLinkeable &&
-            const DeepCollectionEquality().equals(other.url, url));
+            (identical(other.url, url) || other.url == url));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(url));
+  int get hashCode => Object.hash(runtimeType, url);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$WebLinkeableCopyWith<_$WebLinkeable> get copyWith =>
       __$$WebLinkeableCopyWithImpl<_$WebLinkeable>(this, _$identity);
 
@@ -730,7 +727,7 @@ class _$WebLinkeable implements WebLinkeable {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
+    TResult? Function(
             @JsonKey(name: 'type') String documentType,
             List<String> tags,
             String id,
@@ -738,10 +735,10 @@ class _$WebLinkeable implements WebLinkeable {
             String slug,
             bool isBroken)?
         document,
-    TResult Function(String? height, String? width, String? kind, String? name,
+    TResult? Function(String? height, String? width, String? kind, String? name,
             String? size, String? url)?
         media,
-    TResult Function(String url)? web,
+    TResult? Function(String url)? web,
   }) {
     return web?.call(url);
   }
@@ -782,9 +779,9 @@ class _$WebLinkeable implements WebLinkeable {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(DocumentLinkeable value)? document,
-    TResult Function(MediaLinkeable value)? media,
-    TResult Function(WebLinkeable value)? web,
+    TResult? Function(DocumentLinkeable value)? document,
+    TResult? Function(MediaLinkeable value)? media,
+    TResult? Function(WebLinkeable value)? web,
   }) {
     return web?.call(this);
   }
@@ -805,7 +802,9 @@ class _$WebLinkeable implements WebLinkeable {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$WebLinkeableToJson(this);
+    return _$$WebLinkeableToJson(
+      this,
+    );
   }
 }
 
@@ -816,7 +815,7 @@ abstract class WebLinkeable implements Linkeable {
       _$WebLinkeable.fromJson;
 
 // @JsonKey(name: 'link_type') required String linkType,
-  String get url => throw _privateConstructorUsedError;
+  String get url;
   @JsonKey(ignore: true)
   _$$WebLinkeableCopyWith<_$WebLinkeable> get copyWith =>
       throw _privateConstructorUsedError;

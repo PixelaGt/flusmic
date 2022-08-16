@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'richable.dart';
 
@@ -68,7 +68,7 @@ mixin _$Richable {
     required TResult Function(List<Span> spans, String text, String type)
         orderedListItem,
     required TResult Function(
-            String? alt, String? copyright, Dimension dimensions, String url)
+            Dimension dimensions, String url, String? alt, String? copyright)
         image,
     required TResult Function(
             @JsonKey(name: 'oembed') EmbedData info, String type)
@@ -77,20 +77,20 @@ mixin _$Richable {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(List<Span> spans, String text, String type)? heading1,
-    TResult Function(List<Span> spans, String text, String type)? heading2,
-    TResult Function(List<Span> spans, String text, String type)? heading3,
-    TResult Function(List<Span> spans, String text, String type)? heading4,
-    TResult Function(List<Span> spans, String text, String type)? heading5,
-    TResult Function(List<Span> spans, String text, String type)? heading6,
-    TResult Function(List<Span> spans, String text, String type)? paragraph,
-    TResult Function(List<Span> spans, String text, String type)? listItem,
-    TResult Function(List<Span> spans, String text, String type)?
+    TResult? Function(List<Span> spans, String text, String type)? heading1,
+    TResult? Function(List<Span> spans, String text, String type)? heading2,
+    TResult? Function(List<Span> spans, String text, String type)? heading3,
+    TResult? Function(List<Span> spans, String text, String type)? heading4,
+    TResult? Function(List<Span> spans, String text, String type)? heading5,
+    TResult? Function(List<Span> spans, String text, String type)? heading6,
+    TResult? Function(List<Span> spans, String text, String type)? paragraph,
+    TResult? Function(List<Span> spans, String text, String type)? listItem,
+    TResult? Function(List<Span> spans, String text, String type)?
         orderedListItem,
-    TResult Function(
-            String? alt, String? copyright, Dimension dimensions, String url)?
+    TResult? Function(
+            Dimension dimensions, String url, String? alt, String? copyright)?
         image,
-    TResult Function(@JsonKey(name: 'oembed') EmbedData info, String type)?
+    TResult? Function(@JsonKey(name: 'oembed') EmbedData info, String type)?
         embed,
   }) =>
       throw _privateConstructorUsedError;
@@ -107,7 +107,7 @@ mixin _$Richable {
     TResult Function(List<Span> spans, String text, String type)?
         orderedListItem,
     TResult Function(
-            String? alt, String? copyright, Dimension dimensions, String url)?
+            Dimension dimensions, String url, String? alt, String? copyright)?
         image,
     TResult Function(@JsonKey(name: 'oembed') EmbedData info, String type)?
         embed,
@@ -131,17 +131,17 @@ mixin _$Richable {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(RichableHeading1 value)? heading1,
-    TResult Function(RichableHeading2 value)? heading2,
-    TResult Function(RichableHeading3 value)? heading3,
-    TResult Function(RichableHeading4 value)? heading4,
-    TResult Function(RichableHeading5 value)? heading5,
-    TResult Function(RichableHeading6 value)? heading6,
-    TResult Function(RichableParagraph value)? paragraph,
-    TResult Function(RichableListItem value)? listItem,
-    TResult Function(RichableOrderedListItem value)? orderedListItem,
-    TResult Function(RichableImage value)? image,
-    TResult Function(RichableEmbed value)? embed,
+    TResult? Function(RichableHeading1 value)? heading1,
+    TResult? Function(RichableHeading2 value)? heading2,
+    TResult? Function(RichableHeading3 value)? heading3,
+    TResult? Function(RichableHeading4 value)? heading4,
+    TResult? Function(RichableHeading5 value)? heading5,
+    TResult? Function(RichableHeading6 value)? heading6,
+    TResult? Function(RichableParagraph value)? paragraph,
+    TResult? Function(RichableListItem value)? listItem,
+    TResult? Function(RichableOrderedListItem value)? orderedListItem,
+    TResult? Function(RichableImage value)? image,
+    TResult? Function(RichableEmbed value)? embed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -166,16 +166,18 @@ mixin _$Richable {
 /// @nodoc
 abstract class $RichableCopyWith<$Res> {
   factory $RichableCopyWith(Richable value, $Res Function(Richable) then) =
-      _$RichableCopyWithImpl<$Res>;
+      _$RichableCopyWithImpl<$Res, Richable>;
 }
 
 /// @nodoc
-class _$RichableCopyWithImpl<$Res> implements $RichableCopyWith<$Res> {
+class _$RichableCopyWithImpl<$Res, $Val extends Richable>
+    implements $RichableCopyWith<$Res> {
   _$RichableCopyWithImpl(this._value, this._then);
 
-  final Richable _value;
   // ignore: unused_field
-  final $Res Function(Richable) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -183,36 +185,35 @@ abstract class _$$RichableHeading1CopyWith<$Res> {
   factory _$$RichableHeading1CopyWith(
           _$RichableHeading1 value, $Res Function(_$RichableHeading1) then) =
       __$$RichableHeading1CopyWithImpl<$Res>;
+  @useResult
   $Res call({List<Span> spans, String text, String type});
 }
 
 /// @nodoc
 class __$$RichableHeading1CopyWithImpl<$Res>
-    extends _$RichableCopyWithImpl<$Res>
+    extends _$RichableCopyWithImpl<$Res, _$RichableHeading1>
     implements _$$RichableHeading1CopyWith<$Res> {
   __$$RichableHeading1CopyWithImpl(
       _$RichableHeading1 _value, $Res Function(_$RichableHeading1) _then)
-      : super(_value, (v) => _then(v as _$RichableHeading1));
+      : super(_value, _then);
 
-  @override
-  _$RichableHeading1 get _value => super._value as _$RichableHeading1;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? spans = freezed,
-    Object? text = freezed,
-    Object? type = freezed,
+    Object? spans = null,
+    Object? text = null,
+    Object? type = null,
   }) {
     return _then(_$RichableHeading1(
-      spans: spans == freezed
+      spans: null == spans
           ? _value._spans
           : spans // ignore: cast_nullable_to_non_nullable
               as List<Span>,
-      text: text == freezed
+      text: null == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
               as String,
-      type: type == freezed
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as String,
@@ -233,6 +234,7 @@ class _$RichableHeading1 implements RichableHeading1 {
   final List<Span> _spans;
   @override
   List<Span> get spans {
+    if (_spans is EqualUnmodifiableListView) return _spans;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_spans);
   }
@@ -253,20 +255,18 @@ class _$RichableHeading1 implements RichableHeading1 {
         (other.runtimeType == runtimeType &&
             other is _$RichableHeading1 &&
             const DeepCollectionEquality().equals(other._spans, _spans) &&
-            const DeepCollectionEquality().equals(other.text, text) &&
-            const DeepCollectionEquality().equals(other.type, type));
+            (identical(other.text, text) || other.text == text) &&
+            (identical(other.type, type) || other.type == type));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(_spans),
-      const DeepCollectionEquality().hash(text),
-      const DeepCollectionEquality().hash(type));
+      runtimeType, const DeepCollectionEquality().hash(_spans), text, type);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$RichableHeading1CopyWith<_$RichableHeading1> get copyWith =>
       __$$RichableHeading1CopyWithImpl<_$RichableHeading1>(this, _$identity);
 
@@ -292,7 +292,7 @@ class _$RichableHeading1 implements RichableHeading1 {
     required TResult Function(List<Span> spans, String text, String type)
         orderedListItem,
     required TResult Function(
-            String? alt, String? copyright, Dimension dimensions, String url)
+            Dimension dimensions, String url, String? alt, String? copyright)
         image,
     required TResult Function(
             @JsonKey(name: 'oembed') EmbedData info, String type)
@@ -304,20 +304,20 @@ class _$RichableHeading1 implements RichableHeading1 {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(List<Span> spans, String text, String type)? heading1,
-    TResult Function(List<Span> spans, String text, String type)? heading2,
-    TResult Function(List<Span> spans, String text, String type)? heading3,
-    TResult Function(List<Span> spans, String text, String type)? heading4,
-    TResult Function(List<Span> spans, String text, String type)? heading5,
-    TResult Function(List<Span> spans, String text, String type)? heading6,
-    TResult Function(List<Span> spans, String text, String type)? paragraph,
-    TResult Function(List<Span> spans, String text, String type)? listItem,
-    TResult Function(List<Span> spans, String text, String type)?
+    TResult? Function(List<Span> spans, String text, String type)? heading1,
+    TResult? Function(List<Span> spans, String text, String type)? heading2,
+    TResult? Function(List<Span> spans, String text, String type)? heading3,
+    TResult? Function(List<Span> spans, String text, String type)? heading4,
+    TResult? Function(List<Span> spans, String text, String type)? heading5,
+    TResult? Function(List<Span> spans, String text, String type)? heading6,
+    TResult? Function(List<Span> spans, String text, String type)? paragraph,
+    TResult? Function(List<Span> spans, String text, String type)? listItem,
+    TResult? Function(List<Span> spans, String text, String type)?
         orderedListItem,
-    TResult Function(
-            String? alt, String? copyright, Dimension dimensions, String url)?
+    TResult? Function(
+            Dimension dimensions, String url, String? alt, String? copyright)?
         image,
-    TResult Function(@JsonKey(name: 'oembed') EmbedData info, String type)?
+    TResult? Function(@JsonKey(name: 'oembed') EmbedData info, String type)?
         embed,
   }) {
     return heading1?.call(spans, text, type);
@@ -337,7 +337,7 @@ class _$RichableHeading1 implements RichableHeading1 {
     TResult Function(List<Span> spans, String text, String type)?
         orderedListItem,
     TResult Function(
-            String? alt, String? copyright, Dimension dimensions, String url)?
+            Dimension dimensions, String url, String? alt, String? copyright)?
         image,
     TResult Function(@JsonKey(name: 'oembed') EmbedData info, String type)?
         embed,
@@ -370,17 +370,17 @@ class _$RichableHeading1 implements RichableHeading1 {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(RichableHeading1 value)? heading1,
-    TResult Function(RichableHeading2 value)? heading2,
-    TResult Function(RichableHeading3 value)? heading3,
-    TResult Function(RichableHeading4 value)? heading4,
-    TResult Function(RichableHeading5 value)? heading5,
-    TResult Function(RichableHeading6 value)? heading6,
-    TResult Function(RichableParagraph value)? paragraph,
-    TResult Function(RichableListItem value)? listItem,
-    TResult Function(RichableOrderedListItem value)? orderedListItem,
-    TResult Function(RichableImage value)? image,
-    TResult Function(RichableEmbed value)? embed,
+    TResult? Function(RichableHeading1 value)? heading1,
+    TResult? Function(RichableHeading2 value)? heading2,
+    TResult? Function(RichableHeading3 value)? heading3,
+    TResult? Function(RichableHeading4 value)? heading4,
+    TResult? Function(RichableHeading5 value)? heading5,
+    TResult? Function(RichableHeading6 value)? heading6,
+    TResult? Function(RichableParagraph value)? paragraph,
+    TResult? Function(RichableListItem value)? listItem,
+    TResult? Function(RichableOrderedListItem value)? orderedListItem,
+    TResult? Function(RichableImage value)? image,
+    TResult? Function(RichableEmbed value)? embed,
   }) {
     return heading1?.call(this);
   }
@@ -409,7 +409,9 @@ class _$RichableHeading1 implements RichableHeading1 {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$RichableHeading1ToJson(this);
+    return _$$RichableHeading1ToJson(
+      this,
+    );
   }
 }
 
@@ -422,9 +424,9 @@ abstract class RichableHeading1 implements Richable {
   factory RichableHeading1.fromJson(Map<String, dynamic> json) =
       _$RichableHeading1.fromJson;
 
-  List<Span> get spans => throw _privateConstructorUsedError;
-  String get text => throw _privateConstructorUsedError;
-  String get type => throw _privateConstructorUsedError;
+  List<Span> get spans;
+  String get text;
+  String get type;
   @JsonKey(ignore: true)
   _$$RichableHeading1CopyWith<_$RichableHeading1> get copyWith =>
       throw _privateConstructorUsedError;
@@ -435,36 +437,35 @@ abstract class _$$RichableHeading2CopyWith<$Res> {
   factory _$$RichableHeading2CopyWith(
           _$RichableHeading2 value, $Res Function(_$RichableHeading2) then) =
       __$$RichableHeading2CopyWithImpl<$Res>;
+  @useResult
   $Res call({List<Span> spans, String text, String type});
 }
 
 /// @nodoc
 class __$$RichableHeading2CopyWithImpl<$Res>
-    extends _$RichableCopyWithImpl<$Res>
+    extends _$RichableCopyWithImpl<$Res, _$RichableHeading2>
     implements _$$RichableHeading2CopyWith<$Res> {
   __$$RichableHeading2CopyWithImpl(
       _$RichableHeading2 _value, $Res Function(_$RichableHeading2) _then)
-      : super(_value, (v) => _then(v as _$RichableHeading2));
+      : super(_value, _then);
 
-  @override
-  _$RichableHeading2 get _value => super._value as _$RichableHeading2;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? spans = freezed,
-    Object? text = freezed,
-    Object? type = freezed,
+    Object? spans = null,
+    Object? text = null,
+    Object? type = null,
   }) {
     return _then(_$RichableHeading2(
-      spans: spans == freezed
+      spans: null == spans
           ? _value._spans
           : spans // ignore: cast_nullable_to_non_nullable
               as List<Span>,
-      text: text == freezed
+      text: null == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
               as String,
-      type: type == freezed
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as String,
@@ -485,6 +486,7 @@ class _$RichableHeading2 implements RichableHeading2 {
   final List<Span> _spans;
   @override
   List<Span> get spans {
+    if (_spans is EqualUnmodifiableListView) return _spans;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_spans);
   }
@@ -505,20 +507,18 @@ class _$RichableHeading2 implements RichableHeading2 {
         (other.runtimeType == runtimeType &&
             other is _$RichableHeading2 &&
             const DeepCollectionEquality().equals(other._spans, _spans) &&
-            const DeepCollectionEquality().equals(other.text, text) &&
-            const DeepCollectionEquality().equals(other.type, type));
+            (identical(other.text, text) || other.text == text) &&
+            (identical(other.type, type) || other.type == type));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(_spans),
-      const DeepCollectionEquality().hash(text),
-      const DeepCollectionEquality().hash(type));
+      runtimeType, const DeepCollectionEquality().hash(_spans), text, type);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$RichableHeading2CopyWith<_$RichableHeading2> get copyWith =>
       __$$RichableHeading2CopyWithImpl<_$RichableHeading2>(this, _$identity);
 
@@ -544,7 +544,7 @@ class _$RichableHeading2 implements RichableHeading2 {
     required TResult Function(List<Span> spans, String text, String type)
         orderedListItem,
     required TResult Function(
-            String? alt, String? copyright, Dimension dimensions, String url)
+            Dimension dimensions, String url, String? alt, String? copyright)
         image,
     required TResult Function(
             @JsonKey(name: 'oembed') EmbedData info, String type)
@@ -556,20 +556,20 @@ class _$RichableHeading2 implements RichableHeading2 {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(List<Span> spans, String text, String type)? heading1,
-    TResult Function(List<Span> spans, String text, String type)? heading2,
-    TResult Function(List<Span> spans, String text, String type)? heading3,
-    TResult Function(List<Span> spans, String text, String type)? heading4,
-    TResult Function(List<Span> spans, String text, String type)? heading5,
-    TResult Function(List<Span> spans, String text, String type)? heading6,
-    TResult Function(List<Span> spans, String text, String type)? paragraph,
-    TResult Function(List<Span> spans, String text, String type)? listItem,
-    TResult Function(List<Span> spans, String text, String type)?
+    TResult? Function(List<Span> spans, String text, String type)? heading1,
+    TResult? Function(List<Span> spans, String text, String type)? heading2,
+    TResult? Function(List<Span> spans, String text, String type)? heading3,
+    TResult? Function(List<Span> spans, String text, String type)? heading4,
+    TResult? Function(List<Span> spans, String text, String type)? heading5,
+    TResult? Function(List<Span> spans, String text, String type)? heading6,
+    TResult? Function(List<Span> spans, String text, String type)? paragraph,
+    TResult? Function(List<Span> spans, String text, String type)? listItem,
+    TResult? Function(List<Span> spans, String text, String type)?
         orderedListItem,
-    TResult Function(
-            String? alt, String? copyright, Dimension dimensions, String url)?
+    TResult? Function(
+            Dimension dimensions, String url, String? alt, String? copyright)?
         image,
-    TResult Function(@JsonKey(name: 'oembed') EmbedData info, String type)?
+    TResult? Function(@JsonKey(name: 'oembed') EmbedData info, String type)?
         embed,
   }) {
     return heading2?.call(spans, text, type);
@@ -589,7 +589,7 @@ class _$RichableHeading2 implements RichableHeading2 {
     TResult Function(List<Span> spans, String text, String type)?
         orderedListItem,
     TResult Function(
-            String? alt, String? copyright, Dimension dimensions, String url)?
+            Dimension dimensions, String url, String? alt, String? copyright)?
         image,
     TResult Function(@JsonKey(name: 'oembed') EmbedData info, String type)?
         embed,
@@ -622,17 +622,17 @@ class _$RichableHeading2 implements RichableHeading2 {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(RichableHeading1 value)? heading1,
-    TResult Function(RichableHeading2 value)? heading2,
-    TResult Function(RichableHeading3 value)? heading3,
-    TResult Function(RichableHeading4 value)? heading4,
-    TResult Function(RichableHeading5 value)? heading5,
-    TResult Function(RichableHeading6 value)? heading6,
-    TResult Function(RichableParagraph value)? paragraph,
-    TResult Function(RichableListItem value)? listItem,
-    TResult Function(RichableOrderedListItem value)? orderedListItem,
-    TResult Function(RichableImage value)? image,
-    TResult Function(RichableEmbed value)? embed,
+    TResult? Function(RichableHeading1 value)? heading1,
+    TResult? Function(RichableHeading2 value)? heading2,
+    TResult? Function(RichableHeading3 value)? heading3,
+    TResult? Function(RichableHeading4 value)? heading4,
+    TResult? Function(RichableHeading5 value)? heading5,
+    TResult? Function(RichableHeading6 value)? heading6,
+    TResult? Function(RichableParagraph value)? paragraph,
+    TResult? Function(RichableListItem value)? listItem,
+    TResult? Function(RichableOrderedListItem value)? orderedListItem,
+    TResult? Function(RichableImage value)? image,
+    TResult? Function(RichableEmbed value)? embed,
   }) {
     return heading2?.call(this);
   }
@@ -661,7 +661,9 @@ class _$RichableHeading2 implements RichableHeading2 {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$RichableHeading2ToJson(this);
+    return _$$RichableHeading2ToJson(
+      this,
+    );
   }
 }
 
@@ -674,9 +676,9 @@ abstract class RichableHeading2 implements Richable {
   factory RichableHeading2.fromJson(Map<String, dynamic> json) =
       _$RichableHeading2.fromJson;
 
-  List<Span> get spans => throw _privateConstructorUsedError;
-  String get text => throw _privateConstructorUsedError;
-  String get type => throw _privateConstructorUsedError;
+  List<Span> get spans;
+  String get text;
+  String get type;
   @JsonKey(ignore: true)
   _$$RichableHeading2CopyWith<_$RichableHeading2> get copyWith =>
       throw _privateConstructorUsedError;
@@ -687,36 +689,35 @@ abstract class _$$RichableHeading3CopyWith<$Res> {
   factory _$$RichableHeading3CopyWith(
           _$RichableHeading3 value, $Res Function(_$RichableHeading3) then) =
       __$$RichableHeading3CopyWithImpl<$Res>;
+  @useResult
   $Res call({List<Span> spans, String text, String type});
 }
 
 /// @nodoc
 class __$$RichableHeading3CopyWithImpl<$Res>
-    extends _$RichableCopyWithImpl<$Res>
+    extends _$RichableCopyWithImpl<$Res, _$RichableHeading3>
     implements _$$RichableHeading3CopyWith<$Res> {
   __$$RichableHeading3CopyWithImpl(
       _$RichableHeading3 _value, $Res Function(_$RichableHeading3) _then)
-      : super(_value, (v) => _then(v as _$RichableHeading3));
+      : super(_value, _then);
 
-  @override
-  _$RichableHeading3 get _value => super._value as _$RichableHeading3;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? spans = freezed,
-    Object? text = freezed,
-    Object? type = freezed,
+    Object? spans = null,
+    Object? text = null,
+    Object? type = null,
   }) {
     return _then(_$RichableHeading3(
-      spans: spans == freezed
+      spans: null == spans
           ? _value._spans
           : spans // ignore: cast_nullable_to_non_nullable
               as List<Span>,
-      text: text == freezed
+      text: null == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
               as String,
-      type: type == freezed
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as String,
@@ -737,6 +738,7 @@ class _$RichableHeading3 implements RichableHeading3 {
   final List<Span> _spans;
   @override
   List<Span> get spans {
+    if (_spans is EqualUnmodifiableListView) return _spans;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_spans);
   }
@@ -757,20 +759,18 @@ class _$RichableHeading3 implements RichableHeading3 {
         (other.runtimeType == runtimeType &&
             other is _$RichableHeading3 &&
             const DeepCollectionEquality().equals(other._spans, _spans) &&
-            const DeepCollectionEquality().equals(other.text, text) &&
-            const DeepCollectionEquality().equals(other.type, type));
+            (identical(other.text, text) || other.text == text) &&
+            (identical(other.type, type) || other.type == type));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(_spans),
-      const DeepCollectionEquality().hash(text),
-      const DeepCollectionEquality().hash(type));
+      runtimeType, const DeepCollectionEquality().hash(_spans), text, type);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$RichableHeading3CopyWith<_$RichableHeading3> get copyWith =>
       __$$RichableHeading3CopyWithImpl<_$RichableHeading3>(this, _$identity);
 
@@ -796,7 +796,7 @@ class _$RichableHeading3 implements RichableHeading3 {
     required TResult Function(List<Span> spans, String text, String type)
         orderedListItem,
     required TResult Function(
-            String? alt, String? copyright, Dimension dimensions, String url)
+            Dimension dimensions, String url, String? alt, String? copyright)
         image,
     required TResult Function(
             @JsonKey(name: 'oembed') EmbedData info, String type)
@@ -808,20 +808,20 @@ class _$RichableHeading3 implements RichableHeading3 {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(List<Span> spans, String text, String type)? heading1,
-    TResult Function(List<Span> spans, String text, String type)? heading2,
-    TResult Function(List<Span> spans, String text, String type)? heading3,
-    TResult Function(List<Span> spans, String text, String type)? heading4,
-    TResult Function(List<Span> spans, String text, String type)? heading5,
-    TResult Function(List<Span> spans, String text, String type)? heading6,
-    TResult Function(List<Span> spans, String text, String type)? paragraph,
-    TResult Function(List<Span> spans, String text, String type)? listItem,
-    TResult Function(List<Span> spans, String text, String type)?
+    TResult? Function(List<Span> spans, String text, String type)? heading1,
+    TResult? Function(List<Span> spans, String text, String type)? heading2,
+    TResult? Function(List<Span> spans, String text, String type)? heading3,
+    TResult? Function(List<Span> spans, String text, String type)? heading4,
+    TResult? Function(List<Span> spans, String text, String type)? heading5,
+    TResult? Function(List<Span> spans, String text, String type)? heading6,
+    TResult? Function(List<Span> spans, String text, String type)? paragraph,
+    TResult? Function(List<Span> spans, String text, String type)? listItem,
+    TResult? Function(List<Span> spans, String text, String type)?
         orderedListItem,
-    TResult Function(
-            String? alt, String? copyright, Dimension dimensions, String url)?
+    TResult? Function(
+            Dimension dimensions, String url, String? alt, String? copyright)?
         image,
-    TResult Function(@JsonKey(name: 'oembed') EmbedData info, String type)?
+    TResult? Function(@JsonKey(name: 'oembed') EmbedData info, String type)?
         embed,
   }) {
     return heading3?.call(spans, text, type);
@@ -841,7 +841,7 @@ class _$RichableHeading3 implements RichableHeading3 {
     TResult Function(List<Span> spans, String text, String type)?
         orderedListItem,
     TResult Function(
-            String? alt, String? copyright, Dimension dimensions, String url)?
+            Dimension dimensions, String url, String? alt, String? copyright)?
         image,
     TResult Function(@JsonKey(name: 'oembed') EmbedData info, String type)?
         embed,
@@ -874,17 +874,17 @@ class _$RichableHeading3 implements RichableHeading3 {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(RichableHeading1 value)? heading1,
-    TResult Function(RichableHeading2 value)? heading2,
-    TResult Function(RichableHeading3 value)? heading3,
-    TResult Function(RichableHeading4 value)? heading4,
-    TResult Function(RichableHeading5 value)? heading5,
-    TResult Function(RichableHeading6 value)? heading6,
-    TResult Function(RichableParagraph value)? paragraph,
-    TResult Function(RichableListItem value)? listItem,
-    TResult Function(RichableOrderedListItem value)? orderedListItem,
-    TResult Function(RichableImage value)? image,
-    TResult Function(RichableEmbed value)? embed,
+    TResult? Function(RichableHeading1 value)? heading1,
+    TResult? Function(RichableHeading2 value)? heading2,
+    TResult? Function(RichableHeading3 value)? heading3,
+    TResult? Function(RichableHeading4 value)? heading4,
+    TResult? Function(RichableHeading5 value)? heading5,
+    TResult? Function(RichableHeading6 value)? heading6,
+    TResult? Function(RichableParagraph value)? paragraph,
+    TResult? Function(RichableListItem value)? listItem,
+    TResult? Function(RichableOrderedListItem value)? orderedListItem,
+    TResult? Function(RichableImage value)? image,
+    TResult? Function(RichableEmbed value)? embed,
   }) {
     return heading3?.call(this);
   }
@@ -913,7 +913,9 @@ class _$RichableHeading3 implements RichableHeading3 {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$RichableHeading3ToJson(this);
+    return _$$RichableHeading3ToJson(
+      this,
+    );
   }
 }
 
@@ -926,9 +928,9 @@ abstract class RichableHeading3 implements Richable {
   factory RichableHeading3.fromJson(Map<String, dynamic> json) =
       _$RichableHeading3.fromJson;
 
-  List<Span> get spans => throw _privateConstructorUsedError;
-  String get text => throw _privateConstructorUsedError;
-  String get type => throw _privateConstructorUsedError;
+  List<Span> get spans;
+  String get text;
+  String get type;
   @JsonKey(ignore: true)
   _$$RichableHeading3CopyWith<_$RichableHeading3> get copyWith =>
       throw _privateConstructorUsedError;
@@ -939,36 +941,35 @@ abstract class _$$RichableHeading4CopyWith<$Res> {
   factory _$$RichableHeading4CopyWith(
           _$RichableHeading4 value, $Res Function(_$RichableHeading4) then) =
       __$$RichableHeading4CopyWithImpl<$Res>;
+  @useResult
   $Res call({List<Span> spans, String text, String type});
 }
 
 /// @nodoc
 class __$$RichableHeading4CopyWithImpl<$Res>
-    extends _$RichableCopyWithImpl<$Res>
+    extends _$RichableCopyWithImpl<$Res, _$RichableHeading4>
     implements _$$RichableHeading4CopyWith<$Res> {
   __$$RichableHeading4CopyWithImpl(
       _$RichableHeading4 _value, $Res Function(_$RichableHeading4) _then)
-      : super(_value, (v) => _then(v as _$RichableHeading4));
+      : super(_value, _then);
 
-  @override
-  _$RichableHeading4 get _value => super._value as _$RichableHeading4;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? spans = freezed,
-    Object? text = freezed,
-    Object? type = freezed,
+    Object? spans = null,
+    Object? text = null,
+    Object? type = null,
   }) {
     return _then(_$RichableHeading4(
-      spans: spans == freezed
+      spans: null == spans
           ? _value._spans
           : spans // ignore: cast_nullable_to_non_nullable
               as List<Span>,
-      text: text == freezed
+      text: null == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
               as String,
-      type: type == freezed
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as String,
@@ -989,6 +990,7 @@ class _$RichableHeading4 implements RichableHeading4 {
   final List<Span> _spans;
   @override
   List<Span> get spans {
+    if (_spans is EqualUnmodifiableListView) return _spans;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_spans);
   }
@@ -1009,20 +1011,18 @@ class _$RichableHeading4 implements RichableHeading4 {
         (other.runtimeType == runtimeType &&
             other is _$RichableHeading4 &&
             const DeepCollectionEquality().equals(other._spans, _spans) &&
-            const DeepCollectionEquality().equals(other.text, text) &&
-            const DeepCollectionEquality().equals(other.type, type));
+            (identical(other.text, text) || other.text == text) &&
+            (identical(other.type, type) || other.type == type));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(_spans),
-      const DeepCollectionEquality().hash(text),
-      const DeepCollectionEquality().hash(type));
+      runtimeType, const DeepCollectionEquality().hash(_spans), text, type);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$RichableHeading4CopyWith<_$RichableHeading4> get copyWith =>
       __$$RichableHeading4CopyWithImpl<_$RichableHeading4>(this, _$identity);
 
@@ -1048,7 +1048,7 @@ class _$RichableHeading4 implements RichableHeading4 {
     required TResult Function(List<Span> spans, String text, String type)
         orderedListItem,
     required TResult Function(
-            String? alt, String? copyright, Dimension dimensions, String url)
+            Dimension dimensions, String url, String? alt, String? copyright)
         image,
     required TResult Function(
             @JsonKey(name: 'oembed') EmbedData info, String type)
@@ -1060,20 +1060,20 @@ class _$RichableHeading4 implements RichableHeading4 {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(List<Span> spans, String text, String type)? heading1,
-    TResult Function(List<Span> spans, String text, String type)? heading2,
-    TResult Function(List<Span> spans, String text, String type)? heading3,
-    TResult Function(List<Span> spans, String text, String type)? heading4,
-    TResult Function(List<Span> spans, String text, String type)? heading5,
-    TResult Function(List<Span> spans, String text, String type)? heading6,
-    TResult Function(List<Span> spans, String text, String type)? paragraph,
-    TResult Function(List<Span> spans, String text, String type)? listItem,
-    TResult Function(List<Span> spans, String text, String type)?
+    TResult? Function(List<Span> spans, String text, String type)? heading1,
+    TResult? Function(List<Span> spans, String text, String type)? heading2,
+    TResult? Function(List<Span> spans, String text, String type)? heading3,
+    TResult? Function(List<Span> spans, String text, String type)? heading4,
+    TResult? Function(List<Span> spans, String text, String type)? heading5,
+    TResult? Function(List<Span> spans, String text, String type)? heading6,
+    TResult? Function(List<Span> spans, String text, String type)? paragraph,
+    TResult? Function(List<Span> spans, String text, String type)? listItem,
+    TResult? Function(List<Span> spans, String text, String type)?
         orderedListItem,
-    TResult Function(
-            String? alt, String? copyright, Dimension dimensions, String url)?
+    TResult? Function(
+            Dimension dimensions, String url, String? alt, String? copyright)?
         image,
-    TResult Function(@JsonKey(name: 'oembed') EmbedData info, String type)?
+    TResult? Function(@JsonKey(name: 'oembed') EmbedData info, String type)?
         embed,
   }) {
     return heading4?.call(spans, text, type);
@@ -1093,7 +1093,7 @@ class _$RichableHeading4 implements RichableHeading4 {
     TResult Function(List<Span> spans, String text, String type)?
         orderedListItem,
     TResult Function(
-            String? alt, String? copyright, Dimension dimensions, String url)?
+            Dimension dimensions, String url, String? alt, String? copyright)?
         image,
     TResult Function(@JsonKey(name: 'oembed') EmbedData info, String type)?
         embed,
@@ -1126,17 +1126,17 @@ class _$RichableHeading4 implements RichableHeading4 {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(RichableHeading1 value)? heading1,
-    TResult Function(RichableHeading2 value)? heading2,
-    TResult Function(RichableHeading3 value)? heading3,
-    TResult Function(RichableHeading4 value)? heading4,
-    TResult Function(RichableHeading5 value)? heading5,
-    TResult Function(RichableHeading6 value)? heading6,
-    TResult Function(RichableParagraph value)? paragraph,
-    TResult Function(RichableListItem value)? listItem,
-    TResult Function(RichableOrderedListItem value)? orderedListItem,
-    TResult Function(RichableImage value)? image,
-    TResult Function(RichableEmbed value)? embed,
+    TResult? Function(RichableHeading1 value)? heading1,
+    TResult? Function(RichableHeading2 value)? heading2,
+    TResult? Function(RichableHeading3 value)? heading3,
+    TResult? Function(RichableHeading4 value)? heading4,
+    TResult? Function(RichableHeading5 value)? heading5,
+    TResult? Function(RichableHeading6 value)? heading6,
+    TResult? Function(RichableParagraph value)? paragraph,
+    TResult? Function(RichableListItem value)? listItem,
+    TResult? Function(RichableOrderedListItem value)? orderedListItem,
+    TResult? Function(RichableImage value)? image,
+    TResult? Function(RichableEmbed value)? embed,
   }) {
     return heading4?.call(this);
   }
@@ -1165,7 +1165,9 @@ class _$RichableHeading4 implements RichableHeading4 {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$RichableHeading4ToJson(this);
+    return _$$RichableHeading4ToJson(
+      this,
+    );
   }
 }
 
@@ -1178,9 +1180,9 @@ abstract class RichableHeading4 implements Richable {
   factory RichableHeading4.fromJson(Map<String, dynamic> json) =
       _$RichableHeading4.fromJson;
 
-  List<Span> get spans => throw _privateConstructorUsedError;
-  String get text => throw _privateConstructorUsedError;
-  String get type => throw _privateConstructorUsedError;
+  List<Span> get spans;
+  String get text;
+  String get type;
   @JsonKey(ignore: true)
   _$$RichableHeading4CopyWith<_$RichableHeading4> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1191,36 +1193,35 @@ abstract class _$$RichableHeading5CopyWith<$Res> {
   factory _$$RichableHeading5CopyWith(
           _$RichableHeading5 value, $Res Function(_$RichableHeading5) then) =
       __$$RichableHeading5CopyWithImpl<$Res>;
+  @useResult
   $Res call({List<Span> spans, String text, String type});
 }
 
 /// @nodoc
 class __$$RichableHeading5CopyWithImpl<$Res>
-    extends _$RichableCopyWithImpl<$Res>
+    extends _$RichableCopyWithImpl<$Res, _$RichableHeading5>
     implements _$$RichableHeading5CopyWith<$Res> {
   __$$RichableHeading5CopyWithImpl(
       _$RichableHeading5 _value, $Res Function(_$RichableHeading5) _then)
-      : super(_value, (v) => _then(v as _$RichableHeading5));
+      : super(_value, _then);
 
-  @override
-  _$RichableHeading5 get _value => super._value as _$RichableHeading5;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? spans = freezed,
-    Object? text = freezed,
-    Object? type = freezed,
+    Object? spans = null,
+    Object? text = null,
+    Object? type = null,
   }) {
     return _then(_$RichableHeading5(
-      spans: spans == freezed
+      spans: null == spans
           ? _value._spans
           : spans // ignore: cast_nullable_to_non_nullable
               as List<Span>,
-      text: text == freezed
+      text: null == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
               as String,
-      type: type == freezed
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as String,
@@ -1241,6 +1242,7 @@ class _$RichableHeading5 implements RichableHeading5 {
   final List<Span> _spans;
   @override
   List<Span> get spans {
+    if (_spans is EqualUnmodifiableListView) return _spans;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_spans);
   }
@@ -1261,20 +1263,18 @@ class _$RichableHeading5 implements RichableHeading5 {
         (other.runtimeType == runtimeType &&
             other is _$RichableHeading5 &&
             const DeepCollectionEquality().equals(other._spans, _spans) &&
-            const DeepCollectionEquality().equals(other.text, text) &&
-            const DeepCollectionEquality().equals(other.type, type));
+            (identical(other.text, text) || other.text == text) &&
+            (identical(other.type, type) || other.type == type));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(_spans),
-      const DeepCollectionEquality().hash(text),
-      const DeepCollectionEquality().hash(type));
+      runtimeType, const DeepCollectionEquality().hash(_spans), text, type);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$RichableHeading5CopyWith<_$RichableHeading5> get copyWith =>
       __$$RichableHeading5CopyWithImpl<_$RichableHeading5>(this, _$identity);
 
@@ -1300,7 +1300,7 @@ class _$RichableHeading5 implements RichableHeading5 {
     required TResult Function(List<Span> spans, String text, String type)
         orderedListItem,
     required TResult Function(
-            String? alt, String? copyright, Dimension dimensions, String url)
+            Dimension dimensions, String url, String? alt, String? copyright)
         image,
     required TResult Function(
             @JsonKey(name: 'oembed') EmbedData info, String type)
@@ -1312,20 +1312,20 @@ class _$RichableHeading5 implements RichableHeading5 {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(List<Span> spans, String text, String type)? heading1,
-    TResult Function(List<Span> spans, String text, String type)? heading2,
-    TResult Function(List<Span> spans, String text, String type)? heading3,
-    TResult Function(List<Span> spans, String text, String type)? heading4,
-    TResult Function(List<Span> spans, String text, String type)? heading5,
-    TResult Function(List<Span> spans, String text, String type)? heading6,
-    TResult Function(List<Span> spans, String text, String type)? paragraph,
-    TResult Function(List<Span> spans, String text, String type)? listItem,
-    TResult Function(List<Span> spans, String text, String type)?
+    TResult? Function(List<Span> spans, String text, String type)? heading1,
+    TResult? Function(List<Span> spans, String text, String type)? heading2,
+    TResult? Function(List<Span> spans, String text, String type)? heading3,
+    TResult? Function(List<Span> spans, String text, String type)? heading4,
+    TResult? Function(List<Span> spans, String text, String type)? heading5,
+    TResult? Function(List<Span> spans, String text, String type)? heading6,
+    TResult? Function(List<Span> spans, String text, String type)? paragraph,
+    TResult? Function(List<Span> spans, String text, String type)? listItem,
+    TResult? Function(List<Span> spans, String text, String type)?
         orderedListItem,
-    TResult Function(
-            String? alt, String? copyright, Dimension dimensions, String url)?
+    TResult? Function(
+            Dimension dimensions, String url, String? alt, String? copyright)?
         image,
-    TResult Function(@JsonKey(name: 'oembed') EmbedData info, String type)?
+    TResult? Function(@JsonKey(name: 'oembed') EmbedData info, String type)?
         embed,
   }) {
     return heading5?.call(spans, text, type);
@@ -1345,7 +1345,7 @@ class _$RichableHeading5 implements RichableHeading5 {
     TResult Function(List<Span> spans, String text, String type)?
         orderedListItem,
     TResult Function(
-            String? alt, String? copyright, Dimension dimensions, String url)?
+            Dimension dimensions, String url, String? alt, String? copyright)?
         image,
     TResult Function(@JsonKey(name: 'oembed') EmbedData info, String type)?
         embed,
@@ -1378,17 +1378,17 @@ class _$RichableHeading5 implements RichableHeading5 {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(RichableHeading1 value)? heading1,
-    TResult Function(RichableHeading2 value)? heading2,
-    TResult Function(RichableHeading3 value)? heading3,
-    TResult Function(RichableHeading4 value)? heading4,
-    TResult Function(RichableHeading5 value)? heading5,
-    TResult Function(RichableHeading6 value)? heading6,
-    TResult Function(RichableParagraph value)? paragraph,
-    TResult Function(RichableListItem value)? listItem,
-    TResult Function(RichableOrderedListItem value)? orderedListItem,
-    TResult Function(RichableImage value)? image,
-    TResult Function(RichableEmbed value)? embed,
+    TResult? Function(RichableHeading1 value)? heading1,
+    TResult? Function(RichableHeading2 value)? heading2,
+    TResult? Function(RichableHeading3 value)? heading3,
+    TResult? Function(RichableHeading4 value)? heading4,
+    TResult? Function(RichableHeading5 value)? heading5,
+    TResult? Function(RichableHeading6 value)? heading6,
+    TResult? Function(RichableParagraph value)? paragraph,
+    TResult? Function(RichableListItem value)? listItem,
+    TResult? Function(RichableOrderedListItem value)? orderedListItem,
+    TResult? Function(RichableImage value)? image,
+    TResult? Function(RichableEmbed value)? embed,
   }) {
     return heading5?.call(this);
   }
@@ -1417,7 +1417,9 @@ class _$RichableHeading5 implements RichableHeading5 {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$RichableHeading5ToJson(this);
+    return _$$RichableHeading5ToJson(
+      this,
+    );
   }
 }
 
@@ -1430,9 +1432,9 @@ abstract class RichableHeading5 implements Richable {
   factory RichableHeading5.fromJson(Map<String, dynamic> json) =
       _$RichableHeading5.fromJson;
 
-  List<Span> get spans => throw _privateConstructorUsedError;
-  String get text => throw _privateConstructorUsedError;
-  String get type => throw _privateConstructorUsedError;
+  List<Span> get spans;
+  String get text;
+  String get type;
   @JsonKey(ignore: true)
   _$$RichableHeading5CopyWith<_$RichableHeading5> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1443,36 +1445,35 @@ abstract class _$$RichableHeading6CopyWith<$Res> {
   factory _$$RichableHeading6CopyWith(
           _$RichableHeading6 value, $Res Function(_$RichableHeading6) then) =
       __$$RichableHeading6CopyWithImpl<$Res>;
+  @useResult
   $Res call({List<Span> spans, String text, String type});
 }
 
 /// @nodoc
 class __$$RichableHeading6CopyWithImpl<$Res>
-    extends _$RichableCopyWithImpl<$Res>
+    extends _$RichableCopyWithImpl<$Res, _$RichableHeading6>
     implements _$$RichableHeading6CopyWith<$Res> {
   __$$RichableHeading6CopyWithImpl(
       _$RichableHeading6 _value, $Res Function(_$RichableHeading6) _then)
-      : super(_value, (v) => _then(v as _$RichableHeading6));
+      : super(_value, _then);
 
-  @override
-  _$RichableHeading6 get _value => super._value as _$RichableHeading6;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? spans = freezed,
-    Object? text = freezed,
-    Object? type = freezed,
+    Object? spans = null,
+    Object? text = null,
+    Object? type = null,
   }) {
     return _then(_$RichableHeading6(
-      spans: spans == freezed
+      spans: null == spans
           ? _value._spans
           : spans // ignore: cast_nullable_to_non_nullable
               as List<Span>,
-      text: text == freezed
+      text: null == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
               as String,
-      type: type == freezed
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as String,
@@ -1493,6 +1494,7 @@ class _$RichableHeading6 implements RichableHeading6 {
   final List<Span> _spans;
   @override
   List<Span> get spans {
+    if (_spans is EqualUnmodifiableListView) return _spans;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_spans);
   }
@@ -1513,20 +1515,18 @@ class _$RichableHeading6 implements RichableHeading6 {
         (other.runtimeType == runtimeType &&
             other is _$RichableHeading6 &&
             const DeepCollectionEquality().equals(other._spans, _spans) &&
-            const DeepCollectionEquality().equals(other.text, text) &&
-            const DeepCollectionEquality().equals(other.type, type));
+            (identical(other.text, text) || other.text == text) &&
+            (identical(other.type, type) || other.type == type));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(_spans),
-      const DeepCollectionEquality().hash(text),
-      const DeepCollectionEquality().hash(type));
+      runtimeType, const DeepCollectionEquality().hash(_spans), text, type);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$RichableHeading6CopyWith<_$RichableHeading6> get copyWith =>
       __$$RichableHeading6CopyWithImpl<_$RichableHeading6>(this, _$identity);
 
@@ -1552,7 +1552,7 @@ class _$RichableHeading6 implements RichableHeading6 {
     required TResult Function(List<Span> spans, String text, String type)
         orderedListItem,
     required TResult Function(
-            String? alt, String? copyright, Dimension dimensions, String url)
+            Dimension dimensions, String url, String? alt, String? copyright)
         image,
     required TResult Function(
             @JsonKey(name: 'oembed') EmbedData info, String type)
@@ -1564,20 +1564,20 @@ class _$RichableHeading6 implements RichableHeading6 {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(List<Span> spans, String text, String type)? heading1,
-    TResult Function(List<Span> spans, String text, String type)? heading2,
-    TResult Function(List<Span> spans, String text, String type)? heading3,
-    TResult Function(List<Span> spans, String text, String type)? heading4,
-    TResult Function(List<Span> spans, String text, String type)? heading5,
-    TResult Function(List<Span> spans, String text, String type)? heading6,
-    TResult Function(List<Span> spans, String text, String type)? paragraph,
-    TResult Function(List<Span> spans, String text, String type)? listItem,
-    TResult Function(List<Span> spans, String text, String type)?
+    TResult? Function(List<Span> spans, String text, String type)? heading1,
+    TResult? Function(List<Span> spans, String text, String type)? heading2,
+    TResult? Function(List<Span> spans, String text, String type)? heading3,
+    TResult? Function(List<Span> spans, String text, String type)? heading4,
+    TResult? Function(List<Span> spans, String text, String type)? heading5,
+    TResult? Function(List<Span> spans, String text, String type)? heading6,
+    TResult? Function(List<Span> spans, String text, String type)? paragraph,
+    TResult? Function(List<Span> spans, String text, String type)? listItem,
+    TResult? Function(List<Span> spans, String text, String type)?
         orderedListItem,
-    TResult Function(
-            String? alt, String? copyright, Dimension dimensions, String url)?
+    TResult? Function(
+            Dimension dimensions, String url, String? alt, String? copyright)?
         image,
-    TResult Function(@JsonKey(name: 'oembed') EmbedData info, String type)?
+    TResult? Function(@JsonKey(name: 'oembed') EmbedData info, String type)?
         embed,
   }) {
     return heading6?.call(spans, text, type);
@@ -1597,7 +1597,7 @@ class _$RichableHeading6 implements RichableHeading6 {
     TResult Function(List<Span> spans, String text, String type)?
         orderedListItem,
     TResult Function(
-            String? alt, String? copyright, Dimension dimensions, String url)?
+            Dimension dimensions, String url, String? alt, String? copyright)?
         image,
     TResult Function(@JsonKey(name: 'oembed') EmbedData info, String type)?
         embed,
@@ -1630,17 +1630,17 @@ class _$RichableHeading6 implements RichableHeading6 {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(RichableHeading1 value)? heading1,
-    TResult Function(RichableHeading2 value)? heading2,
-    TResult Function(RichableHeading3 value)? heading3,
-    TResult Function(RichableHeading4 value)? heading4,
-    TResult Function(RichableHeading5 value)? heading5,
-    TResult Function(RichableHeading6 value)? heading6,
-    TResult Function(RichableParagraph value)? paragraph,
-    TResult Function(RichableListItem value)? listItem,
-    TResult Function(RichableOrderedListItem value)? orderedListItem,
-    TResult Function(RichableImage value)? image,
-    TResult Function(RichableEmbed value)? embed,
+    TResult? Function(RichableHeading1 value)? heading1,
+    TResult? Function(RichableHeading2 value)? heading2,
+    TResult? Function(RichableHeading3 value)? heading3,
+    TResult? Function(RichableHeading4 value)? heading4,
+    TResult? Function(RichableHeading5 value)? heading5,
+    TResult? Function(RichableHeading6 value)? heading6,
+    TResult? Function(RichableParagraph value)? paragraph,
+    TResult? Function(RichableListItem value)? listItem,
+    TResult? Function(RichableOrderedListItem value)? orderedListItem,
+    TResult? Function(RichableImage value)? image,
+    TResult? Function(RichableEmbed value)? embed,
   }) {
     return heading6?.call(this);
   }
@@ -1669,7 +1669,9 @@ class _$RichableHeading6 implements RichableHeading6 {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$RichableHeading6ToJson(this);
+    return _$$RichableHeading6ToJson(
+      this,
+    );
   }
 }
 
@@ -1682,9 +1684,9 @@ abstract class RichableHeading6 implements Richable {
   factory RichableHeading6.fromJson(Map<String, dynamic> json) =
       _$RichableHeading6.fromJson;
 
-  List<Span> get spans => throw _privateConstructorUsedError;
-  String get text => throw _privateConstructorUsedError;
-  String get type => throw _privateConstructorUsedError;
+  List<Span> get spans;
+  String get text;
+  String get type;
   @JsonKey(ignore: true)
   _$$RichableHeading6CopyWith<_$RichableHeading6> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1695,36 +1697,35 @@ abstract class _$$RichableParagraphCopyWith<$Res> {
   factory _$$RichableParagraphCopyWith(
           _$RichableParagraph value, $Res Function(_$RichableParagraph) then) =
       __$$RichableParagraphCopyWithImpl<$Res>;
+  @useResult
   $Res call({List<Span> spans, String text, String type});
 }
 
 /// @nodoc
 class __$$RichableParagraphCopyWithImpl<$Res>
-    extends _$RichableCopyWithImpl<$Res>
+    extends _$RichableCopyWithImpl<$Res, _$RichableParagraph>
     implements _$$RichableParagraphCopyWith<$Res> {
   __$$RichableParagraphCopyWithImpl(
       _$RichableParagraph _value, $Res Function(_$RichableParagraph) _then)
-      : super(_value, (v) => _then(v as _$RichableParagraph));
+      : super(_value, _then);
 
-  @override
-  _$RichableParagraph get _value => super._value as _$RichableParagraph;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? spans = freezed,
-    Object? text = freezed,
-    Object? type = freezed,
+    Object? spans = null,
+    Object? text = null,
+    Object? type = null,
   }) {
     return _then(_$RichableParagraph(
-      spans: spans == freezed
+      spans: null == spans
           ? _value._spans
           : spans // ignore: cast_nullable_to_non_nullable
               as List<Span>,
-      text: text == freezed
+      text: null == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
               as String,
-      type: type == freezed
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as String,
@@ -1745,6 +1746,7 @@ class _$RichableParagraph implements RichableParagraph {
   final List<Span> _spans;
   @override
   List<Span> get spans {
+    if (_spans is EqualUnmodifiableListView) return _spans;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_spans);
   }
@@ -1765,20 +1767,18 @@ class _$RichableParagraph implements RichableParagraph {
         (other.runtimeType == runtimeType &&
             other is _$RichableParagraph &&
             const DeepCollectionEquality().equals(other._spans, _spans) &&
-            const DeepCollectionEquality().equals(other.text, text) &&
-            const DeepCollectionEquality().equals(other.type, type));
+            (identical(other.text, text) || other.text == text) &&
+            (identical(other.type, type) || other.type == type));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(_spans),
-      const DeepCollectionEquality().hash(text),
-      const DeepCollectionEquality().hash(type));
+      runtimeType, const DeepCollectionEquality().hash(_spans), text, type);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$RichableParagraphCopyWith<_$RichableParagraph> get copyWith =>
       __$$RichableParagraphCopyWithImpl<_$RichableParagraph>(this, _$identity);
 
@@ -1804,7 +1804,7 @@ class _$RichableParagraph implements RichableParagraph {
     required TResult Function(List<Span> spans, String text, String type)
         orderedListItem,
     required TResult Function(
-            String? alt, String? copyright, Dimension dimensions, String url)
+            Dimension dimensions, String url, String? alt, String? copyright)
         image,
     required TResult Function(
             @JsonKey(name: 'oembed') EmbedData info, String type)
@@ -1816,20 +1816,20 @@ class _$RichableParagraph implements RichableParagraph {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(List<Span> spans, String text, String type)? heading1,
-    TResult Function(List<Span> spans, String text, String type)? heading2,
-    TResult Function(List<Span> spans, String text, String type)? heading3,
-    TResult Function(List<Span> spans, String text, String type)? heading4,
-    TResult Function(List<Span> spans, String text, String type)? heading5,
-    TResult Function(List<Span> spans, String text, String type)? heading6,
-    TResult Function(List<Span> spans, String text, String type)? paragraph,
-    TResult Function(List<Span> spans, String text, String type)? listItem,
-    TResult Function(List<Span> spans, String text, String type)?
+    TResult? Function(List<Span> spans, String text, String type)? heading1,
+    TResult? Function(List<Span> spans, String text, String type)? heading2,
+    TResult? Function(List<Span> spans, String text, String type)? heading3,
+    TResult? Function(List<Span> spans, String text, String type)? heading4,
+    TResult? Function(List<Span> spans, String text, String type)? heading5,
+    TResult? Function(List<Span> spans, String text, String type)? heading6,
+    TResult? Function(List<Span> spans, String text, String type)? paragraph,
+    TResult? Function(List<Span> spans, String text, String type)? listItem,
+    TResult? Function(List<Span> spans, String text, String type)?
         orderedListItem,
-    TResult Function(
-            String? alt, String? copyright, Dimension dimensions, String url)?
+    TResult? Function(
+            Dimension dimensions, String url, String? alt, String? copyright)?
         image,
-    TResult Function(@JsonKey(name: 'oembed') EmbedData info, String type)?
+    TResult? Function(@JsonKey(name: 'oembed') EmbedData info, String type)?
         embed,
   }) {
     return paragraph?.call(spans, text, type);
@@ -1849,7 +1849,7 @@ class _$RichableParagraph implements RichableParagraph {
     TResult Function(List<Span> spans, String text, String type)?
         orderedListItem,
     TResult Function(
-            String? alt, String? copyright, Dimension dimensions, String url)?
+            Dimension dimensions, String url, String? alt, String? copyright)?
         image,
     TResult Function(@JsonKey(name: 'oembed') EmbedData info, String type)?
         embed,
@@ -1882,17 +1882,17 @@ class _$RichableParagraph implements RichableParagraph {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(RichableHeading1 value)? heading1,
-    TResult Function(RichableHeading2 value)? heading2,
-    TResult Function(RichableHeading3 value)? heading3,
-    TResult Function(RichableHeading4 value)? heading4,
-    TResult Function(RichableHeading5 value)? heading5,
-    TResult Function(RichableHeading6 value)? heading6,
-    TResult Function(RichableParagraph value)? paragraph,
-    TResult Function(RichableListItem value)? listItem,
-    TResult Function(RichableOrderedListItem value)? orderedListItem,
-    TResult Function(RichableImage value)? image,
-    TResult Function(RichableEmbed value)? embed,
+    TResult? Function(RichableHeading1 value)? heading1,
+    TResult? Function(RichableHeading2 value)? heading2,
+    TResult? Function(RichableHeading3 value)? heading3,
+    TResult? Function(RichableHeading4 value)? heading4,
+    TResult? Function(RichableHeading5 value)? heading5,
+    TResult? Function(RichableHeading6 value)? heading6,
+    TResult? Function(RichableParagraph value)? paragraph,
+    TResult? Function(RichableListItem value)? listItem,
+    TResult? Function(RichableOrderedListItem value)? orderedListItem,
+    TResult? Function(RichableImage value)? image,
+    TResult? Function(RichableEmbed value)? embed,
   }) {
     return paragraph?.call(this);
   }
@@ -1921,7 +1921,9 @@ class _$RichableParagraph implements RichableParagraph {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$RichableParagraphToJson(this);
+    return _$$RichableParagraphToJson(
+      this,
+    );
   }
 }
 
@@ -1934,9 +1936,9 @@ abstract class RichableParagraph implements Richable {
   factory RichableParagraph.fromJson(Map<String, dynamic> json) =
       _$RichableParagraph.fromJson;
 
-  List<Span> get spans => throw _privateConstructorUsedError;
-  String get text => throw _privateConstructorUsedError;
-  String get type => throw _privateConstructorUsedError;
+  List<Span> get spans;
+  String get text;
+  String get type;
   @JsonKey(ignore: true)
   _$$RichableParagraphCopyWith<_$RichableParagraph> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1947,36 +1949,35 @@ abstract class _$$RichableListItemCopyWith<$Res> {
   factory _$$RichableListItemCopyWith(
           _$RichableListItem value, $Res Function(_$RichableListItem) then) =
       __$$RichableListItemCopyWithImpl<$Res>;
+  @useResult
   $Res call({List<Span> spans, String text, String type});
 }
 
 /// @nodoc
 class __$$RichableListItemCopyWithImpl<$Res>
-    extends _$RichableCopyWithImpl<$Res>
+    extends _$RichableCopyWithImpl<$Res, _$RichableListItem>
     implements _$$RichableListItemCopyWith<$Res> {
   __$$RichableListItemCopyWithImpl(
       _$RichableListItem _value, $Res Function(_$RichableListItem) _then)
-      : super(_value, (v) => _then(v as _$RichableListItem));
+      : super(_value, _then);
 
-  @override
-  _$RichableListItem get _value => super._value as _$RichableListItem;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? spans = freezed,
-    Object? text = freezed,
-    Object? type = freezed,
+    Object? spans = null,
+    Object? text = null,
+    Object? type = null,
   }) {
     return _then(_$RichableListItem(
-      spans: spans == freezed
+      spans: null == spans
           ? _value._spans
           : spans // ignore: cast_nullable_to_non_nullable
               as List<Span>,
-      text: text == freezed
+      text: null == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
               as String,
-      type: type == freezed
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as String,
@@ -1997,6 +1998,7 @@ class _$RichableListItem implements RichableListItem {
   final List<Span> _spans;
   @override
   List<Span> get spans {
+    if (_spans is EqualUnmodifiableListView) return _spans;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_spans);
   }
@@ -2017,20 +2019,18 @@ class _$RichableListItem implements RichableListItem {
         (other.runtimeType == runtimeType &&
             other is _$RichableListItem &&
             const DeepCollectionEquality().equals(other._spans, _spans) &&
-            const DeepCollectionEquality().equals(other.text, text) &&
-            const DeepCollectionEquality().equals(other.type, type));
+            (identical(other.text, text) || other.text == text) &&
+            (identical(other.type, type) || other.type == type));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(_spans),
-      const DeepCollectionEquality().hash(text),
-      const DeepCollectionEquality().hash(type));
+      runtimeType, const DeepCollectionEquality().hash(_spans), text, type);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$RichableListItemCopyWith<_$RichableListItem> get copyWith =>
       __$$RichableListItemCopyWithImpl<_$RichableListItem>(this, _$identity);
 
@@ -2056,7 +2056,7 @@ class _$RichableListItem implements RichableListItem {
     required TResult Function(List<Span> spans, String text, String type)
         orderedListItem,
     required TResult Function(
-            String? alt, String? copyright, Dimension dimensions, String url)
+            Dimension dimensions, String url, String? alt, String? copyright)
         image,
     required TResult Function(
             @JsonKey(name: 'oembed') EmbedData info, String type)
@@ -2068,20 +2068,20 @@ class _$RichableListItem implements RichableListItem {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(List<Span> spans, String text, String type)? heading1,
-    TResult Function(List<Span> spans, String text, String type)? heading2,
-    TResult Function(List<Span> spans, String text, String type)? heading3,
-    TResult Function(List<Span> spans, String text, String type)? heading4,
-    TResult Function(List<Span> spans, String text, String type)? heading5,
-    TResult Function(List<Span> spans, String text, String type)? heading6,
-    TResult Function(List<Span> spans, String text, String type)? paragraph,
-    TResult Function(List<Span> spans, String text, String type)? listItem,
-    TResult Function(List<Span> spans, String text, String type)?
+    TResult? Function(List<Span> spans, String text, String type)? heading1,
+    TResult? Function(List<Span> spans, String text, String type)? heading2,
+    TResult? Function(List<Span> spans, String text, String type)? heading3,
+    TResult? Function(List<Span> spans, String text, String type)? heading4,
+    TResult? Function(List<Span> spans, String text, String type)? heading5,
+    TResult? Function(List<Span> spans, String text, String type)? heading6,
+    TResult? Function(List<Span> spans, String text, String type)? paragraph,
+    TResult? Function(List<Span> spans, String text, String type)? listItem,
+    TResult? Function(List<Span> spans, String text, String type)?
         orderedListItem,
-    TResult Function(
-            String? alt, String? copyright, Dimension dimensions, String url)?
+    TResult? Function(
+            Dimension dimensions, String url, String? alt, String? copyright)?
         image,
-    TResult Function(@JsonKey(name: 'oembed') EmbedData info, String type)?
+    TResult? Function(@JsonKey(name: 'oembed') EmbedData info, String type)?
         embed,
   }) {
     return listItem?.call(spans, text, type);
@@ -2101,7 +2101,7 @@ class _$RichableListItem implements RichableListItem {
     TResult Function(List<Span> spans, String text, String type)?
         orderedListItem,
     TResult Function(
-            String? alt, String? copyright, Dimension dimensions, String url)?
+            Dimension dimensions, String url, String? alt, String? copyright)?
         image,
     TResult Function(@JsonKey(name: 'oembed') EmbedData info, String type)?
         embed,
@@ -2134,17 +2134,17 @@ class _$RichableListItem implements RichableListItem {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(RichableHeading1 value)? heading1,
-    TResult Function(RichableHeading2 value)? heading2,
-    TResult Function(RichableHeading3 value)? heading3,
-    TResult Function(RichableHeading4 value)? heading4,
-    TResult Function(RichableHeading5 value)? heading5,
-    TResult Function(RichableHeading6 value)? heading6,
-    TResult Function(RichableParagraph value)? paragraph,
-    TResult Function(RichableListItem value)? listItem,
-    TResult Function(RichableOrderedListItem value)? orderedListItem,
-    TResult Function(RichableImage value)? image,
-    TResult Function(RichableEmbed value)? embed,
+    TResult? Function(RichableHeading1 value)? heading1,
+    TResult? Function(RichableHeading2 value)? heading2,
+    TResult? Function(RichableHeading3 value)? heading3,
+    TResult? Function(RichableHeading4 value)? heading4,
+    TResult? Function(RichableHeading5 value)? heading5,
+    TResult? Function(RichableHeading6 value)? heading6,
+    TResult? Function(RichableParagraph value)? paragraph,
+    TResult? Function(RichableListItem value)? listItem,
+    TResult? Function(RichableOrderedListItem value)? orderedListItem,
+    TResult? Function(RichableImage value)? image,
+    TResult? Function(RichableEmbed value)? embed,
   }) {
     return listItem?.call(this);
   }
@@ -2173,7 +2173,9 @@ class _$RichableListItem implements RichableListItem {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$RichableListItemToJson(this);
+    return _$$RichableListItemToJson(
+      this,
+    );
   }
 }
 
@@ -2186,9 +2188,9 @@ abstract class RichableListItem implements Richable {
   factory RichableListItem.fromJson(Map<String, dynamic> json) =
       _$RichableListItem.fromJson;
 
-  List<Span> get spans => throw _privateConstructorUsedError;
-  String get text => throw _privateConstructorUsedError;
-  String get type => throw _privateConstructorUsedError;
+  List<Span> get spans;
+  String get text;
+  String get type;
   @JsonKey(ignore: true)
   _$$RichableListItemCopyWith<_$RichableListItem> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2199,37 +2201,35 @@ abstract class _$$RichableOrderedListItemCopyWith<$Res> {
   factory _$$RichableOrderedListItemCopyWith(_$RichableOrderedListItem value,
           $Res Function(_$RichableOrderedListItem) then) =
       __$$RichableOrderedListItemCopyWithImpl<$Res>;
+  @useResult
   $Res call({List<Span> spans, String text, String type});
 }
 
 /// @nodoc
 class __$$RichableOrderedListItemCopyWithImpl<$Res>
-    extends _$RichableCopyWithImpl<$Res>
+    extends _$RichableCopyWithImpl<$Res, _$RichableOrderedListItem>
     implements _$$RichableOrderedListItemCopyWith<$Res> {
   __$$RichableOrderedListItemCopyWithImpl(_$RichableOrderedListItem _value,
       $Res Function(_$RichableOrderedListItem) _then)
-      : super(_value, (v) => _then(v as _$RichableOrderedListItem));
+      : super(_value, _then);
 
-  @override
-  _$RichableOrderedListItem get _value =>
-      super._value as _$RichableOrderedListItem;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? spans = freezed,
-    Object? text = freezed,
-    Object? type = freezed,
+    Object? spans = null,
+    Object? text = null,
+    Object? type = null,
   }) {
     return _then(_$RichableOrderedListItem(
-      spans: spans == freezed
+      spans: null == spans
           ? _value._spans
           : spans // ignore: cast_nullable_to_non_nullable
               as List<Span>,
-      text: text == freezed
+      text: null == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
               as String,
-      type: type == freezed
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as String,
@@ -2250,6 +2250,7 @@ class _$RichableOrderedListItem implements RichableOrderedListItem {
   final List<Span> _spans;
   @override
   List<Span> get spans {
+    if (_spans is EqualUnmodifiableListView) return _spans;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_spans);
   }
@@ -2270,20 +2271,18 @@ class _$RichableOrderedListItem implements RichableOrderedListItem {
         (other.runtimeType == runtimeType &&
             other is _$RichableOrderedListItem &&
             const DeepCollectionEquality().equals(other._spans, _spans) &&
-            const DeepCollectionEquality().equals(other.text, text) &&
-            const DeepCollectionEquality().equals(other.type, type));
+            (identical(other.text, text) || other.text == text) &&
+            (identical(other.type, type) || other.type == type));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(_spans),
-      const DeepCollectionEquality().hash(text),
-      const DeepCollectionEquality().hash(type));
+      runtimeType, const DeepCollectionEquality().hash(_spans), text, type);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$RichableOrderedListItemCopyWith<_$RichableOrderedListItem> get copyWith =>
       __$$RichableOrderedListItemCopyWithImpl<_$RichableOrderedListItem>(
           this, _$identity);
@@ -2310,7 +2309,7 @@ class _$RichableOrderedListItem implements RichableOrderedListItem {
     required TResult Function(List<Span> spans, String text, String type)
         orderedListItem,
     required TResult Function(
-            String? alt, String? copyright, Dimension dimensions, String url)
+            Dimension dimensions, String url, String? alt, String? copyright)
         image,
     required TResult Function(
             @JsonKey(name: 'oembed') EmbedData info, String type)
@@ -2322,20 +2321,20 @@ class _$RichableOrderedListItem implements RichableOrderedListItem {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(List<Span> spans, String text, String type)? heading1,
-    TResult Function(List<Span> spans, String text, String type)? heading2,
-    TResult Function(List<Span> spans, String text, String type)? heading3,
-    TResult Function(List<Span> spans, String text, String type)? heading4,
-    TResult Function(List<Span> spans, String text, String type)? heading5,
-    TResult Function(List<Span> spans, String text, String type)? heading6,
-    TResult Function(List<Span> spans, String text, String type)? paragraph,
-    TResult Function(List<Span> spans, String text, String type)? listItem,
-    TResult Function(List<Span> spans, String text, String type)?
+    TResult? Function(List<Span> spans, String text, String type)? heading1,
+    TResult? Function(List<Span> spans, String text, String type)? heading2,
+    TResult? Function(List<Span> spans, String text, String type)? heading3,
+    TResult? Function(List<Span> spans, String text, String type)? heading4,
+    TResult? Function(List<Span> spans, String text, String type)? heading5,
+    TResult? Function(List<Span> spans, String text, String type)? heading6,
+    TResult? Function(List<Span> spans, String text, String type)? paragraph,
+    TResult? Function(List<Span> spans, String text, String type)? listItem,
+    TResult? Function(List<Span> spans, String text, String type)?
         orderedListItem,
-    TResult Function(
-            String? alt, String? copyright, Dimension dimensions, String url)?
+    TResult? Function(
+            Dimension dimensions, String url, String? alt, String? copyright)?
         image,
-    TResult Function(@JsonKey(name: 'oembed') EmbedData info, String type)?
+    TResult? Function(@JsonKey(name: 'oembed') EmbedData info, String type)?
         embed,
   }) {
     return orderedListItem?.call(spans, text, type);
@@ -2355,7 +2354,7 @@ class _$RichableOrderedListItem implements RichableOrderedListItem {
     TResult Function(List<Span> spans, String text, String type)?
         orderedListItem,
     TResult Function(
-            String? alt, String? copyright, Dimension dimensions, String url)?
+            Dimension dimensions, String url, String? alt, String? copyright)?
         image,
     TResult Function(@JsonKey(name: 'oembed') EmbedData info, String type)?
         embed,
@@ -2388,17 +2387,17 @@ class _$RichableOrderedListItem implements RichableOrderedListItem {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(RichableHeading1 value)? heading1,
-    TResult Function(RichableHeading2 value)? heading2,
-    TResult Function(RichableHeading3 value)? heading3,
-    TResult Function(RichableHeading4 value)? heading4,
-    TResult Function(RichableHeading5 value)? heading5,
-    TResult Function(RichableHeading6 value)? heading6,
-    TResult Function(RichableParagraph value)? paragraph,
-    TResult Function(RichableListItem value)? listItem,
-    TResult Function(RichableOrderedListItem value)? orderedListItem,
-    TResult Function(RichableImage value)? image,
-    TResult Function(RichableEmbed value)? embed,
+    TResult? Function(RichableHeading1 value)? heading1,
+    TResult? Function(RichableHeading2 value)? heading2,
+    TResult? Function(RichableHeading3 value)? heading3,
+    TResult? Function(RichableHeading4 value)? heading4,
+    TResult? Function(RichableHeading5 value)? heading5,
+    TResult? Function(RichableHeading6 value)? heading6,
+    TResult? Function(RichableParagraph value)? paragraph,
+    TResult? Function(RichableListItem value)? listItem,
+    TResult? Function(RichableOrderedListItem value)? orderedListItem,
+    TResult? Function(RichableImage value)? image,
+    TResult? Function(RichableEmbed value)? embed,
   }) {
     return orderedListItem?.call(this);
   }
@@ -2427,7 +2426,9 @@ class _$RichableOrderedListItem implements RichableOrderedListItem {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$RichableOrderedListItemToJson(this);
+    return _$$RichableOrderedListItemToJson(
+      this,
+    );
   }
 }
 
@@ -2440,9 +2441,9 @@ abstract class RichableOrderedListItem implements Richable {
   factory RichableOrderedListItem.fromJson(Map<String, dynamic> json) =
       _$RichableOrderedListItem.fromJson;
 
-  List<Span> get spans => throw _privateConstructorUsedError;
-  String get text => throw _privateConstructorUsedError;
-  String get type => throw _privateConstructorUsedError;
+  List<Span> get spans;
+  String get text;
+  String get type;
   @JsonKey(ignore: true)
   _$$RichableOrderedListItemCopyWith<_$RichableOrderedListItem> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2453,49 +2454,50 @@ abstract class _$$RichableImageCopyWith<$Res> {
   factory _$$RichableImageCopyWith(
           _$RichableImage value, $Res Function(_$RichableImage) then) =
       __$$RichableImageCopyWithImpl<$Res>;
-  $Res call({String? alt, String? copyright, Dimension dimensions, String url});
+  @useResult
+  $Res call({Dimension dimensions, String url, String? alt, String? copyright});
 
   $DimensionCopyWith<$Res> get dimensions;
 }
 
 /// @nodoc
-class __$$RichableImageCopyWithImpl<$Res> extends _$RichableCopyWithImpl<$Res>
+class __$$RichableImageCopyWithImpl<$Res>
+    extends _$RichableCopyWithImpl<$Res, _$RichableImage>
     implements _$$RichableImageCopyWith<$Res> {
   __$$RichableImageCopyWithImpl(
       _$RichableImage _value, $Res Function(_$RichableImage) _then)
-      : super(_value, (v) => _then(v as _$RichableImage));
+      : super(_value, _then);
 
-  @override
-  _$RichableImage get _value => super._value as _$RichableImage;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? dimensions = null,
+    Object? url = null,
     Object? alt = freezed,
     Object? copyright = freezed,
-    Object? dimensions = freezed,
-    Object? url = freezed,
   }) {
     return _then(_$RichableImage(
-      alt: alt == freezed
-          ? _value.alt
-          : alt // ignore: cast_nullable_to_non_nullable
-              as String?,
-      copyright: copyright == freezed
-          ? _value.copyright
-          : copyright // ignore: cast_nullable_to_non_nullable
-              as String?,
-      dimensions: dimensions == freezed
+      dimensions: null == dimensions
           ? _value.dimensions
           : dimensions // ignore: cast_nullable_to_non_nullable
               as Dimension,
-      url: url == freezed
+      url: null == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String,
+      alt: freezed == alt
+          ? _value.alt
+          : alt // ignore: cast_nullable_to_non_nullable
+              as String?,
+      copyright: freezed == copyright
+          ? _value.copyright
+          : copyright // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $DimensionCopyWith<$Res> get dimensions {
     return $DimensionCopyWith<$Res>(_value.dimensions, (value) {
       return _then(_value.copyWith(dimensions: value));
@@ -2507,10 +2509,10 @@ class __$$RichableImageCopyWithImpl<$Res> extends _$RichableCopyWithImpl<$Res>
 @JsonSerializable()
 class _$RichableImage implements RichableImage {
   const _$RichableImage(
-      {this.alt,
-      this.copyright,
-      required this.dimensions,
+      {required this.dimensions,
       required this.url,
+      this.alt,
+      this.copyright,
       final String? $type})
       : $type = $type ?? 'image';
 
@@ -2518,20 +2520,20 @@ class _$RichableImage implements RichableImage {
       _$$RichableImageFromJson(json);
 
   @override
-  final String? alt;
-  @override
-  final String? copyright;
-  @override
   final Dimension dimensions;
   @override
   final String url;
+  @override
+  final String? alt;
+  @override
+  final String? copyright;
 
   @JsonKey(name: 'type')
   final String $type;
 
   @override
   String toString() {
-    return 'Richable.image(alt: $alt, copyright: $copyright, dimensions: $dimensions, url: $url)';
+    return 'Richable.image(dimensions: $dimensions, url: $url, alt: $alt, copyright: $copyright)';
   }
 
   @override
@@ -2539,24 +2541,21 @@ class _$RichableImage implements RichableImage {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$RichableImage &&
-            const DeepCollectionEquality().equals(other.alt, alt) &&
-            const DeepCollectionEquality().equals(other.copyright, copyright) &&
-            const DeepCollectionEquality()
-                .equals(other.dimensions, dimensions) &&
-            const DeepCollectionEquality().equals(other.url, url));
+            (identical(other.dimensions, dimensions) ||
+                other.dimensions == dimensions) &&
+            (identical(other.url, url) || other.url == url) &&
+            (identical(other.alt, alt) || other.alt == alt) &&
+            (identical(other.copyright, copyright) ||
+                other.copyright == copyright));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(alt),
-      const DeepCollectionEquality().hash(copyright),
-      const DeepCollectionEquality().hash(dimensions),
-      const DeepCollectionEquality().hash(url));
+  int get hashCode => Object.hash(runtimeType, dimensions, url, alt, copyright);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$RichableImageCopyWith<_$RichableImage> get copyWith =>
       __$$RichableImageCopyWithImpl<_$RichableImage>(this, _$identity);
 
@@ -2582,35 +2581,35 @@ class _$RichableImage implements RichableImage {
     required TResult Function(List<Span> spans, String text, String type)
         orderedListItem,
     required TResult Function(
-            String? alt, String? copyright, Dimension dimensions, String url)
+            Dimension dimensions, String url, String? alt, String? copyright)
         image,
     required TResult Function(
             @JsonKey(name: 'oembed') EmbedData info, String type)
         embed,
   }) {
-    return image(alt, copyright, dimensions, url);
+    return image(dimensions, url, alt, copyright);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(List<Span> spans, String text, String type)? heading1,
-    TResult Function(List<Span> spans, String text, String type)? heading2,
-    TResult Function(List<Span> spans, String text, String type)? heading3,
-    TResult Function(List<Span> spans, String text, String type)? heading4,
-    TResult Function(List<Span> spans, String text, String type)? heading5,
-    TResult Function(List<Span> spans, String text, String type)? heading6,
-    TResult Function(List<Span> spans, String text, String type)? paragraph,
-    TResult Function(List<Span> spans, String text, String type)? listItem,
-    TResult Function(List<Span> spans, String text, String type)?
+    TResult? Function(List<Span> spans, String text, String type)? heading1,
+    TResult? Function(List<Span> spans, String text, String type)? heading2,
+    TResult? Function(List<Span> spans, String text, String type)? heading3,
+    TResult? Function(List<Span> spans, String text, String type)? heading4,
+    TResult? Function(List<Span> spans, String text, String type)? heading5,
+    TResult? Function(List<Span> spans, String text, String type)? heading6,
+    TResult? Function(List<Span> spans, String text, String type)? paragraph,
+    TResult? Function(List<Span> spans, String text, String type)? listItem,
+    TResult? Function(List<Span> spans, String text, String type)?
         orderedListItem,
-    TResult Function(
-            String? alt, String? copyright, Dimension dimensions, String url)?
+    TResult? Function(
+            Dimension dimensions, String url, String? alt, String? copyright)?
         image,
-    TResult Function(@JsonKey(name: 'oembed') EmbedData info, String type)?
+    TResult? Function(@JsonKey(name: 'oembed') EmbedData info, String type)?
         embed,
   }) {
-    return image?.call(alt, copyright, dimensions, url);
+    return image?.call(dimensions, url, alt, copyright);
   }
 
   @override
@@ -2627,14 +2626,14 @@ class _$RichableImage implements RichableImage {
     TResult Function(List<Span> spans, String text, String type)?
         orderedListItem,
     TResult Function(
-            String? alt, String? copyright, Dimension dimensions, String url)?
+            Dimension dimensions, String url, String? alt, String? copyright)?
         image,
     TResult Function(@JsonKey(name: 'oembed') EmbedData info, String type)?
         embed,
     required TResult orElse(),
   }) {
     if (image != null) {
-      return image(alt, copyright, dimensions, url);
+      return image(dimensions, url, alt, copyright);
     }
     return orElse();
   }
@@ -2660,17 +2659,17 @@ class _$RichableImage implements RichableImage {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(RichableHeading1 value)? heading1,
-    TResult Function(RichableHeading2 value)? heading2,
-    TResult Function(RichableHeading3 value)? heading3,
-    TResult Function(RichableHeading4 value)? heading4,
-    TResult Function(RichableHeading5 value)? heading5,
-    TResult Function(RichableHeading6 value)? heading6,
-    TResult Function(RichableParagraph value)? paragraph,
-    TResult Function(RichableListItem value)? listItem,
-    TResult Function(RichableOrderedListItem value)? orderedListItem,
-    TResult Function(RichableImage value)? image,
-    TResult Function(RichableEmbed value)? embed,
+    TResult? Function(RichableHeading1 value)? heading1,
+    TResult? Function(RichableHeading2 value)? heading2,
+    TResult? Function(RichableHeading3 value)? heading3,
+    TResult? Function(RichableHeading4 value)? heading4,
+    TResult? Function(RichableHeading5 value)? heading5,
+    TResult? Function(RichableHeading6 value)? heading6,
+    TResult? Function(RichableParagraph value)? paragraph,
+    TResult? Function(RichableListItem value)? listItem,
+    TResult? Function(RichableOrderedListItem value)? orderedListItem,
+    TResult? Function(RichableImage value)? image,
+    TResult? Function(RichableEmbed value)? embed,
   }) {
     return image?.call(this);
   }
@@ -2699,24 +2698,26 @@ class _$RichableImage implements RichableImage {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$RichableImageToJson(this);
+    return _$$RichableImageToJson(
+      this,
+    );
   }
 }
 
 abstract class RichableImage implements Richable {
   const factory RichableImage(
-      {final String? alt,
-      final String? copyright,
-      required final Dimension dimensions,
-      required final String url}) = _$RichableImage;
+      {required final Dimension dimensions,
+      required final String url,
+      final String? alt,
+      final String? copyright}) = _$RichableImage;
 
   factory RichableImage.fromJson(Map<String, dynamic> json) =
       _$RichableImage.fromJson;
 
-  String? get alt => throw _privateConstructorUsedError;
-  String? get copyright => throw _privateConstructorUsedError;
-  Dimension get dimensions => throw _privateConstructorUsedError;
-  String get url => throw _privateConstructorUsedError;
+  Dimension get dimensions;
+  String get url;
+  String? get alt;
+  String? get copyright;
   @JsonKey(ignore: true)
   _$$RichableImageCopyWith<_$RichableImage> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2727,32 +2728,32 @@ abstract class _$$RichableEmbedCopyWith<$Res> {
   factory _$$RichableEmbedCopyWith(
           _$RichableEmbed value, $Res Function(_$RichableEmbed) then) =
       __$$RichableEmbedCopyWithImpl<$Res>;
+  @useResult
   $Res call({@JsonKey(name: 'oembed') EmbedData info, String type});
 
   $EmbedDataCopyWith<$Res> get info;
 }
 
 /// @nodoc
-class __$$RichableEmbedCopyWithImpl<$Res> extends _$RichableCopyWithImpl<$Res>
+class __$$RichableEmbedCopyWithImpl<$Res>
+    extends _$RichableCopyWithImpl<$Res, _$RichableEmbed>
     implements _$$RichableEmbedCopyWith<$Res> {
   __$$RichableEmbedCopyWithImpl(
       _$RichableEmbed _value, $Res Function(_$RichableEmbed) _then)
-      : super(_value, (v) => _then(v as _$RichableEmbed));
+      : super(_value, _then);
 
-  @override
-  _$RichableEmbed get _value => super._value as _$RichableEmbed;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? info = freezed,
-    Object? type = freezed,
+    Object? info = null,
+    Object? type = null,
   }) {
     return _then(_$RichableEmbed(
-      info: info == freezed
+      info: null == info
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
               as EmbedData,
-      type: type == freezed
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as String,
@@ -2760,6 +2761,7 @@ class __$$RichableEmbedCopyWithImpl<$Res> extends _$RichableCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $EmbedDataCopyWith<$Res> get info {
     return $EmbedDataCopyWith<$Res>(_value.info, (value) {
       return _then(_value.copyWith(info: value));
@@ -2792,19 +2794,17 @@ class _$RichableEmbed implements RichableEmbed {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$RichableEmbed &&
-            const DeepCollectionEquality().equals(other.info, info) &&
-            const DeepCollectionEquality().equals(other.type, type));
+            (identical(other.info, info) || other.info == info) &&
+            (identical(other.type, type) || other.type == type));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(info),
-      const DeepCollectionEquality().hash(type));
+  int get hashCode => Object.hash(runtimeType, info, type);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$RichableEmbedCopyWith<_$RichableEmbed> get copyWith =>
       __$$RichableEmbedCopyWithImpl<_$RichableEmbed>(this, _$identity);
 
@@ -2830,7 +2830,7 @@ class _$RichableEmbed implements RichableEmbed {
     required TResult Function(List<Span> spans, String text, String type)
         orderedListItem,
     required TResult Function(
-            String? alt, String? copyright, Dimension dimensions, String url)
+            Dimension dimensions, String url, String? alt, String? copyright)
         image,
     required TResult Function(
             @JsonKey(name: 'oembed') EmbedData info, String type)
@@ -2842,20 +2842,20 @@ class _$RichableEmbed implements RichableEmbed {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(List<Span> spans, String text, String type)? heading1,
-    TResult Function(List<Span> spans, String text, String type)? heading2,
-    TResult Function(List<Span> spans, String text, String type)? heading3,
-    TResult Function(List<Span> spans, String text, String type)? heading4,
-    TResult Function(List<Span> spans, String text, String type)? heading5,
-    TResult Function(List<Span> spans, String text, String type)? heading6,
-    TResult Function(List<Span> spans, String text, String type)? paragraph,
-    TResult Function(List<Span> spans, String text, String type)? listItem,
-    TResult Function(List<Span> spans, String text, String type)?
+    TResult? Function(List<Span> spans, String text, String type)? heading1,
+    TResult? Function(List<Span> spans, String text, String type)? heading2,
+    TResult? Function(List<Span> spans, String text, String type)? heading3,
+    TResult? Function(List<Span> spans, String text, String type)? heading4,
+    TResult? Function(List<Span> spans, String text, String type)? heading5,
+    TResult? Function(List<Span> spans, String text, String type)? heading6,
+    TResult? Function(List<Span> spans, String text, String type)? paragraph,
+    TResult? Function(List<Span> spans, String text, String type)? listItem,
+    TResult? Function(List<Span> spans, String text, String type)?
         orderedListItem,
-    TResult Function(
-            String? alt, String? copyright, Dimension dimensions, String url)?
+    TResult? Function(
+            Dimension dimensions, String url, String? alt, String? copyright)?
         image,
-    TResult Function(@JsonKey(name: 'oembed') EmbedData info, String type)?
+    TResult? Function(@JsonKey(name: 'oembed') EmbedData info, String type)?
         embed,
   }) {
     return embed?.call(info, type);
@@ -2875,7 +2875,7 @@ class _$RichableEmbed implements RichableEmbed {
     TResult Function(List<Span> spans, String text, String type)?
         orderedListItem,
     TResult Function(
-            String? alt, String? copyright, Dimension dimensions, String url)?
+            Dimension dimensions, String url, String? alt, String? copyright)?
         image,
     TResult Function(@JsonKey(name: 'oembed') EmbedData info, String type)?
         embed,
@@ -2908,17 +2908,17 @@ class _$RichableEmbed implements RichableEmbed {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(RichableHeading1 value)? heading1,
-    TResult Function(RichableHeading2 value)? heading2,
-    TResult Function(RichableHeading3 value)? heading3,
-    TResult Function(RichableHeading4 value)? heading4,
-    TResult Function(RichableHeading5 value)? heading5,
-    TResult Function(RichableHeading6 value)? heading6,
-    TResult Function(RichableParagraph value)? paragraph,
-    TResult Function(RichableListItem value)? listItem,
-    TResult Function(RichableOrderedListItem value)? orderedListItem,
-    TResult Function(RichableImage value)? image,
-    TResult Function(RichableEmbed value)? embed,
+    TResult? Function(RichableHeading1 value)? heading1,
+    TResult? Function(RichableHeading2 value)? heading2,
+    TResult? Function(RichableHeading3 value)? heading3,
+    TResult? Function(RichableHeading4 value)? heading4,
+    TResult? Function(RichableHeading5 value)? heading5,
+    TResult? Function(RichableHeading6 value)? heading6,
+    TResult? Function(RichableParagraph value)? paragraph,
+    TResult? Function(RichableListItem value)? listItem,
+    TResult? Function(RichableOrderedListItem value)? orderedListItem,
+    TResult? Function(RichableImage value)? image,
+    TResult? Function(RichableEmbed value)? embed,
   }) {
     return embed?.call(this);
   }
@@ -2947,7 +2947,9 @@ class _$RichableEmbed implements RichableEmbed {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$RichableEmbedToJson(this);
+    return _$$RichableEmbedToJson(
+      this,
+    );
   }
 }
 
@@ -2960,8 +2962,8 @@ abstract class RichableEmbed implements Richable {
       _$RichableEmbed.fromJson;
 
   @JsonKey(name: 'oembed')
-  EmbedData get info => throw _privateConstructorUsedError;
-  String get type => throw _privateConstructorUsedError;
+  EmbedData get info;
+  String get type;
   @JsonKey(ignore: true)
   _$$RichableEmbedCopyWith<_$RichableEmbed> get copyWith =>
       throw _privateConstructorUsedError;

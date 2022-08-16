@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'dimension.dart';
 
@@ -32,33 +32,37 @@ mixin _$Dimension {
 /// @nodoc
 abstract class $DimensionCopyWith<$Res> {
   factory $DimensionCopyWith(Dimension value, $Res Function(Dimension) then) =
-      _$DimensionCopyWithImpl<$Res>;
+      _$DimensionCopyWithImpl<$Res, Dimension>;
+  @useResult
   $Res call({double height, double width});
 }
 
 /// @nodoc
-class _$DimensionCopyWithImpl<$Res> implements $DimensionCopyWith<$Res> {
+class _$DimensionCopyWithImpl<$Res, $Val extends Dimension>
+    implements $DimensionCopyWith<$Res> {
   _$DimensionCopyWithImpl(this._value, this._then);
 
-  final Dimension _value;
   // ignore: unused_field
-  final $Res Function(Dimension) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? height = freezed,
-    Object? width = freezed,
+    Object? height = null,
+    Object? width = null,
   }) {
     return _then(_value.copyWith(
-      height: height == freezed
+      height: null == height
           ? _value.height
           : height // ignore: cast_nullable_to_non_nullable
               as double,
-      width: width == freezed
+      width: null == width
           ? _value.width
           : width // ignore: cast_nullable_to_non_nullable
               as double,
-    ));
+    ) as $Val);
   }
 }
 
@@ -68,30 +72,30 @@ abstract class _$$_DimensionCopyWith<$Res> implements $DimensionCopyWith<$Res> {
           _$_Dimension value, $Res Function(_$_Dimension) then) =
       __$$_DimensionCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({double height, double width});
 }
 
 /// @nodoc
-class __$$_DimensionCopyWithImpl<$Res> extends _$DimensionCopyWithImpl<$Res>
+class __$$_DimensionCopyWithImpl<$Res>
+    extends _$DimensionCopyWithImpl<$Res, _$_Dimension>
     implements _$$_DimensionCopyWith<$Res> {
   __$$_DimensionCopyWithImpl(
       _$_Dimension _value, $Res Function(_$_Dimension) _then)
-      : super(_value, (v) => _then(v as _$_Dimension));
+      : super(_value, _then);
 
-  @override
-  _$_Dimension get _value => super._value as _$_Dimension;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? height = freezed,
-    Object? width = freezed,
+    Object? height = null,
+    Object? width = null,
   }) {
     return _then(_$_Dimension(
-      height: height == freezed
+      height: null == height
           ? _value.height
           : height // ignore: cast_nullable_to_non_nullable
               as double,
-      width: width == freezed
+      width: null == width
           ? _value.width
           : width // ignore: cast_nullable_to_non_nullable
               as double,
@@ -122,25 +126,25 @@ class _$_Dimension implements _Dimension {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Dimension &&
-            const DeepCollectionEquality().equals(other.height, height) &&
-            const DeepCollectionEquality().equals(other.width, width));
+            (identical(other.height, height) || other.height == height) &&
+            (identical(other.width, width) || other.width == width));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(height),
-      const DeepCollectionEquality().hash(width));
+  int get hashCode => Object.hash(runtimeType, height, width);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_DimensionCopyWith<_$_Dimension> get copyWith =>
       __$$_DimensionCopyWithImpl<_$_Dimension>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DimensionToJson(this);
+    return _$$_DimensionToJson(
+      this,
+    );
   }
 }
 
@@ -153,9 +157,9 @@ abstract class _Dimension implements Dimension {
       _$_Dimension.fromJson;
 
   @override
-  double get height => throw _privateConstructorUsedError;
+  double get height;
   @override
-  double get width => throw _privateConstructorUsedError;
+  double get width;
   @override
   @JsonKey(ignore: true)
   _$$_DimensionCopyWith<_$_Dimension> get copyWith =>

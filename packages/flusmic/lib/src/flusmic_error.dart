@@ -45,7 +45,7 @@ class FlusmicError implements Exception {
   }
 
   /// Exception for failed requests
-  factory FlusmicError.fromResponse(Response? response) {
+  factory FlusmicError.fromResponse(Response<dynamic>? response) {
     if (response == null) {
       return FlusmicError._(
         code: 100,

@@ -1,3 +1,7 @@
+## [4.0.0]
+* New `queryWithModel` and `graphQueryWithModel` methods added
+* Update dependencies
+
 ## [3.2.3]
 * Update dependencies
 

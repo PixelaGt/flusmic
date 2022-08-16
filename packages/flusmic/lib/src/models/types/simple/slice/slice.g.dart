@@ -13,8 +13,8 @@ _$_Slice _$$_SliceFromJson(Map json) => $checkedCreate(
       json,
       ($checkedConvert) {
         final val = _$_Slice(
-          sliceLabel: $checkedConvert('slice_label', (v) => v as String?),
           sliceType: $checkedConvert('slice_type', (v) => v as String?),
+          sliceLabel: $checkedConvert('slice_label', (v) => v as String?),
           items: $checkedConvert(
               'items',
               (v) => (v as List<dynamic>?)
@@ -29,14 +29,14 @@ _$_Slice _$$_SliceFromJson(Map json) => $checkedCreate(
         return val;
       },
       fieldKeyMap: const {
-        'sliceLabel': 'slice_label',
-        'sliceType': 'slice_type'
+        'sliceType': 'slice_type',
+        'sliceLabel': 'slice_label'
       },
     );
 
 Map<String, dynamic> _$$_SliceToJson(_$_Slice instance) => <String, dynamic>{
-      'slice_label': instance.sliceLabel,
       'slice_type': instance.sliceType,
+      'slice_label': instance.sliceLabel,
       'items': instance.items,
       'primary': instance.primary,
     };

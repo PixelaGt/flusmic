@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'span.dart';
 
@@ -32,38 +32,42 @@ mixin _$Span {
 /// @nodoc
 abstract class $SpanCopyWith<$Res> {
   factory $SpanCopyWith(Span value, $Res Function(Span) then) =
-      _$SpanCopyWithImpl<$Res>;
+      _$SpanCopyWithImpl<$Res, Span>;
+  @useResult
   $Res call({String type, int end, int start});
 }
 
 /// @nodoc
-class _$SpanCopyWithImpl<$Res> implements $SpanCopyWith<$Res> {
+class _$SpanCopyWithImpl<$Res, $Val extends Span>
+    implements $SpanCopyWith<$Res> {
   _$SpanCopyWithImpl(this._value, this._then);
 
-  final Span _value;
   // ignore: unused_field
-  final $Res Function(Span) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? type = freezed,
-    Object? end = freezed,
-    Object? start = freezed,
+    Object? type = null,
+    Object? end = null,
+    Object? start = null,
   }) {
     return _then(_value.copyWith(
-      type: type == freezed
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as String,
-      end: end == freezed
+      end: null == end
           ? _value.end
           : end // ignore: cast_nullable_to_non_nullable
               as int,
-      start: start == freezed
+      start: null == start
           ? _value.start
           : start // ignore: cast_nullable_to_non_nullable
               as int,
-    ));
+    ) as $Val);
   }
 }
 
@@ -72,34 +76,33 @@ abstract class _$$_SpanCopyWith<$Res> implements $SpanCopyWith<$Res> {
   factory _$$_SpanCopyWith(_$_Span value, $Res Function(_$_Span) then) =
       __$$_SpanCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String type, int end, int start});
 }
 
 /// @nodoc
-class __$$_SpanCopyWithImpl<$Res> extends _$SpanCopyWithImpl<$Res>
+class __$$_SpanCopyWithImpl<$Res> extends _$SpanCopyWithImpl<$Res, _$_Span>
     implements _$$_SpanCopyWith<$Res> {
   __$$_SpanCopyWithImpl(_$_Span _value, $Res Function(_$_Span) _then)
-      : super(_value, (v) => _then(v as _$_Span));
+      : super(_value, _then);
 
-  @override
-  _$_Span get _value => super._value as _$_Span;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? type = freezed,
-    Object? end = freezed,
-    Object? start = freezed,
+    Object? type = null,
+    Object? end = null,
+    Object? start = null,
   }) {
     return _then(_$_Span(
-      type: type == freezed
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as String,
-      end: end == freezed
+      end: null == end
           ? _value.end
           : end // ignore: cast_nullable_to_non_nullable
               as int,
-      start: start == freezed
+      start: null == start
           ? _value.start
           : start // ignore: cast_nullable_to_non_nullable
               as int,
@@ -131,27 +134,26 @@ class _$_Span implements _Span {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Span &&
-            const DeepCollectionEquality().equals(other.type, type) &&
-            const DeepCollectionEquality().equals(other.end, end) &&
-            const DeepCollectionEquality().equals(other.start, start));
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.end, end) || other.end == end) &&
+            (identical(other.start, start) || other.start == start));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(type),
-      const DeepCollectionEquality().hash(end),
-      const DeepCollectionEquality().hash(start));
+  int get hashCode => Object.hash(runtimeType, type, end, start);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_SpanCopyWith<_$_Span> get copyWith =>
       __$$_SpanCopyWithImpl<_$_Span>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SpanToJson(this);
+    return _$$_SpanToJson(
+      this,
+    );
   }
 }
 
@@ -164,11 +166,11 @@ abstract class _Span implements Span {
   factory _Span.fromJson(Map<String, dynamic> json) = _$_Span.fromJson;
 
   @override
-  String get type => throw _privateConstructorUsedError;
+  String get type;
   @override
-  int get end => throw _privateConstructorUsedError;
+  int get end;
   @override
-  int get start => throw _privateConstructorUsedError;
+  int get start;
   @override
   @JsonKey(ignore: true)
   _$$_SpanCopyWith<_$_Span> get copyWith => throw _privateConstructorUsedError;

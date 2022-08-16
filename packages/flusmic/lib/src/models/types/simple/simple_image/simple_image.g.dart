@@ -13,11 +13,11 @@ _$_SimpleImage _$$_SimpleImageFromJson(Map json) => $checkedCreate(
       json,
       ($checkedConvert) {
         final val = _$_SimpleImage(
-          alt: $checkedConvert('alt', (v) => v as String?),
-          copyright: $checkedConvert('copyright', (v) => v as String?),
           dimensions: $checkedConvert('dimensions',
               (v) => Dimension.fromJson(Map<String, dynamic>.from(v as Map))),
           url: $checkedConvert('url', (v) => v as String),
+          alt: $checkedConvert('alt', (v) => v as String?),
+          copyright: $checkedConvert('copyright', (v) => v as String?),
         );
         return val;
       },
@@ -25,8 +25,8 @@ _$_SimpleImage _$$_SimpleImageFromJson(Map json) => $checkedCreate(
 
 Map<String, dynamic> _$$_SimpleImageToJson(_$_SimpleImage instance) =>
     <String, dynamic>{
-      'alt': instance.alt,
-      'copyright': instance.copyright,
       'dimensions': instance.dimensions.toJson(),
       'url': instance.url,
+      'alt': instance.alt,
+      'copyright': instance.copyright,
     };

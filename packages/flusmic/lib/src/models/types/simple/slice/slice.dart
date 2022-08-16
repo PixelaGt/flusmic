@@ -10,8 +10,8 @@ part 'slice.g.dart';
 class Slice with _$Slice {
   ///Deafult factory constructor for Slice
   factory Slice({
-    @JsonKey(name: 'slice_label') String? sliceLabel,
     @JsonKey(name: 'slice_type') required String? sliceType,
+    @JsonKey(name: 'slice_label') String? sliceLabel,
     List<Map<String, dynamic>>? items,
     Map<String, dynamic>? primary,
   }) = _Slice;

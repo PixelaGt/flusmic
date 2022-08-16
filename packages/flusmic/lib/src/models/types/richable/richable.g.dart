@@ -240,11 +240,11 @@ _$RichableImage _$$RichableImageFromJson(Map json) => $checkedCreate(
       json,
       ($checkedConvert) {
         final val = _$RichableImage(
-          alt: $checkedConvert('alt', (v) => v as String?),
-          copyright: $checkedConvert('copyright', (v) => v as String?),
           dimensions: $checkedConvert('dimensions',
               (v) => Dimension.fromJson(Map<String, dynamic>.from(v as Map))),
           url: $checkedConvert('url', (v) => v as String),
+          alt: $checkedConvert('alt', (v) => v as String?),
+          copyright: $checkedConvert('copyright', (v) => v as String?),
           $type: $checkedConvert('type', (v) => v as String?),
         );
         return val;
@@ -254,10 +254,10 @@ _$RichableImage _$$RichableImageFromJson(Map json) => $checkedCreate(
 
 Map<String, dynamic> _$$RichableImageToJson(_$RichableImage instance) =>
     <String, dynamic>{
-      'alt': instance.alt,
-      'copyright': instance.copyright,
       'dimensions': instance.dimensions.toJson(),
       'url': instance.url,
+      'alt': instance.alt,
+      'copyright': instance.copyright,
       'type': instance.$type,
     };
 
