@@ -37,6 +37,7 @@ class FlusmicBuilder extends StatefulWidget {
     required this.baseUrl,
     required this.builder,
     required this.predicates,
+    this.orderings,
     this.authToken,
     this.controller,
     this.flusmic,
@@ -57,6 +58,9 @@ class FlusmicBuilder extends StatefulWidget {
 
   ///List of predicates to query
   final List<Predicate> predicates;
+
+  ///List of orderings to query
+  final List<Ordering>? orderings;
 
   ///Respository URL
   final String baseUrl;
@@ -98,7 +102,7 @@ class _FlusmicBuilderState extends State<FlusmicBuilder> {
             defaultLanguage: widget.language,
             prismicEndpoint: widget.baseUrl,
           ))
-      .query(widget.predicates);
+      .query(widget.predicates, orderings: widget.orderings);
 
   void onRepeat() => _requestBloc.perform(_perform, 'FlusmicRequest');
 
