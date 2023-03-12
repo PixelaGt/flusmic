@@ -33,10 +33,10 @@ class FlusmicController extends StateNotifier<FlusmicControllerState> {
 class FlusmicBuilder extends StatefulWidget {
   ///Main constructor
   const FlusmicBuilder({
-    Key? key,
     required this.baseUrl,
     required this.builder,
     required this.predicates,
+    Key? key,
     this.orderings,
     this.authToken,
     this.controller,
@@ -96,13 +96,14 @@ class _FlusmicBuilderState extends State<FlusmicBuilder> {
     super.dispose();
   }
 
-  Future<FlusmicResponse> _perform() async => (widget.flusmic ??
-          Flusmic(
-            defaultAuthToken: widget.authToken,
-            defaultLanguage: widget.language,
-            prismicEndpoint: widget.baseUrl,
-          ))
-      .query(widget.predicates, orderings: widget.orderings);
+  Future<FlusmicResponse<Document<Map<String, dynamic>>>> _perform() async =>
+      (widget.flusmic ??
+              Flusmic(
+                defaultAuthToken: widget.authToken,
+                defaultLanguage: widget.language,
+                prismicEndpoint: widget.baseUrl,
+              ))
+          .query(widget.predicates, orderings: widget.orderings);
 
   void onRepeat() => _requestBloc.perform(_perform, 'FlusmicRequest');
 
@@ -112,8 +113,9 @@ class _FlusmicBuilderState extends State<FlusmicBuilder> {
       context,
       _currentState.when(
         error: (error) => FlusmicStatus.error(error),
-        loaded: (dynamic result, _, __) =>
-            FlusmicStatus.loaded(result as FlusmicResponse),
+        loaded: (dynamic result, _, __) => FlusmicStatus.loaded(
+          result as FlusmicResponse<Document<Map<String, dynamic>>>,
+        ),
         loading: () => FlusmicStatus.loading(),
         uninitialized: () => FlusmicStatus.init(),
       ),

@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'flusmic_status.dart';
 
@@ -21,15 +21,15 @@ mixin _$FlusmicStatus {
     required TResult Function() init,
     required TResult Function() loading,
     required TResult Function(String error) error,
-    required TResult Function(FlusmicResponse response) loaded,
+    required TResult Function(FlusmicResponse<dynamic> response) loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function()? loading,
-    TResult Function(String error)? error,
-    TResult Function(FlusmicResponse response)? loaded,
+    TResult? Function()? init,
+    TResult? Function()? loading,
+    TResult? Function(String error)? error,
+    TResult? Function(FlusmicResponse<dynamic> response)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -37,7 +37,7 @@ mixin _$FlusmicStatus {
     TResult Function()? init,
     TResult Function()? loading,
     TResult Function(String error)? error,
-    TResult Function(FlusmicResponse response)? loaded,
+    TResult Function(FlusmicResponse<dynamic> response)? loaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -51,10 +51,10 @@ mixin _$FlusmicStatus {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitFlusmicStatus value)? init,
-    TResult Function(LoadingFlusmicStatus value)? loading,
-    TResult Function(ErrorFlusmicStatus value)? error,
-    TResult Function(LoadedFlusmicStatus value)? loaded,
+    TResult? Function(InitFlusmicStatus value)? init,
+    TResult? Function(LoadingFlusmicStatus value)? loading,
+    TResult? Function(ErrorFlusmicStatus value)? error,
+    TResult? Function(LoadedFlusmicStatus value)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -72,17 +72,18 @@ mixin _$FlusmicStatus {
 abstract class $FlusmicStatusCopyWith<$Res> {
   factory $FlusmicStatusCopyWith(
           FlusmicStatus value, $Res Function(FlusmicStatus) then) =
-      _$FlusmicStatusCopyWithImpl<$Res>;
+      _$FlusmicStatusCopyWithImpl<$Res, FlusmicStatus>;
 }
 
 /// @nodoc
-class _$FlusmicStatusCopyWithImpl<$Res>
+class _$FlusmicStatusCopyWithImpl<$Res, $Val extends FlusmicStatus>
     implements $FlusmicStatusCopyWith<$Res> {
   _$FlusmicStatusCopyWithImpl(this._value, this._then);
 
-  final FlusmicStatus _value;
   // ignore: unused_field
-  final $Res Function(FlusmicStatus) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -94,14 +95,11 @@ abstract class _$$InitFlusmicStatusCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitFlusmicStatusCopyWithImpl<$Res>
-    extends _$FlusmicStatusCopyWithImpl<$Res>
+    extends _$FlusmicStatusCopyWithImpl<$Res, _$InitFlusmicStatus>
     implements _$$InitFlusmicStatusCopyWith<$Res> {
   __$$InitFlusmicStatusCopyWithImpl(
       _$InitFlusmicStatus _value, $Res Function(_$InitFlusmicStatus) _then)
-      : super(_value, (v) => _then(v as _$InitFlusmicStatus));
-
-  @override
-  _$InitFlusmicStatus get _value => super._value as _$InitFlusmicStatus;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -129,7 +127,7 @@ class _$InitFlusmicStatus implements InitFlusmicStatus {
     required TResult Function() init,
     required TResult Function() loading,
     required TResult Function(String error) error,
-    required TResult Function(FlusmicResponse response) loaded,
+    required TResult Function(FlusmicResponse<dynamic> response) loaded,
   }) {
     return init();
   }
@@ -137,10 +135,10 @@ class _$InitFlusmicStatus implements InitFlusmicStatus {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function()? loading,
-    TResult Function(String error)? error,
-    TResult Function(FlusmicResponse response)? loaded,
+    TResult? Function()? init,
+    TResult? Function()? loading,
+    TResult? Function(String error)? error,
+    TResult? Function(FlusmicResponse<dynamic> response)? loaded,
   }) {
     return init?.call();
   }
@@ -151,7 +149,7 @@ class _$InitFlusmicStatus implements InitFlusmicStatus {
     TResult Function()? init,
     TResult Function()? loading,
     TResult Function(String error)? error,
-    TResult Function(FlusmicResponse response)? loaded,
+    TResult Function(FlusmicResponse<dynamic> response)? loaded,
     required TResult orElse(),
   }) {
     if (init != null) {
@@ -174,10 +172,10 @@ class _$InitFlusmicStatus implements InitFlusmicStatus {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitFlusmicStatus value)? init,
-    TResult Function(LoadingFlusmicStatus value)? loading,
-    TResult Function(ErrorFlusmicStatus value)? error,
-    TResult Function(LoadedFlusmicStatus value)? loaded,
+    TResult? Function(InitFlusmicStatus value)? init,
+    TResult? Function(LoadingFlusmicStatus value)? loading,
+    TResult? Function(ErrorFlusmicStatus value)? error,
+    TResult? Function(LoadedFlusmicStatus value)? loaded,
   }) {
     return init?.call(this);
   }
@@ -211,14 +209,11 @@ abstract class _$$LoadingFlusmicStatusCopyWith<$Res> {
 
 /// @nodoc
 class __$$LoadingFlusmicStatusCopyWithImpl<$Res>
-    extends _$FlusmicStatusCopyWithImpl<$Res>
+    extends _$FlusmicStatusCopyWithImpl<$Res, _$LoadingFlusmicStatus>
     implements _$$LoadingFlusmicStatusCopyWith<$Res> {
   __$$LoadingFlusmicStatusCopyWithImpl(_$LoadingFlusmicStatus _value,
       $Res Function(_$LoadingFlusmicStatus) _then)
-      : super(_value, (v) => _then(v as _$LoadingFlusmicStatus));
-
-  @override
-  _$LoadingFlusmicStatus get _value => super._value as _$LoadingFlusmicStatus;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -246,7 +241,7 @@ class _$LoadingFlusmicStatus implements LoadingFlusmicStatus {
     required TResult Function() init,
     required TResult Function() loading,
     required TResult Function(String error) error,
-    required TResult Function(FlusmicResponse response) loaded,
+    required TResult Function(FlusmicResponse<dynamic> response) loaded,
   }) {
     return loading();
   }
@@ -254,10 +249,10 @@ class _$LoadingFlusmicStatus implements LoadingFlusmicStatus {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function()? loading,
-    TResult Function(String error)? error,
-    TResult Function(FlusmicResponse response)? loaded,
+    TResult? Function()? init,
+    TResult? Function()? loading,
+    TResult? Function(String error)? error,
+    TResult? Function(FlusmicResponse<dynamic> response)? loaded,
   }) {
     return loading?.call();
   }
@@ -268,7 +263,7 @@ class _$LoadingFlusmicStatus implements LoadingFlusmicStatus {
     TResult Function()? init,
     TResult Function()? loading,
     TResult Function(String error)? error,
-    TResult Function(FlusmicResponse response)? loaded,
+    TResult Function(FlusmicResponse<dynamic> response)? loaded,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -291,10 +286,10 @@ class _$LoadingFlusmicStatus implements LoadingFlusmicStatus {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitFlusmicStatus value)? init,
-    TResult Function(LoadingFlusmicStatus value)? loading,
-    TResult Function(ErrorFlusmicStatus value)? error,
-    TResult Function(LoadedFlusmicStatus value)? loaded,
+    TResult? Function(InitFlusmicStatus value)? init,
+    TResult? Function(LoadingFlusmicStatus value)? loading,
+    TResult? Function(ErrorFlusmicStatus value)? error,
+    TResult? Function(LoadedFlusmicStatus value)? loaded,
   }) {
     return loading?.call(this);
   }
@@ -324,26 +319,25 @@ abstract class _$$ErrorFlusmicStatusCopyWith<$Res> {
   factory _$$ErrorFlusmicStatusCopyWith(_$ErrorFlusmicStatus value,
           $Res Function(_$ErrorFlusmicStatus) then) =
       __$$ErrorFlusmicStatusCopyWithImpl<$Res>;
+  @useResult
   $Res call({String error});
 }
 
 /// @nodoc
 class __$$ErrorFlusmicStatusCopyWithImpl<$Res>
-    extends _$FlusmicStatusCopyWithImpl<$Res>
+    extends _$FlusmicStatusCopyWithImpl<$Res, _$ErrorFlusmicStatus>
     implements _$$ErrorFlusmicStatusCopyWith<$Res> {
   __$$ErrorFlusmicStatusCopyWithImpl(
       _$ErrorFlusmicStatus _value, $Res Function(_$ErrorFlusmicStatus) _then)
-      : super(_value, (v) => _then(v as _$ErrorFlusmicStatus));
+      : super(_value, _then);
 
-  @override
-  _$ErrorFlusmicStatus get _value => super._value as _$ErrorFlusmicStatus;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? error = freezed,
+    Object? error = null,
   }) {
     return _then(_$ErrorFlusmicStatus(
-      error == freezed
+      null == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
               as String,
@@ -369,15 +363,15 @@ class _$ErrorFlusmicStatus implements ErrorFlusmicStatus {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ErrorFlusmicStatus &&
-            const DeepCollectionEquality().equals(other.error, error));
+            (identical(other.error, error) || other.error == error));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
+  int get hashCode => Object.hash(runtimeType, error);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$ErrorFlusmicStatusCopyWith<_$ErrorFlusmicStatus> get copyWith =>
       __$$ErrorFlusmicStatusCopyWithImpl<_$ErrorFlusmicStatus>(
           this, _$identity);
@@ -388,7 +382,7 @@ class _$ErrorFlusmicStatus implements ErrorFlusmicStatus {
     required TResult Function() init,
     required TResult Function() loading,
     required TResult Function(String error) error,
-    required TResult Function(FlusmicResponse response) loaded,
+    required TResult Function(FlusmicResponse<dynamic> response) loaded,
   }) {
     return error(this.error);
   }
@@ -396,10 +390,10 @@ class _$ErrorFlusmicStatus implements ErrorFlusmicStatus {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function()? loading,
-    TResult Function(String error)? error,
-    TResult Function(FlusmicResponse response)? loaded,
+    TResult? Function()? init,
+    TResult? Function()? loading,
+    TResult? Function(String error)? error,
+    TResult? Function(FlusmicResponse<dynamic> response)? loaded,
   }) {
     return error?.call(this.error);
   }
@@ -410,7 +404,7 @@ class _$ErrorFlusmicStatus implements ErrorFlusmicStatus {
     TResult Function()? init,
     TResult Function()? loading,
     TResult Function(String error)? error,
-    TResult Function(FlusmicResponse response)? loaded,
+    TResult Function(FlusmicResponse<dynamic> response)? loaded,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -433,10 +427,10 @@ class _$ErrorFlusmicStatus implements ErrorFlusmicStatus {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitFlusmicStatus value)? init,
-    TResult Function(LoadingFlusmicStatus value)? loading,
-    TResult Function(ErrorFlusmicStatus value)? error,
-    TResult Function(LoadedFlusmicStatus value)? loaded,
+    TResult? Function(InitFlusmicStatus value)? init,
+    TResult? Function(LoadingFlusmicStatus value)? loading,
+    TResult? Function(ErrorFlusmicStatus value)? error,
+    TResult? Function(LoadedFlusmicStatus value)? loaded,
   }) {
     return error?.call(this);
   }
@@ -460,7 +454,7 @@ class _$ErrorFlusmicStatus implements ErrorFlusmicStatus {
 abstract class ErrorFlusmicStatus implements FlusmicStatus {
   factory ErrorFlusmicStatus(final String error) = _$ErrorFlusmicStatus;
 
-  String get error => throw _privateConstructorUsedError;
+  String get error;
   @JsonKey(ignore: true)
   _$$ErrorFlusmicStatusCopyWith<_$ErrorFlusmicStatus> get copyWith =>
       throw _privateConstructorUsedError;
@@ -471,37 +465,37 @@ abstract class _$$LoadedFlusmicStatusCopyWith<$Res> {
   factory _$$LoadedFlusmicStatusCopyWith(_$LoadedFlusmicStatus value,
           $Res Function(_$LoadedFlusmicStatus) then) =
       __$$LoadedFlusmicStatusCopyWithImpl<$Res>;
-  $Res call({FlusmicResponse response});
+  @useResult
+  $Res call({FlusmicResponse<dynamic> response});
 
-  $FlusmicResponseCopyWith<$Res> get response;
+  $FlusmicResponseCopyWith<dynamic, $Res> get response;
 }
 
 /// @nodoc
 class __$$LoadedFlusmicStatusCopyWithImpl<$Res>
-    extends _$FlusmicStatusCopyWithImpl<$Res>
+    extends _$FlusmicStatusCopyWithImpl<$Res, _$LoadedFlusmicStatus>
     implements _$$LoadedFlusmicStatusCopyWith<$Res> {
   __$$LoadedFlusmicStatusCopyWithImpl(
       _$LoadedFlusmicStatus _value, $Res Function(_$LoadedFlusmicStatus) _then)
-      : super(_value, (v) => _then(v as _$LoadedFlusmicStatus));
+      : super(_value, _then);
 
-  @override
-  _$LoadedFlusmicStatus get _value => super._value as _$LoadedFlusmicStatus;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? response = freezed,
+    Object? response = null,
   }) {
     return _then(_$LoadedFlusmicStatus(
-      response == freezed
+      null == response
           ? _value.response
           : response // ignore: cast_nullable_to_non_nullable
-              as FlusmicResponse,
+              as FlusmicResponse<dynamic>,
     ));
   }
 
   @override
-  $FlusmicResponseCopyWith<$Res> get response {
-    return $FlusmicResponseCopyWith<$Res>(_value.response, (value) {
+  @pragma('vm:prefer-inline')
+  $FlusmicResponseCopyWith<dynamic, $Res> get response {
+    return $FlusmicResponseCopyWith<dynamic, $Res>(_value.response, (value) {
       return _then(_value.copyWith(response: value));
     });
   }
@@ -513,7 +507,7 @@ class _$LoadedFlusmicStatus implements LoadedFlusmicStatus {
   _$LoadedFlusmicStatus(this.response);
 
   @override
-  final FlusmicResponse response;
+  final FlusmicResponse<dynamic> response;
 
   @override
   String toString() {
@@ -525,15 +519,16 @@ class _$LoadedFlusmicStatus implements LoadedFlusmicStatus {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LoadedFlusmicStatus &&
-            const DeepCollectionEquality().equals(other.response, response));
+            (identical(other.response, response) ||
+                other.response == response));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(response));
+  int get hashCode => Object.hash(runtimeType, response);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$LoadedFlusmicStatusCopyWith<_$LoadedFlusmicStatus> get copyWith =>
       __$$LoadedFlusmicStatusCopyWithImpl<_$LoadedFlusmicStatus>(
           this, _$identity);
@@ -544,7 +539,7 @@ class _$LoadedFlusmicStatus implements LoadedFlusmicStatus {
     required TResult Function() init,
     required TResult Function() loading,
     required TResult Function(String error) error,
-    required TResult Function(FlusmicResponse response) loaded,
+    required TResult Function(FlusmicResponse<dynamic> response) loaded,
   }) {
     return loaded(response);
   }
@@ -552,10 +547,10 @@ class _$LoadedFlusmicStatus implements LoadedFlusmicStatus {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function()? loading,
-    TResult Function(String error)? error,
-    TResult Function(FlusmicResponse response)? loaded,
+    TResult? Function()? init,
+    TResult? Function()? loading,
+    TResult? Function(String error)? error,
+    TResult? Function(FlusmicResponse<dynamic> response)? loaded,
   }) {
     return loaded?.call(response);
   }
@@ -566,7 +561,7 @@ class _$LoadedFlusmicStatus implements LoadedFlusmicStatus {
     TResult Function()? init,
     TResult Function()? loading,
     TResult Function(String error)? error,
-    TResult Function(FlusmicResponse response)? loaded,
+    TResult Function(FlusmicResponse<dynamic> response)? loaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -589,10 +584,10 @@ class _$LoadedFlusmicStatus implements LoadedFlusmicStatus {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitFlusmicStatus value)? init,
-    TResult Function(LoadingFlusmicStatus value)? loading,
-    TResult Function(ErrorFlusmicStatus value)? error,
-    TResult Function(LoadedFlusmicStatus value)? loaded,
+    TResult? Function(InitFlusmicStatus value)? init,
+    TResult? Function(LoadingFlusmicStatus value)? loading,
+    TResult? Function(ErrorFlusmicStatus value)? error,
+    TResult? Function(LoadedFlusmicStatus value)? loaded,
   }) {
     return loaded?.call(this);
   }
@@ -614,10 +609,10 @@ class _$LoadedFlusmicStatus implements LoadedFlusmicStatus {
 }
 
 abstract class LoadedFlusmicStatus implements FlusmicStatus {
-  factory LoadedFlusmicStatus(final FlusmicResponse response) =
+  factory LoadedFlusmicStatus(final FlusmicResponse<dynamic> response) =
       _$LoadedFlusmicStatus;
 
-  FlusmicResponse get response => throw _privateConstructorUsedError;
+  FlusmicResponse<dynamic> get response;
   @JsonKey(ignore: true)
   _$$LoadedFlusmicStatusCopyWith<_$LoadedFlusmicStatus> get copyWith =>
       throw _privateConstructorUsedError;

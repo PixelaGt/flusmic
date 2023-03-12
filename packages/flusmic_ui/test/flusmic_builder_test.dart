@@ -17,7 +17,13 @@ void main() {
         when(() => flusmic.query(predicates)).thenAnswer(
           (invocation) => Future.delayed(
             const Duration(seconds: 30),
-            () => FlusmicResponse.fromJson(mockResponse),
+            () => FlusmicResponse.fromJson(
+              mockResponse,
+              (resultJson) => Document.fromJson(
+                resultJson! as Map<String, dynamic>,
+                (documentJson) => documentJson! as Map<String, dynamic>,
+              ),
+            ),
           ),
         );
 
@@ -42,7 +48,13 @@ void main() {
 
       when(() => flusmic.query(predicates)).thenAnswer(
         (invocation) => Future.value(
-          FlusmicResponse.fromJson(mockResponse),
+          FlusmicResponse.fromJson(
+            mockResponse,
+            (resultJson) => Document.fromJson(
+              resultJson! as Map<String, dynamic>,
+              (documentJson) => documentJson! as Map<String, dynamic>,
+            ),
+          ),
         ),
       );
 
@@ -63,7 +75,13 @@ void main() {
 
       when(() => flusmic.query(predicates)).thenAnswer(
         (invocation) => Future.value(
-          FlusmicResponse.fromJson(mockResponse),
+          FlusmicResponse.fromJson(
+            mockResponse,
+            (resultJson) => Document.fromJson(
+              resultJson! as Map<String, dynamic>,
+              (documentJson) => documentJson! as Map<String, dynamic>,
+            ),
+          ),
         ),
       );
 

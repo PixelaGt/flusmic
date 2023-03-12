@@ -15,7 +15,13 @@ void main() {
         ];
         when(() => flusmic.query(predicates)).thenAnswer(
           (invocation) => Future.value(
-            FlusmicResponse.fromJson(mockResponse),
+            FlusmicResponse.fromJson(
+              mockResponse,
+              (resultJson) => Document.fromJson(
+                resultJson! as Map<String, dynamic>,
+                (documentJson) => documentJson! as Map<String, dynamic>,
+              ),
+            ),
           ),
         );
         await tester
@@ -31,8 +37,11 @@ void main() {
 }
 
 class FlusmicApp extends StatefulWidget {
-  const FlusmicApp({Key? key, required this.flusmic, required this.predicates})
-      : super(key: key);
+  const FlusmicApp({
+    required this.flusmic,
+    required this.predicates,
+    Key? key,
+  }) : super(key: key);
 
   final Flusmic flusmic;
   final List<Predicate> predicates;
@@ -55,7 +64,11 @@ class _FlusmicAppState extends State<FlusmicApp> {
             loading: (s) => const Text('Loading', key: Key('loading')),
             error: (s) => const Text('Error', key: Key('error')),
             loaded: (s) {
-              final data = s.response.results.first.data;
+              final data = (s.response
+                      as FlusmicResponse<Document<Map<String, dynamic>>>)
+                  .results
+                  .first
+                  .data;
 
               final richFields = data != null
                   ? (data['content'] as List)

@@ -1,3 +1,4 @@
+///Flusmic UI library
 library flusmic_ui;
 
 export 'package:flusmic/flusmic.dart';
