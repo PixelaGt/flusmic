@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'embed_data.dart';
 
@@ -52,7 +52,8 @@ mixin _$EmbedData {
 /// @nodoc
 abstract class $EmbedDataCopyWith<$Res> {
   factory $EmbedDataCopyWith(EmbedData value, $Res Function(EmbedData) then) =
-      _$EmbedDataCopyWithImpl<$Res>;
+      _$EmbedDataCopyWithImpl<$Res, EmbedData>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'author_name') String authorName,
       @JsonKey(name: 'author_url') String authorUrl,
@@ -71,88 +72,91 @@ abstract class $EmbedDataCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$EmbedDataCopyWithImpl<$Res> implements $EmbedDataCopyWith<$Res> {
+class _$EmbedDataCopyWithImpl<$Res, $Val extends EmbedData>
+    implements $EmbedDataCopyWith<$Res> {
   _$EmbedDataCopyWithImpl(this._value, this._then);
 
-  final EmbedData _value;
   // ignore: unused_field
-  final $Res Function(EmbedData) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? authorName = freezed,
-    Object? authorUrl = freezed,
-    Object? embedUrl = freezed,
-    Object? providerName = freezed,
-    Object? providerUrl = freezed,
-    Object? thumbnailHeight = freezed,
-    Object? thumbnailUrl = freezed,
-    Object? thumbnailWidth = freezed,
-    Object? html = freezed,
-    Object? title = freezed,
-    Object? type = freezed,
-    Object? version = freezed,
-    Object? height = freezed,
-    Object? width = freezed,
+    Object? authorName = null,
+    Object? authorUrl = null,
+    Object? embedUrl = null,
+    Object? providerName = null,
+    Object? providerUrl = null,
+    Object? thumbnailHeight = null,
+    Object? thumbnailUrl = null,
+    Object? thumbnailWidth = null,
+    Object? html = null,
+    Object? title = null,
+    Object? type = null,
+    Object? version = null,
+    Object? height = null,
+    Object? width = null,
   }) {
     return _then(_value.copyWith(
-      authorName: authorName == freezed
+      authorName: null == authorName
           ? _value.authorName
           : authorName // ignore: cast_nullable_to_non_nullable
               as String,
-      authorUrl: authorUrl == freezed
+      authorUrl: null == authorUrl
           ? _value.authorUrl
           : authorUrl // ignore: cast_nullable_to_non_nullable
               as String,
-      embedUrl: embedUrl == freezed
+      embedUrl: null == embedUrl
           ? _value.embedUrl
           : embedUrl // ignore: cast_nullable_to_non_nullable
               as String,
-      providerName: providerName == freezed
+      providerName: null == providerName
           ? _value.providerName
           : providerName // ignore: cast_nullable_to_non_nullable
               as String,
-      providerUrl: providerUrl == freezed
+      providerUrl: null == providerUrl
           ? _value.providerUrl
           : providerUrl // ignore: cast_nullable_to_non_nullable
               as String,
-      thumbnailHeight: thumbnailHeight == freezed
+      thumbnailHeight: null == thumbnailHeight
           ? _value.thumbnailHeight
           : thumbnailHeight // ignore: cast_nullable_to_non_nullable
               as double,
-      thumbnailUrl: thumbnailUrl == freezed
+      thumbnailUrl: null == thumbnailUrl
           ? _value.thumbnailUrl
           : thumbnailUrl // ignore: cast_nullable_to_non_nullable
               as String,
-      thumbnailWidth: thumbnailWidth == freezed
+      thumbnailWidth: null == thumbnailWidth
           ? _value.thumbnailWidth
           : thumbnailWidth // ignore: cast_nullable_to_non_nullable
               as double,
-      html: html == freezed
+      html: null == html
           ? _value.html
           : html // ignore: cast_nullable_to_non_nullable
               as String,
-      title: title == freezed
+      title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      type: type == freezed
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as String,
-      version: version == freezed
+      version: null == version
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
               as String,
-      height: height == freezed
+      height: null == height
           ? _value.height
           : height // ignore: cast_nullable_to_non_nullable
               as double,
-      width: width == freezed
+      width: null == width
           ? _value.width
           : width // ignore: cast_nullable_to_non_nullable
               as double,
-    ));
+    ) as $Val);
   }
 }
 
@@ -162,6 +166,7 @@ abstract class _$$_EmbedDataCopyWith<$Res> implements $EmbedDataCopyWith<$Res> {
           _$_EmbedData value, $Res Function(_$_EmbedData) then) =
       __$$_EmbedDataCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'author_name') String authorName,
       @JsonKey(name: 'author_url') String authorUrl,
@@ -180,86 +185,85 @@ abstract class _$$_EmbedDataCopyWith<$Res> implements $EmbedDataCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_EmbedDataCopyWithImpl<$Res> extends _$EmbedDataCopyWithImpl<$Res>
+class __$$_EmbedDataCopyWithImpl<$Res>
+    extends _$EmbedDataCopyWithImpl<$Res, _$_EmbedData>
     implements _$$_EmbedDataCopyWith<$Res> {
   __$$_EmbedDataCopyWithImpl(
       _$_EmbedData _value, $Res Function(_$_EmbedData) _then)
-      : super(_value, (v) => _then(v as _$_EmbedData));
+      : super(_value, _then);
 
-  @override
-  _$_EmbedData get _value => super._value as _$_EmbedData;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? authorName = freezed,
-    Object? authorUrl = freezed,
-    Object? embedUrl = freezed,
-    Object? providerName = freezed,
-    Object? providerUrl = freezed,
-    Object? thumbnailHeight = freezed,
-    Object? thumbnailUrl = freezed,
-    Object? thumbnailWidth = freezed,
-    Object? html = freezed,
-    Object? title = freezed,
-    Object? type = freezed,
-    Object? version = freezed,
-    Object? height = freezed,
-    Object? width = freezed,
+    Object? authorName = null,
+    Object? authorUrl = null,
+    Object? embedUrl = null,
+    Object? providerName = null,
+    Object? providerUrl = null,
+    Object? thumbnailHeight = null,
+    Object? thumbnailUrl = null,
+    Object? thumbnailWidth = null,
+    Object? html = null,
+    Object? title = null,
+    Object? type = null,
+    Object? version = null,
+    Object? height = null,
+    Object? width = null,
   }) {
     return _then(_$_EmbedData(
-      authorName: authorName == freezed
+      authorName: null == authorName
           ? _value.authorName
           : authorName // ignore: cast_nullable_to_non_nullable
               as String,
-      authorUrl: authorUrl == freezed
+      authorUrl: null == authorUrl
           ? _value.authorUrl
           : authorUrl // ignore: cast_nullable_to_non_nullable
               as String,
-      embedUrl: embedUrl == freezed
+      embedUrl: null == embedUrl
           ? _value.embedUrl
           : embedUrl // ignore: cast_nullable_to_non_nullable
               as String,
-      providerName: providerName == freezed
+      providerName: null == providerName
           ? _value.providerName
           : providerName // ignore: cast_nullable_to_non_nullable
               as String,
-      providerUrl: providerUrl == freezed
+      providerUrl: null == providerUrl
           ? _value.providerUrl
           : providerUrl // ignore: cast_nullable_to_non_nullable
               as String,
-      thumbnailHeight: thumbnailHeight == freezed
+      thumbnailHeight: null == thumbnailHeight
           ? _value.thumbnailHeight
           : thumbnailHeight // ignore: cast_nullable_to_non_nullable
               as double,
-      thumbnailUrl: thumbnailUrl == freezed
+      thumbnailUrl: null == thumbnailUrl
           ? _value.thumbnailUrl
           : thumbnailUrl // ignore: cast_nullable_to_non_nullable
               as String,
-      thumbnailWidth: thumbnailWidth == freezed
+      thumbnailWidth: null == thumbnailWidth
           ? _value.thumbnailWidth
           : thumbnailWidth // ignore: cast_nullable_to_non_nullable
               as double,
-      html: html == freezed
+      html: null == html
           ? _value.html
           : html // ignore: cast_nullable_to_non_nullable
               as String,
-      title: title == freezed
+      title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      type: type == freezed
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as String,
-      version: version == freezed
+      version: null == version
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
               as String,
-      height: height == freezed
+      height: null == height
           ? _value.height
           : height // ignore: cast_nullable_to_non_nullable
               as double,
-      width: width == freezed
+      width: null == width
           ? _value.width
           : width // ignore: cast_nullable_to_non_nullable
               as double,
@@ -336,55 +340,60 @@ class _$_EmbedData implements _EmbedData {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_EmbedData &&
-            const DeepCollectionEquality()
-                .equals(other.authorName, authorName) &&
-            const DeepCollectionEquality().equals(other.authorUrl, authorUrl) &&
-            const DeepCollectionEquality().equals(other.embedUrl, embedUrl) &&
-            const DeepCollectionEquality()
-                .equals(other.providerName, providerName) &&
-            const DeepCollectionEquality()
-                .equals(other.providerUrl, providerUrl) &&
-            const DeepCollectionEquality()
-                .equals(other.thumbnailHeight, thumbnailHeight) &&
-            const DeepCollectionEquality()
-                .equals(other.thumbnailUrl, thumbnailUrl) &&
-            const DeepCollectionEquality()
-                .equals(other.thumbnailWidth, thumbnailWidth) &&
-            const DeepCollectionEquality().equals(other.html, html) &&
-            const DeepCollectionEquality().equals(other.title, title) &&
-            const DeepCollectionEquality().equals(other.type, type) &&
-            const DeepCollectionEquality().equals(other.version, version) &&
-            const DeepCollectionEquality().equals(other.height, height) &&
-            const DeepCollectionEquality().equals(other.width, width));
+            (identical(other.authorName, authorName) ||
+                other.authorName == authorName) &&
+            (identical(other.authorUrl, authorUrl) ||
+                other.authorUrl == authorUrl) &&
+            (identical(other.embedUrl, embedUrl) ||
+                other.embedUrl == embedUrl) &&
+            (identical(other.providerName, providerName) ||
+                other.providerName == providerName) &&
+            (identical(other.providerUrl, providerUrl) ||
+                other.providerUrl == providerUrl) &&
+            (identical(other.thumbnailHeight, thumbnailHeight) ||
+                other.thumbnailHeight == thumbnailHeight) &&
+            (identical(other.thumbnailUrl, thumbnailUrl) ||
+                other.thumbnailUrl == thumbnailUrl) &&
+            (identical(other.thumbnailWidth, thumbnailWidth) ||
+                other.thumbnailWidth == thumbnailWidth) &&
+            (identical(other.html, html) || other.html == html) &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.version, version) || other.version == version) &&
+            (identical(other.height, height) || other.height == height) &&
+            (identical(other.width, width) || other.width == width));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(authorName),
-      const DeepCollectionEquality().hash(authorUrl),
-      const DeepCollectionEquality().hash(embedUrl),
-      const DeepCollectionEquality().hash(providerName),
-      const DeepCollectionEquality().hash(providerUrl),
-      const DeepCollectionEquality().hash(thumbnailHeight),
-      const DeepCollectionEquality().hash(thumbnailUrl),
-      const DeepCollectionEquality().hash(thumbnailWidth),
-      const DeepCollectionEquality().hash(html),
-      const DeepCollectionEquality().hash(title),
-      const DeepCollectionEquality().hash(type),
-      const DeepCollectionEquality().hash(version),
-      const DeepCollectionEquality().hash(height),
-      const DeepCollectionEquality().hash(width));
+      authorName,
+      authorUrl,
+      embedUrl,
+      providerName,
+      providerUrl,
+      thumbnailHeight,
+      thumbnailUrl,
+      thumbnailWidth,
+      html,
+      title,
+      type,
+      version,
+      height,
+      width);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_EmbedDataCopyWith<_$_EmbedData> get copyWith =>
       __$$_EmbedDataCopyWithImpl<_$_EmbedData>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_EmbedDataToJson(this);
+    return _$$_EmbedDataToJson(
+      this,
+    );
   }
 }
 
@@ -410,40 +419,40 @@ abstract class _EmbedData implements EmbedData {
 
   @override
   @JsonKey(name: 'author_name')
-  String get authorName => throw _privateConstructorUsedError;
+  String get authorName;
   @override
   @JsonKey(name: 'author_url')
-  String get authorUrl => throw _privateConstructorUsedError;
+  String get authorUrl;
   @override
   @JsonKey(name: 'embed_url')
-  String get embedUrl => throw _privateConstructorUsedError;
+  String get embedUrl;
   @override
   @JsonKey(name: 'provider_name')
-  String get providerName => throw _privateConstructorUsedError;
+  String get providerName;
   @override
   @JsonKey(name: 'provider_url')
-  String get providerUrl => throw _privateConstructorUsedError;
+  String get providerUrl;
   @override
   @JsonKey(name: 'thumbnail_height')
-  double get thumbnailHeight => throw _privateConstructorUsedError;
+  double get thumbnailHeight;
   @override
   @JsonKey(name: 'thumbnail_url')
-  String get thumbnailUrl => throw _privateConstructorUsedError;
+  String get thumbnailUrl;
   @override
   @JsonKey(name: 'thumbnail_width')
-  double get thumbnailWidth => throw _privateConstructorUsedError;
+  double get thumbnailWidth;
   @override
-  String get html => throw _privateConstructorUsedError;
+  String get html;
   @override
-  String get title => throw _privateConstructorUsedError;
+  String get title;
   @override
-  String get type => throw _privateConstructorUsedError;
+  String get type;
   @override
-  String get version => throw _privateConstructorUsedError;
+  String get version;
   @override
-  double get height => throw _privateConstructorUsedError;
+  double get height;
   @override
-  double get width => throw _privateConstructorUsedError;
+  double get width;
   @override
   @JsonKey(ignore: true)
   _$$_EmbedDataCopyWith<_$_EmbedData> get copyWith =>

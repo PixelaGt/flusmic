@@ -12,13 +12,13 @@ part 'api.g.dart';
 class Api with _$Api {
   ///Deafult factory constructor for Ref
   factory Api({
+    required List<Language> languages,
+    required List<Ref> refs,
+    required String version,
     @JsonKey(name: 'oauth_initiate') required String? oauthInitiate,
     @JsonKey(name: 'oauth_token') required String? oauthToken,
     Map<String, String>? types,
     String? license,
-    required List<Language> languages,
-    required List<Ref> refs,
-    required String version,
   }) = _Api;
 
   ///Creates a Api object from json

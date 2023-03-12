@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'simple_text.dart';
 
@@ -34,38 +34,42 @@ mixin _$SimpleText {
 abstract class $SimpleTextCopyWith<$Res> {
   factory $SimpleTextCopyWith(
           SimpleText value, $Res Function(SimpleText) then) =
-      _$SimpleTextCopyWithImpl<$Res>;
+      _$SimpleTextCopyWithImpl<$Res, SimpleText>;
+  @useResult
   $Res call({List<Span> spans, String text, String type});
 }
 
 /// @nodoc
-class _$SimpleTextCopyWithImpl<$Res> implements $SimpleTextCopyWith<$Res> {
+class _$SimpleTextCopyWithImpl<$Res, $Val extends SimpleText>
+    implements $SimpleTextCopyWith<$Res> {
   _$SimpleTextCopyWithImpl(this._value, this._then);
 
-  final SimpleText _value;
   // ignore: unused_field
-  final $Res Function(SimpleText) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? spans = freezed,
-    Object? text = freezed,
-    Object? type = freezed,
+    Object? spans = null,
+    Object? text = null,
+    Object? type = null,
   }) {
     return _then(_value.copyWith(
-      spans: spans == freezed
+      spans: null == spans
           ? _value.spans
           : spans // ignore: cast_nullable_to_non_nullable
               as List<Span>,
-      text: text == freezed
+      text: null == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
               as String,
-      type: type == freezed
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
@@ -76,35 +80,35 @@ abstract class _$$_SimpleTextCopyWith<$Res>
           _$_SimpleText value, $Res Function(_$_SimpleText) then) =
       __$$_SimpleTextCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({List<Span> spans, String text, String type});
 }
 
 /// @nodoc
-class __$$_SimpleTextCopyWithImpl<$Res> extends _$SimpleTextCopyWithImpl<$Res>
+class __$$_SimpleTextCopyWithImpl<$Res>
+    extends _$SimpleTextCopyWithImpl<$Res, _$_SimpleText>
     implements _$$_SimpleTextCopyWith<$Res> {
   __$$_SimpleTextCopyWithImpl(
       _$_SimpleText _value, $Res Function(_$_SimpleText) _then)
-      : super(_value, (v) => _then(v as _$_SimpleText));
+      : super(_value, _then);
 
-  @override
-  _$_SimpleText get _value => super._value as _$_SimpleText;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? spans = freezed,
-    Object? text = freezed,
-    Object? type = freezed,
+    Object? spans = null,
+    Object? text = null,
+    Object? type = null,
   }) {
     return _then(_$_SimpleText(
-      spans: spans == freezed
+      spans: null == spans
           ? _value._spans
           : spans // ignore: cast_nullable_to_non_nullable
               as List<Span>,
-      text: text == freezed
+      text: null == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
               as String,
-      type: type == freezed
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as String,
@@ -125,6 +129,7 @@ class _$_SimpleText implements _SimpleText {
   final List<Span> _spans;
   @override
   List<Span> get spans {
+    if (_spans is EqualUnmodifiableListView) return _spans;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_spans);
   }
@@ -145,26 +150,26 @@ class _$_SimpleText implements _SimpleText {
         (other.runtimeType == runtimeType &&
             other is _$_SimpleText &&
             const DeepCollectionEquality().equals(other._spans, _spans) &&
-            const DeepCollectionEquality().equals(other.text, text) &&
-            const DeepCollectionEquality().equals(other.type, type));
+            (identical(other.text, text) || other.text == text) &&
+            (identical(other.type, type) || other.type == type));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(_spans),
-      const DeepCollectionEquality().hash(text),
-      const DeepCollectionEquality().hash(type));
+      runtimeType, const DeepCollectionEquality().hash(_spans), text, type);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_SimpleTextCopyWith<_$_SimpleText> get copyWith =>
       __$$_SimpleTextCopyWithImpl<_$_SimpleText>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SimpleTextToJson(this);
+    return _$$_SimpleTextToJson(
+      this,
+    );
   }
 }
 
@@ -178,11 +183,11 @@ abstract class _SimpleText implements SimpleText {
       _$_SimpleText.fromJson;
 
   @override
-  List<Span> get spans => throw _privateConstructorUsedError;
+  List<Span> get spans;
   @override
-  String get text => throw _privateConstructorUsedError;
+  String get text;
   @override
-  String get type => throw _privateConstructorUsedError;
+  String get type;
   @override
   @JsonKey(ignore: true)
   _$$_SimpleTextCopyWith<_$_SimpleText> get copyWith =>

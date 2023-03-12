@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'geopoint.dart';
 
@@ -32,33 +32,37 @@ mixin _$Geopoint {
 /// @nodoc
 abstract class $GeopointCopyWith<$Res> {
   factory $GeopointCopyWith(Geopoint value, $Res Function(Geopoint) then) =
-      _$GeopointCopyWithImpl<$Res>;
+      _$GeopointCopyWithImpl<$Res, Geopoint>;
+  @useResult
   $Res call({double latitude, double longitude});
 }
 
 /// @nodoc
-class _$GeopointCopyWithImpl<$Res> implements $GeopointCopyWith<$Res> {
+class _$GeopointCopyWithImpl<$Res, $Val extends Geopoint>
+    implements $GeopointCopyWith<$Res> {
   _$GeopointCopyWithImpl(this._value, this._then);
 
-  final Geopoint _value;
   // ignore: unused_field
-  final $Res Function(Geopoint) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? latitude = freezed,
-    Object? longitude = freezed,
+    Object? latitude = null,
+    Object? longitude = null,
   }) {
     return _then(_value.copyWith(
-      latitude: latitude == freezed
+      latitude: null == latitude
           ? _value.latitude
           : latitude // ignore: cast_nullable_to_non_nullable
               as double,
-      longitude: longitude == freezed
+      longitude: null == longitude
           ? _value.longitude
           : longitude // ignore: cast_nullable_to_non_nullable
               as double,
-    ));
+    ) as $Val);
   }
 }
 
@@ -68,30 +72,30 @@ abstract class _$$_GeopointCopyWith<$Res> implements $GeopointCopyWith<$Res> {
           _$_Geopoint value, $Res Function(_$_Geopoint) then) =
       __$$_GeopointCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({double latitude, double longitude});
 }
 
 /// @nodoc
-class __$$_GeopointCopyWithImpl<$Res> extends _$GeopointCopyWithImpl<$Res>
+class __$$_GeopointCopyWithImpl<$Res>
+    extends _$GeopointCopyWithImpl<$Res, _$_Geopoint>
     implements _$$_GeopointCopyWith<$Res> {
   __$$_GeopointCopyWithImpl(
       _$_Geopoint _value, $Res Function(_$_Geopoint) _then)
-      : super(_value, (v) => _then(v as _$_Geopoint));
+      : super(_value, _then);
 
-  @override
-  _$_Geopoint get _value => super._value as _$_Geopoint;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? latitude = freezed,
-    Object? longitude = freezed,
+    Object? latitude = null,
+    Object? longitude = null,
   }) {
     return _then(_$_Geopoint(
-      latitude: latitude == freezed
+      latitude: null == latitude
           ? _value.latitude
           : latitude // ignore: cast_nullable_to_non_nullable
               as double,
-      longitude: longitude == freezed
+      longitude: null == longitude
           ? _value.longitude
           : longitude // ignore: cast_nullable_to_non_nullable
               as double,
@@ -122,25 +126,27 @@ class _$_Geopoint implements _Geopoint {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Geopoint &&
-            const DeepCollectionEquality().equals(other.latitude, latitude) &&
-            const DeepCollectionEquality().equals(other.longitude, longitude));
+            (identical(other.latitude, latitude) ||
+                other.latitude == latitude) &&
+            (identical(other.longitude, longitude) ||
+                other.longitude == longitude));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(latitude),
-      const DeepCollectionEquality().hash(longitude));
+  int get hashCode => Object.hash(runtimeType, latitude, longitude);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_GeopointCopyWith<_$_Geopoint> get copyWith =>
       __$$_GeopointCopyWithImpl<_$_Geopoint>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_GeopointToJson(this);
+    return _$$_GeopointToJson(
+      this,
+    );
   }
 }
 
@@ -152,9 +158,9 @@ abstract class _Geopoint implements Geopoint {
   factory _Geopoint.fromJson(Map<String, dynamic> json) = _$_Geopoint.fromJson;
 
   @override
-  double get latitude => throw _privateConstructorUsedError;
+  double get latitude;
   @override
-  double get longitude => throw _privateConstructorUsedError;
+  double get longitude;
   @override
   @JsonKey(ignore: true)
   _$$_GeopointCopyWith<_$_Geopoint> get copyWith =>

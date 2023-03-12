@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'ordering.dart';
 
@@ -28,10 +28,10 @@ mixin _$Ordering {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String customType, String field, bool descending)? type,
-    TResult Function(String type, bool descending)? document,
-    TResult Function(bool descending)? firstPublicationDate,
-    TResult Function(bool descending)? lastPublicationDate,
+    TResult? Function(String customType, String field, bool descending)? type,
+    TResult? Function(String type, bool descending)? document,
+    TResult? Function(bool descending)? firstPublicationDate,
+    TResult? Function(bool descending)? lastPublicationDate,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,10 +55,10 @@ mixin _$Ordering {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(TypeOrdering value)? type,
-    TResult Function(DocumentOrdering value)? document,
-    TResult Function(FirstPublicationDateOrdering value)? firstPublicationDate,
-    TResult Function(LastPublicationDateOrdering value)? lastPublicationDate,
+    TResult? Function(TypeOrdering value)? type,
+    TResult? Function(DocumentOrdering value)? document,
+    TResult? Function(FirstPublicationDateOrdering value)? firstPublicationDate,
+    TResult? Function(LastPublicationDateOrdering value)? lastPublicationDate,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -79,28 +79,32 @@ mixin _$Ordering {
 /// @nodoc
 abstract class $OrderingCopyWith<$Res> {
   factory $OrderingCopyWith(Ordering value, $Res Function(Ordering) then) =
-      _$OrderingCopyWithImpl<$Res>;
+      _$OrderingCopyWithImpl<$Res, Ordering>;
+  @useResult
   $Res call({bool descending});
 }
 
 /// @nodoc
-class _$OrderingCopyWithImpl<$Res> implements $OrderingCopyWith<$Res> {
+class _$OrderingCopyWithImpl<$Res, $Val extends Ordering>
+    implements $OrderingCopyWith<$Res> {
   _$OrderingCopyWithImpl(this._value, this._then);
 
-  final Ordering _value;
   // ignore: unused_field
-  final $Res Function(Ordering) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? descending = freezed,
+    Object? descending = null,
   }) {
     return _then(_value.copyWith(
-      descending: descending == freezed
+      descending: null == descending
           ? _value.descending
           : descending // ignore: cast_nullable_to_non_nullable
               as bool,
-    ));
+    ) as $Val);
   }
 }
 
@@ -111,35 +115,35 @@ abstract class _$$TypeOrderingCopyWith<$Res>
           _$TypeOrdering value, $Res Function(_$TypeOrdering) then) =
       __$$TypeOrderingCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String customType, String field, bool descending});
 }
 
 /// @nodoc
-class __$$TypeOrderingCopyWithImpl<$Res> extends _$OrderingCopyWithImpl<$Res>
+class __$$TypeOrderingCopyWithImpl<$Res>
+    extends _$OrderingCopyWithImpl<$Res, _$TypeOrdering>
     implements _$$TypeOrderingCopyWith<$Res> {
   __$$TypeOrderingCopyWithImpl(
       _$TypeOrdering _value, $Res Function(_$TypeOrdering) _then)
-      : super(_value, (v) => _then(v as _$TypeOrdering));
+      : super(_value, _then);
 
-  @override
-  _$TypeOrdering get _value => super._value as _$TypeOrdering;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? customType = freezed,
-    Object? field = freezed,
-    Object? descending = freezed,
+    Object? customType = null,
+    Object? field = null,
+    Object? descending = null,
   }) {
     return _then(_$TypeOrdering(
-      customType == freezed
+      null == customType
           ? _value.customType
           : customType // ignore: cast_nullable_to_non_nullable
               as String,
-      field == freezed
+      null == field
           ? _value.field
           : field // ignore: cast_nullable_to_non_nullable
               as String,
-      descending: descending == freezed
+      descending: null == descending
           ? _value.descending
           : descending // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -170,22 +174,19 @@ class _$TypeOrdering implements TypeOrdering {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TypeOrdering &&
-            const DeepCollectionEquality()
-                .equals(other.customType, customType) &&
-            const DeepCollectionEquality().equals(other.field, field) &&
-            const DeepCollectionEquality()
-                .equals(other.descending, descending));
+            (identical(other.customType, customType) ||
+                other.customType == customType) &&
+            (identical(other.field, field) || other.field == field) &&
+            (identical(other.descending, descending) ||
+                other.descending == descending));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(customType),
-      const DeepCollectionEquality().hash(field),
-      const DeepCollectionEquality().hash(descending));
+  int get hashCode => Object.hash(runtimeType, customType, field, descending);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$TypeOrderingCopyWith<_$TypeOrdering> get copyWith =>
       __$$TypeOrderingCopyWithImpl<_$TypeOrdering>(this, _$identity);
 
@@ -204,10 +205,10 @@ class _$TypeOrdering implements TypeOrdering {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String customType, String field, bool descending)? type,
-    TResult Function(String type, bool descending)? document,
-    TResult Function(bool descending)? firstPublicationDate,
-    TResult Function(bool descending)? lastPublicationDate,
+    TResult? Function(String customType, String field, bool descending)? type,
+    TResult? Function(String type, bool descending)? document,
+    TResult? Function(bool descending)? firstPublicationDate,
+    TResult? Function(bool descending)? lastPublicationDate,
   }) {
     return type?.call(customType, field, descending);
   }
@@ -243,10 +244,10 @@ class _$TypeOrdering implements TypeOrdering {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(TypeOrdering value)? type,
-    TResult Function(DocumentOrdering value)? document,
-    TResult Function(FirstPublicationDateOrdering value)? firstPublicationDate,
-    TResult Function(LastPublicationDateOrdering value)? lastPublicationDate,
+    TResult? Function(TypeOrdering value)? type,
+    TResult? Function(DocumentOrdering value)? document,
+    TResult? Function(FirstPublicationDateOrdering value)? firstPublicationDate,
+    TResult? Function(LastPublicationDateOrdering value)? lastPublicationDate,
   }) {
     return type?.call(this);
   }
@@ -271,10 +272,10 @@ abstract class TypeOrdering implements Ordering {
   const factory TypeOrdering(final String customType, final String field,
       {final bool descending}) = _$TypeOrdering;
 
-  String get customType => throw _privateConstructorUsedError;
-  String get field => throw _privateConstructorUsedError;
+  String get customType;
+  String get field;
   @override
-  bool get descending => throw _privateConstructorUsedError;
+  bool get descending;
   @override
   @JsonKey(ignore: true)
   _$$TypeOrderingCopyWith<_$TypeOrdering> get copyWith =>
@@ -288,31 +289,30 @@ abstract class _$$DocumentOrderingCopyWith<$Res>
           _$DocumentOrdering value, $Res Function(_$DocumentOrdering) then) =
       __$$DocumentOrderingCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String type, bool descending});
 }
 
 /// @nodoc
 class __$$DocumentOrderingCopyWithImpl<$Res>
-    extends _$OrderingCopyWithImpl<$Res>
+    extends _$OrderingCopyWithImpl<$Res, _$DocumentOrdering>
     implements _$$DocumentOrderingCopyWith<$Res> {
   __$$DocumentOrderingCopyWithImpl(
       _$DocumentOrdering _value, $Res Function(_$DocumentOrdering) _then)
-      : super(_value, (v) => _then(v as _$DocumentOrdering));
+      : super(_value, _then);
 
-  @override
-  _$DocumentOrdering get _value => super._value as _$DocumentOrdering;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? type = freezed,
-    Object? descending = freezed,
+    Object? type = null,
+    Object? descending = null,
   }) {
     return _then(_$DocumentOrdering(
-      type == freezed
+      null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as String,
-      descending: descending == freezed
+      descending: null == descending
           ? _value.descending
           : descending // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -341,19 +341,17 @@ class _$DocumentOrdering implements DocumentOrdering {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DocumentOrdering &&
-            const DeepCollectionEquality().equals(other.type, type) &&
-            const DeepCollectionEquality()
-                .equals(other.descending, descending));
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.descending, descending) ||
+                other.descending == descending));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(type),
-      const DeepCollectionEquality().hash(descending));
+  int get hashCode => Object.hash(runtimeType, type, descending);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$DocumentOrderingCopyWith<_$DocumentOrdering> get copyWith =>
       __$$DocumentOrderingCopyWithImpl<_$DocumentOrdering>(this, _$identity);
 
@@ -372,10 +370,10 @@ class _$DocumentOrdering implements DocumentOrdering {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String customType, String field, bool descending)? type,
-    TResult Function(String type, bool descending)? document,
-    TResult Function(bool descending)? firstPublicationDate,
-    TResult Function(bool descending)? lastPublicationDate,
+    TResult? Function(String customType, String field, bool descending)? type,
+    TResult? Function(String type, bool descending)? document,
+    TResult? Function(bool descending)? firstPublicationDate,
+    TResult? Function(bool descending)? lastPublicationDate,
   }) {
     return document?.call(this.type, descending);
   }
@@ -411,10 +409,10 @@ class _$DocumentOrdering implements DocumentOrdering {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(TypeOrdering value)? type,
-    TResult Function(DocumentOrdering value)? document,
-    TResult Function(FirstPublicationDateOrdering value)? firstPublicationDate,
-    TResult Function(LastPublicationDateOrdering value)? lastPublicationDate,
+    TResult? Function(TypeOrdering value)? type,
+    TResult? Function(DocumentOrdering value)? document,
+    TResult? Function(FirstPublicationDateOrdering value)? firstPublicationDate,
+    TResult? Function(LastPublicationDateOrdering value)? lastPublicationDate,
   }) {
     return document?.call(this);
   }
@@ -439,9 +437,9 @@ abstract class DocumentOrdering implements Ordering {
   const factory DocumentOrdering(final String type, {final bool descending}) =
       _$DocumentOrdering;
 
-  String get type => throw _privateConstructorUsedError;
+  String get type;
   @override
-  bool get descending => throw _privateConstructorUsedError;
+  bool get descending;
   @override
   @JsonKey(ignore: true)
   _$$DocumentOrderingCopyWith<_$DocumentOrdering> get copyWith =>
@@ -456,28 +454,26 @@ abstract class _$$FirstPublicationDateOrderingCopyWith<$Res>
           $Res Function(_$FirstPublicationDateOrdering) then) =
       __$$FirstPublicationDateOrderingCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({bool descending});
 }
 
 /// @nodoc
 class __$$FirstPublicationDateOrderingCopyWithImpl<$Res>
-    extends _$OrderingCopyWithImpl<$Res>
+    extends _$OrderingCopyWithImpl<$Res, _$FirstPublicationDateOrdering>
     implements _$$FirstPublicationDateOrderingCopyWith<$Res> {
   __$$FirstPublicationDateOrderingCopyWithImpl(
       _$FirstPublicationDateOrdering _value,
       $Res Function(_$FirstPublicationDateOrdering) _then)
-      : super(_value, (v) => _then(v as _$FirstPublicationDateOrdering));
+      : super(_value, _then);
 
-  @override
-  _$FirstPublicationDateOrdering get _value =>
-      super._value as _$FirstPublicationDateOrdering;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? descending = freezed,
+    Object? descending = null,
   }) {
     return _then(_$FirstPublicationDateOrdering(
-      descending: descending == freezed
+      descending: null == descending
           ? _value.descending
           : descending // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -504,16 +500,16 @@ class _$FirstPublicationDateOrdering implements FirstPublicationDateOrdering {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$FirstPublicationDateOrdering &&
-            const DeepCollectionEquality()
-                .equals(other.descending, descending));
+            (identical(other.descending, descending) ||
+                other.descending == descending));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(descending));
+  int get hashCode => Object.hash(runtimeType, descending);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$FirstPublicationDateOrderingCopyWith<_$FirstPublicationDateOrdering>
       get copyWith => __$$FirstPublicationDateOrderingCopyWithImpl<
           _$FirstPublicationDateOrdering>(this, _$identity);
@@ -533,10 +529,10 @@ class _$FirstPublicationDateOrdering implements FirstPublicationDateOrdering {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String customType, String field, bool descending)? type,
-    TResult Function(String type, bool descending)? document,
-    TResult Function(bool descending)? firstPublicationDate,
-    TResult Function(bool descending)? lastPublicationDate,
+    TResult? Function(String customType, String field, bool descending)? type,
+    TResult? Function(String type, bool descending)? document,
+    TResult? Function(bool descending)? firstPublicationDate,
+    TResult? Function(bool descending)? lastPublicationDate,
   }) {
     return firstPublicationDate?.call(descending);
   }
@@ -572,10 +568,10 @@ class _$FirstPublicationDateOrdering implements FirstPublicationDateOrdering {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(TypeOrdering value)? type,
-    TResult Function(DocumentOrdering value)? document,
-    TResult Function(FirstPublicationDateOrdering value)? firstPublicationDate,
-    TResult Function(LastPublicationDateOrdering value)? lastPublicationDate,
+    TResult? Function(TypeOrdering value)? type,
+    TResult? Function(DocumentOrdering value)? document,
+    TResult? Function(FirstPublicationDateOrdering value)? firstPublicationDate,
+    TResult? Function(LastPublicationDateOrdering value)? lastPublicationDate,
   }) {
     return firstPublicationDate?.call(this);
   }
@@ -601,7 +597,7 @@ abstract class FirstPublicationDateOrdering implements Ordering {
       _$FirstPublicationDateOrdering;
 
   @override
-  bool get descending => throw _privateConstructorUsedError;
+  bool get descending;
   @override
   @JsonKey(ignore: true)
   _$$FirstPublicationDateOrderingCopyWith<_$FirstPublicationDateOrdering>
@@ -616,28 +612,26 @@ abstract class _$$LastPublicationDateOrderingCopyWith<$Res>
           $Res Function(_$LastPublicationDateOrdering) then) =
       __$$LastPublicationDateOrderingCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({bool descending});
 }
 
 /// @nodoc
 class __$$LastPublicationDateOrderingCopyWithImpl<$Res>
-    extends _$OrderingCopyWithImpl<$Res>
+    extends _$OrderingCopyWithImpl<$Res, _$LastPublicationDateOrdering>
     implements _$$LastPublicationDateOrderingCopyWith<$Res> {
   __$$LastPublicationDateOrderingCopyWithImpl(
       _$LastPublicationDateOrdering _value,
       $Res Function(_$LastPublicationDateOrdering) _then)
-      : super(_value, (v) => _then(v as _$LastPublicationDateOrdering));
+      : super(_value, _then);
 
-  @override
-  _$LastPublicationDateOrdering get _value =>
-      super._value as _$LastPublicationDateOrdering;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? descending = freezed,
+    Object? descending = null,
   }) {
     return _then(_$LastPublicationDateOrdering(
-      descending: descending == freezed
+      descending: null == descending
           ? _value.descending
           : descending // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -664,16 +658,16 @@ class _$LastPublicationDateOrdering implements LastPublicationDateOrdering {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LastPublicationDateOrdering &&
-            const DeepCollectionEquality()
-                .equals(other.descending, descending));
+            (identical(other.descending, descending) ||
+                other.descending == descending));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(descending));
+  int get hashCode => Object.hash(runtimeType, descending);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$LastPublicationDateOrderingCopyWith<_$LastPublicationDateOrdering>
       get copyWith => __$$LastPublicationDateOrderingCopyWithImpl<
           _$LastPublicationDateOrdering>(this, _$identity);
@@ -693,10 +687,10 @@ class _$LastPublicationDateOrdering implements LastPublicationDateOrdering {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String customType, String field, bool descending)? type,
-    TResult Function(String type, bool descending)? document,
-    TResult Function(bool descending)? firstPublicationDate,
-    TResult Function(bool descending)? lastPublicationDate,
+    TResult? Function(String customType, String field, bool descending)? type,
+    TResult? Function(String type, bool descending)? document,
+    TResult? Function(bool descending)? firstPublicationDate,
+    TResult? Function(bool descending)? lastPublicationDate,
   }) {
     return lastPublicationDate?.call(descending);
   }
@@ -732,10 +726,10 @@ class _$LastPublicationDateOrdering implements LastPublicationDateOrdering {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(TypeOrdering value)? type,
-    TResult Function(DocumentOrdering value)? document,
-    TResult Function(FirstPublicationDateOrdering value)? firstPublicationDate,
-    TResult Function(LastPublicationDateOrdering value)? lastPublicationDate,
+    TResult? Function(TypeOrdering value)? type,
+    TResult? Function(DocumentOrdering value)? document,
+    TResult? Function(FirstPublicationDateOrdering value)? firstPublicationDate,
+    TResult? Function(LastPublicationDateOrdering value)? lastPublicationDate,
   }) {
     return lastPublicationDate?.call(this);
   }
@@ -761,7 +755,7 @@ abstract class LastPublicationDateOrdering implements Ordering {
       _$LastPublicationDateOrdering;
 
   @override
-  bool get descending => throw _privateConstructorUsedError;
+  bool get descending;
   @override
   @JsonKey(ignore: true)
   _$$LastPublicationDateOrderingCopyWith<_$LastPublicationDateOrdering>

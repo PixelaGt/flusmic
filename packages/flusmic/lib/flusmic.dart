@@ -1,3 +1,4 @@
+/// Flusmic library
 library flusmic;
 
 export './src/flusmic_error.dart';

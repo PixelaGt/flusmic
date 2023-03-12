@@ -1,6 +1,7 @@
 import 'package:flusmic/flusmic.dart';
 import 'package:test/test.dart';
 import 'sample_model/sample_model.dart';
+import 'single_model/single_model.dart';
 
 void main() {
   final flusmic =
@@ -23,12 +24,12 @@ void main() {
 
     test('document prismic model', () async {
       final result = await flusmic.getDocumentById('XpJ8phAAACzK1yQw');
-      expect(result.results.first, isA<Document>());
+      expect(result.results.first, isA<Document<Map<String, dynamic>>>());
     });
 
     test('response prismic model', () async {
       final result = await flusmic.getDocumentById('XpJ8phAAACzK1yQw');
-      expect(result, isA<FlusmicResponse>());
+      expect(result, isA<FlusmicResponse<Document<Map<String, dynamic>>>>());
     });
 
     test('alternate language prismic model', () async {
@@ -168,6 +169,31 @@ void main() {
       final result = await flusmic.getDocumentById('XpJ8phAAACzK1yQw');
       final data = SampleModel.fromJson(result.results.first.data!);
       expect(data.link, isA<WebLinkeable>());
+    });
+  });
+
+  group('custom prismic models', () {
+    test('query with custom deserialization', () async {
+      final result = await flusmic.queryWithModel<SampleModel>(
+        [Predicate.at(DefaultPredicatePath.id, 'XpJ8phAAACzK1yQw')],
+        (json) => SampleModel.fromJson(json! as Map<String, dynamic>),
+      );
+      expect(result.results.first.data, isA<SampleModel>());
+    });
+
+    test('graph query with custom deserialization', () async {
+      const query = '''
+      {
+        test {
+          title
+        }
+      }
+      ''';
+      final result = await flusmic.graphQueryWithModel<SingleModel>(
+        query,
+        (json) => SingleModel.fromJson(json! as Map<String, dynamic>),
+      );
+      expect(result.results.first.data, isA<SingleModel>());
     });
   });
 }

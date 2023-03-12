@@ -13,14 +13,6 @@ _$_Api _$$_ApiFromJson(Map json) => $checkedCreate(
       json,
       ($checkedConvert) {
         final val = _$_Api(
-          oauthInitiate: $checkedConvert('oauth_initiate', (v) => v as String?),
-          oauthToken: $checkedConvert('oauth_token', (v) => v as String?),
-          types: $checkedConvert(
-              'types',
-              (v) => (v as Map?)?.map(
-                    (k, e) => MapEntry(k as String, e as String),
-                  )),
-          license: $checkedConvert('license', (v) => v as String?),
           languages: $checkedConvert(
               'languages',
               (v) => (v as List<dynamic>)
@@ -33,6 +25,14 @@ _$_Api _$$_ApiFromJson(Map json) => $checkedCreate(
                   .map((e) => Ref.fromJson(Map<String, dynamic>.from(e as Map)))
                   .toList()),
           version: $checkedConvert('version', (v) => v as String),
+          oauthInitiate: $checkedConvert('oauth_initiate', (v) => v as String?),
+          oauthToken: $checkedConvert('oauth_token', (v) => v as String?),
+          types: $checkedConvert(
+              'types',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e as String),
+                  )),
+          license: $checkedConvert('license', (v) => v as String?),
         );
         return val;
       },
@@ -43,11 +43,11 @@ _$_Api _$$_ApiFromJson(Map json) => $checkedCreate(
     );
 
 Map<String, dynamic> _$$_ApiToJson(_$_Api instance) => <String, dynamic>{
+      'languages': instance.languages.map((e) => e.toJson()).toList(),
+      'refs': instance.refs.map((e) => e.toJson()).toList(),
+      'version': instance.version,
       'oauth_initiate': instance.oauthInitiate,
       'oauth_token': instance.oauthToken,
       'types': instance.types,
       'license': instance.license,
-      'languages': instance.languages.map((e) => e.toJson()).toList(),
-      'refs': instance.refs.map((e) => e.toJson()).toList(),
-      'version': instance.version,
     };

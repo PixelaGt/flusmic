@@ -11,10 +11,10 @@ part 'simple_image.g.dart';
 class SimpleImage with _$SimpleImage {
   ///Default constructor
   factory SimpleImage({
-    String? alt,
-    String? copyright,
     required Dimension dimensions,
     required String url,
+    String? alt,
+    String? copyright,
   }) = _SimpleImage;
 
   ///Converts SimpleImage object to json
