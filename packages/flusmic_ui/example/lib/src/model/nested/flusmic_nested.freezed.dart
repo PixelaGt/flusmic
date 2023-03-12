@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'flusmic_nested.dart';
 
@@ -33,34 +33,37 @@ mixin _$FlusmicNested {
 abstract class $FlusmicNestedCopyWith<$Res> {
   factory $FlusmicNestedCopyWith(
           FlusmicNested value, $Res Function(FlusmicNested) then) =
-      _$FlusmicNestedCopyWithImpl<$Res>;
+      _$FlusmicNestedCopyWithImpl<$Res, FlusmicNested>;
+  @useResult
   $Res call({String text1, String text2});
 }
 
 /// @nodoc
-class _$FlusmicNestedCopyWithImpl<$Res>
+class _$FlusmicNestedCopyWithImpl<$Res, $Val extends FlusmicNested>
     implements $FlusmicNestedCopyWith<$Res> {
   _$FlusmicNestedCopyWithImpl(this._value, this._then);
 
-  final FlusmicNested _value;
   // ignore: unused_field
-  final $Res Function(FlusmicNested) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? text1 = freezed,
-    Object? text2 = freezed,
+    Object? text1 = null,
+    Object? text2 = null,
   }) {
     return _then(_value.copyWith(
-      text1: text1 == freezed
+      text1: null == text1
           ? _value.text1
           : text1 // ignore: cast_nullable_to_non_nullable
               as String,
-      text2: text2 == freezed
+      text2: null == text2
           ? _value.text2
           : text2 // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
@@ -71,31 +74,30 @@ abstract class _$$_FlusmicNestedCopyWith<$Res>
           _$_FlusmicNested value, $Res Function(_$_FlusmicNested) then) =
       __$$_FlusmicNestedCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String text1, String text2});
 }
 
 /// @nodoc
 class __$$_FlusmicNestedCopyWithImpl<$Res>
-    extends _$FlusmicNestedCopyWithImpl<$Res>
+    extends _$FlusmicNestedCopyWithImpl<$Res, _$_FlusmicNested>
     implements _$$_FlusmicNestedCopyWith<$Res> {
   __$$_FlusmicNestedCopyWithImpl(
       _$_FlusmicNested _value, $Res Function(_$_FlusmicNested) _then)
-      : super(_value, (v) => _then(v as _$_FlusmicNested));
+      : super(_value, _then);
 
-  @override
-  _$_FlusmicNested get _value => super._value as _$_FlusmicNested;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? text1 = freezed,
-    Object? text2 = freezed,
+    Object? text1 = null,
+    Object? text2 = null,
   }) {
     return _then(_$_FlusmicNested(
-      text1: text1 == freezed
+      text1: null == text1
           ? _value.text1
           : text1 // ignore: cast_nullable_to_non_nullable
               as String,
-      text2: text2 == freezed
+      text2: null == text2
           ? _value.text2
           : text2 // ignore: cast_nullable_to_non_nullable
               as String,
@@ -126,25 +128,25 @@ class _$_FlusmicNested implements _FlusmicNested {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_FlusmicNested &&
-            const DeepCollectionEquality().equals(other.text1, text1) &&
-            const DeepCollectionEquality().equals(other.text2, text2));
+            (identical(other.text1, text1) || other.text1 == text1) &&
+            (identical(other.text2, text2) || other.text2 == text2));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(text1),
-      const DeepCollectionEquality().hash(text2));
+  int get hashCode => Object.hash(runtimeType, text1, text2);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_FlusmicNestedCopyWith<_$_FlusmicNested> get copyWith =>
       __$$_FlusmicNestedCopyWithImpl<_$_FlusmicNested>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_FlusmicNestedToJson(this);
+    return _$$_FlusmicNestedToJson(
+      this,
+    );
   }
 }
 
@@ -157,9 +159,9 @@ abstract class _FlusmicNested implements FlusmicNested {
       _$_FlusmicNested.fromJson;
 
   @override
-  String get text1 => throw _privateConstructorUsedError;
+  String get text1;
   @override
-  String get text2 => throw _privateConstructorUsedError;
+  String get text2;
   @override
   @JsonKey(ignore: true)
   _$$_FlusmicNestedCopyWith<_$_FlusmicNested> get copyWith =>

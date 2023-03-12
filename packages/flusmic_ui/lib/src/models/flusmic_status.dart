@@ -16,5 +16,7 @@ class FlusmicStatus with _$FlusmicStatus {
   factory FlusmicStatus.error(String error) = ErrorFlusmicStatus;
 
   ///Loaded state
-  factory FlusmicStatus.loaded(FlusmicResponse response) = LoadedFlusmicStatus;
+  factory FlusmicStatus.loaded(
+    FlusmicResponse<Document<Map<String, dynamic>>> response,
+  ) = LoadedFlusmicStatus;
 }

@@ -14,8 +14,8 @@ A (unofficial) prismic.io integration for Dart and Flutter.
 
 | Code | Pub |
 | ---- | --- |
-| [flusmic](https://github.com/PixelaGt/flusmic/tree/master/packages/flusmic) | [![pub](https://img.shields.io/badge/pub-3.2.3-blue)](https://pub.dev/packages/flusmic) |
-| [flusmic_ui](https://github.com/PixelaGt/flusmic/tree/master/packages/flusmic_ui) | [![pub](https://img.shields.io/badge/pub-3.2.0-blue)](https://pub.dev/packages/flusmic_ui) |
+| [flusmic](https://github.com/PixelaGt/flusmic/tree/master/packages/flusmic) | [![pub](https://img.shields.io/badge/pub-4.0.0-blue)](https://pub.dev/packages/flusmic) |
+| [flusmic_ui](https://github.com/PixelaGt/flusmic/tree/master/packages/flusmic_ui) | [![pub](https://img.shields.io/badge/pub-4.0.0-blue)](https://pub.dev/packages/flusmic_ui) |
 
 
 ## Docs and articles
