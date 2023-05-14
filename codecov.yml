@@ -22,6 +22,7 @@ comment:
 ignore:
   - "**/*.freezed.dart"
   - "**/*.g.dart"
+  - "packages/flusmic/lib/src/models/document/document.dart"
   - "packages/flusmic/example"
   - "packages/flusmic_ui/example"
   - "packages/flusmic_ui/lib/src/models"
