@@ -1,3 +1,9 @@
+## [4.0.1]
+* Dart min version setted to `2.17.0`
+* `invalid_annotation_target` added to some modules to improve pana score (temporary fix)
+* Temporary fix to include `Document` in custom model
+* Dependencies update
+
 ## [4.0.0]
 * New `queryWithModel` and `graphQueryWithModel` methods added
 * Update dependencies

@@ -1,3 +1,5 @@
+// ignore_for_file: invalid_annotation_target
+
 import 'package:flusmic/src/models/api/ref.dart';
 import 'package:flusmic/src/models/info/language.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';

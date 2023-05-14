@@ -1,3 +1,5 @@
+// ignore_for_file: invalid_annotation_target
+
 import 'package:flusmic/src/models/info/dimension.dart';
 import 'package:flusmic/src/models/types/richable/embed_data/embed_data.dart';
 import 'package:flusmic/src/models/types/simple/span/span.dart';
