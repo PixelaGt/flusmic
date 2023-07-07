@@ -15,7 +15,6 @@ class Flusmic {
     _client = Dio(
       BaseOptions(
         baseUrl: prismicEndpoint,
-        contentType: 'application/json',
         queryParameters: <String, dynamic>{
           if (defaultAuthToken?.isNotEmpty ?? false)
             'access_token': defaultAuthToken,
